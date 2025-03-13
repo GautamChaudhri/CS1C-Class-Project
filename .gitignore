@@ -1,0 +1,9 @@
+#Global .gitignore
+
+#Object files and Executables
+*.o
+#Add executable in future
+
+#MacOS "droppings"
+.DS_Store
+._.DS_Store

@@ -1,0 +1,32 @@
+{
+  "name": "Fed-Dev",
+  "image": "ghcr.io/gautamchaudhri/fed-dev:latest",
+  "remoteUser": "root",
+  "workspaceFolder": "/${localWorkspaceFolderBasename}",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename},type=bind"
+  ],
+  "runArgs": [
+    "-e", "TZ=America/Los_Angeles"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      },
+      "extensions": [                
+        "ms-vscode.cpptools",                         //Microsoft C++ Tools
+        "ms-vscode.cpptools-extension-pack",          //Microsoft C++ Tools Extensions
+        "streetsidesoftware.code-spell-checker",      //Code Spell Checker
+        "vadimcn.vscode-lldb",                        //LLDB Debugger
+        "ms-azuretools.vscode-docker",                //Docker
+        "donjayamanne.githistory",                    //Git History
+        "github.vscode-pull-request-github",          //Github Pull Requests
+        "ms-vsliveshare.vsliveshare",                 //VS Code Live Share
+        "ms-vscode.makefile-tools",                   //Makefile Tools
+        "github.remotehub",                           //Browse GitHub Repos Remotely
+        "ms-vscode.remote-repositories"
+      ]
+    }
+  }
+}
