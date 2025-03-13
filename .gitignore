@@ -2,7 +2,7 @@
 
 #Object files and Executables
 *.o
-#Add executable in future
+main
 
 #MacOS "droppings"
 .DS_Store
