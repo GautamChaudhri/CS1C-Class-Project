@@ -1,5 +1,5 @@
 # Spring 2025 CS1C Class Project – 2D Graphics Modeler Inc.
-Section: TTh 1:30-3:50pm
+Section: TTh 1:30-3:50pm  
 Due Date: 05/01/2025
 
 ---
