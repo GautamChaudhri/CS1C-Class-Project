@@ -1,0 +1,17 @@
+
+Baseline story point estimate value of one = [...] hrs of development time for a single developer
+
+
+#[...] As a ..., I...
+
+  a) Description:
+       
+  b) Tasks:
+       
+  c) Tests:
+      
+  d) Assignee:
+      
+  e) Estimation: 
+  f) Priority: 
+  g) Done: ...
