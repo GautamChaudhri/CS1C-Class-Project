@@ -6,7 +6,6 @@
   b) Tasks:
 * As a user I can choose to display a shape listing report containing only shapes with an area, sorted by area from smallest to largest
 * As a user I can view the properties of any and all shapes on this report (shape type, id, area)
-*** As a user I can click on the shape to edit and change it
 
   c) Tests:
 * Verify a user can display a shape listing report containing ONLY shapes with an area
