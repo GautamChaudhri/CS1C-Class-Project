@@ -1,0 +1,31 @@
+---- EXAMPLE USER STORY ----
+
+#1 As a user, I can cancel a reservation
+
+  a) Description:
+       A site user can cancel a reservation for a full refund to her credit card
+       How far ahead a user must cancel reservation depends upon the user type (see tasks)
+       A cancelation confirmation will be emailed to the site user
+  b) Tasks:
+       As a premium site member, I can cancel a reservation up to the last minute
+       As a non-premium member, I can cancel up to 24 hours in advance
+       As a site visitor, I am emailed a confirmation of any cancelled reservation 
+  c) Tests:
+       Verify that a premium member can cancel the same day without a fee
+       Verify that a non-premium member is charged 10% for a same-day cancellation
+       Verify that an email confirmation is sent
+       Verify that the hotel is notified of any cancellation
+  d) Assignee:
+       James, implement front end UI and code behind logic, member class data & operations reservation cancelation
+       Sandra, implement class to email confirmation to user
+  e) Estimation: 25
+  f) Priority: 9
+  g) Done:
+       User is able to login as a non-premium, premium, guest user and cancel reservation (refer to tests)
+       Appropriate fee is charged to user account
+       User is refunded balance due minus fee
+       Appropriate cancelation record recorded via hotel accounting system
+       Email confirmation is sent to user
+       All task, test conditions satisfied
+
+Baseline story point estimate value of one = 2 hrs of development time for a single developer

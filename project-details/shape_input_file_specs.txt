@@ -1,0 +1,45 @@
+
+---- SHAPE TYPE, DIMENSION & PROPERTY SPECS ----
+
+ShapeId: # [int, unique]
+
+ShapeType: Line, Polyline, Polygon, Rectangle, Square[rectangle, l=w], Ellipse, Circle[ellipse, a=b], Text
+
+ShapeDimensions:
+
+	Line - x1, y1, x2, y2 [x2 points]
+	Polyline - x1, y1, x2, y2, x3, y3, ... , xN, yN [sequence of N points]
+	Polygon - x1, y1, x2, y2, x3, y3, ... , xN, yN [sequence of N points]
+	Rectangle - x1, y1, l, w [x1, y1: top left, l: length, w: width]
+	Square - x1, y1, l [x1, y1: top left, l: length]
+	Ellipse - x1, y1, a, b [x1, y1: top left, a: semi major axis, b: semi minor axis]
+	Circle - x1, y1, r [x1, y1: top left, r: radius]
+	Text - x1, y1, l, w [x1, y1: top left, l: length, w: width ... defines a bounding rectangle]
+	
+PenColor: white, black, red, green, blue, cyan, magenta, yellow, gray [Qt::GlobalColor enum]
+
+PenWidth: 0 - 20 [int]
+
+PenStyle: NoPen, SolidLine, DashLine, DotLine, DashDotLine, DashDotDotLine [Qt::PenStyle enum]
+
+PenCapStyle: FlatCap, SquareCap, RoundCap [Qt::PenCapStyle enum]
+
+PenJoinStyle: MiterJoin, BevelJoin, RoundJoin [Qt::PenJoinStyle enum]
+
+BrushColor: white, black, red, green, blue, cyan, magenta, yellow, gray [Qt::GlobalColor enum]
+
+BrushStyle: SolidPattern, HorPattern, VerPattern, NoBrush [Qt::BrushStyle enum]
+
+TextString: text to be displayed [string]
+
+TextColor: white, black, red, green, blue, cyan, magenta, yellow, gray [Qt::GlobalColor enum]
+
+TextAlignment: AlignLeft, AlignRight, AlignTop, AlignBottom, AlignCenter [Qt::AlignmentFlag enum]
+
+TextPointSize: -1 to 50 [int]
+
+TextFontFamily: Comic Sans MS, Courier, Helvetica, Times [string]
+
+TextFontStyle: StyleNormal, StyleItalic, StyleOblique [QFont::Style enum]
+
+TextFontWeight: Thin, Light, Normal, Bold [QFont::Weight enum]
