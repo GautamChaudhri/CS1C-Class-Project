@@ -23,10 +23,11 @@
   e) Estimation: 20
   f) Priority: 5
   g) Done: 
-	The user can provide a file that contains shape data which will be read by the program and 
-	have the shapes be rendered. (See tests)
-	The program has a default file if none is provided by the user which will contain the shapes 
+	The user can provide a file that contains shape data, which will be read by the program and 
+	have the shapes rendered. (See tests)
+	The program has a default file if none is provided by the user, which will contain the shapes 
 	currently being rendered. (See test)
 	The program will error-check the file being read before the data is used. (See test)
 	Each shape being rendered will have a unique ID.
+	All task, test conditions satisfied.
 	
