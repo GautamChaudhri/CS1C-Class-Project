@@ -23,7 +23,7 @@ Baseline story point estimate value of one = 1 hr of development time for a sing
 	Verify that a customer testimonial persists between executions
 	Verify that a testimonial that is considered satisfactory is displayed
       
-  d) Assignee: TBD
+  d) Assignee: Undecided - Whoever has time will be assigned
       
   e) Estimation: 45
   f) Priority: 8
