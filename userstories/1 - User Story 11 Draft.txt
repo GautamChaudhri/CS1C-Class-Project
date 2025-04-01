@@ -1,4 +1,4 @@
 UI User Story
 
-Asignee: Aspen, Luke, Eric, Madhu, Paul, Gautam, Kevin, and Tim
+Assignee: Aspen, Luke, Eric, Madhu, Paul, Gautam, Kevin, and Tim
 Priority: 1
