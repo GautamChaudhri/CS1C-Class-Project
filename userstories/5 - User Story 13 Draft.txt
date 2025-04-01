@@ -1,4 +1,20 @@
-Shape property manipulation user story
+#11 As an administrator, I want to manipulate shape properties via shape properties including width length etc
 
-Assignee: Kevin, Aspen, Tim & Paul
-Priority: 5
+  a) Description: 
+        Provide a 
+       
+  b) Tasks:
+        Provides a form for an admin to adjust the various shape properties (ex. color, size, width, length, border)
+        Changes to shape properties are immediately seen by the admin
+        Only Administrators can access and use the form.
+       
+  c) Tests:
+        Verify that property changes are immediately seen and update the appearance.
+        Verify only admins can use and access the properties form.
+        Verify that it is not invalid/out of range (return errors)
+
+  d) Assignee: Kevin, Aspen, Tim & Paul
+  e) Estimation : 5
+  f) Priority: 5
+  g) Done:
+        The shape properties form is functional, including real-time updates in the rendering area & only accessible by an administrator.
