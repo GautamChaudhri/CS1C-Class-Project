@@ -1,3 +1,4 @@
 Sorting Algo user story
 
+Assignee: Eric
 Priority: 6
