@@ -27,6 +27,9 @@ git status
 
 git add .                           
     # Adds ALL files in the directory to be committed
+    # NOTE: If you are working in a sub-folder and do this command, 
+    it will add all files only WITHIN that sub-folder to be staged and ready to commit
+
 
 git add file-name folder-name       
     # Adds only specific files/folders to the commit
@@ -48,19 +51,27 @@ git push
 git pull                            
     # Pulls the latest changes from GitHub for your current branch
 
+git pull origin branch-name
+    # Pulls the latest changes from a specific branch
+
 
 #------------------------------------------
 # ✅ Typical Git Workflow
 #------------------------------------------
 
-1. git pull origin main             
-    # Pull the latest version of the main branch (or any base branch)
+1. git pull           
+    # Pull the latest version of the branch you are working on
+
+    OR 
+
+    git pull origin branch-name
+    # Pull the latest version of a specific branch
 
 2. git status                       
     # Check what branch you're on and what the file status is
 
-3. git checkout feature-name     
-    # IF you need to switch to another branch
+3. git checkout branch-name   
+    # ONLY IF you need to switch to another branch
 
 4. Work on your code...
 
@@ -70,11 +81,15 @@ git pull
 6. git commit -m "Add feature or fix bug"   
     # Save a snapshot of your work
 
-7. git push -u origin feature-name 
+7. git push 
     # Push your branch to GitHub
 
-8. Continue pushing with just:
-    git push
+    OR
+
+    git push -u origin branch-name
+    # ONLY IF it is the first push after creating a new branch
+
+8. Your files are saved and uploaded to github!
 
 # NOTE:
 # ✅ Always do `git pull` after switching to a branch
@@ -137,7 +152,6 @@ Once the feature you're working on is **complete**, it's time to create a **pull
 1. ✅ Make sure all your changes are committed and pushed to GitHub:
 
     git push
-
 
 2. 🌐 Go to the GitHub page for your repository in your web browser.
 
