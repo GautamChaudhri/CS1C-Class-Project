@@ -17,8 +17,7 @@
         Verify that the text withint he renderer can also be moved
         Check that shapes do not move out of bounds
       
-  d) Assignee:
-        TBD
+  d) Assignee: Gautam, Madhu, Luke & Eric
       
   e) Estimation: 3
   f) Priority: 5
