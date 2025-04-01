@@ -20,7 +20,7 @@
        Verify contact information/method is accessible and functional
        Ensure contact section is responsive across different screen sizes
       
-  d) Assignee: TBD
+  d) Assignee: Tim
   e) Estimation: 2
   f) Priority: 8
        
