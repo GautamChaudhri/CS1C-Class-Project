@@ -1,0 +1,179 @@
+===========================================
+🌿 Basic Git Commands & Branching Guide
+===========================================
+
+#------------------------------------------
+# 🔀 Working with Branches
+#------------------------------------------
+
+git checkout -b branch-name         
+    # Creates a new branch and switches to it
+    # (Good idea to name the branch after the feature being worked on)
+
+git checkout branch-name            
+    # Switches to an existing branch
+
+git switch branch-name              
+    # Same as above (newer Git versions)
+
+git status                          
+    # Displays what branch you're on
+    # Shows which files are staged, modified, or untracked
+
+
+#------------------------------------------
+# 📤 Pushing a New Branch to GitHub
+#------------------------------------------
+
+git add .                           
+    # Adds ALL files in the directory to be committed
+
+git add file-name folder-name       
+    # Adds only specific files/folders to the commit
+    # You can list multiple files/folders separated by spaces
+    # The majority of the time, you will be using git add . so don't worry about this one too much
+
+git commit -m "Message Here"        
+    # Officially "saves" your progress locally
+    # Does NOT push to GitHub
+
+git push -u origin branch-name      
+    # Pushes the branch to GitHub for the first time
+    # The `-u` flag links your local branch with the remote one
+    # After this, just using `git push` is enough
+
+git push                            
+    # Pushes your committed changes to GitHub
+
+git pull                            
+    # Pulls the latest changes from GitHub for your current branch
+
+
+#------------------------------------------
+# ✅ Typical Git Workflow
+#------------------------------------------
+
+1. git pull origin main             
+    # Pull the latest version of the main branch (or any base branch)
+
+2. git status                       
+    # Check what branch you're on and what the file status is
+
+3. git checkout feature-name     
+    # IF you need to switch to another branch
+
+4. Work on your code...
+
+5. git add .                        
+    # Stage your changes
+
+6. git commit -m "Add feature or fix bug"   
+    # Save a snapshot of your work
+
+7. git push -u origin feature-name 
+    # Push your branch to GitHub
+
+8. Continue pushing with just:
+    git push
+
+# NOTE:
+# ✅ Always do `git pull` after switching to a branch
+# so your files are updated to the latest version!
+
+
+#------------------------------------------
+# 💾 Stashing Changes & Pull Conflicts
+#------------------------------------------
+
+Sometimes you forget to do `git pull` before starting work,
+and Git stops you when trying to push. Or maybe someone else
+pushed changes to GitHub while you were working.
+
+**If this happens:**
+
+- ❌ `git pull` will NOT delete your work.
+- BUT — if your changes conflict with what's on GitHub, Git will stop the pull and ask you to fix things.
+- If you're not ready to commit yet, stash your changes:
+
+    git stash
+
+Then pull:
+
+    git pull
+
+And bring your work back:
+
+    git stash pop
+
+Use this strategy anytime Git says you need to "commit or stash your changes" before continuing.
+
+---
+
+### Stash Commands Summary:
+
+git stash                           
+    # Temporarily stashes your uncommitted changes
+
+git stash list                      
+    # Shows all stashed entries
+
+git stash apply                     
+    # Applies the latest stash but keeps it in the stash list
+
+git stash pop                       
+    # Applies the latest stash and removes it from the list
+
+📝 NOTE: Message the group chat for help if you’re unsure. It's better to ask than risk losing work.
+
+
+#------------------------------------------
+# 📬 Creating a Pull Request (PR)
+#------------------------------------------
+
+Once the feature you're working on is **complete**, it's time to create a **pull request** so it can be reviewed and merged into the main project.
+
+### Steps:
+
+1. ✅ Make sure all your changes are committed and pushed to GitHub:
+
+    git push
+
+
+2. 🌐 Go to the GitHub page for your repository in your web browser.
+
+3. 🔁 If you just pushed the branch, you'll likely see a yellow banner:
+> **"Compare & pull request"**
+
+Click it.
+
+*If you don’t see the banner:*
+- Click the **"Pull requests"** tab at the top of the repo page
+- Click the green **"New pull request"** button
+- Under "base," choose `main` (or the branch you're merging *into*)
+- Under "compare," choose your feature branch (the one you just pushed)
+
+4. ✍️ Fill out the PR form:
+   - **Title**: Something short and descriptive (e.g., `Add login feature`)
+   - **Description**: Explain what the code does, and include any details reviewers should know
+
+5. 👀 Review the changes GitHub shows you. Make sure it looks right.
+
+6. 📤 Click **"Create pull request"**
+
+🎉 You're done! Your teammates, instructor, or reviewers can now leave comments or approve the PR.
+
+---
+
+### ✅ After Your PR Is Merged
+
+Once your pull request is approved and merged into `main`:
+
+1. Switch to `main` locally:
+
+    git checkout main
+
+
+2. Pull the updated main branch:
+
+    git pull origin main
+
