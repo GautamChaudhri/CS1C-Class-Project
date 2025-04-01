@@ -6,7 +6,7 @@ Docker User Story
     Instead of writing directly to a txt or json file using fstream, I can make http requests to an API
         in a docker service to manipulate shape data.
     The docker service should have the following API endpoints:
-        * GET /shapes: returns all saved shapes to hydrate the rendering area
+        * GET /shapes: returns all saved shapes to hydrate the rendering area (user story 3 and 4)
         * GET /shapes/{id}: returns a specific shape to be inspected
         * POST /shapes: adds a new shape to the project (ADMIN ONLY, user story 6)
         * PUT /shapes/{id}: updates the properties of an existing shape (ADMIN ONLY, user story 6)
@@ -15,16 +15,19 @@ Docker User Story
         * GET shapes/sorted-by=id: endpoint for user story 7
         * GET shapes/sorted-by=area: endpoint for user story 8
         * GET shapes/sorted-by=perimeter: endpoint for user story 9
+        * PUT shapes/{id}/data: saves all changes between executions (user story 10)
 
        
   b) Tasks:
     As a developer, I can build a Docker service that exposes all the specified REST API endpoints 
         (GET, POST, PUT, DELETE) for shape manipulation.
-	As a developer, I can parse JSON data from incoming HTTP requests to create or update shapes.
+	As a developer, I can parse JSON data from incoming HTTP requests to create or update shapes 
+        (see user story 3 and 4).
 	As a developer, I can enforce admin-only restrictions on shape addition, updates, and deletion 
         (see user story #6).
 	As a developer, I can implement coordinate updates for shapes to support “move shape” (see user story #5).
 	As a developer, I can handle shape sorting queries by ID, area, and perimeter (see user stories #7, #8, and #9).
+    As a developer, I can implement a PUT /shapes/{id}/data endpoint to persist shape data between executions (see user story #10).
 	As a developer, I can return meaningful error codes (e.g., 400 Bad Request, 401 Unauthorized) when invalid or 
         unauthorized requests are made.
 	As a developer, I can ensure that the application replaces local file I/O with HTTP calls to this Docker service 
@@ -43,6 +46,7 @@ Docker User Story
         in subsequent GET calls.
 	Verify that GET /shapes/sorted-by=id returns shapes sorted by their IDs, GET /shapes/sorted-by=area sorts by area, 
         and GET /shapes/sorted-by=perimeter sorts by perimeter.
+    Verify that PUT /shapes/{idd}/data saves changes so they persist between executions.
 	Verify that requests with invalid shape data (e.g. missing required fields, negative dimensions, or duplicate IDs) 
         result in an error message and do not affect stored data.
 	Verify that all required endpoints respond with the correct status codes (e.g. 200 OK, 400 Bad Request, 
@@ -57,6 +61,7 @@ Docker User Story
 	Admin-only restrictions are enforced, and the Qt application can’t create, modify, or remove shapes unless the 
         user is authorized (user story #6).
 	Moving a shape (user story #5) and sorting shapes (user stories #7, #8, #9) works via the Docker API.
+    PUT /shapes/{idd}/data is implemented, ensuring all changes are saved between executions (user story #10).
 	All shape data is now read/written through the Docker service rather than local files.
 	The tests (above) confirm correct behavior and error handling, ensuring reliability.
 	All tasks and test conditions are satisfied.
