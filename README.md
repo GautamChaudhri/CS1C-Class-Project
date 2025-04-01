@@ -29,7 +29,7 @@ Due Date: 05/01/2025
 - Aspen Cristobal  (acristobal1@saddleback.edu)  
   *Sprint 1 Role:* Development Team  
   *Sprint 2 Role:* ...
-- Name  (tnguyen910@ivc.edu)  
+- Name Tim Nguyen (tnguyen910@ivc.edu)  
   *Sprint 1 Role:* Development Team  
   *Sprint 2 Role:* ...
 - Name  (email)  
