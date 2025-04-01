@@ -1,3 +1,5 @@
+Baseline story point estimate value of one = 1 hrs of development time for a single developer
+
 #8 As a user, I can view a shape listing report of ONLY shapes with an area being used.
 
   a) Description: A user can choose to display a sorted listing report of all created shapes with
@@ -14,7 +16,7 @@
 
   d) Assignee: Aspen, Luke, Madhu, Tim & Paul
 
-  e) Estimation: TBD
+  e) Estimation: 15
   f) Priority: 6
   g) Done:
 * User is able to display a shape listing report containing only shapes with an area
