@@ -1,3 +1,4 @@
 Shape property manipulation user story
 
+Assignee: Kevin, Aspen, Tim & Paul
 Priority: 5
