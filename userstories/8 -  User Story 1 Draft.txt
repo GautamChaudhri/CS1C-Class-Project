@@ -26,7 +26,7 @@ Baseline story point estimate value of one = 1 hr of development time for a sing
   d) Assignee: TBD
       
   e) Estimation: 45
-  f) Priority: 11
+  f) Priority: 8
   g) Done: 
 	A user or guest who launches the program will see a list of satisfied testimonials and can input their 
 	testimonial (see tests)
