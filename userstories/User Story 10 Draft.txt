@@ -1,1 +1,17 @@
 
+Baseline story point estimate value of one = [...] hrs of development time for a single developer
+
+
+#10 As a user, when a shape overlaps another shape(s) while creation or by transformation like 'move', I can choose which shape is shown at front by setting z-depth attribute value to 0,1,2,3,...etc, greatest value is the most forward shape.
+
+  a) Description:
+       
+  b) Tasks:
+       
+  c) Tests:
+      
+  d) Assignee:
+      
+  e) Estimation: 
+  f) Priority: 
+  g) Done: 
