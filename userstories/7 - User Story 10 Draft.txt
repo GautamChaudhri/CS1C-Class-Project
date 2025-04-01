@@ -11,7 +11,7 @@ Baseline story point estimate value of one = [...] hrs of development time for a
        
   c) Tests:
       
-  d) Assignee:
+  d) Assignee: Gautam, Kevin & Paul
       
   e) Estimation: 
   f) Priority: 7
