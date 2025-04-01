@@ -22,7 +22,7 @@
       
   d) Assignee: TBD
   e) Estimation: 2
-  f) Priority: 15
+  f) Priority: 11
        
   g) Done: 
        Team logo and name are visible in the application
