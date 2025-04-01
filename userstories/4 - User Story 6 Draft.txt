@@ -1,3 +1,4 @@
+Baseline story point estimate value of one = 1 hrs of development time for a single developer
 
 #6 As an administrator, I can add and remove shapes and text.
 
@@ -38,9 +39,9 @@
     Verify that the rendering area is updated in real time for all users after a shape is added or removed from the project.
     Verify that the GUI to add and remove shapes is only visible to users with admin privileges.
 	
-  d) Assignee: Aspen, Luke, Eric, Madhu, Paul, Gautam, Kevin, and Tim
+  d) Assignee: Aspen, Luke, Eric, Aram, Paul, Gautam, Kevin, and Tim
       
-  e) Estimation: 35
+  e) Estimation: 10
   f) Priority: 4
   g) Done: 
     The GUI to add or remove shapes is only visible to users with admin privileges after logging in.

@@ -1,4 +1,0 @@
-Polyline / Freehand User Story
-
-Assignee: Kevin & Eric
-Priority: 2

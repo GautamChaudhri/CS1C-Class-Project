@@ -1,3 +1,5 @@
+Baseline story point estimate value of one = 1 hrs of development time for a single developer
+
 #9 As a user, I can view a shape listing report of ONLY shapes with a perimeter being used.
 
   a) Description: A user can choose to display a sorted listing report of all created shapes with
@@ -12,7 +14,7 @@
 * Verify the shapes are sorted by perimeter from smallest to largest
 * Verify a user can view the properties of a chosen shape
 
-  d) Assignee: Aspen, Luke, Madhu, Tim & Paul
+  d) Assignee: Aspen, Luke, Aram, Tim & Paul
 
   e) Estimation: TBD
   f) Priority: 6

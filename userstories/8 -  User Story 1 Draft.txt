@@ -1,4 +1,3 @@
-
 Baseline story point estimate value of one = 1 hr of development time for a single developer
 
 

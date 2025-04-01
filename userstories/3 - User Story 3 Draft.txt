@@ -1,4 +1,6 @@
-﻿#3 As a user, I can display graphic objects
+﻿Baseline story point estimate value of one = 1 hrs of development time for a single developer
+
+#3 As a user, I can display graphic objects
 
 
 a) Description: A site user can easily understand the graphic objects displayed in the rendering window. What is displayed is described below in tasks (see tasks)
@@ -25,9 +27,9 @@ a) Description: A site user can easily understand the graphic objects displayed 
    * accurate when edited
    * accurate when moved
       
-  d) Assignee: Aspen, Luke, Eric, Madhu, Paul, Gautam, Kevin, and Tim
+  d) Assignee: Aspen, Luke, Eric, Aram, Paul, Gautam, Kevin, and Tim
       
-  e) Estimation: TBD
+  e) Estimation: 5
   f) Priority: 3
 
 
