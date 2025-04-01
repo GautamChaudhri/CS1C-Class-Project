@@ -1,4 +1,28 @@
-UI User Story
 
-Assignee: Aspen, Luke, Eric, Madhu, Paul, Gautam, Kevin, and Tim
-Priority: 1
+#11 As a user, I should be able to interact with the application through a user interface
+
+  a) Description: 
+        A program user can fully interact with the program through a user interface that displays all relevant information
+        including a login screen.
+       
+  b) Tasks:
+        A user is presented with a screen where they can enter a username and password to log into their account.
+        A user can see and interact with the shapes currently displayed with their properties and text.
+        A user can see all the buttons that change shape properties and text
+        A user can see a button to both give their user testimonial and developer contact
+       
+  c) Tests:
+        Verify that a user can interact with any text boxes that may appear during program runtime.
+        Verify that all text is shown properly in the program
+        Verify that all dropdown menus function as intended and display the correct options
+        Verify that all buttons execute their intended functionality
+      
+  d) Assignee:
+        Kevin, Paul, Gautam, Eric, Aspen, Mahdu, Tim, and Luke 
+  e) Estimation: 35
+  f) Priority: 1
+  g) Done: 
+        A user is able to interact with the whole program using an interface that behaves as intended
+        and is easy to read. (refer to tests)
+        The user or admin can log in to their account through a login screen using a username and password.
+        All task, test conditions satisfied.
