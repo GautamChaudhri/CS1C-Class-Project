@@ -1,4 +1,4 @@
 Docker User Story
 
-Assignee: Gautam & Tim
+Assignee: Gautam, Tim & Paul
 Priority: 2
