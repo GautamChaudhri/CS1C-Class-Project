@@ -1,8 +1,9 @@
 
 Baseline story point estimate value of one = [...] hrs of development time for a single developer
 
+#10 Save all changes between Executions
 
-#10 As a user, when a shape overlaps another shape(s) while creation or by transformation like 'move', I can choose which shape is shown at front by setting z-depth attribute value to 0,1,2,3,...etc, greatest value is the most forward shape.
+// #10 As a user, when a shape overlaps another shape(s) while creation or by transformation like 'move', I can choose which shape is shown at front by setting z-depth attribute value to 0,1,2,3,...etc, greatest value is the most forward shape. // Madhu this can be a different user story if you want to set it to #16 or something similar just make a new text file
 
   a) Description:
        
