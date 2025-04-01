@@ -13,5 +13,5 @@ Baseline story point estimate value of one = [...] hrs of development time for a
   d) Assignee:
       
   e) Estimation: 
-  f) Priority: 
+  f) Priority: 10
   g) Done: 
