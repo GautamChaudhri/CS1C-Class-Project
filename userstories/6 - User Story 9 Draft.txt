@@ -12,7 +12,7 @@
 * Verify the shapes are sorted by perimeter from smallest to largest
 * Verify a user can view the properties of a chosen shape
 
-  d) Assignee: TBD
+  d) Assignee: Aspen, Luke, Madhu, Tim & Paul
 
   e) Estimation: TBD
   f) Priority: 6
