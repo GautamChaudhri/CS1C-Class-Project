@@ -1,18 +1,26 @@
+#10 As a user, my data will be saved in between executions
 
-Baseline story point estimate value of one = [...] hrs of development time for a single developer
-
-#10 Save all changes between Executions
-
-// #10 As a user, when a shape overlaps another shape(s) while creation or by transformation like 'move', I can choose which shape is shown at front by setting z-depth attribute value to 0,1,2,3,...etc, greatest value is the most forward shape. // Madhu this can be a different user story if you want to set it to #16 or something similar just make a new text file
-
-  a) Description:
+  a) Description: Whenever a user performs an action such as creating an object (shape or text), editing dimensions, moving, etc. that action will automatically be saved (see tasks for more details).
        
   b) Tasks:
+As a user when I create an object that object will be saved.
+As a user when I change an object's dimensions the dimensions will be saved.
+As a user when I move an object the object’s position will be saved.
+As a user when an object is created the object should still exist when exiting and reentering the program.
+As a user when deleting an object the object should not exist when exiting and reentering the program. 
        
   c) Tests:
+Verify data is saved when the user exits and data is correct when user reenters the program.
+Verify object dimensions save after being created or edited.
+Verify object does not exist when deleted.
+Verify object position saved when object moved.
       
   d) Assignee: Gautam, Kevin & Paul
       
-  e) Estimation: 
+  e) Estimation: 8
+
   f) Priority: 7
-  g) Done: 
+
+  g) Done:
+Users are able to exit the program, when reentering user saved data should be there.
+All tasks and test conditions satisfied
