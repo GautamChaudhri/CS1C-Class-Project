@@ -21,7 +21,7 @@
   d) Assignee: TBD
       
   e) Estimation: 20
-  f) Priority: 5
+  f) Priority: 2
   g) Done: 
 	The user can provide a file that contains shape data, which will be read by the program and 
 	have the shapes rendered. (See tests)
