@@ -18,7 +18,7 @@
 	Verify that the program can properly handle errors if the file is incorrect.
 	Verify that the program has a default file to store the shapes.
       
-  d) Assignee: TBD
+  d) Assignee: Paul, Aspen & Luke
       
   e) Estimation: 20
   f) Priority: 2
