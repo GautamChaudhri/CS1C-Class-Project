@@ -15,7 +15,7 @@
   d) Assignee: TBD
 
   e) Estimation: TBD
-  f) Priority: TBD (Would occur around #7 and #9)
+  f) Priority: 4
   g) Done:
 * User is able to display a shape listing report containing only shapes with an area
 * All shapes in the report are sorted by area from smallest to largest
