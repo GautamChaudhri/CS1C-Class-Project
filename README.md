@@ -33,5 +33,5 @@ Due Date: 05/01/2025
   *Sprint 1 Role:* Development Team  
   *Sprint 2 Role:* ...  
 - Paul Tripodi (ptripod0@saddleback.edu)  
-  *Sprint 1 Role:* Product Owner
+  *Sprint 1 Role:* Product Owner  
   *Sprint 2 Role:* ...  
