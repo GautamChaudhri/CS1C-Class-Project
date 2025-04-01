@@ -38,7 +38,7 @@
     Verify that the rendering area is updated in real time for all users after a shape is added or removed from the project.
     Verify that the GUI to add and remove shapes is only visible to users with admin privileges.
 	
-  d) Assignee: TBD
+  d) Assignee: Aspen, Luke, Eric, Madhu, Paul, Gautam, Kevin, and Tim
       
   e) Estimation: 35
   f) Priority: 4
