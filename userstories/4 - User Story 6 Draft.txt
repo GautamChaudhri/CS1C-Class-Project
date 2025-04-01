@@ -41,7 +41,7 @@
   d) Assignee: TBD
       
   e) Estimation: 35
-  f) Priority: 3
+  f) Priority: 4
   g) Done: 
     The GUI to add or remove shapes is only visible to users with admin privileges after logging in.
     The user is prompted with a security check on the first attempt to add or remove shapes.
