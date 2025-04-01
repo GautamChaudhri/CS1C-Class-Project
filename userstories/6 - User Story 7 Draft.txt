@@ -15,7 +15,7 @@
         Verify that all shape properties (shape type, ID, dimensions, area, etc.) are included in the report
         Verify that shapes in the report are sorted by shape ID in ascending order. 
 
-  d) Assignee: TBD
+  d) Assignee: Gautam & Kevin
 
   e) Estimation: TBD
   f) Priority: 6
