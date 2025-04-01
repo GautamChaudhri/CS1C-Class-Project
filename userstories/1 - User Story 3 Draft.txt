@@ -28,7 +28,7 @@ a) Description: A site user can easily understand the graphic objects displayed 
   d) Assignee: TBD
       
   e) Estimation: TBD
-  f) Priority: TBD (probably near last)
+  f) Priority: 1
 
 
   g) Done:
