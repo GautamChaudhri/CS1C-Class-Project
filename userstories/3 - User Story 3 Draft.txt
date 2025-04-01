@@ -25,7 +25,7 @@ a) Description: A site user can easily understand the graphic objects displayed 
    * accurate when edited
    * accurate when moved
       
-  d) Assignee: TBD
+  d) Assignee: Aspen, Luke, Eric, Madhu, Paul, Gautam, Kevin, and Tim
       
   e) Estimation: TBD
   f) Priority: 3
