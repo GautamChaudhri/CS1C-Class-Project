@@ -1,9 +1,9 @@
 Baseline story point estimate value of one = 1 hrs of development time for a single developer
 
-#11 As an administrator, I want to manipulate shape properties via shape properties including width length etc
+#11 As an administrator, I want to manipulate shape properties via a menu including width length etc
 
   a) Description: 
-        Provide a 
+        Provides a form for the administrator to manipulate the object at will.
        
   b) Tasks:
         Provides a form for an admin to adjust the various shape properties (ex. color, size, width, length, border)

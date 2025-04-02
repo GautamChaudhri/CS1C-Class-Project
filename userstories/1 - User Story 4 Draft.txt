@@ -22,7 +22,7 @@ Baseline story point estimate value of one = 1 hrs of development time for a sin
   d) Assignee: Aram, Aspen & Luke
       
   e) Estimation: 10
-  f) Priority: 2
+  f) Priority: 1
   g) Done: 
 	The user can provide a file that contains shape data, which will be read by the program and 
 	have the shapes rendered. (See tests)
