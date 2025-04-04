@@ -12,13 +12,12 @@ int main()
         return "Hello, Crow!";
     });
 
-    // POST endpoint to receive and save shapes.txt
+    
     CROW_ROUTE(app, "/upload-shapes").methods(crow::HTTPMethod::Post)
     ([](const crow::request& req){
-        // Optional: Ensure the directory "uploads" exists
+        
         std::filesystem::create_directory("database");
 
-        // Open the file "shapes.txt" in the "uploads" directory
         std::ofstream outfile("database/shapes.txt", std::ios::binary);
         if (!outfile)
         {

@@ -1,0 +1,13 @@
+Check to see if asio and crow subfolders are empty (they probably are on the first pull)
+
+
+If empty, run these two commands
+    git clone --recursive https://github.com/crowcpp/crow.git
+    git clone --recursive https://github.com/chriskohlhoff/asio.git
+
+They should now be populated with files
+
+Next, run make and run the generated executable ./crow_service
+
+Go to the following link in your web browser to ensure there is a message saying "Hello, Crow!"
+    localhost:8080/
