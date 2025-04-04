@@ -1,0 +1,33 @@
+Baseline story point estimate value of one = 1 hrs of development time for a single developer
+
+#2 As a user, I want to be able to reach out to the development team and recognize their identity by a logo/team name.
+
+  a) Description:
+       The application should display a "Contact Us" section that includes:
+       - Team name
+       - Team logo
+       - Contact method
+       
+  b) Tasks:
+       Design and create team logo
+       Create a "Contact Us" component/section in the UI
+       Add team name display
+       Add team logo display
+       Implement contact form or display contact information
+       Style the contact section to match application theme
+       
+  c) Tests:
+       Verify team logo displays correctly and is properly sized
+       Verify team name is visible and properly formatted
+       Verify contact information/method is accessible and functional
+       Ensure contact section is responsive across different screen sizes
+      
+  d) Assignee: Tim
+  e) Estimation: 2
+  f) Priority: 8
+       
+  g) Done: 
+       Team logo and name are visible in the application
+       Contact method is implemented and functional
+       All tests pass
+       UI is responsive and matches application theme

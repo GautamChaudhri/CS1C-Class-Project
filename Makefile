@@ -1,17 +1,13 @@
-CC = g++
-FLAGS = -std=c++14 -Wall -g
-OBJS = main.o
+CXX      = g++
+CXXFLAGS = -std=c++17 -Wall -g -Icrow/include -Iasio/asio/include -pthread -DCROW_USE_STANDALONE_ASIO
 
-all: main
+TARGET = my_service
+SRC    = main.cpp
 
-main: $(OBJS)
-	$(CC) $(FLAGS) -o main $(OBJS)
+all: $(TARGET)
 
-main.o: main.cpp
-	$(CC) $(FLAGS) -c main.cpp -o main.o
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
 
 clean:
-	rm -f *.o main
-
-tar:
-	tar cf graphics-modeler.tar hw*.scr Makefile *.cpp valgrind_main.rpt
+	rm -f $(TARGET) *.o

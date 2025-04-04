@@ -1,0 +1,28 @@
+Baseline story point estimate value of one = 1 hrs of development time for a single developer
+
+#7 As a user, I can view a shape listing report sorted by shape ID at any time.
+
+  a) Description: 
+        A user can choose to display a sorted listing report of all created shapes, ordered by shape ID. The
+        report includes all shape properties such as shape type, ID, dimensions, area, and any other relevant
+        attributes.
+
+  b) Tasks: 
+        As a user, I can generate a shape listing report that includes all created shapes
+        As a user, I can view the properties of any and all shapes in this report(Shape type, ID, dimensions, area, etc)
+        As a user, I can see the report sorted by shape ID in ascending order.
+
+  c) Tests:
+        Verify that a user can generate and display a shape listing report. 
+        Verify that all shape properties (shape type, ID, dimensions, area, etc.) are included in the report
+        Verify that shapes in the report are sorted by shape ID in ascending order. 
+
+  d) Assignee: Gautam & Kevin
+
+  e) Estimation: TBD
+  f) Priority: 6
+  g) Done: 
+      User is able to display a shape listing report containing all shapes. 
+      All shapes in the report are sorted by shape ID in ascending order.
+      Properties of each shape are displayed (shape type, ID, dimensions, area, etc.).
+      All tasks and test conditions are satisfied. 

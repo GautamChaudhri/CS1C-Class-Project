@@ -1,0 +1,36 @@
+Baseline story point estimate value of one = 1 hr of development time for a single developer
+
+
+#1 As a user, I should be able to write a testimonial that persists between executions
+
+  a) Description:
+	A program user or guest can input their user experience and have it persist between executions.
+	Additionally, a user should be able to see the satisfied testimonials of past users. The program
+	will solicit the user after a certain time of usage (see tasks).
+
+  b) Tasks:
+	As a guest or user, I can input my experience using the app and have it saved
+	As a guest or user, I will be prompted after 30 minutes of total time on the app to give experience
+	As a guest or user, I will be prompted each hour if the user declines to give a testimonial and does not select "do not show again"	
+	As a guest or user, I should be able to see satisfied customer testimonials when launching the program
+	As a site visitor, I should be able to see a list of satisfied customer testimonials
+
+  c) Tests:
+	Verify that a guest or user who has used the app for 30 minutes and has not given their testimonial is prompted
+	Verify that a guest or user is prompted for their testimonial every hour if they did not initially do it and haven't selected "do not show again"
+	Verify that a guest or user who launches the program can see satisfied customer testimonials
+	Verify that a customer testimonial persists between executions
+	Verify that a testimonial that is considered satisfactory is displayed
+      
+  d) Assignee: Eric
+      
+  e) Estimation: 45
+  f) Priority: 8
+  g) Done: 
+	A user or guest who launches the program will see a list of satisfied testimonials and can input their 
+	testimonial (see tests)
+	User will be prompted after 30 minutes to give their testimonial if they haven't already and will be asked 
+	every 1 hour if they still do not have a testimonial (see tests)
+	User can decline to give their testimonial and choose to not be prompted again (see test)
+	All task, and test conditions satisfied
+	
