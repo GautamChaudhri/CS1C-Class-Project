@@ -106,7 +106,10 @@ public:
             y3{y3} {}
 
 private:
-    int x2, y2, x3, y3;
+    int x2;
+    int y2;
+    int x3;
+    int y3;
 };
 
 class Polygon : public Shape
@@ -134,7 +137,10 @@ public:
             y3{y3} {}
 
 private:
-    int x2, y2, x3, y3;
+    int x2;
+    int y2;
+    int x3;
+    int y3;
 };
 
 class Rectangle : public Shape
@@ -199,7 +205,8 @@ public:
             b{b} {}
 
 private:
-    int a, b;
+    int a;
+    int b;
 };
 
 class Circle : public Shape
@@ -238,19 +245,20 @@ public:
          QFont::Weight textFontWeight,
          int length,
          int width)
-        : Shape(shapeId, shapeType, x1, y1, Qt::GlobalColor(), 0, Qt::PenStyle(), Qt::PenCapStyle(), Qt::PenJoinStyle(), Qt::GlobalColor(), Qt::BrushStyle()),
-          textString{textString},
-          textColor{textColor},
-          textAlignment{textAlignment},
-          textPointSize{textPointSize},
-          textFontFamily{textFontFamily},
-          textFontStyle{textFontStyle},
-          textFontWeight{textFontWeight},
-          length{length},
-          width{width} {}
+       : Shape(shapeId, shapeType, x1, y1, Qt::GlobalColor(), 0, Qt::PenStyle(), Qt::PenCapStyle(), Qt::PenJoinStyle(), Qt::GlobalColor(), Qt::BrushStyle()),
+         textString{textString},
+         textColor{textColor},
+         textAlignment{textAlignment},
+         textPointSize{textPointSize},
+         textFontFamily{textFontFamily},
+         textFontStyle{textFontStyle},
+         textFontWeight{textFontWeight},
+         length{length},
+         width{width} {}
 
 private:
-    int length, width;
+    int length;
+    int width;
     std::string textString;
     Qt::GlobalColor textColor;
     Qt::AlignmentFlag textAlignment;
