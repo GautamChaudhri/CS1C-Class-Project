@@ -2,7 +2,7 @@
 
 #Object files and Executables
 *.o
-main
+crow_service
 
 #MacOS "droppings"
 .DS_Store
