@@ -7,3 +7,7 @@ main
 #MacOS "droppings"
 .DS_Store
 ._.DS_Store
+
+#Cause I dont wanna f anything up
+.vscodes
+*.json
