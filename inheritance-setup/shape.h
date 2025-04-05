@@ -7,6 +7,7 @@
 #include <string>
 #include <cmath>
 #include <vector>
+const double PI = 3.14;
 
 class Shape
 {
@@ -78,16 +79,22 @@ public:
          Qt::PenCapStyle penCapStyle,
          Qt::PenJoinStyle penJoinStyle,
          int x1,
-         int y1)
+         int y1,
+         int x2,
+         int y2)
        : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
          x1{x1},
-         y1{y1} {}
+         y1{y1},
+         x2{x2},
+         y2{y2} {}
 
-    int Perimeter() override { return sqrt(pow((x1 - getX()),2) + pow((y1 - getY()),2)); }
+    double Perimeter() override { return sqrt(pow((x1 - x2),2) + pow((y1 - y2),2)); }
 
 private:
     int x1;
     int y1;
+    int x2;
+    int y2;
 };
 
 class Polyline : public Shape
@@ -128,8 +135,10 @@ public:
           : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, brushColor, brushStyle),
             points{points} {}
 
+    double Perimeter() override { for (int i = 0; i < points.size(); i ++){ points[i][i] + points[i+1][i+1]};}
+
 private:
-    std::vector<int> points;
+        std::vector < vector<int> > points;
 };
 
 class Rectangle : public Shape
@@ -150,8 +159,8 @@ public:
               length{length},
               width{width} {}
 
-    int Perimeter() override { return length*2 + width*2;}
-    int Area() override      { return length*width;}
+    double Perimeter() override { return length*2 + width*2;}
+    double Area() override      { return length*width;}
 
 private:
     int length;
@@ -174,8 +183,8 @@ public:
          : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
            length{length} {}
 
-    int Perimeter() override { return length*4;}
-    int Area() override      { return pow(length,2);}
+    double Perimeter() override { return length*4;}
+    double Area() override      { return pow(length,2);}
 
 private:
     int length;
@@ -198,6 +207,8 @@ public:
           : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
             a{a},
             b{b} {}
+    double Perimeter() override { return 2*PI*sqrt((pow((2*a), 2) + pow((2*b), 2))/2); }
+    double Area() override { return PI*a*b; }
 
 private:
     int a;
@@ -219,6 +230,8 @@ public:
            int r)
          : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
            r{r} {}
+    double Perimeter() override { return 2*PI*r ; }
+    double Area() override { return PI*pow(r, 2); }
 
 private:
     int r;
@@ -250,6 +263,9 @@ public:
          textFontWeight{textFontWeight},
          length{length},
          width{width} {}
+
+    double Perimeter() override { return length*2 + width*2;}
+    double Area() override      { return length*width;}
 
 private:
     int length;
