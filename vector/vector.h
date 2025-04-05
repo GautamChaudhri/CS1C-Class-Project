@@ -37,7 +37,13 @@ class vector
         }
 
         // // COPY CONSTRUCTOR
-        // vector(const vector&);
+        vector(const vector& other) : size_v(other.size), space(other.space) {
+            elem = new T[space];
+
+            for (int i = 0; i < size_v; i++) {
+                elem[i] = other.elem[i];
+            } // END for (int i = 0; i < size_v; i++)
+        }
 
         // // COPY ASSIGNEMNT
         // vector& operator=vector(const vector&);
