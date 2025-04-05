@@ -5,14 +5,16 @@
 #include <QFont>
 #include <QPen>
 #include <string>
+#include <cmath>
+#include <vector>
 
 class Shape
 {
 public:
     Shape(int shapeId,
           std::string shapeType,
-          int x1,
-          int y1,
+          int x,
+          int y,
           Qt::GlobalColor penColor,
           int penWidth,
           Qt::PenStyle penStyle,
@@ -22,8 +24,8 @@ public:
           Qt::BrushStyle brushStyle)
         : shapeId{shapeId},
           shapeType{shapeType},
-          x1{x1},
-          y1{y1},
+          x{x},
+          y{y},
           penColor{penColor},
           penWidth{penWidth},
           penStyle{penStyle},
@@ -37,19 +39,22 @@ public:
     virtual void Draw() = 0;
     virtual void Move(int x, int y)
     {
-        x1 = x;
-        y1 = y;
+        this->x = x;
+        this->y = y;
     }
 
-    virtual int Perimeter() { return x1 + y1; }
-    virtual int Area()      { return x1 * y1; }
+    int getX() {return x;}
+    int getY() {return y;}
 
-protected:
+    virtual int Perimeter() { return 0; }
+    virtual int Area()      { return 0; }
+
+private:
     int shapeId;
     std::string shapeType;
 
-    int x1;
-    int y1;
+    int x;
+    int y;
 
     Qt::GlobalColor penColor;
     int penWidth;
@@ -65,22 +70,24 @@ class Line : public Shape
 public:
     Line(int shapeId,
          std::string shapeType,
-         int x1,
-         int y1,
+         int x,
+         int y,
          Qt::GlobalColor penColor,
          int penWidth,
          Qt::PenStyle penStyle,
          Qt::PenCapStyle penCapStyle,
          Qt::PenJoinStyle penJoinStyle,
-         int x2,
-         int y2)
-       : Shape(shapeId, shapeType, x1, y1, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
-         x2{x2},
-         y2{y2} {}
+         int x1,
+         int y1)
+       : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
+         x1{x1},
+         y1{y1} {}
+
+    int Perimeter() override { return sqrt(pow((x1 - getX()),2) + pow((y1 - getY()),2)); }
 
 private:
-    int x2;
-    int y2;
+    int x1;
+    int y1;
 };
 
 class Polyline : public Shape
@@ -88,28 +95,19 @@ class Polyline : public Shape
 public:
     Polyline(int shapeId,
              std::string shapeType,
-             int x1,
-             int y1,
+             int x,
+             int y,
              Qt::GlobalColor penColor,
              int penWidth,
              Qt::PenStyle penStyle,
              Qt::PenCapStyle penCapStyle,
              Qt::PenJoinStyle penJoinStyle,
-             int x2,
-             int y2,
-             int x3,
-             int y3)
-           : Shape(shapeId, shapeType, x1, y1, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
-            x2{x2},
-            y2{y2},
-            x3{x3},
-            y3{y3} {}
+             std::vector<int> points)
+           : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
+             points{points} {}
 
 private:
-    int x2;
-    int y2;
-    int x3;
-    int y3;
+    std::vector<int> points;
 };
 
 class Polygon : public Shape
@@ -117,8 +115,8 @@ class Polygon : public Shape
 public:
     Polygon(int shapeId,
             std::string shapeType,
-            int x1,
-            int y1,
+            int x,
+            int y,
             Qt::GlobalColor penColor,
             int penWidth,
             Qt::PenStyle penStyle,
@@ -126,21 +124,12 @@ public:
             Qt::PenJoinStyle penJoinStyle,
             Qt::GlobalColor brushColor,
             Qt::BrushStyle brushStyle,
-            int x2,
-            int y2,
-            int x3,
-            int y3)
-          : Shape(shapeId, shapeType, x1, y1, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, brushColor, brushStyle),
-            x2{x2},
-            y2{y2},
-            x3{x3},
-            y3{y3} {}
+            std::vector<int> points)
+          : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, brushColor, brushStyle),
+            points{points} {}
 
 private:
-    int x2;
-    int y2;
-    int x3;
-    int y3;
+    std::vector<int> points;
 };
 
 class Rectangle : public Shape
@@ -148,8 +137,8 @@ class Rectangle : public Shape
 public:
     Rectangle(int shapeId,
               std::string shapeType,
-              int x1,
-              int y1,
+              int x,
+              int y,
               Qt::GlobalColor penColor,
               int penWidth,
               Qt::PenStyle penStyle,
@@ -157,9 +146,12 @@ public:
               Qt::PenJoinStyle penJoinStyle,
               int length,
               int width)
-            : Shape(shapeId, shapeType, x1, y1, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
+            : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
               length{length},
               width{width} {}
+
+    int Perimeter() override { return length*2 + width*2;}
+    int Area() override      { return length*width;}
 
 private:
     int length;
@@ -171,16 +163,19 @@ class Square : public Shape
 public:
     Square(int shapeId,
            std::string shapeType,
-           int x1,
-           int y1,
+           int x,
+           int y,
            Qt::GlobalColor penColor,
            int penWidth,
            Qt::PenStyle penStyle,
            Qt::PenCapStyle penCapStyle,
            Qt::PenJoinStyle penJoinStyle,
            int length)
-         : Shape(shapeId, shapeType, x1, y1, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
+         : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
            length{length} {}
+
+    int Perimeter() override { return length*4;}
+    int Area() override      { return pow(length,2);}
 
 private:
     int length;
@@ -191,8 +186,8 @@ class Ellipse : public Shape
 public:
     Ellipse(int shapeId,
             std::string shapeType,
-            int x1,
-            int y1,
+            int x,
+            int y,
             Qt::GlobalColor penColor,
             int penWidth,
             Qt::PenStyle penStyle,
@@ -200,7 +195,7 @@ public:
             Qt::PenJoinStyle penJoinStyle,
             int a,
             int b)
-          : Shape(shapeId, shapeType, x1, y1, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
+          : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
             a{a},
             b{b} {}
 
@@ -214,15 +209,15 @@ class Circle : public Shape
 public:
     Circle(int shapeId,
            std::string shapeType,
-           int x1,
-           int y1,
+           int x,
+           int y,
            Qt::GlobalColor penColor,
            int penWidth,
            Qt::PenStyle penStyle,
            Qt::PenCapStyle penCapStyle,
            Qt::PenJoinStyle penJoinStyle,
            int r)
-         : Shape(shapeId, shapeType, x1, y1, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
+         : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
            r{r} {}
 
 private:
@@ -234,8 +229,8 @@ class Text : public Shape
 public:
     Text(int shapeId,
          std::string shapeType,
-         int x1,
-         int y1,
+         int x,
+         int y,
          std::string textString,
          Qt::GlobalColor textColor,
          Qt::AlignmentFlag textAlignment,
@@ -245,7 +240,7 @@ public:
          QFont::Weight textFontWeight,
          int length,
          int width)
-       : Shape(shapeId, shapeType, x1, y1, Qt::GlobalColor(), 0, Qt::PenStyle(), Qt::PenCapStyle(), Qt::PenJoinStyle(), Qt::GlobalColor(), Qt::BrushStyle()),
+       : Shape(shapeId, shapeType, x, y, Qt::GlobalColor(), 0, Qt::PenStyle(), Qt::PenCapStyle(), Qt::PenJoinStyle(), Qt::GlobalColor(), Qt::BrushStyle()),
          textString{textString},
          textColor{textColor},
          textAlignment{textAlignment},
