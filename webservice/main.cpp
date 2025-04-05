@@ -1,4 +1,3 @@
-//main.cpp
 #include <crow.h>  // Located in crow/include/crow.h  || Check crow guide if this shows error and using VS Code
 #include <crow/json.h>
 #include <string>
@@ -54,6 +53,48 @@ int main()
         }
     });
 
+    //Deletes a shape (user story 6)
+    CROW_ROUTE(app, "/shape").methods(crow::HTTPMethod::Delete)
+    ([](const crow::request& req){
+        try {
+            //Parse the request to get the ShapeId to delete
+            auto deleteTarget = crow::json::load(req.body);
+            if (!deleteTarget || !deleteTarget.has("ShapeId"))
+                return crow::response(400, "Missing or invalid ShapeId");
+            int targetID = deleteTarget["ShapeId"].i();
+
+            //Parse existing shapes to find targetID
+            auto allShapes = get_json_file("../database/shapes.json");
+            crow::json::wvalue newShapesList;
+            // Initialize as JSON object with a "shapes" array
+            newShapesList["shapes"] = crow::json::wvalue::list();
+
+            bool found = false;
+            auto& shapesArray = newShapesList["shapes"];
+            for (size_t i = 0; i < allShapes.size(); ++i) {
+                if (allShapes[i]["ShapeId"].i() != targetID) {
+                    // Append to array by index
+                    shapesArray[shapesArray.size()] = allShapes[i];
+                } else
+                    found = true;
+            }
+
+            if (!found)
+                return crow::response(404, "ShapeId not found in database");
+            else {
+                //Overwrite shapes.json with new shapes which has the target shape missing
+                std::ofstream shapeFile("../database/shapes.json");
+                shapeFile << newShapesList["shapes"].dump(4);
+                shapeFile.close();
+                return crow::response(200, "Shape deleted successfully");
+            }
+        }
+        catch (const std::exception& exception) {
+            return crow::response(500, exception.what());
+        }
+
+    });
+
     // Run the server on port 8080
     app.port(8080).multithreaded().run();
     return 0;
@@ -77,24 +118,3 @@ crow::json::rvalue get_json_file(const std::string& path) {
     return jsonData;
 }
 
-    //Come back after parser is created
-    // CROW_ROUTE(app, "/upload-shapes-file").methods(crow::HTTPMethod::Post)
-    // ([](const crow::request& req){
-    //     //When file comes in, two options
-    //     std::filesystem::create_directory("database");
-    //     std::fstream shapeFile("database/shapes.txt", std::ios::app);
-    //     if (!shapeFile)
-    //         return crow::response(500, "Error saving file");
-    //     //1: If shapes.txt is empty, add whole file without parsing
-    //     else if (std::filesystem::file_size("database/shapes.txt") == 0)
-    //         shapeFile << req.body;
-    //     //2: If shapes.txt is not empty, parse through shapes.txt and selectively add only new shapes
-    //     else {
-    //         //Converts a string object into an input stream like cin
-    //         std::istringstream iss(req.body);
-    //         std::string line;
-    //         getline(iss, line);
-    //     }
-    //     shapeFile.close();
-    //     return crow::response(200, "File saved successfully");
-    // });

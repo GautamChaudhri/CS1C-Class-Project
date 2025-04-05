@@ -23,3 +23,10 @@ execute. You can tell intellisense where the files are by doing the following:
         webservice/asio/asio/include/
 
 This is not absolutely necessary but works if you don't wanna see the error
+
+
+//Cheat sheet
+crow::json::wvalue::list() list     *creates a json array
+list.add(item)                      *adds an item to the json array
+list.dump()                         *converts json array into string
+crow::json::load(string)            *parses string data and outputs data into json
