@@ -174,6 +174,16 @@ public:
         return perimeter;
     }
 
+    double Area() override
+    {
+        double apothem;
+
+        apothem = (sqrt(pow((points[0][0] - points[1][0]), 2) + pow((points[0][1] - points[1][1]), 2))) / tan(180 / points.size());
+
+        return (Perimeter() * apothem) / 2;
+    }
+
+
 private:
         std::vector < std::vector<int> > points;
 };
