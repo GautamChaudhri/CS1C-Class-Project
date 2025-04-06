@@ -47,8 +47,8 @@ public:
     int getX() {return x;}
     int getY() {return y;}
 
-    virtual int Perimeter() { return 0; }
-    virtual int Area()      { return 0; }
+    virtual double Perimeter() { return 0; }
+    virtual double Area()      { return 0; }
 
 private:
     int shapeId;
@@ -113,8 +113,24 @@ public:
            : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
              points{points} {}
 
+    double Perimeter() override
+    {
+        double perimeter;
+        perimeter = 0;
+
+        int vecSize;
+        vecSize = points.size() - 1;
+
+        for(int i = 0; i < vecSize; i ++)
+        {
+            perimeter += sqrt(pow((points[i][0] - points[i + 1][0]),2) + pow((points[i][1] - points[i + 1][1]),2));
+        };
+
+        return perimeter;
+    }
+
 private:
-    std::vector<int> points;
+    std::vector < std::vector<int> > points;
 };
 
 class Polygon : public Shape
@@ -135,10 +151,31 @@ public:
           : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, brushColor, brushStyle),
             points{points} {}
 
-    double Perimeter() override { for (int i = 0; i < points.size(); i ++){ points[i][i] + points[i+1][i+1]};}
+    double Perimeter() override
+    {
+        double perimeter;
+        perimeter = 0;
+
+        int nextRow;
+
+        for(int i = 0; i < points.size(); i ++)
+        {
+            nextRow = i + 1;
+
+            // checks if the next row is the first one
+            if(nextRow > points.size())
+            {
+                nextRow = 0;
+            }
+
+            perimeter += sqrt(pow((points[i][0] - points[nextRow + 1][0]),2) + pow((points[i][1] - points[nextRow + 1][1]),2));
+        };
+
+        return perimeter;
+    }
 
 private:
-        std::vector < vector<int> > points;
+        std::vector < std::vector<int> > points;
 };
 
 class Rectangle : public Shape
