@@ -1,0 +1,311 @@
+#include "shape.h"
+
+/****************************************************
+* class Shape - Abstract Base Class
+*****************************************************/
+
+Shape::Shape(int          shapeId,
+        std::string       shapeType,
+             int          x,
+             int          y,
+         Qt::GlobalColor  penColor,
+             int          penWidth,
+         Qt::PenStyle     penStyle,
+         Qt::PenCapStyle  penCapStyle,
+         Qt::PenJoinStyle penJoinStyle,
+         Qt::GlobalColor  brushColor,
+         Qt::BrushStyle   brushStyle)
+           : shapeId{shapeId},
+             shapeType{shapeType},
+             x{x},
+             y{y},
+             penColor{penColor},
+             penWidth{penWidth},
+             penStyle{penStyle},
+             penCapStyle{penCapStyle},
+             penJoinStyle{penJoinStyle},
+             brushColor{brushColor},
+             brushStyle{brushStyle} 
+{}
+
+virtual Shape::~Shape()
+{}
+
+virtual void Shape::Move(int x, int y)
+{
+    this->x = x;
+    this->y = y;
+}
+
+// Accessor Functions
+int Shape::getX() { return X; }
+int Shape::getY() { return Y; }
+
+// Overloaded Operators
+friend bool operator==(const Shape& shape1, const Shape& shape2)
+{
+    return shape1.shapeId == shape2.shapeId;
+}
+
+friend bool operator<(const Shape& shape1, const Shape& shape2)
+{
+    return shape1.shapeId < shape2.shapeId;
+}
+
+/****************************************************/
+
+
+/****************************************************
+* class Line - Derived Class
+*****************************************************/
+
+Line::Line(int          shapeId,
+      std::string       shapeType,
+           int          x,
+           int          y,
+       Qt::GlobalColor  penColor,
+           int          penWidth,
+       Qt::PenStyle     penStyle,
+       Qt::PenCapStyle  penCapStyle,
+       Qt::PenJoinStyle penJoinStyle,
+           int          x1,
+           int          y1,
+           int          x2,
+           int          y2)
+         : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle,
+                 penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
+           x1{x1},
+           y1{y1},
+           x2{x2},
+           y2{y2} 
+{}
+
+double Line::Perimeter() override 
+{ 
+    return sqrt(pow((x1 - x2),2) + pow((y1 - y2), 2));
+}
+
+/****************************************************/
+
+
+/****************************************************
+* class Polyline - Derived Class
+*****************************************************/
+
+Polyline::Polyline(int          shapeId,
+              std::string       shapeType,
+                   int          x,
+                   int          y,
+               Qt::GlobalColor  penColor,
+                   int          penWidth,
+               Qt::PenStyle     penStyle,
+               Qt::PenCapStyle  penCapStyle,
+               Qt::PenJoinStyle penJoinStyle,
+              std::vector<int>  points)
+                 : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle,
+                         penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
+                   points{points} 
+{}
+
+double Polyline::Perimeter() override
+{
+    double perimeter;
+    perimeter = 0;
+
+    int vecSize;
+    vecSize = points.size() - 1;
+
+    for(int i = 0; i < vecSize; i ++)
+    {
+        perimeter += sqrt(pow((points[i][0] - points[i + 1][0]), 2) + pow((points[i][1] - points[i + 1][1]), 2));
+    };
+
+    return perimeter;
+}
+
+/****************************************************/
+
+
+
+/****************************************************
+* class Polygon - Derived Class
+*****************************************************/
+
+Polygon::Polygon(int shapeId,
+            std::string shapeType,
+                 int x,
+                 int y,
+             Qt::GlobalColor penColor,
+                 int penWidth,
+             Qt::PenStyle penStyle,
+             Qt::PenCapStyle penCapStyle,
+             Qt::PenJoinStyle penJoinStyle,
+             Qt::GlobalColor brushColor,
+             Qt::BrushStyle brushStyle,
+            std::vector<int> points)
+               : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle,
+                       penCapStyle, penJoinStyle, brushColor, brushStyle),
+                 points{points}
+{}
+
+double Polygon::Perimeter() override
+{
+    double perimeter;
+
+    perimeter = sqrt(pow((points[0][0] - points[1][0]), 2) + pow((points[0][1] - points[1][1]), 2) * points.size());
+
+    return perimeter;
+}
+
+double Polygon::Area() override
+{
+    double apothem;
+
+    apothem = (sqrt(pow((points[0][0] - points[1][0]), 2) + pow((points[0][1] - points[1][1]), 2))) / tan(180 / points.size());
+
+    return (Perimeter() * apothem) / 2;
+}
+
+/****************************************************/
+
+
+/****************************************************
+* class Rectangle - Derived Class
+*****************************************************/
+
+Rectangle::Rectangle(int          shapeId,
+                std::string       shapeType,
+                     int          x,
+                     int          y,
+                 Qt::GlobalColor  penColor,
+                     int          penWidth,
+                 Qt::PenStyle     penStyle,
+                 Qt::PenCapStyle  penCapStyle,
+                 Qt::PenJoinStyle penJoinStyle,
+                     int          length,
+                     int          width)
+                   : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle,
+                           penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
+                     length{length},
+                     width{width}
+{}
+
+
+double Rectangle::Perimeter() override { return (length * 2) + (width * 2); }
+double Rectangle::Area()      override { return length * width; }
+
+/****************************************************/
+
+
+/****************************************************
+* class Square - Derived Class
+*****************************************************/
+
+Square::Square(int          shapeId,
+          std::string       shapeType,
+               int          x,
+               int          y,
+           Qt::GlobalColor  penColor,
+               int          penWidth,
+           Qt::PenStyle     penStyle,
+           Qt::PenCapStyle  penCapStyle,
+           Qt::PenJoinStyle penJoinStyle,
+               int          length)
+             : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle,
+                     penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
+               length{length}
+{}
+
+
+double Square::Perimeter() override { return length * 4; }
+double Square::Area()      override { return pow(length, 2); }
+
+/****************************************************/
+
+
+/****************************************************
+* class Ellipse - Derived Class
+*****************************************************/
+
+Ellipse::Ellipse(int shapeId,
+            std::string shapeType,
+                 int x,
+                 int y,
+             Qt::GlobalColor penColor,
+                 int penWidth,
+             Qt::PenStyle penStyle,
+             Qt::PenCapStyle penCapStyle,
+             Qt::PenJoinStyle penJoinStyle,
+                 int a,
+                 int b)
+               : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle,
+                       penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
+                 a{a},
+                 b{b}
+{}
+
+double Ellipse::Perimeter() override { return 2 * PI * sqrt((pow((2 * a), 2) + pow((2 * b), 2)) / 2); }
+double Ellipse::Area()      override { return PI * a * b; }
+
+/****************************************************/
+
+
+/****************************************************
+* class Circle - Derived Class
+*****************************************************/
+
+Circle::Circle(int         shapeId,
+         std::string       shapeType,
+              int          x,
+              int          y,
+          Qt::GlobalColor  penColor,
+              int          penWidth,
+          Qt::PenStyle     penStyle,
+          Qt::PenCapStyle  penCapStyle,
+          Qt::PenJoinStyle penJoinStyle,
+              int          r)
+            : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle,
+                    penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
+              r{r} 
+{}
+
+double Circle::Perimeter() override { return 2 * PI * r; }
+double Circle::Area()      override { return PI * pow(r, 2); }
+
+/****************************************************/
+
+
+/****************************************************
+* class Text - Derived Class
+*****************************************************/
+
+Text::Text(int           shapeId,
+      std::string        shapeType,
+           int           x,
+           int           y,
+      std::string        textString,
+       Qt::GlobalColor   textColor,
+       Qt::AlignmentFlag textAlignment,
+           int           textPointSize,
+      std::string        textFontFamily,
+    QFont::Style         textFontStyle,
+    QFont::Weight        textFontWeight,
+           int           length,
+           int           width)
+         : Shape(shapeId, shapeType, x, y, Qt::GlobalColor(), 0, Qt::PenStyle(), Qt::PenCapStyle(),
+                 Qt::PenJoinStyle(), Qt::GlobalColor(), Qt::BrushStyle()),
+           textString{textString},
+           textColor{textColor},
+           textAlignment{textAlignment},
+           textPointSize{textPointSize},
+           textFontFamily{textFontFamily},
+           textFontStyle{textFontStyle},
+           textFontWeight{textFontWeight},
+           length{length},
+           width{width}
+{}
+
+double Text::Perimeter() override { return (length * 2) + (width * 2); }
+double Text::Area()      override { return length * width; }
+
+/****************************************************/
