@@ -30,6 +30,24 @@ RUN dnf install -y \
 
 RUN dnf update -y && dnf clean all
 
+# Copy your project files into the container
+WORKDIR /app
+COPY . /app
+
+# Clone missing directories if needed
+RUN if [ ! -d webservice/crow ] || [ -z "$(ls -A webservice/crow)" ]; then \
+      echo "Cloning crow repository..."; \
+      git clone --recursive https://github.com/crowcpp/crow.git webservice/crow; \
+    else \
+      echo "webservice/crow is not empty, skipping clone"; \
+    fi && \
+    if [ ! -d webservice/asio ] || [ -z "$(ls -A webservice/asio)" ]; then \
+      echo "Cloning asio repository..."; \
+      git clone --recursive https://github.com/chriskohlhoff/asio.git webservice/asio; \
+    else \
+      echo "webservice/asio is not empty, skipping clone"; \
+    fi
+
 # Install Oh My Zsh (non-interactive)
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
