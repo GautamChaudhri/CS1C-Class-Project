@@ -22,7 +22,7 @@ RUN dnf install -y \
     eza \
     tmux \
     qt6-qtbase-devel \
-    qt6-qttools \ 
+    qt6-qttools-devel \ 
     qt6-qtcreator \
     doxygen \
     graphviz \

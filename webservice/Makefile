@@ -1,8 +1,8 @@
 CXX      = g++
 CXXFLAGS = -std=c++17 -Wall -g -Icrow/include -Iasio/asio/include -pthread -DCROW_USE_STANDALONE_ASIO
 
-TARGET = crow_service
-SRC    = main.cpp
+TARGET = webservice
+SRC    = webservice.cpp
 
 all: $(TARGET)
 
