@@ -28,7 +28,7 @@ Shape::Shape(int          shapeId,
     brushStyle{brushStyle}
 {}
 
-Shape::~Shape()
+virtual Shape::~Shape()
 {}
 
 void Shape::Move(int x, int y)
