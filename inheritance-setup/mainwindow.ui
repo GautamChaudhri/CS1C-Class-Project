@@ -68,7 +68,7 @@
    <string>2D Graphics Modeler</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="RenderArea" native="true">
+   <widget class="QFrame" name="RenderArea">
     <property name="geometry">
      <rect>
       <x>50</x>

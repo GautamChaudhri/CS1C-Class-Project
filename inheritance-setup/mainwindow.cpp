@@ -8,8 +8,14 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    //Creates custom widget
     RenderArea *customWidget = new RenderArea(this);
-    customWidget->setGeometry(0, 0, width(), height());
+
+    //Sets the render area on the screen
+    customWidget->setGeometry(50, 105, 1000, 850);
+
+    //Ensures the widget doesn't block the buttons in the main window
+    customWidget->setAttribute(Qt::WA_TransparentForMouseEvents);
 }
 
 MainWindow::~MainWindow()
