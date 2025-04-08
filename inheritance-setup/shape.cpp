@@ -37,9 +37,39 @@ virtual void Shape::Move(int x, int y)
     this->y = y;
 }
 
-// Accessor Functions
-int Shape::getX() { return X; }
-int Shape::getY() { return Y; }
+/**************** ACCESSOR FUNCTIONS ****************/
+int    Shape::getShapeId()   const { return shapeId; }
+int    Shape::getTrackerId() const { return trackerId; }
+string Shape::getShapeType() const { return shapeType; }
+
+int Shape::getX() const { return X; }
+int Shape::getY() const { return Y; }
+
+Qt::GlobalColor  Shape::getGlobalColor()  const { return globalColor; }
+int              Shape::getPenWidth()     const { return penWidth; }
+Qt::PenStyle     Shape::getPenStyle()     const { return penStyle; }
+Qt::PenCapStyle  Shape::getPenCapStyle()  const { return penCapStyle; }
+Qt::PenJoinStyle Shape::getPenJoinStyle() const { return penJoinStyle; }
+Qt::GlobalColor  Shape::getBrushColor()   const { return brushColor; }
+Qt::BrushStyle   Shape::getBrushStyle()   const { return brushStyle; }
+/****************************************************/
+
+/***************** MUTATOR FUNCTIONS ****************/
+int    Shape::setShapeId(int shapeId)        { this->shapeId   = shapeId; }
+int    Shape::setTrackerId(int trackerId)    { this->trackerId = trackerId; }
+string Shape::setShapeType(string shapeType) { this->shapeType = shapeType; }
+
+int Shape::setX(int x) { this->x = x; }
+int Shape::setY(int y) { this->y = y; }
+
+Qt::GlobalColor  Shape::setGlobalColor(Qt::GlobalColor globalColor)    { this->globalColor  = globalColor; }
+int              Shape::setPenWidth(int penWidth)                      { this->penWidth     = penwidth; }
+Qt::PenStyle     Shape::setPenStyle(Qt::PenStyle penStyle)             { this->penStyle     = penStyle; }
+Qt::PenCapStyle  Shape::setPenCapStyle(Qt::PenCapStyle penCapStyle)    { this->penCapStyle  = penCapStyle; }
+Qt::PenJoinStyle Shape::setPenJoinStyle(Qt::PenJoinStyle penJoinStyle) { this->penJoinStyle = penJoinStyle; }
+Qt::GlobalColor  Shape::setBrushColor(Qt::GlobalColor brushColor)      { this->brushColor   = brushColor; }
+Qt::BrushStyle   Shape::setBrushStyle(Qt::BrushStyle brushStyle)       { this->brushStyle   = brushStyle; }
+/****************************************************/
 
 // Overloaded Operators
 friend bool operator==(const Shape& shape1, const Shape& shape2)
