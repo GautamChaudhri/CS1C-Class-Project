@@ -26,37 +26,45 @@ class Shape
     friend bool operator<(const Shape& shape1, const Shape& shape2);
 
 public:
-    Shape(int    shapeId,
-         std::string shapeType,
-             int    x,
-             int    y,
-          Qt::GlobalColor penColor,
-               int    penWidth,
-          Qt::PenStyle penStyle,
-          Qt::PenCapStyle penCapStyle,
+
+    /**********************************************************
+    * Overloaded Constructor Shape: Class Shape
+    * ---------------------------------------------------------
+    * ----------------------
+    * PRE-CONDITIONS  -
+    *
+    *      shapeId      :
+    *      shapeType    :
+    *      x            :
+    *      y            :
+    *      penColor     :
+    *      penWidth     :
+    *      penStyle     :
+    *      penCapStyle  :
+    *      penJoinStyle :
+    *      brushColor   :
+    *      brushStyle   :
+    *
+    * POST-CONDITIONS -
+    *
+    ***********************************************************/
+    Shape(     int          shapeId,
+          std::string       shapeType,
+          int          x,
+          int          y,
+          Qt::GlobalColor  penColor,
+          int          penWidth,
+          Qt::PenStyle     penStyle,
+          Qt::PenCapStyle  penCapStyle,
           Qt::PenJoinStyle penJoinStyle,
-          Qt::GlobalColor brushColor,
-          Qt::BrushStyle brushStyle)
-        : shapeId{shapeId},
-          shapeType{shapeType},
-          x{x},
-          y{y},
-          penColor{penColor},
-          penWidth{penWidth},
-          penStyle{penStyle},
-          penCapStyle{penCapStyle},
-          penJoinStyle{penJoinStyle},
-          brushColor{brushColor},
-          brushStyle{brushStyle};
+          Qt::GlobalColor  brushColor,
+          Qt::BrushStyle   brushStyle);
 
-    virtual ~Shape() {}
+    virtual ~Shape();
 
+    // Need to complete Draw !!
     virtual void Draw() = 0;
-    virtual void Move(int x, int y)
-    {
-        this->x = x;
-        this->y = y;
-    }
+    virtual void Move(int x, int y);
 
     /**************** ACCESSOR FUNCTIONS ****************/
     int    getShapeId()   const;
@@ -94,7 +102,6 @@ public:
 
     virtual double Perimeter() {}
     virtual double Area()      {}
-
 private:
 
     int shapeId;
@@ -122,27 +129,23 @@ private:
 class Line : public Shape
 {
 public:
-    Line(int shapeId,
-         std::string shapeType,
-         int x,
-         int y,
-         Qt::GlobalColor penColor,
-         int penWidth,
-         Qt::PenStyle penStyle,
-         Qt::PenCapStyle penCapStyle,
+
+    Line(     int         shapeId,
+         std::string      shapeType,
+         int          x,
+         int          y,
+         Qt::GlobalColor  penColor,
+         int          penWidth,
+         Qt::PenStyle     penStyle,
+         Qt::PenCapStyle  penCapStyle,
          Qt::PenJoinStyle penJoinStyle,
-         int x1,
-         int y1,
-         int x2,
-         int y2)
-       : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
-         x1{x1},
-         y1{y1},
-         x2{x2},
-         y2{y2} {}
+         int          x1,
+         int          y1,
+         int          x2,
+         int          y2);
 
 
-    double Perimeter() override { return sqrt(pow((x1 - x2),2) + pow((y1 - y2),2)); }
+    double Perimeter() const override;
 
 private:
     int x1;
@@ -170,27 +173,13 @@ public:
            : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
              points{points} {}
 
-    double Perimeter() override
-    {
-        double perimeter;
-        perimeter = 0;
-
-        int vecSize;
-        vecSize = points.size() - 1;
-
-        for(int i = 0; i < vecSize; i ++)
-        {
-            perimeter += sqrt(pow((points[i][0] - points[i + 1][0]), 2) + pow((points[i][1] - points[i + 1][1]), 2));
-        };
-
-        return perimeter;
-    }
+    double Perimeter() const override;
 
 private:
     std::vector < std::vector<int> > points;
 
     // Disable Copy Operations
-    Polyline(Polyline& Polyline) = delete; 
+    Polyline(Polyline& Polyline) = delete;
 };
 
 class Polygon : public Shape
@@ -207,34 +196,18 @@ public:
             Qt::PenJoinStyle penJoinStyle,
             Qt::GlobalColor brushColor,
             Qt::BrushStyle brushStyle,
-            std::vector<int> points)
-          : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, brushColor, brushStyle),
-            points{points} {}
+            std::vector<int> points);
 
-    double Perimeter() override
-    {
-        double perimeter;
 
-        perimeter = sqrt(pow((points[0][0] - points[1][0]), 2) + pow((points[0][1] - points[1][1]), 2) * points.size());
-
-        return perimeter;
-    }
-
-    double Area() override
-    {
-        double apothem;
-
-        apothem = (sqrt(pow((points[0][0] - points[1][0]), 2) + pow((points[0][1] - points[1][1]), 2))) / tan(180 / points.size());
-
-        return (Perimeter() * apothem) / 2;
-    }
+    double Perimeter() const override;
+    double Area()      const override;
 
 
 private:
     std::vector < std::vector<int> > points;
 
     // Disable Copy Operations
-    Polygon(Polygon& Polygon) = delete; 
+    Polygon(Polygon& Polygon) = delete;
 };
 
 class Rectangle : public Shape
@@ -255,15 +228,15 @@ public:
               length{length},
               width{width} {}
 
-    double Perimeter() override { return length*2 + width*2;}
-    double Area() override      { return length*width;}
+    double Perimeter() const override;
+    double Area()      const override;
 
 private:
     int length;
     int width;
 
     // Disable Copy Operations
-    Rectangle(Rectangle& Rectangle) = delete; 
+    Rectangle(Rectangle& Rectangle) = delete;
 };
 
 class Square : public Shape
@@ -282,14 +255,14 @@ public:
          : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
            length{length} {}
 
-    double Perimeter() override { return length*4;}
-    double Area() override      { return pow(length,2);}
+    double Perimeter() const override;
+    double Area()      const override;
 
 private:
     int length;
 
     // Disable Copy Operations
-    Square(Square& Square) = delete; 
+    Square(Square& Square) = delete;
 };
 
 class Ellipse : public Shape
@@ -305,19 +278,17 @@ public:
             Qt::PenCapStyle penCapStyle,
             Qt::PenJoinStyle penJoinStyle,
             int a,
-            int b)
-          : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
-            a{a},
-            b{b} {}
-    double Perimeter() override { return 2*PI*sqrt((pow((2*a), 2) + pow((2*b), 2))/2); }
-    double Area() override { return PI*a*b; }
+            int b);
+
+    double Perimeter() const override;
+    double Area()      const override;
 
 private:
     int a;
     int b;
 
     // Disable Copy Operations
-    Ellipse(Ellipse& Ellipse) = delete; 
+    Ellipse(Ellipse& Ellipse) = delete;
 };
 
 class Circle : public Shape
@@ -332,17 +303,16 @@ public:
            Qt::PenStyle penStyle,
            Qt::PenCapStyle penCapStyle,
            Qt::PenJoinStyle penJoinStyle,
-           int r)
-         : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle, penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
-           r{r} {}
-    double Perimeter() override { return 2*PI*r ; }
-    double Area() override { return PI*pow(r, 2); }
+           int r);
+
+    double Perimeter() const override;
+    double Area()      const override;
 
 private:
     int r;
 
     // Disable Copy Operations
-    Circle(Circle& Circle) = delete; 
+    Circle(Circle& Circle) = delete;
 };
 
 class Text : public Shape
@@ -360,20 +330,10 @@ public:
          QFont::Style textFontStyle,
          QFont::Weight textFontWeight,
          int length,
-         int width)
-       : Shape(shapeId, shapeType, x, y, Qt::GlobalColor(), 0, Qt::PenStyle(), Qt::PenCapStyle(), Qt::PenJoinStyle(), Qt::GlobalColor(), Qt::BrushStyle()),
-         textString{textString},
-         textColor{textColor},
-         textAlignment{textAlignment},
-         textPointSize{textPointSize},
-         textFontFamily{textFontFamily},
-         textFontStyle{textFontStyle},
-         textFontWeight{textFontWeight},
-         length{length},
-         width{width} {}
+         int width);
 
-    double Perimeter() override { return length*2 + width*2;}
-    double Area() override      { return length*width;}
+    double Perimeter() const override;
+    double Area()      const override;
 
 private:
     int length;
@@ -387,7 +347,7 @@ private:
     QFont::Weight textFontWeight;
 
     // Disable Copy Operations
-    Text(Text& Text) = delete;  
+    Text(Text& Text) = delete;
 };
 
 #endif // SHAPE_H
