@@ -16,6 +16,13 @@ Rectangle::Rectangle(int    shapeId,
                     width{width}
 {}
 
+void Rectangle::Draw()
+{
+    getPainter().setPen(getPen());
+    getPainter().setBrush(getBrush());
+    getPainter().drawRect(getX(),getY(), length, width);
+    getPainter().restore();
+}
 
 double Rectangle::Perimeter() const { return (length * 2) + (width * 2); }
 double Rectangle::Area()      const { return length * width; }

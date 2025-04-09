@@ -14,6 +14,13 @@ Square::Square(int    shapeId,
                length{length}
 {}
 
+void Square::Draw()
+{
+    getPainter().setPen(getPen());
+    getPainter().setBrush(getBrush());
+    getPainter().drawRect(getX(),getY(), length, length);
+    getPainter().restore();
+}
 
 double Square::Perimeter() const { return length * 4; }
 double Square::Area()      const { return pow(length, 2); }

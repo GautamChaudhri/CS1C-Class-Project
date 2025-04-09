@@ -13,6 +13,18 @@ Polyline::Polyline(int    shapeId,
                 points{points}
 {}
 
+void Polyline::Draw()
+{
+    // This is an example but we need to change the coords to use and array or vector
+    QPoint points[] = {QPoint(100, 100), QPoint(200, 50), QPoint(300, 150),
+                       QPoint(250, 250), QPoint(150, 200)};
+
+    getPainter().setPen(getPen());
+    getPainter().setBrush(getBrush());
+    getPainter().drawPolyline(points, pointCount);
+    getPainter().restore();
+}
+
 double Polyline::Perimeter() const
 {
     double perimeter;

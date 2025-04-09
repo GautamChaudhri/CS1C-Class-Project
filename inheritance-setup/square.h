@@ -13,6 +13,8 @@ public:
            QBrush brush,
            int length);
 
+    void Draw() override;
+
     double Perimeter() const override;
     double Area()      const override;
 

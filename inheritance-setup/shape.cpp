@@ -40,7 +40,9 @@ PenCapStyle  Shape::getPenCapStyle()  const { return pen.capStyle(); }
 PenJoinStyle Shape::getPenJoinStyle() const { return pen.joinStyle(); }
 QColor       Shape::getBrushColor()   const { return brush.color(); }
 BrushStyle   Shape::getBrushStyle()   const { return brush.style(); }
-QPen         Shape::getPen()          const { return this->pen; }
+QPen         Shape::getPen()          const { return pen; }
+QBrush       Shape::getBrush()        const { return brush; }
+QPoint       Shape::getPoints()       const { return coords;}
 /****************************************************/
 
 /***************** MUTATOR FUNCTIONS ****************/

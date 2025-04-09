@@ -68,7 +68,7 @@ public:
     virtual ~Shape();
 
     // Need to complete Draw !!
-    virtual void Draw() const = 0;
+    virtual void Draw() = 0;
     virtual void Move(int x, int y);
 
     /**************** ACCESSOR FUNCTIONS ****************/
@@ -79,6 +79,8 @@ public:
     int getX() const;
     int getY() const;
 
+    QPainter& getPainter() { return painter;} // for some reason this doesn't like being in shape.cpp
+
     int          getPenWidth()     const;
     PenStyle     getPenStyle()     const;
     PenCapStyle  getPenCapStyle()  const;
@@ -86,6 +88,8 @@ public:
     QColor       getBrushColor()   const;
     BrushStyle   getBrushStyle()   const;
     QPen         getPen()          const;
+    QBrush       getBrush()        const;
+    QPoint       getPoints()       const;
     /****************************************************/
 
     /***************** MUTATOR FUNCTIONS ****************/

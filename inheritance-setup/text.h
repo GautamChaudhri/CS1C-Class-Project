@@ -9,7 +9,7 @@ public:
     Text(int    shapeId,
          string shapeType,
          QPoint coords,
-         string textString,
+         QString textString,
          Qt::GlobalColor   textColor,
          Qt::AlignmentFlag textAlignment,
          int    textPointSize,
@@ -19,6 +19,8 @@ public:
          int           length,
          int           width);
 
+    void Draw() override;
+
     double Perimeter() const override;
     double Area()      const override;
 
@@ -26,7 +28,7 @@ private:
     int length;
     int width;
 
-    string        textString;
+    QString       textString;
     GlobalColor   textColor;
     AlignmentFlag textAlignment;
     int           textPointSize;

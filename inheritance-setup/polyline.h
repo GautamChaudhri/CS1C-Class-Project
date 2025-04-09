@@ -13,11 +13,13 @@ public:
                  QBrush brush,
              std::vector<int>  points);
 
+    void Draw() override;
+
     double Perimeter() const override;
 
 private:
     std::vector < std::vector<int> > points;
-
+    int pointCount;
     // Disable Copy Operations
     Polyline(Polyline& Polyline) = delete;
 };

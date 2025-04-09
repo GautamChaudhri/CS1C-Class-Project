@@ -12,6 +12,7 @@ public:
              QPen   pen,
              QBrush brush);
 
+    void Draw() override;
 
     double Perimeter() const override;
     double Area()      const override;
@@ -19,6 +20,7 @@ public:
 
 private:
     std::vector < std::vector<int> > points; // temporary
+    int pointCount; // todo: DO SOMETHING ABOUT THIS !!1!!11!!!1
 
     // Disable Copy Operations
     Polygon(Polygon& Polygon) = delete;

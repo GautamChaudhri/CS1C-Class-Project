@@ -13,8 +13,21 @@ Polygon::Polygon(int    shapeId,
                        shapeType,
                        coords,
                        pen,
-                       brush)
+                       brush) // todo: WE NEED SOME WAY OF STORING POINT COUNT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 {}
+
+void Polygon::Draw()
+{
+
+    // This is an example but we need to change the coords to use and array or vector
+    QPoint points[] = {QPoint(100, 100), QPoint(200, 50), QPoint(300, 150),
+                       QPoint(250, 250), QPoint(150, 200)};
+
+    getPainter().setPen(getPen());
+    getPainter().setBrush(getBrush());
+    getPainter().drawPolygon(points, pointCount, Qt::OddEvenFill); // I am not sure what to do about the fill rule :/
+    getPainter().restore();
+}
 
 double Polygon::Perimeter() const
 {

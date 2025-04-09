@@ -20,12 +20,15 @@ Line::Line(int    shapeId,
          endPoint{endPoint}
 {}
 
-void Line::Draw() const
+void Line::Draw()
 {
-    painter.setPen(getPen());
+    getPainter().setPen(getPen());
+    getPainter().setBrush(getBrush());
+    getPainter().drawLine(startPoint,endPoint);
+    getPainter().restore();
 }
 
 double Line::Perimeter() const
 {
-    return sqrt(pow((x1 - x2),2) + pow((y1 - y2), 2));
+    return sqrt(pow((startPoint.x() - endPoint.x()),2) + pow((startPoint.y() - endPoint.y()), 2));
 }

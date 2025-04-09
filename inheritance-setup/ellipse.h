@@ -14,6 +14,8 @@ public:
             int    a,
             int    b);
 
+    void Draw() override;
+
     double Perimeter() const override;
     double Area()      const override;
 

@@ -18,6 +18,14 @@ Circle::Circle(int    shapeId,
                r{r}
 {}
 
+void Circle::Draw()
+{
+    getPainter().setPen(getPen());
+    getPainter().setBrush(getBrush());
+    getPainter().drawEllipse(getPoints(), r, r);
+    getPainter().restore();
+}
+
 double Circle::Perimeter() const { return 2 * PI * r; }
 double Circle::Area()      const { return PI * pow(r, 2); }
 
