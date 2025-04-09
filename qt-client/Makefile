@@ -1,10 +1,21 @@
+# Compiler to use
 CXX = g++
-#Include directories for Qt6 headers (adjust these if needed)
+# Define the moc tool with the full path on your system
+MOC = /usr/lib64/qt6/libexec/moc
+
+# Compiler flags for C++17 and necessary Qt6 include directories
 CXXFLAGS = -std=c++17 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtNetwork
+
 # Linker flags: Link against the Qt6Core and Qt6Network libraries
 LDFLAGS = -lQt6Core -lQt6Network
-SOURCES = main.cpp api_client.cpp
-OBJECTS = main.o api_client.o
+
+# Source files (main.cpp and ApiClient.cpp)
+SOURCES = main.cpp ApiClient.cpp
+
+# Object files produced from your sources and the moc-generated file
+OBJECTS = main.o ApiClient.o moc_ApiClient.o
+
+# Name of the final executable
 TARGET = MyApp
 
 # Default target: Build the final executable
@@ -12,16 +23,24 @@ all: $(TARGET)
 
 # Link object files to produce the final executable
 $(TARGET): $(OBJECTS)
-	$(CXX) -o $(TARGET) main.o api_client.o $(LDFLAGS)
+	$(CXX) -o $(TARGET) main.o ApiClient.o moc_ApiClient.o $(LDFLAGS)
 
-# Compile main.cpp to produce main.o
+# Rule to compile main.cpp into main.o
 main.o: main.cpp
 	$(CXX) $(CXXFLAGS) -c main.cpp -o main.o
 
-# Compile api_client.cpp to produce api_client.o
-api_client.o: api_client.cpp
-	$(CXX) $(CXXFLAGS) -c api_client.cpp -o api_client.o
+# Rule to compile ApiClient.cpp into ApiClient.o
+ApiClient.o: ApiClient.cpp
+	$(CXX) $(CXXFLAGS) -c ApiClient.cpp -o ApiClient.o
 
-# Clean: Remove the executable and object files
+# Generate moc_ApiClient.cpp from ApiClient.h
+moc_ApiClient.cpp: ApiClient.h
+	$(MOC) -o moc_ApiClient.cpp ApiClient.h
+
+# Compile moc_ApiClient.cpp into moc_ApiClient.o
+moc_ApiClient.o: moc_ApiClient.cpp
+	$(CXX) $(CXXFLAGS) -c moc_ApiClient.cpp -o moc_ApiClient.o
+
+# Clean: Remove the executable, object files, and the generated moc file
 clean:
-	rm -f $(TARGET) main.o api_client.o
+	rm -f $(TARGET) main.o ApiClient.o moc_ApiClient.o moc_ApiClient.cpp
