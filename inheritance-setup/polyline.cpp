@@ -3,19 +3,14 @@
 /****************************************************
 * class Polyline - Derived Class
 *****************************************************/
-Polyline::Polyline(int          shapeId,
-                   std::string       shapeType,
-                   int          x,
-                   int          y,
-                   Qt::GlobalColor  penColor,
-                   int          penWidth,
-                   Qt::PenStyle     penStyle,
-                   Qt::PenCapStyle  penCapStyle,
-                   Qt::PenJoinStyle penJoinStyle,
-                   std::vector<int>  points)
-    : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle,
-            penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
-    points{points}
+Polyline::Polyline(int    shapeId,
+                    string shapeType,
+                    QPoint coords,
+                    QPen   pen,
+                    QBrush brush,
+                   std::vector<int> points)
+                : Shape(shapeId, shapeType, coords, pen, brush),
+                points{points}
 {}
 
 double Polyline::Perimeter() const

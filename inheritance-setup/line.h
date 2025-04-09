@@ -10,28 +10,21 @@ class Line : public Shape
 {
 public:
 
-    Line(     int         shapeId,
-         std::string      shapeType,
-         int          x,
-         int          y,
-         Qt::GlobalColor  penColor,
-         int          penWidth,
-         Qt::PenStyle     penStyle,
-         Qt::PenCapStyle  penCapStyle,
-         Qt::PenJoinStyle penJoinStyle,
-         int          x1,
-         int          y1,
-         int          x2,
-         int          y2);
+    Line(int    shapeId,
+          string shapeType,
+          QPoint coords,
+          QPen   pen,
+          QBrush brush,
+          QPoint startPoint,
+         QPoint endPoint);
 
+    void Draw() const override;
 
     double Perimeter() const override;
 
 private:
-    int x1;
-    int y1;
-    int x2;
-    int y2;
+    QPoint startPoint;
+    QPoint endPoint;
 
     // Disable Copy Operations
     Line(Line& Line) = delete;

@@ -6,15 +6,11 @@
 class Polyline : public Shape
 {
 public:
-    Polyline(int          shapeId,
-           std::string       shapeType,
-           int          x,
-           int          y,
-           Qt::GlobalColor  penColor,
-           int          penWidth,
-           Qt::PenStyle     penStyle,
-           Qt::PenCapStyle  penCapStyle,
-           Qt::PenJoinStyle penJoinStyle,
+    Polyline(int    shapeId,
+                 string shapeType,
+                 QPoint coords,
+                 QPen   pen,
+                 QBrush brush,
              std::vector<int>  points);
 
     double Perimeter() const override;
@@ -24,34 +20,6 @@ private:
 
     // Disable Copy Operations
     Polyline(Polyline& Polyline) = delete;
-};
-
-class Polygon : public Shape
-{
-public:
-    Polygon(int shapeId,
-            std::string shapeType,
-            int x,
-            int y,
-            Qt::GlobalColor penColor,
-            int penWidth,
-            Qt::PenStyle penStyle,
-            Qt::PenCapStyle penCapStyle,
-            Qt::PenJoinStyle penJoinStyle,
-            Qt::GlobalColor brushColor,
-            Qt::BrushStyle brushStyle,
-            std::vector<int> points);
-
-
-    double Perimeter() const override;
-    double Area()      const override;
-
-
-private:
-    std::vector < std::vector<int> > points;
-
-    // Disable Copy Operations
-    Polygon(Polygon& Polygon) = delete;
 };
 
 #endif // POLYLINE_H

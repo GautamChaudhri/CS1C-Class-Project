@@ -6,15 +6,11 @@
 class Circle : public Shape
 {
 public:
-    Circle(int shapeId,
-           std::string shapeType,
-           int x,
-           int y,
-           Qt::GlobalColor penColor,
-           int penWidth,
-           Qt::PenStyle penStyle,
-           Qt::PenCapStyle penCapStyle,
-           Qt::PenJoinStyle penJoinStyle,
+    Circle(int    shapeId,
+           string shapeType,
+           QPoint coords,
+           QPen   pen,
+           QBrush brush,
            int r);
 
     double Perimeter() const override;

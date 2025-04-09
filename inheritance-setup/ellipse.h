@@ -6,17 +6,13 @@
 class Ellipse : public Shape
 {
 public:
-    Ellipse(int shapeId,
-            std::string shapeType,
-            int x,
-            int y,
-            Qt::GlobalColor penColor,
-            int penWidth,
-            Qt::PenStyle penStyle,
-            Qt::PenCapStyle penCapStyle,
-            Qt::PenJoinStyle penJoinStyle,
-            int a,
-            int b);
+    Ellipse(int    shapeId,
+            string shapeType,
+            QPoint coords,
+            QPen   pen,
+            QBrush brush,
+            int    a,
+            int    b);
 
     double Perimeter() const override;
     double Area()      const override;

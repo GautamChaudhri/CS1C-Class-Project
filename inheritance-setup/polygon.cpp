@@ -4,21 +4,16 @@
 * class Polygon - Derived Class
 *****************************************************/
 
-Polygon::Polygon(int shapeId,
-                 std::string shapeType,
-                 int x,
-                 int y,
-                 Qt::GlobalColor penColor,
-                 int penWidth,
-                 Qt::PenStyle penStyle,
-                 Qt::PenCapStyle penCapStyle,
-                 Qt::PenJoinStyle penJoinStyle,
-                 Qt::GlobalColor brushColor,
-                 Qt::BrushStyle brushStyle,
-                 std::vector<int> points)
-    : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle,
-            penCapStyle, penJoinStyle, brushColor, brushStyle),
-    points{points}
+Polygon::Polygon(int    shapeId,
+                 string shapeType,
+                 QPoint coords,
+                 QPen   pen,
+                 QBrush brush)
+               : Shape(shapeId,
+                       shapeType,
+                       coords,
+                       pen,
+                       brush)
 {}
 
 double Polygon::Perimeter() const

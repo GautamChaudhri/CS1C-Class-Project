@@ -10,11 +10,11 @@ Circle::Circle(int    shapeId,
                QPen   pen,
                QBrush brush,
                int    r)
-             : shapeId{shapeId},
-               shapeType{shapeType},
-               coords{coords},
-               pen{pen},
-               brush{brush},
+       : Shape(shapeId,
+               shapeType,
+               coords,
+               pen,
+               brush),
                r{r}
 {}
 

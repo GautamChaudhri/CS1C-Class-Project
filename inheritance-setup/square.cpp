@@ -4,19 +4,14 @@
 * class Square - Derived Class
 *****************************************************/
 
-Square::Square(int          shapeId,
-               std::string       shapeType,
-               int          x,
-               int          y,
-               Qt::GlobalColor  penColor,
-               int          penWidth,
-               Qt::PenStyle     penStyle,
-               Qt::PenCapStyle  penCapStyle,
-               Qt::PenJoinStyle penJoinStyle,
-               int          length)
-    : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle,
-            penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
-    length{length}
+Square::Square(int    shapeId,
+               string shapeType,
+               QPoint coords,
+               QPen   pen,
+               QBrush brush,
+               int length)
+             : Shape(shapeId, shapeType, coords, pen, brush),
+               length{length}
 {}
 
 

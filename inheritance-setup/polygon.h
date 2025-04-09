@@ -6,18 +6,11 @@
 class Polygon : public Shape
 {
 public:
-    Polygon(int shapeId,
-            std::string shapeType,
-            int x,
-            int y,
-            Qt::GlobalColor penColor,
-            int penWidth,
-            Qt::PenStyle penStyle,
-            Qt::PenCapStyle penCapStyle,
-            Qt::PenJoinStyle penJoinStyle,
-            Qt::GlobalColor brushColor,
-            Qt::BrushStyle brushStyle,
-            std::vector<int> points);
+    Polygon(int    shapeId,
+             string shapeType,
+             QPoint coords,
+             QPen   pen,
+             QBrush brush);
 
 
     double Perimeter() const override;
@@ -25,7 +18,7 @@ public:
 
 
 private:
-    std::vector < std::vector<int> > points;
+    std::vector < std::vector<int> > points; // temporary
 
     // Disable Copy Operations
     Polygon(Polygon& Polygon) = delete;

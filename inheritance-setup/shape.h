@@ -1,12 +1,14 @@
 #ifndef SHAPE_H
 #define SHAPE_H
 
+#include <QWidget>
 #include <QColor>
 #include <QFont>
 #include <QPen>
 #include <string>
 #include <cmath>
 #include <vector>
+#include <QPainter>
 
 using std::string;
 
@@ -66,7 +68,7 @@ public:
     virtual ~Shape();
 
     // Need to complete Draw !!
-    virtual void Draw() = 0;
+    virtual void Draw() const = 0;
     virtual void Move(int x, int y);
 
     /**************** ACCESSOR FUNCTIONS ****************/
@@ -77,12 +79,13 @@ public:
     int getX() const;
     int getY() const;
 
-    int              getPenWidth()     const;
+    int          getPenWidth()     const;
     PenStyle     getPenStyle()     const;
     PenCapStyle  getPenCapStyle()  const;
     PenJoinStyle getPenJoinStyle() const;
-    QColor           getBrushColor()   const;
+    QColor       getBrushColor()   const;
     BrushStyle   getBrushStyle()   const;
+    QPen         getPen()          const;
     /****************************************************/
 
     /***************** MUTATOR FUNCTIONS ****************/
@@ -100,15 +103,17 @@ public:
     virtual double Perimeter() const = 0;
     virtual double Area()      const = 0;
 
+protected:
+    QPainter painter;
+
 private:
+    int      shapeId;
+    int      trackerId;
+    string   shapeType;
 
-    int    shapeId;
-    int    trackerId;
-    string shapeType;
-
-    QPen   pen;
-    QBrush brush;
-    QPoint coords;
+    QPen     pen;
+    QBrush   brush;
+    QPoint   coords;
 
     // Disable Copy Operations
     Shape(Shape& shape) = delete;

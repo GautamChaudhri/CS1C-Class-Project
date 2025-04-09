@@ -6,15 +6,11 @@
 class Rectangle : public Shape
 {
 public:
-    Rectangle(int shapeId,
-              std::string shapeType,
-              int x,
-              int y,
-              Qt::GlobalColor penColor,
-              int penWidth,
-              Qt::PenStyle penStyle,
-              Qt::PenCapStyle penCapStyle,
-              Qt::PenJoinStyle penJoinStyle,
+    Rectangle(int    shapeId,
+              string shapeType,
+              QPoint coords,
+              QPen   pen,
+              QBrush brush,
               int length,
               int width);
 

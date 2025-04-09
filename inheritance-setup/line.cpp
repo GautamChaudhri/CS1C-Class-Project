@@ -18,8 +18,11 @@ Line::Line(int    shapeId,
                   brush),
        startPoint{startPoint},
          endPoint{endPoint}
-{
+{}
 
+void Line::Draw() const
+{
+    painter.setPen(getPen());
 }
 
 double Line::Perimeter() const
