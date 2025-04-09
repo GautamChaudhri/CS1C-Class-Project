@@ -3,7 +3,7 @@
 using namespace std;
 
 #include <iostream>
-#include "vector/vector.h"
+#include "vector.h"
 
 
 /**********************************************************************
@@ -18,11 +18,10 @@ using namespace std;
 **********************************************************************/
 int main() {
 
-    // TEST DEFAULT CONTSTRUCTOR
+    // TEST COPY ASSIGNEMNT CONTSTRUCTOR
     vector<int> testVec;
     cout << "Test Size: " << testVec.size();
     cout << "\nTest Capacity: " << testVec.capacity();
-
 
     return 0;
 }

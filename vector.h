@@ -3,7 +3,8 @@
  * -----------------------------------------------------------------------------
  * Worked on by: Aram, Aspen, Luke
  * -----------------------------------------------------------------------------
- * This vector supports the following basic operations:
+ * This vector will be used to hold the shapes that will be displayed.
+ * It supports the following basic operations:
  *      - constructors for one or more arguments
  *      - default constructors
  *      - copy constructor
@@ -52,41 +53,68 @@ class vector
         } // END vector(const vector& other)
 
         /***********************************************************************
-         * COPY ASSIGNEMNT - causing errors in main, will fix later
+         * COPY ASSIGNEMNT
          **********************************************************************/
-        // vector& operator=vector(const vector& other) {
-        //     /*******************************************************************
-        //     * CHECKS IF SELF-ASSIGNMENT
-        //     *******************************************************************/
-        //     if (this == &other) { 
-        //         return *this; 
-        //     }
+        vector& operator=(const vector& other) {
+            /*******************************************************************
+            * CHECKS IF SELF-ASSIGNMENT
+            *******************************************************************/
+            if (this == &other) { 
+                return *this; 
+            }
 
-        //     /*******************************************************************
-        //     * IF NOT SELF-ASSIGNMENT
-        //     *******************************************************************/
-        //     delete[] elem;
+            /*******************************************************************
+            * IF NOT SELF-ASSIGNMENT
+            *******************************************************************/
+            delete[] elem;
             
-        //     size_v = other.size_v;
-        //     space = other.space;
-        //     elem = new T[space];
+            size_v = other.size_v;
+            space = other.space;
+            elem = new T[space];
 
-        //     for (int i = 0; i < size_v; i++) {
-        //         elem[i] = other.elem[i];
-        //     }
+            for (int i = 0; i < size_v; i++) {
+                elem[i] = other.elem[i];
+            }
 
-        //     return *this;
-        // } // END vector& operator=vector
+            return *this;
+        } // END vector& operator=vector
 
         /***********************************************************************
          * MOVE CONSTRUCTOR
          **********************************************************************/
-        // vector(const vector&&) noexcept;
+        vector(vector&& other) noexcept 
+            : size_v(other.size_v), elem(other.elem), space(other.space) {
+            other.size_v = 0;
+            other.elem = nullptr;
+            other.space = 0;
+        }
 
         /***********************************************************************
          * MOVE ASSIGNMENT
          **********************************************************************/
-        // vector& operator=vector(const vector&&) noexcept;
+        vector& operator=(vector&& other) noexcept {
+            /*******************************************************************
+            * CHECKS IF SELF-ASSIGNMENT
+            *******************************************************************/
+            if (this == &other) { 
+                return *this; 
+            }
+
+            /*******************************************************************
+            * IF NOT SELF-ASSIGNMENT
+            *******************************************************************/
+            delete[] elem;
+            
+            size_v = other.size_v;
+            space = other.space;
+            elem = other.elem;
+
+            other.size_v = 0;
+            other.space = 0;
+            other.elem = nullptr;
+
+           return *this;
+        } // END vector& operator=(const vector&& other) noexcept
 
         /***********************************************************************
          * DESTURCTOR
