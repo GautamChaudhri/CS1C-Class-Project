@@ -6,19 +6,18 @@
 class Text : public Shape
 {
 public:
-    Text(int shapeId,
-         std::string shapeType,
-         int x,
-         int y,
-         std::string textString,
-         Qt::GlobalColor textColor,
+    Text(int    shapeId,
+         string shapeType,
+         QPoint coords,
+         string textString,
+         Qt::GlobalColor   textColor,
          Qt::AlignmentFlag textAlignment,
-         int textPointSize,
-         std::string textFontFamily,
-         QFont::Style textFontStyle,
+         int    textPointSize,
+         string textFontFamily,
+         QFont::Style  textFontStyle,
          QFont::Weight textFontWeight,
-         int length,
-         int width);
+         int           length,
+         int           width);
 
     double Perimeter() const override;
     double Area()      const override;
@@ -26,12 +25,13 @@ public:
 private:
     int length;
     int width;
-    std::string textString;
-    Qt::GlobalColor textColor;
-    Qt::AlignmentFlag textAlignment;
-    int textPointSize;
-    std::string textFontFamily;
-    QFont::Style textFontStyle;
+
+    string        textString;
+    GlobalColor   textColor;
+    AlignmentFlag textAlignment;
+    int           textPointSize;
+    string        textFontFamily;
+    QFont::Style  textFontStyle;
     QFont::Weight textFontWeight;
 
     // Disable Copy Operations

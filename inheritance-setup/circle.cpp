@@ -4,19 +4,18 @@
 * class Circle - Derived Class
 *****************************************************/
 
-Circle::Circle(int         shapeId,
-               std::string       shapeType,
-               int          x,
-               int          y,
-               Qt::GlobalColor  penColor,
-               int          penWidth,
-               Qt::PenStyle     penStyle,
-               Qt::PenCapStyle  penCapStyle,
-               Qt::PenJoinStyle penJoinStyle,
-               int          r)
-    : Shape(shapeId, shapeType, x, y, penColor, penWidth, penStyle,
-            penCapStyle, penJoinStyle, Qt::GlobalColor(), Qt::BrushStyle()),
-    r{r}
+Circle::Circle(int    shapeId,
+               string shapeType,
+               QPoint coords,
+               QPen   pen,
+               QBrush brush,
+               int    r)
+             : shapeId{shapeId},
+               shapeType{shapeType},
+               coords{coords},
+               pen{pen},
+               brush{brush},
+               r{r}
 {}
 
 double Circle::Perimeter() const { return 2 * PI * r; }

@@ -10,6 +10,13 @@
 
 using std::string;
 
+using Qt::GlobalColor;
+using Qt::PenCapStyle;
+using Qt::PenStyle;
+using Qt::PenJoinStyle;
+using Qt::BrushStyle;
+using Qt::AlignmentFlag;
+
 /****************************************************
 * CONSTANTS
 * ---------------------------------------------------
@@ -50,17 +57,11 @@ public:
     * POST-CONDITIONS -
     *
     ***********************************************************/
-    Shape(     int          shapeId,
-          std::string       shapeType,
-          int          x,
-          int          y,
-          Qt::GlobalColor  penColor,
-          int          penWidth,
-          Qt::PenStyle     penStyle,
-          Qt::PenCapStyle  penCapStyle,
-          Qt::PenJoinStyle penJoinStyle,
-          Qt::GlobalColor  brushColor,
-          Qt::BrushStyle   brushStyle);
+    Shape(int    shapeId,
+          string shapeType,
+          QPoint coords,
+          QPen   pen,
+          QBrush brush);
 
     virtual ~Shape();
 
@@ -76,13 +77,12 @@ public:
     int getX() const;
     int getY() const;
 
-    Qt::GlobalColor  getGlobalColor()  const;
     int              getPenWidth()     const;
-    Qt::PenStyle     getPenStyle()     const;
-    Qt::PenCapStyle  getPenCapStyle()  const;
-    Qt::PenJoinStyle getPenJoinStyle() const;
-    Qt::GlobalColor  getBrushColor()   const;
-    Qt::BrushStyle   getBrushStyle()   const;
+    PenStyle     getPenStyle()     const;
+    PenCapStyle  getPenCapStyle()  const;
+    PenJoinStyle getPenJoinStyle() const;
+    QColor           getBrushColor()   const;
+    BrushStyle   getBrushStyle()   const;
     /****************************************************/
 
     /***************** MUTATOR FUNCTIONS ****************/
@@ -93,13 +93,8 @@ public:
     void setX(int x);
     void setY(int y);
 
-    void setGlobalColor(Qt::GlobalColor globalColor);
-    void setPenWidth(int penWidth);
-    void setPenStyle(Qt::PenStyle penStyle);
-    void setPenCapStyle(Qt::PenCapStyle penCapStyle);
-    void setPenJoinStyle(Qt::PenJoinStyle penJoinStyle);
-    void setBrushColor(Qt::GlobalColor brushColor);
-    void setBrushStyle(Qt::BrushStyle brushStyle);
+    void setPen(GlobalColor penColor, int penWidth, PenStyle penStyle, PenCapStyle penCapStyle, PenJoinStyle penJoinStyle);
+    void setBrush(GlobalColor brushColor, BrushStyle brushStyle);
     /****************************************************/
 
     virtual double Perimeter() const = 0;
@@ -107,20 +102,13 @@ public:
 
 private:
 
-    int shapeId;
-    int trackerId;
-    std::string shapeType;
+    int    shapeId;
+    int    trackerId;
+    string shapeType;
 
-    int x;
-    int y;
-
-    Qt::GlobalColor penColor;
-    int penWidth;
-    Qt::PenStyle penStyle;
-    Qt::PenCapStyle penCapStyle;
-    Qt::PenJoinStyle penJoinStyle;
-    Qt::GlobalColor brushColor;
-    Qt::BrushStyle brushStyle;
+    QPen   pen;
+    QBrush brush;
+    QPoint coords;
 
     // Disable Copy Operations
     Shape(Shape& shape) = delete;

@@ -6,15 +6,11 @@
 class Square : public Shape
 {
 public:
-    Square(int shapeId,
-           std::string shapeType,
-           int x,
-           int y,
-           Qt::GlobalColor penColor,
-           int penWidth,
-           Qt::PenStyle penStyle,
-           Qt::PenCapStyle penCapStyle,
-           Qt::PenJoinStyle penJoinStyle,
+    Square(int    shapeId,
+           string shapeType,
+           QPoint coords,
+           QPen   pen,
+           QBrush brush,
            int length);
 
     double Perimeter() const override;
