@@ -26,6 +26,18 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Shape.h
         Shape.cpp
         renderarea.h
+        line.h
+        line.cpp
+        polyline.h polyline.cpp
+        polygon.h polygon.cpp
+        rectangle.h rectangle.cpp
+        square.h square.cpp
+        ellipse.h ellipse.cpp
+        circle.h circle.cpp
+        text.h text.cpp
+        rectangle.h rectangle.cpp
+        rectangle.h
+        renderarea.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET inheritance-setup APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
