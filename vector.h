@@ -3,7 +3,8 @@
  * -----------------------------------------------------------------------------
  * Worked on by: Aram, Aspen, Luke
  * -----------------------------------------------------------------------------
- * This vector supports the following basic operations:
+ * This vector will be used to hold the shapes that will be displayed.
+ * It supports the following basic operations:
  *      - constructors for one or more arguments
  *      - default constructors
  *      - copy constructor
@@ -52,54 +53,81 @@ class vector
         } // END vector(const vector& other)
 
         /***********************************************************************
-         * COPY ASSIGNEMNT - causing errors in main, will fix later
+         * COPY ASSIGNMENT
          **********************************************************************/
-        // vector& operator=vector(const vector& other) {
-        //     /*******************************************************************
-        //     * CHECKS IF SELF-ASSIGNMENT
-        //     *******************************************************************/
-        //     if (this == &other) { 
-        //         return *this; 
-        //     }
+        vector& operator=(const vector& other) {
+            /*******************************************************************
+            * CHECKS IF SELF-ASSIGNMENT
+            *******************************************************************/
+            if (this == &other) { 
+                return *this; 
+            }
 
-        //     /*******************************************************************
-        //     * IF NOT SELF-ASSIGNMENT
-        //     *******************************************************************/
-        //     delete[] elem;
+            /*******************************************************************
+            * IF NOT SELF-ASSIGNMENT
+            *******************************************************************/
+            delete[] elem;
             
-        //     size_v = other.size_v;
-        //     space = other.space;
-        //     elem = new T[space];
+            size_v = other.size_v;
+            space = other.space;
+            elem = new T[space];
 
-        //     for (int i = 0; i < size_v; i++) {
-        //         elem[i] = other.elem[i];
-        //     }
+            for (int i = 0; i < size_v; i++) {
+                elem[i] = other.elem[i];
+            }
 
-        //     return *this;
-        // } // END vector& operator=vector
+            return *this;
+        } // END vector& operator=vector
 
         /***********************************************************************
          * MOVE CONSTRUCTOR
          **********************************************************************/
-        // vector(const vector&&) noexcept;
+        vector(vector&& other) noexcept 
+            : size_v(other.size_v), elem(other.elem), space(other.space) {
+            other.size_v = 0;
+            other.elem = nullptr;
+            other.space = 0;
+        }
 
         /***********************************************************************
          * MOVE ASSIGNMENT
          **********************************************************************/
-        // vector& operator=vector(const vector&&) noexcept;
+        vector& operator=(vector&& other) noexcept {
+            /*******************************************************************
+            * CHECKS IF SELF-ASSIGNMENT
+            *******************************************************************/
+            if (this == &other) { 
+                return *this; 
+            }
+
+            /*******************************************************************
+            * IF NOT SELF-ASSIGNMENT
+            *******************************************************************/
+            delete[] elem;
+            
+            size_v = other.size_v;
+            space = other.space;
+            elem = other.elem;
+
+            other.size_v = 0;
+            other.space = 0;
+            other.elem = nullptr;
+
+           return *this;
+        } // END vector& operator=(const vector&& other) noexcept
 
         /***********************************************************************
-         * DESTURCTOR
+         * DESTRUCTOR
          **********************************************************************/
         ~vector() { delete[] elem; }
         
         /***********************************************************************
-         * ACCESSOR - RETURN REFERNCE - MODIFIABLE
+         * ACCESSOR - RETURN REFERENCE - MODIFIABLE
          **********************************************************************/
         T& operator[] (int n) { return elem[n]; }
 
         /***********************************************************************
-         * ACCESSOR - RETURN REFERNCE
+         * ACCESSOR - RETURN REFERENCE
          **********************************************************************/
         const T& operator[] (int n) const { return elem[n]; }
         
@@ -114,7 +142,7 @@ class vector
         int capacity() const { return space; }
 
         /***********************************************************************
-         * void resize(int newsize) - not done
+         * void resize(int newsize)
          * ----------------------------------------------------------------------
          * This function will be passed a number:
          *      newsize     - size to increase vector by
@@ -138,7 +166,7 @@ class vector
         void resize(int newsize) {
 
             /*******************************************************************
-            * EQUALS EACH OTHER
+            * DOES NOTHING - EQUALS EACH OTHER
             *******************************************************************/
             if (size_v == newsize) {}
 
@@ -151,22 +179,44 @@ class vector
             } // END else if (size_v < newsize)
 
             /*******************************************************************
-            * DEFAULT - SMALLER THAN OG / INVALID INPUT / ERROR
+            * DOES NOTHING - DEFAULT - SMALLER THAN OG / INVALID INPUT / ERROR
             *******************************************************************/
-            else {
-                // WILL DO ERROR LATER
-            }
+            else { }
 
         } // END void resize(int newsize)
 
         /***********************************************************************
          * FUNCTION - ADD ELEMENT
-         **********************************************************************/
-        // void push_back(T val);
-
-         /***********************************************************************
-         * void reserve(int newalloc) - not done
          * ----------------------------------------------------------------------
+         * This function will be passed a value:
+         *      val     - data to add to vector
+         * 
+         * Function adds the data to the back of the vector. If there is no
+         * space then the function will increase the space before adding
+         * ---------------------------------------------------------------------
+         * PRE-CONDITIONS
+         *      size_v  - original size of vector
+         * 
+         * POST-CONDITIONS
+         *      newsize  - new size of vector
+         **********************************************************************/
+        void push_back(const T val) {
+            /*******************************************************************
+             * IF NO SPACE - MAKE ROOM
+             ******************************************************************/
+            if (size_v == space) {
+                reserve(space + 1);
+            }
+            /*******************************************************************
+             * IF SPACE
+             ******************************************************************/
+            elem[size_v] = val;
+            size_v++;
+        } // END void push_back(const T val)
+
+         /**********************************************************************
+         * void reserve(int newalloc)
+         * ---------------------------------------------------------------------
          * This function will be passed a number:
          *      newalloc     - size to increase vector capacity by
          * 
@@ -188,7 +238,7 @@ class vector
          **********************************************************************/
         void reserve(int newalloc) {
             /*******************************************************************
-            * EQUALS EACH OTHER
+            * DOES NOTHING - EQUALS EACH OTHER
             *******************************************************************/
             if (space == newalloc) {}
 
@@ -213,22 +263,82 @@ class vector
             } // END else if (space < newalloc)
 
             /*******************************************************************
-            * DEFAULT - SMALLER THAN OG / INVALID INPUT / ERROR
+            * DOES NOTHING - DEFAULT - SMALLER THAN OG / INVALID INPUT / ERROR
             *******************************************************************/
-            else {
-                // ADDING ERROR STUFF LATER
-            }
+            else { }
 
         } // END void reserve(int newalloc)
 
         
-        // using iterator = T*;
-        // using const_iterator = const T*;
+        using iterator = T*;
+        using const_iterator = const T*;
 
-        // iterator begin(); // points to first element
-        // const_iterator begin() const;
-        // iterator end(); // points to one beyond the last element
-        // const_iterator end() const;
-        // iterator insert(iterator p, const T& v); // insert a new element v before p
-        // iterator erase(iterator p); // remove element pointed to by p
-};
+        /***********************************************************************
+         * POINTS TO FIRST ELEMENT
+         **********************************************************************/
+        iterator begin() { return elem; }
+
+        /***********************************************************************
+         * CONSTANT - POINTS TO FIRST ELEMENT
+         **********************************************************************/
+        const_iterator begin() const { return elem; }
+
+        /***********************************************************************
+         * POINTS TO ONE BEYOND THE LAST ELEMENT
+         **********************************************************************/
+        iterator end() { return elem + size_v; }
+
+        /***********************************************************************
+         * CONSTANT - POINTS TO ONE BEYOND THE LAST ELEMENT
+         **********************************************************************/
+        const_iterator end() const { return elem + size_v; }
+
+        /***********************************************************************
+         * INSERT NEW ELEMENT (V) BEFORE P
+         **********************************************************************/
+        iterator insert(iterator p, const T& v) {
+            /*******************************************************************
+             * CHECK IF ENOUGH SPACE
+             ******************************************************************/
+            if (size_v == space) {
+                reserve(space + 1);
+            }
+
+            iterator next = end();
+            while (next != p) {
+                *next = *(next - 1);
+                next--;
+            }
+
+            *p = v;
+            size_v++;
+
+            return p;
+        } // END iterator insert(iterator p, const T& v)
+
+        /***********************************************************************
+         * REMOVE ELEMENT POINTED TO BY P
+         **********************************************************************/
+        iterator erase(iterator p) {
+            /*******************************************************************
+             * IF P AT THE END
+             ******************************************************************/
+            if (p == end()) {
+                return p;
+            }
+
+            iterator next = p + 1;
+            while (next != end()) {
+                *p = *next;
+                p++;
+                next++;
+            }
+
+            p--;
+            p->~T();
+            size_v--;
+
+            return p;
+        } // END iterator erase(iterator p)
+        
+}; // END class vector

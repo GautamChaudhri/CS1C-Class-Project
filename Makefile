@@ -7,7 +7,7 @@ all: main
 main: $(OBJS) vector.h
 	$(CC) $(FLAGS) -o main $(OBJS)
 
-main.o: main.cpp
+main.o: main.cpp vector.h
 	$(CC) $(FLAGS) -c main.cpp -o main.o
 
 run:
