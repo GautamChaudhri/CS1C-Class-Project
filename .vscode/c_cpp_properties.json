@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "webservice/crow/include/",
+                "webservice/asio/asio/include/",
+                "/usr/include/qt6",
+                "/usr/include/qt6/QtCore",
+                "/usr/include/qt6/QtNetwork"
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}
