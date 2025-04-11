@@ -12,10 +12,7 @@ public:
          QString textString,
          Qt::GlobalColor   textColor,
          Qt::AlignmentFlag textAlignment,
-         int    textPointSize,
-         string textFontFamily,
-         QFont::Style  textFontStyle,
-         QFont::Weight textFontWeight,
+         QFont font,
          int           length,
          int           width);
 
@@ -30,11 +27,8 @@ private:
 
     QString       textString;
     GlobalColor   textColor;
+    QFont         font;
     AlignmentFlag textAlignment;
-    int           textPointSize;
-    string        textFontFamily;
-    QFont::Style  textFontStyle;
-    QFont::Weight textFontWeight;
 
     // Disable Copy Operations
     Text(Text& Text) = delete;

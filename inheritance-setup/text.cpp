@@ -10,29 +10,23 @@ Text::Text(int    shapeId,
            QString textString,
            Qt::GlobalColor   textColor,
            Qt::AlignmentFlag textAlignment,
-           int    textPointSize,
-           string textFontFamily,
-           QFont::Style  textFontStyle,
-           QFont::Weight textFontWeight,
+           QFont             font,
            int           length,
            int           width)
         : Shape(shapeId, shapeType, coords, QPen(), QBrush()),
             textString{textString},
             textColor{textColor},
             textAlignment{textAlignment},
-            textPointSize{textPointSize},
-            textFontFamily{textFontFamily},
-            textFontStyle{textFontStyle},
-            textFontWeight{textFontWeight},
+            font{font},
             length{length},
             width{width}
 {}
 
 void Text::Draw()
-{
-    getPainter().setPen(getPen());
-    getPainter().setBrush(getBrush());
-    getPainter().drawText(getX(),getY(), textString);
+{  
+    getPainter().setPen(textColor);
+    getPainter().setFont(font);
+    getPainter().drawText(QRect(getX(),getY(),length,width),textAlignment, textString);
     getPainter().restore();
 }
 

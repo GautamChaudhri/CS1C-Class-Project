@@ -10,7 +10,9 @@ public:
              string shapeType,
              QPoint coords,
              QPen   pen,
-             QBrush brush);
+             QBrush brush,
+             QPoint *points,
+             int    pointCount);
 
     void Draw() override;
 
@@ -19,8 +21,8 @@ public:
 
 
 private:
-    std::vector < std::vector<int> > points; // temporary
-    int pointCount; // todo: DO SOMETHING ABOUT THIS !!1!!11!!!1
+    QPoint * points; // pointer that will point to an array of QPoints
+    int pointCount;
 
     // Disable Copy Operations
     Polygon(Polygon& Polygon) = delete;

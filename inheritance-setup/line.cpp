@@ -23,7 +23,6 @@ Line::Line(int    shapeId,
 void Line::Draw()
 {
     getPainter().setPen(getPen());
-    getPainter().setBrush(getBrush());
     getPainter().drawLine(startPoint,endPoint);
     getPainter().restore();
 }

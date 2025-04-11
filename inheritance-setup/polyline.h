@@ -7,19 +7,21 @@ class Polyline : public Shape
 {
 public:
     Polyline(int    shapeId,
-                 string shapeType,
-                 QPoint coords,
-                 QPen   pen,
-                 QBrush brush,
-             std::vector<int>  points);
+             string shapeType,
+             QPoint coords,
+             QPen   pen,
+             QBrush brush,
+             QPoint *points,
+             int    pointCount);
 
     void Draw() override;
 
     double Perimeter() const override;
 
 private:
-    std::vector < std::vector<int> > points;
+    QPoint * points; // pointer that will point to an array of QPoints
     int pointCount;
+
     // Disable Copy Operations
     Polyline(Polyline& Polyline) = delete;
 };
