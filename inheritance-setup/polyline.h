@@ -14,6 +14,8 @@ public:
              QPoint *points,
              int    pointCount);
 
+    ~Polyline();
+
     void Draw() override;
 
     double Perimeter() const override;

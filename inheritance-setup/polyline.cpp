@@ -19,6 +19,8 @@ Polyline::Polyline(int    shapeId,
                     pointCount{pointCount}
 {}
 
+Polyline::~Polyline() { delete points; }
+
 void Polyline::Draw()
 {
     getPainter().setPen(getPen());

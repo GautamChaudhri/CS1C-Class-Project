@@ -20,6 +20,8 @@ Polygon::Polygon(int    shapeId,
                 pointCount{pointCount}
 {}
 
+Polygon::~Polygon() { delete points;}
+
 void Polygon::Draw()
 {
     getPainter().setPen(getPen());
