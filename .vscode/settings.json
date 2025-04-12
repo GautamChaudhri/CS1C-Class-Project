@@ -84,6 +84,7 @@
         "filesystem": "cpp",
         "*.ipp": "cpp",
         "strstream": "cpp",
-        "stdfloat": "cpp"
+        "stdfloat": "cpp",
+        "xstring": "cpp"
     }
 }
