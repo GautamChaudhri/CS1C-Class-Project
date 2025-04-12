@@ -38,7 +38,7 @@ double Polygon::Perimeter() const
 {
     double perimeter;
 
-    perimeter = sqrt(pow((pointsList[0].x() - pointsList[1].x()), 2) + pow((pointsList[0].y() - pointsList[1].y()), 2) * pointsList);
+    perimeter = sqrt(pow((pointsList[0].x() - pointsList[1].x()), 2) + pow((pointsList[0].y() - pointsList[1].y()), 2) * pointsList.size());
 
     return perimeter;
 }
