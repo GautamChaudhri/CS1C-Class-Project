@@ -2,8 +2,8 @@
 
 #Build files, binaries, and general clutter
 *.o
-webservice/webservice
-qt-backend/MyApp
+src/webservice/webservice
+src/backend/MyApp
 *.user*
 build/
 Desktop_*

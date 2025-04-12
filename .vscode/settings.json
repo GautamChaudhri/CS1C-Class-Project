@@ -85,6 +85,9 @@
         "*.ipp": "cpp",
         "strstream": "cpp",
         "stdfloat": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "xmemory": "cpp",
+        "xtr1common": "cpp",
+        "xutility": "cpp"
     }
 }

@@ -35,17 +35,17 @@ WORKDIR /app
 COPY . /app
 
 # Clone missing directories if needed
-RUN if [ ! -d webservice/crow ] || [ -z "$(ls -A webservice/crow)" ]; then \
+RUN if [ ! -d src/webservice/crow ] || [ -z "$(ls -A src/webservice/crow)" ]; then \
       echo "Cloning crow repository..."; \
-      git clone --recursive https://github.com/crowcpp/crow.git webservice/crow; \
+      git clone --recursive https://github.com/crowcpp/crow.git src/webservice/crow; \
     else \
-      echo "webservice/crow is not empty, skipping clone"; \
+      echo "src/webservice/crow is not empty, skipping clone"; \
     fi && \
-    if [ ! -d webservice/asio ] || [ -z "$(ls -A webservice/asio)" ]; then \
+    if [ ! -d src/webservice/asio ] || [ -z "$(ls -A src/webservice/asio)" ]; then \
       echo "Cloning asio repository..."; \
-      git clone --recursive https://github.com/chriskohlhoff/asio.git webservice/asio; \
+      git clone --recursive https://github.com/chriskohlhoff/asio.git src/webservice/asio; \
     else \
-      echo "webservice/asio is not empty, skipping clone"; \
+      echo "src/webservice/asio is not empty, skipping clone"; \
     fi
 
 # Install Oh My Zsh (non-interactive)

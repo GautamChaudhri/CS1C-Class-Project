@@ -4,11 +4,14 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "webservice/crow/include/",
-                "webservice/asio/asio/include/",
+                "src/webservice/crow/include/",
+                "src/webservice/asio/asio/include/",
                 "/usr/include/qt6",
                 "/usr/include/qt6/QtCore",
-                "/usr/include/qt6/QtNetwork"
+                "/usr/include/qt6/QtNetwork",
+                "/usr/include/qt6/QtWidgets",
+                "/usr/include/qt6/QtGui",
+                "/usr/include/qt6/QtPrintSupport"
             ],
             "defines": [],
             "cStandard": "c17",

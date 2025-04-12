@@ -4,11 +4,11 @@
  *
  * @details This web service provides the following endpoints:
  *            - GET "/"             : A test endpoint that returns a greeting.
- *            - POST /shapes        : Accepts JSON data to update the shapes file (../database/shapes.json).
- *            - GET /shapes         : Returns the JSON-formatted shapes data from ../database/shapes.json.
+ *            - POST /shapes        : Accepts JSON data to update the shapes file (../../database/shapes.json).
+ *            - GET /shapes         : Returns the JSON-formatted shapes data from ../../database/shapes.json.
  *            - DELETE /shape       : Deletes a shape (identified by ShapeId) from the shapes file.
- *            - POST /render_area   : Accepts JSON data to update the render area file (../database/render_area.json).
- *            - GET /render_area    : Returns the JSON-formatted render area data from ../database/render_area.json.
+ *            - POST /render_area   : Accepts JSON data to update the render area file (../../database/render_area.json).
+ *            - GET /render_area    : Returns the JSON-formatted render area data from ../../database/render_area.json.
  *
  * @note Uses the Crow framework for handling HTTP requests. Make sure the database directory exists or is created.
  */
@@ -39,13 +39,13 @@
       * @brief Updates shapes.json with new shapes.
       *
       * @details Accepts a POST request with JSON data in the body and writes the contents
-      *          to the file "../database/shapes.json". If the file cannot be opened, a 500 response is returned.
+      *          to the file "../../database/shapes.json". If the file cannot be opened, a 500 response is returned.
       */
      CROW_ROUTE(app, "/shapes").methods(crow::HTTPMethod::Post)
      ([](const crow::request& req){
-         std::filesystem::create_directory("../database");
+         std::filesystem::create_directory("../../database");
  
-         std::ofstream outfile("../database/shapes.json", std::ios::binary);
+         std::ofstream outfile("../../database/shapes.json", std::ios::binary);
          if (!outfile)
          {
              return crow::response(500, "Error saving file");
@@ -60,13 +60,13 @@
      /**
       * @brief Retrieves shapes data.
       *
-      * @details Reads the JSON data from "../database/shapes.json", parses it using Crow's JSON parser, and 
+      * @details Reads the JSON data from "../../database/shapes.json", parses it using Crow's JSON parser, and 
       *          returns the data with the Content-Type header set to "application/json".
       */
      CROW_ROUTE(app, "/shapes").methods(crow::HTTPMethod::Get)
      ([](){
          try {
-             auto shapes = get_json_file("../database/shapes.json");
+             auto shapes = get_json_file("../../database/shapes.json");
              crow::json::wvalue w = shapes;
  
              crow::response resp;
@@ -84,7 +84,7 @@
       * @brief Deletes a shape.
       *
       * @details Parses a DELETE request that provides a JSON body with a "ShapeId" key. The function removes the shape
-      *          with the matching ShapeId from "../database/shapes.json" and writes the updated list back to the file.
+      *          with the matching ShapeId from "../../database/shapes.json" and writes the updated list back to the file.
       *          Returns a 404 response if the ShapeId is not found.
       */
      CROW_ROUTE(app, "/shape").methods(crow::HTTPMethod::Delete)
@@ -97,7 +97,7 @@
              int targetID = deleteTarget["ShapeId"].i();
  
              // Parse existing shapes to find targetID
-             auto allShapes = get_json_file("../database/shapes.json");
+             auto allShapes = get_json_file("../../database/shapes.json");
              crow::json::wvalue newShapesList;
              // Initialize as JSON object with a "shapes" array
              newShapesList["shapes"] = crow::json::wvalue::list();
@@ -116,7 +116,7 @@
                  return crow::response(404, "ShapeId not found in database");
              else {
                  // Overwrite shapes.json with new shapes which has the target shape missing
-                 std::ofstream shapeFile("../database/shapes.json");
+                 std::ofstream shapeFile("../../database/shapes.json");
                  shapeFile << newShapesList["shapes"].dump(4);
                  shapeFile.close();
                  return crow::response(200, "Shape deleted successfully");
@@ -130,14 +130,14 @@
      /**
       * @brief Updates the render area data.
       *
-      * @details Accepts a POST request with JSON data and writes it to the file "../database/render_area.json".
+      * @details Accepts a POST request with JSON data and writes it to the file "../../database/render_area.json".
       *          Returns a 500 response if the file cannot be opened.
       */
      CROW_ROUTE(app, "/render_area").methods(crow::HTTPMethod::Post)
      ([](const crow::request& req){
-         std::filesystem::create_directory("../database");
+         std::filesystem::create_directory("../../database");
  
-         std::ofstream outfile("../database/render_area.json", std::ios::binary);
+         std::ofstream outfile("../../database/render_area.json", std::ios::binary);
          if (!outfile)
          {
              return crow::response(500, "Error saving file");
@@ -152,13 +152,13 @@
      /**
       * @brief Retrieves render area data.
       *
-      * @details Reads JSON data from "../database/render_area.json", parses it using Crow's JSON parser,
+      * @details Reads JSON data from "../../database/render_area.json", parses it using Crow's JSON parser,
       *          and returns the data with the Content-Type header set to "application/json".
       */
      CROW_ROUTE(app, "/render_area").methods(crow::HTTPMethod::Get)
      ([](){
          try {
-             auto shapes = get_json_file("../database/render_area.json");
+             auto shapes = get_json_file("../../database/render_area.json");
              crow::json::wvalue w = shapes;
  
              crow::response resp;
