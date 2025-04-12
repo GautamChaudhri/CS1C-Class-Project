@@ -19,15 +19,15 @@ Polyline::Polyline(int    shapeId,
 
 Polyline::~Polyline() {}
 
-void Polyline::Draw(RenderArea* renderArea)
+void Polyline::Draw(QWidget* renderArea)
 {
-    painter.begin(renderArea);
+    getPainter().begin(renderArea);
 
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawPolyline(pointsList);
+    getPainter().setPen(getPen());
+    getPainter().setBrush(getBrush());
+    getPainter().drawPolygon(pointsList);
 
-    painter.end();
+    getPainter().end();
 }
 
 double Polyline::Perimeter() const

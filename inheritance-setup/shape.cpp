@@ -22,8 +22,6 @@ void Shape::Move(int x, int y)
 {
     setX(x);
     setY(y);
-
-    // qpainter update();
 }
 
 /**************** ACCESSOR FUNCTIONS ****************/

@@ -16,7 +16,7 @@ public:
          int           length,
          int           width);
 
-    void Draw(RenderArea* renderArea) override;
+    void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;
     double Area()      const override;
@@ -31,7 +31,7 @@ private:
     AlignmentFlag textAlignment;
 
     // Disable Copy Operations
-    Text(Text& Text) = delete;
+    //Text(Text& Text) = delete;
 };
 
 #endif // TEXT_H

@@ -13,7 +13,7 @@ public:
            QBrush brush,
            int length);
 
-    void Draw(RenderArea* renderArea) override;
+    void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;
     double Area()      const override;
@@ -22,7 +22,7 @@ private:
     int length;
 
     // Disable Copy Operations
-    Square(Square& Square) = delete;
+    //Square(Square& Square) = delete;
 };
 
 #endif // SQUARE_H

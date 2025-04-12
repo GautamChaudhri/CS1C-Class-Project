@@ -16,7 +16,7 @@ Rectangle::Rectangle(int    shapeId,
                     width{width}
 {}
 
-void Rectangle::Draw(RenderArea* renderArea)
+void Rectangle::Draw(QWidget* renderArea)
 {
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());

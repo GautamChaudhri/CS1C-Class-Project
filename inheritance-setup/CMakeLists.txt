@@ -38,6 +38,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         rectangle.h rectangle.cpp
         rectangle.h
         renderarea.cpp
+        vector.h
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET inheritance-setup APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

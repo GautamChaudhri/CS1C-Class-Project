@@ -22,7 +22,7 @@ Text::Text(int    shapeId,
             width{width}
 {}
 
-void Text::Draw(RenderArea* renderArea)
+void Text::Draw(QWidget* renderArea)
 {  
     getPainter().setPen(textColor);
     getPainter().setFont(font);

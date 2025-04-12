@@ -2,7 +2,6 @@
 #define POLYLINE_H
 
 #include "shape.h"
-#include "renderarea.h"
 
 class Polyline : public Shape
 {
@@ -16,7 +15,7 @@ public:
 
     ~Polyline();
 
-    void Draw(RenderArea* renderArea) override;
+    void Draw(QWidget* renderArea) override;
 
     QPolygon getPointsList() { return pointsList; }
 
@@ -27,7 +26,7 @@ private:
     QPolygon pointsList;
 
     // Disable Copy Operations
-    Polyline(Polyline& Polyline) = delete;
+    //Polyline(Polyline& Polyline) = delete;
 };
 
 #endif // POLYLINE_H

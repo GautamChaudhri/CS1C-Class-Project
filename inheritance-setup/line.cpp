@@ -20,7 +20,7 @@ Line::Line(int    shapeId,
          endPoint{endPoint}
 {}
 
-void Line::Draw(RenderArea* renderArea)
+void Line::Draw(QWidget* renderArea)
 {
     getPainter().setPen(getPen());
     getPainter().drawLine(startPoint,endPoint);

@@ -18,7 +18,7 @@ public:
           QPoint startPoint,
          QPoint endPoint);
 
-    void Draw(RenderArea* renderArea) override;
+    void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;
 
@@ -27,7 +27,7 @@ private:
     QPoint endPoint;
 
     // Disable Copy Operations
-    Line(Line& Line) = delete;
+    //Line(Line& Line) = delete;
 };
 
 #endif // LINE_H

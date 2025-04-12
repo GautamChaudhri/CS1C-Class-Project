@@ -18,7 +18,7 @@ Circle::Circle(int    shapeId,
                r{r}
 {}
 
-void Circle::Draw(RenderArea* renderArea)
+void Circle::Draw(QWidget* renderArea)
 {
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());

@@ -20,7 +20,7 @@ Ellipse::Ellipse(int    shapeId,
                  b{b}
 {}
 
-void Ellipse::Draw(RenderArea* renderArea)
+void Ellipse::Draw(QWidget* renderArea)
 {
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());

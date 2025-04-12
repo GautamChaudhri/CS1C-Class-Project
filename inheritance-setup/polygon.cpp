@@ -22,15 +22,15 @@ Polygon::Polygon(int    shapeId,
 
 Polygon::~Polygon() {}
 
-void Polygon::Draw(RenderArea* renderArea)
+void Polygon::Draw(QWidget* renderArea)
 {
-    painter.begin(renderArea);
+    getPainter().begin(renderArea);
 
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawPolygon(pointsList);
+    getPainter().setPen(getPen());
+    getPainter().setBrush(getBrush());
+    getPainter().drawPolygon(pointsList);
 
-    painter.end();
+    getPainter().end();
 }
 
 

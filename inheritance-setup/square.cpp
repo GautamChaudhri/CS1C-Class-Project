@@ -14,12 +14,15 @@ Square::Square(int    shapeId,
                length{length}
 {}
 
-void Square::Draw(RenderArea* renderArea)
+void Square::Draw(QWidget* renderArea)
 {
+    getPainter().begin(renderArea);
+
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
     getPainter().drawRect(getX(),getY(), length, length);
-    getPainter().restore();
+
+    getPainter().end();
 }
 
 double Square::Perimeter() const { return length * 4; }

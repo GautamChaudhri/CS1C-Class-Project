@@ -12,7 +12,7 @@
 #include <QList>
 #include <QPolygon>
 
-#include "renderarea.h"
+//#include "renderarea.h"
 
 using std::string;
 
@@ -72,7 +72,7 @@ public:
     virtual ~Shape();
 
     // Need to complete Draw !!
-    virtual void Draw(RenderArea* renderArea) = 0;
+    virtual void Draw(QWidget* renderArea) = 0;
     virtual void Move(int x, int y);
 
     /**************** ACCESSOR FUNCTIONS ****************/
@@ -84,6 +84,7 @@ public:
     int getY() const;
 
     QPainter& getPainter() { return painter;} // for some reason this doesn't like being in shape.cpp
+    //void setPainter(QPainter* activePainter) { painter = activePainter; }
 
     int          getPenWidth()     const;
     PenStyle     getPenStyle()     const;
@@ -124,7 +125,7 @@ private:
     QPoint   coords;
 
     // Disable Copy Operations
-    Shape(Shape& shape) = delete;
+    //Shape(Shape& shape) = delete;
 };
 
 #endif // SHAPE_H

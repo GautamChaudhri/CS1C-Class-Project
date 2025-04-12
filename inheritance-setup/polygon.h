@@ -15,7 +15,7 @@ public:
 
     ~Polygon();
 
-    void Draw(RenderArea* renderArea) override;
+    void Draw(QWidget* renderArea) override;
 
     QPolygon getPointsList() { return pointsList; }
 
@@ -28,6 +28,6 @@ private:
     QPolygon pointsList;
 
     // Disable Copy Operations
-    Polygon(Polygon& Polygon) = delete;
+    //Polygon(Polygon& Polygon) = delete;
 };
 #endif // POLYGON_H
