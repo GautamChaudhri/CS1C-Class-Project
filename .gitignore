@@ -1,9 +1,13 @@
 #Global .gitignore
 
-#Object files and Binaries
+#Build files, binaries, and general clutter
 *.o
 webservice/webservice
 qt-backend/MyApp
+*.user*
+build/
+Desktop_*
+Qt_*
 
 #MacOS "droppings"
 .DS_Store

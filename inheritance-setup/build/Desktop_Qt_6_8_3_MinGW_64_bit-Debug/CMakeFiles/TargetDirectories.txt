@@ -1,9 +1,0 @@
-C:/Users/minik/Documents/GitHub/CS1C-Class-Project/inheritance-setup/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/inheritance-setup.dir
-C:/Users/minik/Documents/GitHub/CS1C-Class-Project/inheritance-setup/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
-C:/Users/minik/Documents/GitHub/CS1C-Class-Project/inheritance-setup/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/minik/Documents/GitHub/CS1C-Class-Project/inheritance-setup/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
-C:/Users/minik/Documents/GitHub/CS1C-Class-Project/inheritance-setup/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/install.dir
-C:/Users/minik/Documents/GitHub/CS1C-Class-Project/inheritance-setup/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
-C:/Users/minik/Documents/GitHub/CS1C-Class-Project/inheritance-setup/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
-C:/Users/minik/Documents/GitHub/CS1C-Class-Project/inheritance-setup/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/inheritance-setup_autogen_timestamp_deps.dir
-C:/Users/minik/Documents/GitHub/CS1C-Class-Project/inheritance-setup/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/inheritance-setup_autogen.dir
