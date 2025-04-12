@@ -22,9 +22,13 @@ Line::Line(int    shapeId,
 
 void Line::Draw(RenderArea* renderArea)
 {
+    getPainter().begin(renderArea);
+
     getPainter().setPen(getPen());
+    getPainter().setBrush(getBrush());
     getPainter().drawLine(startPoint,endPoint);
-    getPainter().restore();
+
+    getPainter().end();
 }
 
 double Line::Perimeter() const

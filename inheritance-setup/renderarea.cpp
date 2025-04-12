@@ -6,22 +6,6 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent) {}
 
 void RenderArea::paintEvent(QPaintEvent *event)
 {
-    QPainter painter(this);
-
-    painter.setPen(Qt::blue);
-    painter.setBrush(Qt::BDiagPattern);
-    painter.setBrush(Qt::magenta);
-
-    painter.drawRect(600, 400, 100, 150);
-
-    painter.setPen(Qt::red);
-    painter.setBrush(Qt::blue);
-    painter.drawEllipse(150, 700, 100, 50);
-
-    painter.setPen(Qt::green);
-    painter.setPen(QPen(Qt::yellow, 3));
-    painter.drawLine(800, 400, 900, 10);
-
     // TEST
     QPoint coords(5, 6);
     QBrush brush;
@@ -35,7 +19,11 @@ void RenderArea::paintEvent(QPaintEvent *event)
     QPoint point3(600, 750);
 
     QPoint point4(800, 900);
+    QPoint point5(700, 850);
+    QPoint point6(400, 400);
     pointsList2.push_back(point4);
+    pointsList2.push_back(point5);
+    pointsList2.push_back(point6);
 
     pointsList.push_back(point);
     pointsList.push_back(point2);
@@ -45,13 +33,10 @@ void RenderArea::paintEvent(QPaintEvent *event)
     polyline.setBrush(Qt::blue, Qt::SolidPattern);
     polyline.setPen(Qt::blue, 3, Qt::DashDotLine, Qt::SquareCap, Qt::RoundJoin);
 
-    Polygon polygon(2, "polygon", coords, pen, brush, pointsList);
+    Polygon polygon(2, "polygon", coords, pen, brush, pointsList2);
 
     polygon.setBrush(Qt::blue, Qt::SolidPattern);
     polygon.setPen(Qt::blue, 3, Qt::DashDotLine, Qt::SquareCap, Qt::RoundJoin);
-
-    //painter.setPen(polyline.getPen());
-    //painter.drawPolyline(polyline.getPointsList());
 
     polyline.Draw(this);
     polygon.Draw(this);

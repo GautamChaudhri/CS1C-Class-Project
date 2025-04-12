@@ -4,6 +4,7 @@
 #include <QPainter>
 #include <QPen>
 
+
 class RenderArea : public QWidget
 {
 public:

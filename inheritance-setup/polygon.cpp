@@ -24,22 +24,21 @@ Polygon::~Polygon() {}
 
 void Polygon::Draw(RenderArea* renderArea)
 {
-    painter.begin(renderArea);
+    getPainter().begin(renderArea);
 
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawPolygon(pointsList);
+    getPainter().setPen(getPen());
+    getPainter().setBrush(getBrush());
+    getPainter().drawPolygon(pointsList);
 
-    painter.end();
+    getPainter().end();
 }
 
 
 double Polygon::Perimeter() const
 {
     double perimeter;
-    perimeter = 0;
 
-    //perimeter = sqrt(pow((points[0].x() - points[1].x()), 2) + pow((points[0].y() - points[1].y()), 2) * pointCount);
+    perimeter = sqrt(pow((pointsList[0].x() - pointsList[1].x()), 2) + pow((pointsList[0].y() - pointsList[1].y()), 2) * pointsList);
 
     return perimeter;
 }
@@ -48,9 +47,9 @@ double Polygon::Area() const
 {
     double apothem;
 
-    //apothem = (sqrt(pow((points[0].x() - points[1].x()), 2) + pow((points[0].y() - points[1].y()), 2))) / tan(180 / pointCount);
+    apothem = (sqrt(pow((pointsList[0].x() - pointsList[1].x()), 2) + pow((pointsList[0].y() - pointsList[1].y()), 2))) / tan(180 / pointsList.size());
 
-    return 0; //(Perimeter() * apothem) / 2;
+    return (Perimeter() * apothem) / 2;
 }
 
 /****************************************************/

@@ -21,13 +21,13 @@ Polyline::~Polyline() {}
 
 void Polyline::Draw(RenderArea* renderArea)
 {
-    painter.begin(renderArea);
+    getPainter().begin(renderArea);
 
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawPolyline(pointsList);
+    getPainter().setPen(getPen());
+    getPainter().setBrush(getBrush());
+    getPainter().drawPolyline(pointsList);
 
-    painter.end();
+    getPainter().end();
 }
 
 double Polyline::Perimeter() const
@@ -36,7 +36,7 @@ double Polyline::Perimeter() const
     perimeter = 0;
 
     int size;
-    size =  0; //pointCount - 1;
+    size = pointsList.size() - 1;
 
     for(int i = 0; i < size; i ++)
     {

@@ -34,6 +34,8 @@ string Shape::getShapeType() const { return shapeType; }
 int Shape::getX() const { return coords.x(); }
 int Shape::getY() const { return coords.y(); }
 
+QPainter& Shape::getPainter() { return painter; }
+
 int          Shape::getPenWidth()     const { return pen.width(); }
 PenStyle     Shape::getPenStyle()     const { return pen.style(); }
 PenCapStyle  Shape::getPenCapStyle()  const { return pen.capStyle(); }

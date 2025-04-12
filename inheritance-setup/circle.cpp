@@ -20,10 +20,13 @@ Circle::Circle(int    shapeId,
 
 void Circle::Draw(RenderArea* renderArea)
 {
+    getPainter().begin(renderArea);
+
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
     getPainter().drawEllipse(getPoints(), r, r);
-    getPainter().restore();
+
+    getPainter().end();
 }
 
 double Circle::Perimeter() const { return 2 * PI * r; }
