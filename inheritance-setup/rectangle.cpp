@@ -16,7 +16,7 @@ Rectangle::Rectangle(int    shapeId,
                     width{width}
 {}
 
-void Rectangle::Draw()
+void Rectangle::Draw(RenderArea* renderArea)
 {
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());

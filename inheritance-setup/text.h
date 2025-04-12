@@ -16,7 +16,7 @@ public:
          int           length,
          int           width);
 
-    void Draw() override;
+    void Draw(RenderArea* renderArea) override;
 
     double Perimeter() const override;
     double Area()      const override;

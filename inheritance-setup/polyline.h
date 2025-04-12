@@ -2,6 +2,7 @@
 #define POLYLINE_H
 
 #include "shape.h"
+#include "renderarea.h"
 
 class Polyline : public Shape
 {
@@ -11,18 +12,19 @@ public:
              QPoint coords,
              QPen   pen,
              QBrush brush,
-             QPoint *points,
-             int    pointCount);
+             QPolygon pointsList);
 
     ~Polyline();
 
-    void Draw() override;
+    void Draw(RenderArea* renderArea) override;
+
+    QPolygon getPointsList() { return pointsList; }
 
     double Perimeter() const override;
+    double Area() const override {return 0;}
 
 private:
-    QPoint * points; // pointer that will point to an array of QPoints
-    int pointCount;
+    QPolygon pointsList;
 
     // Disable Copy Operations
     Polyline(Polyline& Polyline) = delete;

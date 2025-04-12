@@ -20,7 +20,7 @@ Line::Line(int    shapeId,
          endPoint{endPoint}
 {}
 
-void Line::Draw()
+void Line::Draw(RenderArea* renderArea)
 {
     getPainter().setPen(getPen());
     getPainter().drawLine(startPoint,endPoint);

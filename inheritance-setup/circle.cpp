@@ -18,7 +18,7 @@ Circle::Circle(int    shapeId,
                r{r}
 {}
 
-void Circle::Draw()
+void Circle::Draw(RenderArea* renderArea)
 {
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());

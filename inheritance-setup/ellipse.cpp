@@ -20,7 +20,7 @@ Ellipse::Ellipse(int    shapeId,
                  b{b}
 {}
 
-void Ellipse::Draw()
+void Ellipse::Draw(RenderArea* renderArea)
 {
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());

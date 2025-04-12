@@ -8,24 +8,26 @@ Polyline::Polyline(int    shapeId,
                     QPoint coords,
                     QPen   pen,
                     QBrush brush,
-                    QPoint *points,
-                    int    pointCount)
+                    QPolygon pointsList)
                 : Shape(shapeId,
                         shapeType,
                         coords,
                         pen,
                         brush),
-                    points{points},
-                    pointCount{pointCount}
+                    pointsList{pointsList}
 {}
 
-Polyline::~Polyline() { delete points; }
+Polyline::~Polyline() {}
 
-void Polyline::Draw()
+void Polyline::Draw(RenderArea* renderArea)
 {
-    getPainter().setPen(getPen());
-    getPainter().drawPolyline(points, pointCount);
-    getPainter().restore();
+    painter.begin(renderArea);
+
+    painter.setPen(getPen());
+    painter.setBrush(getBrush());
+    painter.drawPolyline(pointsList);
+
+    painter.end();
 }
 
 double Polyline::Perimeter() const
@@ -34,11 +36,11 @@ double Polyline::Perimeter() const
     perimeter = 0;
 
     int size;
-    size = pointCount - 1;
+    size =  0; //pointCount - 1;
 
     for(int i = 0; i < size; i ++)
     {
-        perimeter += sqrt(pow((points[i].x() - points[i + 1].x()), 2) + pow((points[i].y() - points[i + 1].y()), 2));
+        perimeter += sqrt(pow((pointsList[i].x() - pointsList[i + 1].x()), 2) + pow((pointsList[i].y() - pointsList[i + 1].y()), 2));
     };
 
     return perimeter;

@@ -22,7 +22,7 @@ Text::Text(int    shapeId,
             width{width}
 {}
 
-void Text::Draw()
+void Text::Draw(RenderArea* renderArea)
 {  
     getPainter().setPen(textColor);
     getPainter().setFont(font);

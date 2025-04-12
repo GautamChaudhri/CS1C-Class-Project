@@ -14,7 +14,7 @@ Square::Square(int    shapeId,
                length{length}
 {}
 
-void Square::Draw()
+void Square::Draw(RenderArea* renderArea)
 {
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());

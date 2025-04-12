@@ -7,8 +7,12 @@
 #include <QPen>
 #include <string>
 #include <cmath>
-#include <vector>
 #include <QPainter>
+
+#include <QList>
+#include <QPolygon>
+
+#include "renderarea.h"
 
 using std::string;
 
@@ -68,7 +72,7 @@ public:
     virtual ~Shape();
 
     // Need to complete Draw !!
-    virtual void Draw() = 0;
+    virtual void Draw(RenderArea* renderArea) = 0;
     virtual void Move(int x, int y);
 
     /**************** ACCESSOR FUNCTIONS ****************/

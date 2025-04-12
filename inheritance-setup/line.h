@@ -18,7 +18,7 @@ public:
           QPoint startPoint,
          QPoint endPoint);
 
-    void Draw() override;
+    void Draw(RenderArea* renderArea) override;
 
     double Perimeter() const override;
 

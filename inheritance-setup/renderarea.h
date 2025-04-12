@@ -1,3 +1,5 @@
+#pragma once
+
 #include <QWidget>
 #include <QPainter>
 #include <QPen>

@@ -11,20 +11,21 @@ public:
              QPoint coords,
              QPen   pen,
              QBrush brush,
-             QPoint *points,
-             int    pointCount);
+             QPolygon pointsList);
 
     ~Polygon();
 
-    void Draw() override;
+    void Draw(RenderArea* renderArea) override;
+
+    QPolygon getPointsList() { return pointsList; }
+
 
     double Perimeter() const override;
     double Area()      const override;
 
 
 private:
-    QPoint * points; // pointer that will point to an array of QPoints
-    int pointCount;
+    QPolygon pointsList;
 
     // Disable Copy Operations
     Polygon(Polygon& Polygon) = delete;
