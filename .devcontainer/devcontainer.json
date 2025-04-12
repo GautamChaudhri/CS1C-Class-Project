@@ -1,6 +1,9 @@
 {
   "name": "Fed-Dev",
-  "image": "ghcr.io/gautamchaudhri/fed-dev:latest",
+  "build": {
+    "dockerfile": "Dockerfile", 
+    "context": ".." 
+  },
   "remoteUser": "root",
   "workspaceFolder": "/${localWorkspaceFolderBasename}",
   "mounts": [

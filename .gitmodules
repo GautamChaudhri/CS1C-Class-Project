@@ -1,0 +1,6 @@
+[submodule "crow"]
+	path = webservice/crow
+	url = https://github.com/crowcpp/crow.git
+[submodule "asio"]
+	path = webservice/asio
+	url = https://github.com/chriskohlhoff/asio.git

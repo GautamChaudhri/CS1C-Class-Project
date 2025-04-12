@@ -1,8 +1,9 @@
 #Global .gitignore
 
-#Object files and Executables
+#Object files and Binaries
 *.o
-main
+webservice/webservice
+qt-backend/MyApp
 
 #MacOS "droppings"
 .DS_Store
