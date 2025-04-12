@@ -25,7 +25,7 @@ void Polyline::Draw(QWidget* renderArea)
 
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
-    getPainter().drawPolygon(pointsList);
+    getPainter().drawPolyline(pointsList);
 
     getPainter().end();
 }
@@ -36,7 +36,7 @@ double Polyline::Perimeter() const
     perimeter = 0;
 
     int size;
-    size =  0; //pointCount - 1;
+    size = pointsList.size() - 1;
 
     for(int i = 0; i < size; i ++)
     {

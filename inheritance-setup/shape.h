@@ -83,8 +83,7 @@ public:
     int getX() const;
     int getY() const;
 
-    QPainter& getPainter() { return painter;} // for some reason this doesn't like being in shape.cpp
-    //void setPainter(QPainter* activePainter) { painter = activePainter; }
+    QPainter& getPainter(); // for some reason this doesn't like being in shape.cpp
 
     int          getPenWidth()     const;
     PenStyle     getPenStyle()     const;
@@ -112,9 +111,6 @@ public:
     virtual double Perimeter() const = 0;
     virtual double Area()      const = 0;
 
-protected:
-    QPainter painter;
-
 private:
     int      shapeId;
     int      trackerId;
@@ -123,6 +119,8 @@ private:
     QPen     pen;
     QBrush   brush;
     QPoint   coords;
+
+    QPainter painter;
 
     // Disable Copy Operations
     //Shape(Shape& shape) = delete;
