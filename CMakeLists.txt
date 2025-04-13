@@ -126,7 +126,7 @@ set(BACKEND_SOURCES
 
 # Backend executable
 add_executable(Backend ${BACKEND_SOURCES})
-target_link_libraries(Backend PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Network)
+target_link_libraries(Backend PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Network Qt${QT_VERSION_MAJOR}::Widgets)
 
 set_target_properties(Backend PROPERTIES
     WIN32_EXECUTABLE FALSE
