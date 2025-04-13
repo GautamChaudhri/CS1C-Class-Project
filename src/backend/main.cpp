@@ -16,6 +16,7 @@ std::string GetRenderAreaTestString();
 
 //Global accesss for app object;
 QCoreApplication* pApp = nullptr;
+ApiClient* pClient = nullptr;
 
 //Just for testing right now. First make and run the webservice binary in the webservice folder
 //and then make and run this. The output is sent to the console. You should see a string formatted as json
@@ -28,12 +29,13 @@ int main(int argc, char* argv[])
 
     // Instantiate the ApiClient object
     ApiClient* client = GetConnectedClient();
+    pClient = client;
 
-    //std::string testStr = GetShapeTestString();
-    client->GetShapes();
+    std::string testStr = GetShapeTestString();
+    client->PostShapes(testStr);
     
     //testStr = GetRenderAreaTestString();
-    client->GetRenderArea();
+    //client->GetShapes();
 
     // Start the Qt event loop; this loop will run until app.quit() is called.
     return app.exec();
@@ -60,6 +62,7 @@ void OnBadGetResponseTest(const QString &errorMsg) {
 
 void OnGoodPostResponseTest() {
     std::cout << "Data Received by webservice successfully!\n";
+    pClient->GetShapes();
     //pApp->quit();
 }
 

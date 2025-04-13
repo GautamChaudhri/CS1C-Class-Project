@@ -18,6 +18,7 @@
  *      - begin()
  *      - end() operations
 *******************************************************************************/
+namespace alpha {
 template<class T>
 
 class vector
@@ -342,3 +343,4 @@ class vector
         } // END iterator erase(iterator p)
         
 }; // END class vector
+}; // END namespace alpha
