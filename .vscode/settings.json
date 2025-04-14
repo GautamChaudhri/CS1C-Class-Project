@@ -94,7 +94,7 @@
         "webservice"
     ],
     "github.copilot.enable": {
-        "*": true,
+        "*": false,
         "plaintext": false,
         "markdown": false,
         "scminput": false

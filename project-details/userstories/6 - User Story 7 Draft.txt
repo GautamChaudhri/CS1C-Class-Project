@@ -1,3 +1,4 @@
+IN PROGRESS: Paul
 Baseline story point estimate value of one = 1 hrs of development time for a single developer
 
 #7 As a user, I can view a shape listing report sorted by shape ID at any time.

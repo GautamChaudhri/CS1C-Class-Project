@@ -1,3 +1,4 @@
+DONE
 Baseline story point estimate value of one = 1 hrs of development time for a single developer
 
 Docker User Story

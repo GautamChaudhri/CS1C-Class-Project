@@ -1,4 +1,5 @@
-﻿Baseline story point estimate value of one = 1 hrs of development time for a single developer
+﻿DONE
+Baseline story point estimate value of one = 1 hrs of development time for a single developer
 
 #3 As a user, I can display graphic objects
 

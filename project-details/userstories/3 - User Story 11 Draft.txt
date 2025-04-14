@@ -1,3 +1,4 @@
+IN PROGRESS
 Baseline story point estimate value of one = 1 hrs of development time for a single developer
 
 #11 As a user, I should be able to interact with the application through a user interface

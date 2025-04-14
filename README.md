@@ -7,28 +7,28 @@ Due Date: 05/01/2025
 **Contributors:**
 - Kevin Azarbal  (kazarbal1@saddleback.edu)  
   *Sprint 1 Role:* Development Team  
-  *Sprint 2 Role:* ...  
+  *Sprint 2 Role:* Development Team  
 - Gautam Chaudhri (gchaudhri0@ivc.edu)  
   *Sprint 1 Role:* Scrum Master  
-  *Sprint 2 Role:* ...  
+  *Sprint 2 Role:* Development Team  
 - Aspen Cristobal  (acristobal1@saddleback.edu)  
   *Sprint 1 Role:* Development Team  
-  *Sprint 2 Role:* ...  
+  *Sprint 2 Role:* Development Team  
 - Tim Nguyen (tnguyen910@ivc.edu)  
   *Sprint 1 Role:* Development Team  
-  *Sprint 2 Role:* ...  
+  *Sprint 2 Role:* Scrum Master  
 - Luke Ortiz  (lortiz25@saddleback.edu)  
   *Sprint 1 Role:* Development Team  
-  *Sprint 2 Role:* ...  
+  *Sprint 2 Role:* Development Team  
 - Eric Sears  (esears5@ivc.edu)  
   *Sprint 1 Role:* Development Team  
-  *Sprint 2 Role:* ...  
+  *Sprint 2 Role:* Product Owner  
 - Name  (email)  
   *Sprint 1 Role:* Development Team  
-  *Sprint 2 Role:* ...  
+  *Sprint 2 Role:* Development Team  
 - Paul Tripodi (ptripod0@saddleback.edu)  
   *Sprint 1 Role:* Product Owner  
-  *Sprint 2 Role:* ...  
+  *Sprint 2 Role:* Development Team  
 
 ---
 
