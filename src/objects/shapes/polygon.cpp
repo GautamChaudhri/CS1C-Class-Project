@@ -9,25 +9,28 @@ Polygon::Polygon(int    shapeId,
                  QPoint coords,
                  QPen   pen,
                  QBrush brush,
-                 QPoint *points,
-                 int    pointCount)
+                 QPolygon pointsList)
                : Shape(shapeId,
                        shapeType,
                        coords,
                        pen,
                        brush),
-                points{points},
-                pointCount{pointCount}
-{}
-
-Polygon::~Polygon() { delete points;}
-
-void Polygon::Draw()
+                pointsList{pointsList}
 {
+
+}
+
+Polygon::~Polygon() {}
+
+void Polygon::Draw(QWidget* renderArea)
+{
+    getPainter().begin(renderArea);
+
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
-    getPainter().drawPolygon(points, pointCount);
-    getPainter().restore();
+    getPainter().drawPolygon(pointsList);
+
+    getPainter().end();
 }
 
 
@@ -35,7 +38,7 @@ double Polygon::Perimeter() const
 {
     double perimeter;
 
-    perimeter = sqrt(pow((points[0].x() - points[1].x()), 2) + pow((points[0].y() - points[1].y()), 2) * pointCount);
+    perimeter = sqrt(pow((pointsList[0].x() - pointsList[1].x()), 2) + pow((pointsList[0].y() - pointsList[1].y()), 2) * pointsList.size());
 
     return perimeter;
 }
@@ -44,7 +47,7 @@ double Polygon::Area() const
 {
     double apothem;
 
-    apothem = (sqrt(pow((points[0].x() - points[1].x()), 2) + pow((points[0].y() - points[1].y()), 2))) / tan(180 / pointCount);
+    apothem = (sqrt(pow((pointsList[0].x() - pointsList[1].x()), 2) + pow((pointsList[0].y() - pointsList[1].y()), 2))) / tan(180 / pointsList.size());
 
     return (Perimeter() * apothem) / 2;
 }
