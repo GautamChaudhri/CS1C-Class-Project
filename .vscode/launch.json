@@ -27,7 +27,7 @@
 			"name": "g++ - launch and debug active file",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${fileDirname}/${fileBasenameNoExtension}",
+			"program": "/CS1C-Class-Project/src/backend/MyApp",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",

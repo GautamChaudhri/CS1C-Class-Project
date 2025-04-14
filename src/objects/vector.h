@@ -45,7 +45,7 @@ class vector
         /***********************************************************************
          * COPY CONSTRUCTOR
          **********************************************************************/
-        vector(const vector& other) : size_v(other.size), space(other.space) {
+        vector(const vector& other) : size_v(other.size_v), space(other.space) {
             elem = new T[space];
 
             for (int i = 0; i < size_v; i++) {

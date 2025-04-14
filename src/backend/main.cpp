@@ -3,6 +3,7 @@
 #include <QObject>
 #include "ApiClient.h"
 //#include "ApiHandler.h"   | i'm dumb and made this when we don't need it
+#include "Parser.h"
 
 void OnGoodGetResponseTest(const QString &json);
 void OnBadGetResponseTest(const QString &errorMsg);
@@ -28,14 +29,19 @@ int main(int argc, char* argv[])
     pApp = &app;
 
     // Instantiate the ApiClient object
-    ApiClient* client = GetConnectedClient();
-    pClient = client;
+    //ApiClient* client = GetConnectedClient();
+    //pClient = client;
 
-    std::string testStr = GetShapeTestString();
-    client->PostShapes(testStr);
+    //std::string testStr = GetShapeTestString();
+    //client->PostShapes(testStr);
     
     //testStr = GetRenderAreaTestString();
     //client->GetShapes();
+
+    std::string testStr = GetRenderAreaTestString();
+    Parser parse;
+    alpha::vector<Shape*> shapes = parse.JsonToShapes(testStr);
+    parse.PrintShapeVector(shapes);
 
     // Start the Qt event loop; this loop will run until app.quit() is called.
     return app.exec();
@@ -85,7 +91,7 @@ std::string GetShapeTestString() {
     return R"([
     {
       "ShapeId": 1,
-      "TrackingId": null,
+      "TrackerId": null,
       "ShapeType": "Line",
       "ShapeDimensions": [20, 90, 100, 20],
       "PenColor": "blue",
@@ -93,95 +99,6 @@ std::string GetShapeTestString() {
       "PenStyle": "DashDotLine",
       "PenCapStyle": "FlatCap",
       "PenJoinStyle": "MiterJoin"
-    },
-    {
-      "ShapeId": 2,
-      "TrackingId": null,
-      "ShapeType": "Polyline",
-      "ShapeDimensions": [460, 90, 470, 20, 530, 40, 540, 80],
-      "PenColor": "green",
-      "PenWidth": 6,
-      "PenStyle": "SolidLine",
-      "PenCapStyle": "FlatCap",
-      "PenJoinStyle": "MiterJoin"
-    },
-    {
-      "ShapeId": 3,
-      "TrackingId": null,
-      "ShapeType": "Polygon",
-      "ShapeDimensions": [900, 90, 910, 20, 970, 40, 980, 80],
-      "PenColor": "cyan",
-      "PenWidth": 6,
-      "PenStyle": "DashDotDotLine",
-      "PenCapStyle": "FlatCap",
-      "PenJoinStyle": "MiterJoin",
-      "BrushColor": "yellow",
-      "BrushStyle": "SolidPattern"
-    },
-    {
-      "ShapeId": 4,
-      "TrackingId": null,
-      "ShapeType": "Rectangle",
-      "ShapeDimensions": [20, 200, 170, 100],
-      "PenColor": "blue",
-      "PenWidth": 0,
-      "PenStyle": "DashLine",
-      "PenCapStyle": "RoundCap",
-      "PenJoinStyle": "RoundJoin",
-      "BrushColor": "red",
-      "BrushStyle": "VerPattern"
-    },
-    {
-      "ShapeId": 5,
-      "TrackingId": null,
-      "ShapeType": "Square",
-      "ShapeDimensions": [250, 150, 200],
-      "PenColor": "red",
-      "PenWidth": 0,
-      "PenStyle": "SolidLine",
-      "PenCapStyle": "RoundCap",
-      "PenJoinStyle": "RoundJoin",
-      "BrushColor": "blue",
-      "BrushStyle": "HorPattern"
-    },
-    {
-      "ShapeId": 6,
-      "TrackingId": null,
-      "ShapeType": "Ellipse",
-      "ShapeDimensions": [520, 200, 170, 100],
-      "PenColor": "black",
-      "PenWidth": 12,
-      "PenStyle": "SolidLine",
-      "PenCapStyle": "FlatCap",
-      "PenJoinStyle": "MiterJoin",
-      "BrushColor": "white",
-      "BrushStyle": "NoBrush"
-    },
-    {
-      "ShapeId": 7,
-      "TrackingId": null,
-      "ShapeType": "Circle",
-      "ShapeDimensions": [750, 150, 200],
-      "PenColor": "black",
-      "PenWidth": 12,
-      "PenStyle": "SolidLine",
-      "PenCapStyle": "FlatCap",
-      "PenJoinStyle": "MiterJoin",
-      "BrushColor": "magenta",
-      "BrushStyle": "SolidPattern"
-    },
-    {
-      "ShapeId": 8,
-      "TrackingId": null,
-      "ShapeType": "Text",
-      "ShapeDimensions": [250, 425, 500, 50],
-      "TextString": "Class Project 2 - 2D Graphics Modeler",
-      "TextColor": "blue",
-      "TextAlignment": "AlignCenter",
-      "TextPointSize": 10,
-      "TextFontFamily": "Comic Sans MS",
-      "TextFontStyle": "StyleItalic",
-      "TextFontWeight": "Normal"
     }
   ])";
 }
@@ -190,7 +107,7 @@ std::string GetRenderAreaTestString() {
     return R"([
     {
       "ShapeId": 1,
-      "TrackingId": 1320,
+      "TrackerId": 1320,
       "ShapeType": "Line",
       "ShapeDimensions": [34, 76, 123, 89],
       "PenColor": "red",
@@ -201,7 +118,7 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 2,
-      "TrackingId": 2471,
+      "TrackerId": 2471,
       "ShapeType": "Polyline",
       "ShapeDimensions": [50, 60, 80, 20, 100, 100],
       "PenColor": "green",
@@ -212,7 +129,7 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 3,
-      "TrackingId": 3619,
+      "TrackerId": 3619,
       "ShapeType": "Polygon",
       "ShapeDimensions": [300, 300, 350, 250, 400, 300],
       "PenColor": "blue",
@@ -225,7 +142,7 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 4,
-      "TrackingId": 4383,
+      "TrackerId": 4383,
       "ShapeType": "Rectangle",
       "ShapeDimensions": [400, 400, 150, 100],
       "PenColor": "blue",
@@ -238,10 +155,10 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 5,
-      "TrackingId": 5524,
+      "TrackerId": 5524,
       "ShapeType": "Square",
       "ShapeDimensions": [500, 500, 80],
-      "PenColor": "orange",
+      "PenColor": "black",
       "PenWidth": 1,
       "PenStyle": "SolidLine",
       "PenCapStyle": "RoundCap",
@@ -251,7 +168,7 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 6,
-      "TrackingId": 6852,
+      "TrackerId": 6852,
       "ShapeType": "Ellipse",
       "ShapeDimensions": [200, 200, 100, 60],
       "PenColor": "black",
@@ -264,7 +181,7 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 7,
-      "TrackingId": 7901,
+      "TrackerId": 7901,
       "ShapeType": "Circle",
       "ShapeDimensions": [300, 300, 90],
       "PenColor": "black",
@@ -277,11 +194,11 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 8,
-      "TrackingId": 8675,
+      "TrackerId": 8675,
       "ShapeType": "Text",
       "ShapeDimensions": [100, 600, 300, 40],
       "TextString": "Sample Text A",
-      "TextColor": "purple",
+      "TextColor": "blue",
       "TextAlignment": "AlignCenter",
       "TextPointSize": 14,
       "TextFontFamily": "Arial",
@@ -290,20 +207,20 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 3,
-      "TrackingId": 3214,
+      "TrackerId": 3214,
       "ShapeType": "Polygon",
       "ShapeDimensions": [100, 100, 150, 50, 200, 100],
-      "PenColor": "teal",
+      "PenColor": "yellow",
       "PenWidth": 2,
       "PenStyle": "SolidLine",
       "PenCapStyle": "FlatCap",
       "PenJoinStyle": "MiterJoin",
-      "BrushColor": "pink",
-      "BrushStyle": "Dense4Pattern"
+      "BrushColor": "darkGray",
+      "BrushStyle": "Dense1Pattern"
     },
     {
       "ShapeId": 4,
-      "TrackingId": 4098,
+      "TrackerId": 4098,
       "ShapeType": "Rectangle",
       "ShapeDimensions": [10, 10, 200, 100],
       "PenColor": "gray",
@@ -311,12 +228,12 @@ std::string GetRenderAreaTestString() {
       "PenStyle": "DashLine",
       "PenCapStyle": "RoundCap",
       "PenJoinStyle": "RoundJoin",
-      "BrushColor": "orange",
+      "BrushColor": "black",
       "BrushStyle": "NoBrush"
     },
     {
       "ShapeId": 5,
-      "TrackingId": 5890,
+      "TrackerId": 5890,
       "ShapeType": "Square",
       "ShapeDimensions": [50, 50, 50],
       "PenColor": "red",
@@ -329,7 +246,7 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 6,
-      "TrackingId": 6799,
+      "TrackerId": 6799,
       "ShapeType": "Ellipse",
       "ShapeDimensions": [600, 200, 120, 80],
       "PenColor": "green",
@@ -338,11 +255,11 @@ std::string GetRenderAreaTestString() {
       "PenCapStyle": "FlatCap",
       "PenJoinStyle": "BevelJoin",
       "BrushColor": "white",
-      "BrushStyle": "Dense7Pattern"
+      "BrushStyle": "Dense1Pattern"
     },
     {
       "ShapeId": 1,
-      "TrackingId": 1534,
+      "TrackerId": 1534,
       "ShapeType": "Line",
       "ShapeDimensions": [0, 0, 500, 500],
       "PenColor": "blue",
@@ -353,10 +270,10 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 2,
-      "TrackingId": 2670,
+      "TrackerId": 2670,
       "ShapeType": "Polyline",
       "ShapeDimensions": [20, 30, 40, 50, 60, 70],
-      "PenColor": "navy",
+      "PenColor": "lightGray",
       "PenWidth": 2,
       "PenStyle": "SolidLine",
       "PenCapStyle": "RoundCap",
@@ -364,10 +281,10 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 7,
-      "TrackingId": 7104,
+      "TrackerId": 7104,
       "ShapeType": "Circle",
       "ShapeDimensions": [100, 100, 60],
-      "PenColor": "maroon",
+      "PenColor": "green",
       "PenWidth": 1,
       "PenStyle": "SolidLine",
       "PenCapStyle": "FlatCap",
@@ -377,20 +294,20 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 8,
-      "TrackingId": 8999,
+      "TrackerId": 8999,
       "ShapeType": "Text",
       "ShapeDimensions": [200, 700, 400, 30],
       "TextString": "Test Shape Text",
       "TextColor": "black",
       "TextAlignment": "AlignLeft",
       "TextPointSize": 12,
-      "TextFontFamily": "Courier New",
+      "TextFontFamily": "Courier",
       "TextFontStyle": "StyleItalic",
       "TextFontWeight": "Normal"
     },
     {
       "ShapeId": 6,
-      "TrackingId": 6044,
+      "TrackerId": 6044,
       "ShapeType": "Ellipse",
       "ShapeDimensions": [150, 150, 90, 45],
       "PenColor": "cyan",
@@ -399,11 +316,11 @@ std::string GetRenderAreaTestString() {
       "PenCapStyle": "FlatCap",
       "PenJoinStyle": "MiterJoin",
       "BrushColor": "blue",
-      "BrushStyle": "Dense3Pattern"
+      "BrushStyle": "Dense1Pattern"
     },
     {
       "ShapeId": 3,
-      "TrackingId": 3933,
+      "TrackerId": 3933,
       "ShapeType": "Polygon",
       "ShapeDimensions": [700, 100, 750, 50, 800, 100],
       "PenColor": "black",
@@ -416,20 +333,20 @@ std::string GetRenderAreaTestString() {
     },
     {
       "ShapeId": 4,
-      "TrackingId": 4632,
+      "TrackerId": 4632,
       "ShapeType": "Rectangle",
       "ShapeDimensions": [300, 300, 100, 200],
-      "PenColor": "lime",
+      "PenColor": "white",
       "PenWidth": 3,
       "PenStyle": "SolidLine",
       "PenCapStyle": "RoundCap",
       "PenJoinStyle": "RoundJoin",
-      "BrushColor": "purple",
-      "BrushStyle": "Dense6Pattern"
+      "BrushColor": "blue",
+      "BrushStyle": "Dense1Pattern"
     },
     {
       "ShapeId": 5,
-      "TrackingId": 5012,
+      "TrackerId": 5012,
       "ShapeType": "Square",
       "ShapeDimensions": [100, 100, 120],
       "PenColor": "black",
