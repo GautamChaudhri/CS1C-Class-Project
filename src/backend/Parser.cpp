@@ -392,7 +392,7 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             shape = new Line(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, startPoint, endPoint);
             break;
         }
-        case 2: { // Polyline
+        case 2: { // Polyline   | REFINE DOUBLE LOOPS LATER
             QPoint* points = new QPoint[tempShape.shapeDimensions.size() / 2];
             int pointsIndex = 0;
             for (int i = 0; i < tempShape.shapeDimensions.size(); i += 2) {
@@ -401,10 +401,13 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
                 pointsIndex++;
             }
             tempShape.coords = points[0];
-            shape = new Polyline(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, points, pointsIndex);
+            QPolygon polyList;
+            for (int i = 0; i < pointsIndex; ++i)
+                polyList << points[i];
+            shape = new Polyline(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, polyList);
             break;
         }
-        case 3: { // Polygon
+        case 3: { // Polygon   | REFINE DOUBLE LOOPS LATER
             QPoint* points = new QPoint[tempShape.shapeDimensions.size() / 2];
             int pointsIndex = 0;
             for (int i = 0; i < tempShape.shapeDimensions.size(); i += 2) {
@@ -413,7 +416,10 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
                 pointsIndex++;
             }
             tempShape.coords = points[0];
-            shape = new Polygon(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, points, pointsIndex);
+            QPolygon polyList;
+            for (int i = 0; i < pointsIndex; ++i)
+                polyList << points[i];
+            shape = new Polygon(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, polyList);
             break;
         }
         case 4: { // Rectangle

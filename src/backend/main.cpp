@@ -18,6 +18,7 @@ std::string GetRenderAreaTestString();
 //Global accesss for app object;
 QCoreApplication* pApp = nullptr;
 ApiClient* pClient = nullptr;
+Parser parse;
 
 //Just for testing right now. First make and run the webservice binary in the webservice folder
 //and then make and run this. The output is sent to the console. You should see a string formatted as json
@@ -29,19 +30,18 @@ int main(int argc, char* argv[])
     pApp = &app;
 
     // Instantiate the ApiClient object
-    //ApiClient* client = GetConnectedClient();
-    //pClient = client;
+    ApiClient* client = GetConnectedClient();
+    pClient = client;
 
-    //std::string testStr = GetShapeTestString();
-    //client->PostShapes(testStr);
+    std::string testStr = GetRenderAreaTestString();
+    client->PostShapes(testStr);
     
     //testStr = GetRenderAreaTestString();
     //client->GetShapes();
 
-    std::string testStr = GetRenderAreaTestString();
-    Parser parse;
-    alpha::vector<Shape*> shapes = parse.JsonToShapes(testStr);
-    parse.PrintShapeVector(shapes);
+    //std::string testStr = GetRenderAreaTestString();
+    //alpha::vector<Shape*> shapes = parse.JsonToShapes(testStr);
+    //parse.PrintShapeVector(shapes);
 
     // Start the Qt event loop; this loop will run until app.quit() is called.
     return app.exec();
@@ -57,7 +57,11 @@ int main(int argc, char* argv[])
 */
 
 void OnGoodGetResponseTest(const QString &json) {
-    std::cout << "Received JSON:\n" << json.toStdString() << std::endl << std::endl;
+    std::cout << "Received JSON from webservice!" << std::endl << std::endl;
+    std::string jsonStr = json.toStdString();
+    alpha::vector<Shape*> shapes = parse.JsonToShapes(jsonStr);
+    std::cout << "Print Vector of Shapes*:" << std::endl;
+    parse.PrintShapeVector(shapes);
     //pApp->quit();
 }
 
