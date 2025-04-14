@@ -14,7 +14,7 @@ public:
             int    a,
             int    b);
 
-    void Draw() override;
+    void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;
     double Area()      const override;
@@ -24,7 +24,7 @@ private:
     int b;
 
     // Disable Copy Operations
-    Ellipse(Ellipse& Ellipse) = delete;
+    //Ellipse(Ellipse& Ellipse) = delete;
 };
 
 #endif // ELLIPSE_H
