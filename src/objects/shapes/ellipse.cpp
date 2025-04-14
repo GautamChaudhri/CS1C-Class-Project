@@ -20,12 +20,15 @@ Ellipse::Ellipse(int    shapeId,
                  b{b}
 {}
 
-void Ellipse::Draw()
+void Ellipse::Draw(QWidget* renderArea)
 {
+    getPainter().begin(renderArea);
+
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
     getPainter().drawEllipse(getPoints(), a, b);
-    getPainter().restore();
+
+    getPainter().end();
 }
 
 double Ellipse::Perimeter() const { return 2 * PI * sqrt((pow((2 * a), 2) + pow((2 * b), 2)) / 2); }
