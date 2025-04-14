@@ -71,7 +71,6 @@ public:
 
     virtual ~Shape();
 
-    // Need to complete Draw !!
     virtual void Draw(QWidget* renderArea) = 0;
     virtual void Move(int x, int y);
 
@@ -83,7 +82,7 @@ public:
     int getX() const;
     int getY() const;
 
-    QPainter& getPainter(); // for some reason this doesn't like being in shape.cpp
+    QPainter& getPainter();
 
     int          getPenWidth()     const;
     PenStyle     getPenStyle()     const;
