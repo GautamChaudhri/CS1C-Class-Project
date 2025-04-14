@@ -7,8 +7,12 @@
 #include <QPen>
 #include <string>
 #include <cmath>
-#include <vector>
 #include <QPainter>
+
+#include <QList>
+#include <QPolygon>
+
+//#include "renderarea.h"
 
 using std::string;
 
@@ -68,7 +72,7 @@ public:
     virtual ~Shape();
 
     // Need to complete Draw !!
-    virtual void Draw() = 0;
+    virtual void Draw(QWidget* renderArea) = 0;
     virtual void Move(int x, int y);
 
     /**************** ACCESSOR FUNCTIONS ****************/
@@ -79,7 +83,7 @@ public:
     int getX() const;
     int getY() const;
 
-    QPainter& getPainter() { return painter;} // for some reason this doesn't like being in shape.cpp
+    QPainter& getPainter(); // for some reason this doesn't like being in shape.cpp
 
     int          getPenWidth()     const;
     PenStyle     getPenStyle()     const;
@@ -107,9 +111,6 @@ public:
     virtual double Perimeter() const = 0;
     virtual double Area()      const = 0;
 
-protected:
-    QPainter painter;
-
 private:
     int      shapeId;
     int      trackerId;
@@ -119,8 +120,11 @@ private:
     QBrush   brush;
     QPoint   coords;
 
+    QPainter painter;
+
     // Disable Copy Operations
-    Shape(Shape& shape) = delete;
+    //Shape(Shape& shape) = delete;
 };
 
 #endif // SHAPE_H
+
