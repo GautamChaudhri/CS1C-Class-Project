@@ -18,12 +18,15 @@ Circle::Circle(int    shapeId,
                r{r}
 {}
 
-void Circle::Draw()
+void Circle::Draw(QWidget* renderArea)
 {
+    getPainter().begin(renderArea);
+
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
     getPainter().drawEllipse(getPoints(), r, r);
-    getPainter().restore();
+
+    getPainter().end();
 }
 
 double Circle::Perimeter() const { return 2 * PI * r; }
