@@ -31,26 +31,26 @@ set(PROJECT_srcS
     src/frontend/renderarea.cpp
     src/frontend/renderarea.h
 
-    # Objects / shapes
-    src/objects/shapes/all_shapes.h
-    src/objects/shapes/circle.cpp
-    src/objects/shapes/circle.h
-    src/objects/shapes/ellipse.cpp
-    src/objects/shapes/ellipse.h
-    src/objects/shapes/line.cpp
-    src/objects/shapes/line.h
-    src/objects/shapes/polygon.cpp
-    src/objects/shapes/polygon.h
-    src/objects/shapes/polyline.cpp
-    src/objects/shapes/polyline.h
-    src/objects/shapes/rectangle.cpp
-    src/objects/shapes/rectangle.h
-    src/objects/shapes/shape.cpp
-    src/objects/shapes/shape.h
-    src/objects/shapes/square.cpp
-    src/objects/shapes/square.h
-    src/objects/shapes/text.cpp
-    src/objects/shapes/text.h
+    # Objects / shapes are now in src/objects/
+    src/objects/all_shapes.h
+    src/objects/circle.cpp
+    src/objects/circle.h
+    src/objects/ellipse.cpp
+    src/objects/ellipse.h
+    src/objects/line.cpp
+    src/objects/line.h
+    src/objects/polygon.cpp
+    src/objects/polygon.h
+    src/objects/polyline.cpp
+    src/objects/polyline.h
+    src/objects/rectangle.cpp
+    src/objects/rectangle.h
+    src/objects/shape.cpp
+    src/objects/shape.h
+    src/objects/square.cpp
+    src/objects/square.h
+    src/objects/text.cpp
+    src/objects/text.h
     src/objects/vector.h
 )
 
@@ -99,28 +99,29 @@ set(BACKEND_SOURCES
     src/backend/main.cpp
     src/backend/ApiClient.cpp
     src/backend/ApiClient.h
-    src/objects/Converter.h
+    src/backend/Parser.h
+    src/backend/Parser.cpp
 
-    # Objects / shapes
-    src/objects/shapes/all_shapes.h
-    src/objects/shapes/circle.cpp
-    src/objects/shapes/circle.h
-    src/objects/shapes/ellipse.cpp
-    src/objects/shapes/ellipse.h
-    src/objects/shapes/line.cpp
-    src/objects/shapes/line.h
-    src/objects/shapes/polygon.cpp
-    src/objects/shapes/polygon.h
-    src/objects/shapes/polyline.cpp
-    src/objects/shapes/polyline.h
-    src/objects/shapes/rectangle.cpp
-    src/objects/shapes/rectangle.h
-    src/objects/shapes/shape.cpp
-    src/objects/shapes/shape.h
-    src/objects/shapes/square.cpp
-    src/objects/shapes/square.h
-    src/objects/shapes/text.cpp
-    src/objects/shapes/text.h
+    # Objects / shapes are now in src/objects/
+    src/objects/all_shapes.h
+    src/objects/circle.cpp
+    src/objects/circle.h
+    src/objects/ellipse.cpp
+    src/objects/ellipse.h
+    src/objects/line.cpp
+    src/objects/line.h
+    src/objects/polygon.cpp
+    src/objects/polygon.h
+    src/objects/polyline.cpp
+    src/objects/polyline.h
+    src/objects/rectangle.cpp
+    src/objects/rectangle.h
+    src/objects/shape.cpp
+    src/objects/shape.h
+    src/objects/square.cpp
+    src/objects/square.h
+    src/objects/text.cpp
+    src/objects/text.h
     src/objects/vector.h
 )
 

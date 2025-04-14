@@ -19,6 +19,7 @@ public:
     void Draw() override;
 
     double Perimeter() const override;
+    double Area() const override { return 0; }  // Need to implement this to instantiate Line
 
 private:
     QPoint * points; // pointer that will point to an array of QPoints

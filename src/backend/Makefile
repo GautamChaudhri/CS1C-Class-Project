@@ -3,17 +3,41 @@ CXX = g++
 # Define the moc tool with the full path on your system
 MOC = /usr/lib64/qt6/libexec/moc
 
-# Compiler flags for C++17 and necessary Qt6 include directories
-CXXFLAGS = -std=c++17 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtNetwork
+# Compiler flags for C++17, debug symbols, and necessary Qt6 include directories
+CXXFLAGS = -std=c++17 -g -O0 \
+  -I/usr/include/qt6 \
+  -I/usr/include/qt6/QtCore \
+  -I/usr/include/qt6/QtNetwork \
+  -I/usr/include/qt6/QtWidgets \
+  -I/usr/include/qt6/QtGui
 
-# Linker flags: Link against the Qt6Core and Qt6Network libraries
-LDFLAGS = -lQt6Core -lQt6Network
+# Linker flags: Link against the necessary Qt6 libraries
+LDFLAGS = -lQt6Core -lQt6Network -lQt6Widgets -lQt6Gui
 
-# Source files (main.cpp and ApiClient.cpp)
-SOURCES = main.cpp ApiClient.cpp
+# Source files: main, ApiClient, Parser, and all shape implementations
+SOURCES = main.cpp ApiClient.cpp Parser.cpp \
+    ../objects/shape.cpp \
+    ../objects/line.cpp \
+    ../objects/polyline.cpp \
+    ../objects/polygon.cpp \
+    ../objects/rectangle.cpp \
+    ../objects/square.cpp \
+    ../objects/ellipse.cpp \
+    ../objects/circle.cpp \
+    ../objects/text.cpp
 
-# Object files produced from your sources and the moc-generated file
-OBJECTS = main.o ApiClient.o moc_ApiClient.o  
+# Object files: Convert .cpp file names to .o
+OBJECTS = main.o ApiClient.o moc_ApiClient.o \
+    Parser.o \
+    ../objects/shape.o \
+    ../objects/line.o \
+    ../objects/polyline.o \
+    ../objects/polygon.o \
+    ../objects/rectangle.o \
+    ../objects/square.o \
+    ../objects/ellipse.o \
+    ../objects/circle.o \
+    ../objects/text.o
 
 # Name of the final executable
 TARGET = MyApp
@@ -21,9 +45,9 @@ TARGET = MyApp
 # Default target: Build the final executable
 all: $(TARGET)
 
-# Link object files to produce the final executable
+# Link all object files together to create the target executable
 $(TARGET): $(OBJECTS)
-	$(CXX) -o $(TARGET) main.o ApiClient.o moc_ApiClient.o $(LDFLAGS)
+	$(CXX) -o $(TARGET) $(OBJECTS) $(LDFLAGS)
 
 # Rule to compile main.cpp into main.o
 main.o: main.cpp
@@ -33,26 +57,32 @@ main.o: main.cpp
 ApiClient.o: ApiClient.cpp
 	$(CXX) $(CXXFLAGS) -c ApiClient.cpp -o ApiClient.o
 
+# Rule to compile Parser.cpp into Parser.o
+Parser.o: Parser.cpp Parser.h
+	$(CXX) $(CXXFLAGS) -c Parser.cpp -o Parser.o
+
 # Generate moc_ApiClient.cpp from ApiClient.h
 moc_ApiClient.cpp: ApiClient.h
 	$(MOC) -o moc_ApiClient.cpp ApiClient.h
-
-# Generate moc_ApiHandler.cpp from ApiHandler.h
-#moc_ApiHandler.cpp: ApiHandler.h
-	#$(MOC) -o moc_ApiHandler.cpp ApiHandler.h
 
 # Compile moc_ApiClient.cpp into moc_ApiClient.o
 moc_ApiClient.o: moc_ApiClient.cpp
 	$(CXX) $(CXXFLAGS) -c moc_ApiClient.cpp -o moc_ApiClient.o
 
-# Compile moc_ApiHandler.cpp into moc_ApiHandler.o
-#moc_ApiHandler.o: moc_ApiHandler.cpp
-	#$(CXX) $(CXXFLAGS) -c moc_ApiHandler.cpp -o moc_ApiHandler.o
+# Pattern rule to compile any .cpp file in ../objects/ to its corresponding .o file
+../objects/%.o: ../objects/%.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Rule to compile ApiHandler.cpp into ApiHandler.o
-#ApiHandler.o: ApiHandler.cpp
-	#$(CXX) $(CXXFLAGS) -c ApiHandler.cpp -o ApiHandler.o
-
-# Clean: Remove the executable, object files, and the generated moc files
+# Clean: Remove the executable, object files, and generated moc files
 clean:
-	rm -f $(TARGET) main.o ApiClient.o ApiHandler.o moc_ApiClient.o moc_ApiHandler.o moc_ApiClient.cpp moc_ApiHandler.cpp
+	rm -f $(TARGET) main.o ApiClient.o Parser.o moc_ApiClient.o \
+	    ../objects/shape.o \
+	    ../objects/line.o \
+	    ../objects/polyline.o \
+	    ../objects/polygon.o \
+	    ../objects/rectangle.o \
+	    ../objects/square.o \
+	    ../objects/ellipse.o \
+	    ../objects/circle.o \
+	    ../objects/text.o \
+	    moc_ApiClient.cpp
