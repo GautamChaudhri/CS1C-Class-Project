@@ -14,7 +14,7 @@ public:
               int length,
               int width);
 
-    void Draw() override;
+    void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;
     double Area()      const override;
@@ -24,7 +24,8 @@ private:
     int width;
 
     // Disable Copy Operations
-    Rectangle(Rectangle& Rectangle) = delete;
+    //Rectangle(Rectangle& Rectangle) = delete;
 };
 
 #endif // RECTANGLE_H
+
