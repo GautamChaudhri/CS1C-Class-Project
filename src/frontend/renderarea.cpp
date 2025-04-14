@@ -4,19 +4,19 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent) {}
 
 void RenderArea::paintEvent(QPaintEvent *event)
 {
-    QPainter painter(this);
+    // TEST
+    QPoint coords(500, 500);
+    QBrush brush(Qt::blue);
+    QPen pen(Qt::blue);
 
-    painter.setPen(Qt::blue);
-    painter.setBrush(Qt::BDiagPattern);
-    painter.setBrush(Qt::magenta);
+    std::unique_ptr<Shape> shape = std::make_unique<Square>(1, "Square", coords, pen, brush, 50);
+    addShape(std::move(shape));
 
-    painter.drawRect(600, 400, 100, 150);
+    int vecSize;
+    vecSize = renderShapes.size();
 
-    painter.setPen(Qt::red);
-    painter.setBrush(Qt::blue);
-    painter.drawEllipse(150, 700, 100, 50);
-
-    painter.setPen(Qt::green);
-    painter.setPen(QPen(Qt::yellow, 3));
-    painter.drawLine(800, 400, 900, 10);
+    for(int i = 0; i < vecSize; ++i)
+    {
+        renderShapes[i]->Draw(this);
+    }
 }
