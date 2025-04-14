@@ -16,12 +16,15 @@ Rectangle::Rectangle(int    shapeId,
                     width{width}
 {}
 
-void Rectangle::Draw()
+void Rectangle::Draw(QWidget* renderArea)
 {
+    getPainter().begin(renderArea);
+
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
     getPainter().drawRect(getX(),getY(), length, width);
-    getPainter().restore();
+
+    getPainter().end();
 }
 
 double Rectangle::Perimeter() const { return (length * 2) + (width * 2); }
