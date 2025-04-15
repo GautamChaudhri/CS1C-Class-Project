@@ -15,7 +15,7 @@ ApiClient* GetConnectedClient();
 std::string GetShapeTestString();
 std::string GetRenderAreaTestString();
 
-//Global accesss for app object;
+//Global accesss for app, client, and parser
 QCoreApplication* pApp = nullptr;
 ApiClient* pClient = nullptr;
 Parser parse;
@@ -33,16 +33,10 @@ int main(int argc, char* argv[])
     ApiClient* client = GetConnectedClient();
     pClient = client;
 
+    //Test, post shapes in backend
     std::string testStr = GetRenderAreaTestString();
     client->PostShapes(testStr);
     
-    //testStr = GetRenderAreaTestString();
-    //client->GetShapes();
-
-    //std::string testStr = GetRenderAreaTestString();
-    //alpha::vector<Shape*> shapes = parse.JsonToShapes(testStr);
-    //parse.PrintShapeVector(shapes);
-
     // Start the Qt event loop; this loop will run until app.quit() is called.
     return app.exec();
 }
@@ -57,12 +51,14 @@ int main(int argc, char* argv[])
 */
 
 void OnGoodGetResponseTest(const QString &json) {
+    //Test, on response, parse json into vector
     std::cout << "Received JSON from webservice!" << std::endl << std::endl;
     std::string jsonStr = json.toStdString();
     alpha::vector<Shape*> shapes = parse.JsonToShapes(jsonStr);
+    //Test, print primitive data types of the newly created vector
     std::cout << "Print Vector of Shapes*:" << std::endl;
     parse.PrintShapeVector(shapes);
-    //pApp->quit();
+    pApp->quit();
 }
 
 void OnBadGetResponseTest(const QString &errorMsg) {
@@ -71,6 +67,7 @@ void OnBadGetResponseTest(const QString &errorMsg) {
 }
 
 void OnGoodPostResponseTest() {
+    //Test, on response, run the Get endpoint to get data back
     std::cout << "Data Received by webservice successfully!\n";
     pClient->GetShapes();
     //pApp->quit();

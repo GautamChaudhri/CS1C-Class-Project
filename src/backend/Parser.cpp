@@ -5,6 +5,7 @@
 void Parser::PrintShapeVector(const alpha::vector<Shape*> &shapes) {
     for (const auto& shape : shapes) {
         std::cout << "Shape ID: " << shape->getShapeId() 
+                  << ", TrackerId: " << shape->getTrackerId()
                   << ", Shape Type: " << shape->getShapeType() << std::endl;
     }
 }
@@ -163,7 +164,7 @@ void Parser::UpdateMorphicShape(const std::string &key, const std::string &value
         tempShape.shapeType = value;
     }
     else if (key == "ShapeDimensions") {
-        alpha::vector<int> dimensions = StringToVector(value);
+        tempShape.shapeDimensions = StringToVector(value);
     }
     else if (key == "PenWidth") {
         int width = std::stoi(value);
@@ -390,36 +391,33 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             QPoint endPoint(tempShape.shapeDimensions[2], tempShape.shapeDimensions[3]);
             tempShape.coords = startPoint;
             shape = new Line(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, startPoint, endPoint);
+            shape->setTrackerId(tempShape.trackerId);
             break;
         }
         case 2: { // Polyline   | REFINE DOUBLE LOOPS LATER
-            QPoint* points = new QPoint[tempShape.shapeDimensions.size() / 2];
-            int pointsIndex = 0;
+            QPolygon pointsList;
+            QPoint tempPoint;
             for (int i = 0; i < tempShape.shapeDimensions.size(); i += 2) {
-                points[pointsIndex].setX(tempShape.shapeDimensions[i]);
-                points[pointsIndex].setY(tempShape.shapeDimensions[i + 1]);
-                pointsIndex++;
+                tempPoint.setX(tempShape.shapeDimensions[i]);
+                tempPoint.setY(tempShape.shapeDimensions[i + 1]);
+                pointsList << tempPoint;
             }
-            tempShape.coords = points[0];
-            QPolygon polyList;
-            for (int i = 0; i < pointsIndex; ++i)
-                polyList << points[i];
-            shape = new Polyline(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, polyList);
+            tempShape.coords = pointsList[0];
+            shape = new Polyline(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, pointsList);
+            shape->setTrackerId(tempShape.trackerId);
             break;
         }
         case 3: { // Polygon   | REFINE DOUBLE LOOPS LATER
-            QPoint* points = new QPoint[tempShape.shapeDimensions.size() / 2];
-            int pointsIndex = 0;
+            QPolygon pointsList;
+            QPoint tempPoint;
             for (int i = 0; i < tempShape.shapeDimensions.size(); i += 2) {
-                points[pointsIndex].setX(tempShape.shapeDimensions[i]);
-                points[pointsIndex].setY(tempShape.shapeDimensions[i + 1]);
-                pointsIndex++;
+                tempPoint.setX(tempShape.shapeDimensions[i]);
+                tempPoint.setY(tempShape.shapeDimensions[i + 1]);
+                pointsList << tempPoint;
             }
-            tempShape.coords = points[0];
-            QPolygon polyList;
-            for (int i = 0; i < pointsIndex; ++i)
-                polyList << points[i];
-            shape = new Polygon(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, polyList);
+            tempShape.coords = pointsList[0];
+            shape = new Polygon(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, pointsList);
+            shape->setTrackerId(tempShape.trackerId);
             break;
         }
         case 4: { // Rectangle
@@ -427,12 +425,14 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             int length = tempShape.shapeDimensions[2];
             int width = tempShape.shapeDimensions[3];
             shape = new Rectangle(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, length, width);
+            shape->setTrackerId(tempShape.trackerId);
             break;
         }
         case 5: { // Square
             tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
             int length = tempShape.shapeDimensions[2];
             shape = new Square(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, length);
+            shape->setTrackerId(tempShape.trackerId);
             break;
         }
         case 6: { // Ellipse
@@ -440,12 +440,14 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             int a = tempShape.shapeDimensions[2];
             int b = tempShape.shapeDimensions[3];
             shape = new Ellipse(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, a, b);
+            shape->setTrackerId(tempShape.trackerId);
             break;
         }
         case 7: { // Circle
             tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
             int r = tempShape.shapeDimensions[2];
             shape = new Circle(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, r);
+            shape->setTrackerId(tempShape.trackerId);
             break;
         }
         case 8: { // Text
@@ -453,6 +455,7 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             int length = tempShape.shapeDimensions[2];
             int width = tempShape.shapeDimensions[3];
             shape = new Text(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.textString, tempShape.textColor, tempShape.textAlignment, tempShape.font, length, width);
+            shape->setTrackerId(tempShape.trackerId);
             break;
         }
         default: {
