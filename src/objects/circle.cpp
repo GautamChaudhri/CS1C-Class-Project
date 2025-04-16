@@ -29,6 +29,8 @@ void Circle::Draw(QWidget* renderArea)
     getPainter().end();
 }
 
+int Circle::getR() const { return r; }
+
 double Circle::Perimeter() const { return 2 * PI * r; }
 double Circle::Area()      const { return PI * pow(r, 2); }
 

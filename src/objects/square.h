@@ -22,9 +22,6 @@ public:
 
 private:
     int length;
-
-    // Disable Copy Operations
-    //Square(Square& Square) = delete;
 };
 
 #endif // SQUARE_H

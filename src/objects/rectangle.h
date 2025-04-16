@@ -26,9 +26,6 @@ public:
 private:
     int length;
     int width;
-
-    // Disable Copy Operations
-    //Rectangle(Rectangle& Rectangle) = delete;
 };
 
 #endif // RECTANGLE_H

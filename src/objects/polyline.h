@@ -24,9 +24,6 @@ public:
 
 private:
     QPolygon pointsList;
-
-    // Disable Copy Operations
-    //Polyline(Polyline& Polyline) = delete;
 };
 
 #endif // POLYLINE_H
