@@ -184,4 +184,4 @@ add_custom_target(Database ALL SOURCES ${DATABASE})
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Frontend)
     qt_finalize_executable(Backend)
-endif()git re
+endif()
