@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <cctype>
-#include "../objects/vector.h"
-#include "../objects/all_shapes.h"
+//#include "vector.h"
+#include "all_shapes.h"
 
 enum ShapeIDs {LINE = 1, POLYLINE, POLYGON, RECTANGLE, SQUARE, ELLIPSE, CIRCLE, TEXT};
 class Parser {

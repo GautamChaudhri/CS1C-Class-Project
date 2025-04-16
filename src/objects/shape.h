@@ -12,6 +12,8 @@
 #include <QList>
 #include <QPolygon>
 
+#include "vector.h"
+
 //#include "renderarea.h"
 
 using std::string;

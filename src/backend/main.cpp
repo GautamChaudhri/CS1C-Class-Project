@@ -71,6 +71,7 @@ void OnGoodGetResponseTest(const QString &json) {
     //Test Point 2
     std::cout << "Test point 2: Parse JSON and convert to vector.\n";
     alpha::vector<Shape*> vect = parse.JsonToShapes(jsonStr);
+
     std::cout << "Outputting Primitive Data Types from Shape* Vector:\n";
     parse.PrintShapeVector(vect);
     std::cout << std::endl << std::endl;

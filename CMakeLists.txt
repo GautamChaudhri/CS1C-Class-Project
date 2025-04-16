@@ -12,6 +12,9 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+include_directories(${CMAKE_SOURCE_DIR}/src/objects)
+include_directories(${CMAKE_SOURCE_DIR}/src/backend)
+
 # ===============================
 # Qt Package Finding
 # ===============================
@@ -30,6 +33,10 @@ set(PROJECT_srcS
     src/frontend/mainwindow.ui
     src/frontend/renderarea.cpp
     src/frontend/renderarea.h
+    src/backend/ApiClient.cpp
+    src/backend/ApiClient.h
+    src/backend/Parser.h
+    src/backend/Parser.cpp
 
     # Objects / shapes are now in src/objects/
     src/objects/all_shapes.h
@@ -59,6 +66,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Frontend
         MANUAL_FINALIZATION
         ${PROJECT_srcS}
+        src/frontend/shapecontroller.h
     )
 else()
     if(ANDROID)
@@ -72,7 +80,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(Frontend PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Frontend PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network)
 
 # Frontend bundle and install configuration
 set_target_properties(Frontend PROPERTIES
@@ -126,7 +134,8 @@ set(BACKEND_SOURCES
 )
 
 # Backend executable
-add_executable(Backend ${BACKEND_SOURCES})
+add_executable(Backend ${BACKEND_SOURCES}
+)
 target_link_libraries(Backend PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Network Qt${QT_VERSION_MAJOR}::Widgets)
 
 set_target_properties(Backend PROPERTIES

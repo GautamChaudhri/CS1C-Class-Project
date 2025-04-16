@@ -4,17 +4,7 @@
 #include <QPainter>
 #include <QPen>
 
-#include "shape.h"
-#include "line.h"
-#include "polyline.h"
-#include "polygon.h"
-#include "rectangle.h"
-#include "square.h"
-#include "ellipse.h"
-#include "circle.h"
-#include "text.h"
-
-#include "vector.h"
+#include "all_shapes.h"
 
 class RenderArea : public QWidget
 {
