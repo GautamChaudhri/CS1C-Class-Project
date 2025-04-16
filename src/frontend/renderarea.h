@@ -11,8 +11,7 @@ class RenderArea : public QWidget
 public:
     RenderArea(QWidget *parent = nullptr);
 
-public slots:
-void setShapes(const alpha::vector<Shape*>& shapes);
+    void setShapes(const alpha::vector<Shape*>& shapes);
 
 protected:
     void paintEvent(QPaintEvent *event) override;

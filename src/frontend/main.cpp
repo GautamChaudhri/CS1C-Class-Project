@@ -32,15 +32,14 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     MainWindow window;
-    RenderArea renderArea;
     windowPtr = &window;
 
-    QObject::connect(&shapeController, &ShapeController::ShapesReady, &renderArea, &RenderArea::setShapes);
+    QObject::connect(&shapeController, &ShapeController::ShapesReady, &window, &MainWindow::setShapes);
 
     ApiClient* client = GetConnectedClient();
     client->GetShapes();  // triggers API call
 
-    renderArea.show();
+    //renderArea.show();
     window.show();
     return a.exec();
 }

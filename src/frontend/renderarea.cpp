@@ -2,7 +2,8 @@
 
 RenderArea::RenderArea(QWidget *parent) : QWidget(parent) {}
 
-void RenderArea::setShapes(const alpha::vector<Shape*>& shapes) {
+void RenderArea::setShapes(const alpha::vector<Shape*>& shapes)
+{
     renderShapes = std::move(shapes); // moves the local copy
 }
 

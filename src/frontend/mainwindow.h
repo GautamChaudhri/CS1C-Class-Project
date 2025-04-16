@@ -23,13 +23,13 @@ public:
 
     void drawShapes() const;
 
-protected:
-    //void paintEvent(QPaintEvent *event) override;
+public slots:
+    void setShapes(const alpha::vector<Shape*>& shapes);
 
 private slots:
 
 private:
     Ui::MainWindow *ui;
-    RenderArea renderArea;
+    RenderArea *renderArea;
 };
 #endif // MAINWINDOW_H
