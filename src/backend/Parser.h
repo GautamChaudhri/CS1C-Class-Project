@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <cctype>
-//#include <stdexcept>
 #include "../objects/vector.h"
 #include "../objects/all_shapes.h"
 
