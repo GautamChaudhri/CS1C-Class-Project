@@ -150,30 +150,34 @@ install(TARGETS Backend
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-# ===============================
-# Webservice Configuration
-# ===============================
-
 # Webservice (Crow) source files
 set(WEB_SERVICE_SOURCES
     src/webservice/webservice.cpp
 )
 
+find_package(Threads REQUIRED)
+
 # Webservice executable
 add_executable(Webservice ${WEB_SERVICE_SOURCES})
+
 target_include_directories(Webservice PRIVATE
     src/webservice/crow/include
     src/webservice/asio/asio/include
 )
+
 target_compile_definitions(Webservice PRIVATE -DCROW_USE_STANDALONE_ASIO)
-target_compile_options(Webservice PRIVATE -Wall -pthread -g)
-target_link_libraries(Webservice PRIVATE pthread)
+target_compile_options(Webservice PRIVATE -Wall -g)
+target_link_libraries(Webservice PRIVATE
+    Threads::Threads
+    # on Windows, link both Winsock2 and Mswsock for AcceptEx, GetAcceptExSockaddrs, etc.
+    $<$<PLATFORM_ID:Windows>:Ws2_32>
+    $<$<PLATFORM_ID:Windows>:Mswsock>
+)
 
 set_target_properties(Webservice PROPERTIES
     WIN32_EXECUTABLE FALSE
     MACOSX_BUNDLE FALSE
 )
-
 install(TARGETS Webservice
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
