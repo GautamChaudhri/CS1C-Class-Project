@@ -31,6 +31,9 @@ void Ellipse::Draw(QWidget* renderArea)
     getPainter().end();
 }
 
+int Ellipse::getA() const { return a; }  // Necessary for parser
+int Ellipse::getB() const { return b; }
+
 double Ellipse::Perimeter() const { return 2 * PI * sqrt((pow((2 * a), 2) + pow((2 * b), 2)) / 2); }
 double Ellipse::Area()      const { return PI * a * b; }
 

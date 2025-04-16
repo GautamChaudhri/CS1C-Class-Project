@@ -123,7 +123,8 @@ private:
     QPainter painter;
 
     // Disable Copy Operations
-    //Shape(Shape& shape) = delete;
+    Shape(Shape& shape) = delete;
+    Shape& operator=(Shape& object) = delete;
 };
 
 #endif // SHAPE_H

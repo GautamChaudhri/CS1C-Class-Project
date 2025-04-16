@@ -29,9 +29,6 @@ public:
 private:
     QPoint startPoint;
     QPoint endPoint;
-
-    // Disable Copy Operations
-    //Line(Line& Line) = delete;
 };
 
 #endif // LINE_H

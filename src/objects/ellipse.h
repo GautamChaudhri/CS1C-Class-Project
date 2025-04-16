@@ -14,10 +14,10 @@ public:
             int    a,
             int    b);
 
-    int getA() const {return a;};   // Necessary for parser
-    int getB() const {return b;};
-
     void Draw(QWidget* renderArea) override;
+
+    int getA() const;   // Necessary for parser
+    int getB() const;
 
     double Perimeter() const override;
     double Area()      const override;
@@ -25,9 +25,6 @@ public:
 private:
     int a;
     int b;
-
-    // Disable Copy Operations
-    //Ellipse(Ellipse& Ellipse) = delete;
 };
 
 #endif // ELLIPSE_H

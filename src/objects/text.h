@@ -36,9 +36,6 @@ private:
     GlobalColor   textColor;
     QFont         font;
     AlignmentFlag textAlignment;
-
-    // Disable Copy Operations
-    //Text(Text& Text) = delete;
 };
 
 #endif // TEXT_H

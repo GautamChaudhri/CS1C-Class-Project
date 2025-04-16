@@ -25,8 +25,5 @@ public:
 
 private:
     QPolygon pointsList;
-
-    // Disable Copy Operations
-    //Polygon(Polygon& Polygon) = delete;
 };
 #endif // POLYGON_H
