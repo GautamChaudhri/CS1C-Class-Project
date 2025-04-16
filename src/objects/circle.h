@@ -13,6 +13,8 @@ public:
            QBrush brush,
            int r);
 
+    int getR() const {return r;}    // Necessary for parser
+
     void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;

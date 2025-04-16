@@ -88,6 +88,7 @@ public:
     PenStyle     getPenStyle()     const;
     PenCapStyle  getPenCapStyle()  const;
     PenJoinStyle getPenJoinStyle() const;
+    QColor       getPenColor()     const;
     QColor       getBrushColor()   const;
     BrushStyle   getBrushStyle()   const;
     QPen         getPen()          const;

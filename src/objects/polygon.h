@@ -15,10 +15,9 @@ public:
 
     ~Polygon();
 
+    QPolygon getPointsList() const { return pointsList; } // Necessary for parser
+
     void Draw(QWidget* renderArea) override;
-
-    QPolygon getPointsList() { return pointsList; }
-
 
     double Perimeter() const override;
     double Area()      const override;

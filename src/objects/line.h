@@ -18,6 +18,9 @@ public:
           QPoint startPoint,
          QPoint endPoint);
 
+    QPoint getStartPoint() const {return startPoint;}   // Necessary for parser
+    QPoint getEndPoint() const {return endPoint;}
+
     void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;

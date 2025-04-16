@@ -16,6 +16,13 @@ public:
          int           length,
          int           width);
 
+    int getLength() const {return length;}  // Necessary for parser
+    int getWidth() const {return width;}
+    QString getTextString() const {return textString;}
+    GlobalColor getTextColor() const {return textColor;}
+    QFont getFont() const { return font; }
+    AlignmentFlag getTextAlignment() const {return textAlignment;}
+
     void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;

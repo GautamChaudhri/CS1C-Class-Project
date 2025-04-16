@@ -10,6 +10,8 @@ void OnBadGetResponseTest(const QString &errorMsg);
 void OnGoodPostResponseTest();
 void OnBadPostResponseTest(const QString &errorMsg);
 ApiClient* GetConnectedClient();
+void saveShapes(const alpha::vector<Shape*> shapes);
+void saveRenderArea(const alpha::vector<Shape*> renderArea);
 
 //For testing
 std::string GetShapeTestString();
@@ -20,10 +22,7 @@ QCoreApplication* pApp = nullptr;
 ApiClient* pClient = nullptr;
 Parser parse;
 
-//Just for testing right now. First make and run the webservice binary in the webservice folder
-//and then make and run this. The output is sent to the console. You should see a string formatted as json
-//directly reflecting the data in database/shapes.json. Meaning if you delete one shape in that file then run
-//this again, that shape will be missing in the output and vice versa if you add a shape.
+//Webservice must be up and running for main to work
 int main(int argc, char* argv[])
 {
     QCoreApplication app(argc, argv);
@@ -33,49 +32,70 @@ int main(int argc, char* argv[])
     ApiClient* client = GetConnectedClient();
     pClient = client;
 
-    //Test, post shapes in backend
-    std::string testStr = GetRenderAreaTestString();
-    client->PostShapes(testStr);
-    
+    //Testing Gauntlet: point 1
+    std::cout << "Starting Test Gauntlet! Point 1: Get endpoint\n";
+    client->GetRenderArea();
+
     // Start the Qt event loop; this loop will run until app.quit() is called.
     return app.exec();
 }
-/* The app variable manages the event loop and keeps main in a loop until app.quit() is called to break it
- * The client object is defined by us and is set up to make and receive api calls
- * The two connect() functions serve to connect the ApiClient signals to the lambda slot functions. They
- * are not used immediately, instead, they are just defined for now and called later when the API call completes
- * client.FetchAllShapes() is what actually makes the API call to the Get /shapes endpoint. If successful, execution
- *      jumps to the first lambda function. If it fails, it jumps to the second function
- * lambda functions are anonymous functions without a name that can be defined inline without needing to build
- *      a separate function with its own function prototypes and everything else 
-*/
+
+void SaveShapes(const alpha::vector<Shape*> shapes) {
+  //Test point 3 cont.
+  std::string json = parse.ShapesToJson(shapes);
+  std::cout << "Outputting new JSON:\n";
+  std::cout << json << std::endl << std::endl;
+
+  //Test Point 4
+  std::cout << "Test point 4: Post endpoint\n";
+  pClient->PostShapes(json);
+}
+
+void SaveRenderArea(const alpha::vector<Shape*> renderArea) {
+  //Test point 3 cont.
+  std::string json = parse.ShapesToJson(renderArea);
+  std::cout << "Outputting new JSON:\n";
+  std::cout << json << std::endl << std::endl;
+
+  //Test Point 4
+  std::cout << "Test point 4: Post endpoint\n";
+  pClient->PostRenderArea(json);
+}
 
 void OnGoodGetResponseTest(const QString &json) {
-    //Test, on response, parse json into vector
-    std::cout << "Received JSON from webservice!" << std::endl << std::endl;
+    //Test point 1 contd.
     std::string jsonStr = json.toStdString();
-    alpha::vector<Shape*> shapes = parse.JsonToShapes(jsonStr);
-    //Test, print primitive data types of the newly created vector
-    std::cout << "Print Vector of Shapes*:" << std::endl;
-    parse.PrintShapeVector(shapes);
-    pApp->quit();
+    std::cout << "Received JSON from webservice:\n";
+    std::cout << jsonStr << std::endl << std::endl;
+
+    //Test Point 2
+    std::cout << "Test point 2: Parse JSON and convert to vector.\n";
+    alpha::vector<Shape*> vect = parse.JsonToShapes(jsonStr);
+    std::cout << "Outputting Primitive Data Types from Shape* Vector:\n";
+    parse.PrintShapeVector(vect);
+    std::cout << std::endl << std::endl;
+
+    //Test Point 3
+    std::cout << "Test point 3: Begin save by first converting vector back into JSON.\n";
+    SaveRenderArea(vect);
+    //pApp->quit();
 }
 
 void OnBadGetResponseTest(const QString &errorMsg) {
     std::cerr << "Error: " << errorMsg.toStdString() << std::endl << std::endl;
-    //pApp->quit();
+    pApp->quit();
 }
 
 void OnGoodPostResponseTest() {
-    //Test, on response, run the Get endpoint to get data back
+    //Test point 4 cont.
     std::cout << "Data Received by webservice successfully!\n";
-    pClient->GetShapes();
-    //pApp->quit();
+    std::cout << "Finish Test Gauntlet!\n";
+    pApp->quit();
 }
 
 void OnBadPostResponseTest(const QString &errorMsg) {
     std::cerr << "Error: " << errorMsg.toStdString() << std::endl;
-    //pApp->quit();
+    pApp->quit();
 }
 
 ApiClient* GetConnectedClient() {
@@ -89,7 +109,7 @@ ApiClient* GetConnectedClient() {
 
 //For testing
 std::string GetShapeTestString() {
-    return R"([
+    return R"([[
     {
       "ShapeId": 1,
       "TrackerId": null,
@@ -100,6 +120,95 @@ std::string GetShapeTestString() {
       "PenStyle": "DashDotLine",
       "PenCapStyle": "FlatCap",
       "PenJoinStyle": "MiterJoin"
+    },
+    {
+      "ShapeId": 2,
+      "TrackerId": null,
+      "ShapeType": "Polyline",
+      "ShapeDimensions": [460, 90, 470, 20, 530, 40, 540, 80],
+      "PenColor": "green",
+      "PenWidth": 6,
+      "PenStyle": "SolidLine",
+      "PenCapStyle": "FlatCap",
+      "PenJoinStyle": "MiterJoin"
+    },
+    {
+      "ShapeId": 3,
+      "TrackerId": null,
+      "ShapeType": "Polygon",
+      "ShapeDimensions": [900, 90, 910, 20, 970, 40, 980, 80],
+      "PenColor": "cyan",
+      "PenWidth": 6,
+      "PenStyle": "DashDotDotLine",
+      "PenCapStyle": "FlatCap",
+      "PenJoinStyle": "MiterJoin",
+      "BrushColor": "yellow",
+      "BrushStyle": "SolidPattern"
+    },
+    {
+      "ShapeId": 4,
+      "TrackerId": null,
+      "ShapeType": "Rectangle",
+      "ShapeDimensions": [20, 200, 170, 100],
+      "PenColor": "blue",
+      "PenWidth": 0,
+      "PenStyle": "DashLine",
+      "PenCapStyle": "RoundCap",
+      "PenJoinStyle": "RoundJoin",
+      "BrushColor": "red",
+      "BrushStyle": "VerPattern"
+    },
+    {
+      "ShapeId": 5,
+      "TrackerId": null,
+      "ShapeType": "Square",
+      "ShapeDimensions": [250, 150, 200],
+      "PenColor": "red",
+      "PenWidth": 0,
+      "PenStyle": "SolidLine",
+      "PenCapStyle": "RoundCap",
+      "PenJoinStyle": "RoundJoin",
+      "BrushColor": "blue",
+      "BrushStyle": "HorPattern"
+    },
+    {
+      "ShapeId": 6,
+      "TrackerId": null,
+      "ShapeType": "Ellipse",
+      "ShapeDimensions": [520, 200, 170, 100],
+      "PenColor": "black",
+      "PenWidth": 12,
+      "PenStyle": "SolidLine",
+      "PenCapStyle": "FlatCap",
+      "PenJoinStyle": "MiterJoin",
+      "BrushColor": "white",
+      "BrushStyle": "NoBrush"
+    },
+    {
+      "ShapeId": 7,
+      "TrackerId": null,
+      "ShapeType": "Circle",
+      "ShapeDimensions": [750, 150, 200],
+      "PenColor": "black",
+      "PenWidth": 12,
+      "PenStyle": "SolidLine",
+      "PenCapStyle": "FlatCap",
+      "PenJoinStyle": "MiterJoin",
+      "BrushColor": "magenta",
+      "BrushStyle": "SolidPattern"
+    },
+    {
+      "ShapeId": 8,
+      "TrackerId": null,
+      "ShapeType": "Text",
+      "ShapeDimensions": [250, 425, 500, 50],
+      "TextString": "Class Project 2 - 2D Graphics Modeler",
+      "TextColor": "blue",
+      "TextAlignment": "AlignCenter",
+      "TextPointSize": 10,
+      "TextFontFamily": "Comic Sans MS",
+      "TextFontStyle": "StyleItalic",
+      "TextFontWeight": "Normal"
     }
   ])";
 }

@@ -38,6 +38,7 @@ int          Shape::getPenWidth()     const { return pen.width(); }
 PenStyle     Shape::getPenStyle()     const { return pen.style(); }
 PenCapStyle  Shape::getPenCapStyle()  const { return pen.capStyle(); }
 PenJoinStyle Shape::getPenJoinStyle() const { return pen.joinStyle(); }
+QColor       Shape::getPenColor()     const { return pen.color(); }
 QColor       Shape::getBrushColor()   const { return brush.color(); }
 BrushStyle   Shape::getBrushStyle()   const { return brush.style(); }
 QPen         Shape::getPen()          const { return pen; }

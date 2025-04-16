@@ -1,7 +1,7 @@
 [
     {
       "ShapeId": 1,
-      "TrackerId": null,
+      "TrackerId": 0,
       "ShapeType": "Line",
       "ShapeDimensions": [20, 90, 100, 20],
       "PenColor": "blue",
@@ -12,7 +12,7 @@
     },
     {
       "ShapeId": 2,
-      "TrackerId": null,
+      "TrackerId": 0,
       "ShapeType": "Polyline",
       "ShapeDimensions": [460, 90, 470, 20, 530, 40, 540, 80],
       "PenColor": "green",
@@ -23,7 +23,7 @@
     },
     {
       "ShapeId": 3,
-      "TrackerId": null,
+      "TrackerId": 0,
       "ShapeType": "Polygon",
       "ShapeDimensions": [900, 90, 910, 20, 970, 40, 980, 80],
       "PenColor": "cyan",
@@ -36,7 +36,7 @@
     },
     {
       "ShapeId": 4,
-      "TrackerId": null,
+      "TrackerId": 0,
       "ShapeType": "Rectangle",
       "ShapeDimensions": [20, 200, 170, 100],
       "PenColor": "blue",
@@ -49,7 +49,7 @@
     },
     {
       "ShapeId": 5,
-      "TrackerId": null,
+      "TrackerId": 0,
       "ShapeType": "Square",
       "ShapeDimensions": [250, 150, 200],
       "PenColor": "red",
@@ -62,7 +62,7 @@
     },
     {
       "ShapeId": 6,
-      "TrackerId": null,
+      "TrackerId": 0,
       "ShapeType": "Ellipse",
       "ShapeDimensions": [520, 200, 170, 100],
       "PenColor": "black",
@@ -75,7 +75,7 @@
     },
     {
       "ShapeId": 7,
-      "TrackerId": null,
+      "TrackerId": 0,
       "ShapeType": "Circle",
       "ShapeDimensions": [750, 150, 200],
       "PenColor": "black",
@@ -88,7 +88,7 @@
     },
     {
       "ShapeId": 8,
-      "TrackerId": null,
+      "TrackerId": 0,
       "ShapeType": "Text",
       "ShapeDimensions": [250, 425, 500, 50],
       "TextString": "Class Project 2 - 2D Graphics Modeler",

@@ -14,6 +14,10 @@ public:
               int length,
               int width);
 
+
+    int getLength() const {return length;}  // Necessary for parser
+    int getWidth() const {return width;}
+
     void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;

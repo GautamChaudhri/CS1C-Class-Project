@@ -1,5 +1,4 @@
 #include "Parser.h"
-#include <stdexcept>
 
 // Public functions
 void Parser::PrintShapeVector(const alpha::vector<Shape*> &shapes) {
@@ -10,7 +9,9 @@ void Parser::PrintShapeVector(const alpha::vector<Shape*> &shapes) {
     }
 }
 
-alpha::vector<Shape*> Parser::JsonToShapes(const std::string& json) {
+
+
+alpha::vector<Shape*> Parser::JsonToShapes(const std::string& json) {   //Forward Parser (JSON string -> vector<Shape*>)
     alpha::vector<Shape*> shapes;
     Shape* newShape = nullptr;
 
@@ -46,7 +47,34 @@ alpha::vector<Shape*> Parser::JsonToShapes(const std::string& json) {
     return shapes;
 }
 
-// Private functions
+
+
+std::string Parser::ShapesToJson(const alpha::vector<Shape*>& shapes) {     //Reverse Parser (vector<Shape*> -> JSON string)
+    std::string json = "[\n";
+    for (size_t i = 0; i < shapes.size(); ++i) {
+        const Shape* currShape = shapes[i];
+        int currShapeId = currShape->getShapeId();
+        json += "{\n";
+        
+        //Add correct data based on shape type
+        if (currShapeId < POLYGON)
+            json += AppendCommonShapeData(currShape);
+        else if (currShapeId >= POLYGON && currShapeId != TEXT) {
+            json += AppendCommonShapeData(currShape)+ ",\n" + AppendBrushData(currShape);
+        }
+        else if (currShapeId == TEXT)
+            json += AppendTextData(currShape);
+
+        if (i == shapes.size() - 1) //don't add comma if this is the last object
+            json += "\n}\n]\n";
+        else
+            json += "\n},\n";
+    }
+    return json;
+}
+
+/*==================================== Forward Parser Subroutines ============================================*/
+
 Parser::MorphicShape Parser::ParseJsonObject(const std::string json, size_t &index) {
     MorphicShape tempShape;
 
@@ -77,7 +105,7 @@ Parser::MorphicShape Parser::ParseJsonObject(const std::string json, size_t &ind
         std::string value = ExtractValue(json, index);
         SkipWhitespace(json, index);
 
-        UpdateMorphicShape(key, value, tempShape);
+        UpdateAccumulator(key, value, tempShape);
 
         if (json[index] == ',') {       // if comma, loop again
             index++;
@@ -93,64 +121,9 @@ Parser::MorphicShape Parser::ParseJsonObject(const std::string json, size_t &ind
     return tempShape;
 }
 
-std::string Parser::ExtractKey(const std::string& json, size_t &index) {
-    // index at opening "
-    size_t closingQuoteIndex = json.find('"', index + 1);
-    size_t keyLength = closingQuoteIndex - index - 1;
-    std::string key = json.substr(index + 1, keyLength);
-    index = closingQuoteIndex + 1;
-    return key;
-}
 
-std::string Parser::ExtractValue(const std::string& json, size_t &index) {
-    std::string value;
 
-    if (json[index] == '"')             // value is a string
-        value = ExtractKey(json, index);
-    else if (isdigit(json[index]))      // value is a number
-        value = ExtractInteger(json, index);
-    else if (json[index] == '[')        // value is an array
-        value = ExtractArray(json, index);
-    else if (json[index] == 'n')        // value is null
-        value = ExtractNull(json, index);
-    else
-        throw std::runtime_error("Expected '\"', '[', integer, or null.");
-    
-    return value;
-}
-
-std::string Parser::ExtractInteger(const std::string& json, size_t &index) {
-    size_t startIndex = index;
-    while (isdigit(json[index]))
-        index++;
-    std::string integerStr = json.substr(startIndex, index - startIndex);
-    return integerStr;
-}
-
-std::string Parser::ExtractArray(const std::string& json, size_t &index) {
-    size_t closingBracketIndex = json.find(']', index + 1);
-    if (closingBracketIndex == std::string::npos) {
-        throw std::runtime_error("Missing ']' in array");
-    }
-    std::string arrayStr = json.substr(index, closingBracketIndex + 1);
-    index = closingBracketIndex + 1;
-    return arrayStr;
-}
-
-std::string Parser::ExtractNull(const std::string& json, size_t &index) {
-    std::string nullStr = json.substr(index, 4);
-    index += 4;
-    if (nullStr != "null")
-        throw std::runtime_error("Expected null");
-    return nullStr;
-}
-
-void Parser::SkipWhitespace(const std::string& json, size_t& index) {
-    while (index < json.length() && isspace(json[index]))
-        ++index;
-}
-
-void Parser::UpdateMorphicShape(const std::string &key, const std::string &value, MorphicShape &tempShape) {
+void Parser::UpdateAccumulator(const std::string &key, const std::string &value, MorphicShape &tempShape) {
     if (key == "ShapeId") {
         tempShape.shapeId = std::stoi(value);
     }
@@ -175,29 +148,29 @@ void Parser::UpdateMorphicShape(const std::string &key, const std::string &value
     }
     else if (key == "PenColor") {
         if (value == "red")
-            tempShape.brush.setColor(Qt::red);
+            tempShape.pen.setColor(Qt::red);
         else if (value == "green")
-            tempShape.brush.setColor(Qt::green);
+            tempShape.pen.setColor(Qt::green);
         else if (value == "yellow")
-            tempShape.brush.setColor(Qt::yellow);
+            tempShape.pen.setColor(Qt::yellow);
         else if (value == "cyan")
-            tempShape.brush.setColor(Qt::cyan);
+            tempShape.pen.setColor(Qt::cyan);
         else if (value == "magenta")
-            tempShape.brush.setColor(Qt::magenta);
+            tempShape.pen.setColor(Qt::magenta);
         else if (value == "gray")
-            tempShape.brush.setColor(Qt::gray);
+            tempShape.pen.setColor(Qt::gray);
         else if (value == "blue")
-            tempShape.brush.setColor(Qt::blue);
+            tempShape.pen.setColor(Qt::blue);
         else if (value == "white")
-            tempShape.brush.setColor(Qt::white);
+            tempShape.pen.setColor(Qt::white);
         else if (value == "lightGray")
-            tempShape.brush.setColor(Qt::lightGray);
+            tempShape.pen.setColor(Qt::lightGray);
         else if (value == "darkGray")
-            tempShape.brush.setColor(Qt::darkGray);
+            tempShape.pen.setColor(Qt::darkGray);
         else if (value == "black")
-            tempShape.brush.setColor(Qt::black);
+            tempShape.pen.setColor(Qt::black);
         else if (value == "transparent")
-            tempShape.brush.setColor(Qt::transparent);
+            tempShape.pen.setColor(Qt::transparent);
         else
             throw std::runtime_error("Unknown pen color: " + value);
     }
@@ -305,13 +278,19 @@ void Parser::UpdateMorphicShape(const std::string &key, const std::string &value
         else if (value == "gray")
             tempShape.textColor = Qt::gray;
         else if (value == "blue")
+            tempShape.textColor = Qt::blue;
+        else if (value == "white")
+            tempShape.textColor = Qt::white;
+        else if (value == "lightGray")
+            tempShape.textColor = Qt::lightGray;
+        else if (value == "darkGray")
             tempShape.textColor = Qt::darkGray;
         else if (value == "black")
-            tempShape.textColor = Qt::lightGray;
+            tempShape.textColor = Qt::black;
         else if (value == "transparent")
             tempShape.textColor = Qt::transparent;
         else
-            throw std::runtime_error("Unknown color: " + value);
+            throw std::runtime_error("Unknown text color: " + value);
     }
     else if (key == "TextAlignment") {
         if (value == "AlignLeft")
@@ -359,6 +338,147 @@ void Parser::UpdateMorphicShape(const std::string &key, const std::string &value
         throw std::runtime_error("Unknown key: " + key);
 }
 
+
+
+Shape* Parser::BuildShape(MorphicShape tempShape) {
+    Shape* shape;
+    switch (tempShape.shapeId) {
+        case LINE: {
+            QPoint startPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
+            QPoint endPoint(tempShape.shapeDimensions[2], tempShape.shapeDimensions[3]);
+            tempShape.coords = startPoint;
+            shape = new Line(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, startPoint, endPoint);
+            shape->setTrackerId(tempShape.trackerId);
+            break;
+        }
+        case POLYLINE: {
+            QPolygon pointsList;
+            QPoint tempPoint;
+            for (int i = 0; i < tempShape.shapeDimensions.size(); i += 2) {
+                tempPoint.setX(tempShape.shapeDimensions[i]);
+                tempPoint.setY(tempShape.shapeDimensions[i + 1]);
+                pointsList << tempPoint;
+            }
+            tempShape.coords = pointsList[0];
+            shape = new Polyline(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, pointsList);
+            shape->setTrackerId(tempShape.trackerId);
+            break;
+        }
+        case POLYGON: {
+            QPolygon pointsList;
+            QPoint tempPoint;
+            for (int i = 0; i < tempShape.shapeDimensions.size(); i += 2) {
+                tempPoint.setX(tempShape.shapeDimensions[i]);
+                tempPoint.setY(tempShape.shapeDimensions[i + 1]);
+                pointsList << tempPoint;
+            }
+            tempShape.coords = pointsList[0];
+            shape = new Polygon(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, pointsList);
+            shape->setTrackerId(tempShape.trackerId);
+            break;
+        }
+        case RECTANGLE: {
+            tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
+            int length = tempShape.shapeDimensions[2];
+            int width = tempShape.shapeDimensions[3];
+            shape = new Rectangle(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, length, width);
+            shape->setTrackerId(tempShape.trackerId);
+            break;
+        }
+        case SQUARE: {
+            tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
+            int length = tempShape.shapeDimensions[2];
+            shape = new Square(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, length);
+            shape->setTrackerId(tempShape.trackerId);
+            break;
+        }
+        case ELLIPSE: {
+            tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
+            int a = tempShape.shapeDimensions[2];
+            int b = tempShape.shapeDimensions[3];
+            shape = new Ellipse(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, a, b);
+            shape->setTrackerId(tempShape.trackerId);
+            break;
+        }
+        case CIRCLE: {
+            tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
+            int r = tempShape.shapeDimensions[2];
+            shape = new Circle(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, r);
+            shape->setTrackerId(tempShape.trackerId);
+            break;
+        }
+        case TEXT: {
+            tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
+            int length = tempShape.shapeDimensions[2];
+            int width = tempShape.shapeDimensions[3];
+            shape = new Text(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.textString, tempShape.textColor, tempShape.textAlignment, tempShape.font, length, width);
+            shape->setTrackerId(tempShape.trackerId);
+            break;
+        }
+        default: {
+            shape = nullptr;
+        }
+    }
+    return shape;
+}
+
+
+
+std::string Parser::ExtractKey(const std::string& json, size_t &index) {
+    // index at opening "
+    size_t closingQuoteIndex = json.find('"', index + 1);
+    size_t keyLength = closingQuoteIndex - index - 1;
+    std::string key = json.substr(index + 1, keyLength);
+    index = closingQuoteIndex + 1;
+    return key;
+}
+
+
+
+std::string Parser::ExtractValue(const std::string& json, size_t &index) {
+    std::string value;
+
+    if (json[index] == '"')             // value is a string so same extraction process as key
+        value = ExtractKey(json, index);
+    else if (isdigit(json[index]))      // value is a number
+        value = ExtractInteger(json, index);
+    else if (json[index] == '[')        // value is an array
+        value = ExtractArray(json, index);
+    else
+        throw std::runtime_error("Expected '\"', '[', or integer.");
+    
+    return value;
+}
+
+
+
+std::string Parser::ExtractInteger(const std::string& json, size_t &index) {
+    size_t startIndex = index;
+    while (isdigit(json[index]))
+        index++;
+    std::string integerStr = json.substr(startIndex, index - startIndex);
+    return integerStr;
+}
+
+
+
+std::string Parser::ExtractArray(const std::string& json, size_t &index) {
+    size_t closingBracketIndex = json.find(']', index + 1);
+    if (closingBracketIndex == std::string::npos) {
+        throw std::runtime_error("Missing ']' in array");
+    }
+    std::string arrayStr = json.substr(index, closingBracketIndex + 1);
+    index = closingBracketIndex + 1;
+    return arrayStr;
+}
+
+void Parser::SkipWhitespace(const std::string& json, size_t& index) {
+    while (index < json.length() && isspace(json[index]))
+        ++index;
+}
+
+
+
 alpha::vector<int> Parser::StringToVector(const std::string &value) {
     alpha::vector<int> dimensions;
     bool endBracketEncountered = false;
@@ -383,84 +503,324 @@ alpha::vector<int> Parser::StringToVector(const std::string &value) {
     return dimensions;
 }
 
-Shape* Parser::BuildShape(MorphicShape tempShape) {
-    Shape* shape;
-    switch (tempShape.shapeId) {
-        case 1: { // Line
-            QPoint startPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
-            QPoint endPoint(tempShape.shapeDimensions[2], tempShape.shapeDimensions[3]);
-            tempShape.coords = startPoint;
-            shape = new Line(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, startPoint, endPoint);
-            shape->setTrackerId(tempShape.trackerId);
+/*==================================== Reverse Parser Subroutines ============================================*/
+
+std::string Parser::AppendCommonShapeData(const Shape* shape) {
+    std::string commonData;
+        commonData += "\"ShapeId\": " + std::to_string(shape->getShapeId()) + ",\n"
+                   += "\"TrackerId\": " + std::to_string(shape->getTrackerId()) + ",\n"
+                   += "\"ShapeType\": \"" + shape->getShapeType() + "\",\n"
+                   += "\"ShapeDimensions\": " + GetShapeDimensions(shape) + ",\n"
+                   += "\"PenColor\": \"" + GetColor(shape->getPenColor()) + "\",\n"
+                   += "\"PenWidth\": " + std::to_string(shape->getPen().width()) + ",\n"
+                   += "\"PenStyle\": \"" + GetPenStyle(shape) + "\",\n"
+                   += "\"PenCapStyle\": \"" + GetPenCapStyle(shape) + "\",\n"
+                   += "\"PenJoinStyle\": \"" + GetPenJoinStyle(shape) + "\"";
+    return commonData;
+}
+
+
+
+std::string Parser::AppendBrushData(const Shape* shape) {
+    std::string brushData;
+    brushData += "\"BrushColor\": \"" + GetColor(shape->getBrushColor()) + "\",\n"
+              += "\"BrushStyle\": \"" + GetBrushStyle(shape) + "\"";
+    return brushData;
+}
+
+
+
+std::string Parser::AppendTextData(const Shape* shape) {
+    const Text* text = dynamic_cast<const Text*>(shape);
+    if (!text) throw std::runtime_error("Dynamic Cast to Text pointer failed.");
+    std::string textData;
+    textData += "\"ShapeId\": " + std::to_string(shape->getShapeId()) + ",\n"
+             += "\"TrackerId\": " + std::to_string(shape->getTrackerId()) + ",\n"
+             += "\"ShapeType\": \"" + shape->getShapeType() + "\",\n"
+             += "\"ShapeDimensions\": " + GetShapeDimensions(shape) + ",\n"
+             += "\"TextString\": \"" + text->getTextString().toStdString() + "\",\n"
+             += "\"TextPointSize\": " + std::to_string(text->getFont().pointSize()) + ",\n"
+             += "\"TextColor\": \"" + GetColor(text->getTextColor()) + "\",\n"
+             += "\"TextAlignment\": \"" + GetAlignmentFlag(text) + "\",\n"
+             += "\"TextFontFamily\": \"" + text->getFont().family().toStdString() + "\",\n"
+             += "\"TextFontStyle\": \"" + GetFontStyle(text) + "\",\n"
+             += "\"TextFontWeight\": \"" + GetFontWeight(text) + "\"";
+    return textData;
+}
+
+
+
+std::string Parser::GetShapeDimensions(const Shape* shape) {
+    std::string dimensions = "[";
+    switch (shape->getShapeId()) {
+        case 1: {   //Line
+            //Line pointer needed to access following get functions since they are 
+            //only defined in the derived classes. Same follows for all cases.
+            const Line* line = dynamic_cast<const Line*>(shape);
+            if (!line) throw std::runtime_error("Dynamic Cast to Line pointer failed.");
+            //Get the necessary points
+            std::string startX = std::to_string(line->getStartPoint().x());
+            std::string startY = std::to_string(line->getStartPoint().y());
+            std::string endX = std::to_string(line->getEndPoint().x());
+            std::string endY = std::to_string(line->getEndPoint().y());
+            dimensions += startX + ", " + startY + ", " + endX + ", " + endY + "]";
             break;
         }
-        case 2: { // Polyline   | REFINE DOUBLE LOOPS LATER
-            QPolygon pointsList;
-            QPoint tempPoint;
-            for (int i = 0; i < tempShape.shapeDimensions.size(); i += 2) {
-                tempPoint.setX(tempShape.shapeDimensions[i]);
-                tempPoint.setY(tempShape.shapeDimensions[i + 1]);
-                pointsList << tempPoint;
+        case 2: {   // Polyline
+            const Polyline* polyline = dynamic_cast<const Polyline*>(shape);
+            if (!polyline)
+                throw std::runtime_error("Dynamic Cast to Polyline pointer failed.");
+            QPolygon points = polyline->getPointsList();
+            // Loop over each point and add its x and y values
+            for (int i = 0; i < points.size(); ++i) {
+                std::string x = std::to_string(points.at(i).x());
+                std::string y = std::to_string(points.at(i).y());
+                dimensions += x + ", " + y;
+                if (i < points.size() - 1)
+                    dimensions += ", ";
             }
-            tempShape.coords = pointsList[0];
-            shape = new Polyline(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, pointsList);
-            shape->setTrackerId(tempShape.trackerId);
+            dimensions += "]";
             break;
         }
-        case 3: { // Polygon   | REFINE DOUBLE LOOPS LATER
-            QPolygon pointsList;
-            QPoint tempPoint;
-            for (int i = 0; i < tempShape.shapeDimensions.size(); i += 2) {
-                tempPoint.setX(tempShape.shapeDimensions[i]);
-                tempPoint.setY(tempShape.shapeDimensions[i + 1]);
-                pointsList << tempPoint;
+        case 3: {   // Polygon
+            const Polygon* polygon = dynamic_cast<const Polygon*>(shape);
+            if (!polygon)
+                throw std::runtime_error("Dynamic Cast to Polygon pointer failed.");
+            QPolygon points = polygon->getPointsList();
+            // Loop over each point and add its x and y values
+            for (int i = 0; i < points.size(); ++i) {
+                std::string x = std::to_string(points.at(i).x());
+                std::string y = std::to_string(points.at(i).y());
+                dimensions += x + ", " + y;
+                if (i < points.size() - 1)
+                    dimensions += ", ";
             }
-            tempShape.coords = pointsList[0];
-            shape = new Polygon(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, pointsList);
-            shape->setTrackerId(tempShape.trackerId);
+            dimensions += "]";
             break;
         }
         case 4: { // Rectangle
-            tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
-            int length = tempShape.shapeDimensions[2];
-            int width = tempShape.shapeDimensions[3];
-            shape = new Rectangle(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, length, width);
-            shape->setTrackerId(tempShape.trackerId);
+            const Rectangle* rect = dynamic_cast<const Rectangle*>(shape);
+            if (!rect)
+                throw std::runtime_error("Dynamic Cast to Rectangle pointer failed.");
+            QPoint coordinates = shape->getPoints();
+            std::string x = std::to_string(coordinates.x());
+            std::string y = std::to_string(coordinates.y());
+            std::string length = std::to_string(rect->getLength());
+            std::string width = std::to_string(rect->getWidth());
+            dimensions += x + ", " + y + ", " + length + ", " + width + "]";
             break;
         }
         case 5: { // Square
-            tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
-            int length = tempShape.shapeDimensions[2];
-            shape = new Square(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, length);
-            shape->setTrackerId(tempShape.trackerId);
+            const Square* square = dynamic_cast<const Square*>(shape);
+            if (!square)
+                throw std::runtime_error("Dynamic Cast to Square pointer failed.");
+            // Get the coordinate from the base Shape's getPoints() method.
+            QPoint coordinates = shape->getPoints();
+            std::string x = std::to_string(coordinates.x());
+            std::string y = std::to_string(coordinates.y());
+            std::string length = std::to_string(square->getLength());
+            dimensions += x + ", " + y + ", " + length + "]";
             break;
         }
         case 6: { // Ellipse
-            tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
-            int a = tempShape.shapeDimensions[2];
-            int b = tempShape.shapeDimensions[3];
-            shape = new Ellipse(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, a, b);
-            shape->setTrackerId(tempShape.trackerId);
+            const Ellipse* ellipse = dynamic_cast<const Ellipse*>(shape);
+            if (!ellipse)
+                throw std::runtime_error("Dynamic Cast to Ellipse pointer failed.");
+            // Get the coordinate from the base Shape's getPoints() method.
+            QPoint coordinates = shape->getPoints();
+            std::string x = std::to_string(coordinates.x());
+            std::string y = std::to_string(coordinates.y());
+            std::string aVal = std::to_string(ellipse->getA());
+            std::string bVal = std::to_string(ellipse->getB());
+            dimensions += x + ", " + y + ", " + aVal + ", " + bVal + "]";
             break;
         }
         case 7: { // Circle
-            tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
-            int r = tempShape.shapeDimensions[2];
-            shape = new Circle(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, r);
-            shape->setTrackerId(tempShape.trackerId);
+            const Circle* circle = dynamic_cast<const Circle*>(shape);
+            if (!circle)
+                throw std::runtime_error("Dynamic Cast to Circle pointer failed.");
+            QPoint coordinates = shape->getPoints();
+            std::string x = std::to_string(coordinates.x());
+            std::string y = std::to_string(coordinates.y());
+            std::string radius = std::to_string(circle->getR());
+            dimensions += x + ", " + y + ", " + radius + "]";
             break;
         }
         case 8: { // Text
-            tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
-            int length = tempShape.shapeDimensions[2];
-            int width = tempShape.shapeDimensions[3];
-            shape = new Text(tempShape.shapeId, tempShape.shapeType, tempShape.coords, tempShape.textString, tempShape.textColor, tempShape.textAlignment, tempShape.font, length, width);
-            shape->setTrackerId(tempShape.trackerId);
+            const Text* text = dynamic_cast<const Text*>(shape);
+            if (!text)
+                throw std::runtime_error("Dynamic Cast to Text pointer failed.");
+            QPoint coordinates = shape->getPoints();
+            std::string x = std::to_string(coordinates.x());
+            std::string y = std::to_string(coordinates.y());
+            std::string length = std::to_string(text->getLength());
+            std::string width = std::to_string(text->getWidth());
+            dimensions += x + ", " + y + ", " + length + ", " + width + "]";
             break;
         }
-        default: {
-            shape = nullptr;
-        }
+        default:
+            throw std::runtime_error("Unknown ShapeId: " + shape->getShapeId());
     }
-    return shape;
+    return dimensions;
+}
+
+
+
+std::string Parser::GetColor(const QColor &objectColor) {
+    std::string colorStr;
+    if (objectColor == Qt::red)
+        colorStr = "red";
+    else if (objectColor == Qt::green)
+        colorStr = "green";
+    else if (objectColor == Qt::yellow)
+        colorStr = "yellow";
+    else if (objectColor == Qt::cyan)
+        colorStr = "cyan";
+    else if (objectColor == Qt::magenta)
+        colorStr = "magenta";
+    else if (objectColor == Qt::gray)
+        colorStr = "gray";
+    else if (objectColor == Qt::blue)
+        colorStr = "blue";
+    else if (objectColor == Qt::white)
+        colorStr = "white";
+    else if (objectColor == Qt::lightGray)
+        colorStr = "lightGray";
+    else if (objectColor == Qt::darkGray)
+        colorStr = "darkGray";
+    else if (objectColor == Qt::black)
+        colorStr = "black";
+    else if (objectColor == Qt::transparent)
+        colorStr = "transparent";
+    else
+        throw std::runtime_error("Encountered unknown pen color.");
+    return colorStr;
+}
+
+
+
+std::string Parser::GetPenStyle(const Shape* shape) {
+    std::string style;
+    PenStyle penStyle = shape->getPenStyle();
+    if (penStyle == Qt::SolidLine)
+        style = "SolidLine";
+    else if (penStyle == Qt::DashLine)
+        style = "DashLine";
+    else if (penStyle == Qt::DotLine)
+        style = "DotLine";
+    else if (penStyle == Qt::DashDotLine)
+        style = "DashDotLine";
+    else if (penStyle == Qt::DashDotDotLine)
+        style = "DashDotDotLine";
+    else
+        throw std::runtime_error("Unknown pen style at ShapeId: " + shape->getShapeId());
+    return style;
+}
+
+
+
+std::string Parser::GetPenCapStyle(const Shape* shape) {
+    std::string capStyle;
+    PenCapStyle penCapStyle = shape->getPenCapStyle();
+    if (penCapStyle == Qt::FlatCap)
+        capStyle = "FlatCap";
+    else if (penCapStyle == Qt::SquareCap)
+        capStyle = "SquareCap";
+    else if (penCapStyle == Qt::RoundCap)
+        capStyle = "RoundCap";
+    else
+        throw std::runtime_error("Unknown pen cap style at ShapeId: " + shape->getShapeId());
+    return capStyle;
+}
+
+
+
+std::string Parser::GetPenJoinStyle(const Shape* shape) {
+    std::string joinStyle;
+    PenJoinStyle penJoinStyle = shape->getPenJoinStyle();
+    if (penJoinStyle == Qt::MiterJoin)
+        joinStyle = "MiterJoin";
+    else if (penJoinStyle == Qt::BevelJoin)
+        joinStyle = "BevelJoin";
+    else if (penJoinStyle == Qt::RoundJoin)
+        joinStyle = "RoundJoin";
+    else
+        throw std::runtime_error("Unknown pen join style at ShapeId: " + shape->getShapeId());
+    return joinStyle;
+}
+
+
+
+std::string Parser::GetBrushStyle(const Shape* shape) {
+    std::string style;
+    BrushStyle brushStyle = shape->getBrushStyle();
+    if (brushStyle == Qt::SolidPattern)
+        style = "SolidPattern";
+    else if (brushStyle == Qt::VerPattern)
+        style = "VerPattern";
+    else if (brushStyle == Qt::HorPattern)
+        style = "HorPattern";
+    else if (brushStyle == Qt::Dense1Pattern)
+        style = "Dense1Pattern";
+    else if (brushStyle == Qt::CrossPattern)
+        style = "CrossPattern";
+    else if (brushStyle == Qt::DiagCrossPattern)
+        style = "DiagCrossPattern";
+    else if (brushStyle == Qt::NoBrush)
+        style = "NoBrush";
+    else
+        throw std::runtime_error("Unknown brush style at ShapeId: " + shape->getShapeId());
+    return style;
+}
+
+
+
+std::string Parser::GetAlignmentFlag(const Text* text) {
+    AlignmentFlag flag = text->getTextAlignment();
+    if (flag == Qt::AlignLeft)
+        return "AlignLeft";
+    else if (flag == Qt::AlignRight)
+        return "AlignRight";
+    else if (flag == Qt::AlignHCenter)
+        return "AlignHCenter";
+    else if (flag == Qt::AlignJustify)
+        return "AlignJustify";
+    else if (flag == Qt::AlignTop)
+        return "AlignTop";
+    else if (flag == Qt::AlignBottom)
+        return "AlignBottom";
+    else if (flag == Qt::AlignVCenter)
+        return "AlignVCenter";
+    else if (flag == Qt::AlignCenter)
+        return "AlignCenter";
+    else
+        throw std::runtime_error("Unknown text alignment flag encountered: " + std::to_string(static_cast<int>(flag)));
+}
+
+
+
+std::string Parser::GetFontStyle(const Text* text) {
+    QFont::Style style = text->getFont().style();
+    if (style == QFont::StyleNormal)
+        return "StyleNormal";
+    else if (style == QFont::StyleItalic)
+        return "StyleItalic";
+    else if (style == QFont::StyleOblique)
+        return "StyleOblique";
+    else
+        throw std::runtime_error("Unknown font style encountered: " + std::to_string(static_cast<int>(style)));
+}
+
+
+
+std::string Parser::GetFontWeight(const Text* text) {
+    int weight = text->getFont().weight();
+    if (weight == QFont::Normal)
+        return "Normal";
+    else if (weight == QFont::Bold)
+        return "Bold";
+    else if (weight == QFont::Light)
+        return "Light";
+    else
+        throw std::runtime_error("Unknown font weight encountered: " + std::to_string(weight));
 }

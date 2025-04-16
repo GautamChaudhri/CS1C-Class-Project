@@ -14,6 +14,9 @@ public:
             int    a,
             int    b);
 
+    int getA() const {return a;};   // Necessary for parser
+    int getB() const {return b;};
+
     void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;
