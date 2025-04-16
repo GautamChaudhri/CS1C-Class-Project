@@ -39,6 +39,16 @@ public:
      */
     alpha::vector<Shape*> JsonToShapes(const std::string& json);    //Forward Parser (JSON string -> vector<Shape*>)
 
+    /**
+     * @brief This function takes in a vector of Shape pointers and converts
+     *        them into a string formatted in json.
+     * 
+     * @param shapes - a vector of Shape pointers
+     * 
+     * @return a string formatted in json containing all of the key:value pairs
+     *         in the correct json format
+     * 
+     */
     std::string ShapesToJson(const alpha::vector<Shape*>& shapes);  //Reverse Parser (vector<Shape*> -> JSON string)
 
 private:
