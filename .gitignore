@@ -3,7 +3,7 @@
 #Build files, binaries, and general clutter
 *.o
 src/webservice/webservice
-src/webservice-dockerized/webservice
+/webservice-dockerized/webservice
 src/backend/MyApp
 *.user*
 build/
