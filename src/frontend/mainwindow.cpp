@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -7,12 +6,14 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    renderArea = new RenderArea(this);
+    // Manually create the RenderArea and insert it into the placeholder container
+    renderArea = new RenderArea(ui->renderAreaContainer);
 
-    //Sets the render area on the screen
-    renderArea->setGeometry(50, 105, 1000, 850);
+    // Create a layout to manage the RenderArea inside the container
+    auto layout = new QVBoxLayout(ui->renderAreaContainer);
+    layout->setContentsMargins(0, 0, 0, 0); // Optional: remove padding
+    layout->addWidget(renderArea);
 
-    //Ensures the widget doesn't block the buttons in the main window
     renderArea->setAttribute(Qt::WA_TransparentForMouseEvents);
 }
 

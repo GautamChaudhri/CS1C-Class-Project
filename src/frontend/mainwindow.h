@@ -6,6 +6,8 @@
 #include "Parser.h"
 #include "ApiClient.h"
 #include <QApplication>
+#include <QGridLayout>
+#include "ui_mainwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
