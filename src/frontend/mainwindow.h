@@ -21,8 +21,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-public slots:
-    void setShapes(const alpha::vector<Shape*>& shapes);
+    void drawShapes() const;
+
+protected:
+    //void paintEvent(QPaintEvent *event) override;
 
 private slots:
 

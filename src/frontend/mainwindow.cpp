@@ -4,9 +4,10 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , renderArea(new RenderArea(this))
 {
     ui->setupUi(this);
+
+    RenderArea renderArea = new RenderArea(this);
 
     //Sets the render area on the screen
     renderArea.setGeometry(50, 105, 1000, 850);
@@ -15,13 +16,10 @@ MainWindow::MainWindow(QWidget *parent)
     renderArea.setAttribute(Qt::WA_TransparentForMouseEvents);
 }
 
-void MainWindow::setShapes(const alpha::vector<Shape*>& shapes) {
-    // store the shapes, trigger re-render, etc.
-}
-
 
 MainWindow::~MainWindow()
 {  
     delete ui;
 }
+
 
