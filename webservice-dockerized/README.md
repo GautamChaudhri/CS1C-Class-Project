@@ -12,11 +12,11 @@ You need to have Docker Desktop installed on your machine:
 - Open the terminal anywhere on your machine
 - Pull the container
   ```bash
-  docker pull ghcr.io/gautamchaudhri/cs1c-class-project:latest
+  docker pull ghcr.io/gautamchaudhri/crow-webservice:latest
   ```
 - Start the container:
   ```bash
-  docker run -p 8080:8080 --name crow-webservice -it ghcr.io/gautamchaudhri/cs1c-class-project:latest
+  docker run -p 8080:8080 --name crow-webservice -it ghcr.io/gautamchaudhri/crow-webservice:latest
   ```
 - Stop the container:
   In the terminal running the container, press `Ctrl + C`
@@ -89,7 +89,7 @@ If it returns an error or hangs, Docker Desktop is likely not running. Start it 
 **Q: It says "image not found."**  
 A: Make sure you pulled the image with:
 ```bash
-docker pull ghcr.io/gautamchaudhri/cs1c-class-project:latest
+docker pull ghcr.io/gautamchaudhri/crow-webservice:latest
 ```
 
 **Q: How do I stop the container?**  

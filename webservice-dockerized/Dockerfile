@@ -1,4 +1,5 @@
 FROM fedora:latest
+LABEL org.opencontainers.image.source="https://github.com/GautamChaudhri/CS1C-Class-Project"
 
 #install dependencies
 RUN sudo dnf install -y git make g++ nano && sudo dnf update -y && dnf clean all
