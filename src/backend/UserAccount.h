@@ -5,9 +5,16 @@
 
 class UserAccount {
 public:
-    UserAccount();
+    // Constructors
+    UserAccount();      //creates a default guest account
     UserAccount(QString username, QString password, bool admin);
     ~UserAccount();
+
+    // Copy and move constructors and assignment operators
+    UserAccount(const UserAccount& other);
+    UserAccount& operator=(const UserAccount& other);
+    UserAccount(UserAccount&& other) noexcept;
+    UserAccount& operator=(UserAccount&& other) noexcept;
 
     //Getters
     QString getUsername() const;
@@ -19,6 +26,7 @@ public:
     void setPassword(QString& password);
     void setAdmin(bool admin);
     void setUserAccount(QString& username, QString& password, bool admin);
+
 
 private:
     QString username;
