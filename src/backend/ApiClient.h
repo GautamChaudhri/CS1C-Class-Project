@@ -30,6 +30,8 @@ public:
      */
     explicit ApiClient(QObject* parent = nullptr);
 
+
+
     /**
      * @brief Makes a request to get data from the Get /shapes API Endpoint
      * @file reads from database/shapes.json
@@ -38,6 +40,8 @@ public:
      *          On completion of request, control is handed over to @see AnalyzeGetReply().
      */
     void GetShapes();
+
+
 
     /**
      * @brief Makes a request to get data from the Get /render_area API Endpoint
@@ -48,29 +52,92 @@ public:
      */
     void GetRenderArea();
 
+
+
+    /**
+     * @brief Makes a request to get data from the Get /users API Endpoint
+     * @file reads from database/users.json
+     * 
+     * @details This function submits a request to the Get /users API in the webservice. 
+     *          On completion of request, control is handed over to @see AnalyzeGetReply().
+     */
+    void GetUsers();
+
+
+
     /**
      * @brief Makes a request to send data to the Post /shapes API Endpoint
      * @file writes to database/shapes.json
      * 
      * @details This function submits a request to the Post /shapes API in the webservice. 
-     *          On completion of request, control is handed over to @see AnalyzePostReply(). 
+     *          On completion of request, control is handed over to @see AnalyzeReply(). 
      * 
      * @param json - contains data for all possible shapes that can be rendered by the 
      *               application; formatted in JSON
      */
     void PostShapes(std::string json);
 
+
+
     /**
-     * @brief Makes a request to get data from the Post /render_area API Endpoint
+     * @brief Makes a request to send data to the Post /render_area API Endpoint
      * @file writes to database/render_area.json
      * 
      * @details This function submits a request to the Post /render_area API in the webservice. 
-     *          On completion of request, control is handed over to @see AnalyzePostReply().
+     *          On completion of request, control is handed over to @see AnalyzeReply().
      * 
      * @param json - contains data for all shapes currently in the render window in the 
      *               frontend UI; formatted in JSON
      */
     void PostRenderArea(std::string json);
+    
+    
+    /**
+     * @brief Makes a request to send data to the Post /users API Endpoint
+     * @file writes to database/users.json
+     * 
+     * @details This function submits a request to the Post /users API in the webservice. 
+     *          On completion of request, control is handed over to @see AnalyzePostReply().
+     * 
+     * @param json - contains data for all shapes currently in the render window in the 
+     *               frontend UI; formatted in JSON
+     */
+    void PostUsers(std::string json);
+
+
+
+    /**
+     * @brief Makes a request to delete all shapes via the Delete /shapes-all endpoint
+     * @file deletes data from database/shapes.json
+     * 
+     * @details This function submits a request to the Delete /shapes-all API in the webservice. 
+     *          On completion of request, control is handed over to @see AnalyzeDeleteReply().
+     */
+    void DeleteShapesAll();
+
+
+
+    /**
+     * @brief Makes a request to delete all render area data via Delete /render_area-all
+     * @file deletes data from database/render_area.json
+     * 
+     * @details This function submits a request to the Delete /render_area API in the webservice. 
+     *          On completion of request, control is handed over to @see AnalyzeDeleteReply().
+     */
+    void DeleteRenderAreaAll();
+
+
+
+    /**
+     * @brief Makes a request to delete all user data via Delete /users-all
+     * @file deletes data from database/users.json
+     * 
+     * @details This function submits a request to the Delete /users-all API in the webservice. 
+     *          On completion of request, control is handed over to @see AnalyzeDeleteReply().
+     */
+    void DeleteUsersAll();
+
+
 
 signals:
     /**
@@ -81,7 +148,9 @@ signals:
      * 
      * @param json - contains data received from whichever Get endpoint was called and is formatted in JSON.
      */
-    void GoodGetReply(const QString& json);
+    void GoodGetReply(const std::string& json);
+
+
 
     /**
      * @brief Signal for a failed request sent to a Get endpoint
@@ -91,7 +160,9 @@ signals:
      * 
      * @param error - the error message indicating what went wrong
      */
-    void BadGetReply(const QString& error);
+    void BadGetReply(const std::string& error);
+
+
 
     /**
      * @brief Signal for a successful request sent to a Post endpoint
@@ -99,6 +170,8 @@ signals:
      * @details When this signal is emitted, then the data was successfully received by the API.
      */
     void GoodPostReply();
+
+
 
     /**
      * @brief Signal for a failed request sent to a Post endpoint
@@ -108,27 +181,62 @@ signals:
      * 
      * @param error - the error message indicating what went wrong
      */
-    void BadPostReply(const QString& error);
+    void BadPostReply(const std::string& error);
+
+
+
+    /**
+     * @brief Signal for a successful request sent to a Delete endpoint
+     * 
+     * @details When this signal is emitted, then the data was successfully deleted by the API.
+     */
+    void GoodDeleteReply();
+
+
+
+    /**
+     * @brief Signal for a failed request sent to a Delete endpoint
+     * 
+     * @details When this signal is emitted, then the API was not able to properly delete the file it needed to. 
+     *          Assume the data sent was not deleted.
+     * 
+     * @param error - the error message indicating what went wrong
+     */
+    void BadDeleteReply(const std::string& error);
+
+
 
 private slots:
     /**
      * @brief Analyzes the reply to discover if the Get request sent was successful or a failure.
      * 
      * @details A successful reply emits the @see GoodGetReply signal. An errored reply emits the 
-     *          @see BadGetReply signal. After signal emission, what happens next is implemented
-     *          in @see main.cpp.
+     *          @see BadGetReply signal. 
      */
     void AnalyzeGetReply();
+
+
 
     /**
      * @brief Analyzes the reply to discover if the Post request sent was successful or a failure.
      * 
      * @details A successful reply emits the @see GoodPostReply signal. An errored reply emits the 
-     *          @see BadPostReply signal. After signal emission, what happens next is implemented
-     *          in @see main.cpp.
+     *          @see BadPostReply signal. 
      */
     void AnalyzePostReply();
 
+
+
+    /**
+     * @brief Analyzes the reply to discover if the Delete request sent was successful or a failure.
+     * 
+     * @details A successful reply emits the @see GoodDeleteReply signal. An errored reply emits the 
+     *          @see BadDeleteReply signal.
+     */
+    void AnalyzeDeleteReply();
+
+
+    
 private:
     QNetworkAccessManager* manager;  // Manages all network operations for the client
 };

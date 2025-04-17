@@ -1,19 +1,18 @@
-#include <iostream>
 #include <QCoreApplication>
 #include <QObject>
 #include "ApiClient.h"
 //#include "ApiHandler.h"   | i'm dumb and made this when we don't need it
 #include "Parser.h"
+#include "UserManager.h"
 
-void OnGoodGetResponseTest(const QString &json);
-void OnBadGetResponseTest(const QString &errorMsg);
+void OnGoodGetResponseTest(const std::string &json);
+void OnBadGetResponseTest(const std::string &errorMsg);
 void OnGoodPostResponseTest();
-void OnBadPostResponseTest(const QString &errorMsg);
+void OnBadPostResponseTest(const std::string &errorMsg);
 ApiClient* GetConnectedClient();
-void saveShapes(const alpha::vector<Shape*> shapes);
-void saveRenderArea(const alpha::vector<Shape*> renderArea);
 
 //For testing
+std::string GetUsersTestString();
 std::string GetShapeTestString();
 std::string GetRenderAreaTestString();
 
@@ -28,73 +27,56 @@ int main(int argc, char* argv[])
     QCoreApplication app(argc, argv);
     pApp = &app;
 
-    // Instantiate the ApiClient object
+    //Testing gauntlet point 1
+    std::cout << "Starting Test Gauntlet! Test Point 1: Get users\n";
+    UserManager manager;
+
+    //Test point 2
     ApiClient* client = GetConnectedClient();
     pClient = client;
-
-    //Testing Gauntlet: point 1
-    std::cout << "Starting Test Gauntlet! Point 1: Get endpoint\n";
+    //client->PostUsers(userTest);
+    std::cout << "Test Point 2: Get render area\n";
     client->GetRenderArea();
 
     // Start the Qt event loop; this loop will run until app.quit() is called.
     return app.exec();
 }
 
-void SaveShapes(const alpha::vector<Shape*> shapes) {
-  //Test point 3 cont.
-  std::string json = parse.ShapesToJson(shapes);
+void OnGoodGetResponseTest(const std::string &json) {
+  //Test point 2 cont.
+  std::cout << "Received JSON from webservice:\n" << json << std::endl << std::endl;
+
+  //Test point 3
+  std::cout << "Test point 3: convert json to vector of shapes\n";
+  alpha::vector<Shape*> shapes = parse.JsonToShapes(json);
+  std::cout << "Shapes in vector:\n";
+  parse.PrintShapeVector(shapes);
+
+  //Test point 4
+  std::cout << "Test point 4: convert vector of shapes to json\n";
+  std::string jsonShapes = parse.ShapesToJson(shapes);
   std::cout << "Outputting new JSON:\n";
-  std::cout << json << std::endl << std::endl;
+  std::cout << jsonShapes << std::endl << std::endl;
 
-  //Test Point 4
-  std::cout << "Test point 4: Post endpoint\n";
-  pClient->PostShapes(json);
+  //Test point 5
+  std::cout << "Test point 5: Post endpoint\n";
+  pClient->PostShapes(jsonShapes);
 }
 
-void SaveRenderArea(const alpha::vector<Shape*> renderArea) {
-  //Test point 3 cont.
-  std::string json = parse.ShapesToJson(renderArea);
-  std::cout << "Outputting new JSON:\n";
-  std::cout << json << std::endl << std::endl;
-
-  //Test Point 4
-  std::cout << "Test point 4: Post endpoint\n";
-  pClient->PostRenderArea(json);
-}
-
-void OnGoodGetResponseTest(const QString &json) {
-    //Test point 1 contd.
-    std::string jsonStr = json.toStdString();
-    std::cout << "Received JSON from webservice:\n";
-    std::cout << jsonStr << std::endl << std::endl;
-
-    //Test Point 2
-    std::cout << "Test point 2: Parse JSON and convert to vector.\n";
-    alpha::vector<Shape*> vect = parse.JsonToShapes(jsonStr);
-    std::cout << "Outputting Primitive Data Types from Shape* Vector:\n";
-    parse.PrintShapeVector(vect);
-    std::cout << std::endl << std::endl;
-
-    //Test Point 3
-    std::cout << "Test point 3: Begin save by first converting vector back into JSON.\n";
-    SaveRenderArea(vect);
-    //pApp->quit();
-}
-
-void OnBadGetResponseTest(const QString &errorMsg) {
-    std::cerr << "Error: " << errorMsg.toStdString() << std::endl << std::endl;
+void OnBadGetResponseTest(const std::string &errorMsg) {
+    std::cerr << "Error: " << errorMsg << std::endl << std::endl;
     pApp->quit();
 }
 
 void OnGoodPostResponseTest() {
-    //Test point 4 cont.
+    //Test point 5 cont.
     std::cout << "Data Received by webservice successfully!\n";
     std::cout << "Finish Test Gauntlet!\n";
     pApp->quit();
 }
 
-void OnBadPostResponseTest(const QString &errorMsg) {
-    std::cerr << "Error: " << errorMsg.toStdString() << std::endl;
+void OnBadPostResponseTest(const std::string &errorMsg) {
+    std::cerr << "Error: " << errorMsg << std::endl;
     pApp->quit();
 }
 
@@ -108,6 +90,63 @@ ApiClient* GetConnectedClient() {
 }
 
 //For testing
+
+// For testing: ten random UserAccount JSON objects
+std::string GetUsersTestString() {
+  return R"([
+  {
+    "username": "alice",
+    "password": "Wonderland1!",
+    "admin": true
+  },
+  {
+    "username": "bob",
+    "password": "Builder#22",
+    "admin": false
+  },
+  {
+    "username": "carol",
+    "password": "C@rol2025",
+    "admin": true
+  },
+  {
+    "username": "dave",
+    "password": "davE_pw_3",
+    "admin": false
+  },
+  {
+    "username": "eve",
+    "password": "3v3_secret",
+    "admin": true
+  },
+  {
+    "username": "frank",
+    "password": "FrankPass4",
+    "admin": false
+  },
+  {
+    "username": "grace",
+    "password": "Gr@ceful5",
+    "admin": false
+  },
+  {
+    "username": "heidi",
+    "password": "heidi-6pwd",
+    "admin": true
+  },
+  {
+    "username": "ivan",
+    "password": "Ivan_pw7",
+    "admin": false
+  },
+  {
+    "username": "judy",
+    "password": "JuDy!2025",
+    "admin": false
+  }
+])";
+}
+
 std::string GetShapeTestString() {
     return R"([[
     {

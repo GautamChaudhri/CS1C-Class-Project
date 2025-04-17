@@ -18,6 +18,8 @@
  *      - begin()
  *      - end() operations
 *******************************************************************************/
+#ifndef VECTOR_H
+#define VECTOR_H
 namespace alpha {
 template<class T>
 
@@ -344,3 +346,4 @@ class vector
         
 }; // END class vector
 }; // END namespace alpha
+#endif // VECTOR_H

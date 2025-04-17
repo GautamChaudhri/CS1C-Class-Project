@@ -15,7 +15,7 @@ CXXFLAGS = -std=c++17 -g -O0 \
 LDFLAGS = -lQt6Core -lQt6Network -lQt6Widgets -lQt6Gui
 
 # Source files: main, ApiClient, Parser, and all shape implementations
-SOURCES = main.cpp ApiClient.cpp Parser.cpp \
+SOURCES = main.cpp ApiClient.cpp Parser.cpp UserManager.cpp UserAccount.cpp \
     ../objects/shape.cpp \
     ../objects/line.cpp \
     ../objects/polyline.cpp \
@@ -27,8 +27,8 @@ SOURCES = main.cpp ApiClient.cpp Parser.cpp \
     ../objects/text.cpp
 
 # Object files: Convert .cpp file names to .o
-OBJECTS = main.o ApiClient.o moc_ApiClient.o \
-    Parser.o \
+OBJECTS = main.o ApiClient.o moc_ApiClient.o moc_UserManager.o \
+    Parser.o UserManager.o UserAccount.o \
     ../objects/shape.o \
     ../objects/line.o \
     ../objects/polyline.o \
@@ -40,7 +40,7 @@ OBJECTS = main.o ApiClient.o moc_ApiClient.o \
     ../objects/text.o
 
 # Name of the final executable
-TARGET = MyApp
+TARGET = Backend
 
 # Default target: Build the final executable
 all: $(TARGET)
@@ -61,13 +61,29 @@ ApiClient.o: ApiClient.cpp
 Parser.o: Parser.cpp Parser.h
 	$(CXX) $(CXXFLAGS) -c Parser.cpp -o Parser.o
 
+# Rule to compile UserManager.cpp into UserManager.o
+UserManager.o: UserManager.cpp UserManager.h
+	$(CXX) $(CXXFLAGS) -c UserManager.cpp -o UserManager.o
+
+# Rule to compile UserAccount.cpp into UserAccount.o
+UserAccount.o: UserAccount.cpp UserAccount.h
+	$(CXX) $(CXXFLAGS) -c UserAccount.cpp -o UserAccount.o
+
 # Generate moc_ApiClient.cpp from ApiClient.h
 moc_ApiClient.cpp: ApiClient.h
 	$(MOC) -o moc_ApiClient.cpp ApiClient.h
 
+# Generate moc_UserManager.cpp from UserManager.h
+moc_UserManager.cpp: UserManager.h
+	$(MOC) -o moc_UserManager.cpp UserManager.h
+
 # Compile moc_ApiClient.cpp into moc_ApiClient.o
 moc_ApiClient.o: moc_ApiClient.cpp
 	$(CXX) $(CXXFLAGS) -c moc_ApiClient.cpp -o moc_ApiClient.o
+
+# Compile moc_UserManager.cpp into moc_UserManager.o
+moc_UserManager.o: moc_UserManager.cpp
+	$(CXX) $(CXXFLAGS) -c moc_UserManager.cpp -o moc_UserManager.o
 
 # Pattern rule to compile any .cpp file in ../objects/ to its corresponding .o file
 ../objects/%.o: ../objects/%.cpp
@@ -75,7 +91,7 @@ moc_ApiClient.o: moc_ApiClient.cpp
 
 # Clean: Remove the executable, object files, and generated moc files
 clean:
-	rm -f $(TARGET) main.o ApiClient.o Parser.o moc_ApiClient.o \
+	rm -f $(TARGET) main.o ApiClient.o Parser.o moc_ApiClient.o moc_UserManager.o \
 	    ../objects/shape.o \
 	    ../objects/line.o \
 	    ../objects/polyline.o \
@@ -85,4 +101,4 @@ clean:
 	    ../objects/ellipse.o \
 	    ../objects/circle.o \
 	    ../objects/text.o \
-	    moc_ApiClient.cpp
+	    moc_ApiClient.cpp moc_UserManager.cpp

@@ -3,12 +3,17 @@
  * @brief Implements the Crow web service for handling shapes and render area data.
  *
  * @details This web service provides the following endpoints:
- *            - GET "/"             : A test endpoint that returns a greeting.
- *            - POST /shapes        : Accepts JSON data to update the shapes file (/webservice/database/shapes.json).
- *            - GET /shapes         : Returns the JSON-formatted shapes data from /webservice/database/shapes.json.
- *            - DELETE /shape       : Deletes a shape (identified by ShapeId) from the shapes file.
- *            - POST /render_area   : Accepts JSON data to update the render area file (/webservice/database/render_area.json).
- *            - GET /render_area    : Returns the JSON-formatted render area data from /webservice/database/render_area.json.
+ *            - TEST GET "/"            : A test endpoint that returns a greeting.
+ *            - GET /shapes             : Returns the JSON-formatted shapes data from /webservice/database/shapes.json. 
+ *            - GET /render_area        : Returns the JSON-formatted render area data from /webservice/database/render_area.json.
+ *            - GET /users              : Returns the JSON-formatted user data from /webservice/database/users.json.
+ *            - POST /shapes            : Accepts JSON data to update the shapes file (/webservice/database/shapes.json).
+ *            - POST /render_area       : Accepts JSON data to update the render area file (/webservice/database/render_area.json).
+ *            - POST /users             : Accepts JSON data to update the user file (/webservice/database/users.json).
+ *            - DELETE /shapes-all      : Clears all shapes data by truncating the shapes.json file.
+ *            - DELETE /render_area-all : Clears all render area data by truncating the render_area.json file.
+ *            - DELETE /users-all       : Clears all user data by truncating the users.json file.
+ *            
  *
  * @note Uses the Crow framework for handling HTTP requests. Make sure the database directory exists or is created.
  */
@@ -35,53 +40,8 @@
          return "Hello, Crow!";
      });
  
-     /**
-      * @brief Updates shapes.json with new shapes.
-      *
-      * @details Accepts a POST request with JSON data in the body and writes the contents
-      *          to the file "/webservice/database/shapes.json". If the file cannot be opened, a 500 response is returned.
-      */
-    //  CROW_ROUTE(app, "/shapes").methods(crow::HTTPMethod::Post)
-    //  ([](const crow::request& req){
-    //      std::filesystem::create_directory("/webservice/database");
- 
-    //      std::ofstream outfile("/webservice/database/shapes.json", std::ios::binary);
-    //      if (!outfile)
-    //      {
-    //          return crow::response(500, "Error saving file");
-    //      }
- 
-    //      // Write the content received (assuming req.body contains the file data)
-    //      outfile << req.body;
-    //      outfile.close();
-    //      return crow::response(200, "File saved successfully");
-    //  });
 
-    CROW_ROUTE(app, "/shapes").methods(crow::HTTPMethod::Post)
-    ([](const crow::request& req){
-        try {
-            std::filesystem::create_directory("/webservice/database");
 
-            std::ofstream outfile("/webservice/database/shapes.json", std::ios::binary);
-            if (!outfile) {
-                CROW_LOG_ERROR << "Failed to open /webservice/database/shapes.json for writing";
-                return crow::response(500, "Error saving file");
-            }
-
-            if (req.body.empty()) {
-                CROW_LOG_ERROR << "POST /shapes called with empty body";
-                return crow::response(400, "Request body is empty");
-            }
-
-            outfile << req.body;
-            outfile.close();
-            return crow::response(200, "File saved successfully");
-        } catch (const std::exception& e) {
-            CROW_LOG_ERROR << "Exception in /shapes POST: " << e.what();
-            return crow::response(500, e.what());
-        }
-    });
- 
      /**
       * @brief Retrieves shapes data.
       *
@@ -104,76 +64,9 @@
              return crow::response(500, exception.what());
          }
      });
- 
-     /**
-      * @brief Deletes a shape.
-      *
-      * @details Parses a DELETE request that provides a JSON body with a "ShapeId" key. The function removes the shape
-      *          with the matching ShapeId from "/webservice/database/shapes.json" and writes the updated list back to the file.
-      *          Returns a 404 response if the ShapeId is not found.
-      */
-     CROW_ROUTE(app, "/shape").methods(crow::HTTPMethod::Delete)
-     ([](const crow::request& req){
-         try {
-             // Parse the request to get the ShapeId to delete
-             auto deleteTarget = crow::json::load(req.body);
-             if (!deleteTarget || !deleteTarget.has("ShapeId"))
-                 return crow::response(400, "Missing or invalid ShapeId");
-             int targetID = deleteTarget["ShapeId"].i();
- 
-             // Parse existing shapes to find targetID
-             auto allShapes = get_json_file("/webservice/database/shapes.json");
-             crow::json::wvalue newShapesList;
-             // Initialize as JSON object with a "shapes" array
-             newShapesList["shapes"] = crow::json::wvalue::list();
- 
-             bool found = false;
-             auto& shapesArray = newShapesList["shapes"];
-             for (size_t i = 0; i < allShapes.size(); ++i) {
-                 if (allShapes[i]["ShapeId"].i() != targetID) {
-                     // Append to array by index
-                     shapesArray[shapesArray.size()] = allShapes[i];
-                 } else
-                     found = true;
-             }
- 
-             if (!found)
-                 return crow::response(404, "ShapeId not found in database");
-             else {
-                 // Overwrite shapes.json with new shapes which has the target shape missing
-                 std::ofstream shapeFile("/webservice/database/shapes.json");
-                 shapeFile << newShapesList["shapes"].dump(4);
-                 shapeFile.close();
-                 return crow::response(200, "Shape deleted successfully");
-             }
-         }
-         catch (const std::exception& exception) {
-             return crow::response(500, exception.what());
-         }
-     });
- 
-     /**
-      * @brief Updates the render area data.
-      *
-      * @details Accepts a POST request with JSON data and writes it to the file "/webservice/database/render_area.json".
-      *          Returns a 500 response if the file cannot be opened.
-      */
-     CROW_ROUTE(app, "/render_area").methods(crow::HTTPMethod::Post)
-     ([](const crow::request& req){
-         std::filesystem::create_directory("/webservice/database");
- 
-         std::ofstream outfile("/webservice/database/render_area.json", std::ios::binary);
-         if (!outfile)
-         {
-             return crow::response(500, "Error saving file");
-         }
- 
-         // Write the content received (assuming req.body contains the file data)
-         outfile << req.body;
-         outfile.close();
-         return crow::response(200, "File saved successfully");
-     });
- 
+
+
+
      /**
       * @brief Retrieves render area data.
       *
@@ -196,7 +89,174 @@
              return crow::response(500, exception.what());
          }
      });
+
+
+
+     /**
+      * @brief Retrieves user account data.
+      *
+      * @details Reads the JSON data from "/webservice/database/user.json", parses it, and returns it
+      *          with Content-Type "application/json".
+      */
+     CROW_ROUTE(app, "/users").methods(crow::HTTPMethod::Get)
+     ([](){
+         try {
+             auto users = get_json_file("/webservice/database/users.json");
+             crow::json::wvalue w = users;
+             crow::response resp;
+             resp.code = 200;
+             resp.add_header("Content-Type", "application/json");
+             resp.body = w.dump();
+             return resp;
+         }
+         catch (const std::exception& exception) {
+             return crow::response(500, exception.what());
+         }
+     });
+
+
+
+     /**
+      * @brief Updates shapes.json with new shapes.
+      *
+      * @details Accepts a POST request with JSON data in the body and writes the contents
+      *          to the file "/webservice/database/shapes.json". If the file cannot be opened, a 500 response is returned.
+      */
+     CROW_ROUTE(app, "/shapes").methods(crow::HTTPMethod::Post)
+     ([](const crow::request& req){
+         std::filesystem::create_directory("/webservice/database");
  
+         std::ofstream outfile("/webservice/database/shapes.json", std::ios::binary);
+         if (!outfile)
+         {
+             return crow::response(500, "Error saving file");
+         }
+ 
+         // Write the content received (assuming req.body contains the file data)
+         outfile << req.body;
+         outfile.close();
+         return crow::response(200, "File saved successfully");
+     });
+ 
+
+ 
+     /**
+      * @brief Updates the render area data.
+      *
+      * @details Accepts a POST request with JSON data and writes it to the file "/webservice/database/render_area.json".
+      *          Returns a 500 response if the file cannot be opened.
+      */
+     CROW_ROUTE(app, "/render_area").methods(crow::HTTPMethod::Post)
+     ([](const crow::request& req){
+         std::filesystem::create_directory("/webservice/database");
+ 
+         std::ofstream outfile("/webservice/database/render_area.json", std::ios::binary);
+         if (!outfile)
+         {
+             return crow::response(500, "Error saving file");
+         }
+ 
+         // Write the content received (assuming req.body contains the file data)
+         outfile << req.body;
+         outfile.close();
+         return crow::response(200, "File saved successfully");
+     });
+
+
+
+     /**
+      * @brief Updates user.json with new user data.
+      *
+      * @details Accepts a POST request with JSON body and writes it to "/webservice/database/user.json".
+      */
+     CROW_ROUTE(app, "/users").methods(crow::HTTPMethod::Post)
+     ([](const crow::request& req){
+         std::filesystem::create_directory("/webservice/database");
+         std::ofstream outfile("/webservice/database/users.json", std::ios::binary | std::ios::trunc);
+         if (!outfile) {
+             return crow::response(500, "Error saving user file");
+         }
+         outfile << req.body;
+         outfile.close();
+         return crow::response(200, "User file saved successfully");
+     });
+
+
+
+     /**
+      * @brief Clears all shapes.
+      *
+      * @details Deletes the shapes.json file content by truncating the file,
+      *          leaving it empty (an empty JSON array).
+      */
+     CROW_ROUTE(app, "/shapes-all").methods(crow::HTTPMethod::Delete)
+     ([](){
+         try {
+             std::filesystem::create_directory("/webservice/database");
+             std::ofstream shapeFile("/webservice/database/shapes.json", std::ios::trunc);
+             if (!shapeFile) {
+                 return crow::response(500, "Error clearing shapes file");
+             }
+             // Write an empty JSON array to keep valid format
+             shapeFile << "[]";
+             shapeFile.close();
+             return crow::response(200, "All shapes cleared");
+         }
+         catch (const std::exception& exception) {
+             return crow::response(500, exception.what());
+         }
+     });
+ 
+     
+     
+     /**
+      * @brief Clears all render area data.
+      *
+      * @details Deletes the render_area.json file content by truncating the file,
+      *          leaving it empty (an empty JSON array).
+      */
+     CROW_ROUTE(app, "/render_area-all").methods(crow::HTTPMethod::Delete)
+     ([](){
+         try {
+             std::filesystem::create_directory("/webservice/database");
+             std::ofstream raFile("/webservice/database/render_area.json", std::ios::trunc);
+             if (!raFile) {
+                 return crow::response(500, "Error clearing render_area file");
+             }
+             // Write an empty JSON array to keep valid format
+             raFile << "[]";
+             raFile.close();
+             return crow::response(200, "All render area data cleared");
+         }
+         catch (const std::exception& exception) {
+             return crow::response(500, exception.what());
+         }
+     });
+     
+
+ 
+     /**
+      * @brief Clears all user account data.
+      *
+      * @details Deletes the user.json file content by truncating it, leaving an empty JSON array.
+      */
+     CROW_ROUTE(app, "/users-all").methods(crow::HTTPMethod::Delete)
+     ([](){
+         try {
+             std::filesystem::create_directory("/webservice/database");
+             std::ofstream userFile("/webservice/database/users.json", std::ios::trunc);
+             if (!userFile) {
+                 return crow::response(500, "Error clearing user file");
+             }
+             userFile << "[]";
+             userFile.close();
+             return crow::response(200, "All user data cleared");
+         }
+         catch (const std::exception& exception) {
+             return crow::response(500, exception.what());
+         }
+     });
+     
      // Run the server on port 8080 using multiple threads
      app.port(8080).multithreaded().run();
      return 0;
@@ -212,39 +272,67 @@
   * @param path The file system path to the JSON file.
   * @return crow::json::rvalue The parsed JSON data.
   */
-//  crow::json::rvalue get_json_file(const std::string& path) {
-//      std::ifstream file(path);
-//      if (!file) 
-//          throw std::runtime_error("Failed to open file: " + path);
+ crow::json::rvalue get_json_file(const std::string& path) {
+     std::ifstream file(path);
+     if (!file) 
+         throw std::runtime_error("Failed to open file: " + path);
      
-//      // Put file data into a stringstream
-//      std::stringstream buffer;
-//      buffer << file.rdbuf();
+     // Put file data into a stringstream
+     std::stringstream buffer;
+     buffer << file.rdbuf();
  
-//      // Parse data with Crow's JSON parser
-//      auto jsonData = crow::json::load(buffer.str());
-//      if (!jsonData)
-//          throw std::runtime_error("Failed to parse file: " + path);
+     // Parse data with Crow's JSON parser
+     auto jsonData = crow::json::load(buffer.str());
+     if (!jsonData)
+         throw std::runtime_error("Failed to parse file: " + path);
      
-//      return jsonData;
-//  }
+     return jsonData;
+ }
 
-crow::json::rvalue get_json_file(const std::string& path) {
-    std::ifstream file(path);
-    if (!file) 
-        throw std::runtime_error("Failed to open file: " + path);
 
-    std::stringstream buffer;
-    buffer << file.rdbuf();
-    std::string content = buffer.str();
-
-    if (content.empty()) {
-        return crow::json::load("[]"); // Or "{}" depending on your file
-    }
-
-    auto jsonData = crow::json::load(content);
-    if (!jsonData)
-        throw std::runtime_error("Failed to parse file: " + path);
-    
-    return jsonData;
-}
+//  /**
+//       * @brief Deletes a shape.
+//       *
+//       * @details Parses a DELETE request that provides a JSON body with a "ShapeId" key. The function removes the shape
+//       *          with the matching ShapeId from "/webservice/database/shapes.json" and writes the updated list back to the file.
+//       *          Returns a 404 response if the ShapeId is not found.
+//       */
+//      CROW_ROUTE(app, "/shape").methods(crow::HTTPMethod::Delete)
+//      ([](const crow::request& req){
+//          try {
+//              // Parse the request to get the ShapeId to delete
+//              auto deleteTarget = crow::json::load(req.body);
+//              if (!deleteTarget || !deleteTarget.has("ShapeId"))
+//                  return crow::response(400, "Missing or invalid ShapeId");
+//              int targetID = deleteTarget["ShapeId"].i();
+ 
+//              // Parse existing shapes to find targetID
+//              auto allShapes = get_json_file("/webservice/database/shapes.json");
+//              crow::json::wvalue newShapesList;
+//              // Initialize as JSON object with a "shapes" array
+//              newShapesList["shapes"] = crow::json::wvalue::list();
+ 
+//              bool found = false;
+//              auto& shapesArray = newShapesList["shapes"];
+//              for (size_t i = 0; i < allShapes.size(); ++i) {
+//                  if (allShapes[i]["ShapeId"].i() != targetID) {
+//                      // Append to array by index
+//                      shapesArray[shapesArray.size()] = allShapes[i];
+//                  } else
+//                      found = true;
+//              }
+ 
+//              if (!found)
+//                  return crow::response(404, "ShapeId not found in database");
+//              else {
+//                  // Overwrite shapes.json with new shapes which has the target shape missing
+//                  std::ofstream shapeFile("/webservice/database/shapes.json");
+//                  shapeFile << newShapesList["shapes"].dump(4);
+//                  shapeFile.close();
+//                  return crow::response(200, "Shape deleted successfully");
+//              }
+//          }
+//          catch (const std::exception& exception) {
+//              return crow::response(500, exception.what());
+//          }
+//      });

@@ -5,6 +5,7 @@
 #include <cctype>
 #include "../objects/vector.h"
 #include "../objects/all_shapes.h"
+#include "UserAccount.h"
 
 enum ShapeIDs {LINE = 1, POLYLINE, POLYGON, RECTANGLE, SQUARE, ELLIPSE, CIRCLE, TEXT};
 class Parser {
@@ -51,6 +52,12 @@ public:
      */
     std::string ShapesToJson(const alpha::vector<Shape*>& shapes);  //Reverse Parser (vector<Shape*> -> JSON string)
 
+    // Forward parser: JSON → vector<UserAccount>
+    alpha::vector<UserAccount*> JsonToUsers(const std::string& json);
+
+    // Reverse parser: vector<UserAccount> → JSON
+    std::string UsersToJson(const alpha::vector<UserAccount*>& users);
+
 private:
     /*==================================== Forward Parser Subroutines ============================================*/
     /**
@@ -77,6 +84,16 @@ private:
         QFont font;
         AlignmentFlag textAlignment;
     };
+
+    //Accumulator for user account objects
+    struct RawUser {
+            QString username;
+            QString password;
+            bool    admin       = false;
+            bool    hasUsername = false;
+            bool    hasPassword = false;
+            bool    hasAdmin    = false;
+        };
 
     /**
      * @brief Parses a single object in the Json 
@@ -208,6 +225,8 @@ private:
      * 
      */
     std::string ExtractArray(const std::string& json, size_t &index);
+
+    std::string ExtractLiteral(const std::string& json, size_t& index);
     
     /**
      * @brief Converts an array that is currently a string value into an actual 
@@ -398,6 +417,10 @@ private:
      * @return the text font family as a string
      */
     std::string GetFontWeight(const Text* text);
+
+
+
+    static void   UpdateUserAccumulator(const std::string& key, const std::string& value, RawUser& acc);
 };
 
 #endif // PARSER_H

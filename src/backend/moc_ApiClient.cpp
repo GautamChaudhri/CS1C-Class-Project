@@ -40,13 +40,17 @@ static constexpr auto qt_meta_stringdata_ZN9ApiClientE = QtMocHelpers::stringDat
     "ApiClient",
     "GoodGetReply",
     "",
+    "std::string",
     "json",
     "BadGetReply",
     "error",
     "GoodPostReply",
     "BadPostReply",
+    "GoodDeleteReply",
+    "BadDeleteReply",
     "AnalyzeGetReply",
-    "AnalyzePostReply"
+    "AnalyzePostReply",
+    "AnalyzeDeleteReply"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -58,30 +62,36 @@ Q_CONSTINIT static const uint qt_meta_data_ZN9ApiClientE[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       4,       // signalCount
+       6,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   50,    2, 0x06,    1 /* Public */,
-       4,    1,   53,    2, 0x06,    3 /* Public */,
-       6,    0,   56,    2, 0x06,    5 /* Public */,
-       7,    1,   57,    2, 0x06,    6 /* Public */,
+       1,    1,   68,    2, 0x06,    1 /* Public */,
+       5,    1,   71,    2, 0x06,    3 /* Public */,
+       7,    0,   74,    2, 0x06,    5 /* Public */,
+       8,    1,   75,    2, 0x06,    6 /* Public */,
+       9,    0,   78,    2, 0x06,    8 /* Public */,
+      10,    1,   79,    2, 0x06,    9 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       8,    0,   60,    2, 0x08,    8 /* Private */,
-       9,    0,   61,    2, 0x08,    9 /* Private */,
+      11,    0,   82,    2, 0x08,   11 /* Private */,
+      12,    0,   83,    2, 0x08,   12 /* Private */,
+      13,    0,   84,    2, 0x08,   13 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::QString,    3,
-    QMetaType::Void, QMetaType::QString,    5,
+    QMetaType::Void, 0x80000000 | 3,    4,
+    QMetaType::Void, 0x80000000 | 3,    6,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    5,
+    QMetaType::Void, 0x80000000 | 3,    6,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 3,    6,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -99,18 +109,25 @@ Q_CONSTINIT const QMetaObject ApiClient::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<ApiClient, std::true_type>,
         // method 'GoodGetReply'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const std::string &, std::false_type>,
         // method 'BadGetReply'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const std::string &, std::false_type>,
         // method 'GoodPostReply'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'BadPostReply'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const std::string &, std::false_type>,
+        // method 'GoodDeleteReply'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'BadDeleteReply'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const std::string &, std::false_type>,
         // method 'AnalyzeGetReply'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'AnalyzePostReply'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'AnalyzeDeleteReply'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -121,26 +138,29 @@ void ApiClient::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
     auto *_t = static_cast<ApiClient *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->GoodGetReply((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 1: _t->BadGetReply((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 0: _t->GoodGetReply((*reinterpret_cast< std::add_pointer_t<std::string>>(_a[1]))); break;
+        case 1: _t->BadGetReply((*reinterpret_cast< std::add_pointer_t<std::string>>(_a[1]))); break;
         case 2: _t->GoodPostReply(); break;
-        case 3: _t->BadPostReply((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 4: _t->AnalyzeGetReply(); break;
-        case 5: _t->AnalyzePostReply(); break;
+        case 3: _t->BadPostReply((*reinterpret_cast< std::add_pointer_t<std::string>>(_a[1]))); break;
+        case 4: _t->GoodDeleteReply(); break;
+        case 5: _t->BadDeleteReply((*reinterpret_cast< std::add_pointer_t<std::string>>(_a[1]))); break;
+        case 6: _t->AnalyzeGetReply(); break;
+        case 7: _t->AnalyzePostReply(); break;
+        case 8: _t->AnalyzeDeleteReply(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _q_method_type = void (ApiClient::*)(const QString & );
+            using _q_method_type = void (ApiClient::*)(const std::string & );
             if (_q_method_type _q_method = &ApiClient::GoodGetReply; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
         }
         {
-            using _q_method_type = void (ApiClient::*)(const QString & );
+            using _q_method_type = void (ApiClient::*)(const std::string & );
             if (_q_method_type _q_method = &ApiClient::BadGetReply; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
                 *result = 1;
                 return;
@@ -154,9 +174,23 @@ void ApiClient::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
             }
         }
         {
-            using _q_method_type = void (ApiClient::*)(const QString & );
+            using _q_method_type = void (ApiClient::*)(const std::string & );
             if (_q_method_type _q_method = &ApiClient::BadPostReply; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
                 *result = 3;
+                return;
+            }
+        }
+        {
+            using _q_method_type = void (ApiClient::*)();
+            if (_q_method_type _q_method = &ApiClient::GoodDeleteReply; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+                *result = 4;
+                return;
+            }
+        }
+        {
+            using _q_method_type = void (ApiClient::*)(const std::string & );
+            if (_q_method_type _q_method = &ApiClient::BadDeleteReply; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+                *result = 5;
                 return;
             }
         }
@@ -182,27 +216,27 @@ int ApiClient::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 9;
     }
     return _id;
 }
 
 // SIGNAL 0
-void ApiClient::GoodGetReply(const QString & _t1)
+void ApiClient::GoodGetReply(const std::string & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
-void ApiClient::BadGetReply(const QString & _t1)
+void ApiClient::BadGetReply(const std::string & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
@@ -215,9 +249,22 @@ void ApiClient::GoodPostReply()
 }
 
 // SIGNAL 3
-void ApiClient::BadPostReply(const QString & _t1)
+void ApiClient::BadPostReply(const std::string & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
+}
+
+// SIGNAL 4
+void ApiClient::GoodDeleteReply()
+{
+    QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
+}
+
+// SIGNAL 5
+void ApiClient::BadDeleteReply(const std::string & _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 5, _a);
 }
 QT_WARNING_POP

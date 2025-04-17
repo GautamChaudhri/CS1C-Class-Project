@@ -73,6 +73,80 @@ std::string Parser::ShapesToJson(const alpha::vector<Shape*>& shapes) {     //Re
     return json;
 }
 
+
+
+alpha::vector<UserAccount*> Parser::JsonToUsers(const std::string& json) { // Forward Parser for user accounts
+    alpha::vector<UserAccount*> out;
+    size_t index = 0;
+    SkipWhitespace(json, index);
+    if (index >= json.size() || json[index] != '[')
+        throw std::runtime_error("Expected '[' at start of JSON array");
+    ++index;
+
+    while (true) {
+        SkipWhitespace(json, index);
+        if (index < json.size() && json[index] == ']') { ++index; break; }
+
+        if (index >= json.size() || json[index] != '{')
+            throw std::runtime_error("Expected '{' at start of user object");
+        ++index;
+
+        RawUser acc;
+        // parse one object
+        while (true) {
+            SkipWhitespace(json, index);
+            if (index < json.size() && json[index] == '}') { ++index; break; }
+            if (index >= json.size() || json[index] != '\"')
+                throw std::runtime_error("Expected '\"' at key");
+
+            std::string key = ExtractKey(json, index);
+            SkipWhitespace(json, index);
+            if (index >= json.size() || json[index] != ':')
+                throw std::runtime_error("Expected ':' after key");
+            ++index;
+            SkipWhitespace(json, index);
+
+            std::string value = ExtractValue(json, index);
+            UpdateUserAccumulator(key, value, acc);
+            SkipWhitespace(json, index);
+
+            if (index < json.size() && json[index] == ',') { ++index; continue; }
+            else if (index < json.size() && json[index] == '}') continue;
+            else throw std::runtime_error("Expected ',' or '}' in object");
+        }
+
+        if (!acc.hasUsername || !acc.hasPassword || !acc.hasAdmin)
+            throw std::runtime_error("Missing required fields in user object");
+
+        out.push_back(new UserAccount(acc.username, acc.password, acc.admin));
+        SkipWhitespace(json, index);
+
+        if (index < json.size() && json[index] == ',') { ++index; continue; }
+        else if (index < json.size() && json[index] == ']') { ++index; break; }
+        else throw std::runtime_error("Expected ',' or ']' after object");
+    }
+
+    return out;
+}
+
+
+
+std::string Parser::UsersToJson(const alpha::vector<UserAccount*>& users) {    // Reverse Parser for user accounts
+    std::string json = "[\n";
+    for (size_t index = 0; index < users.size(); ++index) {
+        const UserAccount* user = users[index];
+        json += "  {\n";
+        json += "    \"username\": \"" + user->getUsername().toStdString() + "\",\n";
+        json += "    \"password\": \"" + user->getPassword().toStdString() + "\",\n";
+        json += "    \"admin\": " + std::string(user->isAdmin() ? "true" : "false") + "\n";
+        json += "  }";
+        if (index + 1 < users.size()) json += ",";
+        json += "\n";
+    }
+    json += "]";
+    return json;
+}
+
 /*==================================== Forward Parser Subroutines ============================================*/
 
 Parser::MorphicShape Parser::ParseJsonObject(const std::string json, size_t &index) {
@@ -444,6 +518,8 @@ std::string Parser::ExtractValue(const std::string& json, size_t &index) {
         value = ExtractInteger(json, index);
     else if (json[index] == '[')        // value is an array
         value = ExtractArray(json, index);
+    else if (json[index] == 't' || json[index] == 'f')  // value is a boolean
+        value = ExtractLiteral(json, index);
     else
         throw std::runtime_error("Expected '\"', '[', or integer.");
     
@@ -475,6 +551,13 @@ std::string Parser::ExtractArray(const std::string& json, size_t &index) {
 void Parser::SkipWhitespace(const std::string& json, size_t& index) {
     while (index < json.length() && isspace(json[index]))
         ++index;
+}
+
+std::string Parser::ExtractLiteral(const std::string& json, size_t& index) {
+    size_t start = index;
+    while (index < json.size() && std::isalpha(static_cast<unsigned char>(json[index])))
+        ++index;
+    return json.substr(start, index - start);
 }
 
 
@@ -823,4 +906,23 @@ std::string Parser::GetFontWeight(const Text* text) {
         return "Light";
     else
         throw std::runtime_error("Unknown font weight encountered: " + std::to_string(weight));
+}
+
+
+
+void Parser::UpdateUserAccumulator(const std::string& key, const std::string& value, RawUser& acc) {
+    if (key == "username") {
+        acc.username    = QString::fromStdString(value);
+        acc.hasUsername = true;
+    }
+    else if (key == "password") {
+        acc.password    = QString::fromStdString(value);
+        acc.hasPassword = true;
+    }
+    else if (key == "admin") {
+        if      (value == "true")  acc.admin = true;
+        else if (value == "false") acc.admin = false;
+        else throw std::runtime_error("Invalid boolean for admin: " + value);
+        acc.hasAdmin = true;
+    }
 }
