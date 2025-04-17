@@ -95,12 +95,17 @@ install(TARGETS Frontend
 # ===============================
 
 # Backend source files
+# Backend source files
 set(BACKEND_SOURCES
     src/backend/main.cpp
     src/backend/ApiClient.cpp
     src/backend/ApiClient.h
     src/backend/Parser.h
     src/backend/Parser.cpp
+    src/backend/UserManager.h
+    src/backend/UserManager.cpp
+    src/backend/UserAccount.h
+    src/backend/UserAccount.cpp
 
     # Objects / shapes are now in src/objects/
     src/objects/all_shapes.h
