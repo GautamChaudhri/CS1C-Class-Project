@@ -21,16 +21,21 @@ public:
     ~RenderAreaManager();
 
     /**
+     * @brief Returns the renderShapes vector as a reference
+     */
+    alpha::vector<Shape*>* getShapesRef();
+
+    /**
      * @brief These functions are used to add, change, delete, and load shapes
      *        in the RenderAreaManager.
      * 
      * @details All of these functions emit the renderAreaChanged() signal
      *          to notify the frontend that the shapes have changed and need to be
-     *          redrawn except for saveShapes().
+     *          redrawn except for saveShapes
      */
     void addShape(Shape* shape);
-    void changeShape(Shape* shape);
-    void deleteShape(int trackerId);
+    void modifyShape(Shape* shape);
+    void deleteShape(const int trackerId);
     void deleteAllShapes();
     void loadShapes();
     void saveShapes();
@@ -46,6 +51,7 @@ signals:
      *              or whatever the message is for the user.
      */
     void renderAreaChanged();
+    void renderAreaNotChanged(const QString &message);
     void statusMessage(const QString &message);
 
 

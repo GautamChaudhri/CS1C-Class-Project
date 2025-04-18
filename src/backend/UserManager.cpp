@@ -1,4 +1,5 @@
 #include "UserManager.h"
+#include <QString>
 
 UserManager::UserManager(QObject* parent) : QObject{parent}, currUser{new UserAccount}, client{}, parse{} {
     connect(&client, &ApiClient::GoodGetReply, this, &UserManager::onGoodGetResponse);
@@ -7,7 +8,7 @@ UserManager::UserManager(QObject* parent) : QObject{parent}, currUser{new UserAc
     connect(&client, &ApiClient::BadPostReply, this, &UserManager::onBadPostResponse);
     connect(&client, &ApiClient::GoodDeleteReply, this, &UserManager::onGoodDeleteResponse);
     connect(&client, &ApiClient::BadDeleteReply, this, &UserManager::onBadDeleteResponse);
-    client.GetUsers();
+    //loadUsers();
 }
 
 
@@ -20,6 +21,12 @@ UserManager::~UserManager() {
 
 
 
+UserAccount* UserManager::getCurrUserRef() {
+    return currUser;
+}
+
+
+
 void UserManager::addUser(const QString username, const QString password, const bool admin) {
     // Adds a new user to the UserManager
     users.push_back(new UserAccount(username, password, admin));
@@ -28,36 +35,50 @@ void UserManager::addUser(const QString username, const QString password, const 
 
 
 
-void UserManager::changeUser(const QString username, const QString password, const bool admin) {
-    // Modifies an existing user's credentials and admin status
-    for (size_t i = 0; i < users.size(); ++i) {
+void UserManager::modifyUser(const QString username, const QString password, const bool admin) {
+    bool userFound = false;
+    for (size_t i = 0; i < users.size() && !userFound; ++i) {
         if (users[i]->getUsername() == username) {
             delete users[i];
             users[i] = new UserAccount(username, password, admin);
-            break;
+            userFound = true;
+            emit userChanged();
+            saveUsers();
         }
     }
-    saveUsers();
+    if (!userFound) {
+        QString message = "User not found. Username: " + username;
+        emit userNotChanged(message);
+    }
 }
 
 
 
 void UserManager::deleteUser(QString username) {
-    // Deletes a user from the UserManager
-    for (size_t i = 0; i < users.size(); ++i) {
+    bool userFound = false;
+    for (size_t i = 0; i < users.size() && !userFound; ++i) {
         if (users[i]->getUsername() == username) {
             delete users[i];
             users.erase(users.begin() + i);
-            break;
+            userFound = true;
+            emit userChanged();
+            saveUsers();
         }
     }
-    saveUsers();
+    if (!userFound) {
+        QString message = "User not found. Username: " + username;
+        emit userNotChanged(message);
+    }
 }
 
 
 
 void UserManager::deleteAllUsers() {
     client.DeleteUsersAll();
+    for (size_t i = 0; i < users.size(); ++i) {
+        delete users[i];
+    }
+    emit userChanged();
 }
 
 
@@ -71,15 +92,19 @@ void UserManager::loadUsers() {
 
 void UserManager::authenticate(const QString username, const QString password) {
     // Authenticates a user based on username and password
-    for (size_t i = 0; i < users.size(); ++i) {
+    bool authSuccess = false;
+    for (size_t i = 0; i < users.size() && !authSuccess; ++i) {
         if (users[i]->getUsername() == username && users[i]->getPassword() == password) {
+            authSuccess = true;
             emit userAuthenticated("User authenticated successfully.");
             delete currUser;
             currUser = users[i];
-            return;
         }
     }
-    emit statusMessage("Authentication failed. Invalid username or password.");
+    if (!authSuccess) {
+        QString message = "Authentication failed. Invalid username or password.";
+        emit authenticationFailed(message);
+    }
 }
 
 

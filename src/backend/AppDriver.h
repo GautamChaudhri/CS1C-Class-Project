@@ -17,16 +17,40 @@ public:
     void run();
     void shutdown();
 
+    void loadAllData();
 
-protected:
-    void connectSlotsSignals();
+
+private slots:
+    /// @brief These slots connect the shapes box UI to the ShapesManager data
+    void onShapeAdded(Shape* shape);
+    void onShapeChanged(Shape* shape);
+    void onShapeDeleted(const int trackerId);
+    void onDeleteAllShapes();
+
+    /// @brief These slots connect the render area UI to the RenderAreaManager data
+    void onRenderShapeAdded(Shape* shape);
+    void onRenderAreaChanged(Shape* shape);
+    void onRenderShapeDeleted(const int trackerId);
+    void onRenderDeleteAllShapes();
+
+    ///@brief These slots connect the user login UI to the UserManager data
+    void onNewUser(const QString username, const QString password, const bool admin);
+    void onUserModified(const QString username, const QString password, const bool admin);
+    void onUserDeleted(const QString username);
+    void onDeleteAllUsers();
+    void onLoginAttempt(const QString username, const QString password);
 
 
 private:
     ShapesManager* shapes;
     RenderAreaManager* renderedShapes;
     UserManager* user;
-    QCoreApplication* qtApp;
+
+    MainWindow* mainwindow;
+
+    //Subroutines
+    void connectFrontendToDriver();
+    void connectManagersToFrontend();
 };
 
 #endif // APP_DRIVER_H

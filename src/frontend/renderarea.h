@@ -4,31 +4,18 @@
 #include <QPainter>
 #include <QPen>
 
-#include "shape.h"
-#include "line.h"
-#include "polyline.h"
-#include "polygon.h"
-#include "rectangle.h"
-#include "square.h"
-#include "ellipse.h"
-#include "circle.h"
-#include "text.h"
-
-#include "vector.h"
+#include "all_shapes.h"
 
 class RenderArea : public QWidget
 {
 public:
     RenderArea(QWidget *parent = nullptr);
 
-    void addShape(std::unique_ptr<Shape> newShape)
-    {
-        renderShapes.push_back(std::move(newShape));
-    }
+    void setShapes(const alpha::vector<Shape*>& shapes);
 
 protected:
-    void paintEvent(QPaintEvent *event);
+    void paintEvent(QPaintEvent *event) override;
 
 private:
-    std::vector<std::unique_ptr<Shape>> renderShapes;
+    alpha::vector<Shape*> renderShapes;
 };

@@ -12,7 +12,7 @@
 class UserManager : public QObject {
     Q_OBJECT
 public:
-        /**
+    /**
      * @brief Default Constructor
      * 
      * @details This constructor initializes the UserManager object and connects
@@ -24,6 +24,11 @@ public:
     ~UserManager();
 
     /**
+     * @brief Returns the users vector as a reference
+     */
+    UserAccount* getCurrUserRef();
+
+    /**
      * @brief These functions are used to add, change, delete, and load users
      *        in the UserManager.
      * 
@@ -32,11 +37,12 @@ public:
      *          and needs to be refreshed except for authenticate().
      */
     void addUser(const QString username, const QString password, const bool admin);
-    void changeUser(const QString username, const QString password, const bool admin);
+    void modifyUser(const QString username, const QString password, const bool admin);
     void deleteUser(QString username);
     void deleteAllUsers();
     void loadUsers();
     void saveUsers();
+    void authenticate(const QString username, const QString password);
     
 
 signals:
@@ -47,12 +53,14 @@ signals:
      *          - userAuthenticated(): notifies when authentication succeeds or fails
      */
     void userChanged();
+    void userNotChanged(const QString &message);
     void statusMessage(const QString &message);
     void userAuthenticated(const QString &message);
+    void authenticationFailed(const QString &messsage);
 
 
 private slots:
-    void authenticate(const QString username, const QString password);
+    
 
     /**
      * @details These slot functions receive signals from the ApiClient class

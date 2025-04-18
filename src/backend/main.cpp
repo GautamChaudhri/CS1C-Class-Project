@@ -4,6 +4,7 @@
 //#include "ApiHandler.h"   | i'm dumb and made this when we don't need it
 #include "Parser.h"
 #include "UserManager.h"
+#include "AppDriver.h"
 
 void OnGoodGetResponseTest(const std::string &json);
 void OnBadGetResponseTest(const std::string &errorMsg);
@@ -25,18 +26,21 @@ Parser parse;
 int main(int argc, char* argv[])
 {
     QCoreApplication app(argc, argv);
-    pApp = &app;
+    AppDriver driver(&app);
+    driver.run();
 
-    //Testing gauntlet point 1
-    std::cout << "Starting Test Gauntlet! Test Point 1: Get users\n";
-    UserManager manager;
+    // pApp = &app;
 
-    //Test point 2
-    ApiClient* client = GetConnectedClient();
-    pClient = client;
-    //client->PostUsers(userTest);
-    std::cout << "Test Point 2: Get render area\n";
-    client->GetRenderArea();
+    // //Testing gauntlet point 1
+    // std::cout << "Starting Test Gauntlet! Test Point 1: Get users\n";
+    // UserManager manager;
+
+    // //Test point 2
+    // ApiClient* client = GetConnectedClient();
+    // pClient = client;
+    // //client->PostUsers(userTest);
+    // std::cout << "Test Point 2: Get render area\n";
+    // client->GetRenderArea();
 
     // Start the Qt event loop; this loop will run until app.quit() is called.
     return app.exec();

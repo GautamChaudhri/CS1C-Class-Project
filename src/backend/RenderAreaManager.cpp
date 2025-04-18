@@ -7,7 +7,7 @@ RenderAreaManager::RenderAreaManager(QObject* parent) : QObject{parent}, client{
     connect(&client, &ApiClient::BadPostReply, this, &RenderAreaManager::onBadPostResponse);
     connect(&client, &ApiClient::GoodDeleteReply, this, &RenderAreaManager::onGoodDeleteResponse);
     connect(&client, &ApiClient::BadDeleteReply, this, &RenderAreaManager::onBadDeleteResponse);
-    loadShapes();
+    //loadShapes();
 }
 
 
@@ -19,6 +19,12 @@ RenderAreaManager::~RenderAreaManager() {
 
 
 
+alpha::vector<Shape*>* RenderAreaManager::getShapesRef() {
+    return &renderedShapes;
+}
+
+
+
 void RenderAreaManager::addShape(Shape* shape) {
     renderedShapes.push_back(shape);
     emit renderAreaChanged();
@@ -26,29 +32,41 @@ void RenderAreaManager::addShape(Shape* shape) {
 
 
 
-void RenderAreaManager::changeShape(Shape* shape) {
-    // Changes a shape in the RenderAreaManager
-    for (size_t i = 0; i < renderedShapes.size(); ++i) {
+void RenderAreaManager::modifyShape(Shape* shape) {
+    bool shapeFound = false;
+
+    for (size_t i = 0; i < renderedShapes.size() && !shapeFound; ++i) {
         if (renderedShapes[i]->getTrackerId() == shape->getTrackerId()) {
             delete renderedShapes[i];
             renderedShapes[i] = shape;
             emit renderAreaChanged();
-            break;
+            saveShapes();
         }
+    }
+
+    if (!shapeFound) {
+        QString message = "Shape not found. TrackerId: " + shape->getTrackerId();
+        emit renderAreaNotChanged(message);
     }
 }
 
 
 
-void RenderAreaManager::deleteShape(int trackerId) {
-    // Deletes a shape from the RenderAreaManager
-    for (size_t i = 0; i < renderedShapes.size(); ++i) {
+void RenderAreaManager::deleteShape(const int trackerId) {
+    bool shapeFound = false;
+
+    for (size_t i = 0; i < renderedShapes.size() && !shapeFound; ++i) {
         if (renderedShapes[i]->getTrackerId() == trackerId) {
             delete renderedShapes[i];
             renderedShapes.erase(renderedShapes.begin() + i);
             emit renderAreaChanged();
-            break;
+            saveShapes();
         }
+    }
+
+    if (!shapeFound) {
+        QString message = "Shape not found. TrackerId: " + trackerId;
+        emit renderAreaNotChanged(message);
     }
 }
 
@@ -66,6 +84,7 @@ void RenderAreaManager::deleteAllShapes() {
 
 void RenderAreaManager::loadShapes() {
     client.GetShapes();
+    emit renderAreaChanged();
 }
 
 

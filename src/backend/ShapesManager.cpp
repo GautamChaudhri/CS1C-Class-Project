@@ -10,7 +10,7 @@
      connect(&client, &ApiClient::BadPostReply, this, &ShapesManager::onBadPostResponse);
      connect(&client, &ApiClient::GoodDeleteReply, this, &ShapesManager::onGoodDeleteResponse);
      connect(&client, &ApiClient::BadDeleteReply,  this, &ShapesManager::onBadDeleteResponse);
-     loadShapes();
+     //loadShapes();
  }
  
 
@@ -20,6 +20,10 @@
          delete shape;
      }
  }
+
+ alpha::vector<Shape*>* ShapesManager::getShapesRef() {
+    return &shapes;
+}
  
 
 
@@ -28,19 +32,45 @@
     emit shapesChanged();
     saveShapes();
  }
- 
 
 
- void ShapesManager::deleteShape(int trackerId) {
-    for (size_t i = 0; i < shapes.size(); ++i) {
+
+void ShapesManager::modifyShape(Shape* shape) {
+    bool shapeFound = false;
+
+    for (size_t i = 0; i < shapes.size() && !shapeFound; ++i) {
+        if (shapes[i]->getTrackerId() == shape->getTrackerId()) {
+            delete shapes[i];
+            shapes[i] = shape;
+            emit shapesChanged();
+            saveShapes();
+        }
+    }
+
+    if (!shapeFound) {
+        QString message = "Shape not found. TrackerId: " + shape->getTrackerId();
+        emit shapesNotChanged(message);
+    }
+}
+
+
+
+ void ShapesManager::deleteShape(const int trackerId) {
+    bool shapeFound = false;
+
+    for (size_t i = 0; i < shapes.size() && !shapeFound; ++i) {
         if (shapes[i]->getTrackerId() == trackerId) {
             delete shapes[i];
             shapes.erase(shapes.begin() + i);
             emit shapesChanged();
-            break;
+            saveShapes();
         }
     }
-    saveShapes();
+    
+    if (!shapeFound) {
+        QString message = "Shape not found. TrackerId: " + trackerId;
+        emit shapesNotChanged(message);
+    }
  }
  
 

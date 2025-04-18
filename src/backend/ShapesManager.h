@@ -23,6 +23,11 @@ public:
     ~ShapesManager();
 
     /**
+     * @brief Returns the shapes vector as a reference
+     */
+    alpha::vector<Shape*>* getShapesRef();
+
+    /**
      * @brief These functions are used to add, delete, and load shapes
      *        in the ShapesManager.
      * 
@@ -31,10 +36,12 @@ public:
      *          redrawn except for saveShapes().
      */
     void addShape(Shape* shape);
-    void deleteShape(int trackerId);
+    void modifyShape(Shape* shape);
+    void deleteShape(const int trackerId);
     void deleteAllShapes();
     void loadShapes();
     void saveShapes();
+    
 
 
 signals:
@@ -47,6 +54,7 @@ signals:
      *              or whatever the message is for the user.
      */
     void shapesChanged();
+    void shapesNotChanged(const QString &messsage);
     void statusMessage(const QString &message);
 
 

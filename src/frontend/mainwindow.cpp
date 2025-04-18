@@ -1,25 +1,53 @@
 #include "mainwindow.h"
-#include "renderarea.h"
-#include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+// MainWindow::MainWindow(QWidget *parent)
+//     : QMainWindow(parent)
+//     , ui(new Ui::MainWindow)
+// {
+//     ui->setupUi(this);
+
+//     // Manually create the RenderArea and insert it into the placeholder container
+//     renderArea = new RenderArea(ui->renderAreaContainer);
+
+//     // Create a layout to manage the RenderArea inside the container
+//     auto layout = new QVBoxLayout(ui->renderAreaContainer);
+//     layout->setContentsMargins(0, 0, 0, 0); // Optional: remove padding
+//     layout->addWidget(renderArea);
+
+//     renderArea->setAttribute(Qt::WA_TransparentForMouseEvents);
+// }
+
+
+MainWindow::MainWindow(QWidget *parent, alpha::vector<Shape*>* shapes,
+                         alpha::vector<Shape*>* renderedShapes, UserAccount* user)
+    : QMainWindow(parent), ui(new Ui::MainWindow), shapes(shapes), renderedShapes(renderedShapes), user(user)
 {
     ui->setupUi(this);
 
-    //Creates custom widget
-    RenderArea *customWidget = new RenderArea(this);
+    // Manually create the RenderArea and insert it into the placeholder container
+    renderArea = new RenderArea(ui->renderAreaContainer);
 
-    //Sets the render area on the screen
-    customWidget->setGeometry(50, 105, 1000, 850);
+    // Create a layout to manage the RenderArea inside the container
+    auto layout = new QVBoxLayout(ui->renderAreaContainer);
+    layout->setContentsMargins(0, 0, 0, 0); // Optional: remove padding
+    layout->addWidget(renderArea);
 
-    //Ensures the widget doesn't block the buttons in the main window
-    customWidget->setAttribute(Qt::WA_TransparentForMouseEvents);
+    renderArea->setAttribute(Qt::WA_TransparentForMouseEvents);
 }
+
 
 MainWindow::~MainWindow()
 {  
     delete ui;
 }
+
+void MainWindow::onRenderAreaChange() {
+    //code here to redraw renderArea
+}
+
+// void MainWindow::setShapes(const alpha::vector<Shape*>& shapes) {
+//     //updates the shape vector in renderArea and then draws it again
+//     renderArea->setShapes(shapes);
+//     renderArea->update();
+// }
 
