@@ -16,6 +16,12 @@ Rectangle::Rectangle(int    shapeId,
                     width{width}
 {}
 
+bool Rectangle::isPointInside(const QPoint& point) const
+{
+    QRect rect(getX(), getY(), length, width);
+    return rect.contains(point);
+}
+
 void Rectangle::Draw(QWidget* renderArea)
 {
     getPainter().begin(renderArea);

@@ -22,10 +22,7 @@ public:
     double Perimeter() const override;
     double Area()      const override;
 
-    bool isPointInside(const QPoint& point) const override
-    {
-        return pointsList.containsPoint(point, Qt::OddEvenFill);
-    }
+    bool isPointInside(const QPoint& point) const override;
 
 private:
     QPolygon pointsList;

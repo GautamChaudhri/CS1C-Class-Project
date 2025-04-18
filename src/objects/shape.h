@@ -124,8 +124,8 @@ public:
         return isSelected;
     }
 
-    //virtual bool isPointInside(const QPoint& point) const = 0;
-    virtual bool isPointInside(const QPoint& point) const {return false;}; // Temparary so that other shapes are not considered abstract
+    virtual bool isPointInside(const QPoint& point) const = 0;
+    //virtual bool isPointInside(const QPoint& point) const {return false;};
 
 private:
     int      shapeId;

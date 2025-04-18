@@ -20,6 +20,13 @@ Ellipse::Ellipse(int    shapeId,
                  b{b}
 {}
 
+bool Ellipse::isPointInside(const QPoint& point) const
+{
+    QRect rect(getX() - a, getY() - b, a*2, b*2);
+    return rect.contains(point);
+}
+
+
 void Ellipse::Draw(QWidget* renderArea)
 {
     getPainter().begin(renderArea);

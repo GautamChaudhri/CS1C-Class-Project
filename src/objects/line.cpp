@@ -20,6 +20,23 @@ Line::Line(int    shapeId,
          endPoint{endPoint}
 {}
 
+bool Line::isPointInside(const QPoint& point) const
+{
+    // Define a margin for the bounding box (e.g., 5 pixels)
+    const int margin = 5;
+
+    // Create a bounding rectangle around the line
+    int minX = std::min(startPoint.x(), endPoint.x()) - margin;
+    int maxX = std::max(startPoint.x(), endPoint.x()) + margin;
+    int minY = std::min(startPoint.y(), endPoint.y()) - margin;
+    int maxY = std::max(startPoint.y(), endPoint.y()) + margin;
+
+    QRect boundingBox(QPoint(minX, minY), QPoint(maxX, maxY));
+
+    // Check if the point is inside the bounding box
+    return boundingBox.contains(point);
+}
+
 void Line::Draw(QWidget* renderArea)
 {
     getPainter().begin(renderArea);

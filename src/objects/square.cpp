@@ -14,6 +14,12 @@ Square::Square(int    shapeId,
                length{length}
 {}
 
+bool Square::isPointInside(const QPoint& point) const
+{
+    QRect rect(getX(), getY(), length, length);
+    return rect.contains(point);
+}
+
 void Square::Draw(QWidget* renderArea)
 {
     getPainter().begin(renderArea);
