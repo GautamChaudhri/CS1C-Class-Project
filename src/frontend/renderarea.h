@@ -14,49 +14,13 @@ public:
 
     void setShapes(const alpha::vector<Shape*>& shapes);
 
-    void mousePressEvent(QMouseEvent* event) override
-    {
-        int vecSize = renderShapes.size();
-
-        QPoint clickPoint = event->pos();
-
-        for (int i = 0; i < vecSize; ++i)
-        {
-            if (renderShapes[i]->isPointInside(clickPoint))
-            {
-                renderShapes[i]->setSelected(true);
-            } else
-            {
-                renderShapes[i]->setSelected(false);
-            }
-        }
-        update(); // Trigger repaint to show the selection state visually
-    }
-
-    void mouseMoveEvent(QMouseEvent* event) override
-    {
-        QPoint oldPos;
-        QPoint newPos;
-
-        int vecSize = renderShapes.size();
-
-        for (int i = 0; i < vecSize; ++i)
-        {
-            if (renderShapes[i]->getSelected() == true)
-            {
-                oldPos = renderShapes[i]->getPoints();
-
-                newPos = QCursor::pos();
-
-                renderShapes[i]->Move(newPos.x(), newPos.y());
-            }
-        }
-        update();
-    }
+    void mousePressEvent(QMouseEvent* event) override;
+    void mouseMoveEvent(QMouseEvent* event) override;
 
 protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
     alpha::vector<Shape*> renderShapes;
+    int shapeSelectedIndex; // This is the vector index of the current shape selected, this is done so we prevent multiple shapes being selected at once
 };

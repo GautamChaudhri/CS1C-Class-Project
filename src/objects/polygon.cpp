@@ -29,7 +29,12 @@ bool Polygon::isPointInside(const QPoint& point) const
 
 void Polygon::Draw(QWidget* renderArea)
 {
-    getPainter().begin(renderArea);
+    if (!getPainter().isActive())
+    {
+        getPainter().begin(renderArea); // Ensure the painter is properly started
+    }
+
+    getPainter().save(); // Save current state
 
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
@@ -48,7 +53,9 @@ void Polygon::Draw(QWidget* renderArea)
         getPainter().drawRect(boundingBox);
     }
 
-    getPainter().end();
+    getPainter().restore(); // Restore saved state
+
+    getPainter().end(); // End the painter session
 }
 
 

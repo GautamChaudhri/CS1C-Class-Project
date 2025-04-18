@@ -22,7 +22,12 @@ bool Square::isPointInside(const QPoint& point) const
 
 void Square::Draw(QWidget* renderArea)
 {
-    getPainter().begin(renderArea);
+    if (!getPainter().isActive())
+    {
+        getPainter().begin(renderArea); // Ensure the painter is properly started
+    }
+
+    getPainter().save(); // Save current state
 
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
@@ -37,7 +42,9 @@ void Square::Draw(QWidget* renderArea)
         getPainter().drawRect(getX(), getY(), length, length);
     }
 
-    getPainter().end();
+    getPainter().restore(); // Restore saved state
+
+    getPainter().end(); // End the painter session
 }
 
 double Square::Perimeter() const { return length * 4; }

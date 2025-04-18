@@ -68,6 +68,9 @@ void Shape::setBrush(Qt::GlobalColor brushColor, Qt::BrushStyle brushStyle)
     this->brush.setColor(brushColor);
     this->brush.setStyle(brushStyle);
 }
+void Shape::setSelected(bool selected) { isSelected = selected;}
+bool Shape::getSelected() const { return isSelected;}
+
 /****************************************************/
 
 // Overloaded Operators

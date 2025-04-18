@@ -115,17 +115,11 @@ public:
     virtual double Perimeter() const = 0;
     virtual double Area()      const = 0;
 
-    void setSelected(bool selected) {
-        isSelected = selected;
-    }
+    void setSelected(bool selected);
 
-    bool getSelected() const {
-        std::cout << "Holy Cow!" << std::endl;
-        return isSelected;
-    }
+    bool getSelected() const;
 
     virtual bool isPointInside(const QPoint& point) const = 0;
-    //virtual bool isPointInside(const QPoint& point) const {return false;};
 
 private:
     int      shapeId;

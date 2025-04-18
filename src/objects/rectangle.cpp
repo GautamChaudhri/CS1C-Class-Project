@@ -24,7 +24,12 @@ bool Rectangle::isPointInside(const QPoint& point) const
 
 void Rectangle::Draw(QWidget* renderArea)
 {
-    getPainter().begin(renderArea);
+    if (!getPainter().isActive())
+    {
+        getPainter().begin(renderArea); // Ensure the painter is properly started
+    }
+
+    getPainter().save(); // Save current state
 
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
@@ -39,7 +44,9 @@ void Rectangle::Draw(QWidget* renderArea)
         getPainter().drawRect(getX(), getY(), length, width);
     }
 
-    getPainter().end();
+    getPainter().restore(); // Restore saved state
+
+    getPainter().end(); // End the painter session
 }
 
 double Rectangle::Perimeter() const { return (length * 2) + (width * 2); }

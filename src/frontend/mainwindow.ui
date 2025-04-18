@@ -229,7 +229,7 @@
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>14</pointsize>
+        <pointsize>15</pointsize>
         <bold>true</bold>
         <underline>true</underline>
        </font>
@@ -399,26 +399,18 @@
      </widget>
     </item>
     <item row="0" column="0">
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="maximumSize">
-       <size>
-        <width>16777195</width>
-        <height>100</height>
-       </size>
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>15</pointsize>
+        <bold>true</bold>
+        <underline>true</underline>
+       </font>
       </property>
-      <property name="currentIndex">
-       <number>0</number>
+      <property name="text">
+       <string>Render Area</string>
       </property>
-      <widget class="QWidget" name="tab_1">
-       <attribute name="title">
-        <string>Shapes</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_2">
-       <attribute name="title">
-        <string>Tab 2</string>
-       </attribute>
-      </widget>
      </widget>
     </item>
    </layout>

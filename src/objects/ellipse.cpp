@@ -29,7 +29,12 @@ bool Ellipse::isPointInside(const QPoint& point) const
 
 void Ellipse::Draw(QWidget* renderArea)
 {
-    getPainter().begin(renderArea);
+    if (!getPainter().isActive())
+    {
+        getPainter().begin(renderArea); // Ensure the painter is properly started
+    }
+
+    getPainter().save(); // Save current state
 
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
@@ -44,7 +49,9 @@ void Ellipse::Draw(QWidget* renderArea)
         getPainter().drawRect(getX() - a, getY() - b, a*2, b*2); //probably a better way to do the x and y but I am lazy
     }
 
-    getPainter().end();
+    getPainter().restore(); // Restore saved state
+
+    getPainter().end(); // End the painter session
 }
 
 int Ellipse::getA() const { return a; }  // Necessary for parser

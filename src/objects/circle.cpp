@@ -26,7 +26,12 @@ bool Circle::isPointInside(const QPoint& point) const
 
 void Circle::Draw(QWidget* renderArea)
 {
-    getPainter().begin(renderArea);
+    if (!getPainter().isActive())
+    {
+        getPainter().begin(renderArea); // Ensure the painter is properly started
+    }
+
+    getPainter().save(); // Save current state
 
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
@@ -38,10 +43,12 @@ void Circle::Draw(QWidget* renderArea)
         highlightPen.setColor(Qt::red);
         getPainter().setPen(highlightPen);
         getPainter().setBrush(Qt::NoBrush);
-        getPainter().drawRect(getX() - r, getY() - r, r*2, r*2);
+        getPainter().drawRect(getX() - r, getY() - r, r * 2, r * 2);
     }
 
-    getPainter().end();
+    getPainter().restore(); // Restore saved state
+
+    getPainter().end(); // End the painter session
 }
 
 int Circle::getR() const { return r; }

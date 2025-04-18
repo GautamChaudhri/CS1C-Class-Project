@@ -30,15 +30,21 @@ bool Text::isPointInside(const QPoint& point) const
 
 void Text::Draw(QWidget* renderArea)
 {
-    getPainter().begin(renderArea);
+    if (!getPainter().isActive())
+    {
+        getPainter().begin(renderArea); // Ensure the painter is properly started
+    }
 
+    getPainter().save(); // Save current state
+
+    // Draw the text
     getPainter().setPen(textColor);
     getPainter().setFont(font);
-    getPainter().drawText(QRect(getX(),getY(),length,width),textAlignment, textString);
-    getPainter().restore();
+    getPainter().drawText(QRect(getX(), getY(), length, width), textAlignment, textString);
 
     if (getSelected())
     {
+        // Draw the highlight rectangle
         QPen highlightPen(Qt::DashLine);
         highlightPen.setColor(Qt::red);
         getPainter().setPen(highlightPen);
@@ -46,7 +52,9 @@ void Text::Draw(QWidget* renderArea)
         getPainter().drawRect(getX(), getY(), length, width);
     }
 
-    getPainter().end();
+    getPainter().restore(); // Restore saved state
+
+    getPainter().end(); // End the painter session
 }
 
 double Text::Perimeter() const { return (length * 2) + (width * 2); }
