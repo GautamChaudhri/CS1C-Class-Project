@@ -30,6 +30,12 @@ public slots:
 
 private slots:
 
+    void on_toolButton_triggered(QAction *arg1);
+
+    void on_toolButton_clicked();
+
+    void on_toolButton_pressed();
+
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;
