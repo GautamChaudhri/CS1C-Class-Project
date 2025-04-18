@@ -22,6 +22,15 @@ void Square::Draw(QWidget* renderArea)
     getPainter().setBrush(getBrush());
     getPainter().drawRect(getX(),getY(), length, length);
 
+    if (getSelected())
+    {
+        QPen highlightPen(Qt::DashLine);
+        highlightPen.setColor(Qt::red);
+        getPainter().setPen(highlightPen);
+        getPainter().setBrush(Qt::NoBrush);
+        getPainter().drawRect(getX(), getY(), length, length);
+    }
+
     getPainter().end();
 }
 

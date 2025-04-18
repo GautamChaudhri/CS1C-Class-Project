@@ -1,6 +1,8 @@
 #ifndef SHAPE_H
 #define SHAPE_H
 
+#include <iostream> // used to make debugging much more convenient
+
 #include <QWidget>
 #include <QColor>
 #include <QFont>
@@ -113,6 +115,18 @@ public:
     virtual double Perimeter() const = 0;
     virtual double Area()      const = 0;
 
+    void setSelected(bool selected) {
+        isSelected = selected;
+    }
+
+    bool getSelected() const {
+        std::cout << "Holy Cow!" << std::endl;
+        return isSelected;
+    }
+
+    //virtual bool isPointInside(const QPoint& point) const = 0;
+    virtual bool isPointInside(const QPoint& point) const {return false;}; // Temparary so that other shapes are not considered abstract
+
 private:
     int      shapeId;
     int      trackerId;
@@ -127,6 +141,8 @@ private:
     // Disable Copy Operations
     Shape(Shape& shape) = delete;
     Shape& operator=(Shape& object) = delete;
+
+    bool isSelected = false;
 };
 
 #endif // SHAPE_H

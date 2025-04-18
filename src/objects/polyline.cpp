@@ -27,6 +27,18 @@ void Polyline::Draw(QWidget* renderArea)
     getPainter().setBrush(getBrush());
     getPainter().drawPolyline(pointsList);
 
+    if (getSelected()) {
+        // Define a highlight pen for the bounding box
+        QPen highlightPen(Qt::DashLine);
+        highlightPen.setColor(Qt::red);
+        getPainter().setPen(highlightPen);
+        getPainter().setBrush(Qt::NoBrush);
+
+        // Draw the bounding box around the polyline
+        QRect boundingBox = pointsList.boundingRect().adjusted(-5, -5, 5, 5); // With margin
+        getPainter().drawRect(boundingBox);
+    }
+
     getPainter().end();
 }
 

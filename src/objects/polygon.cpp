@@ -30,6 +30,19 @@ void Polygon::Draw(QWidget* renderArea)
     getPainter().setBrush(getBrush());
     getPainter().drawPolygon(pointsList);
 
+    if (getSelected())
+    {
+        // Define a highlight pen for the bounding box
+        QPen highlightPen(Qt::DashLine);
+        highlightPen.setColor(Qt::red);
+        getPainter().setPen(highlightPen);
+        getPainter().setBrush(Qt::NoBrush);
+
+        // Draw the bounding box around the polygon
+        QRect boundingBox = pointsList.boundingRect();
+        getPainter().drawRect(boundingBox);
+    }
+
     getPainter().end();
 }
 

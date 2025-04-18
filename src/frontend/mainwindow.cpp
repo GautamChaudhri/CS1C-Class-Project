@@ -14,7 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
     layout->setContentsMargins(0, 0, 0, 0); // Optional: remove padding
     layout->addWidget(renderArea);
 
-    renderArea->setAttribute(Qt::WA_TransparentForMouseEvents);
+    // This prevents mouse detection which is why it is commented
+    //renderArea->setAttribute(Qt::WA_TransparentForMouseEvents);
 }
 
 

@@ -26,6 +26,15 @@ void Circle::Draw(QWidget* renderArea)
     getPainter().setBrush(getBrush());
     getPainter().drawEllipse(getPoints(), r, r);
 
+    if (getSelected())
+    {
+        QPen highlightPen(Qt::DashLine);
+        highlightPen.setColor(Qt::red);
+        getPainter().setPen(highlightPen);
+        getPainter().setBrush(Qt::NoBrush);
+        getPainter().drawRect(getX() - r, getY() - r, r*2, r*2);
+    }
+
     getPainter().end();
 }
 

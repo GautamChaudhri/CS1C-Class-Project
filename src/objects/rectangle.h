@@ -23,6 +23,12 @@ public:
     double Perimeter() const override;
     double Area()      const override;
 
+    bool isPointInside(const QPoint& point) const override
+    {
+        QRect rect(getX(), getY(), length, width);
+        return rect.contains(point);
+    }
+
 private:
     int length;
     int width;

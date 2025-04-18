@@ -23,11 +23,24 @@ Text::Text(int    shapeId,
 {}
 
 void Text::Draw(QWidget* renderArea)
-{  
+{
+    getPainter().begin(renderArea);
+
     getPainter().setPen(textColor);
     getPainter().setFont(font);
     getPainter().drawText(QRect(getX(),getY(),length,width),textAlignment, textString);
     getPainter().restore();
+
+    if (getSelected())
+    {
+        QPen highlightPen(Qt::DashLine);
+        highlightPen.setColor(Qt::red);
+        getPainter().setPen(highlightPen);
+        getPainter().setBrush(Qt::NoBrush);
+        getPainter().drawRect(getX(), getY(), length, width);
+    }
+
+    getPainter().end();
 }
 
 double Text::Perimeter() const { return (length * 2) + (width * 2); }

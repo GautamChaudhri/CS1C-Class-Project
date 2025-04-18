@@ -24,6 +24,15 @@ void Rectangle::Draw(QWidget* renderArea)
     getPainter().setBrush(getBrush());
     getPainter().drawRect(getX(),getY(), length, width);
 
+    if (getSelected())
+    {
+        QPen highlightPen(Qt::DashLine);
+        highlightPen.setColor(Qt::red);
+        getPainter().setPen(highlightPen);
+        getPainter().setBrush(Qt::NoBrush);
+        getPainter().drawRect(getX(), getY(), length, width);
+    }
+
     getPainter().end();
 }
 
