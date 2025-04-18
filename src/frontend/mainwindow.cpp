@@ -28,3 +28,30 @@ void MainWindow::setShapes(const alpha::vector<Shape*>& shapes) {
     renderArea->update();
 }
 
+
+// Create Square - TEST
+void MainWindow::on_toolButton_triggered(QAction *arg1)
+{
+    Square square(5, "Square", QPoint(500, 500), QPen(), QBrush(), 200);
+
+    square.Draw(renderArea);
+    renderArea->update();
+}
+
+// Create Square - TEST
+void MainWindow::on_toolButton_clicked()
+{
+    Square square(5, "Square", QPoint(500, 500), QPen(), QBrush(), 200);
+
+    square.Draw(renderArea);
+    renderArea->update();
+}
+
+// Create Square - TEST
+void MainWindow::on_toolButton_pressed()
+{
+    Square square(5, "Square", QPoint(500, 500), QPen(), QBrush(), 200);
+
+    square.Draw(renderArea);
+    renderArea->update();
+}
