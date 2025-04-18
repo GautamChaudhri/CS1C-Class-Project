@@ -22,6 +22,12 @@ Text::Text(int    shapeId,
             width{width}
 {}
 
+bool Text::isPointInside(const QPoint& point) const
+{
+    QRect rect(getX(), getY(), length, width);
+    return rect.contains(point);
+}
+
 void Text::Draw(QWidget* renderArea)
 {
     getPainter().begin(renderArea);

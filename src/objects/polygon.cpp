@@ -22,6 +22,11 @@ Polygon::Polygon(int    shapeId,
 
 Polygon::~Polygon() {}
 
+bool Polygon::isPointInside(const QPoint& point) const
+{
+    return pointsList.containsPoint(point, Qt::OddEvenFill);
+}
+
 void Polygon::Draw(QWidget* renderArea)
 {
     getPainter().begin(renderArea);

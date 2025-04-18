@@ -18,6 +18,12 @@ Circle::Circle(int    shapeId,
                r{r}
 {}
 
+bool Circle::isPointInside(const QPoint& point) const
+{
+    QRect rect(getX() - r, getY() - r, r*2, r*2);
+    return rect.contains(point);
+}
+
 void Circle::Draw(QWidget* renderArea)
 {
     getPainter().begin(renderArea);

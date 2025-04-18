@@ -20,24 +20,6 @@ Line::Line(int    shapeId,
          endPoint{endPoint}
 {}
 
-
-void Line::Move(int x, int y)
-{
-    QPoint relativeStartPoint;
-    QPoint relativeEndPoint;
-
-    relativeStartPoint = getPoints() - startPoint;
-    relativeEndPoint   = getPoints() - endPoint;
-
-    setX(x);
-    setY(y);
-
-    startPoint = getPoints() + relativeStartPoint;
-    endPoint   = getPoints() + relativeEndPoint;
-
-}
-
-
 void Line::Draw(QWidget* renderArea)
 {
     getPainter().begin(renderArea);

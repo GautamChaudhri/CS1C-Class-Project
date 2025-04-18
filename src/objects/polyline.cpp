@@ -19,6 +19,11 @@ Polyline::Polyline(int    shapeId,
 
 Polyline::~Polyline() {}
 
+bool Polyline::isPointInside(const QPoint& point) const
+{
+    return pointsList.containsPoint(point, Qt::OddEvenFill);
+}
+
 void Polyline::Draw(QWidget* renderArea)
 {
     getPainter().begin(renderArea);

@@ -28,22 +28,8 @@ public:
     double Area() const override { return 0; }  // Need to implement this to instantiate Line
 
 
-    bool isPointInside(const QPoint& point) const override
-    {
-        // Define a margin for the bounding box (e.g., 5 pixels)
-        const int margin = 5;
 
-        // Create a bounding rectangle around the line
-        int minX = std::min(startPoint.x(), endPoint.x()) - margin;
-        int maxX = std::max(startPoint.x(), endPoint.x()) + margin;
-        int minY = std::min(startPoint.y(), endPoint.y()) - margin;
-        int maxY = std::max(startPoint.y(), endPoint.y()) + margin;
-
-        QRect boundingBox(QPoint(minX, minY), QPoint(maxX, maxY));
-
-        // Check if the point is inside the bounding box
-        return boundingBox.contains(point);
-    }
+    bool isPointInside(const QPoint& point) const override;
 
 private:
     QPoint startPoint;
