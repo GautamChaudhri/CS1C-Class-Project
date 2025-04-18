@@ -224,27 +224,21 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="renderTitleLabel">
+    <item row="0" column="1">
+     <widget class="QLabel" name="shapePropertiesLabel">
       <property name="font">
        <font>
         <family>Comic Sans MS</family>
-        <pointsize>21</pointsize>
-        <italic>false</italic>
+        <pointsize>14</pointsize>
         <bold>true</bold>
         <underline>true</underline>
-        <strikeout>false</strikeout>
-        <kerning>true</kerning>
        </font>
       </property>
       <property name="text">
-       <string>Render Area</string>
-      </property>
-      <property name="scaledContents">
-       <bool>false</bool>
+       <string>Shape Properties</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+       <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
       </property>
      </widget>
     </item>
@@ -404,22 +398,27 @@
       </layout>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QLabel" name="shapePropertiesLabel">
-      <property name="font">
-       <font>
-        <family>Comic Sans MS</family>
-        <pointsize>14</pointsize>
-        <bold>true</bold>
-        <underline>true</underline>
-       </font>
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="maximumSize">
+       <size>
+        <width>16777195</width>
+        <height>100</height>
+       </size>
       </property>
-      <property name="text">
-       <string>Shape Properties</string>
+      <property name="currentIndex">
+       <number>0</number>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
-      </property>
+      <widget class="QWidget" name="tab_1">
+       <attribute name="title">
+        <string>Shapes</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+      </widget>
      </widget>
     </item>
    </layout>

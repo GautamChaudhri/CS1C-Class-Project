@@ -14,7 +14,7 @@ public:
 
     void setShapes(const alpha::vector<Shape*>& shapes);
 
-    void mousePressEvent(QMouseEvent* event)
+    void mousePressEvent(QMouseEvent* event) override
     {
         int vecSize = renderShapes.size();
 
@@ -31,6 +31,27 @@ public:
             }
         }
         update(); // Trigger repaint to show the selection state visually
+    }
+
+    void mouseMoveEvent(QMouseEvent* event) override
+    {
+        QPoint oldPos;
+        QPoint newPos;
+
+        int vecSize = renderShapes.size();
+
+        for (int i = 0; i < vecSize; ++i)
+        {
+            if (renderShapes[i]->getSelected() == true)
+            {
+                oldPos = renderShapes[i]->getPoints();
+
+                newPos = QCursor::pos();
+
+                renderShapes[i]->Move(newPos.x(), newPos.y());
+            }
+        }
+        update();
     }
 
 protected:
