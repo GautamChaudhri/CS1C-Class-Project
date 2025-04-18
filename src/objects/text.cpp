@@ -57,6 +57,13 @@ void Text::Draw(QWidget* renderArea)
     getPainter().end(); // End the painter session
 }
 
+int           Text::getLength() const { return length; }
+int           Text::getWidth() const { return width; }
+QString       Text::getTextString() const { return textString; }
+GlobalColor   Text::getTextColor() const { return textColor; }
+QFont         Text::getFont() const { return font; }
+AlignmentFlag Text::getTextAlignment() const { return textAlignment; }
+
 double Text::Perimeter() const { return (length * 2) + (width * 2); }
 double Text::Area()      const { return length * width; }
 

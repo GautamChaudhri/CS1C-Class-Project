@@ -20,6 +20,16 @@ Line::Line(int    shapeId,
          endPoint{endPoint}
 {}
 
+QPoint Line::getStartPoint() const
+{
+    return startPoint;
+}
+
+QPoint Line::getEndPoint() const
+{
+    return endPoint;
+}
+
 bool Line::isPointInside(const QPoint& point) const
 {
     // Define a margin for the bounding box (e.g., 5 pixels)

@@ -13,7 +13,7 @@ public:
            QBrush brush,
            int length);
 
-    int getLength() const {return length;} // Necessary for parser
+    int getLength() const; // Necessary for parser
 
     void Draw(QWidget* renderArea) override;
 

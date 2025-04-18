@@ -24,6 +24,17 @@ bool Polyline::isPointInside(const QPoint& point) const
     return pointsList.containsPoint(point, Qt::OddEvenFill);
 }
 
+void Polyline::Move(int x, int y)
+{
+    setX(x);
+    setY(y);
+
+    for (int i = 0; i < pointsList.size(); ++i)
+    {
+        pointsList[i] = getPoints() + (getPoints() - pointsList[i]);
+    }
+}
+
 void Polyline::Draw(QWidget* renderArea)
 {
     if (!getPainter().isActive())

@@ -49,6 +49,9 @@ void Rectangle::Draw(QWidget* renderArea)
     getPainter().end(); // End the painter session
 }
 
+int Rectangle::getLength() const { return length; }  // Necessary for parser
+int Rectangle::getWidth()  const { return width; }
+
 double Rectangle::Perimeter() const { return (length * 2) + (width * 2); }
 double Rectangle::Area()      const { return length * width; }
 

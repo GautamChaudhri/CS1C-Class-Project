@@ -46,27 +46,6 @@ class Shape
 
 public:
 
-    /**********************************************************
-    * Overloaded Constructor Shape: Class Shape
-    * ---------------------------------------------------------
-    * ----------------------
-    * PRE-CONDITIONS  -
-    *
-    *      shapeId      :
-    *      shapeType    :
-    *      x            :
-    *      y            :
-    *      penColor     :
-    *      penWidth     :
-    *      penStyle     :
-    *      penCapStyle  :
-    *      penJoinStyle :
-    *      brushColor   :
-    *      brushStyle   :
-    *
-    * POST-CONDITIONS -
-    *
-    ***********************************************************/
     Shape(int    shapeId,
           string shapeType,
           QPoint coords,
@@ -132,11 +111,11 @@ private:
 
     QPainter painter;
 
+    bool isSelected = false;
+
     // Disable Copy Operations
     Shape(Shape& shape) = delete;
     Shape& operator=(Shape& object) = delete;
-
-    bool isSelected = false;
 };
 
 #endif // SHAPE_H

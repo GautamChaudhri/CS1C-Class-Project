@@ -47,6 +47,8 @@ void Square::Draw(QWidget* renderArea)
     getPainter().end(); // End the painter session
 }
 
+int Square::getLength() const {return length;} // Necessary for parser
+
 double Square::Perimeter() const { return length * 4; }
 double Square::Area()      const { return pow(length, 2); }
 

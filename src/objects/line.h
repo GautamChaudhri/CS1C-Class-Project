@@ -11,15 +11,15 @@ class Line : public Shape
 public:
 
     Line(int    shapeId,
-          string shapeType,
-          QPoint coords,
-          QPen   pen,
-          QBrush brush,
-          QPoint startPoint,
+         string shapeType,
+         QPoint coords,
+         QPen   pen,
+         QBrush brush,
+         QPoint startPoint,
          QPoint endPoint);
 
-    QPoint getStartPoint() const {return startPoint;}   // Necessary for parser
-    QPoint getEndPoint() const {return endPoint;}
+    QPoint getStartPoint() const; // Necessary for parser
+    QPoint getEndPoint()   const;
 
     void Move(int x, int y) override;
 

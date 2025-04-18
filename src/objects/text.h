@@ -10,18 +10,18 @@ public:
          string shapeType,
          QPoint coords,
          QString textString,
-         Qt::GlobalColor   textColor,
-         Qt::AlignmentFlag textAlignment,
+         GlobalColor   textColor,
+         AlignmentFlag textAlignment,
          QFont font,
-         int           length,
-         int           width);
+         int length,
+         int width);
 
-    int getLength() const {return length;}  // Necessary for parser
-    int getWidth() const {return width;}
-    QString getTextString() const {return textString;}
-    GlobalColor getTextColor() const {return textColor;}
-    QFont getFont() const { return font; }
-    AlignmentFlag getTextAlignment() const {return textAlignment;}
+    int           getLength() const;
+    int           getWidth() const;
+    QString       getTextString() const;
+    GlobalColor   getTextColor() const;
+    QFont         getFont() const;
+    AlignmentFlag getTextAlignment() const;
 
     void Draw(QWidget* renderArea) override;
 

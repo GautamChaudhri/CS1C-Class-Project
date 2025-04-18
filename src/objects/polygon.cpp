@@ -16,15 +16,24 @@ Polygon::Polygon(int    shapeId,
                        pen,
                        brush),
                 pointsList{pointsList}
-{
-
-}
+{}
 
 Polygon::~Polygon() {}
 
 bool Polygon::isPointInside(const QPoint& point) const
 {
     return pointsList.containsPoint(point, Qt::OddEvenFill);
+}
+
+void Polygon::Move(int x, int y)
+{
+    setX(x);
+    setY(y);
+
+    for (int i = 0; i < pointsList.size(); ++i)
+    {
+        pointsList[i] = getPoints() + (getPoints() - pointsList[i]);
+    }
 }
 
 void Polygon::Draw(QWidget* renderArea)
@@ -58,6 +67,10 @@ void Polygon::Draw(QWidget* renderArea)
     getPainter().end(); // End the painter session
 }
 
+QPolygon Polygon::getPointsList() const
+{
+    return pointsList;
+}
 
 double Polygon::Perimeter() const
 {
