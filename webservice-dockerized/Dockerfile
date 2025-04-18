@@ -1,4 +1,5 @@
 FROM fedora:latest
+LABEL org.opencontainers.image.source="https://github.com/GautamChaudhri/CS1C-Class-Project"
 
 #install dependencies
 RUN sudo dnf install -y git make g++ nano && sudo dnf update -y && dnf clean all
@@ -7,7 +8,7 @@ RUN sudo dnf install -y git make g++ nano && sudo dnf update -y && dnf clean all
 WORKDIR /webservice
 COPY . /webservice
 
-COPY database/ /webservice/database/
+COPY database /webservice/database
 
 RUN mkdir /webservice/crow \
    && git clone --recursive https://github.com/crowcpp/crow.git /webservice/crow
