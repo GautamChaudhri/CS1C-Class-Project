@@ -37,24 +37,6 @@ bool Line::isPointInside(const QPoint& point) const
     return boundingBox.contains(point);
 }
 
-
-void Line::Move(int x, int y)
-{
-    QPoint relativeStartPoint;
-    QPoint relativeEndPoint;
-
-    relativeStartPoint = getPoints() - startPoint;
-    relativeEndPoint   = getPoints() - endPoint;
-
-    setX(x);
-    setY(y);
-
-    startPoint = getPoints() + relativeStartPoint;
-    endPoint   = getPoints() + relativeEndPoint;
-
-}
-
-
 void Line::Draw(QWidget* renderArea)
 {
     if (!getPainter().isActive())
@@ -91,7 +73,6 @@ void Line::Draw(QWidget* renderArea)
 
     getPainter().end(); // End the painter session
 }
-
 
 double Line::Perimeter() const
 {
