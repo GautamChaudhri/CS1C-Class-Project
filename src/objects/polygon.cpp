@@ -27,12 +27,18 @@ bool Polygon::isPointInside(const QPoint& point) const
 
 void Polygon::Move(int x, int y)
 {
+    int offsetX = x - getX(); // Calculate the change in x
+    int offsetY = y - getY(); // Calculate the change in y
+
+    // Update the position of the polygon
     setX(x);
     setY(y);
 
+    // Adjust each point in pointsList based on the calculated deltas
     for (int i = 0; i < pointsList.size(); ++i)
     {
-        pointsList[i] = getPoints() + (getPoints() - pointsList[i]);
+        pointsList[i].setX(pointsList[i].x() + offsetX);
+        pointsList[i].setY(pointsList[i].y() + offsetY);
     }
 }
 
