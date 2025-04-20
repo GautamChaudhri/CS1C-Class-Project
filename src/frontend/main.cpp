@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "shapecontroller.h"
+#include <QFile>
 
 Parser parse;
 ShapeController shapeController;
@@ -30,6 +31,12 @@ ApiClient* GetConnectedClient() {
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    //set app style
+    QFile styleSheetFile(":styles/SpyBot.qss");
+    styleSheetFile.open(QFile::ReadOnly);
+    QString styleSheet = QLatin1String(styleSheetFile.readAll());
+    a.setStyleSheet(styleSheet);
 
     MainWindow window;
     windowPtr = &window;
