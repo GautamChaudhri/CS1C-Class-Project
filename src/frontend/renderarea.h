@@ -17,6 +17,10 @@ public:
     {
         renderShapes.push_back(shape);
     }
+    alpha::vector<Shape*> getShapes()
+    {
+        return renderShapes;
+    }
 
     void mousePressEvent(QMouseEvent* event) override;
     void mouseMoveEvent(QMouseEvent* event) override;

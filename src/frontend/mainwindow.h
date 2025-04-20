@@ -10,7 +10,7 @@
 #include "ui_mainwindow.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
+namespace Ui{
 class MainWindow;
 }
 QT_END_NAMESPACE
@@ -25,12 +25,12 @@ public:
 
     void drawShapes() const;
 
+    void shapes_to_treeWidget();
+
 public slots:
     void setShapes(const alpha::vector<Shape*>& shapes);
 
 private slots:
-    void on_lineButton_pressed();
-
     void on_actionnew_shape_button_triggered();
 
 private:

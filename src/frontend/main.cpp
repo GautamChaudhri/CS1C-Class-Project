@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
     ApiClient* client = GetConnectedClient();
     client->GetShapes();  // triggers API call
 
+
     //renderArea.show();
     window.show();
     return a.exec();

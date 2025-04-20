@@ -13,8 +13,11 @@ Shape::Shape(int    shapeId,
              shapeType{shapeType},
              coords{coords},
              pen{pen},
-             brush{brush}
-{}
+             brush{brush},
+             parentItem{new QTreeWidgetItem()}
+{
+    parentItem->setText(0, QString::fromStdString(shapeType));
+}
 
 Shape::~Shape() {}
 

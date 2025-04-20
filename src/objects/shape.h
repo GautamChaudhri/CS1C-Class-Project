@@ -16,6 +16,8 @@
 
 #include "vector.h"
 
+#include <QTreeWidget>
+
 //#include "renderarea.h"
 
 using std::string;
@@ -100,6 +102,11 @@ public:
 
     virtual bool isPointInside(const QPoint& point) const = 0;
 
+    QTreeWidgetItem* getParentItem()
+    {
+        return parentItem;
+    }
+
 private:
     int      shapeId;
     int      trackerId;
@@ -116,6 +123,8 @@ private:
     // Disable Copy Operations
     Shape(Shape& shape) = delete;
     Shape& operator=(Shape& object) = delete;
+
+    QTreeWidgetItem* parentItem;
 };
 
 #endif // SHAPE_H

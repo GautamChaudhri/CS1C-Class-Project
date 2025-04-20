@@ -13,6 +13,16 @@ MainWindow::MainWindow(QWidget *parent)
     auto layout = new QVBoxLayout(ui->renderAreaContainer);
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(renderArea);
+
+    QTreeWidgetItem* temp = new QTreeWidgetItem();
+    temp->setText(0, "temp");
+
+    // ui->treeWidget->addTopLevelItem(temp);
+    // Line* line = new Line(1, "Line", QPoint(500, 500), QPen(), QBrush(), QPoint(500,500), QPoint(700, 700));
+    // ui->treeWidget->addTopLevelItem(line->getParentItem());
+    //qDebug() << "Shape count: " << renderArea->getShapes().size();
+
+
 }
 
 
@@ -28,17 +38,6 @@ void MainWindow::setShapes(const alpha::vector<Shape*>& shapes) {
     renderArea->update();
 }
 
-// Create a line on button press
-// Using new because addShapes() needs a Shape*
-// Basic implementation - need to find a place for a delete
-void MainWindow::on_lineButton_pressed()
-{
-    Line* line = new Line(1, "Line", QPoint(500, 500), QPen(), QBrush(), QPoint(500, 500), QPoint(700, 700));
-
-    renderArea->addShape(line);
-    renderArea->update();
-}
-
 
 void MainWindow::on_actionnew_shape_button_triggered()
 {
@@ -48,3 +47,12 @@ void MainWindow::on_actionnew_shape_button_triggered()
     renderArea->update();
 }
 
+void MainWindow::shapes_to_treeWidget()
+{
+    qDebug() << "Shape count: " << renderArea->getShapes().size();
+    for (int i = 0; i < renderArea->getShapes().size(); ++i)
+    {
+        qDebug() << "Shape count: " << renderArea->getShapes().size();
+        ui->treeWidget->addTopLevelItem(renderArea->getShapes()[i]->getParentItem());
+    }
+}
