@@ -13,6 +13,10 @@ public:
     RenderArea(QWidget *parent = nullptr);
 
     void setShapes(const alpha::vector<Shape*>& shapes);
+    void addShape(Shape* shape)
+    {
+        renderShapes.push_back(shape);
+    }
 
     void mousePressEvent(QMouseEvent* event) override;
     void mouseMoveEvent(QMouseEvent* event) override;

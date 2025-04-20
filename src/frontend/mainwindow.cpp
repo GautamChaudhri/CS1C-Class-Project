@@ -28,30 +28,23 @@ void MainWindow::setShapes(const alpha::vector<Shape*>& shapes) {
     renderArea->update();
 }
 
-
-// Create Square - TEST
-void MainWindow::on_toolButton_triggered(QAction *arg1)
+// Create a line on button press
+// Using new because addShapes() needs a Shape*
+// Basic implementation - need to find a place for a delete
+void MainWindow::on_lineButton_pressed()
 {
-    Square square(5, "Square", QPoint(500, 500), QPen(), QBrush(), 200);
+    Line* line = new Line(1, "Line", QPoint(500, 500), QPen(), QBrush(), QPoint(500, 500), QPoint(700, 700));
 
-    square.Draw(renderArea);
+    renderArea->addShape(line);
     renderArea->update();
 }
 
-// Create Square - TEST
-void MainWindow::on_toolButton_clicked()
-{
-    Square square(5, "Square", QPoint(500, 500), QPen(), QBrush(), 200);
 
-    square.Draw(renderArea);
+void MainWindow::on_actionnew_shape_button_triggered()
+{
+    Line* line = new Line(1, "Line", QPoint(500, 500), QPen(), QBrush(), QPoint(500, 500), QPoint(700, 700));
+
+    renderArea->addShape(line);
     renderArea->update();
 }
 
-// Create Square - TEST
-void MainWindow::on_toolButton_pressed()
-{
-    Square square(5, "Square", QPoint(500, 500), QPen(), QBrush(), 200);
-
-    square.Draw(renderArea);
-    renderArea->update();
-}

@@ -29,11 +29,9 @@ public slots:
     void setShapes(const alpha::vector<Shape*>& shapes);
 
 private slots:
-    void on_toolButton_triggered(QAction *arg1);
+    void on_lineButton_pressed();
 
-    void on_toolButton_clicked();
-
-    void on_toolButton_pressed();
+    void on_actionnew_shape_button_triggered();
 
 private:
     Ui::MainWindow *ui;
