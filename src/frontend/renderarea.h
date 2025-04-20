@@ -17,7 +17,8 @@ public:
     {
         renderShapes.push_back(shape);
     }
-    alpha::vector<Shape*> getShapes()
+
+    const alpha::vector<Shape*>& getShapes() const
     {
         return renderShapes;
     }

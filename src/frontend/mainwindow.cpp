@@ -49,10 +49,13 @@ void MainWindow::on_actionnew_shape_button_triggered()
 
 void MainWindow::shapes_to_treeWidget()
 {
-    qDebug() << "Shape count: " << renderArea->getShapes().size();
-    for (int i = 0; i < renderArea->getShapes().size(); ++i)
+    int vecSize;
+    vecSize = renderArea->getShapes().size();
+
+    qDebug() << "Shape count: " << vecSize;
+    for (int i = 0; i < vecSize; ++i)
     {
-        qDebug() << "Shape count: " << renderArea->getShapes().size();
+        qDebug() << "Shape count: " << vecSize;
         ui->treeWidget->addTopLevelItem(renderArea->getShapes()[i]->getParentItem());
     }
 }
