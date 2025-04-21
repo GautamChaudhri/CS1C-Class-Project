@@ -13,16 +13,6 @@ MainWindow::MainWindow(QWidget *parent)
     auto layout = new QVBoxLayout(ui->renderAreaContainer);
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(renderArea);
-
-    QTreeWidgetItem* temp = new QTreeWidgetItem();
-    temp->setText(0, "temp");
-
-    // ui->treeWidget->addTopLevelItem(temp);
-    // Line* line = new Line(1, "Line", QPoint(500, 500), QPen(), QBrush(), QPoint(500,500), QPoint(700, 700));
-    // ui->treeWidget->addTopLevelItem(line->getParentItem());
-    //qDebug() << "Shape count: " << renderArea->getShapes().size();
-
-
 }
 
 
@@ -45,6 +35,7 @@ void MainWindow::on_actionnew_shape_button_triggered()
 
     renderArea->addShape(line);
     renderArea->update();
+    shapes_to_treeWidget(); // add new shape to tree widget as it is created
 }
 
 void MainWindow::shapes_to_treeWidget()
@@ -52,10 +43,8 @@ void MainWindow::shapes_to_treeWidget()
     int vecSize;
     vecSize = renderArea->getShapes().size();
 
-    qDebug() << "Shape count: " << vecSize;
     for (int i = 0; i < vecSize; ++i)
     {
-        qDebug() << "Shape count: " << vecSize;
         ui->treeWidget->addTopLevelItem(renderArea->getShapes()[i]->getParentItem());
     }
 }

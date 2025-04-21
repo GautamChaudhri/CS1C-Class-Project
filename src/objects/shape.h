@@ -125,6 +125,7 @@ private:
     Shape& operator=(Shape& object) = delete;
 
     QTreeWidgetItem* parentItem;
+    QTreeWidgetItem* childItems[6]; // array works for now with shape data members but derived classes have varying amounts of data members. Maybe use vector?
 };
 
 #endif // SHAPE_H

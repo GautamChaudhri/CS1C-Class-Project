@@ -17,6 +17,18 @@ Shape::Shape(int    shapeId,
              parentItem{new QTreeWidgetItem()}
 {
     parentItem->setText(0, QString::fromStdString(shapeType));
+
+    for (int i = 0; i < 5; ++i) // 5 being # of data members in shape being displayed for all shapes (JUST FOR TESTING PLEASE CHANGE)
+    {
+        childItems[i] = new QTreeWidgetItem();
+        parentItem->addChild(childItems[i]);
+    }
+
+    childItems[0]->setText(0, "Shape Id:");
+    childItems[1]->setText(0, "Shape Type:");
+    childItems[2]->setText(0, "Pen:");
+    childItems[3]->setText(0, "Brush:");
+    childItems[4]->setText(0, "Coords:");
 }
 
 Shape::~Shape() {}
