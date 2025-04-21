@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/styles">
-        <file>SpyBot.qss</file>
+        <file>Medize.qss</file>
     </qresource>
 </RCC>

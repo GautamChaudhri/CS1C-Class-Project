@@ -68,7 +68,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_srcS}
         src/frontend/shapecontroller.h
-        src/frontend/resources.qrc # Include the resource file here
+        src/frontend/resources.qrc
     )
 else()
     if(ANDROID)

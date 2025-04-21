@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     //set app style
-    QFile styleSheetFile(":styles/SpyBot.qss");
+    QFile styleSheetFile(":styles/Medize.qss");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet = QLatin1String(styleSheetFile.readAll());
     a.setStyleSheet(styleSheet);
