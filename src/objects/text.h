@@ -16,12 +16,6 @@ public:
          int length,
          int width);
 
-    int           getLength() const;
-    int           getWidth() const;
-    QString       getTextString() const;
-    GlobalColor   getTextColor() const;
-    QFont         getFont() const;
-    AlignmentFlag getTextAlignment() const;
 
     void Draw(QWidget* renderArea) override;
 
@@ -29,6 +23,15 @@ public:
     double Area()      const override;
 
     bool isPointInside(const QPoint& point) const override;
+
+    /************* ACCESSOR FUNCTIONS *************/
+    int           getLength()        const;
+    int           getWidth()         const;
+    QString       getTextString()    const;
+    GlobalColor   getTextColor()     const;
+    QFont         getFont()          const;
+    AlignmentFlag getTextAlignment() const;
+    /**********************************************/
 
 private:
     int length;

@@ -13,7 +13,6 @@ public:
            QBrush brush,
            int length);
 
-    int getLength() const; // Necessary for parser
 
     void Draw(QWidget* renderArea) override;
 
@@ -21,6 +20,8 @@ public:
     double Area()      const override;
 
     bool isPointInside(const QPoint& point) const override;
+
+    int getLength() const;
 
 private:
     int length;

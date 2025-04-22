@@ -1,7 +1,7 @@
 #include "ellipse.h"
 
 /****************************************************
-* class Ellipse - Derived Class
+* derived class Ellipse - Base Shape
 *****************************************************/
 
 Ellipse::Ellipse(int    shapeId,
@@ -19,12 +19,6 @@ Ellipse::Ellipse(int    shapeId,
                  a{a},
                  b{b}
 {}
-
-bool Ellipse::isPointInside(const QPoint& point) const
-{
-    QRect rect(getX() - a, getY() - b, a*2, b*2);
-    return rect.contains(point);
-}
 
 
 void Ellipse::Draw(QWidget* renderArea)
@@ -54,11 +48,21 @@ void Ellipse::Draw(QWidget* renderArea)
     getPainter().end(); // End the painter session
 }
 
-int Ellipse::getA() const { return a; }  // Necessary for parser
-int Ellipse::getB() const { return b; }
 
 double Ellipse::Perimeter() const { return 2 * PI * sqrt((pow((2 * a), 2) + pow((2 * b), 2)) / 2); }
 double Ellipse::Area()      const { return PI * a * b; }
 
-/****************************************************/
+
+bool Ellipse::isPointInside(const QPoint& point) const
+{
+    QRect rect(getX() - a, getY() - b, a*2, b*2);
+    return rect.contains(point);
+}
+
+
+/************* ACCESSOR FUNCTIONS *************/
+int Ellipse::getA() const { return a; }
+int Ellipse::getB() const { return b; }
+/**********************************************/
+
 

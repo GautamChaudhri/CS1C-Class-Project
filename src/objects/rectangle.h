@@ -15,15 +15,15 @@ public:
               int width);
 
 
-    int getLength() const; // Necessary for parser
-    int getWidth()  const;
-
     void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;
     double Area()      const override;
 
     bool isPointInside(const QPoint& point) const override;
+
+    int getLength() const;
+    int getWidth()  const;
 
 private:
     int length;

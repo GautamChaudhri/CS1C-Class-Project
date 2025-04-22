@@ -1,7 +1,7 @@
 #include "polygon.h"
 
 /****************************************************
-* class Polygon - Derived Class
+* derived class Polygon - Base Shape
 *****************************************************/
 
 Polygon::Polygon(int    shapeId,
@@ -18,29 +18,9 @@ Polygon::Polygon(int    shapeId,
                 pointsList{pointsList}
 {}
 
+
 Polygon::~Polygon() {}
 
-bool Polygon::isPointInside(const QPoint& point) const
-{
-    return pointsList.containsPoint(point, Qt::OddEvenFill);
-}
-
-void Polygon::Move(int x, int y)
-{
-    int offsetX = x - getX(); // Calculate the change in x
-    int offsetY = y - getY(); // Calculate the change in y
-
-    // Update the position of the polygon
-    setX(x);
-    setY(y);
-
-    // Adjust each point in pointsList based on the calculated deltas
-    for (int i = 0; i < pointsList.size(); ++i)
-    {
-        pointsList[i].setX(pointsList[i].x() + offsetX);
-        pointsList[i].setY(pointsList[i].y() + offsetY);
-    }
-}
 
 void Polygon::Draw(QWidget* renderArea)
 {
@@ -73,10 +53,24 @@ void Polygon::Draw(QWidget* renderArea)
     getPainter().end(); // End the painter session
 }
 
-QPolygon Polygon::getPointsList() const
+
+void Polygon::Move(int x, int y)
 {
-    return pointsList;
+    int offsetX = x - getX(); // Calculate the change in x
+    int offsetY = y - getY(); // Calculate the change in y
+
+    // Update the position of the polygon
+    setX(x);
+    setY(y);
+
+    // Adjust each point in pointsList based on the calculated deltas
+    for (int i = 0; i < pointsList.size(); ++i)
+    {
+        pointsList[i].setX(pointsList[i].x() + offsetX);
+        pointsList[i].setY(pointsList[i].y() + offsetY);
+    }
 }
+
 
 double Polygon::Perimeter() const
 {
@@ -96,5 +90,13 @@ double Polygon::Area() const
     return (Perimeter() * apothem) / 2;
 }
 
-/****************************************************/
 
+bool Polygon::isPointInside(const QPoint& point) const
+{
+    return pointsList.containsPoint(point, Qt::OddEvenFill);
+}
+
+
+/************* ACCESSOR FUNCTIONS *************/
+QPolygon Polygon::getPointsList() const { return pointsList; }
+/**********************************************/

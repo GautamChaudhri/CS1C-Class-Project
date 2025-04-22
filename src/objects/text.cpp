@@ -1,15 +1,15 @@
 #include "text.h"
 
 /****************************************************
-* class Text - Derived Class
+* derived class Text - Base Shape
 *****************************************************/
 
 Text::Text(int    shapeId,
            string shapeType,
            QPoint coords,
            QString textString,
-           Qt::GlobalColor   textColor,
-           Qt::AlignmentFlag textAlignment,
+           GlobalColor   textColor,
+           AlignmentFlag textAlignment,
            QFont             font,
            int           length,
            int           width)
@@ -22,11 +22,6 @@ Text::Text(int    shapeId,
             width{width}
 {}
 
-bool Text::isPointInside(const QPoint& point) const
-{
-    QRect rect(getX(), getY(), length, width);
-    return rect.contains(point);
-}
 
 void Text::Draw(QWidget* renderArea)
 {
@@ -57,14 +52,22 @@ void Text::Draw(QWidget* renderArea)
     getPainter().end(); // End the painter session
 }
 
-int           Text::getLength() const { return length; }
-int           Text::getWidth() const { return width; }
-QString       Text::getTextString() const { return textString; }
-GlobalColor   Text::getTextColor() const { return textColor; }
-QFont         Text::getFont() const { return font; }
-AlignmentFlag Text::getTextAlignment() const { return textAlignment; }
+
+bool Text::isPointInside(const QPoint& point) const
+{
+    QRect rect(getX(), getY(), length, width);
+    return rect.contains(point);
+}
+
 
 double Text::Perimeter() const { return (length * 2) + (width * 2); }
 double Text::Area()      const { return length * width; }
 
-/****************************************************/
+/************* ACCESSOR FUNCTIONS *************/
+int           Text::getLength()        const { return length; }
+int           Text::getWidth()         const { return width; }
+QString       Text::getTextString()    const { return textString; }
+GlobalColor   Text::getTextColor()     const { return textColor; }
+QFont         Text::getFont()          const { return font; }
+AlignmentFlag Text::getTextAlignment() const { return textAlignment; }
+/**********************************************/

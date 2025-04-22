@@ -15,12 +15,12 @@ public:
 
     void Draw(QWidget* renderArea) override;
 
-    int getR() const; // Necessary for parser
-
     double Perimeter() const override;
     double Area()      const override;
 
     bool isPointInside(const QPoint& point) const override;
+
+    int getR() const;
 
 private:
     int r;

@@ -20,10 +20,10 @@ Shape::Shape(int    shapeId,
 
     for (int i = 0; i < 5; ++i) // 5 being # of data members in shape being displayed for all shapes (JUST FOR TESTING PLEASE CHANGE)
     {
-        childItems[i] = new QTreeWidgetItem();
+        childItems.push_back(new QTreeWidgetItem());
         parentItem->addChild(childItems[i]);
     }
-
+    // hard coded spaces for each subitem, change as you please
     childItems[0]->setText(0, "Shape Id:");
     childItems[1]->setText(0, "Shape Type:");
     childItems[2]->setText(0, "Pen:");
@@ -43,11 +43,14 @@ void Shape::Move(int x, int y)
 int    Shape::getShapeId()   const { return shapeId; }
 int    Shape::getTrackerId() const { return trackerId; }
 string Shape::getShapeType() const { return shapeType; }
+bool   Shape::getSelected()  const { return isSelected; }
 
 int Shape::getX() const { return coords.x(); }
 int Shape::getY() const { return coords.y(); }
 
 QPainter& Shape::getPainter() { return painter; }
+QTreeWidgetItem* Shape::getParentItem() { return parentItem; }
+alpha::vector<QTreeWidgetItem*>& Shape::getChildItems() { return childItems; }
 
 int          Shape::getPenWidth()     const { return pen.width(); }
 PenStyle     Shape::getPenStyle()     const { return pen.style(); }
@@ -65,6 +68,7 @@ QPoint       Shape::getPoints()       const { return coords;}
 void Shape::setShapeId(int shapeId)        { this->shapeId   = shapeId; }
 void Shape::setTrackerId(int trackerId)    { this->trackerId = trackerId; }
 void Shape::setShapeType(string shapeType) { this->shapeType = shapeType; }
+void Shape::setSelected(bool selected)     { isSelected = selected;}
 
 void Shape::setX(int x) { coords.rx() = x; }
 void Shape::setY(int y) { coords.ry() = y; }
@@ -83,9 +87,6 @@ void Shape::setBrush(Qt::GlobalColor brushColor, Qt::BrushStyle brushStyle)
     this->brush.setColor(brushColor);
     this->brush.setStyle(brushStyle);
 }
-void Shape::setSelected(bool selected) { isSelected = selected;}
-bool Shape::getSelected() const { return isSelected;}
-
 /****************************************************/
 
 // Overloaded Operators

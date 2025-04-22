@@ -1,7 +1,7 @@
 #include "circle.h"
 
 /****************************************************
-* class Circle - Derived Class
+* derived class Circle - Base Shape
 *****************************************************/
 
 Circle::Circle(int    shapeId,
@@ -16,13 +16,12 @@ Circle::Circle(int    shapeId,
                pen,
                brush),
                r{r}
-{}
-
-bool Circle::isPointInside(const QPoint& point) const
 {
-    QRect rect(getX() - r, getY() - r, r*2, r*2);
-    return rect.contains(point);
+    getChildItems().push_back(new QTreeWidgetItem());
+    getParentItem()->addChild(getChildItems()[5]);
+    getChildItems()[5]->setText(0, "Radius:");
 }
+
 
 void Circle::Draw(QWidget* renderArea)
 {
@@ -51,9 +50,15 @@ void Circle::Draw(QWidget* renderArea)
     getPainter().end(); // End the painter session
 }
 
-int Circle::getR() const { return r; }
-
 double Circle::Perimeter() const { return 2 * PI * r; }
 double Circle::Area()      const { return PI * pow(r, 2); }
 
-/****************************************************/
+bool Circle::isPointInside(const QPoint& point) const
+{
+    QRect rect(getX() - r, getY() - r, r*2, r*2);
+    return rect.contains(point);
+}
+
+/************* ACCESSOR FUNCTIONS *************/
+int Circle::getR() const { return r; }
+/**********************************************/

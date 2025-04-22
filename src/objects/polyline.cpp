@@ -1,7 +1,7 @@
 #include "polyline.h"
 
 /****************************************************
-* class Polyline - Derived Class
+* derived class Polyline - Base Shape
 *****************************************************/
 Polyline::Polyline(int    shapeId,
                     string shapeType,
@@ -19,27 +19,6 @@ Polyline::Polyline(int    shapeId,
 
 Polyline::~Polyline() {}
 
-bool Polyline::isPointInside(const QPoint& point) const
-{
-    return pointsList.containsPoint(point, Qt::OddEvenFill);
-}
-
-void Polyline::Move(int x, int y)
-{
-    int offsetX = x - getX(); // Calculate the change in x
-    int offsetY = y - getY(); // Calculate the change in y
-
-    // Update the position of the polygon
-    setX(x);
-    setY(y);
-
-    // Adjust each point in pointsList based on the calculated deltas
-    for (int i = 0; i < pointsList.size(); ++i)
-    {
-        pointsList[i].setX(pointsList[i].x() + offsetX);
-        pointsList[i].setY(pointsList[i].y() + offsetY);
-    }
-}
 
 void Polyline::Draw(QWidget* renderArea)
 {
@@ -71,6 +50,31 @@ void Polyline::Draw(QWidget* renderArea)
     getPainter().end(); // End the painter session
 }
 
+
+void Polyline::Move(int x, int y)
+{
+    int offsetX = x - getX(); // Calculate the change in x
+    int offsetY = y - getY(); // Calculate the change in y
+
+    // Update the position of the polygon
+    setX(x);
+    setY(y);
+
+    // Adjust each point in pointsList based on the calculated deltas
+    for (int i = 0; i < pointsList.size(); ++i)
+    {
+        pointsList[i].setX(pointsList[i].x() + offsetX);
+        pointsList[i].setY(pointsList[i].y() + offsetY);
+    }
+}
+
+
+bool Polyline::isPointInside(const QPoint& point) const
+{
+    return pointsList.containsPoint(point, Qt::OddEvenFill);
+}
+
+
 double Polyline::Perimeter() const
 {
     double perimeter;
@@ -87,4 +91,7 @@ double Polyline::Perimeter() const
     return perimeter;
 }
 
-/****************************************************/
+
+/************* ACCESSOR FUNCTIONS *************/
+QPolygon Polyline::getPointsList() const { return pointsList; }
+/**********************************************/

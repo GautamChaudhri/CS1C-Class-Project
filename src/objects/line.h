@@ -18,17 +18,17 @@ public:
          QPoint startPoint,
          QPoint endPoint);
 
-    QPoint getStartPoint() const; // Necessary for parser
-    QPoint getEndPoint()   const;
-
-    void Move(int x, int y) override;
-
     void Draw(QWidget* renderArea) override;
+    void Move(int x, int y) override;
 
     double Perimeter() const override;
     double Area() const override { return 0; }  // Need to implement this to instantiate Line
 
     bool isPointInside(const QPoint& point) const override;
+
+    QPoint getStartPoint() const;
+    QPoint getEndPoint()   const;
+
 
 private:
     QPoint startPoint;

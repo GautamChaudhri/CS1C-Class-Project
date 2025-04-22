@@ -16,16 +16,16 @@ public:
 
     void Draw(QWidget* renderArea) override;
 
-    int getA() const;   // Necessary for parser
-    int getB() const;
-
     double Perimeter() const override;
     double Area()      const override;
 
     bool isPointInside(const QPoint& point) const override;
 
+    int getA() const;
+    int getB() const;
+
 private:
-    int a;
+    int a; // rename a & b to semi major and minor axis?
     int b;
 };
 
