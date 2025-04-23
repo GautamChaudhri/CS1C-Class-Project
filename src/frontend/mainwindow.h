@@ -3,14 +3,15 @@
 
 #include <QMainWindow>
 #include "renderarea.h"
-#include "Parser.h"
-#include "ApiClient.h"
+#include "../backend/Parser.h"
+#include "../backend/ApiClient.h"
 #include <QApplication>
 #include <QGridLayout>
 #include "ui_mainwindow.h"
+#include "../backend/UserAccount.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
+namespace Ui{
 class MainWindow;
 }
 QT_END_NAMESPACE
@@ -20,25 +21,27 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    //MainWindow(QWidget *parent = nullptr);
-    explicit MainWindow(QWidget *parent = nullptr, const alpha::vector<Shape*>* shapes,
-             const alpha::vector<Shape*>* renderedShapes, const UserAccount* user);
+    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr, const alpha::vector<Shape*>* shapes,
+               const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser);
     ~MainWindow();
 
     void drawShapes() const;
 
+    void shapes_to_treeWidget();
+
 public slots:
-    
-    
+    void setShapes(const alpha::vector<Shape*>& shapes);
+
 private slots:
-    void onRenderAreaChange();
+    void on_actionnew_shape_button_triggered();
 
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;
 
-    alpha::vector<Shape*>* shapes;
-    alpha::vector<Shape*>* renderedShapes;
-    UserAccount* user;
+    const alpha::vector<Shape*>* shapes;
+    //const alpha::vector<Shape*>* renderedShapes;
+    const UserAccount* currUser;
 };
 #endif // MAINWINDOW_H

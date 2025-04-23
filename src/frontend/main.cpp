@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "shapecontroller.h"
+#include <QFile>
+#include "../backend/AppDriver.cpp"
 
 Parser parse;
 ShapeController shapeController;
@@ -31,15 +33,21 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    MainWindow window;
-    windowPtr = &window;
+    //set app style
+    QFile styleSheetFile(":styles/Medize.qss");
+    styleSheetFile.open(QFile::ReadOnly);
+    QString styleSheet = QLatin1String(styleSheetFile.readAll());
+    a.setStyleSheet(styleSheet);
 
-    QObject::connect(&shapeController, &ShapeController::ShapesReady, &window, &MainWindow::setShapes);
+    //MainWindow window;
+    //windowPtr = &window;
+
+    //QObject::connect(&shapeController, &ShapeController::ShapesReady, &window, &MainWindow::setShapes);
+    //QObject::connect(&shapeController, &ShapeController::ShapesReady, [&window]() { window.shapes_to_treeWidget();});
 
     ApiClient* client = GetConnectedClient();
     client->GetShapes();  // triggers API call
 
-    //renderArea.show();
-    window.show();
+    //window.show();
     return a.exec();
 }

@@ -1,6 +1,7 @@
 #ifndef APP_DRIVER_H
 #define APP_DRIVER_H
 #include <QCoreApplication>
+#include <QApplication>
 #include <QObject>
 #include "ShapesManager.h"
 #include "RenderAreaManager.h"

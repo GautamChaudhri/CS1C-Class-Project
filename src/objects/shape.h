@@ -1,16 +1,19 @@
 #ifndef SHAPE_H
 #define SHAPE_H
 
+#include <iostream> // used to make debugging much more convenient
+#include <string>
+#include <cmath>
 #include <QWidget>
 #include <QColor>
 #include <QFont>
 #include <QPen>
-#include <string>
-#include <cmath>
 #include <QPainter>
-
 #include <QList>
 #include <QPolygon>
+#include <QTreeWidget>
+
+#include "vector.h"
 
 //#include "renderarea.h"
 
@@ -42,27 +45,6 @@ class Shape
 
 public:
 
-    /**********************************************************
-    * Overloaded Constructor Shape: Class Shape
-    * ---------------------------------------------------------
-    * ----------------------
-    * PRE-CONDITIONS  -
-    *
-    *      shapeId      :
-    *      shapeType    :
-    *      x            :
-    *      y            :
-    *      penColor     :
-    *      penWidth     :
-    *      penStyle     :
-    *      penCapStyle  :
-    *      penJoinStyle :
-    *      brushColor   :
-    *      brushStyle   :
-    *
-    * POST-CONDITIONS -
-    *
-    ***********************************************************/
     Shape(int    shapeId,
           string shapeType,
           QPoint coords,
@@ -73,16 +55,23 @@ public:
 
     virtual void Draw(QWidget* renderArea) = 0;
     virtual void Move(int x, int y);
+    virtual double Perimeter() const = 0;
+    virtual double Area()      const = 0;
+
+    virtual bool isPointInside(const QPoint& point) const = 0;
 
     /**************** ACCESSOR FUNCTIONS ****************/
     int    getShapeId()   const;
     int    getTrackerId() const;
     string getShapeType() const;
+    bool   getSelected()  const;
 
     int getX() const;
     int getY() const;
 
     QPainter& getPainter();
+    QTreeWidgetItem* getParentItem();
+    alpha::vector<QTreeWidgetItem*>& getChildItems();
 
     int          getPenWidth()     const;
     PenStyle     getPenStyle()     const;
@@ -100,6 +89,7 @@ public:
     void setShapeId(int shapeId);
     void setTrackerId(int trackerId);
     void setShapeType(string shapeType);
+    void setSelected(bool selected);
 
     void setX(int x);
     void setY(int y);
@@ -107,9 +97,6 @@ public:
     void setPen(GlobalColor penColor, int penWidth, PenStyle penStyle, PenCapStyle penCapStyle, PenJoinStyle penJoinStyle);
     void setBrush(GlobalColor brushColor, BrushStyle brushStyle);
     /****************************************************/
-
-    virtual double Perimeter() const = 0;
-    virtual double Area()      const = 0;
 
 private:
     int      shapeId;
@@ -122,8 +109,14 @@ private:
 
     QPainter painter;
 
+    bool isSelected = false;
+
+    QTreeWidgetItem* parentItem;
+    alpha::vector<QTreeWidgetItem*> childItems;
+
     // Disable Copy Operations
-    //Shape(Shape& shape) = delete;
+    Shape(Shape& shape) = delete;
+    Shape& operator=(Shape& object) = delete;
 };
 
 #endif // SHAPE_H

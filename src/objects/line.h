@@ -11,27 +11,28 @@ class Line : public Shape
 public:
 
     Line(int    shapeId,
-          string shapeType,
-          QPoint coords,
-          QPen   pen,
-          QBrush brush,
-          QPoint startPoint,
+         string shapeType,
+         QPoint coords,
+         QPen   pen,
+         QBrush brush,
+         QPoint startPoint,
          QPoint endPoint);
 
-    QPoint getStartPoint() const {return startPoint;}   // Necessary for parser
-    QPoint getEndPoint() const {return endPoint;}
-
     void Draw(QWidget* renderArea) override;
+    void Move(int x, int y) override;
 
     double Perimeter() const override;
     double Area() const override { return 0; }  // Need to implement this to instantiate Line
 
+    bool isPointInside(const QPoint& point) const override;
+
+    QPoint getStartPoint() const;
+    QPoint getEndPoint()   const;
+
+
 private:
     QPoint startPoint;
     QPoint endPoint;
-
-    // Disable Copy Operations
-    //Line(Line& Line) = delete;
 };
 
 #endif // LINE_H

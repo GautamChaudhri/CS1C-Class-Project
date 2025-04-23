@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # ===============================
 # Qt Package Finding
 # ===============================
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Core)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Core Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core Network)
 
 # ===============================
@@ -72,7 +72,12 @@ else()
     endif()
 endif()
 
-target_link_libraries(Frontend PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+# Link Core, Widgets, and Network for Frontend
+target_link_libraries(Frontend PRIVATE
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Network
+)
 
 # Frontend bundle and install configuration
 set_target_properties(Frontend PROPERTIES
@@ -85,16 +90,15 @@ set_target_properties(Frontend PROPERTIES
 
 include(GNUInstallDirs)
 install(TARGETS Frontend
-    BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    BUNDLE     DESTINATION .
+    LIBRARY    DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME    DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 # ===============================
 # Backend Configuration
 # ===============================
 
-# Backend source files
 # Backend source files
 set(BACKEND_SOURCES
     src/backend/main.cpp
@@ -132,7 +136,11 @@ set(BACKEND_SOURCES
 
 # Backend executable
 add_executable(Backend ${BACKEND_SOURCES})
-target_link_libraries(Backend PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Network Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Backend PRIVATE
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Network
+    Qt${QT_VERSION_MAJOR}::Widgets
+)
 
 set_target_properties(Backend PROPERTIES
     WIN32_EXECUTABLE FALSE
@@ -140,9 +148,8 @@ set_target_properties(Backend PROPERTIES
 )
 
 install(TARGETS Backend
-    BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    LIBRARY    DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME    DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 # ===============================
@@ -158,21 +165,17 @@ find_package(Threads REQUIRED)
 
 # Webservice executable
 add_executable(Webservice ${WEB_SERVICE_SOURCES})
-
 target_include_directories(Webservice PRIVATE
     src/webservice/crow/include
     src/webservice/asio/asio/include
 )
-
 target_compile_definitions(Webservice PRIVATE -DCROW_USE_STANDALONE_ASIO)
 target_compile_options(Webservice PRIVATE -Wall -g)
 target_link_libraries(Webservice PRIVATE
     Threads::Threads
-    # on Windows, link both Winsock2 and Mswsock for AcceptEx, GetAcceptExSockaddrs, etc.
     $<$<PLATFORM_ID:Windows>:Ws2_32>
     $<$<PLATFORM_ID:Windows>:Mswsock>
 )
-
 set_target_properties(Webservice PROPERTIES
     WIN32_EXECUTABLE FALSE
     MACOSX_BUNDLE FALSE
