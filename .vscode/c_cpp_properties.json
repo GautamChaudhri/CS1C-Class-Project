@@ -13,7 +13,11 @@
                 "/usr/include/qt6/QtGui",
                 "/usr/include/qt6/QtPrintSupport"
             ],
-            "defines": [],
+            "defines": [
+                "signals=public",
+                "slots=public",
+                "Q_OBJECT="
+            ],
             "cStandard": "c17",
             "cppStandard": "c++17",
             "configurationProvider": "ms-vscode.makefile-tools"
