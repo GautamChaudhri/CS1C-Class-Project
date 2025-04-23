@@ -30,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(renderArea);
 
-    renderArea->setShapes(renderedShapes);
+    renderArea->setShapes2(renderedShapes);
 }
 
 
@@ -41,6 +41,12 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::setShapes(const alpha::vector<Shape*>& shapes) {
+    //updates the shape vector in renderArea and then draws it again
+    renderArea->setShapes(shapes);
+    renderArea->update();
+}
+
+void MainWindow::setShapes2(const alpha::vector<Shape*>& shapes) {
     //updates the shape vector in renderArea and then draws it again
     renderArea->setShapes(shapes);
     renderArea->update();

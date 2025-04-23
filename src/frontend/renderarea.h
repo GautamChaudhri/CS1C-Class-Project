@@ -16,7 +16,7 @@ public:
     RenderArea(QWidget *parent = nullptr);
 
     void setShapes(const alpha::vector<Shape*>& shapes);
-    void setShapes(const alpha::vector<Shape*>* shapes);
+    void setShapes2(const alpha::vector<Shape*>* shapes);
     void addShape(Shape* shape)
     {
         renderShapes.push_back(shape);
@@ -31,7 +31,7 @@ public:
     void mouseMoveEvent(QMouseEvent* event) override;
 
 public slots:
-    void onRenderAreaChanged(const alpha::vector<Shape*>* shapes);
+    void onRenderAreaChanged();
     void onRenderAreaNotChanged(const QString& message);
     void showStatusMessage(QString msg);
 
@@ -46,6 +46,6 @@ protected:
 
 private:
     alpha::vector<Shape*> renderShapes;
-    const alpha::vector<Shape*> renderShapes2;
+    const alpha::vector<Shape*>* renderShapes2;
     int shapeSelectedIndex; // This is the vector index of the current shape selected, this is done so we prevent multiple shapes being selected at once
 };

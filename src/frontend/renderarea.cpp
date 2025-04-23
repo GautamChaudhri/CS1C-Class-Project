@@ -2,7 +2,12 @@
 
 RenderArea::RenderArea(QWidget *parent) : QWidget(parent) {}
 
-void RenderArea::setShapes(const alpha::vector<Shape*>* shapes)
+void RenderArea::setShapes(const alpha::vector<Shape*>& shapes)
+{
+    renderShapes = shapes; // copy the shapes from pointer
+}
+
+void RenderArea::setShapes2(const alpha::vector<Shape*>* shapes)
 {
     renderShapes = *shapes; // copy the shapes from pointer
 }
@@ -67,11 +72,15 @@ void RenderArea::paintEvent(QPaintEvent *event)
     }
 }
 
-void RenderArea::onRenderAreaChanged(const alpha::vector<Shape*>* shapes) {
-    setShapes(shapes);
+void RenderArea::onRenderAreaChanged() {
     update();
 }
 
 void RenderArea::onRenderAreaNotChanged(const QString& message) {
     // handle error: you could show a popup or log the message
+}
+
+void RenderArea::showStatusMessage(QString message)
+{
+    qDebug() << "Status:" << message;
 }

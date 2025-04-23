@@ -26,6 +26,8 @@ public:
                const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser);
     ~MainWindow();
 
+    void setShapes2(const alpha::vector<Shape*>& shapes);
+
     RenderArea* getRenderAreaRef();
     void drawShapes() const;
 
