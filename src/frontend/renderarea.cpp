@@ -2,9 +2,9 @@
 
 RenderArea::RenderArea(QWidget *parent) : QWidget(parent) {}
 
-void RenderArea::setShapes(const alpha::vector<Shape*>& shapes)
+void RenderArea::setShapes(const alpha::vector<Shape*>* shapes)
 {
-    renderShapes = std::move(shapes); // moves the local copy
+    renderShapes = *shapes; // copy the shapes from pointer
 }
 
 void RenderArea::mousePressEvent(QMouseEvent* event)
@@ -65,4 +65,13 @@ void RenderArea::paintEvent(QPaintEvent *event)
     {
         renderShapes[i]->Draw(this);
     }
+}
+
+void RenderArea::onRenderAreaChanged(const alpha::vector<Shape*>* shapes) {
+    setShapes(shapes);
+    update();
+}
+
+void RenderArea::onRenderAreaNotChanged(const QString& message) {
+    // handle error: you could show a popup or log the message
 }

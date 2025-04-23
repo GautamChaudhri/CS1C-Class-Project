@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     layout->addWidget(renderArea);
 }
 
-MainWindow::MainWindow(QWidget *parent = nullptr, const alpha::vector<Shape*>* shapes,
+MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser)
     : QMainWindow(parent), 
       ui(new Ui::MainWindow)

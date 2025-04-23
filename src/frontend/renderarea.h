@@ -9,7 +9,7 @@
 #include <QMouseEvent>
 
 class RenderArea : public QWidget
-{
+{   Q_OBJECT
 public:
     RenderArea(QWidget *parent = nullptr);
 
@@ -29,8 +29,8 @@ public:
     void mouseMoveEvent(QMouseEvent* event) override;
 
 public slots:
-    void onRenderAreaChanged(Shape* shape);
-    void onRenderAreaNotChanged(Shape* shape);
+    void onRenderAreaChanged(const alpha::vector<Shape*>* shapes);
+    void onRenderAreaNotChanged(const QString& message);
     void showStatusMessage(QString msg);
 
 signals:

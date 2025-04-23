@@ -22,7 +22,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    MainWindow(QWidget *parent = nullptr, const alpha::vector<Shape*>* shapes,
+    MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
                const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser);
     ~MainWindow();
 

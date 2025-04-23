@@ -82,11 +82,10 @@ void ApiClient::AnalyzeGetReply() {
     if (reply->error() == QNetworkReply::NoError) {
         QByteArray bytes = reply->readAll();
         QString json = QString::fromUtf8(bytes);
-        std::string jsonStr = json.toStdString();
-        emit GoodGetReply(jsonStr);
+        emit GoodGetReply(json);
     }
     else {
-        std::string errorStr = reply->errorString().toStdString();
+        QString errorStr = reply->errorString();
         emit BadGetReply(errorStr);
     }
     
@@ -104,7 +103,7 @@ void ApiClient::AnalyzePostReply() {
         emit GoodPostReply();
     }
     else {
-        std::string errorStr = reply->errorString().toStdString();
+        QString errorStr = reply->errorString();
         emit BadPostReply(errorStr);
     }
     
@@ -122,7 +121,7 @@ void ApiClient::AnalyzeDeleteReply() {
         emit GoodPostReply();
     }
     else {
-        std::string errorStr = reply->errorString().toStdString();
+        QString errorStr = reply->errorString();
         emit BadDeleteReply(errorStr);
     }
     

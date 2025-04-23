@@ -1,6 +1,6 @@
 #include "AppDriver.h"
 
-AppDriver::AppDriver(QObject* parent = nullptr) 
+AppDriver::AppDriver(QObject* parent) 
           : QObject{parent}, shapes{new ShapesManager}, renderedShapes{new RenderAreaManager}, 
             user{new UserManager} {
     connectFrontendToDriver();

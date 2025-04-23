@@ -148,7 +148,7 @@ signals:
      * 
      * @param json - contains data received from whichever Get endpoint was called and is formatted in JSON.
      */
-    void GoodGetReply(const std::string& json);
+    void GoodGetReply(const QString& json);
 
 
 
@@ -160,7 +160,7 @@ signals:
      * 
      * @param error - the error message indicating what went wrong
      */
-    void BadGetReply(const std::string& error);
+    void BadGetReply(const QString& error);
 
 
 
@@ -181,7 +181,7 @@ signals:
      * 
      * @param error - the error message indicating what went wrong
      */
-    void BadPostReply(const std::string& error);
+    void BadPostReply(const QString& error);
 
 
 
@@ -202,7 +202,7 @@ signals:
      * 
      * @param error - the error message indicating what went wrong
      */
-    void BadDeleteReply(const std::string& error);
+    void BadDeleteReply(const QString& error);
 
 
 
