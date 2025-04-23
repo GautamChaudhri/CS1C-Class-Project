@@ -31,6 +31,15 @@ set(PROJECT_srcS
     src/frontend/renderarea.cpp
     src/frontend/renderarea.h
 
+    # Backend components used by Frontend
+    src/backend/ApiClient.cpp
+    src/backend/Parser.cpp
+    src/backend/AppDriver.cpp
+    src/backend/RenderAreaManager.cpp
+    src/backend/ShapesManager.cpp
+    src/backend/UserManager.cpp
+    src/backend/UserAccount.cpp
+
     # Objects / shapes are now in src/objects/
     src/objects/all_shapes.h
     src/objects/circle.cpp
@@ -52,6 +61,11 @@ set(PROJECT_srcS
     src/objects/text.cpp
     src/objects/text.h
     src/objects/vector.h
+
+    src/frontend/loginwindow.cpp
+    src/frontend/loginwindow.h
+    src/frontend/shapecontroller.h
+    src/frontend/resources.qrc
 )
 
 # Frontend executable
@@ -110,6 +124,13 @@ set(BACKEND_SOURCES
     src/backend/UserManager.cpp
     src/backend/UserAccount.h
     src/backend/UserAccount.cpp
+
+    src/backend/AppDriver.h
+    src/backend/AppDriver.cpp
+    src/backend/RenderAreaManager.h
+    src/backend/RenderAreaManager.cpp
+    src/backend/ShapesManager.h
+    src/backend/ShapesManager.cpp
 
     # Objects / shapes are now in src/objects/
     src/objects/all_shapes.h
