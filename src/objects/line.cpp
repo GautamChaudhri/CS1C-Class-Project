@@ -11,13 +11,13 @@ Line::Line(int    shapeId,
            QBrush brush,
            QPoint startPoint,
            QPoint endPoint)
-        :  Shape (shapeId,
-                  shapeType,
-                  coords,
-                  pen,
-                  brush),
-       startPoint{startPoint},
-         endPoint{endPoint}
+    :  Shape (shapeId,
+            shapeType,
+            coords,
+            pen,
+            brush),
+    startPoint{startPoint},
+    endPoint{endPoint}
 {}
 
 
@@ -100,5 +100,3 @@ bool Line::isPointInside(const QPoint& point) const
 QPoint Line::getStartPoint() const { return startPoint; }
 QPoint Line::getEndPoint()   const { return endPoint; }
 /**********************************************/
-
-

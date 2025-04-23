@@ -14,20 +14,19 @@ public:
             int    a,
             int    b);
 
-    int getA() const {return a;};   // Necessary for parser
-    int getB() const {return b;};
-
     void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;
     double Area()      const override;
 
-private:
-    int a;
-    int b;
+    bool isPointInside(const QPoint& point) const override;
 
-    // Disable Copy Operations
-    //Ellipse(Ellipse& Ellipse) = delete;
+    int getA() const;
+    int getB() const;
+
+private:
+    int a; // rename a & b to semi major and minor axis?
+    int b;
 };
 
 #endif // ELLIPSE_H

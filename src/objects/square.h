@@ -13,18 +13,18 @@ public:
            QBrush brush,
            int length);
 
-    int getLength() const {return length;} // Necessary for parser
 
     void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;
     double Area()      const override;
 
+    bool isPointInside(const QPoint& point) const override;
+
+    int getLength() const;
+
 private:
     int length;
-
-    // Disable Copy Operations
-    //Square(Square& Square) = delete;
 };
 
 #endif // SQUARE_H

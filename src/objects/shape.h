@@ -120,4 +120,3 @@ private:
 };
 
 #endif // SHAPE_H
-

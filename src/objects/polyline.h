@@ -15,18 +15,18 @@ public:
 
     ~Polyline();
 
-    QPolygon getPointsList() const { return pointsList; } // Necessary for parser
-
     void Draw(QWidget* renderArea) override;
+    void Move(int x, int y) override;
 
     double Perimeter() const override;
     double Area() const override {return 0;}
 
+    bool isPointInside(const QPoint& point) const override;
+
+    QPolygon getPointsList() const;
+
 private:
     QPolygon pointsList;
-
-    // Disable Copy Operations
-    //Polyline(Polyline& Polyline) = delete;
 };
 
 #endif // POLYLINE_H

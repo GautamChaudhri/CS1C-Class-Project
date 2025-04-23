@@ -15,21 +15,19 @@ public:
               int width);
 
 
-    int getLength() const {return length;}  // Necessary for parser
-    int getWidth() const {return width;}
-
     void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;
     double Area()      const override;
 
+    bool isPointInside(const QPoint& point) const override;
+
+    int getLength() const;
+    int getWidth()  const;
+
 private:
     int length;
     int width;
-
-    // Disable Copy Operations
-    //Rectangle(Rectangle& Rectangle) = delete;
 };
 
 #endif // RECTANGLE_H
-

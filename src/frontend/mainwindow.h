@@ -42,7 +42,7 @@ private:
     RenderArea *renderArea;
 
     const alpha::vector<Shape*>* shapes;
-    //const alpha::vector<Shape*>* renderedShapes;
+    const alpha::vector<Shape*>* renderedShapes;
     const UserAccount* currUser;
 };
 #endif // MAINWINDOW_H

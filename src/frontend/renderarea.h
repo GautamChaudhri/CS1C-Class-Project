@@ -9,7 +9,9 @@
 #include <QMouseEvent>
 
 class RenderArea : public QWidget
-{   Q_OBJECT
+{
+    Q_OBJECT
+
 public:
     RenderArea(QWidget *parent = nullptr);
 

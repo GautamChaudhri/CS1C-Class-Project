@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "shapecontroller.h"
 #include <QFile>
-#include "../backend/AppDriver.cpp"
+//#include "../backend/AppDriver.cpp"
 
 Parser parse;
 ShapeController shapeController;
@@ -39,11 +39,11 @@ int main(int argc, char *argv[])
     QString styleSheet = QLatin1String(styleSheetFile.readAll());
     a.setStyleSheet(styleSheet);
 
-    //MainWindow window;
-    //windowPtr = &window;
+    MainWindow window;
+    windowPtr = &window;
 
-    //QObject::connect(&shapeController, &ShapeController::ShapesReady, &window, &MainWindow::setShapes);
-    //QObject::connect(&shapeController, &ShapeController::ShapesReady, [&window]() { window.shapes_to_treeWidget();});
+    QObject::connect(&shapeController, &ShapeController::ShapesReady, &window, &MainWindow::setShapes);
+    QObject::connect(&shapeController, &ShapeController::ShapesReady, [&window]() { window.shapes_to_treeWidget();});
 
     ApiClient* client = GetConnectedClient();
     client->GetShapes();  // triggers API call

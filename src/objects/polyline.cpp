@@ -1,34 +1,79 @@
 #include "polyline.h"
 
 /****************************************************
-* class Polyline - Derived Class
+* derived class Polyline - Base Shape
 *****************************************************/
 Polyline::Polyline(int    shapeId,
-                    string shapeType,
-                    QPoint coords,
-                    QPen   pen,
-                    QBrush brush,
-                    QPolygon pointsList)
-                : Shape(shapeId,
-                        shapeType,
-                        coords,
-                        pen,
-                        brush),
-                    pointsList{pointsList}
+                   string shapeType,
+                   QPoint coords,
+                   QPen   pen,
+                   QBrush brush,
+                   QPolygon pointsList)
+    : Shape(shapeId,
+            shapeType,
+            coords,
+            pen,
+            brush),
+    pointsList{pointsList}
 {}
 
 Polyline::~Polyline() {}
 
+
 void Polyline::Draw(QWidget* renderArea)
 {
-    getPainter().begin(renderArea);
+    if (!getPainter().isActive())
+    {
+        getPainter().begin(renderArea); // Ensure the painter is properly started
+    }
+
+    getPainter().save(); // Save current state
 
     getPainter().setPen(getPen());
     getPainter().setBrush(getBrush());
     getPainter().drawPolyline(pointsList);
 
-    getPainter().end();
+    if (getSelected()) {
+        // Define a highlight pen for the bounding box
+        QPen highlightPen(Qt::DashLine);
+        highlightPen.setColor(Qt::red);
+        getPainter().setPen(highlightPen);
+        getPainter().setBrush(Qt::NoBrush);
+
+        // Draw the bounding box around the polyline
+        QRect boundingBox = pointsList.boundingRect().adjusted(-5, -5, 5, 5); // With margin
+        getPainter().drawRect(boundingBox);
+    }
+
+    getPainter().restore(); // Restore saved state
+
+    getPainter().end(); // End the painter session
 }
+
+
+void Polyline::Move(int x, int y)
+{
+    int offsetX = x - getX(); // Calculate the change in x
+    int offsetY = y - getY(); // Calculate the change in y
+
+    // Update the position of the polygon
+    setX(x);
+    setY(y);
+
+    // Adjust each point in pointsList based on the calculated deltas
+    for (int i = 0; i < pointsList.size(); ++i)
+    {
+        pointsList[i].setX(pointsList[i].x() + offsetX);
+        pointsList[i].setY(pointsList[i].y() + offsetY);
+    }
+}
+
+
+bool Polyline::isPointInside(const QPoint& point) const
+{
+    return pointsList.containsPoint(point, Qt::OddEvenFill);
+}
+
 
 double Polyline::Perimeter() const
 {
@@ -46,4 +91,7 @@ double Polyline::Perimeter() const
     return perimeter;
 }
 
-/****************************************************/
+
+/************* ACCESSOR FUNCTIONS *************/
+QPolygon Polyline::getPointsList() const { return pointsList; }
+/**********************************************/

@@ -12,7 +12,7 @@
  *      - move constructor
  *      - move assignment
  *      - destructor
- * 
+ *
  * Vector also supports:
  *      - a basic iterator member type and member function
  *      - begin()
@@ -28,7 +28,7 @@ class vector
     int size_v;     // the size
     T* elem;        // a pointer to the elements
     int space;      // size + free_space
-    
+
     public:
         /***********************************************************************
          * DEFAULT CONSTRUCTOR
@@ -36,13 +36,13 @@ class vector
         vector() : size_v(0), space(1) {
             elem = new T[space];
         } // END vector()
-        
+
         /***********************************************************************
          * ALTERNATE CONSTRUCTOR - size given
          **********************************************************************/
         explicit vector(int s) : size_v(s), space(s) {
             elem = new T[space];
-        } // END explicit vector(int s) 
+        } // END explicit vector(int s)
 
         /***********************************************************************
          * COPY CONSTRUCTOR
@@ -62,15 +62,15 @@ class vector
             /*******************************************************************
             * CHECKS IF SELF-ASSIGNMENT
             *******************************************************************/
-            if (this == &other) { 
-                return *this; 
+            if (this == &other) {
+                return *this;
             }
 
             /*******************************************************************
             * IF NOT SELF-ASSIGNMENT
             *******************************************************************/
             delete[] elem;
-            
+
             size_v = other.size_v;
             space = other.space;
             elem = new T[space];
@@ -85,7 +85,7 @@ class vector
         /***********************************************************************
          * MOVE CONSTRUCTOR
          **********************************************************************/
-        vector(vector&& other) noexcept 
+        vector(vector&& other) noexcept
             : size_v(other.size_v), elem(other.elem), space(other.space) {
             other.size_v = 0;
             other.elem = nullptr;
@@ -99,15 +99,15 @@ class vector
             /*******************************************************************
             * CHECKS IF SELF-ASSIGNMENT
             *******************************************************************/
-            if (this == &other) { 
-                return *this; 
+            if (this == &other) {
+                return *this;
             }
 
             /*******************************************************************
             * IF NOT SELF-ASSIGNMENT
             *******************************************************************/
             delete[] elem;
-            
+
             size_v = other.size_v;
             space = other.space;
             elem = other.elem;
@@ -123,7 +123,7 @@ class vector
          * DESTRUCTOR
          **********************************************************************/
         ~vector() { delete[] elem; }
-        
+
         /***********************************************************************
          * ACCESSOR - RETURN REFERENCE - MODIFIABLE
          **********************************************************************/
@@ -133,7 +133,7 @@ class vector
          * ACCESSOR - RETURN REFERENCE
          **********************************************************************/
         const T& operator[] (int n) const { return elem[n]; }
-        
+
         /***********************************************************************
          * ACCESSOR - RETURN CURRENT SIZE
          **********************************************************************/
@@ -149,20 +149,20 @@ class vector
          * ----------------------------------------------------------------------
          * This function will be passed a number:
          *      newsize     - size to increase vector by
-         * 
+         *
          * depending on size_v the following will happen:
          *      size_v = newsize
          *      nothing will happen
-         * 
+         *
          *      size_v < newsize
          *      will change size_v to newsize
-         * 
+         *
          *      size_v > newsize (default)
          *      error will occur
          * ---------------------------------------------------------------------
          * PRE-CONDITIONS
          *      size_v  - original size of vector
-         * 
+         *
          * POST-CONDITIONS
          *      newsize  - new size of vector
          **********************************************************************/
@@ -193,13 +193,13 @@ class vector
          * ----------------------------------------------------------------------
          * This function will be passed a value:
          *      val     - data to add to vector
-         * 
+         *
          * Function adds the data to the back of the vector. If there is no
          * space then the function will increase the space before adding
          * ---------------------------------------------------------------------
          * PRE-CONDITIONS
          *      size_v  - original size of vector
-         * 
+         *
          * POST-CONDITIONS
          *      newsize  - new size of vector
          **********************************************************************/
@@ -222,20 +222,20 @@ class vector
          * ---------------------------------------------------------------------
          * This function will be passed a number:
          *      newalloc     - size to increase vector capacity by
-         * 
+         *
          * depending on space the following will happen:
          *      space = newalloc
          *      nothing will happen
-         * 
+         *
          *      space < newalloc
          *      will change space to newalloc
-         * 
+         *
          *      size_v > newalloc (default)
          *      error will occur
          * ---------------------------------------------------------------------
          * PRE-CONDITIONS
          *      space  - original size of vector
-         * 
+         *
          * POST-CONDITIONS
          *      newalloc  - new size of vector
          **********************************************************************/
@@ -260,7 +260,7 @@ class vector
 
                 delete[] elem;
                 elem = new_elem;
-                
+
                 // UPDATE SPACE
                 space = newalloc;
             } // END else if (space < newalloc)
@@ -272,7 +272,7 @@ class vector
 
         } // END void reserve(int newalloc)
 
-        
+
         using iterator = T*;
         using const_iterator = const T*;
 
@@ -343,7 +343,7 @@ class vector
 
             return p;
         } // END iterator erase(iterator p)
-        
+
 }; // END class vector
 }; // END namespace alpha
 #endif // VECTOR_H

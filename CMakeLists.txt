@@ -110,6 +110,10 @@ set(BACKEND_SOURCES
     src/backend/UserManager.cpp
     src/backend/UserAccount.h
     src/backend/UserAccount.cpp
+    src/backend/AppDriver.h
+    src/backend/AppDriver.cpp
+    src/backend/RenderAreaManager.h
+    src/backend/RenderAreaManager.cpp
 
     # Objects / shapes are now in src/objects/
     src/objects/all_shapes.h

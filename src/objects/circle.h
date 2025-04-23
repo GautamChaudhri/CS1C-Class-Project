@@ -13,19 +13,17 @@ public:
            QBrush brush,
            int r);
 
-    int getR() const {return r;}    // Necessary for parser
-
     void Draw(QWidget* renderArea) override;
 
     double Perimeter() const override;
     double Area()      const override;
 
+    bool isPointInside(const QPoint& point) const override;
+
+    int getR() const;
+
 private:
     int r;
-
-    // Disable Copy Operations
-    //Circle(Circle& Circle) = delete;
 };
 
 #endif // CIRCLE_H
-
