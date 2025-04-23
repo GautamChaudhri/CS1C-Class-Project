@@ -69,7 +69,7 @@ set(PROJECT_srcS
 )
 
 # Frontend executable
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+if(QT_VERSION_MAJOR GREATER_EQUAL 6)
     qt_add_executable(Frontend
         MANUAL_FINALIZATION
         ${PROJECT_srcS}
@@ -105,74 +105,6 @@ set_target_properties(Frontend PROPERTIES
 include(GNUInstallDirs)
 install(TARGETS Frontend
     BUNDLE     DESTINATION .
-    LIBRARY    DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME    DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
-
-# ===============================
-# Backend Configuration
-# ===============================
-
-# Backend source files
-set(BACKEND_SOURCES
-    src/backend/main.cpp
-    src/backend/ApiClient.cpp
-    src/backend/ApiClient.h
-    src/backend/Parser.h
-    src/backend/Parser.cpp
-    src/backend/UserManager.h
-    src/backend/UserManager.cpp
-    src/backend/UserAccount.h
-    src/backend/UserAccount.cpp
-    src/backend/AppDriver.h
-    src/backend/AppDriver.cpp
-    src/backend/RenderAreaManager.h
-    src/backend/RenderAreaManager.cpp
-
-    src/backend/AppDriver.h
-    src/backend/AppDriver.cpp
-    src/backend/RenderAreaManager.h
-    src/backend/RenderAreaManager.cpp
-    src/backend/ShapesManager.h
-    src/backend/ShapesManager.cpp
-
-    # Objects / shapes are now in src/objects/
-    src/objects/all_shapes.h
-    src/objects/circle.cpp
-    src/objects/circle.h
-    src/objects/ellipse.cpp
-    src/objects/ellipse.h
-    src/objects/line.cpp
-    src/objects/line.h
-    src/objects/polygon.cpp
-    src/objects/polygon.h
-    src/objects/polyline.cpp
-    src/objects/polyline.h
-    src/objects/rectangle.cpp
-    src/objects/rectangle.h
-    src/objects/shape.cpp
-    src/objects/shape.h
-    src/objects/square.cpp
-    src/objects/square.h
-    src/objects/text.cpp
-    src/objects/text.h
-    src/objects/vector.h
-)
-
-# Backend executable
-add_executable(Backend ${BACKEND_SOURCES})
-target_link_libraries(Backend PRIVATE
-    Qt${QT_VERSION_MAJOR}::Core
-    Qt${QT_VERSION_MAJOR}::Network
-    Qt${QT_VERSION_MAJOR}::Widgets
-)
-
-set_target_properties(Backend PROPERTIES
-    WIN32_EXECUTABLE FALSE
-    MACOSX_BUNDLE FALSE
-)
-
-install(TARGETS Backend
     LIBRARY    DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME    DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
@@ -216,5 +148,5 @@ add_custom_target(Database ALL SOURCES ${DATABASE})
 # Finalize Qt Executables (Qt 6 only)
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Frontend)
-    qt_finalize_executable(Backend)
+    qt_finalize_executable(Webservice)
 endif()

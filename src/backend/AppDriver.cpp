@@ -2,10 +2,7 @@
 
 AppDriver::AppDriver(QObject* parent) 
           : QObject{parent}, shapes{new ShapesManager}, renderedShapes{new RenderAreaManager}, 
-            user{new UserManager} {
-    connectFrontendToDriver();
-    connectManagersToFrontend();
-}
+            user{new UserManager} {}
 
 AppDriver::~AppDriver() {
     delete shapes;
@@ -17,6 +14,8 @@ void AppDriver::run() {
     loadAllData();
     mainwindow = new MainWindow(nullptr, shapes->getShapesRef(), renderedShapes->getShapesRef(), user->getCurrUserRef());
     renderArea = mainwindow->getRenderAreaRef();
+    connectFrontendToDriver();
+    connectManagersToFrontend();
     mainwindow->show();
 }
 
