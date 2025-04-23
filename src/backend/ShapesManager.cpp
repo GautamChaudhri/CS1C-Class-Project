@@ -1,4 +1,3 @@
-
  #include "ShapesManager.h"
  
  ShapesManager::ShapesManager(QObject* parent)
@@ -98,16 +97,16 @@ void ShapesManager::modifyShape(Shape* shape) {
  
 
 
- void ShapesManager::onGoodGetResponse(const std::string &json) {
-     shapes = parse.JsonToShapes(json);
+ void ShapesManager::onGoodGetResponse(const QString &json) {
+     shapes = parse.JsonToShapes(json.toStdString());
      emit statusMessage("Shapes loaded successfully.");
      emit shapesChanged();
  }
  
 
 
- void ShapesManager::onBadGetResponse(const std::string &errorMsg) {
-     emit statusMessage("Error in receiving data from database: " + QString::fromStdString(errorMsg));
+ void ShapesManager::onBadGetResponse(const QString &errorMsg) {
+     emit statusMessage("Error in receiving data from database: " + errorMsg);
  }
  
 
@@ -118,8 +117,8 @@ void ShapesManager::modifyShape(Shape* shape) {
  
 
 
- void ShapesManager::onBadPostResponse(const std::string &errorMsg) {
-     emit statusMessage("Error in saving shapes: " + QString::fromStdString(errorMsg));
+ void ShapesManager::onBadPostResponse(const QString &errorMsg) {
+     emit statusMessage("Error in saving shapes: " + errorMsg);
  }
  
 
@@ -130,6 +129,6 @@ void ShapesManager::modifyShape(Shape* shape) {
  
 
 
- void ShapesManager::onBadDeleteResponse(const std::string &errorMsg) {
-     emit statusMessage("Error in deleting shapes: " + QString::fromStdString(errorMsg));
+ void ShapesManager::onBadDeleteResponse(const QString &errorMsg) {
+     emit statusMessage("Error in deleting shapes: " + errorMsg);
  }

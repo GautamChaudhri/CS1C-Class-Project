@@ -1,4 +1,5 @@
 #include "RenderAreaManager.h"
+#include <QString>
 
 RenderAreaManager::RenderAreaManager(QObject* parent) : QObject{parent}, client{}, parse{} {
     connect(&client, &ApiClient::GoodGetReply, this, &RenderAreaManager::onGoodGetResponse);
@@ -96,16 +97,17 @@ void RenderAreaManager::saveShapes() {
 
 
 
-void RenderAreaManager::onGoodGetResponse(const std::string &json) {
-    renderedShapes = parse.JsonToShapes(json);
+void RenderAreaManager::onGoodGetResponse(const QString &json) {
+    std::string jsonStr = json.toStdString();
+    renderedShapes = parse.JsonToShapes(jsonStr);
     emit statusMessage("Shapes loaded successfully.");
     emit renderAreaChanged(&renderedShapes);
 }
 
 
 
-void RenderAreaManager::onBadGetResponse(const std::string &errorMsg) {
-    emit statusMessage("Error in receiving data from database: " + QString::fromStdString(errorMsg));
+void RenderAreaManager::onBadGetResponse(const QString &errorMsg) {
+    emit statusMessage("Error in receiving data: " + errorMsg);
 }
 
 
@@ -116,8 +118,8 @@ void RenderAreaManager::onGoodPostResponse() {
 
 
 
-void RenderAreaManager::onBadPostResponse(const std::string &errorMsg) {
-    emit statusMessage("Error in saving shapes: " + QString::fromStdString(errorMsg));
+void RenderAreaManager::onBadPostResponse(const QString &errorMsg) {
+    emit statusMessage("Error in saving shapes: " + errorMsg);
 }
 
 
@@ -128,6 +130,6 @@ void RenderAreaManager::onGoodDeleteResponse() {
 
 
 
-void RenderAreaManager::onBadDeleteResponse(const std::string &errorMsg) {
-    emit statusMessage("Error in deleting shapes: " + QString::fromStdString(errorMsg));
+void RenderAreaManager::onBadDeleteResponse(const QString &errorMsg) {
+    emit statusMessage("Error in deleting shapes: " + errorMsg);
 }
