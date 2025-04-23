@@ -48,6 +48,7 @@ private:
     UserManager* user;
 
     MainWindow* mainwindow;
+    const RenderArea* renderArea;
 
     //Subroutines
     void connectFrontendToDriver();

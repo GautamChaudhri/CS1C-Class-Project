@@ -66,3 +66,7 @@ void MainWindow::shapes_to_treeWidget()
         ui->treeWidget->addTopLevelItem(renderArea->getShapes()[i]->getParentItem());
     }
 }
+
+RenderArea* MainWindow::getRenderAreaRef() {
+    return renderArea;
+}

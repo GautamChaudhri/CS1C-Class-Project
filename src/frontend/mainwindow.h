@@ -26,6 +26,7 @@ public:
                const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser);
     ~MainWindow();
 
+    RenderArea* getRenderAreaRef();
     void drawShapes() const;
 
     void shapes_to_treeWidget();

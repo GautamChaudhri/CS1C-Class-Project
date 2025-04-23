@@ -16,6 +16,7 @@ AppDriver::~AppDriver() {
 void AppDriver::run() {
     loadAllData();
     mainwindow = new MainWindow(nullptr, shapes->getShapesRef(), renderedShapes->getShapesRef(), user->getCurrUserRef());
+    renderArea = mainwindow->getRenderAreaRef();
     mainwindow->show();
 }
 

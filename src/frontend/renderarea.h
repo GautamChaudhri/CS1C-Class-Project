@@ -28,7 +28,16 @@ public:
     void mousePressEvent(QMouseEvent* event) override;
     void mouseMoveEvent(QMouseEvent* event) override;
 
+public slots:
+    void onRenderAreaChanged(Shape* shape);
+    void onRenderAreaNotChanged(Shape* shape);
+    void showStatusMessage(QString msg);
 
+signals:
+    void shapeAdded(Shape* shape);
+    void shapeChanged(Shape* shape);
+    void shapeDeleted(int trackerId);
+    void deleteAllShapes();
 
 protected:
     void paintEvent(QPaintEvent *event) override;
