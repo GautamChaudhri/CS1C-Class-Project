@@ -56,7 +56,7 @@ signals:
     void userNotChanged(const QString &message);
     void statusMessage(const QString &message);
     void userAuthenticated(const QString &message);
-    void authenticationFailed(const QString &messsage);
+    void authenticationFailed(const QString &message);
 
 
 private slots:
@@ -66,12 +66,12 @@ private slots:
      * @details These slot functions receive signals from the ApiClient class
      *          and handle logic after API responses for user data.
      */
-    void onGoodGetResponse(const std::string &json);
-    void onBadGetResponse(const std::string &errorMsg);
+    void onGoodGetResponse(const QString &json);
+    void onBadGetResponse(const QString &errorMsg);
     void onGoodPostResponse();
-    void onBadPostResponse(const std::string &errorMsg);
+    void onBadPostResponse(const QString &errorMsg);
     void onGoodDeleteResponse();
-    void onBadDeleteResponse(const std::string &errorMsg);
+    void onBadDeleteResponse(const QString &errorMsg);
 
     
 private:

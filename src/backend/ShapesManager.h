@@ -64,12 +64,12 @@ private slots:
      * and hold the code on what to do next after one of these responses from the
      * webservice.
      */
-    void onGoodGetResponse(const std::string &json);
-    void onBadGetResponse(const std::string &errorMsg);
+    void onGoodGetResponse(const QString &json);
+    void onBadGetResponse(const QString &errorMsg);
     void onGoodPostResponse();
-    void onBadPostResponse(const std::string &errorMsg);
+    void onBadPostResponse(const QString &errorMsg);
     void onGoodDeleteResponse();
-    void onBadDeleteResponse(const std::string &errorMsg);
+    void onBadDeleteResponse(const QString &errorMsg);
 
 
 private:

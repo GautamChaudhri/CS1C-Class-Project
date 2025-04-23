@@ -17,6 +17,7 @@ UserManager::~UserManager() {
     // Destructor that cleans up the UserAccount objects
     for (size_t i = 0; i < users.size(); ++i)
         delete users[i];
+    delete currUser;
 }
 
 
@@ -78,6 +79,7 @@ void UserManager::deleteAllUsers() {
     for (size_t i = 0; i < users.size(); ++i) {
         delete users[i];
     }
+    //users.clear();
     emit userChanged();
 }
 
@@ -116,15 +118,16 @@ void UserManager::saveUsers() {
 
 
 
-void UserManager::onGoodGetResponse(const std::string &json) {
-    users = parse.JsonToUsers(json);
+void UserManager::onGoodGetResponse(const QString &json) {
+    std::string str = json.toStdString();
+    users = parse.JsonToUsers(str);
     emit statusMessage("User data retrieved successfully.");
 }
 
 
 
-void UserManager::onBadGetResponse(const std::string &errorMsg) {
-    emit statusMessage("Failed to retrieve user data from database. Error: " + QString::fromStdString(errorMsg));
+void UserManager::onBadGetResponse(const QString &errorMsg) {
+    emit statusMessage("Failed to retrieve user data from database. Error: " + errorMsg);
 }
 
 
@@ -135,8 +138,8 @@ void UserManager::onGoodPostResponse() {
 
 
 
-void UserManager::onBadPostResponse(const std::string &errorMsg) {
-    emit statusMessage("Failed to save user data to database. Error: " + QString::fromStdString(errorMsg));
+void UserManager::onBadPostResponse(const QString &errorMsg) {
+    emit statusMessage("Failed to save user data to database. Error: " + errorMsg);
 }
 
 
@@ -147,6 +150,6 @@ void UserManager::onGoodDeleteResponse() {
 
 
 
-void UserManager::onBadDeleteResponse(const std::string &errorMsg) {
-    emit statusMessage("Failed to delete user data from database. Error: " + QString::fromStdString(errorMsg));
+void UserManager::onBadDeleteResponse(const QString &errorMsg) {
+    emit statusMessage("Failed to delete user data from database. Error: " + errorMsg);
 }
