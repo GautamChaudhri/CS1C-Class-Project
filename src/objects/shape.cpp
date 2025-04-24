@@ -9,12 +9,12 @@ Shape::Shape(int    shapeId,
              QPoint coords,
              QPen   pen,
              QBrush brush)
-    : shapeId{shapeId},
-    shapeType{shapeType},
-    coords{coords},
-    pen{pen},
-    brush{brush},
-    parentItem{new QTreeWidgetItem()}
+           : shapeId{shapeId},
+             shapeType{shapeType},
+             coords{coords},
+             pen{pen},
+             brush{brush},
+             parentItem{new QTreeWidgetItem()}
 {
     parentItem->setText(0, QString::fromStdString(shapeType));
 

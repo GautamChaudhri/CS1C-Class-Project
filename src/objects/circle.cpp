@@ -10,12 +10,12 @@ Circle::Circle(int    shapeId,
                QPen   pen,
                QBrush brush,
                int    r)
-    : Shape(shapeId,
-            shapeType,
-            coords,
-            pen,
-            brush),
-    r{r}
+       : Shape(shapeId,
+               shapeType,
+               coords,
+               pen,
+               brush),
+               r{r}
 {
     getChildItems().push_back(new QTreeWidgetItem());
     getParentItem()->addChild(getChildItems()[5]);
@@ -44,6 +44,13 @@ void Circle::Draw(QWidget* renderArea)
         getPainter().setBrush(Qt::NoBrush);
         getPainter().drawRect(getX() - r, getY() - r, r * 2, r * 2);
     }
+
+    //draws the shape id text
+    QFont font;
+    getPainter().setPen(Qt::black);
+    font.setPointSize(10); // Sets the font size
+    getPainter().setFont(font);
+    getPainter().drawText(getX() - r, getY() - r, QString("ID: " + QString::number(getShapeId())));
 
     getPainter().restore(); // Restore saved state
 

@@ -5,19 +5,19 @@
 *****************************************************/
 
 Ellipse::Ellipse(int    shapeId,
-                 string shapeType,
-                 QPoint coords,
-                 QPen   pen,
-                 QBrush brush,
-                 int    a,
-                 int    b)
-    : Shape(shapeId,
-            shapeType,
-            coords,
-            pen,
-            brush),
-    a{a},
-    b{b}
+                  string shapeType,
+                  QPoint coords,
+                  QPen   pen,
+                  QBrush brush,
+                  int    a,
+                  int    b)
+                 : Shape(shapeId,
+                         shapeType,
+                         coords,
+                         pen,
+                         brush),
+                 a{a},
+                 b{b}
 {}
 
 
@@ -43,6 +43,13 @@ void Ellipse::Draw(QWidget* renderArea)
         getPainter().drawRect(getX() - a, getY() - b, a*2, b*2); //probably a better way to do the x and y but I am lazy
     }
 
+    //draws the shape id text
+    QFont font;
+    getPainter().setPen(Qt::black);
+    font.setPointSize(10); // Sets the font size
+    getPainter().setFont(font);
+    getPainter().drawText(getX() - a, getY() - b, QString("ID: " + QString::number(getShapeId())));
+
     getPainter().restore(); // Restore saved state
 
     getPainter().end(); // End the painter session
@@ -64,3 +71,5 @@ bool Ellipse::isPointInside(const QPoint& point) const
 int Ellipse::getA() const { return a; }
 int Ellipse::getB() const { return b; }
 /**********************************************/
+
+

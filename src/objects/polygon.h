@@ -7,11 +7,11 @@ class Polygon : public Shape
 {
 public:
     Polygon(int    shapeId,
-            string shapeType,
-            QPoint coords,
-            QPen   pen,
-            QBrush brush,
-            QPolygon pointsList);
+             string shapeType,
+             QPoint coords,
+             QPen   pen,
+             QBrush brush,
+             QPolygon pointsList);
 
     ~Polygon(); // do we need to implement destructor?
 

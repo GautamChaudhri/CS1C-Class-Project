@@ -4,17 +4,17 @@
 * derived class Polyline - Base Shape
 *****************************************************/
 Polyline::Polyline(int    shapeId,
-                   string shapeType,
-                   QPoint coords,
-                   QPen   pen,
-                   QBrush brush,
-                   QPolygon pointsList)
-    : Shape(shapeId,
-            shapeType,
-            coords,
-            pen,
-            brush),
-    pointsList{pointsList}
+                    string shapeType,
+                    QPoint coords,
+                    QPen   pen,
+                    QBrush brush,
+                    QPolygon pointsList)
+                : Shape(shapeId,
+                        shapeType,
+                        coords,
+                        pen,
+                        brush),
+                    pointsList{pointsList}
 {}
 
 Polyline::~Polyline() {}
@@ -33,6 +33,8 @@ void Polyline::Draw(QWidget* renderArea)
     getPainter().setBrush(getBrush());
     getPainter().drawPolyline(pointsList);
 
+    QRect boundingBox = pointsList.boundingRect();
+
     if (getSelected()) {
         // Define a highlight pen for the bounding box
         QPen highlightPen(Qt::DashLine);
@@ -41,9 +43,15 @@ void Polyline::Draw(QWidget* renderArea)
         getPainter().setBrush(Qt::NoBrush);
 
         // Draw the bounding box around the polyline
-        QRect boundingBox = pointsList.boundingRect().adjusted(-5, -5, 5, 5); // With margin
         getPainter().drawRect(boundingBox);
     }
+
+    //draws the shape id text
+    QFont font;
+    getPainter().setPen(Qt::black);
+    font.setPointSize(10); // Sets the font size
+    getPainter().setFont(font);
+    getPainter().drawText(getX(), boundingBox.y(), QString("ID: " + QString::number(getShapeId())));
 
     getPainter().restore(); // Restore saved state
 
