@@ -51,7 +51,7 @@ signals:
      *              to the frontend so it can display a popup saying the shapes were saved successfully,
      *              or whatever the message is for the user.
      */
-    void renderAreaChanged(alpha::vector<Shape*>* shapes);
+    void renderAreaChanged();
     void renderAreaNotChanged(const QString &message);
     void statusMessage(const QString &message);
 

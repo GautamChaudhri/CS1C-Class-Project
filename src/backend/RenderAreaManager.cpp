@@ -28,7 +28,7 @@ alpha::vector<Shape*>* RenderAreaManager::getShapesRef() {
 
 void RenderAreaManager::addShape(Shape* shape) {
     renderedShapes.push_back(shape);
-    emit renderAreaChanged(&renderedShapes);
+    emit renderAreaChanged();
 }
 
 
@@ -40,7 +40,7 @@ void RenderAreaManager::modifyShape(Shape* shape) {
         if (renderedShapes[i]->getTrackerId() == shape->getTrackerId()) {
             delete renderedShapes[i];
             renderedShapes[i] = shape;
-            emit renderAreaChanged(&renderedShapes);
+            emit renderAreaChanged();
             saveShapes();
         }
     }
@@ -60,7 +60,7 @@ void RenderAreaManager::deleteShape(const int trackerId) {
         if (renderedShapes[i]->getTrackerId() == trackerId) {
             delete renderedShapes[i];
             renderedShapes.erase(renderedShapes.begin() + i);
-            emit renderAreaChanged(&renderedShapes);
+            emit renderAreaChanged();
             saveShapes();
         }
     }
@@ -76,7 +76,7 @@ void RenderAreaManager::deleteShape(const int trackerId) {
 void RenderAreaManager::deleteAllShapes() {
     for (Shape* shape : renderedShapes)
         delete shape;
-    emit renderAreaChanged(&renderedShapes);
+    emit renderAreaChanged();
     //renderedShapes.clear();
     client.DeleteShapesAll();
 }
@@ -85,7 +85,7 @@ void RenderAreaManager::deleteAllShapes() {
 
 void RenderAreaManager::loadShapes() {
     client.GetShapes();
-    emit renderAreaChanged(&renderedShapes);
+    emit renderAreaChanged();
 }
 
 
@@ -101,7 +101,7 @@ void RenderAreaManager::onGoodGetResponse(const QString &json) {
     std::string jsonStr = json.toStdString();
     renderedShapes = parse.JsonToShapes(jsonStr);
     emit statusMessage("Shapes loaded successfully.");
-    emit renderAreaChanged(&renderedShapes);
+    emit renderAreaChanged();
 }
 
 

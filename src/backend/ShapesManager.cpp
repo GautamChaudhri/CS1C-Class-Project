@@ -100,8 +100,6 @@ void ShapesManager::modifyShape(Shape* shape) {
 
 
  void ShapesManager::onGoodGetResponse(const QString &json) {
-    qDebug() << "ShapesManager::onGoodGetResponse() – raw JSON:\n" << json;
-
     shapes = parse.JsonToShapes(json.toStdString());
 
     qDebug() << "ShapesManager::onGoodGetResponse() – parsed shapes.size() =" 
