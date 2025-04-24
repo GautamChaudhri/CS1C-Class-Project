@@ -33,8 +33,20 @@ public:
 
     void shapes_to_treeWidget();
 
+signals:
+    // These signals connect to the slots in the AppDriver class
+    void shapeAdded(Shape* shape);
+    void shapeChanged(Shape* shape);
+    void shapeDeleted(int trackerId);
+    void deleteAllShapes();
+
 public slots:
     void setShapes(const alpha::vector<Shape*>& shapes);
+
+    // Signals for these slots come from RenderAreaManager class
+    void onRenderAreaChanged();
+    void onRenderAreaNotChanged(const QString& message);
+    void showStatusMessage(QString msg);
 
 private slots:
     void on_actionnew_shape_button_triggered();

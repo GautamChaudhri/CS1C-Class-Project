@@ -30,7 +30,9 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(renderArea);
 
-    renderArea->setShapes2(renderedShapes);
+    renderArea->setShapes(shapes);
+    renderArea->setRenderShapes(renderedShapes);
+    
 }
 
 
@@ -42,15 +44,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::setShapes(const alpha::vector<Shape*>& shapes) {
     //updates the shape vector in renderArea and then draws it again
-    renderArea->setShapes(shapes);
+    renderArea->setShapes2(shapes);
     renderArea->update();
 }
 
-void MainWindow::setShapes2(const alpha::vector<Shape*>& shapes) {
-    //updates the shape vector in renderArea and then draws it again
-    renderArea->setShapes(shapes);
-    renderArea->update();
-}
+// void MainWindow::setShapes2(const alpha::vector<Shape*>& shapes) {
+//     //updates the shape vector in renderArea and then draws it again
+//     renderArea->setShapes(shapes);
+//     renderArea->update();
+// }
 
 
 void MainWindow::on_actionnew_shape_button_triggered()
@@ -75,4 +77,17 @@ void MainWindow::shapes_to_treeWidget()
 
 RenderArea* MainWindow::getRenderAreaRef() {
     return renderArea;
+}
+
+void MainWindow::onRenderAreaChanged() {
+    update();
+}
+
+void MainWindow::onRenderAreaNotChanged(const QString& message) {
+    // handle error: you could show a popup or log the message
+}
+
+void MainWindow::showStatusMessage(QString message)
+{
+    qDebug() << "Status:" << message;
 }

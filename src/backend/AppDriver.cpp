@@ -12,11 +12,11 @@ AppDriver::~AppDriver() {
 
 void AppDriver::run() {
     loadAllData();
-    mainwindow = new MainWindow(nullptr, shapes->getShapesRef(), renderedShapes->getShapesRef(), user->getCurrUserRef());
-    renderArea = mainwindow->getRenderAreaRef();
+    mainWindow = new MainWindow(nullptr, shapes->getShapesRef(), renderedShapes->getShapesRef(), user->getCurrUserRef());
+    renderArea = mainWindow->getRenderAreaRef();
     connectFrontendToDriver();
     connectManagersToFrontend();
-    mainwindow->show();
+    mainWindow->show();
 }
 
 void AppDriver::shutdown() {
@@ -55,7 +55,7 @@ void AppDriver::onRenderShapeAdded(Shape* shape) {
     renderedShapes->addShape(shape);
 }
 
-void AppDriver::onRenderAreaChanged(Shape* shape) {
+void AppDriver::onRenderShapeChanged(Shape* shape) {
     renderedShapes->modifyShape(shape);
 }
 
@@ -95,10 +95,10 @@ void AppDriver::connectFrontendToDriver() {
     // connect(mainwindow, &MainWindow::shapeDeleted, this, &AppDriver::onShapeDeleted);
     // connect(mainwindow, &MainWindow::deleteAllShapes, this, &AppDriver::onDeleteAllShapes);
     //for rendered shapes
-    connect(renderArea, &RenderArea::shapeAdded, this, &AppDriver::onRenderShapeAdded);
-    connect(renderArea, &RenderArea::shapeChanged, this, &AppDriver::onRenderAreaChanged);
-    connect(renderArea, &RenderArea::shapeDeleted, this, &AppDriver::onRenderShapeDeleted);
-    connect(renderArea, &RenderArea::deleteAllShapes, this, &AppDriver::onRenderDeleteAllShapes);
+    connect(mainWindow, &MainWindow::shapeAdded, this, &AppDriver::onRenderShapeAdded);
+    connect(mainWindow, &MainWindow::shapeChanged, this, &AppDriver::onRenderShapeChanged);
+    connect(mainWindow, &MainWindow::shapeDeleted, this, &AppDriver::onRenderShapeDeleted);
+    connect(mainWindow, &MainWindow::deleteAllShapes, this, &AppDriver::onRenderDeleteAllShapes);
     //for user accounts
     // connect(loginWindow, &LoginWindow::userAdded, this, &AppDriver::onNewUser);
     // connect(loginWindow, &LoginWindow::userModified, this, &AppDriver::onUserModified);
@@ -114,9 +114,9 @@ void AppDriver::connectManagersToFrontend() {
     // connect(shapes, &ShapesManager::shapesNotChanged, mainwindow, &MainWindow::onShapesNotChanged);
     // connect(shapes, &ShapesManager::statusMessage, mainwindow, &MainWindow::showStatusMessage);
     //for rendered shapes
-    connect(renderedShapes, &RenderAreaManager::renderAreaChanged, renderArea, &RenderArea::onRenderAreaChanged);
-    connect(renderedShapes, &RenderAreaManager::renderAreaNotChanged, renderArea, &RenderArea::onRenderAreaNotChanged);
-    connect(renderedShapes, &RenderAreaManager::statusMessage, renderArea, &RenderArea::showStatusMessage);
+    connect(renderedShapes, &RenderAreaManager::renderAreaChanged, mainWindow, &MainWindow::onRenderAreaChanged);
+    connect(renderedShapes, &RenderAreaManager::renderAreaNotChanged, mainWindow, &MainWindow::onRenderAreaNotChanged);
+    connect(renderedShapes, &RenderAreaManager::statusMessage, mainWindow, &MainWindow::showStatusMessage);
     //for user accounts
     // connect(user, &UserManager::userChanged, loginWindow, &LoginWindow::onUsersChanged);
     // connect(user, &UserManager::userNotChanged, loginWindow, &LoginWindow::showStatusMessage);
