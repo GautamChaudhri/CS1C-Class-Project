@@ -34,6 +34,14 @@ void Line::Draw(QWidget* renderArea)
     getPainter().setBrush(getBrush());
     getPainter().drawLine(startPoint,endPoint);
 
+    // Create and draw the bounding box
+    int minX = std::min(startPoint.x(), endPoint.x());
+    int maxX = std::max(startPoint.x(), endPoint.x());
+    int minY = std::min(startPoint.y(), endPoint.y());
+    int maxY = std::max(startPoint.y(), endPoint.y());
+
+    QRect boundingBox(QPoint(minX, minY), QPoint(maxX, maxY));
+
     if (getSelected())
     {
         // Define a highlight pen for the bounding box
@@ -42,16 +50,16 @@ void Line::Draw(QWidget* renderArea)
         getPainter().setPen(highlightPen);
         getPainter().setBrush(Qt::NoBrush);
 
-        // Create and draw the bounding box
-        const int margin = 5;
-        int minX = std::min(startPoint.x(), endPoint.x()) - margin;
-        int maxX = std::max(startPoint.x(), endPoint.x()) + margin;
-        int minY = std::min(startPoint.y(), endPoint.y()) - margin;
-        int maxY = std::max(startPoint.y(), endPoint.y()) + margin;
-
-        QRect boundingBox(QPoint(minX, minY), QPoint(maxX, maxY));
         getPainter().drawRect(boundingBox);
     }
+
+    //draws the shape id text
+    QFont font;
+
+    getPainter().setPen(Qt::black);
+    font.setPointSize(10); // Sets the font size
+    getPainter().setFont(font);
+    getPainter().drawText(boundingBox.x(), boundingBox.y(), QString("ID: " + QString::number(getShapeId())));
 
     getPainter().restore(); // Restore saved state
 

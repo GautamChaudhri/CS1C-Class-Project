@@ -35,6 +35,8 @@ void Polygon::Draw(QWidget* renderArea)
     getPainter().setBrush(getBrush());
     getPainter().drawPolygon(pointsList);
 
+    QRect boundingBox = pointsList.boundingRect();
+
     if (getSelected())
     {
         // Define a highlight pen for the bounding box
@@ -44,9 +46,15 @@ void Polygon::Draw(QWidget* renderArea)
         getPainter().setBrush(Qt::NoBrush);
 
         // Draw the bounding box around the polygon
-        QRect boundingBox = pointsList.boundingRect();
         getPainter().drawRect(boundingBox);
     }
+
+    //draws the shape id text
+    QFont font;
+    getPainter().setPen(Qt::black);
+    font.setPointSize(10); // Sets the font size
+    getPainter().setFont(font);
+    getPainter().drawText(getX(), boundingBox.y(), QString("ID: " + QString::number(getShapeId())));
 
     getPainter().restore(); // Restore saved state
 

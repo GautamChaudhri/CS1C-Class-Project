@@ -39,6 +39,13 @@ void Rectangle::Draw(QWidget* renderArea)
         getPainter().drawRect(getX(), getY(), length, width);
     }
 
+    //draws the shape id text
+    QFont font;
+    getPainter().setPen(Qt::black);
+    font.setPointSize(10); // Sets the font size
+    getPainter().setFont(font);
+    getPainter().drawText(getX(), getY(), QString("ID: " + QString::number(getShapeId())));
+
     getPainter().restore(); // Restore saved state
 
     getPainter().end(); // End the painter session
