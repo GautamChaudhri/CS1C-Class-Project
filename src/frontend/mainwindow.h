@@ -9,6 +9,7 @@
 #include <QGridLayout>
 #include "ui_mainwindow.h"
 #include "../backend/UserAccount.h"
+#include <QComboBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui{
@@ -43,10 +44,15 @@ signals:
 public slots:
     void setShapes(const alpha::vector<Shape*>& shapes);
 
+    // Signals from ShapesManager class
+    void onShapesChanged();
+    void onShapesNotChanged(const QString& message);
+    void showShapesStatusMessage(const QString &message);
+
     // Signals for these slots come from RenderAreaManager class
     void onRenderAreaChanged();
     void onRenderAreaNotChanged(const QString& message);
-    void showStatusMessage(QString msg);
+    void showRenderStatusMessage(const QString &message);
 
 private slots:
     void on_actionnew_shape_button_triggered();
@@ -54,9 +60,10 @@ private slots:
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;
+    QComboBox* shapeSelector;   //Drop down menu for selecting shapes
 
-    const alpha::vector<Shape*>* shapes;
-    const alpha::vector<Shape*>* renderedShapes;
+    const alpha::vector<Shape*>* allShapes;         // Holds all possible shapes that can be rendered
+    const alpha::vector<Shape*>* renderShapes;      // Holds currently renderedShapes
     const UserAccount* currUser;
 };
 #endif // MAINWINDOW_H

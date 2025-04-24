@@ -30,9 +30,16 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(renderArea);
 
+    // Set up shape selector box
+    shapeSelector = new QComboBox(this);
+    ui->toolBar->addWidget(shapeSelector);
+
+    // Store references for data
+    this->allShapes = shapes;
+    this->renderShapes = renderedShapes;
+    this->currUser = currUser;
     renderArea->setShapes(shapes);
     renderArea->setRenderShapes(renderedShapes);
-    
 }
 
 
@@ -47,12 +54,6 @@ void MainWindow::setShapes(const alpha::vector<Shape*>& shapes) {
     renderArea->setShapes2(shapes);
     renderArea->update();
 }
-
-// void MainWindow::setShapes2(const alpha::vector<Shape*>& shapes) {
-//     //updates the shape vector in renderArea and then draws it again
-//     renderArea->setShapes(shapes);
-//     renderArea->update();
-// }
 
 
 void MainWindow::on_actionnew_shape_button_triggered()
@@ -79,6 +80,26 @@ RenderArea* MainWindow::getRenderAreaRef() {
     return renderArea;
 }
 
+void MainWindow::onShapesChanged() {
+    qDebug() << "onShapesChanged(): allShapes size =" 
+             << (allShapes ? allShapes->size() : -1);
+    shapeSelector->clear();
+    for (Shape* shapeType : *allShapes) {
+        QString shapeName = QString::fromStdString(shapeType->getShapeType());
+        shapeSelector->addItem(shapeName);
+    }
+    
+}
+
+void MainWindow::onShapesNotChanged(const QString& message) {
+    // handle error: you could show a popup or log the message
+}
+
+void MainWindow::showShapesStatusMessage(const QString& message)
+{
+    qDebug() << "Shapes Status:" << message;
+}
+
 void MainWindow::onRenderAreaChanged() {
     update();
 }
@@ -87,7 +108,7 @@ void MainWindow::onRenderAreaNotChanged(const QString& message) {
     // handle error: you could show a popup or log the message
 }
 
-void MainWindow::showStatusMessage(QString message)
+void MainWindow::showRenderStatusMessage(const QString &message)
 {
     qDebug() << "Status:" << message;
 }

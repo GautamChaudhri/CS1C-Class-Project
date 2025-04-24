@@ -1,23 +1,31 @@
 ///@file ApiClient.cpp
 #include "ApiClient.h"
 
-ApiClient::ApiClient(QObject* parent) : QObject{parent}, manager{new QNetworkAccessManager(this)} {}
-
+//ApiClient::ApiClient(QObject* parent) : QObject{parent}, manager{new QNetworkAccessManager(this)} {}
+ApiClient::ApiClient(QObject* parent) : QObject{parent}, manager{new QNetworkAccessManager(this)} 
+{
+    // Catch all finished replies in one place
+    connect(manager, &QNetworkAccessManager::finished,
+            this, &ApiClient::AnalyzeGetReply);
+}
 
 //Get Endpoints
 void ApiClient::GetShapes() {
+    qDebug() << "ApiClient::GetShapes() called";
     QNetworkRequest request(QUrl("http://localhost:8080/shapes"));
     auto* reply = manager->get(request);
     connect(reply, &QNetworkReply::finished, this, &ApiClient::AnalyzeGetReply);
 }
 
 void ApiClient::GetRenderArea() {
+    qDebug() << "ApiClient::GetRenderArea() called";
     QNetworkRequest request(QUrl("http://localhost:8080/render_area"));
     auto* reply = manager->get(request);
     connect(reply, &QNetworkReply::finished, this, &ApiClient::AnalyzeGetReply);
 }
 
 void ApiClient::GetUsers() {
+    qDebug() << "ApiClient::GetUsers() called";
     QNetworkRequest request(QUrl("http://localhost:8080/users"));
     auto* reply = manager->get(request);
     connect(reply, &QNetworkReply::finished, this, &ApiClient::AnalyzeGetReply);
@@ -90,6 +98,10 @@ void ApiClient::AnalyzeGetReply() {
     }
     
     reply->deleteLater();
+    qDebug() << "ApiClient reply finished; HTTP status ="
+            << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt()
+            << "payload size =" << reply->size();
+    qDebug() << "ApiClient payload:" << reply->readAll();
 }
 
 void ApiClient::AnalyzePostReply() {

@@ -1,3 +1,4 @@
+#include <QDebug>
  #include "ShapesManager.h"
  
  ShapesManager::ShapesManager(QObject* parent)
@@ -85,6 +86,7 @@ void ShapesManager::modifyShape(Shape* shape) {
 
 
  void ShapesManager::loadShapes() {
+    qDebug() << "ShapesManager::loadShapes() – about to call client.GetShapes()";
     client.GetShapes();
  }
  
@@ -98,14 +100,25 @@ void ShapesManager::modifyShape(Shape* shape) {
 
 
  void ShapesManager::onGoodGetResponse(const QString &json) {
-     shapes = parse.JsonToShapes(json.toStdString());
-     emit statusMessage("Shapes loaded successfully.");
-     emit shapesChanged();
+    qDebug() << "ShapesManager::onGoodGetResponse() – raw JSON:\n" << json;
+
+    shapes = parse.JsonToShapes(json.toStdString());
+
+    qDebug() << "ShapesManager::onGoodGetResponse() – parsed shapes.size() =" 
+             << shapes.size();
+
+    // Print the internal vector size again to be sure
+    qDebug() << "ShapesManager internal vector size =" << shapes.size();
+
+    emit statusMessage("Shapes loaded successfully.");
+    emit shapesChanged();
  }
  
 
 
  void ShapesManager::onBadGetResponse(const QString &errorMsg) {
+    qDebug() << "ShapesManager::onBadGetResponse() – errorMsg:" << errorMsg;
+    qDebug() << "ShapesManager::onBadGetResponse() – current shapes.size() =" << shapes.size();
      emit statusMessage("Error in receiving data from database: " + errorMsg);
  }
  

@@ -47,8 +47,8 @@ int main(int argc, char *argv[])
     // QObject::connect(&shapeController, &ShapeController::ShapesReady, &window, &MainWindow::setShapes);
     // QObject::connect(&shapeController, &ShapeController::ShapesReady, [&window]() { window.shapes_to_treeWidget();});
 
-    // ApiClient* client = GetConnectedClient();
-    // client->GetShapes();  // triggers API call
+     ApiClient* client = GetConnectedClient();
+     client->GetShapes();  // triggers API call
 
     // window.show();
     return a.exec();
