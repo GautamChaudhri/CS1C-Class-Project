@@ -25,6 +25,9 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     // Manually create the RenderArea and insert it into the placeholder container
     renderArea = new RenderArea(ui->renderAreaContainer);
 
+    connect(ui->toggleStyle, &QAction::toggled, this, &MainWindow::onToggleStyle);
+    onToggleStyle(ui->toggleStyle->isChecked());
+
     // Create a layout to manage the RenderArea inside the container
     auto layout = new QVBoxLayout(ui->renderAreaContainer);
     layout->setContentsMargins(0, 0, 0, 0);
@@ -111,4 +114,28 @@ void MainWindow::onRenderAreaNotChanged(const QString& message) {
 void MainWindow::showRenderStatusMessage(const QString &message)
 {
     qDebug() << "Status:" << message;
+}
+
+QString MainWindow::loadStyleSheet(const QString &path)
+{
+    QFile file(path);
+
+    if (!file.open(QFile::ReadOnly | QFile::Text)) {
+        qDebug() << "Could not open stylesheet:" << path;
+        return "";
+    }
+
+    QTextStream in(&file);
+
+    return in.readAll();
+}
+
+void MainWindow::onToggleStyle(bool checked) {
+    if (checked) {
+        QString darkStyle = loadStyleSheet(":/qdarkstyle/dark/darkstyle.qss");
+        qApp->setStyleSheet(darkStyle);
+    } else {
+        QString lightStyle = loadStyleSheet(":/qdarkstyle/light/lightstyle.qss");
+        qApp->setStyleSheet(lightStyle);
+    }
 }

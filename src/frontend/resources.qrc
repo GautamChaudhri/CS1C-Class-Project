@@ -1,5 +1,6 @@
 <RCC>
-    <qresource prefix="/styles">
-        <file>Medize.qss</file>
+    <qresource prefix="/qdarkstyle">
+        <file>../../qdarkstyle/dark/darkstyle.qss</file>
+        <file>../../qdarkstyle/light/lightstyle.qss</file>
     </qresource>
 </RCC>

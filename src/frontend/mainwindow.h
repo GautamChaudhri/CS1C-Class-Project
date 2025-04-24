@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
 #include "renderarea.h"
 #include "../backend/Parser.h"
 #include "../backend/ApiClient.h"
@@ -56,6 +57,7 @@ public slots:
 
 private slots:
     void on_actionnew_shape_button_triggered();
+    void onToggleStyle(bool checked);
 
 private:
     Ui::MainWindow *ui;
@@ -65,5 +67,6 @@ private:
     const alpha::vector<Shape*>* allShapes;         // Holds all possible shapes that can be rendered
     const alpha::vector<Shape*>* renderShapes;      // Holds currently renderedShapes
     const UserAccount* currUser;
+    QString loadStyleSheet(const QString &path);
 };
 #endif // MAINWINDOW_H

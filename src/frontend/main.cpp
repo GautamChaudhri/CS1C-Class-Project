@@ -34,12 +34,6 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     AppDriver driver;
 
-    //set app style
-    QFile styleSheetFile(":styles/Medize.qss");
-    styleSheetFile.open(QFile::ReadOnly);
-    QString styleSheet = QLatin1String(styleSheetFile.readAll());
-    a.setStyleSheet(styleSheet);
-
     driver.run();
     // MainWindow window;
     // windowPtr = &window;
