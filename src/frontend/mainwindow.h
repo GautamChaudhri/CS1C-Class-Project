@@ -54,6 +54,8 @@ public slots:
     void onRenderAreaNotChanged(const QString& message);
     void showRenderStatusMessage(const QString &message);
 
+    void onInitializeTreeWidget();
+
 private slots:
     void on_actionnew_line_button_triggered();
 
@@ -74,7 +76,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;
-    QComboBox* shapeSelector;   //Drop down menu for selecting shapes
 
     const alpha::vector<Shape*>* allShapes;         // Holds all possible shapes that can be rendered
     const alpha::vector<Shape*>* renderShapes;      // Holds currently renderedShapes

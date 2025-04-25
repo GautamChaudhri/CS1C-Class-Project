@@ -30,16 +30,16 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(renderArea);
 
-    // Set up shape selector box
-    shapeSelector = new QComboBox(this);
-    ui->toolBar->addWidget(shapeSelector);
-
     // Store references for data
     this->allShapes = shapes;
     this->renderShapes = renderedShapes;
     this->currUser = currUser;
-    renderArea->setShapes(shapes);
+
+    connect(renderArea,&RenderArea::initializeTreeWidget,this,&MainWindow::onInitializeTreeWidget);
+
     renderArea->setRenderShapes(renderedShapes);
+
+    qDebug() << "TEST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 }
 
 
@@ -47,12 +47,6 @@ MainWindow::~MainWindow()
 {  
     delete ui;
     delete renderArea;
-}
-
-void MainWindow::setShapes(const alpha::vector<Shape*>& shapes) {
-    //updates the shape vector in renderArea and then draws it again
-    renderArea->setShapes2(shapes);
-    renderArea->update();
 }
 
 void MainWindow::shapes_to_treeWidget()
@@ -71,14 +65,7 @@ RenderArea* MainWindow::getRenderAreaRef() {
 }
 
 void MainWindow::onShapesChanged() {
-    qDebug() << "onShapesChanged(): allShapes size =" 
-             << (allShapes ? allShapes->size() : -1);
-    shapeSelector->clear();
-    for (Shape* shapeType : *allShapes) {
-        QString shapeName = QString::fromStdString(shapeType->getShapeType());
-        shapeSelector->addItem(shapeName);
-    }
-    
+
 }
 
 void MainWindow::onShapesNotChanged(const QString& message) {
@@ -101,6 +88,11 @@ void MainWindow::onRenderAreaNotChanged(const QString& message) {
 void MainWindow::showRenderStatusMessage(const QString &message)
 {
     qDebug() << "Status:" << message;
+}
+
+void MainWindow::onInitializeTreeWidget()
+{
+    shapes_to_treeWidget();
 }
 
 
@@ -168,7 +160,7 @@ void MainWindow::on_actionnew_text_button_triggered()
 
 void MainWindow::addToShapeTree(Shape* shape)
 {
-    renderArea->addShape(shape);
+    emit shapeAdded(shape);
     renderArea->update();
     shapes_to_treeWidget(); // add new shape to tree widget as it is created
 }

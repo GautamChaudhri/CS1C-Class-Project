@@ -2,16 +2,6 @@
 
 RenderArea::RenderArea(QWidget *parent) : QWidget(parent) {}
 
-void RenderArea::setShapes2(const alpha::vector<Shape*>& shapes)
-{
-    renderShapes2 = shapes; // copy the shapes from pointer
-}
-
-void RenderArea::setShapes(const alpha::vector<Shape*>* shapes)
-{
-    allShapes = shapes; // copy the shapes from pointer
-}
-
 void RenderArea::setRenderShapes(const alpha::vector<Shape*>* renderShapes) {
     this->renderShapes = renderShapes;
 }
@@ -69,6 +59,8 @@ void RenderArea::paintEvent(QPaintEvent *event)
 {
     int vecSize;
     vecSize = renderShapes->size();
+
+    emit initializeTreeWidget();
 
     for(int i = 0; i < vecSize; ++i)
     {
