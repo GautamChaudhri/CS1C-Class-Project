@@ -19,12 +19,12 @@ void RenderArea::setRenderShapes(const alpha::vector<Shape*>* renderShapes) {
 void RenderArea::mousePressEvent(QMouseEvent* event)
 {
     QPoint clickPoint = event->pos();
-    int vecSize = renderShapes2.size();
+    int vecSize = renderShapes->size();
     int newSelectionIndex = -1;
 
     for (int i = 0; i < vecSize; ++i)
     {
-        if (renderShapes2[i]->isPointInside(clickPoint))
+        if ((*renderShapes)[i]->isPointInside(clickPoint))
         {
             newSelectionIndex = i; // Mark the new selected shape index
         }
@@ -35,12 +35,12 @@ void RenderArea::mousePressEvent(QMouseEvent* event)
     {
         if (shapeSelectedIndex >= 0 && shapeSelectedIndex < vecSize)
         {
-            renderShapes2[shapeSelectedIndex]->setSelected(false); // Deselect previous
+            (*renderShapes)[shapeSelectedIndex]->setSelected(false); // Deselect previous
         }
         shapeSelectedIndex = newSelectionIndex;
         if (shapeSelectedIndex >= 0 && shapeSelectedIndex < vecSize)
         {
-            renderShapes2[shapeSelectedIndex]->setSelected(true); // Select new shape
+            (*renderShapes)[shapeSelectedIndex]->setSelected(true); // Select new shape
         }
     }
 
@@ -49,17 +49,17 @@ void RenderArea::mousePressEvent(QMouseEvent* event)
 
 void RenderArea::mouseMoveEvent(QMouseEvent* event)
 {
-    if (shapeSelectedIndex >= 0 && shapeSelectedIndex < renderShapes2.size())
+    if (shapeSelectedIndex >= 0 && shapeSelectedIndex < renderShapes->size())
     {
         QPoint newPos = mapFromGlobal(QCursor::pos());
 
         // Get the current position of the selected shape
-        QPoint currentPos = renderShapes2[shapeSelectedIndex]->getPoints();
+        QPoint currentPos = (*renderShapes)[shapeSelectedIndex]->getPoints();
 
         // Only update if the new position is different from the current position
         if (newPos != currentPos)
         {
-            renderShapes2[shapeSelectedIndex]->Move(newPos.x(), newPos.y());
+            (*renderShapes)[shapeSelectedIndex]->Move(newPos.x(), newPos.y());
             update(); // Trigger repaint
         }
     }
@@ -68,10 +68,10 @@ void RenderArea::mouseMoveEvent(QMouseEvent* event)
 void RenderArea::paintEvent(QPaintEvent *event)
 {
     int vecSize;
-    vecSize = renderShapes2.size();
+    vecSize = renderShapes->size();
 
     for(int i = 0; i < vecSize; ++i)
     {
-        renderShapes2[i]->Draw(this);
+        (*renderShapes)[i]->Draw(this);
     }
 }
