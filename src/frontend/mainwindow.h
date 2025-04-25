@@ -55,7 +55,21 @@ public slots:
     void showRenderStatusMessage(const QString &message);
 
 private slots:
-    void on_actionnew_shape_button_triggered();
+    void on_actionnew_line_button_triggered();
+
+    void on_actionnew_square_button_triggered();
+
+    void on_actionnew_rectange_button_triggered();
+
+    void on_actionnew_circle_button_triggered();
+
+    void on_actionnew_ellipse_button_triggered();
+
+    void on_actionnew_polyline_button_triggered();
+
+    void on_actionnew_polygon_button_triggered();
+
+    void on_actionnew_text_button_triggered();
 
 private:
     Ui::MainWindow *ui;
@@ -65,5 +79,7 @@ private:
     const alpha::vector<Shape*>* allShapes;         // Holds all possible shapes that can be rendered
     const alpha::vector<Shape*>* renderShapes;      // Holds currently renderedShapes
     const UserAccount* currUser;
+
+    void addToShapeTree(Shape* shape);
 };
 #endif // MAINWINDOW_H

@@ -2,4 +2,14 @@
     <qresource prefix="/styles">
         <file>Medize.qss</file>
     </qresource>
+    <qresource prefix="/icons">
+        <file>RectangleButtonIcon.png</file>
+        <file>SquareButtonIcon.png</file>
+        <file>CircleButtonIcons.png</file>
+        <file>EllipseButtonIcon.png</file>
+        <file>LineButtonIcon.png</file>
+        <file>PolygonButtonIcon.png</file>
+        <file>PolylineButtonIcon.png</file>
+        <file>TextButtonIcon.png</file>
+    </qresource>
 </RCC>
