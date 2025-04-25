@@ -32,6 +32,7 @@ void UserManager::addUser(const QString username, const QString password, const 
     // Adds a new user to the UserManager
     users.push_back(new UserAccount(username, password, admin));
     saveUsers();
+    authenticate(username, password);
 }
 
 
@@ -99,7 +100,7 @@ void UserManager::authenticate(const QString username, const QString password) {
         if (users[i]->getUsername() == username && users[i]->getPassword() == password) {
             authSuccess = true;
             emit userAuthenticated("User authenticated successfully.");
-            delete currUser;
+            //delete currUser;
             currUser = users[i];
         }
     }

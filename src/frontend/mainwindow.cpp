@@ -34,12 +34,21 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     shapeSelector = new QComboBox(this);
     ui->toolBar->addWidget(shapeSelector);
 
+    // Login Window
+    auto *loginButton = new QPushButton("Login", this);
+    ui->toolBar->addWidget(loginButton);
+    connect(loginButton, &QPushButton::clicked, this, &MainWindow::onLoginClicked);
+
     // Store references for data
     this->allShapes = shapes;
     this->renderShapes = renderedShapes;
     this->currUser = currUser;
     renderArea->setShapes(shapes);
     renderArea->setRenderShapes(renderedShapes);
+
+    //Current user label                                                         // <-- added
+    userStatusLabel = new QLabel("Logged in as: " + currUser->getUsername(), this);       // <-- added
+    ui->toolBar->addWidget(userStatusLabel);  
 }
 
 
@@ -173,3 +182,32 @@ void MainWindow::addToShapeTree(Shape* shape)
     shapes_to_treeWidget(); // add new shape to tree widget as it is created
 }
 
+void MainWindow::onLoginClicked() {
+    auto *dlg = new LoginWindow(this);
+    connect(dlg, &LoginWindow::loginRequested, this, &MainWindow::onLoginRequest);
+    connect(dlg, &LoginWindow::signupRequested, this, &MainWindow::onSignupRequest);
+    connect(this, &MainWindow::loginSuccess, dlg,  &QDialog::accept);
+    // connect(this, &MainWindow::loginFailed, this,
+    //     [dlg](const QString &msg){
+    //         QMessageBox::warning(dlg, "Login Failed", msg);
+    //     });
+    dlg->exec();
+}
+
+void MainWindow::onLoginRequest(const QString &username, const QString &password) {
+    emit loginAttempt(username, password);
+}
+
+void MainWindow::onSignupRequest(const QString &username, const QString &password, const bool admin) {
+    emit newUserAdded(username, password, admin);
+}
+
+
+void MainWindow::onUserAuthentication(const QString &message) {
+    userStatusLabel->setText("Logged in as: " + currUser->getUsername());   
+    emit loginSuccess();
+}
+
+void MainWindow::onUserAuthenticationFailure(const QString &message) {
+    emit loginFailed(message);
+}

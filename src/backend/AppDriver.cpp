@@ -125,11 +125,11 @@ void AppDriver::connectFrontendToDriver() {
     connect(mainWindow, &MainWindow::shapeDeleted, this, &AppDriver::onRenderShapeDeleted);
     connect(mainWindow, &MainWindow::deleteAllShapes, this, &AppDriver::onRenderDeleteAllShapes);
     //for user accounts
-    // connect(loginWindow, &LoginWindow::userAdded, this, &AppDriver::onNewUser);
+    connect(mainWindow, &MainWindow::newUserAdded, this, &AppDriver::onNewUser);
     // connect(loginWindow, &LoginWindow::userModified, this, &AppDriver::onUserModified);
     // connect(loginWindow, &LoginWindow::userDeleted, this, &AppDriver::onUserDeleted);
     // connect(loginWindow, &LoginWindow::deleteAllUsers, this, &AppDriver::onDeleteAllUsers);
-    // connect(loginWindow, &LoginWindow::loginRequested, this, &AppDriver::onLoginAttempt);
+    connect(mainWindow, &MainWindow::loginAttempt, this, &AppDriver::onLoginAttempt);
 }
 
 //Connects the signals in the Manager Classes to the slots in Frontend
@@ -151,7 +151,8 @@ void AppDriver::connectManagersToFrontend() {
     //for user accounts
     // connect(user, &UserManager::userChanged, loginWindow, &LoginWindow::onUsersChanged);
     // connect(user, &UserManager::userNotChanged, loginWindow, &LoginWindow::showStatusMessage);
-    // connect(user, &UserManager::userAuthenticated, loginWindow, &LoginWindow::onAuthenticated);
+    connect(user, &UserManager::userAuthenticated, mainWindow, &MainWindow::onUserAuthentication);
+    connect(user, &UserManager::authenticationFailed, mainWindow, &MainWindow::onUserAuthenticationFailure);
     // connect(user, &UserManager::authenticationFailed, loginWindow, &LoginWindow::showStatusMessage);
     // connect(user, &UserManager::statusMessage, loginWindow, &LoginWindow::showStatusMessage);
     qDebug() << "AppDriver::connectManagersToFrontend() – done connecting";
