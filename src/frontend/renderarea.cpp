@@ -60,7 +60,7 @@ void RenderArea::paintEvent(QPaintEvent *event)
     int vecSize;
     vecSize = renderShapes->size();
 
-    emit initializeTreeWidget();
+    //emit initializeTreeWidget(); //Bad for performance but will fix later
 
     for(int i = 0; i < vecSize; ++i)
     {

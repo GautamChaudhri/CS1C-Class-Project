@@ -17,8 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser)
-    : QMainWindow(parent), 
-      ui(new Ui::MainWindow)
+    : QMainWindow(parent),
+    ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
@@ -35,12 +35,14 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     this->renderShapes = renderedShapes;
     this->currUser = currUser;
 
-    connect(renderArea,&RenderArea::initializeTreeWidget,this,&MainWindow::onInitializeTreeWidget);
-
+    // Set render shapes AFTER renderArea is fully initialized
     renderArea->setRenderShapes(renderedShapes);
 
-    qDebug() << "TEST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+    // Connect the toggleStyle signal to its slot
+    connect(ui->toggleStyle, &QAction::toggled, this, &MainWindow::onToggleStyle);
+    onToggleStyle(ui->toggleStyle->isChecked());
 }
+
 
 
 MainWindow::~MainWindow()
@@ -65,7 +67,6 @@ RenderArea* MainWindow::getRenderAreaRef() {
 }
 
 void MainWindow::onShapesChanged() {
-
 }
 
 void MainWindow::onShapesNotChanged(const QString& message) {
@@ -79,6 +80,7 @@ void MainWindow::showShapesStatusMessage(const QString& message)
 
 void MainWindow::onRenderAreaChanged() {
     update();
+    shapes_to_treeWidget();
 }
 
 void MainWindow::onRenderAreaNotChanged(const QString& message) {
@@ -89,12 +91,6 @@ void MainWindow::showRenderStatusMessage(const QString &message)
 {
     qDebug() << "Status:" << message;
 }
-
-void MainWindow::onInitializeTreeWidget()
-{
-    shapes_to_treeWidget();
-}
-
 
 void MainWindow::on_actionnew_square_button_triggered()
 {
@@ -165,3 +161,28 @@ void MainWindow::addToShapeTree(Shape* shape)
     shapes_to_treeWidget(); // add new shape to tree widget as it is created
 }
 
+QString MainWindow::loadStyleSheet(const QString &path)
+{
+    QFile file(path);
+
+    if (!file.open(QFile::ReadOnly | QFile::Text)) {
+        qDebug() << "Could not open stylesheet:" << path;
+        return "";
+    }
+
+    QTextStream in(&file);
+
+    return in.readAll();
+}
+
+void MainWindow::onToggleStyle(bool checked) {
+    QString path = checked
+                       ? ":styles/Obit.qss"
+                       : ":styles/Medize.qss";
+
+    QString style = loadStyleSheet(path);
+    // qDebug() << "Applying style:" << path;
+    // qDebug() << "Style size:" << style.length(); // Should be > 0
+
+    qApp->setStyleSheet(style);
+}

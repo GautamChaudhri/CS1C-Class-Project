@@ -24,9 +24,6 @@ public:
     void mousePressEvent(QMouseEvent* event) override;
     void mouseMoveEvent(QMouseEvent* event) override;
 
-signals:
-    void initializeTreeWidget();
-
 protected:
     void paintEvent(QPaintEvent *event) override;
 

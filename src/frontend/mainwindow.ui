@@ -337,6 +337,7 @@
     <property name="title">
      <string>Settings</string>
     </property>
+    <addaction name="toggleStyle"/>
    </widget>
    <widget class="QMenu" name="menuLogin">
     <property name="title">
@@ -753,6 +754,29 @@
    </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="toggleStyle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Darkmode</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>false</bool>
+   </property>
+   <property name="shortcutVisibleInContextMenu">
+    <bool>false</bool>
+   </property>
+   <property name="priority">
+    <enum>QAction::Priority::LowPriority</enum>
    </property>
   </action>
  </widget>

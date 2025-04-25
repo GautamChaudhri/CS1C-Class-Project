@@ -10,6 +10,8 @@
 #include "ui_mainwindow.h"
 #include "../backend/UserAccount.h"
 #include <QComboBox>
+#include <QFile>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui{
@@ -42,8 +44,6 @@ signals:
     void deleteAllShapes();
 
 public slots:
-    void setShapes(const alpha::vector<Shape*>& shapes);
-
     // Signals from ShapesManager class
     void onShapesChanged();
     void onShapesNotChanged(const QString& message);
@@ -54,9 +54,10 @@ public slots:
     void onRenderAreaNotChanged(const QString& message);
     void showRenderStatusMessage(const QString &message);
 
-    void onInitializeTreeWidget();
-
 private slots:
+
+    void onToggleStyle(bool checked = true);
+
     void on_actionnew_line_button_triggered();
 
     void on_actionnew_square_button_triggered();
@@ -82,5 +83,7 @@ private:
     const UserAccount* currUser;
 
     void addToShapeTree(Shape* shape);
+
+    QString loadStyleSheet(const QString &path);
 };
 #endif // MAINWINDOW_H

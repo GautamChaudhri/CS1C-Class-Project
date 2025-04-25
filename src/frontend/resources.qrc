@@ -1,6 +1,9 @@
 <RCC>
     <qresource prefix="/styles">
         <file>Medize.qss</file>
+        <file>darkstyle.qss</file>
+        <file>lightstyle.qss</file>
+        <file>Obit.qss</file>
     </qresource>
     <qresource prefix="/icons">
         <file>RectangleButtonIcon.png</file>
