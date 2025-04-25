@@ -203,7 +203,8 @@ void MainWindow::onSignupRequest(const QString &username, const QString &passwor
 }
 
 
-void MainWindow::onUserAuthentication(const QString &message) {
+void MainWindow::onUserAuthentication(const UserAccount* currUser) {
+    this->currUser = currUser;
     userStatusLabel->setText("Logged in as: " + currUser->getUsername());   
     emit loginSuccess();
 }

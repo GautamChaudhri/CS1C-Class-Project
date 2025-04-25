@@ -69,7 +69,7 @@ public slots:
     void onSignupRequest(const QString &username, const QString &password, const bool admin);
 
     // responses from UserManager
-    void onUserAuthentication(const QString& message);
+    void onUserAuthentication(const UserAccount* currUser);
     void onUserAuthenticationFailure(const QString& message);
 
 private slots:

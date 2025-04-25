@@ -55,7 +55,7 @@ signals:
     void userChanged();
     void userNotChanged(const QString &message);
     void statusMessage(const QString &message);
-    void userAuthenticated(const QString &message);
+    void userAuthenticated(const UserAccount* currUser);
     void authenticationFailed(const QString &message);
 
 
