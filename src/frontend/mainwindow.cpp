@@ -131,11 +131,13 @@ QString MainWindow::loadStyleSheet(const QString &path)
 }
 
 void MainWindow::onToggleStyle(bool checked) {
-    if (checked) {
-        QString darkStyle = loadStyleSheet(":/qdarkstyle/dark/darkstyle.qss");
-        qApp->setStyleSheet(darkStyle);
-    } else {
-        QString lightStyle = loadStyleSheet(":/qdarkstyle/light/lightstyle.qss");
-        qApp->setStyleSheet(lightStyle);
-    }
+    QString path = checked
+    ? ":styles/darkstyle.qss"
+    : ":styles/lightstyle.qss";
+
+    QString style = loadStyleSheet(path);
+    qDebug() << "Applying style:" << path;
+    qDebug() << "Style size:" << style.length(); // Should be > 0
+
+qApp->setStyleSheet(style);
 }

@@ -1,6 +1,6 @@
 <RCC>
-    <qresource prefix="/qdarkstyle">
-        <file>../../qdarkstyle/dark/darkstyle.qss</file>
-        <file>../../qdarkstyle/light/lightstyle.qss</file>
+    <qresource prefix="/styles">
+        <file>darkstyle.qss</file>
+        <file>lightstyle.qss</file>
     </qresource>
 </RCC>

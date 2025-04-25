@@ -57,7 +57,7 @@ public slots:
 
 private slots:
     void on_actionnew_shape_button_triggered();
-    void onToggleStyle(bool checked);
+    void onToggleStyle(bool checked = true);
 
 private:
     Ui::MainWindow *ui;
