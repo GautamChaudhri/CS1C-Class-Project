@@ -56,9 +56,56 @@ void MainWindow::shapes_to_treeWidget()
     int vecSize;
     vecSize = renderArea->getShapes().size();
 
+    Shape* item;
+
     for (int i = 0; i < vecSize; ++i)
     {
-        ui->treeWidget->addTopLevelItem(renderArea->getShapes()[i]->getParentItem());
+        item = renderArea->getShapes()[i];
+
+        //Todo: Put these elsewhere after testing is done, I think they will cause a memory leak!!!!!!!
+
+        // ComboBox for Shape Style
+        QComboBox* shapeTypeCombo = new QComboBox();
+        shapeTypeCombo->addItem("Square");
+        shapeTypeCombo->addItem("Rectangle");
+        shapeTypeCombo->addItem("Circle");
+        shapeTypeCombo->addItem("Ellipse");
+        shapeTypeCombo->addItem("Line");
+        shapeTypeCombo->addItem("Polyline");
+        shapeTypeCombo->addItem("Polygon");
+        shapeTypeCombo->addItem("Text");
+        shapeTypeCombo->setCurrentText(QString::fromStdString(item->getShapeType()));
+
+        // ComboBox for Pen Style
+        QComboBox* penStyleCombo = new QComboBox();
+        penStyleCombo->addItem("NoPen", static_cast<int>(Qt::NoPen));
+        penStyleCombo->addItem("SolidLine", static_cast<int>(Qt::SolidLine));
+        penStyleCombo->addItem("DashLine", static_cast<int>(Qt::DashLine));
+        penStyleCombo->addItem("DotLine", static_cast<int>(Qt::DotLine));
+        penStyleCombo->addItem("DashDotLine", static_cast<int>(Qt::DashDotLine));
+        penStyleCombo->addItem("DashDotDotLine", static_cast<int>(Qt::DashDotDotLine));
+        penStyleCombo->setCurrentIndex(item->getPenStyle());
+
+        // I DON'T REMEMBER ALL OF THE BRUSH STYLES PLEASE FIX!!!!!!!
+        // ComboBox for Brush Style
+        QComboBox* brushStyleCombo = new QComboBox();
+        brushStyleCombo->addItem("NoBrush", static_cast<int>(Qt::NoBrush));
+        brushStyleCombo->addItem("SolidPattern", static_cast<int>(Qt::SolidPattern));
+        brushStyleCombo->addItem("Dense1Pattern", static_cast<int>(Qt::Dense1Pattern));
+        brushStyleCombo->addItem("Dense2Pattern", static_cast<int>(Qt::Dense2Pattern));
+        brushStyleCombo->addItem("Dense3Pattern", static_cast<int>(Qt::Dense3Pattern));
+        brushStyleCombo->addItem("Dense4Pattern", static_cast<int>(Qt::Dense4Pattern));
+        brushStyleCombo->addItem("Dense5Pattern", static_cast<int>(Qt::Dense5Pattern));
+        brushStyleCombo->addItem("Dense6Pattern", static_cast<int>(Qt::Dense6Pattern));
+        brushStyleCombo->addItem("Dense7Pattern", static_cast<int>(Qt::Dense7Pattern));
+        brushStyleCombo->setCurrentIndex(item->getBrushStyle());
+
+        ui->treeWidget->addTopLevelItem(item->getParentItem());
+
+        // Add the comboboxes to the children
+        ui->treeWidget->setItemWidget(item->getChildItems()[1], 1, shapeTypeCombo);
+        ui->treeWidget->setItemWidget(item->getChildItems()[4], 1, penStyleCombo);
+        ui->treeWidget->setItemWidget(item->getChildItems()[5], 1, brushStyleCombo);
     }
 }
 

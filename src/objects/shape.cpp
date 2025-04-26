@@ -1,4 +1,5 @@
 #include "shape.h"
+#include <QComboBox>
 
 /****************************************************
 * class Shape - Abstract Base Class
@@ -18,17 +19,32 @@ Shape::Shape(int    shapeId,
 {
     parentItem->setText(0, QString::fromStdString(shapeType));
 
-    for (int i = 0; i < 5; ++i) // 5 being # of data members in shape being displayed for all shapes (JUST FOR TESTING PLEASE CHANGE)
+    for (int i = 0; i < 6; ++i) // 6 being # of data members in shape being displayed for all shapes (JUST FOR TESTING PLEASE CHANGE)
     {
         childItems.push_back(new QTreeWidgetItem());
         parentItem->addChild(childItems[i]);
     }
     // hard coded spaces for each subitem, change as you please
     childItems[0]->setText(0, "Shape Id:");
+    childItems[0]->setText(1, QString::number(getTrackerId()));
+    childItems[0]->setFlags(childItems[0]->flags() | Qt::ItemIsEditable);
+
     childItems[1]->setText(0, "Shape Type:");
-    childItems[2]->setText(0, "Pen:");
-    childItems[3]->setText(0, "Brush:");
-    childItems[4]->setText(0, "Coords:");
+    childItems[1]->setFlags(childItems[1]->flags() | Qt::ItemIsEditable);
+
+    childItems[2]->setText(0, "X:");
+    childItems[2]->setText(1, QString::number(getX()));
+    childItems[2]->setFlags(childItems[2]->flags() | Qt::ItemIsEditable);
+
+    childItems[3]->setText(0, "Y:");
+    childItems[3]->setText(1, QString::number(getY()));
+    childItems[3]->setFlags(childItems[3]->flags() | Qt::ItemIsEditable);
+
+    childItems[4]->setText(0, "Pen:");
+    childItems[4]->setFlags(childItems[4]->flags() | Qt::ItemIsEditable);
+
+    childItems[5]->setText(0, "Brush:");
+    childItems[5]->setFlags(childItems[5]->flags() | Qt::ItemIsEditable);
 }
 
 Shape::~Shape() {}
