@@ -53,53 +53,27 @@ MainWindow::~MainWindow()
 
 void MainWindow::shapes_to_treeWidget()
 {
-    int vecSize;
-    vecSize = renderArea->getShapes().size();
-
     Shape* item;
+    int vecSize;
+
+    item = nullptr;
+    vecSize = renderArea->getShapes().size();
 
     for (int i = 0; i < vecSize; ++i)
     {
         item = renderArea->getShapes()[i];
 
-        //Todo: Put these elsewhere after testing is done, I think they will cause a memory leak!!!!!!!
+        // Creates the objects to hold the combo boxes
+        QComboBox* shapeTypeCombo = createShapeTypeComboBox(QString::fromStdString(item->getShapeType()));
+        QComboBox* penStyleCombo = createPenStyleComboBox(item->getPenStyle());
+        QComboBox* brushStyleCombo = createBrushStyleComboBox(item->getBrushStyle());
 
-        // ComboBox for Shape Style
-        QComboBox* shapeTypeCombo = new QComboBox();
-        shapeTypeCombo->addItem("Square");
-        shapeTypeCombo->addItem("Rectangle");
-        shapeTypeCombo->addItem("Circle");
-        shapeTypeCombo->addItem("Ellipse");
-        shapeTypeCombo->addItem("Line");
-        shapeTypeCombo->addItem("Polyline");
-        shapeTypeCombo->addItem("Polygon");
-        shapeTypeCombo->addItem("Text");
-        shapeTypeCombo->setCurrentText(QString::fromStdString(item->getShapeType()));
+        // Set parent of combo box as treeWidget
+        shapeTypeCombo->setParent(ui->treeWidget);
+        penStyleCombo->setParent(ui->treeWidget);
+        brushStyleCombo->setParent(ui->treeWidget);
 
-        // ComboBox for Pen Style
-        QComboBox* penStyleCombo = new QComboBox();
-        penStyleCombo->addItem("NoPen", static_cast<int>(Qt::NoPen));
-        penStyleCombo->addItem("SolidLine", static_cast<int>(Qt::SolidLine));
-        penStyleCombo->addItem("DashLine", static_cast<int>(Qt::DashLine));
-        penStyleCombo->addItem("DotLine", static_cast<int>(Qt::DotLine));
-        penStyleCombo->addItem("DashDotLine", static_cast<int>(Qt::DashDotLine));
-        penStyleCombo->addItem("DashDotDotLine", static_cast<int>(Qt::DashDotDotLine));
-        penStyleCombo->setCurrentIndex(item->getPenStyle());
-
-        // I DON'T REMEMBER ALL OF THE BRUSH STYLES PLEASE FIX!!!!!!!
-        // ComboBox for Brush Style
-        QComboBox* brushStyleCombo = new QComboBox();
-        brushStyleCombo->addItem("NoBrush", static_cast<int>(Qt::NoBrush));
-        brushStyleCombo->addItem("SolidPattern", static_cast<int>(Qt::SolidPattern));
-        brushStyleCombo->addItem("Dense1Pattern", static_cast<int>(Qt::Dense1Pattern));
-        brushStyleCombo->addItem("Dense2Pattern", static_cast<int>(Qt::Dense2Pattern));
-        brushStyleCombo->addItem("Dense3Pattern", static_cast<int>(Qt::Dense3Pattern));
-        brushStyleCombo->addItem("Dense4Pattern", static_cast<int>(Qt::Dense4Pattern));
-        brushStyleCombo->addItem("Dense5Pattern", static_cast<int>(Qt::Dense5Pattern));
-        brushStyleCombo->addItem("Dense6Pattern", static_cast<int>(Qt::Dense6Pattern));
-        brushStyleCombo->addItem("Dense7Pattern", static_cast<int>(Qt::Dense7Pattern));
-        brushStyleCombo->setCurrentIndex(item->getBrushStyle());
-
+        // Add top-level item to the tree widget
         ui->treeWidget->addTopLevelItem(item->getParentItem());
 
         // Add the comboboxes to the children
@@ -232,4 +206,41 @@ void MainWindow::onToggleStyle(bool checked) {
     // qDebug() << "Style size:" << style.length(); // Should be > 0
 
     qApp->setStyleSheet(style);
+}
+
+QComboBox* MainWindow::createShapeTypeComboBox(const QString& currentShapeType)
+{
+    QComboBox* box = new QComboBox();
+    box->addItems({"Square", "Rectangle", "Circle", "Ellipse", "Line", "Polyline", "Polygon", "Text"});
+    box->setCurrentText(currentShapeType);
+    return box;
+}
+
+QComboBox* MainWindow::createPenStyleComboBox(int currentPenStyle)
+{
+    QComboBox* box = new QComboBox();
+    box->addItem("NoPen", static_cast<int>(Qt::NoPen));
+    box->addItem("SolidLine", static_cast<int>(Qt::SolidLine));
+    box->addItem("DashLine", static_cast<int>(Qt::DashLine));
+    box->addItem("DotLine", static_cast<int>(Qt::DotLine));
+    box->addItem("DashDotLine", static_cast<int>(Qt::DashDotLine));
+    box->addItem("DashDotDotLine", static_cast<int>(Qt::DashDotDotLine));
+    box->setCurrentIndex(currentPenStyle);
+    return box;
+}
+
+QComboBox* MainWindow::createBrushStyleComboBox(int currentBrushStyle)
+{
+    QComboBox* box = new QComboBox();
+    box->addItem("NoBrush", static_cast<int>(Qt::NoBrush));
+    box->addItem("SolidPattern", static_cast<int>(Qt::SolidPattern));
+    box->addItem("Dense1Pattern", static_cast<int>(Qt::Dense1Pattern));
+    box->addItem("Dense2Pattern", static_cast<int>(Qt::Dense2Pattern));
+    box->addItem("Dense3Pattern", static_cast<int>(Qt::Dense3Pattern));
+    box->addItem("Dense4Pattern", static_cast<int>(Qt::Dense4Pattern));
+    box->addItem("Dense5Pattern", static_cast<int>(Qt::Dense5Pattern));
+    box->addItem("Dense6Pattern", static_cast<int>(Qt::Dense6Pattern));
+    box->addItem("Dense7Pattern", static_cast<int>(Qt::Dense7Pattern));
+    box->setCurrentIndex(currentBrushStyle);
+    return box;
 }

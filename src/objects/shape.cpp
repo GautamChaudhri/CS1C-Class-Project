@@ -26,7 +26,7 @@ Shape::Shape(int    shapeId,
     }
     // hard coded spaces for each subitem, change as you please
     childItems[0]->setText(0, "Shape Id:");
-    childItems[0]->setText(1, QString::number(getTrackerId()));
+    childItems[0]->setText(1, QString::number(getShapeId()));
     childItems[0]->setFlags(childItems[0]->flags() | Qt::ItemIsEditable);
 
     childItems[1]->setText(0, "Shape Type:");
@@ -47,7 +47,10 @@ Shape::Shape(int    shapeId,
     childItems[5]->setFlags(childItems[5]->flags() | Qt::ItemIsEditable);
 }
 
-Shape::~Shape() {}
+Shape::~Shape()
+{
+    delete parentItem;
+}
 
 void Shape::Move(int x, int y)
 {

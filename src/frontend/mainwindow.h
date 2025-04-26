@@ -85,5 +85,9 @@ private:
     void addToShapeTree(Shape* shape);
 
     QString loadStyleSheet(const QString &path);
+
+    QComboBox* createShapeTypeComboBox(const QString& currentShapeType);
+    QComboBox* createPenStyleComboBox(int currentPenStyle);
+    QComboBox* createBrushStyleComboBox(int currentBrushStyle);
 };
 #endif // MAINWINDOW_H

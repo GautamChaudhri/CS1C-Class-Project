@@ -1,7 +1,6 @@
 #ifndef SHAPE_H
 #define SHAPE_H
 
-#include <iostream> // used to make debugging much more convenient
 #include <string>
 #include <cmath>
 #include <QWidget>

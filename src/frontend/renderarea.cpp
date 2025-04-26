@@ -67,3 +67,4 @@ void RenderArea::paintEvent(QPaintEvent *event)
         (*renderShapes)[i]->Draw(this);
     }
 }
+
