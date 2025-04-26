@@ -27,7 +27,6 @@ Shape::Shape(int    shapeId,
     // hard coded spaces for each subitem, change as you please
     childItems[0]->setText(0, "Shape Id:");
     childItems[0]->setText(1, QString::number(getShapeId()));
-    childItems[0]->setFlags(childItems[0]->flags() | Qt::ItemIsEditable);
 
     childItems[1]->setText(0, "Shape Type:");
     childItems[1]->setFlags(childItems[1]->flags() | Qt::ItemIsEditable);

@@ -198,7 +198,7 @@ QString MainWindow::loadStyleSheet(const QString &path)
 
 void MainWindow::onToggleStyle(bool checked) {
     QString path = checked
-                       ? ":styles/Obit.qss"
+                       ? ":styles/Geoo.qss"
                        : ":styles/Medize.qss";
 
     QString style = loadStyleSheet(path);

@@ -3,7 +3,7 @@
         <file>Medize.qss</file>
         <file>darkstyle.qss</file>
         <file>lightstyle.qss</file>
-        <file>Obit.qss</file>
+        <file>Geoo.qss</file>
     </qresource>
     <qresource prefix="/icons">
         <file>RectangleButtonIcon.png</file>
