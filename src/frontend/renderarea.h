@@ -24,6 +24,12 @@ public:
     void mousePressEvent(QMouseEvent* event) override;
     void mouseMoveEvent(QMouseEvent* event) override;
 
+    void setShapeSelectedIndex(int newIndex);
+    void resetSelection();
+
+    int getShapeSelected() const;
+    int getShapeSelectedIndex() const;
+
 protected:
     void paintEvent(QPaintEvent *event) override;
 

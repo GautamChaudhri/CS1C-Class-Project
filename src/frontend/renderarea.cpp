@@ -1,6 +1,6 @@
 #include "renderarea.h"
 
-RenderArea::RenderArea(QWidget *parent) : QWidget(parent) {}
+RenderArea::RenderArea(QWidget *parent) : QWidget(parent), shapeSelectedIndex{-1} {}
 
 void RenderArea::setRenderShapes(const alpha::vector<Shape*>* renderShapes) {
     this->renderShapes = renderShapes;
@@ -27,7 +27,9 @@ void RenderArea::mousePressEvent(QMouseEvent* event)
         {
             (*renderShapes)[shapeSelectedIndex]->setSelected(false); // Deselect previous
         }
+
         shapeSelectedIndex = newSelectionIndex;
+
         if (shapeSelectedIndex >= 0 && shapeSelectedIndex < vecSize)
         {
             (*renderShapes)[shapeSelectedIndex]->setSelected(true); // Select new shape
@@ -55,6 +57,18 @@ void RenderArea::mouseMoveEvent(QMouseEvent* event)
     }
 }
 
+void RenderArea::resetSelection()
+{
+    int vecSize = renderShapes->size();
+
+    for (int i = 0; i < vecSize; ++i)
+    {
+        (*renderShapes)[i]->setSelected(false);
+    }
+
+    shapeSelectedIndex = -1;
+}
+
 void RenderArea::paintEvent(QPaintEvent *event)
 {
     int vecSize;
@@ -66,5 +80,20 @@ void RenderArea::paintEvent(QPaintEvent *event)
     {
         (*renderShapes)[i]->Draw(this);
     }
+}
+
+void RenderArea::setShapeSelectedIndex(int newIndex)
+{
+    shapeSelectedIndex = newIndex;
+}
+
+int RenderArea::getShapeSelected() const
+{
+    return (*renderShapes)[shapeSelectedIndex]->getTrackerId();
+}
+
+int RenderArea::getShapeSelectedIndex() const
+{
+    return shapeSelectedIndex;
 }
 

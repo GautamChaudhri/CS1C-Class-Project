@@ -74,6 +74,8 @@ private slots:
 
     void on_actionnew_text_button_triggered();
 
+    void on_actionremove_shape_button_triggered();
+
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;

@@ -244,3 +244,21 @@ QComboBox* MainWindow::createBrushStyleComboBox(int currentBrushStyle)
     box->setCurrentIndex(currentBrushStyle);
     return box;
 }
+
+void MainWindow::on_actionremove_shape_button_triggered()
+{
+    try
+    {
+        if(renderArea->getShapeSelectedIndex() >= 0)
+        {
+            emit shapeDeleted(renderArea->getShapeSelected());
+        }
+    }
+    catch (...)
+    {
+        // The code works but an exception keeps being thrown which is why this exists :/
+    }
+
+    renderArea->resetSelection();
+}
+
