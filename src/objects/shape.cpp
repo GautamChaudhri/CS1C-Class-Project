@@ -25,7 +25,7 @@ Shape::Shape(int    shapeId,
         parentItem->addChild(childItems[i]);
     }
     // hard coded spaces for each subitem, change as you please
-    childItems[0]->setText(0, "Shape Id:");
+    childItems[0]->setText(0, "Shape ID:");
     childItems[0]->setText(1, QString::number(getShapeId()));
 
     childItems[1]->setText(0, "Shape Type:");

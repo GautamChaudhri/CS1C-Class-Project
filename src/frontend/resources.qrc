@@ -14,5 +14,8 @@
         <file>PolygonButtonIcon.png</file>
         <file>PolylineButtonIcon.png</file>
         <file>TextButtonIcon.png</file>
+        <file>ProgramIcon.png</file>
+        <file>RemoveButtonIcon.png</file>
+        <file>ProgramIcon2.png</file>
     </qresource>
 </RCC>
