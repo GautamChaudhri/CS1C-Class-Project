@@ -46,10 +46,8 @@ MainWindow::MainWindow(QWidget *parent,
     
     //Login
     userStatusLabel = new QLabel("Logged in as: " + currUser->getUsername(), this);
-    //ui->toolBar->addWidget(userStatusLabel);
     statusBar()->addPermanentWidget(userStatusLabel);
     auto *loginButton = new QPushButton("Login", this);
-    //ui->toolBar->addWidget(loginButton);
     statusBar()->addPermanentWidget(loginButton);
     connect(loginButton, &QPushButton::clicked, this, &MainWindow::onLoginClicked);
 }
@@ -260,10 +258,6 @@ void MainWindow::onLoginClicked() {
     connect(dlg, &LoginWindow::loginRequested, this, &MainWindow::onLoginRequest);
     connect(dlg, &LoginWindow::signupRequested, this, &MainWindow::onSignupRequest);
     connect(this, &MainWindow::loginSuccess, dlg,  &QDialog::accept);
-    // connect(this, &MainWindow::loginFailed, this,
-    //     [dlg](const QString &msg){
-    //         QMessageBox::warning(dlg, "Login Failed", msg);
-    //     });
     dlg->exec();
 }
 

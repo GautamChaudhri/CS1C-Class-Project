@@ -64,7 +64,6 @@ set(PROJECT_srcS
 
     src/frontend/loginwindow.cpp
     src/frontend/loginwindow.h
-    src/frontend/shapecontroller.h
     src/frontend/resources.qrc
 )
 

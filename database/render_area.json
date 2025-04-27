@@ -59,5 +59,27 @@
 "PenJoinStyle": "BevelJoin",
 "BrushColor": "black",
 "BrushStyle": "NoBrush"
+},
+{
+"ShapeId": 1,
+"TrackerId": 0,
+"ShapeType": "Line",
+"ShapeDimensions": [0, 0, 50, 50],
+"PenColor": "black",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "BevelJoin"
+},
+{
+"ShapeId": 2,
+"TrackerId": 0,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 100, 100, 50, 150, 100],
+"PenColor": "black",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "BevelJoin"
 }
 ]

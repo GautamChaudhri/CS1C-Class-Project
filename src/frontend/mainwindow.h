@@ -3,20 +3,16 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QLabel>               // <-- added for userStatusLabel
-#include "renderarea.h"
-#include "../backend/Parser.h"
-#include "../backend/ApiClient.h"
-#include <QApplication>
 #include <QGridLayout>
-#include "ui_mainwindow.h"
-#include "../backend/UserAccount.h"
+#include <QLabel>
 #include <QFile>
 #include <QTimer>
 #include <QComboBox>
 #include <QStatusBar>
+#include "ui_mainwindow.h"
+#include "renderarea.h"
 #include "loginwindow.h"
-
+#include "../backend/UserAccount.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

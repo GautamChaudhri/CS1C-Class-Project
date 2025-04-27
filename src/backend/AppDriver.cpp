@@ -26,19 +26,21 @@ void AppDriver::run() {
     mainWindow->show();
 
     // Defer loading until after the event loop starts
-    qDebug() << "AppDriver::run() – scheduling loadAllData() after event loop starts";
+    qDebug() << "[AppDriver:run] initializing main window and deferring loadAllData until after event loop starts";
     QTimer::singleShot(0, this, [this]() {
-        qDebug() << "AppDriver: loadAllData() now running";
+        qDebug() << "[AppDriver:loadAllData] now running loadAllData";
         loadAllData();
     });
 }
 
 void AppDriver::shutdown() {
+    qDebug() << "[AppDriver:shutdown] saving shapes and users";
     renderedShapes->saveShapes();
     user->saveUsers();
 }
 
 void AppDriver::loadAllData() {
+    qDebug() << "[AppDriver:loadAllData] loading shapes and users";
     renderedShapes->loadShapes();
     user->loadUsers();
 }
@@ -98,7 +100,6 @@ void AppDriver::connectFrontendToDriver() {
 
 //Connects the signals in the Manager Classes to the slots in Frontend
 void AppDriver::connectManagersToFrontend() {
-    qDebug() << "AppDriver::connectManagersToFrontend() – hooking up shapesChanged → onShapesChanged";
     //for rendered shapes
     connect(renderedShapes, &RenderAreaManager::renderAreaChanged, mainWindow, &MainWindow::onRenderAreaChanged);
     connect(renderedShapes, &RenderAreaManager::renderAreaNotChanged, mainWindow, &MainWindow::onRenderAreaNotChanged);
@@ -107,5 +108,4 @@ void AppDriver::connectManagersToFrontend() {
     connect(user, &UserManager::userAuthenticated, mainWindow, &MainWindow::onUserAuthentication);
     connect(user, &UserManager::authenticationFailed, mainWindow, &MainWindow::onUserAuthenticationFailure);
     // connect(user, &UserManager::statusMessage, loginWindow, &LoginWindow::showStatusMessage);
-    qDebug() << "AppDriver::connectManagersToFrontend() – done connecting";
 }

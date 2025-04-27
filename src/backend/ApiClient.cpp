@@ -11,21 +11,21 @@ ApiClient::ApiClient(QObject* parent) : QObject{parent}, manager{new QNetworkAcc
 
 //Get Endpoints
 void ApiClient::GetShapes() {
-    qDebug() << "ApiClient::GetShapes() called";
+    qDebug().noquote().nospace() << "[ApiClient::GetShapes] url=" << "http://localhost:8080/shapes";
     QNetworkRequest request(QUrl("http://localhost:8080/shapes"));
     auto* reply = manager->get(request);
     connect(reply, &QNetworkReply::finished, this, &ApiClient::AnalyzeGetReply);
 }
 
 void ApiClient::GetRenderArea() {
-    qDebug() << "ApiClient::GetRenderArea() called";
+    qDebug().noquote().nospace() << "[ApiClient::GetRenderArea] url=" << "http://localhost:8080/render_area";
     QNetworkRequest request(QUrl("http://localhost:8080/render_area"));
     auto* reply = manager->get(request);
     connect(reply, &QNetworkReply::finished, this, &ApiClient::AnalyzeGetReply);
 }
 
 void ApiClient::GetUsers() {
-    qDebug() << "ApiClient::GetUsers() called";
+    qDebug().noquote().nospace() << "[ApiClient::GetUsers] url=" << "http://localhost:8080/users";
     QNetworkRequest request(QUrl("http://localhost:8080/users"));
     auto* reply = manager->get(request);
     connect(reply, &QNetworkReply::finished, this, &ApiClient::AnalyzeGetReply);
@@ -90,18 +90,16 @@ void ApiClient::AnalyzeGetReply() {
     if (reply->error() == QNetworkReply::NoError) {
         QByteArray bytes = reply->readAll();
         QString json = QString::fromUtf8(bytes);
+        qDebug().noquote().nospace() << "[ApiClient::AnalyzeGetReply] success payload_size=" << bytes.size();
         emit GoodGetReply(json);
     }
     else {
         QString errorStr = reply->errorString();
+        qDebug().noquote().nospace() << "[ApiClient::AnalyzeGetReply] failure error_string=\"" << errorStr << "\"";
         emit BadGetReply(errorStr);
     }
     
     reply->deleteLater();
-    qDebug() << "ApiClient reply finished; HTTP status ="
-            << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt()
-            << "payload size =" << reply->size();
-    qDebug() << "ApiClient payload:" << reply->readAll();
 }
 
 void ApiClient::AnalyzePostReply() {
@@ -112,10 +110,12 @@ void ApiClient::AnalyzePostReply() {
     if (reply->error() == QNetworkReply::NoError) {
         QByteArray bytes = reply->readAll();
         QString json = QString::fromUtf8(bytes);
+        qDebug().noquote().nospace() << "[ApiClient::AnalyzePostReply] success";
         emit GoodPostReply();
     }
     else {
         QString errorStr = reply->errorString();
+        qDebug().noquote().nospace() << "[ApiClient::AnalyzePostReply] failure error_string=\"" << errorStr << "\"";
         emit BadPostReply(errorStr);
     }
     
@@ -130,10 +130,12 @@ void ApiClient::AnalyzeDeleteReply() {
     if (reply->error() == QNetworkReply::NoError) {
         QByteArray bytes = reply->readAll();
         QString json = QString::fromUtf8(bytes);
+        qDebug().noquote().nospace() << "[ApiClient::AnalyzeDeleteReply] success";
         emit GoodPostReply();
     }
     else {
         QString errorStr = reply->errorString();
+        qDebug().noquote().nospace() << "[ApiClient::AnalyzeDeleteReply] failure error_string=\"" << errorStr << "\"";
         emit BadDeleteReply(errorStr);
     }
     

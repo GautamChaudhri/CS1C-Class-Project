@@ -29,7 +29,9 @@
 
  void ShapesManager::addShape(Shape* shape) {
     shapes.push_back(shape);
+    qDebug().noquote().nospace() << "[ShapesManager::addShape] added shape trackerId=" << shape->getTrackerId();
     emit shapesChanged();
+    qDebug().noquote().nospace() << "[ShapesManager::addShape] triggering saveShapes, totalShapes=" << shapes.size();
     saveShapes();
  }
 
@@ -43,12 +45,14 @@ void ShapesManager::modifyShape(Shape* shape) {
             delete shapes[i];
             shapes[i] = shape;
             emit shapesChanged();
+            qDebug().noquote().nospace() << "[ShapesManager::modifyShape] replaced shape trackerId=" << shape->getTrackerId();
             saveShapes();
         }
     }
 
     if (!shapeFound) {
         QString message = "Shape not found. TrackerId: " + shape->getTrackerId();
+        qDebug().noquote().nospace() << "[ShapesManager::modifyShape] failed to find shape trackerId=" << shape->getTrackerId();
         emit shapesNotChanged(message);
     }
 }
@@ -63,12 +67,14 @@ void ShapesManager::modifyShape(Shape* shape) {
             delete shapes[i];
             shapes.erase(shapes.begin() + i);
             emit shapesChanged();
+            qDebug().noquote().nospace() << "[ShapesManager::deleteShape] deleted shape trackerId=" << trackerId;
             saveShapes();
         }
     }
     
     if (!shapeFound) {
         QString message = "Shape not found. TrackerId: " + trackerId;
+        qDebug().noquote().nospace() << "[ShapesManager::deleteShape] no shape found trackerId=" << trackerId;
         emit shapesNotChanged(message);
     }
  }
@@ -76,37 +82,36 @@ void ShapesManager::modifyShape(Shape* shape) {
 
 
  void ShapesManager::deleteAllShapes() {
+    qDebug().noquote().nospace() << "[ShapesManager::deleteAllShapes] deleting all, shapeCount=" << shapes.size();
     for (Shape* shape : shapes) {
         delete shape;
     }
     emit shapesChanged();
+    qDebug().noquote().nospace() << "[ShapesManager::deleteAllShapes] local list cleared";
     client.DeleteShapesAll();
  }
  
 
 
  void ShapesManager::loadShapes() {
-    qDebug() << "ShapesManager::loadShapes() – about to call client.GetShapes()";
+    qDebug().noquote().nospace() << "[ShapesManager::loadShapes] calling client.GetShapes()";
     client.GetShapes();
  }
  
 
 
  void ShapesManager::saveShapes() {
-     std::string renderedShapeData = parse.ShapesToJson(shapes);
-     client.PostRenderArea(renderedShapeData);
+    qDebug().noquote().nospace() << "[ShapesManager::saveShapes] preparing to save shapeCount=" << shapes.size();
+    std::string renderedShapeData = parse.ShapesToJson(shapes);
+    client.PostRenderArea(renderedShapeData);
  }
  
 
 
  void ShapesManager::onGoodGetResponse(const QString &json) {
+    qDebug().noquote().nospace() << "[ShapesManager::onGoodGetResponse] received JSON response, jsonSize=" << json.size();
     shapes = parse.JsonToShapes(json.toStdString());
-
-    qDebug() << "ShapesManager::onGoodGetResponse() – parsed shapes.size() =" 
-             << shapes.size();
-
-    // Print the internal vector size again to be sure
-    qDebug() << "ShapesManager internal vector size =" << shapes.size();
+    qDebug().noquote().nospace() << "[ShapesManager::onGoodGetResponse] parsed shapeCount=" << shapes.size();
 
     emit statusMessage("Shapes loaded successfully.");
     emit shapesChanged();
@@ -115,31 +120,34 @@ void ShapesManager::modifyShape(Shape* shape) {
 
 
  void ShapesManager::onBadGetResponse(const QString &errorMsg) {
-    qDebug() << "ShapesManager::onBadGetResponse() – errorMsg:" << errorMsg;
-    qDebug() << "ShapesManager::onBadGetResponse() – current shapes.size() =" << shapes.size();
-     emit statusMessage("Error in receiving data from database: " + errorMsg);
+    qDebug().noquote().nospace() << "[ShapesManager::onBadGetResponse] error receiving shapes, error=" << errorMsg;
+    emit statusMessage("Error in receiving data from database: " + errorMsg);
  }
  
 
 
  void ShapesManager::onGoodPostResponse() {
-     emit statusMessage("Shapes saved successfully.");
+    qDebug().noquote().nospace() << "[ShapesManager::onGoodPostResponse] shapes saved successfully";
+    emit statusMessage("Shapes saved successfully.");
  }
  
 
 
  void ShapesManager::onBadPostResponse(const QString &errorMsg) {
-     emit statusMessage("Error in saving shapes: " + errorMsg);
+    qDebug().noquote().nospace() << "[ShapesManager::onBadPostResponse] error saving shapes, error=" << errorMsg;
+    emit statusMessage("Error in saving shapes: " + errorMsg);
  }
  
 
 
  void ShapesManager::onGoodDeleteResponse() {
-     emit statusMessage("All shapes deleted successfully.");
+    qDebug().noquote().nospace() << "[ShapesManager::onGoodDeleteResponse] all shapes deleted successfully";
+    emit statusMessage("All shapes deleted successfully.");
  }
  
 
 
  void ShapesManager::onBadDeleteResponse(const QString &errorMsg) {
-     emit statusMessage("Error in deleting shapes: " + errorMsg);
+    qDebug().noquote().nospace() << "[ShapesManager::onBadDeleteResponse] error deleting shapes, error=" << errorMsg;
+    emit statusMessage("Error in deleting shapes: " + errorMsg);
  }
