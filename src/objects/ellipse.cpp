@@ -4,15 +4,13 @@
 * derived class Ellipse - Base Shape
 *****************************************************/
 
-Ellipse::Ellipse(int    shapeId,
-                  string shapeType,
+Ellipse::Ellipse(string shapeType,
                   QPoint coords,
                   QPen   pen,
                   QBrush brush,
                   int    a,
                   int    b)
-                 : Shape(shapeId,
-                         shapeType,
+                 : Shape(shapeType,
                          coords,
                          pen,
                          brush),
@@ -58,6 +56,7 @@ Ellipse::Ellipse(int    shapeId,
 
         childItems[8]->setText(0, "Brush:");
         childItems[8]->setFlags(childItems[8]->flags() | Qt::ItemIsEditable);
+    setShapeId(6);
 }
 
 

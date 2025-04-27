@@ -6,14 +6,11 @@
 class Polygon : public Shape
 {
 public:
-    Polygon(int    shapeId,
-             string shapeType,
+    Polygon(string shapeType,
              QPoint coords,
              QPen   pen,
              QBrush brush,
              QPolygon pointsList);
-
-    ~Polygon(); // do we need to implement destructor?
 
     void Draw(QWidget* renderArea) override;
     void Move(int x, int y) override;

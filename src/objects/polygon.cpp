@@ -4,14 +4,12 @@
 * derived class Polygon - Base Shape
 *****************************************************/
 
-Polygon::Polygon(int    shapeId,
-                 string shapeType,
+Polygon::Polygon(string shapeType,
                  QPoint coords,
                  QPen   pen,
                  QBrush brush,
                  QPolygon pointsList)
-               : Shape(shapeId,
-                       shapeType,
+               : Shape(shapeType,
                        coords,
                        pen,
                        brush),
@@ -71,11 +69,12 @@ Polygon::Polygon(int    shapeId,
 
         childItems[12]->setText(0, "Brush:");
         childItems[12]->setFlags(childItems[12]->flags() | Qt::ItemIsEditable);
+
+        setShapeId(3);
 }
 
 
 Polygon::~Polygon() {}
-
 
 void Polygon::Draw(QWidget* renderArea)
 {

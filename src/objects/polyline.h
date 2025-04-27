@@ -6,14 +6,11 @@
 class Polyline : public Shape
 {
 public:
-    Polyline(int    shapeId,
-             string shapeType,
+    Polyline(string shapeType,
              QPoint coords,
              QPen   pen,
              QBrush brush,
              QPolygon pointsList);
-
-    ~Polyline();
 
     void Draw(QWidget* renderArea) override;
     void Move(int x, int y) override;

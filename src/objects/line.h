@@ -10,8 +10,7 @@ class Line : public Shape
 {
 public:
 
-    Line(int    shapeId,
-         string shapeType,
+    Line(string shapeType,
          QPoint coords,
          QPen   pen,
          QBrush brush,

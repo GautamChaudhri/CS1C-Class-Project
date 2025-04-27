@@ -5,13 +5,11 @@
 * class Shape - Abstract Base Class
 *****************************************************/
 
-Shape::Shape(int    shapeId,
-             string shapeType,
+Shape::Shape(string shapeType,
              QPoint coords,
              QPen   pen,
              QBrush brush)
-           : shapeId{shapeId},
-             shapeType{shapeType},
+           : shapeType{shapeType},
              coords{coords},
              pen{pen},
              brush{brush},
@@ -82,7 +80,7 @@ QPoint       Shape::getPoints()       const { return coords;}
 
 /***************** MUTATOR FUNCTIONS ****************/
 void Shape::setShapeId(int shapeId)        { this->shapeId   = shapeId; }
-void Shape::setTrackerId(int trackerId)    { /*this->trackerId = trackerId;*/} //This causes issues
+void Shape::setTrackerId(int trackerId)    { this->trackerId = trackerId;} //This causes issues
 void Shape::setShapeType(string shapeType) { this->shapeType = shapeType; }
 void Shape::setSelected(bool selected)     { isSelected = selected;}
 

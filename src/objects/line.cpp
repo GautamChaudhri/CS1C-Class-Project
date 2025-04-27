@@ -4,15 +4,13 @@
 * derived class Line - Base Shape
 *****************************************************/
 
-Line::Line(int    shapeId,
-           string shapeType,
+Line::Line(string shapeType,
            QPoint coords,
            QPen   pen,
            QBrush brush,
            QPoint startPoint,
            QPoint endPoint)
-        :  Shape (shapeId,
-                  shapeType,
+        :  Shape (shapeType,
                   coords,
                   pen,
                   brush),
@@ -20,6 +18,7 @@ Line::Line(int    shapeId,
          endPoint{endPoint}
 {
     parentItem->setText(0, QString::fromStdString(shapeType));
+    setShapeId(1);
 
     for (int i = 0; i < 8; ++i)
     {

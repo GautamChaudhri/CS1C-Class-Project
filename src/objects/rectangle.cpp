@@ -4,14 +4,13 @@
 * derived class Rectangle - Base Shape
 *****************************************************/
 
-Rectangle::Rectangle(int    shapeId,
-                     string shapeType,
+Rectangle::Rectangle(string shapeType,
                      QPoint coords,
                      QPen   pen,
                      QBrush brush,
                      int length,
                      int width)
-                   : Shape(shapeId, shapeType, coords, pen, brush),
+                   : Shape(shapeType, coords, pen, brush),
                     length{length},
                     width{width}
 {
@@ -53,6 +52,7 @@ Rectangle::Rectangle(int    shapeId,
 
         childItems[8]->setText(0, "Brush:");
         childItems[8]->setFlags(childItems[8]->flags() | Qt::ItemIsEditable);
+    setShapeId(4);
 }
 
 

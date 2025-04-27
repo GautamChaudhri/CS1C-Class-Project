@@ -6,8 +6,7 @@
 class Ellipse : public Shape
 {
 public:
-    Ellipse(int    shapeId,
-            string shapeType,
+    Ellipse(string shapeType,
             QPoint coords,
             QPen   pen,
             QBrush brush,

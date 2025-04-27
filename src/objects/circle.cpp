@@ -4,14 +4,12 @@
 * derived class Circle - Base Shape
 *****************************************************/
 
-Circle::Circle(int    shapeId,
-               string shapeType,
+Circle::Circle(string shapeType,
                QPoint coords,
                QPen   pen,
                QBrush brush,
                int    r)
-       : Shape(shapeId,
-               shapeType,
+       : Shape(shapeType,
                coords,
                pen,
                brush),
@@ -51,6 +49,11 @@ Circle::Circle(int    shapeId,
 
         childItems[7]->setText(0, "Brush:");
         childItems[7]->setFlags(childItems[7]->flags() | Qt::ItemIsEditable);
+    setShapeId(7);
+
+    getChildItems().push_back(new QTreeWidgetItem());
+    getParentItem()->addChild(getChildItems()[5]);
+    getChildItems()[5]->setText(0, "Radius:");
 }
 
 

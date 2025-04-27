@@ -4,17 +4,17 @@
 * derived class Square - Base Shape
 *****************************************************/
 
-Square::Square(int    shapeId,
-               string shapeType,
+Square::Square(string shapeType,
                QPoint coords,
                QPen   pen,
                QBrush brush,
                int length)
-             : Shape(shapeId, shapeType, coords, pen, brush),
+             : Shape(shapeType, coords, pen, brush),
                length{length}
 {
     parentItem->setText(0, QString::fromStdString(shapeType));
-
+    setShapeId(5);
+    
     for (int i = 0; i < 8; ++i)
     {
         childItems.push_back(new QTreeWidgetItem());

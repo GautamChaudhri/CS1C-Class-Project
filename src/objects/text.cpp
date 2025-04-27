@@ -4,8 +4,7 @@
 * derived class Text - Base Shape
 *****************************************************/
 
-Text::Text(int    shapeId,
-           string shapeType,
+Text::Text(string shapeType,
            QPoint coords,
            QString textString,
            GlobalColor   textColor,
@@ -13,7 +12,7 @@ Text::Text(int    shapeId,
            QFont             font,
            int           length,
            int           width)
-        : Shape(shapeId, shapeType, coords, QPen(), QBrush()),
+        : Shape(shapeType, coords, QPen(), QBrush()),
             textString{textString},
             textColor{textColor},
             textAlignment{textAlignment},
@@ -62,6 +61,7 @@ Text::Text(int    shapeId,
 
     childItems[9]->setText(0, "Font Weight:");
     childItems[9]->setFlags(childItems[9]->flags() | Qt::ItemIsEditable);
+    setShapeId(8);
 }
 
 

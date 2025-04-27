@@ -3,14 +3,12 @@
 /****************************************************
 * derived class Polyline - Base Shape
 *****************************************************/
-Polyline::Polyline(int    shapeId,
-                    string shapeType,
+Polyline::Polyline(string shapeType,
                     QPoint coords,
                     QPen   pen,
                     QBrush brush,
                     QPolygon pointsList)
-                : Shape(shapeId,
-                        shapeType,
+                : Shape(shapeType,
                         coords,
                         pen,
                         brush),
@@ -67,10 +65,11 @@ Polyline::Polyline(int    shapeId,
 
         childItems[11]->setText(0, "Pen:");
         childItems[11]->setFlags(childItems[11]->flags() | Qt::ItemIsEditable);
+
+        setShapeId(2);
 }
 
 Polyline::~Polyline() {}
-
 
 void Polyline::Draw(QWidget* renderArea)
 {

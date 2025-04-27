@@ -23,6 +23,7 @@ public:
 
     void mousePressEvent(QMouseEvent* event) override;
     void mouseMoveEvent(QMouseEvent* event) override;
+    void mouseDoubleClickEvent(QMouseEvent* event) override;
 
     void setShapeSelectedIndex(int newIndex);
     void resetSelection();
