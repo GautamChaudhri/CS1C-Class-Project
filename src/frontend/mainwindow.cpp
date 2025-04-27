@@ -1,7 +1,5 @@
 #include "mainwindow.h"
 
-enum typeID {LineID = 1, PolylineID, PolygonID, RectangleID,SquareID,EllipseID,CircleID,TextID };
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -79,47 +77,52 @@ void MainWindow::shapes_to_treeWidget()
         // Add the comboboxes to the children
         switch (item->getShapeId())
         {
-        case LineID:
+        case LINE:
             ui->treeWidget->setItemWidget(item->getChildItems()[7], 1, penStyleCombo);
             break;
 
-        case PolylineID:
+        case POLYLINE:
             ui->treeWidget->setItemWidget(item->getChildItems()[11], 1, penStyleCombo);
             break;
 
-        case PolygonID:
+        case POLYGON:
             ui->treeWidget->setItemWidget(item->getChildItems()[11], 1, penStyleCombo);
             ui->treeWidget->setItemWidget(item->getChildItems()[12], 1, brushStyleCombo);
             break;
 
-        case RectangleID:
+        case RECTANGLE:
             ui->treeWidget->setItemWidget(item->getChildItems()[7], 1, penStyleCombo);
             ui->treeWidget->setItemWidget(item->getChildItems()[8], 1, brushStyleCombo);
             break;
 
-        case SquareID:
+        case SQUARE:
             ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, penStyleCombo);
             ui->treeWidget->setItemWidget(item->getChildItems()[7], 1, brushStyleCombo);
             break;
 
-        case EllipseID:
+        case ELLIPSE:
             ui->treeWidget->setItemWidget(item->getChildItems()[7], 1, penStyleCombo);
             ui->treeWidget->setItemWidget(item->getChildItems()[8], 1, brushStyleCombo);
             break;
 
-        case CircleID:
+        case CIRCLE:
             ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, penStyleCombo);
             ui->treeWidget->setItemWidget(item->getChildItems()[7], 1, brushStyleCombo);
             break;
 
-        case TextID:
-
+        case TEXT:
             Text* text = static_cast<Text*>(item);
 
             QComboBox* alignmentCombo  = createAlignmentComboBox(text->getTextAlignment());
             QComboBox* fontCombo       = createFontComboBox(text->getFont());
             QComboBox* fontStyleCombo  = createFontStyleComboBox(text->getFontStyle());
             QComboBox* fontWeightCombo = createFontWeightComboBox(text->getFontWeight());
+
+            // Set parent of combo box as treeWidget
+            alignmentCombo->setParent(ui->treeWidget);
+            fontCombo->setParent(ui->treeWidget);
+            fontStyleCombo->setParent(ui->treeWidget);
+            fontWeightCombo->setParent(ui->treeWidget);
 
             ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, alignmentCombo);
             ui->treeWidget->setItemWidget(item->getChildItems()[7], 1, fontCombo);
@@ -324,8 +327,10 @@ QComboBox* MainWindow::createAlignmentComboBox(Qt::AlignmentFlag currentAlignmen
 
     // Match currentAlignment to its index
     int index = -1;
-    for (int i = 0; i < box->count(); ++i) {
-        if (box->itemData(i).toInt() == static_cast<int>(currentAlignment)) {
+    for (int i = 0; i < box->count(); ++i)
+    {
+        if (box->itemData(i).toInt() == static_cast<int>(currentAlignment))
+        {
             index = i;
             break;
         }
@@ -346,19 +351,33 @@ QComboBox* MainWindow::createFontComboBox(QFont currentFont)
     box->addItem("Courier New", 2);
     box->addItem("Verdana", 3);
     box->addItem("Tahoma", 4);
+    box->addItem("Comic Sans MS", 5);
 
     // This sucks but TOO BAD!!!
     int index = 0;
-    if (currentFont.family() == "Arial") {
+    if (currentFont.family() == "Arial")
+    {
         index = 0;
-    } else if (currentFont.family() == "Times New Roman") {
+    }
+    else if (currentFont.family() == "Times New Roman")
+    {
         index = 1;
-    } else if (currentFont.family() == "Courier New") {
+    }
+    else if (currentFont.family() == "Courier New")
+    {
         index = 2;
-    } else if (currentFont.family() == "Verdana") {
+    }
+    else if (currentFont.family() == "Verdana")
+    {
         index = 3;
-    } else if (currentFont.family() == "Tahoma") {
+    }
+    else if (currentFont.family() == "Tahoma")
+    {
         index = 4;
+    }
+    else if (currentFont.family() == "Comic Sans MS")
+    {
+        index = 5;
     }
 
     box->setCurrentIndex(index);
@@ -387,8 +406,10 @@ QComboBox* MainWindow::createFontWeightComboBox(QFont::Weight currentFontWeight)
 
     // Match currentFontWeight to its index
     int index = -1;
-    for (int i = 0; i < box->count(); ++i) {
-        if (box->itemData(i).toInt() == static_cast<int>(currentFontWeight)) {
+    for (int i = 0; i < box->count(); ++i)
+    {
+        if (box->itemData(i).toInt() == static_cast<int>(currentFontWeight))
+        {
             index = i;
             break;
         }
