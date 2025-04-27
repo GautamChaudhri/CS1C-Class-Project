@@ -33,7 +33,7 @@ QWidget
 QLabel
 {
 	background-color: transparent;
-	color: #fff;
+        color: #fff;
 
 }
 
@@ -129,13 +129,11 @@ QToolButton
 
 }
 
-
 QToolButton:pressed
 {
     background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 
 }
-
 
 QToolButton:checked
 {
@@ -156,16 +154,15 @@ QLineEdit{
 /*-----QTreeView-----*/
 QTreeView 
 {
-	background-color: #434343;
+    background-color: #434343;
     border: 0.5px solid rgba(108,108,108,75);
 
 }
 
 
 QTreeView::item, 
-QTreeView::branch 
+QTreeView::branch
 {
-    background: transparent;
     color: #DDD;
 
 }
@@ -241,4 +238,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
     background-color: transparent;
 
 }
+
+QToolBar {
+    border-top: 0px;
+}
+
 
