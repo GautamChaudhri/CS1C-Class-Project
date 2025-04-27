@@ -4,13 +4,13 @@
 * derived class Square - Base Shape
 *****************************************************/
 
-Square::Square(int    trackerId,
+Square::Square(int    shapeId,
                string shapeType,
                QPoint coords,
                QPen   pen,
                QBrush brush,
                int length)
-             : Shape(trackerId, shapeType, coords, pen, brush),
+             : Shape(shapeId, shapeType, coords, pen, brush),
                length{length}
 {}
 

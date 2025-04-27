@@ -10,7 +10,7 @@ class Line : public Shape
 {
 public:
 
-    Line(int    trackerId,
+    Line(int    shapeId,
          string shapeType,
          QPoint coords,
          QPen   pen,

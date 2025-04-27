@@ -4,7 +4,7 @@
 * derived class Text - Base Shape
 *****************************************************/
 
-Text::Text(int    trackerId,
+Text::Text(int    shapeId,
            string shapeType,
            QPoint coords,
            QString textString,
@@ -13,7 +13,7 @@ Text::Text(int    trackerId,
            QFont             font,
            int           length,
            int           width)
-        : Shape(trackerId, shapeType, coords, QPen(), QBrush()),
+        : Shape(shapeId, shapeType, coords, QPen(), QBrush()),
             textString{textString},
             textColor{textColor},
             textAlignment{textAlignment},

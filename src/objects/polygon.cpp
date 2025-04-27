@@ -4,13 +4,13 @@
 * derived class Polygon - Base Shape
 *****************************************************/
 
-Polygon::Polygon(int    trackerId,
+Polygon::Polygon(int    shapeId,
                  string shapeType,
                  QPoint coords,
                  QPen   pen,
                  QBrush brush,
                  QPolygon pointsList)
-               : Shape(trackerId,
+               : Shape(shapeId,
                        shapeType,
                        coords,
                        pen,

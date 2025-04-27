@@ -4,14 +4,14 @@
 * derived class Rectangle - Base Shape
 *****************************************************/
 
-Rectangle::Rectangle(int    trackerId,
+Rectangle::Rectangle(int    shapeId,
                      string shapeType,
                      QPoint coords,
                      QPen   pen,
                      QBrush brush,
                      int length,
                      int width)
-                   : Shape(trackerId, shapeType, coords, pen, brush),
+                   : Shape(shapeId, shapeType, coords, pen, brush),
                     length{length},
                     width{width}
 {}

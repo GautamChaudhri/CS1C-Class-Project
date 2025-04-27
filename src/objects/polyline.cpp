@@ -3,13 +3,13 @@
 /****************************************************
 * derived class Polyline - Base Shape
 *****************************************************/
-Polyline::Polyline(int    trackerId,
+Polyline::Polyline(int    shapeId,
                     string shapeType,
                     QPoint coords,
                     QPen   pen,
                     QBrush brush,
                     QPolygon pointsList)
-                : Shape(trackerId,
+                : Shape(shapeId,
                         shapeType,
                         coords,
                         pen,

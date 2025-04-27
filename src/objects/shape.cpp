@@ -5,12 +5,12 @@
 * class Shape - Abstract Base Class
 *****************************************************/
 
-Shape::Shape(int    trackerId,
+Shape::Shape(int    shapeId,
              string shapeType,
              QPoint coords,
              QPen   pen,
              QBrush brush)
-           : trackerId{trackerId},
+           : shapeId{shapeId},
              shapeType{shapeType},
              coords{coords},
              pen{pen},

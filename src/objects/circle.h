@@ -6,7 +6,7 @@
 class Circle : public Shape
 {
 public:
-    Circle(int    trackerId,
+    Circle(int    shapeId,
            string shapeType,
            QPoint coords,
            QPen   pen,

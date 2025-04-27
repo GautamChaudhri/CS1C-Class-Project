@@ -4,13 +4,13 @@
 * derived class Circle - Base Shape
 *****************************************************/
 
-Circle::Circle(int    trackerId,
+Circle::Circle(int    shapeId,
                string shapeType,
                QPoint coords,
                QPen   pen,
                QBrush brush,
                int    r)
-       : Shape(trackerId,
+       : Shape(shapeId,
                shapeType,
                coords,
                pen,

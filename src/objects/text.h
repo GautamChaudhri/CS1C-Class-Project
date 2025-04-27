@@ -6,7 +6,7 @@
 class Text : public Shape
 {
 public:
-    Text(int    trackerId,
+    Text(int    shapeId,
          string shapeType,
          QPoint coords,
          QString textString,
