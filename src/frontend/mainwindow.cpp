@@ -165,14 +165,14 @@ void MainWindow::showRenderStatusMessage(const QString &message)
 
 void MainWindow::on_actionnew_square_button_triggered()
 {
-    Square* square = new Square("Square", QPoint(0, 0), QPen(), QBrush(), 100);
+    Square* square = new Square("Square", QPoint(0, 10), QPen(), QBrush(), 100);
 
     addToShapeTree(square);
 }
 
 void MainWindow::on_actionnew_line_button_triggered()
 {
-    Line* line = new Line("Line", QPoint(0, 0), QPen(), QBrush(), QPoint(0, 0), QPoint(50, 50));
+    Line* line = new Line("Line", QPoint(0, 10), QPen(), QBrush(), QPoint(0, 10), QPoint(50, 60));
 
     addToShapeTree(line);
 }
@@ -180,7 +180,7 @@ void MainWindow::on_actionnew_line_button_triggered()
 
 void MainWindow::on_actionnew_rectange_button_triggered()
 {
-    Rectangle* rectangle = new Rectangle("Rectangle", QPoint(0, 0), QPen(), QBrush(), 100, 50);
+    Rectangle* rectangle = new Rectangle("Rectangle", QPoint(0, 10), QPen(), QBrush(), 100, 50);
 
     addToShapeTree(rectangle);
 }
@@ -188,7 +188,7 @@ void MainWindow::on_actionnew_rectange_button_triggered()
 
 void MainWindow::on_actionnew_circle_button_triggered()
 {
-    Circle* circle = new Circle("Circle", QPoint(25, 25), QPen(), QBrush(), 25);
+    Circle* circle = new Circle("Circle", QPoint(25, 35), QPen(), QBrush(), 25);
 
     addToShapeTree(circle);
 }
@@ -196,7 +196,7 @@ void MainWindow::on_actionnew_circle_button_triggered()
 
 void MainWindow::on_actionnew_ellipse_button_triggered()
 {
-    Ellipse* ellipse = new Ellipse("Ellipse", QPoint(25, 20), QPen(), QBrush(), 25, 20);
+    Ellipse* ellipse = new Ellipse("Ellipse", QPoint(25, 30), QPen(), QBrush(), 25, 20);
 
     addToShapeTree(ellipse);
 }
@@ -204,7 +204,7 @@ void MainWindow::on_actionnew_ellipse_button_triggered()
 
 void MainWindow::on_actionnew_polyline_button_triggered()
 {
-    Polyline* polyline = new Polyline("Polyline", QPoint(50, 100), QPen(), QBrush(), QPolygon({QPoint(50, 100), QPoint(100, 50), QPoint(150, 100)}));
+    Polyline* polyline = new Polyline("Polyline", QPoint(0, 10), QPen(), QBrush(), QPolygon({QPoint(0, 60), QPoint(25, 10), QPoint(50, 60), QPoint(75, 10)}));
 
     addToShapeTree(polyline);
 }
@@ -212,7 +212,7 @@ void MainWindow::on_actionnew_polyline_button_triggered()
 
 void MainWindow::on_actionnew_polygon_button_triggered()
 {
-    Polygon* polygon = new Polygon("Polygon", QPoint(50, 100), QPen(), QBrush(), QPolygon({QPoint(50, 100), QPoint(100, 50), QPoint(150, 100)}));
+    Polygon* polygon = new Polygon("Polygon", QPoint(0, 10), QPen(), QBrush(), QPolygon({QPoint(0, 60), QPoint(50, 10), QPoint(100, 60), QPoint(50, 45)}));
 
     addToShapeTree(polygon);
 }
@@ -220,7 +220,7 @@ void MainWindow::on_actionnew_polygon_button_triggered()
 
 void MainWindow::on_actionnew_text_button_triggered()
 {
-    Text* text = new Text("Text", QPoint(0, 0), "Hello World", Qt::black, Qt::AlignLeft, QFont("Arial", 12), 100, 50);
+    Text* text = new Text("Text", QPoint(0, 10), "Hello World", Qt::black, Qt::AlignLeft, QFont("Arial", 12), 100, 50);
 
     addToShapeTree(text);
 }
