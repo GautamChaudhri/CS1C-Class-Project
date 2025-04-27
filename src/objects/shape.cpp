@@ -19,7 +19,7 @@ Shape::Shape(int    shapeId,
 {
     parentItem->setText(0, QString::fromStdString(shapeType));
 
-    for (int i = 0; i < 6; ++i) // 6 being # of data members in shape being displayed for all shapes (JUST FOR TESTING PLEASE CHANGE)
+    for (int i = 0; i < 7; ++i) // 6 being # of data members in shape being displayed for all shapes (JUST FOR TESTING PLEASE CHANGE)
     {
         childItems.push_back(new QTreeWidgetItem());
         parentItem->addChild(childItems[i]);
@@ -28,22 +28,25 @@ Shape::Shape(int    shapeId,
     childItems[0]->setText(0, "Shape ID:");
     childItems[0]->setText(1, QString::number(getShapeId()));
 
-    childItems[1]->setText(0, "Shape Type:");
-    childItems[1]->setFlags(childItems[1]->flags() | Qt::ItemIsEditable);
+    childItems[1]->setText(0, "Tracker ID:");
+    childItems[1]->setText(1, QString::number(getTrackerId()));
 
-    childItems[2]->setText(0, "X:");
-    childItems[2]->setText(1, QString::number(getX()));
+    childItems[2]->setText(0, "Shape Type:");
     childItems[2]->setFlags(childItems[2]->flags() | Qt::ItemIsEditable);
 
-    childItems[3]->setText(0, "Y:");
-    childItems[3]->setText(1, QString::number(getY()));
+    childItems[3]->setText(0, "X:");
+    childItems[3]->setText(1, QString::number(getX()));
     childItems[3]->setFlags(childItems[3]->flags() | Qt::ItemIsEditable);
 
-    childItems[4]->setText(0, "Pen:");
+    childItems[4]->setText(0, "Y:");
+    childItems[4]->setText(1, QString::number(getY()));
     childItems[4]->setFlags(childItems[4]->flags() | Qt::ItemIsEditable);
 
-    childItems[5]->setText(0, "Brush:");
+    childItems[5]->setText(0, "Pen:");
     childItems[5]->setFlags(childItems[5]->flags() | Qt::ItemIsEditable);
+
+    childItems[6]->setText(0, "Brush:");
+    childItems[6]->setFlags(childItems[6]->flags() | Qt::ItemIsEditable);
 }
 
 Shape::~Shape()
@@ -84,7 +87,7 @@ QPoint       Shape::getPoints()       const { return coords;}
 
 /***************** MUTATOR FUNCTIONS ****************/
 void Shape::setShapeId(int shapeId)        { this->shapeId   = shapeId; }
-void Shape::setTrackerId(int trackerId)    { this->trackerId = trackerId; }
+void Shape::setTrackerId(int trackerId)    { /*this->trackerId = trackerId;*/} //This causes issues
 void Shape::setShapeType(string shapeType) { this->shapeType = shapeType; }
 void Shape::setSelected(bool selected)     { isSelected = selected;}
 

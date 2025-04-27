@@ -77,9 +77,9 @@ void MainWindow::shapes_to_treeWidget()
         ui->treeWidget->addTopLevelItem(item->getParentItem());
 
         // Add the comboboxes to the children
-        ui->treeWidget->setItemWidget(item->getChildItems()[1], 1, shapeTypeCombo);
-        ui->treeWidget->setItemWidget(item->getChildItems()[4], 1, penStyleCombo);
-        ui->treeWidget->setItemWidget(item->getChildItems()[5], 1, brushStyleCombo);
+        ui->treeWidget->setItemWidget(item->getChildItems()[2], 1, shapeTypeCombo);
+        ui->treeWidget->setItemWidget(item->getChildItems()[5], 1, penStyleCombo);
+        ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, brushStyleCombo);
     }
 }
 
@@ -241,9 +241,16 @@ QComboBox* MainWindow::createBrushStyleComboBox(int currentBrushStyle)
     box->addItem("Dense5Pattern", static_cast<int>(Qt::Dense5Pattern));
     box->addItem("Dense6Pattern", static_cast<int>(Qt::Dense6Pattern));
     box->addItem("Dense7Pattern", static_cast<int>(Qt::Dense7Pattern));
+    box->addItem("HorPattern", static_cast<int>(Qt::HorPattern));
+    box->addItem("VerPattern", static_cast<int>(Qt::VerPattern));
+    box->addItem("CrossPattern", static_cast<int>(Qt::CrossPattern));
+    box->addItem("BDiagPattern", static_cast<int>(Qt::BDiagPattern));
+    box->addItem("FDiagPattern", static_cast<int>(Qt::FDiagPattern));
+    box->addItem("DiagCrossPattern", static_cast<int>(Qt::DiagCrossPattern));
     box->setCurrentIndex(currentBrushStyle);
     return box;
 }
+
 
 void MainWindow::on_actionremove_shape_button_triggered()
 {
@@ -251,6 +258,9 @@ void MainWindow::on_actionremove_shape_button_triggered()
     {
         if(renderArea->getShapeSelectedIndex() >= 0)
         {
+            qDebug() << "Selected Index: " << renderArea->getShapeSelectedIndex();
+            qDebug() << "Tracker ID: "     << renderArea->getShapeSelected();
+
             emit shapeDeleted(renderArea->getShapeSelected());
         }
     }

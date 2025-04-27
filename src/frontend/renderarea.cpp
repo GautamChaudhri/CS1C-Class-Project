@@ -89,6 +89,11 @@ void RenderArea::setShapeSelectedIndex(int newIndex)
 
 int RenderArea::getShapeSelected() const
 {
+    if(shapeSelectedIndex < 0)
+    {
+        return -1;
+    }
+
     return (*renderShapes)[shapeSelectedIndex]->getTrackerId();
 }
 

@@ -34,7 +34,7 @@ using Qt::AlignmentFlag;
 const double PI = 3.14;
 
 
-static int globalTracker; // contains the highest tracker id
+static int globalTracker = 0; // contains the highest tracker id
 
 /****************************************************
 * class Shape - Abstract Base Class
