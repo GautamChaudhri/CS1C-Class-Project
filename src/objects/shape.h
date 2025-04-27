@@ -99,6 +99,10 @@ public:
     void setBrush(GlobalColor brushColor, BrushStyle brushStyle);
     /****************************************************/
 
+protected:
+    QTreeWidgetItem* parentItem;
+    alpha::vector<QTreeWidgetItem*> childItems;
+
 private:
     int      shapeId;
     int      trackerId = globalTracker++;
@@ -111,9 +115,6 @@ private:
     QPainter painter;
 
     bool isSelected = false;
-
-    QTreeWidgetItem* parentItem;
-    alpha::vector<QTreeWidgetItem*> childItems;
 
     // Disable Copy Operations
     Shape(Shape& shape) = delete;
