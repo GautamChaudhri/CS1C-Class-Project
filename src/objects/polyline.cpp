@@ -17,9 +17,6 @@ Polyline::Polyline(string shapeType,
     setShapeId(2);
 }
 
-Polyline::~Polyline() {}
-
-
 void Polyline::Draw(QWidget* renderArea)
 {
     if (!getPainter().isActive())

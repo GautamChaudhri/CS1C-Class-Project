@@ -57,6 +57,46 @@ void RenderArea::mouseMoveEvent(QMouseEvent* event)
     }
 }
 
+void RenderArea::mouseDoubleClickEvent(QMouseEvent* event)
+{
+    if (shapeSelectedIndex >= 0 && shapeSelectedIndex < renderShapes->size())
+    {
+        switch((*renderShapes)[shapeSelectedIndex]->getShapeId())
+        {
+        case 1: // Line
+
+            break;
+
+        case 2: // Polyline
+            break;
+
+        case 3:
+            break;
+
+        case 4:
+            break;
+
+        case 5:
+
+            break;
+
+        case 6:
+
+            break;
+
+        case 7:
+
+            break;
+
+        case 8:
+
+            break;
+        }
+    }
+
+    update();
+}
+
 void RenderArea::resetSelection()
 {
     int vecSize = renderShapes->size();

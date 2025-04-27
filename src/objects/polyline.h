@@ -12,8 +12,6 @@ public:
              QBrush brush,
              QPolygon pointsList);
 
-    ~Polyline();
-
     void Draw(QWidget* renderArea) override;
     void Move(int x, int y) override;
 

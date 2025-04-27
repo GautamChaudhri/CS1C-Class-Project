@@ -19,9 +19,6 @@ Polygon::Polygon(string shapeType,
 }
 
 
-Polygon::~Polygon() {}
-
-
 void Polygon::Draw(QWidget* renderArea)
 {
     if (!getPainter().isActive())
