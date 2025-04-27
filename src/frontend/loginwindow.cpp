@@ -92,5 +92,5 @@ void LoginWindow::attemptLogin() {
 }
 
 void LoginWindow::attemptSignup() {
-    emit signupRequested(signupUserEdit->text(), signupPassEdit->text(), false);
+    emit signupRequested(signupUserEdit->text(), signupPassEdit->text(), true);
 }

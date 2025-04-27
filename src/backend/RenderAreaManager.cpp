@@ -90,7 +90,7 @@ void RenderAreaManager::deleteAllShapes() {
 
 
 void RenderAreaManager::loadShapes() {
-    client.GetShapes();
+    client.GetRenderArea();
     emit renderAreaChanged();
 }
 

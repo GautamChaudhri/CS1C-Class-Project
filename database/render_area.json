@@ -1,9 +1,9 @@
 [
 {
-"ShapeId": 5,
+"ShapeId": 7,
 "TrackerId": 0,
-"ShapeType": "Square",
-"ShapeDimensions": [0, 0, 100],
+"ShapeType": "Circle",
+"ShapeDimensions": [25, 25, 25],
 "PenColor": "black",
 "PenWidth": 1,
 "PenStyle": "SolidLine",
@@ -13,10 +13,10 @@
 "BrushStyle": "NoBrush"
 },
 {
-"ShapeId": 7,
+"ShapeId": 6,
 "TrackerId": 0,
-"ShapeType": "Circle",
-"ShapeDimensions": [25, 25, 25],
+"ShapeType": "Ellipse",
+"ShapeDimensions": [25, 20, 25, 20],
 "PenColor": "black",
 "PenWidth": 1,
 "PenStyle": "SolidLine",
@@ -35,5 +35,29 @@
 "PenStyle": "SolidLine",
 "PenCapStyle": "SquareCap",
 "PenJoinStyle": "BevelJoin"
+},
+{
+"ShapeId": 2,
+"TrackerId": 0,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 100, 100, 50, 150, 100],
+"PenColor": "black",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "BevelJoin"
+},
+{
+"ShapeId": 3,
+"TrackerId": 0,
+"ShapeType": "Polygon",
+"ShapeDimensions": [50, 100, 100, 50, 150, 100],
+"PenColor": "black",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
 }
 ]

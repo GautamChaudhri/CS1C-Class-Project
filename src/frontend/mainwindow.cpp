@@ -275,7 +275,6 @@ void MainWindow::onSignupRequest(const QString &username, const QString &passwor
     emit newUserAdded(username, password, admin);
 }
 
-
 void MainWindow::onUserAuthentication(const UserAccount* currUser) {
     this->currUser = currUser;
     userStatusLabel->setText("Logged in as: " + currUser->getUsername());   
