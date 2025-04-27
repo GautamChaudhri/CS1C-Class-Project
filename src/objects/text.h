@@ -30,6 +30,8 @@ public:
     GlobalColor   getTextColor()     const;
     QFont         getFont()          const;
     AlignmentFlag getTextAlignment() const;
+    int           getFontStyle()     const;
+    QFont::Weight getFontWeight()    const;
     /**********************************************/
 
 private:

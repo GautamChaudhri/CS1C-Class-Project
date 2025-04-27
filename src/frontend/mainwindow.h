@@ -91,5 +91,11 @@ private:
     QComboBox* createShapeTypeComboBox(const QString& currentShapeType);
     QComboBox* createPenStyleComboBox(int currentPenStyle);
     QComboBox* createBrushStyleComboBox(int currentBrushStyle);
+
+    QComboBox* createAlignmentComboBox(AlignmentFlag currentAlignment);
+    QComboBox* createFontComboBox(QFont currentFont);
+    QComboBox* createFontStyleComboBox(int currentFontStyle);
+    QComboBox* createFontWeightComboBox(QFont::Weight currentFontWeight);
+
 };
 #endif // MAINWINDOW_H

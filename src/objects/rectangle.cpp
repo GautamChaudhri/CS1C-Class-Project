@@ -14,6 +14,44 @@ Rectangle::Rectangle(string shapeType,
                     length{length},
                     width{width}
 {
+    parentItem->setText(0, QString::fromStdString(shapeType));
+
+    for (int i = 0; i < 9; ++i)
+    {
+        childItems.push_back(new QTreeWidgetItem());
+        parentItem->addChild(childItems[i]);
+    }
+
+        childItems[0]->setText(0, "Shape ID:");
+        childItems[0]->setText(1, QString::number(getShapeId()));
+
+        childItems[1]->setText(0, "Tracker ID:");
+        childItems[1]->setText(1, QString::number(getTrackerId()));
+
+        childItems[2]->setText(0, "Shape Type:");
+        childItems[2]->setText(1, QString::fromStdString(getShapeType()));
+
+        childItems[3]->setText(0, "X:");
+        childItems[3]->setText(1, QString::number(getX()));
+        childItems[3]->setFlags(getChildItems()[3]->flags() | Qt::ItemIsEditable);
+
+        childItems[4]->setText(0, "Y:");
+        childItems[4]->setText(1, QString::number(getY()));
+        childItems[4]->setFlags(getChildItems()[4]->flags() | Qt::ItemIsEditable);
+
+        childItems[5]->setText(0, "Length:");
+        childItems[5]->setText(1, QString::number(getLength()));
+        childItems[5]->setFlags(getChildItems()[5]->flags() | Qt::ItemIsEditable);
+
+        childItems[6]->setText(0, "Width:");
+        childItems[6]->setText(1, QString::number(getWidth()));
+        childItems[6]->setFlags(getChildItems()[6]->flags() | Qt::ItemIsEditable);
+
+        childItems[7]->setText(0, "Pen:");
+        childItems[7]->setFlags(childItems[7]->flags() | Qt::ItemIsEditable);
+
+        childItems[8]->setText(0, "Brush:");
+        childItems[8]->setFlags(childItems[8]->flags() | Qt::ItemIsEditable);
     setShapeId(4);
 }
 

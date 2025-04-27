@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 
+enum typeID {LineID = 1, PolylineID, PolygonID, RectangleID,SquareID,EllipseID,CircleID,TextID };
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -75,44 +77,56 @@ void MainWindow::shapes_to_treeWidget()
         ui->treeWidget->addTopLevelItem(item->getParentItem());
 
         // Add the comboboxes to the children
-        // switch (item->getShapeId())
-        // {
-        // case 1:
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[5], 1, penStyleCombo);
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, brushStyleCombo);
-        //     break;
-
-        // case 2:
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[5], 1, penStyleCombo);
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, brushStyleCombo);
-        //     break;
-        // }
-
-        item->getParentItem()->setText(0, QString::fromStdString(item->getShapeType()));
-
-        for (int i = 0; i < 7; ++i) // 6 being # of data members in shape being displayed for all shapes (JUST FOR TESTING PLEASE CHANGE)
+        switch (item->getShapeId())
         {
-            item->getChildItems().push_back(new QTreeWidgetItem());
-            item->getParentItem()->addChild(item->getChildItems()[i]);
+        case LineID:
+            ui->treeWidget->setItemWidget(item->getChildItems()[7], 1, penStyleCombo);
+            break;
+
+        case PolylineID:
+            ui->treeWidget->setItemWidget(item->getChildItems()[11], 1, penStyleCombo);
+            break;
+
+        case PolygonID:
+            ui->treeWidget->setItemWidget(item->getChildItems()[11], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[12], 1, brushStyleCombo);
+            break;
+
+        case RectangleID:
+            ui->treeWidget->setItemWidget(item->getChildItems()[7], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[8], 1, brushStyleCombo);
+            break;
+
+        case SquareID:
+            ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[7], 1, brushStyleCombo);
+            break;
+
+        case EllipseID:
+            ui->treeWidget->setItemWidget(item->getChildItems()[7], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[8], 1, brushStyleCombo);
+            break;
+
+        case CircleID:
+            ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[7], 1, brushStyleCombo);
+            break;
+
+        case TextID:
+
+            Text* text = static_cast<Text*>(item);
+
+            QComboBox* alignmentCombo  = createAlignmentComboBox(text->getTextAlignment());
+            QComboBox* fontCombo       = createFontComboBox(text->getFont());
+            QComboBox* fontStyleCombo  = createFontStyleComboBox(text->getFontStyle());
+            QComboBox* fontWeightCombo = createFontWeightComboBox(text->getFontWeight());
+
+            ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, alignmentCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[7], 1, fontCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[8], 1, fontStyleCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[9], 1, fontWeightCombo);
+            break;
         }
-        // hard coded spaces for each subitem, change as you please
-        item->getChildItems()[0]->setText(0, "Shape ID:");
-        item->getChildItems()[0]->setText(1, QString::number(item->getShapeId()));
-
-        item->getChildItems()[1]->setText(0, "Tracker ID:");
-        item->getChildItems()[1]->setText(1, QString::number(item->getTrackerId()));
-
-        item->getChildItems()[2]->setText(0, "Shape Type:");
-        item->getChildItems()[2]->setText(1, QString::fromStdString(item->getShapeType()));
-
-        item->getChildItems()[3]->setText(0, "X:");
-        item->getChildItems()[3]->setText(1, QString::number(item->getX()));
-        item->getChildItems()[3]->setFlags(item->getChildItems()[3]->flags() | Qt::ItemIsEditable);
-
-        item->getChildItems()[4]->setText(0, "Y:");
-        item->getChildItems()[4]->setText(1, QString::number(item->getY()));
-        item->getChildItems()[4]->setFlags(item->getChildItems()[4]->flags() | Qt::ItemIsEditable);
-
     }
 }
 
@@ -289,11 +303,102 @@ void MainWindow::on_actionremove_shape_button_triggered()
             emit shapeDeleted(renderArea->getShapeSelected());
         }
     }
-    catch (...)
+    catch (...) // Added to help programmers debug in future
     {
-        // The code works but an exception keeps being thrown which is why this exists :/
+
     }
 
     renderArea->resetSelection();
 }
+
+QComboBox* MainWindow::createAlignmentComboBox(Qt::AlignmentFlag currentAlignment)
+{
+    QComboBox* box = new QComboBox();
+    box->addItem("AlignLeft", static_cast<int>(Qt::AlignLeft));
+    box->addItem("AlignRight", static_cast<int>(Qt::AlignRight));
+    box->addItem("AlignHCenter", static_cast<int>(Qt::AlignHCenter));
+    box->addItem("AlignTop", static_cast<int>(Qt::AlignTop));
+    box->addItem("AlignBottom", static_cast<int>(Qt::AlignBottom));
+    box->addItem("AlignVCenter", static_cast<int>(Qt::AlignVCenter));
+    box->addItem("AlignCenter", static_cast<int>(Qt::AlignCenter));
+
+    // Match currentAlignment to its index
+    int index = -1;
+    for (int i = 0; i < box->count(); ++i) {
+        if (box->itemData(i).toInt() == static_cast<int>(currentAlignment)) {
+            index = i;
+            break;
+        }
+    }
+
+    // Set the appropriate index or default to 0 if no match is found
+    box->setCurrentIndex(index >= 0 ? index : 0);
+
+    return box;
+}
+
+
+QComboBox* MainWindow::createFontComboBox(QFont currentFont)
+{
+    QComboBox* box = new QComboBox();
+    box->addItem("Arial", 0);
+    box->addItem("Times New Roman", 1);
+    box->addItem("Courier New", 2);
+    box->addItem("Verdana", 3);
+    box->addItem("Tahoma", 4);
+
+    // This sucks but TOO BAD!!!
+    int index = 0;
+    if (currentFont.family() == "Arial") {
+        index = 0;
+    } else if (currentFont.family() == "Times New Roman") {
+        index = 1;
+    } else if (currentFont.family() == "Courier New") {
+        index = 2;
+    } else if (currentFont.family() == "Verdana") {
+        index = 3;
+    } else if (currentFont.family() == "Tahoma") {
+        index = 4;
+    }
+
+    box->setCurrentIndex(index);
+    return box;
+}
+
+
+QComboBox* MainWindow::createFontStyleComboBox(int currentFontStyle)
+{
+    QComboBox* box = new QComboBox();
+    box->addItem("Normal", 0);
+    box->addItem("Italic", 1);
+    box->addItem("Oblique", 2);
+    box->setCurrentIndex(currentFontStyle);
+    return box;
+}
+
+QComboBox* MainWindow::createFontWeightComboBox(QFont::Weight currentFontWeight)
+{
+    QComboBox* box = new QComboBox();
+    box->addItem("Thin", QFont::Thin);
+    box->addItem("Light", QFont::Light);
+    box->addItem("Normal", QFont::Normal);
+    box->addItem("Bold", QFont::Bold);
+    box->addItem("Black", QFont::Black);
+
+    // Match currentFontWeight to its index
+    int index = -1;
+    for (int i = 0; i < box->count(); ++i) {
+        if (box->itemData(i).toInt() == static_cast<int>(currentFontWeight)) {
+            index = i;
+            break;
+        }
+    }
+
+    // Set the appropriate index or default to 0 if no match is found
+    box->setCurrentIndex(index >= 0 ? index : 0);
+
+    return box;
+}
+
+
 

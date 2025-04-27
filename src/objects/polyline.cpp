@@ -14,7 +14,59 @@ Polyline::Polyline(string shapeType,
                         brush),
                     pointsList{pointsList}
 {
-    setShapeId(2);
+    parentItem->setText(0, QString::fromStdString(shapeType));
+
+    for (int i = 0; i < 12; ++i)
+    {
+        childItems.push_back(new QTreeWidgetItem());
+        parentItem->addChild(childItems[i]);
+    }
+
+        childItems[0]->setText(0, "Shape ID:");
+        childItems[0]->setText(1, QString::number(getShapeId()));
+
+        childItems[1]->setText(0, "Tracker ID:");
+        childItems[1]->setText(1, QString::number(getTrackerId()));
+
+        childItems[2]->setText(0, "Shape Type:");
+        childItems[2]->setText(1, QString::fromStdString(getShapeType()));
+
+        childItems[3]->setText(0, "X:");
+        childItems[3]->setText(1, QString::number(pointsList[0].x()));
+        childItems[3]->setFlags(getChildItems()[3]->flags() | Qt::ItemIsEditable);
+
+        childItems[4]->setText(0, "Y:");
+        childItems[4]->setText(1, QString::number(pointsList[0].y()));
+        childItems[4]->setFlags(getChildItems()[4]->flags() | Qt::ItemIsEditable);
+
+        childItems[5]->setText(0, "X2:");
+        childItems[5]->setText(1, QString::number(pointsList[1].x()));
+        childItems[5]->setFlags(getChildItems()[5]->flags() | Qt::ItemIsEditable);
+
+        childItems[6]->setText(0, "Y2:");
+        childItems[6]->setText(1, QString::number(pointsList[1].y()));
+        childItems[6]->setFlags(getChildItems()[6]->flags() | Qt::ItemIsEditable);
+
+        childItems[7]->setText(0, "X3:");
+        childItems[7]->setText(1, QString::number(pointsList[2].x()));
+        childItems[7]->setFlags(getChildItems()[7]->flags() | Qt::ItemIsEditable);
+
+        childItems[8]->setText(0, "Y3:");
+        childItems[8]->setText(1, QString::number(pointsList[2].y()));
+        childItems[8]->setFlags(getChildItems()[8]->flags() | Qt::ItemIsEditable);
+
+        childItems[9]->setText(0, "X4:");
+        childItems[9]->setText(1, QString::number(pointsList[3].x()));
+        childItems[9]->setFlags(getChildItems()[9]->flags() | Qt::ItemIsEditable);
+
+        childItems[10]->setText(0, "Y4:");
+        childItems[10]->setText(1, QString::number(pointsList[3].y()));
+        childItems[10]->setFlags(getChildItems()[10]->flags() | Qt::ItemIsEditable);
+
+        childItems[11]->setText(0, "Pen:");
+        childItems[11]->setFlags(childItems[11]->flags() | Qt::ItemIsEditable);
+
+        setShapeId(2);
 }
 
 void Polyline::Draw(QWidget* renderArea)

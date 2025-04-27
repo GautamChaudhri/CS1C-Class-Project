@@ -22,6 +22,7 @@ Shape::Shape(string shapeType,
         childItems.push_back(new QTreeWidgetItem());
         parentItem->addChild(childItems[i]);
     }
+
     // hard coded spaces for each subitem, change as you please
     childItems[0]->setText(0, "Shape ID:");
     childItems[0]->setText(1, QString::number(getShapeId()));
