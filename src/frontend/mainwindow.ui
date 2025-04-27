@@ -895,6 +895,9 @@
    <property name="text">
     <string>new line button</string>
    </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
@@ -911,6 +914,9 @@
    <property name="text">
     <string>new square button</string>
    </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
@@ -922,6 +928,9 @@
    </property>
    <property name="text">
     <string>new rectange button</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
    </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::NoRole</enum>
@@ -935,6 +944,9 @@
    <property name="text">
     <string>new circle button</string>
    </property>
+   <property name="shortcut">
+    <string>F4</string>
+   </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
@@ -946,6 +958,9 @@
    </property>
    <property name="text">
     <string>new ellipse button</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
    </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::NoRole</enum>
@@ -959,6 +974,9 @@
    <property name="text">
     <string>new polyline button</string>
    </property>
+   <property name="shortcut">
+    <string>F6</string>
+   </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
@@ -971,6 +989,9 @@
    <property name="text">
     <string>new polygon button</string>
    </property>
+   <property name="shortcut">
+    <string>F7</string>
+   </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
@@ -982,6 +1003,9 @@
    </property>
    <property name="text">
     <string>new text button</string>
+   </property>
+   <property name="shortcut">
+    <string>F8</string>
    </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::NoRole</enum>

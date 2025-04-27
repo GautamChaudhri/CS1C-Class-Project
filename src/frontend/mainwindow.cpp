@@ -74,15 +74,45 @@ void MainWindow::shapes_to_treeWidget()
         // Add top-level item to the tree widget
         ui->treeWidget->addTopLevelItem(item->getParentItem());
 
-        switch (item->getShapeId())
-        {
-        case 1:
-            break;
-        }
-
         // Add the comboboxes to the children
-        ui->treeWidget->setItemWidget(item->getChildItems()[5], 1, penStyleCombo);
-        ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, brushStyleCombo);
+        // switch (item->getShapeId())
+        // {
+        // case 1:
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[5], 1, penStyleCombo);
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, brushStyleCombo);
+        //     break;
+
+        // case 2:
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[5], 1, penStyleCombo);
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, brushStyleCombo);
+        //     break;
+        // }
+
+        item->getParentItem()->setText(0, QString::fromStdString(item->getShapeType()));
+
+        for (int i = 0; i < 7; ++i) // 6 being # of data members in shape being displayed for all shapes (JUST FOR TESTING PLEASE CHANGE)
+        {
+            item->getChildItems().push_back(new QTreeWidgetItem());
+            item->getParentItem()->addChild(item->getChildItems()[i]);
+        }
+        // hard coded spaces for each subitem, change as you please
+        item->getChildItems()[0]->setText(0, "Shape ID:");
+        item->getChildItems()[0]->setText(1, QString::number(item->getShapeId()));
+
+        item->getChildItems()[1]->setText(0, "Tracker ID:");
+        item->getChildItems()[1]->setText(1, QString::number(item->getTrackerId()));
+
+        item->getChildItems()[2]->setText(0, "Shape Type:");
+        item->getChildItems()[2]->setText(1, QString::fromStdString(item->getShapeType()));
+
+        item->getChildItems()[3]->setText(0, "X:");
+        item->getChildItems()[3]->setText(1, QString::number(item->getX()));
+        item->getChildItems()[3]->setFlags(item->getChildItems()[3]->flags() | Qt::ItemIsEditable);
+
+        item->getChildItems()[4]->setText(0, "Y:");
+        item->getChildItems()[4]->setText(1, QString::number(item->getY()));
+        item->getChildItems()[4]->setFlags(item->getChildItems()[4]->flags() | Qt::ItemIsEditable);
+
     }
 }
 
