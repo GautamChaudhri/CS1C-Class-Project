@@ -243,4 +243,7 @@ QToolBar {
     border-top: 0px;
 }
 
-
+/*-----QFrame-----*/
+QFrame {
+    background-color: #444;
+}
