@@ -64,12 +64,10 @@ void MainWindow::shapes_to_treeWidget()
         item = renderArea->getShapes()[i];
 
         // Creates the objects to hold the combo boxes
-        QComboBox* shapeTypeCombo = createShapeTypeComboBox(QString::fromStdString(item->getShapeType()));
         QComboBox* penStyleCombo = createPenStyleComboBox(item->getPenStyle());
         QComboBox* brushStyleCombo = createBrushStyleComboBox(item->getBrushStyle());
 
         // Set parent of combo box as treeWidget
-        shapeTypeCombo->setParent(ui->treeWidget);
         penStyleCombo->setParent(ui->treeWidget);
         brushStyleCombo->setParent(ui->treeWidget);
 
@@ -77,7 +75,6 @@ void MainWindow::shapes_to_treeWidget()
         ui->treeWidget->addTopLevelItem(item->getParentItem());
 
         // Add the comboboxes to the children
-        ui->treeWidget->setItemWidget(item->getChildItems()[2], 1, shapeTypeCombo);
         ui->treeWidget->setItemWidget(item->getChildItems()[5], 1, penStyleCombo);
         ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, brushStyleCombo);
     }
@@ -206,14 +203,6 @@ void MainWindow::onToggleStyle(bool checked) {
     // qDebug() << "Style size:" << style.length(); // Should be > 0
 
     qApp->setStyleSheet(style);
-}
-
-QComboBox* MainWindow::createShapeTypeComboBox(const QString& currentShapeType)
-{
-    QComboBox* box = new QComboBox();
-    box->addItems({"Square", "Rectangle", "Circle", "Ellipse", "Line", "Polyline", "Polygon", "Text"});
-    box->setCurrentText(currentShapeType);
-    return box;
 }
 
 QComboBox* MainWindow::createPenStyleComboBox(int currentPenStyle)
