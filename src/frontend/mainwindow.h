@@ -12,7 +12,7 @@
 #include "ui_mainwindow.h"
 #include "../backend/UserAccount.h"
 #include <QComboBox>
-#include "LoginWindow.h"
+#include "loginwindow.h"
 
 
 QT_BEGIN_NAMESPACE

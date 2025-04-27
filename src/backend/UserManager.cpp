@@ -17,7 +17,6 @@ UserManager::~UserManager() {
     // Destructor that cleans up the UserAccount objects
     for (size_t i = 0; i < users.size(); ++i)
         delete users[i];
-    delete currUser;
 }
 
 

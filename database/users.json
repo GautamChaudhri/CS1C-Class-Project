@@ -133,5 +133,15 @@
     "username": "gautam",
     "password": "gautam",
     "admin": false
+  },
+  {
+    "username": "g",
+    "password": "g",
+    "admin": false
+  },
+  {
+    "username": "test123",
+    "password": "test123",
+    "admin": false
   }
 ]
