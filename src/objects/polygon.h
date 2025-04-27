@@ -6,7 +6,7 @@
 class Polygon : public Shape
 {
 public:
-    Polygon(int    shapeId,
+    Polygon(int    trackerId,
              string shapeType,
              QPoint coords,
              QPen   pen,

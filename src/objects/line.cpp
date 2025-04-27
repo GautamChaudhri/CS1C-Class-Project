@@ -4,14 +4,14 @@
 * derived class Line - Base Shape
 *****************************************************/
 
-Line::Line(int    shapeId,
+Line::Line(int    trackerId,
            string shapeType,
            QPoint coords,
            QPen   pen,
            QBrush brush,
            QPoint startPoint,
            QPoint endPoint)
-        :  Shape (shapeId,
+        :  Shape (trackerId,
                   shapeType,
                   coords,
                   pen,

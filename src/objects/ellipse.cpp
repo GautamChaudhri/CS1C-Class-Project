@@ -4,14 +4,14 @@
 * derived class Ellipse - Base Shape
 *****************************************************/
 
-Ellipse::Ellipse(int    shapeId,
+Ellipse::Ellipse(int    trackerId,
                   string shapeType,
                   QPoint coords,
                   QPen   pen,
                   QBrush brush,
                   int    a,
                   int    b)
-                 : Shape(shapeId,
+                 : Shape(trackerId,
                          shapeType,
                          coords,
                          pen,

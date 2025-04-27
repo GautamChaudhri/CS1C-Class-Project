@@ -6,7 +6,7 @@
 class Rectangle : public Shape
 {
 public:
-    Rectangle(int    shapeId,
+    Rectangle(int    trackerId,
               string shapeType,
               QPoint coords,
               QPen   pen,

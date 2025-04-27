@@ -6,7 +6,7 @@
 class Polyline : public Shape
 {
 public:
-    Polyline(int    shapeId,
+    Polyline(int    trackerId,
              string shapeType,
              QPoint coords,
              QPen   pen,

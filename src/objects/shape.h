@@ -46,7 +46,7 @@ class Shape
 
 public:
 
-    Shape(int    shapeId,
+    Shape(int    trackerId,
           string shapeType,
           QPoint coords,
           QPen   pen,
