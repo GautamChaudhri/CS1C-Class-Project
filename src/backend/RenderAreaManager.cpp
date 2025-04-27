@@ -29,6 +29,12 @@ alpha::vector<Shape*>* RenderAreaManager::getShapesRef() {
 void RenderAreaManager::addShape(Shape* shape) {
     renderedShapes.push_back(shape);
     emit renderAreaChanged();
+    try {
+        std::string renderedShapeData = parse.ShapesToJson(renderedShapes);
+        client.PostRenderArea(renderedShapeData);
+    } catch (const std::exception &e) {
+        qWarning() << "RenderAreaManager::saveShapes failed:" << e.what();
+    }
 }
 
 

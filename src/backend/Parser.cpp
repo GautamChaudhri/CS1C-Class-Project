@@ -1,4 +1,5 @@
 #include "Parser.h"
+#include <string>
 
 // Public functions
 void Parser::PrintShapeVector(const alpha::vector<Shape*> &shapes) {
@@ -614,7 +615,7 @@ std::string Parser::AppendBrushData(const Shape* shape) {
 
 
 std::string Parser::AppendTextData(const Shape* shape) {
-    const Text* text = dynamic_cast<const Text*>(shape);
+    const Text* text = static_cast<const Text*>(shape);
     if (!text) throw std::runtime_error("Dynamic Cast to Text pointer failed.");
     std::string textData;
     textData += "\"ShapeId\": " + std::to_string(shape->getShapeId()) + ",\n"
@@ -639,7 +640,7 @@ std::string Parser::GetShapeDimensions(const Shape* shape) {
         case 1: {   //Line
             //Line pointer needed to access following get functions since they are 
             //only defined in the derived classes. Same follows for all cases.
-            const Line* line = dynamic_cast<const Line*>(shape);
+            const Line* line = static_cast<const Line*>(shape);
             if (!line) throw std::runtime_error("Dynamic Cast to Line pointer failed.");
             //Get the necessary points
             std::string startX = std::to_string(line->getStartPoint().x());
@@ -650,7 +651,7 @@ std::string Parser::GetShapeDimensions(const Shape* shape) {
             break;
         }
         case 2: {   // Polyline
-            const Polyline* polyline = dynamic_cast<const Polyline*>(shape);
+            const Polyline* polyline = static_cast<const Polyline*>(shape);
             if (!polyline)
                 throw std::runtime_error("Dynamic Cast to Polyline pointer failed.");
             QPolygon points = polyline->getPointsList();
@@ -666,7 +667,7 @@ std::string Parser::GetShapeDimensions(const Shape* shape) {
             break;
         }
         case 3: {   // Polygon
-            const Polygon* polygon = dynamic_cast<const Polygon*>(shape);
+            const Polygon* polygon = static_cast<const Polygon*>(shape);
             if (!polygon)
                 throw std::runtime_error("Dynamic Cast to Polygon pointer failed.");
             QPolygon points = polygon->getPointsList();
@@ -682,7 +683,7 @@ std::string Parser::GetShapeDimensions(const Shape* shape) {
             break;
         }
         case 4: { // Rectangle
-            const Rectangle* rect = dynamic_cast<const Rectangle*>(shape);
+            const Rectangle* rect = static_cast<const Rectangle*>(shape);
             if (!rect)
                 throw std::runtime_error("Dynamic Cast to Rectangle pointer failed.");
             QPoint coordinates = shape->getPoints();
@@ -694,7 +695,7 @@ std::string Parser::GetShapeDimensions(const Shape* shape) {
             break;
         }
         case 5: { // Square
-            const Square* square = dynamic_cast<const Square*>(shape);
+            const Square* square = static_cast<const Square*>(shape);
             if (!square)
                 throw std::runtime_error("Dynamic Cast to Square pointer failed.");
             // Get the coordinate from the base Shape's getPoints() method.
@@ -706,7 +707,7 @@ std::string Parser::GetShapeDimensions(const Shape* shape) {
             break;
         }
         case 6: { // Ellipse
-            const Ellipse* ellipse = dynamic_cast<const Ellipse*>(shape);
+            const Ellipse* ellipse = static_cast<const Ellipse*>(shape);
             if (!ellipse)
                 throw std::runtime_error("Dynamic Cast to Ellipse pointer failed.");
             // Get the coordinate from the base Shape's getPoints() method.
@@ -719,7 +720,7 @@ std::string Parser::GetShapeDimensions(const Shape* shape) {
             break;
         }
         case 7: { // Circle
-            const Circle* circle = dynamic_cast<const Circle*>(shape);
+            const Circle* circle = static_cast<const Circle*>(shape);
             if (!circle)
                 throw std::runtime_error("Dynamic Cast to Circle pointer failed.");
             QPoint coordinates = shape->getPoints();
@@ -730,7 +731,7 @@ std::string Parser::GetShapeDimensions(const Shape* shape) {
             break;
         }
         case 8: { // Text
-            const Text* text = dynamic_cast<const Text*>(shape);
+            const Text* text = static_cast<const Text*>(shape);
             if (!text)
                 throw std::runtime_error("Dynamic Cast to Text pointer failed.");
             QPoint coordinates = shape->getPoints();
@@ -742,7 +743,7 @@ std::string Parser::GetShapeDimensions(const Shape* shape) {
             break;
         }
         default:
-            throw std::runtime_error("Unknown ShapeId: " + shape->getShapeId());
+            throw std::runtime_error("Unknown ShapeId: " + std::to_string(shape->getShapeId()));
     }
     return dimensions;
 }

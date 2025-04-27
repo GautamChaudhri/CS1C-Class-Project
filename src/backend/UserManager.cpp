@@ -29,9 +29,28 @@ UserAccount* UserManager::getCurrUserRef() {
 
 void UserManager::addUser(const QString username, const QString password, const bool admin) {
     // Adds a new user to the UserManager
-    users.push_back(new UserAccount(username, password, admin));
-    saveUsers();
-    authenticate(username, password);
+    // users.push_back(new UserAccount(username, password, admin));
+    // saveUsers();
+    // authenticate(username, password);
+    bool userFound = false;
+    for (size_t i = 0; i < users.size() && !userFound; ++i) {
+        if (users[i]->getUsername() == username) {
+            userFound = true;
+            emit userNotChanged("Failed to create account! Username already exists.");
+            
+            
+            delete users[i];
+            users[i] = new UserAccount(username, password, admin);
+            
+            emit userChanged();
+            saveUsers();
+        }
+    }
+    if (!userFound) {
+        users.push_back(new UserAccount(username, password, admin));
+        saveUsers();
+        authenticate(username, password);
+    }
 }
 
 

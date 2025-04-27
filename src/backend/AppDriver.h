@@ -22,16 +22,6 @@ public:
 
 
 private slots:
-    // /// @brief These slots connect the shapes box UI to the ShapesManager data
-    // // For when a new shape is added
-    // void onShapeAdded(Shape* shape);
-    // // For when an existing shape is modified
-    // void onShapeChanged(Shape* shape);
-    // // For when a single shape is deleted
-    // void onShapeDeleted(const int trackerId);
-    // // For when all shapes are deleted
-    // void onDeleteAllShapes();
-
     /// @brief These slots connect the render area UI to the RenderAreaManager data
     // For when a new shape is added to the render area
     void onRenderShapeAdded(Shape* shape);

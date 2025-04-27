@@ -25,15 +25,6 @@ void AppDriver::run() {
     // Finally show the window
     mainWindow->show();
 
-    // // Load all the data (this emits shapesChanged())
-    // qDebug() << "AppDriver::run() – calling loadAllData()";
-    // loadAllData();
-    // qDebug() << "After loadAllData(): ShapesManager vector size =" 
-    //          << shapes->getShapesRef()->size();
-    // qDebug() << "AppDriver::run() – loadAllData() returned";
-
-    // // In case shapesChanged() fired before we connected, do one explicit populate
-    // mainWindow->onShapesChanged();
     // Defer loading until after the event loop starts
     qDebug() << "AppDriver::run() – scheduling loadAllData() after event loop starts";
     QTimer::singleShot(0, this, [this]() {
@@ -92,11 +83,6 @@ void AppDriver::onLoginAttempt(const QString username, const QString password) {
 
 //Connects the signals from frontend to the slots in AppDriver
 void AppDriver::connectFrontendToDriver() {
-    //for shapes
-    // connect(mainWindow, &MainWindow::shapeAdded, this, &AppDriver::onShapeAdded);
-    // connect(mainWindow, &MainWindow::shapeChanged, this, &AppDriver::onShapeChanged);
-    // connect(mainWindow, &MainWindow::shapeDeleted, this, &AppDriver::onShapeDeleted);
-    // connect(mainWindow, &MainWindow::deleteAllShapes, this, &AppDriver::onDeleteAllShapes);
     //for rendered shapes
     connect(mainWindow, &MainWindow::shapeAdded, this, &AppDriver::onRenderShapeAdded);
     connect(mainWindow, &MainWindow::shapeChanged, this, &AppDriver::onRenderShapeChanged);
@@ -118,11 +104,8 @@ void AppDriver::connectManagersToFrontend() {
     connect(renderedShapes, &RenderAreaManager::renderAreaNotChanged, mainWindow, &MainWindow::onRenderAreaNotChanged);
     connect(renderedShapes, &RenderAreaManager::statusMessage, mainWindow, &MainWindow::showRenderStatusMessage);
     //for user accounts
-    // connect(user, &UserManager::userChanged, loginWindow, &LoginWindow::onUsersChanged);
-    // connect(user, &UserManager::userNotChanged, loginWindow, &LoginWindow::showStatusMessage);
     connect(user, &UserManager::userAuthenticated, mainWindow, &MainWindow::onUserAuthentication);
     connect(user, &UserManager::authenticationFailed, mainWindow, &MainWindow::onUserAuthenticationFailure);
-    // connect(user, &UserManager::authenticationFailed, loginWindow, &LoginWindow::showStatusMessage);
     // connect(user, &UserManager::statusMessage, loginWindow, &LoginWindow::showStatusMessage);
     qDebug() << "AppDriver::connectManagersToFrontend() – done connecting";
 }
