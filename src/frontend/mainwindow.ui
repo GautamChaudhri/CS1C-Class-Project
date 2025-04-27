@@ -1018,6 +1018,9 @@
    <property name="text">
     <string>remove shape button</string>
    </property>
+   <property name="shortcut">
+    <string>Backspace</string>
+   </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::NoRole</enum>
    </property>

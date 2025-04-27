@@ -74,6 +74,12 @@ void MainWindow::shapes_to_treeWidget()
         // Add top-level item to the tree widget
         ui->treeWidget->addTopLevelItem(item->getParentItem());
 
+        switch (item->getShapeId())
+        {
+        case 1:
+            break;
+        }
+
         // Add the comboboxes to the children
         ui->treeWidget->setItemWidget(item->getChildItems()[5], 1, penStyleCombo);
         ui->treeWidget->setItemWidget(item->getChildItems()[6], 1, brushStyleCombo);
