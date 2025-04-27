@@ -32,7 +32,7 @@ Shape::Shape(int    shapeId,
     childItems[1]->setText(1, QString::number(getTrackerId()));
 
     childItems[2]->setText(0, "Shape Type:");
-    childItems[2]->setFlags(childItems[2]->flags() | Qt::ItemIsEditable);
+    childItems[2]->setText(1, QString::fromStdString(shapeType));
 
     childItems[3]->setText(0, "X:");
     childItems[3]->setText(1, QString::number(getX()));
@@ -41,12 +41,6 @@ Shape::Shape(int    shapeId,
     childItems[4]->setText(0, "Y:");
     childItems[4]->setText(1, QString::number(getY()));
     childItems[4]->setFlags(childItems[4]->flags() | Qt::ItemIsEditable);
-
-    childItems[5]->setText(0, "Pen:");
-    childItems[5]->setFlags(childItems[5]->flags() | Qt::ItemIsEditable);
-
-    childItems[6]->setText(0, "Brush:");
-    childItems[6]->setFlags(childItems[6]->flags() | Qt::ItemIsEditable);
 }
 
 Shape::~Shape()
