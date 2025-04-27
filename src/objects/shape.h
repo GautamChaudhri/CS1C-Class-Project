@@ -46,8 +46,7 @@ class Shape
 
 public:
 
-    Shape(int    shapeId,
-          string shapeType,
+    Shape(string shapeType,
           QPoint coords,
           QPen   pen,
           QBrush brush);

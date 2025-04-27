@@ -4,21 +4,21 @@
 * derived class Line - Base Shape
 *****************************************************/
 
-Line::Line(int    shapeId,
-           string shapeType,
+Line::Line(string shapeType,
            QPoint coords,
            QPen   pen,
            QBrush brush,
            QPoint startPoint,
            QPoint endPoint)
-        :  Shape (shapeId,
-                  shapeType,
+        :  Shape (shapeType,
                   coords,
                   pen,
                   brush),
        startPoint{startPoint},
          endPoint{endPoint}
-{}
+{
+    setShapeId(1);
+}
 
 
 void Line::Draw(QWidget* renderArea)

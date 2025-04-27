@@ -3,19 +3,19 @@
 /****************************************************
 * derived class Polyline - Base Shape
 *****************************************************/
-Polyline::Polyline(int    shapeId,
-                    string shapeType,
+Polyline::Polyline(string shapeType,
                     QPoint coords,
                     QPen   pen,
                     QBrush brush,
                     QPolygon pointsList)
-                : Shape(shapeId,
-                        shapeType,
+                : Shape(shapeType,
                         coords,
                         pen,
                         brush),
                     pointsList{pointsList}
-{}
+{
+    setShapeId(2);
+}
 
 Polyline::~Polyline() {}
 

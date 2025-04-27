@@ -6,8 +6,7 @@
 class Text : public Shape
 {
 public:
-    Text(int    shapeId,
-         string shapeType,
+    Text(string shapeType,
          QPoint coords,
          QString textString,
          GlobalColor   textColor,

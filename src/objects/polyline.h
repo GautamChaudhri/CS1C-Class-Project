@@ -6,8 +6,7 @@
 class Polyline : public Shape
 {
 public:
-    Polyline(int    shapeId,
-             string shapeType,
+    Polyline(string shapeType,
              QPoint coords,
              QPen   pen,
              QBrush brush,

@@ -4,17 +4,18 @@
 * derived class Rectangle - Base Shape
 *****************************************************/
 
-Rectangle::Rectangle(int    shapeId,
-                     string shapeType,
+Rectangle::Rectangle(string shapeType,
                      QPoint coords,
                      QPen   pen,
                      QBrush brush,
                      int length,
                      int width)
-                   : Shape(shapeId, shapeType, coords, pen, brush),
+                   : Shape(shapeType, coords, pen, brush),
                     length{length},
                     width{width}
-{}
+{
+    setShapeId(4);
+}
 
 
 void Rectangle::Draw(QWidget* renderArea)

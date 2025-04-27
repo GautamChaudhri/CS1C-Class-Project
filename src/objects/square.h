@@ -6,8 +6,7 @@
 class Square : public Shape
 {
 public:
-    Square(int    shapeId,
-           string shapeType,
+    Square(string shapeType,
            QPoint coords,
            QPen   pen,
            QBrush brush,

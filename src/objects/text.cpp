@@ -4,8 +4,7 @@
 * derived class Text - Base Shape
 *****************************************************/
 
-Text::Text(int    shapeId,
-           string shapeType,
+Text::Text(string shapeType,
            QPoint coords,
            QString textString,
            GlobalColor   textColor,
@@ -13,14 +12,16 @@ Text::Text(int    shapeId,
            QFont             font,
            int           length,
            int           width)
-        : Shape(shapeId, shapeType, coords, QPen(), QBrush()),
+        : Shape(shapeType, coords, QPen(), QBrush()),
             textString{textString},
             textColor{textColor},
             textAlignment{textAlignment},
             font{font},
             length{length},
             width{width}
-{}
+{
+    setShapeId(8);
+}
 
 
 void Text::Draw(QWidget* renderArea)

@@ -4,15 +4,16 @@
 * derived class Square - Base Shape
 *****************************************************/
 
-Square::Square(int    shapeId,
-               string shapeType,
+Square::Square(string shapeType,
                QPoint coords,
                QPen   pen,
                QBrush brush,
                int length)
-             : Shape(shapeId, shapeType, coords, pen, brush),
+             : Shape(shapeType, coords, pen, brush),
                length{length}
-{}
+{
+    setShapeId(5);
+}
 
 
 void Square::Draw(QWidget* renderArea)

@@ -4,21 +4,21 @@
 * derived class Ellipse - Base Shape
 *****************************************************/
 
-Ellipse::Ellipse(int    shapeId,
-                  string shapeType,
+Ellipse::Ellipse(string shapeType,
                   QPoint coords,
                   QPen   pen,
                   QBrush brush,
                   int    a,
                   int    b)
-                 : Shape(shapeId,
-                         shapeType,
+                 : Shape(shapeType,
                          coords,
                          pen,
                          brush),
                  a{a},
                  b{b}
-{}
+{
+    setShapeId(6);
+}
 
 
 void Ellipse::Draw(QWidget* renderArea)
