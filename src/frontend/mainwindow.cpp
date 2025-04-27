@@ -15,8 +15,9 @@ MainWindow::MainWindow(QWidget *parent)
     layout->addWidget(renderArea);
 }
 
-MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
-    const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser)
+MainWindow::MainWindow(QWidget *parent, 
+                       const alpha::vector<Shape*>* renderedShapes, 
+                       const UserAccount* currUser)
     : QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -30,8 +31,9 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(renderArea);
 
+    
+
     // Store references for data
-    this->allShapes = shapes;
     this->renderShapes = renderedShapes;
     this->currUser = currUser;
 
@@ -41,6 +43,15 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     // Connect the toggleStyle signal to its slot
     connect(ui->toggleStyle, &QAction::toggled, this, &MainWindow::onToggleStyle);
     onToggleStyle(ui->toggleStyle->isChecked());
+    
+    //Login
+    userStatusLabel = new QLabel("Logged in as: " + currUser->getUsername(), this);
+    //ui->toolBar->addWidget(userStatusLabel);
+    statusBar()->addPermanentWidget(userStatusLabel);
+    auto *loginButton = new QPushButton("Login", this);
+    //ui->toolBar->addWidget(loginButton);
+    statusBar()->addPermanentWidget(loginButton);
+    connect(loginButton, &QPushButton::clicked, this, &MainWindow::onLoginClicked);
 }
 
 
@@ -243,4 +254,34 @@ QComboBox* MainWindow::createBrushStyleComboBox(int currentBrushStyle)
     box->addItem("Dense7Pattern", static_cast<int>(Qt::Dense7Pattern));
     box->setCurrentIndex(currentBrushStyle);
     return box;
+}
+void MainWindow::onLoginClicked() {
+    auto *dlg = new LoginWindow(this);
+    connect(dlg, &LoginWindow::loginRequested, this, &MainWindow::onLoginRequest);
+    connect(dlg, &LoginWindow::signupRequested, this, &MainWindow::onSignupRequest);
+    connect(this, &MainWindow::loginSuccess, dlg,  &QDialog::accept);
+    // connect(this, &MainWindow::loginFailed, this,
+    //     [dlg](const QString &msg){
+    //         QMessageBox::warning(dlg, "Login Failed", msg);
+    //     });
+    dlg->exec();
+}
+
+void MainWindow::onLoginRequest(const QString &username, const QString &password) {
+    emit loginAttempt(username, password);
+}
+
+void MainWindow::onSignupRequest(const QString &username, const QString &password, const bool admin) {
+    emit newUserAdded(username, password, admin);
+}
+
+
+void MainWindow::onUserAuthentication(const UserAccount* currUser) {
+    this->currUser = currUser;
+    userStatusLabel->setText("Logged in as: " + currUser->getUsername());   
+    emit loginSuccess();
+}
+
+void MainWindow::onUserAuthenticationFailure(const QString &message) {
+    emit loginFailed(message);
 }

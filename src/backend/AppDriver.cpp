@@ -3,11 +3,10 @@
 #include <QTimer>
 
 AppDriver::AppDriver(QObject* parent) 
-          : QObject{parent}, shapes{new ShapesManager}, renderedShapes{new RenderAreaManager}, 
+          : QObject{parent}, renderedShapes{new RenderAreaManager}, 
             user{new UserManager} {}
 
 AppDriver::~AppDriver() {
-    delete shapes;
     delete renderedShapes;
     delete user;
 }
@@ -15,7 +14,6 @@ AppDriver::~AppDriver() {
 void AppDriver::run() {
     // Construct the main window and grab its renderArea
     mainWindow = new MainWindow(nullptr,
-                    shapes->getShapesRef(),
                     renderedShapes->getShapesRef(),
                     user->getCurrUserRef());
     renderArea = mainWindow->getRenderAreaRef();
@@ -45,36 +43,16 @@ void AppDriver::run() {
 }
 
 void AppDriver::shutdown() {
-    shapes->saveShapes();
     renderedShapes->saveShapes();
     user->saveUsers();
 }
 
 void AppDriver::loadAllData() {
-    shapes->loadShapes();
     renderedShapes->loadShapes();
     user->loadUsers();
 }
 
-
-
 //=========================================== SLOTS ===================================================
-
-void AppDriver::onShapeAdded(Shape* shape) {
-    shapes->addShape(shape);
-}
-
-void AppDriver::onShapeChanged(Shape* shape) {
-    shapes->modifyShape(shape);
-}
-
-void AppDriver::onShapeDeleted(const int trackerId) {
-    shapes->deleteShape(trackerId);
-}
-
-void AppDriver::onDeleteAllShapes() {
-    shapes->deleteAllShapes();
-}
 
 void AppDriver::onRenderShapeAdded(Shape* shape) {
     renderedShapes->addShape(shape);
@@ -125,33 +103,25 @@ void AppDriver::connectFrontendToDriver() {
     connect(mainWindow, &MainWindow::shapeDeleted, this, &AppDriver::onRenderShapeDeleted);
     connect(mainWindow, &MainWindow::deleteAllShapes, this, &AppDriver::onRenderDeleteAllShapes);
     //for user accounts
-    // connect(loginWindow, &LoginWindow::userAdded, this, &AppDriver::onNewUser);
+    connect(mainWindow, &MainWindow::newUserAdded, this, &AppDriver::onNewUser);
     // connect(loginWindow, &LoginWindow::userModified, this, &AppDriver::onUserModified);
     // connect(loginWindow, &LoginWindow::userDeleted, this, &AppDriver::onUserDeleted);
     // connect(loginWindow, &LoginWindow::deleteAllUsers, this, &AppDriver::onDeleteAllUsers);
-    // connect(loginWindow, &LoginWindow::loginRequested, this, &AppDriver::onLoginAttempt);
+    connect(mainWindow, &MainWindow::loginAttempt, this, &AppDriver::onLoginAttempt);
 }
 
 //Connects the signals in the Manager Classes to the slots in Frontend
 void AppDriver::connectManagersToFrontend() {
     qDebug() << "AppDriver::connectManagersToFrontend() – hooking up shapesChanged → onShapesChanged";
-    //for shapes
-    connect(shapes, &ShapesManager::shapesChanged, mainWindow, &MainWindow::onShapesChanged);
-    connect(shapes, &ShapesManager::shapesNotChanged, mainWindow, &MainWindow::onShapesNotChanged);
-    connect(shapes, &ShapesManager::statusMessage, mainWindow, &MainWindow::showShapesStatusMessage);
     //for rendered shapes
     connect(renderedShapes, &RenderAreaManager::renderAreaChanged, mainWindow, &MainWindow::onRenderAreaChanged);
     connect(renderedShapes, &RenderAreaManager::renderAreaNotChanged, mainWindow, &MainWindow::onRenderAreaNotChanged);
     connect(renderedShapes, &RenderAreaManager::statusMessage, mainWindow, &MainWindow::showRenderStatusMessage);
-    // Debug: confirm signal arrives in AppDriver
-    connect(shapes, &ShapesManager::shapesChanged, this, [this]() {
-        qDebug() << "AppDriver: shapesChanged received, manager size ="
-                 << shapes->getShapesRef()->size();
-    });
     //for user accounts
     // connect(user, &UserManager::userChanged, loginWindow, &LoginWindow::onUsersChanged);
     // connect(user, &UserManager::userNotChanged, loginWindow, &LoginWindow::showStatusMessage);
-    // connect(user, &UserManager::userAuthenticated, loginWindow, &LoginWindow::onAuthenticated);
+    connect(user, &UserManager::userAuthenticated, mainWindow, &MainWindow::onUserAuthentication);
+    connect(user, &UserManager::authenticationFailed, mainWindow, &MainWindow::onUserAuthenticationFailure);
     // connect(user, &UserManager::authenticationFailed, loginWindow, &LoginWindow::showStatusMessage);
     // connect(user, &UserManager::statusMessage, loginWindow, &LoginWindow::showStatusMessage);
     qDebug() << "AppDriver::connectManagersToFrontend() – done connecting";

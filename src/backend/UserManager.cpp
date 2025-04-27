@@ -17,7 +17,6 @@ UserManager::~UserManager() {
     // Destructor that cleans up the UserAccount objects
     for (size_t i = 0; i < users.size(); ++i)
         delete users[i];
-    delete currUser;
 }
 
 
@@ -32,6 +31,7 @@ void UserManager::addUser(const QString username, const QString password, const 
     // Adds a new user to the UserManager
     users.push_back(new UserAccount(username, password, admin));
     saveUsers();
+    authenticate(username, password);
 }
 
 
@@ -98,9 +98,9 @@ void UserManager::authenticate(const QString username, const QString password) {
     for (size_t i = 0; i < users.size() && !authSuccess; ++i) {
         if (users[i]->getUsername() == username && users[i]->getPassword() == password) {
             authSuccess = true;
-            emit userAuthenticated("User authenticated successfully.");
             delete currUser;
             currUser = users[i];
+            emit userAuthenticated(currUser);
         }
     }
     if (!authSuccess) {
