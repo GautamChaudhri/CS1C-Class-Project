@@ -73,9 +73,6 @@ Polygon::Polygon(string shapeType,
         setShapeId(3);
 }
 
-
-Polygon::~Polygon() {}
-
 void Polygon::Draw(QWidget* renderArea)
 {
     if (!getPainter().isActive())
