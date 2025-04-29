@@ -60,6 +60,9 @@ public:
 
     virtual bool isPointInside(const QPoint& point) const = 0;
 
+    void CreateParentItem();
+    void AddPointsToParent(const int POINTS_NUM);
+
     /**************** ACCESSOR FUNCTIONS ****************/
     int    getShapeId()   const;
     int    getTrackerId() const;
@@ -101,6 +104,7 @@ public:
 protected:
     QTreeWidgetItem* parentItem;
     alpha::vector<QTreeWidgetItem*> childItems;
+    alpha::vector<QTreeWidgetItem*> pointsItems;
 
 private:
     int      shapeId;

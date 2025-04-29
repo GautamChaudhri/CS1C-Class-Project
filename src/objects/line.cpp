@@ -17,42 +17,29 @@ Line::Line(string shapeType,
        startPoint{startPoint},
          endPoint{endPoint}
 {
-    parentItem->setText(0, QString::fromStdString(shapeType));
     setShapeId(1);
+    CreateParentItem();
+    AddPointsToParent(2);
 
-    for (int i = 0; i < 8; ++i)
-    {
-        childItems.push_back(new QTreeWidgetItem());
-        parentItem->addChild(childItems[i]);
 
-        childItems[0]->setText(0, "Shape ID:");
-        childItems[0]->setText(1, QString::number(getShapeId()));
+    // parentItem->setText(0, QString::fromStdString(shapeType));
 
-        childItems[1]->setText(0, "Tracker ID:");
-        childItems[1]->setText(1, QString::number(getTrackerId()));
+    // for (int i = 0; i < 3; ++i)
+    // {
+    //     childItems.push_back(new QTreeWidgetItem());
+    //     parentItem->addChild(childItems[i + 5]);
+    // }
 
-        childItems[2]->setText(0, "Shape Type:");
-        childItems[2]->setText(1, QString::fromStdString(getShapeType()));
+    // childItems[5]->setText(0, "X2:");
+    // childItems[5]->setText(1, QString::number(getX()));
+    // childItems[5]->setFlags(getChildItems()[5]->flags() | Qt::ItemIsEditable);
 
-        childItems[3]->setText(0, "X:");
-        childItems[3]->setText(1, QString::number(getX()));
-        childItems[3]->setFlags(getChildItems()[3]->flags() | Qt::ItemIsEditable);
+    // childItems[6]->setText(0, "Y2:");
+    // childItems[6]->setText(1, QString::number(getY()));
+    // childItems[6]->setFlags(getChildItems()[6]->flags() | Qt::ItemIsEditable);
 
-        childItems[4]->setText(0, "Y:");
-        childItems[4]->setText(1, QString::number(getY()));
-        childItems[4]->setFlags(getChildItems()[4]->flags() | Qt::ItemIsEditable);
-
-        childItems[5]->setText(0, "X2:");
-        childItems[5]->setText(1, QString::number(getX()));
-        childItems[5]->setFlags(getChildItems()[5]->flags() | Qt::ItemIsEditable);
-
-        childItems[6]->setText(0, "Y2:");
-        childItems[6]->setText(1, QString::number(getY()));
-        childItems[6]->setFlags(getChildItems()[6]->flags() | Qt::ItemIsEditable);
-
-        childItems[7]->setText(0, "Pen:");
-        childItems[7]->setFlags(childItems[7]->flags() | Qt::ItemIsEditable);
-    }
+    // childItems[7]->setText(0, "Pen:");
+    // childItems[7]->setFlags(childItems[7]->flags() | Qt::ItemIsEditable);
 }
 
 void Line::Draw(QWidget* renderArea)

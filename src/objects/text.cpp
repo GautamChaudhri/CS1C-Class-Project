@@ -20,48 +20,33 @@ Text::Text(string shapeType,
             length{length},
             width{width}
 {
-    parentItem->setText(0, QString::fromStdString(shapeType));
-
-    for (int i = 0; i < 10; ++i) // 6 being # of data members in shape being displayed for all shapes (JUST FOR TESTING PLEASE CHANGE)
-    {
-        childItems.push_back(new QTreeWidgetItem());
-        parentItem->addChild(childItems[i]);
-    }
-
-    // hard coded spaces for each subitem, change as you please
-    childItems[0]->setText(0, "Shape ID:");
-    childItems[0]->setText(1, QString::number(getShapeId()));
-
-    childItems[1]->setText(0, "Tracker ID:");
-    childItems[1]->setText(1, QString::number(getTrackerId()));
-
-    childItems[2]->setText(0, "Shape Type:");
-    childItems[2]->setText(1, QString::fromStdString(shapeType));
-
-    childItems[3]->setText(0, "X:");
-    childItems[3]->setText(1, QString::number(getX()));
-    childItems[3]->setFlags(childItems[3]->flags() | Qt::ItemIsEditable);
-
-    childItems[4]->setText(0, "Y:");
-    childItems[4]->setText(1, QString::number(getY()));
-    childItems[4]->setFlags(childItems[4]->flags() | Qt::ItemIsEditable);
-
-    childItems[5]->setText(0, "Text:");
-    childItems[5]->setText(1, getTextString());
-    childItems[5]->setFlags(childItems[4]->flags() | Qt::ItemIsEditable);
-
-    childItems[6]->setText(0, "Alignment:");
-    childItems[6]->setFlags(childItems[6]->flags() | Qt::ItemIsEditable);
-
-    childItems[7]->setText(0, "Font:");
-    childItems[7]->setFlags(childItems[7]->flags() | Qt::ItemIsEditable);
-
-    childItems[8]->setText(0, "Font Style:");
-    childItems[8]->setFlags(childItems[8]->flags() | Qt::ItemIsEditable);
-
-    childItems[9]->setText(0, "Font Weight:");
-    childItems[9]->setFlags(childItems[9]->flags() | Qt::ItemIsEditable);
     setShapeId(8);
+    CreateParentItem();
+
+
+    // parentItem->setText(0, QString::fromStdString(shapeType));
+
+    // for (int i = 0; i < 5; ++i) // 6 being # of data members in shape being displayed for all shapes (JUST FOR TESTING PLEASE CHANGE)
+    // {
+    //     childItems.push_back(new QTreeWidgetItem());
+    //     parentItem->addChild(childItems[i + 5]);
+    // }
+
+    // childItems[5]->setText(0, "Text:");
+    // childItems[5]->setText(1, getTextString());
+    // childItems[5]->setFlags(childItems[4]->flags() | Qt::ItemIsEditable);
+
+    // childItems[6]->setText(0, "Alignment:");
+    // childItems[6]->setFlags(childItems[6]->flags() | Qt::ItemIsEditable);
+
+    // childItems[7]->setText(0, "Font:");
+    // childItems[7]->setFlags(childItems[7]->flags() | Qt::ItemIsEditable);
+
+    // childItems[8]->setText(0, "Font Style:");
+    // childItems[8]->setFlags(childItems[8]->flags() | Qt::ItemIsEditable);
+
+    // childItems[9]->setText(0, "Font Weight:");
+    // childItems[9]->setFlags(childItems[9]->flags() | Qt::ItemIsEditable);
 }
 
 

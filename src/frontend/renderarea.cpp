@@ -59,9 +59,17 @@ void RenderArea::mouseMoveEvent(QMouseEvent* event)
 
 void RenderArea::mouseDoubleClickEvent(QMouseEvent* event)
 {
+    // If dropdown is not expanded, expand it; If dropdown is expanded, close it
     if (shapeSelectedIndex >= 0 && shapeSelectedIndex < renderShapes->size())
     {
-        (*renderShapes)[shapeSelectedIndex]->getParentItem()->setExpanded(true);
+        if ((*renderShapes)[shapeSelectedIndex]->getParentItem()->isExpanded() == false)
+        {
+            (*renderShapes)[shapeSelectedIndex]->getParentItem()->setExpanded(true);
+        }
+        else
+        {
+            (*renderShapes)[shapeSelectedIndex]->getParentItem()->setExpanded(false);
+        }
     }
 }
 

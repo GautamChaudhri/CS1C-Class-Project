@@ -15,31 +15,6 @@ Shape::Shape(string shapeType,
              brush{brush},
              parentItem{new QTreeWidgetItem()}
 {
-    parentItem->setText(0, QString::fromStdString(shapeType));
-
-    for (int i = 0; i < 7; ++i) // 6 being # of data members in shape being displayed for all shapes (JUST FOR TESTING PLEASE CHANGE)
-    {
-        childItems.push_back(new QTreeWidgetItem());
-        parentItem->addChild(childItems[i]);
-    }
-
-    // hard coded spaces for each subitem, change as you please
-    childItems[0]->setText(0, "Shape ID:");
-    childItems[0]->setText(1, QString::number(getShapeId()));
-
-    childItems[1]->setText(0, "Tracker ID:");
-    childItems[1]->setText(1, QString::number(getTrackerId()));
-
-    childItems[2]->setText(0, "Shape Type:");
-    childItems[2]->setText(1, QString::fromStdString(shapeType));
-
-    childItems[3]->setText(0, "X:");
-    childItems[3]->setText(1, QString::number(getX()));
-    childItems[3]->setFlags(childItems[3]->flags() | Qt::ItemIsEditable);
-
-    childItems[4]->setText(0, "Y:");
-    childItems[4]->setText(1, QString::number(getY()));
-    childItems[4]->setFlags(childItems[4]->flags() | Qt::ItemIsEditable);
 }
 
 Shape::~Shape()
@@ -52,6 +27,52 @@ void Shape::Move(int x, int y)
     setX(x);
     setY(y);
 }
+
+void Shape::CreateParentItem()
+{
+    parentItem->setText(0, QString::fromStdString(shapeType));
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+    (*(childItems.end() - 1))->setText(0, "Shape ID:");
+    (*(childItems.end() - 1))->setText(1, QString::number(getShapeId()));
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+    (*(childItems.end() - 1))->setText(0, "Tracker ID:");
+    (*(childItems.end() - 1))->setText(1, QString::number(getTrackerId()));
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+    (*(childItems.end() - 1))->setText(0, "X:");
+    (*(childItems.end() - 1))->setText(1, QString::number(getX()));
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+    (*(childItems.end() - 1))->setText(0, "Y");
+    (*(childItems.end() - 1))->setText(1, QString::number(getY()));
+}
+
+void Shape::AddPointsToParent(const int POINTS_NUM)
+{
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+    (*(childItems.end() - 1))->setText(0, "Points:");
+
+    for (int i = 0; i < (POINTS_NUM); ++i)
+    {
+        pointsItems.push_back(new QTreeWidgetItem());
+        (*(childItems.end() - 1))->addChild(*(pointsItems.end() - 1));
+        (*(pointsItems.end() - 1))->setText(0, "X" + QString::number(i + 1) + ":");
+        (*(pointsItems.end() - 1))->setText(1, QString::number(getX()));
+
+        pointsItems.push_back(new QTreeWidgetItem());
+        (*(childItems.end() - 1))->addChild(*(pointsItems.end() - 1));
+        (*(pointsItems.end() - 1))->setText(0, "Y" + QString::number(i + 1) + ":");
+        (*(pointsItems.end() - 1))->setText(1, QString::number(getY()));
+    }
+}
+
 
 /**************** ACCESSOR FUNCTIONS ****************/
 int    Shape::getShapeId()   const { return shapeId; }
@@ -113,5 +134,4 @@ bool operator<(const Shape& shape1, const Shape& shape2)
 {
     return shape1.shapeId < shape2.shapeId;
 }
-
 /****************************************************/

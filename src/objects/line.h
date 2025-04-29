@@ -32,6 +32,7 @@ public:
 private:
     QPoint startPoint;
     QPoint endPoint;
+    QPolygon pointsList[2];
 };
 
 #endif // LINE_H
