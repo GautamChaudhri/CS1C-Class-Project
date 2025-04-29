@@ -15,8 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     layout->addWidget(renderArea);
 }
 
-MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
-    const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser)
+MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser)
     : QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -33,7 +32,6 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     layout->addWidget(renderArea);
 
     // Store references for data
-    this->allShapes = shapes;
     this->renderShapes = renderedShapes;
     this->currUser = currUser;
 
@@ -160,22 +158,6 @@ void MainWindow::onTreeWidgetItemChanged(QTreeWidgetItem* item, int column) {
     else
         qDebug() << "[MainWindow::onTreeWidgetItemChanged] shape not found - trackerId:" << trackerId;
     
-}
-
-RenderArea* MainWindow::getRenderAreaRef() {
-    return renderArea;
-}
-
-void MainWindow::onShapesChanged() {
-}
-
-void MainWindow::onShapesNotChanged(const QString& message) {
-    // handle error: you could show a popup or log the message
-}
-
-void MainWindow::showShapesStatusMessage(const QString& message)
-{
-    qDebug() << "Shapes Status:" << message;
 }
 
 void MainWindow::onRenderAreaChanged() {

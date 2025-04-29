@@ -29,6 +29,7 @@ alpha::vector<Shape*>* RenderAreaManager::getShapesRef() {
 void RenderAreaManager::addShape(Shape* shape) {
     renderedShapes.push_back(shape);
     emit renderAreaChanged();
+    saveShapes();
 }
 
 
@@ -239,6 +240,7 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
             qDebug() << "[RenderAreaManager::modifyShape] Unknown shape type. ShapeId: " << shapeId;
             return;
     }
+    saveShapes();
 }
 
 

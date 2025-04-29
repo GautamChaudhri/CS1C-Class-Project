@@ -25,13 +25,11 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
-               const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser);
+    MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser);
     ~MainWindow();
 
     void setShapes2(const alpha::vector<Shape*>& shapes);
 
-    RenderArea* getRenderAreaRef();
     void drawShapes() const;
 
     void shapes_to_treeWidget();
@@ -44,11 +42,6 @@ signals:
     void deleteAllShapes();
 
 public slots:
-    // Signals from ShapesManager class
-    void onShapesChanged();
-    void onShapesNotChanged(const QString& message);
-    void showShapesStatusMessage(const QString &message);
-
     // Signals for these slots come from RenderAreaManager class
     void onRenderAreaChanged();
     void onRenderAreaNotChanged(const QString& message);
@@ -75,7 +68,6 @@ private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;
 
-    const alpha::vector<Shape*>* allShapes;         // Holds all possible shapes that can be rendered
     const alpha::vector<Shape*>* renderShapes;      // Holds currently renderedShapes
     const UserAccount* currUser;
 
