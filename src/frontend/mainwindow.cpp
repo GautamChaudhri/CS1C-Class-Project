@@ -140,6 +140,18 @@ void MainWindow::onTreeWidgetItemChanged(QTreeWidgetItem* item, int column) {
     // Only proceed if changes made occurred in column 1 and in child items
     if (column != 1 || !item->parent()) return;
 
+    QString key = item->text(0);
+    bool ok = false;
+    int value = item->text(1).toInt(&ok);
+
+    // forces it to be ok if user is modifying text - a bit of a hack but it works
+    if (key == "Text:")
+    {
+        ok = true;
+    }
+
+    if (!ok) return;
+
     int trackerId = item->parent()->data(0, Qt::UserRole).toInt();
     Shape* shape = nullptr;
     bool found = false;
@@ -151,23 +163,11 @@ void MainWindow::onTreeWidgetItemChanged(QTreeWidgetItem* item, int column) {
         }
     }
 
-    QString key = item->text(0);
-    bool ok = false;
-    int value = item->text(1).toInt(&ok);
-
-    // forces it to be ok if user is modifying text - a bit of a hack but it works
-    if (shape->getShapeId() == TEXT && key == "Text:")
-    {
-        ok = true;
-    }
-
-    if (!ok) return;
-
     if (found)
         emit shapeChanged(shape, key, value);
     else
         qDebug() << "[MainWindow::onTreeWidgetItemChanged] shape not found - trackerId:" << trackerId;
-    
+
 }
 
 void MainWindow::onRenderAreaChanged() {
