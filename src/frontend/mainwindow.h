@@ -80,6 +80,9 @@ private slots:
     // For modifying shape
     void onTreeWidgetItemChanged(QTreeWidgetItem*, int column);
 
+    void showTestimonialPrompt();
+    void showTestimonialsDisplay();
+
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;
@@ -100,6 +103,8 @@ private:
     QComboBox* createFontComboBox(QFont currentFont);
     QComboBox* createFontStyleComboBox(int currentFontStyle);
     QComboBox* createFontWeightComboBox(QFont::Weight currentFontWeight);
+
+    void setupTestimonials();
 
 };
 
