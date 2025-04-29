@@ -31,6 +31,13 @@ void ApiClient::GetUsers() {
     connect(reply, &QNetworkReply::finished, this, &ApiClient::AnalyzeGetReply);
 }
 
+void ApiClient::GetTestimonials() {
+    qDebug().noquote().nospace() << "[ApiClient::GetTestimonials] url=" << "http://localhost:8080/testimonials";
+    QNetworkRequest request(QUrl("http://localhost:8080/testimonials"));
+    auto* reply = manager->get(request);
+    connect(reply, &QNetworkReply::finished, this, &ApiClient::AnalyzeGetReply);
+}
+
 
 
 //Post Endpoints
@@ -58,6 +65,14 @@ void ApiClient::PostUsers(std::string json) {
     connect(reply, &QNetworkReply::finished, this, &ApiClient::AnalyzePostReply);
 }
 
+void ApiClient::PostTestimonials(std::string json) {
+    QNetworkRequest request(QUrl("http://localhost:8080/testimonials"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    QString qstr = QString::fromStdString(json);
+    auto* reply = manager->post(request, qstr.toUtf8());
+    connect(reply, &QNetworkReply::finished, this, &ApiClient::AnalyzePostReply);
+}
+
 
 
 //Delete Endpoints
@@ -75,6 +90,12 @@ void ApiClient::DeleteRenderAreaAll() {
 
 void ApiClient::DeleteUsersAll() {
     QNetworkRequest request(QUrl("http://localhost:8080/users-all"));
+    auto* reply = manager->deleteResource(request);
+    connect(reply, &QNetworkReply::finished, this, &ApiClient::AnalyzeDeleteReply);
+}
+
+void ApiClient::DeleteTestimonialsAll() {
+    QNetworkRequest request(QUrl("http://localhost:8080/testimonials"));
     auto* reply = manager->deleteResource(request);
     connect(reply, &QNetworkReply::finished, this, &ApiClient::AnalyzeDeleteReply);
 }

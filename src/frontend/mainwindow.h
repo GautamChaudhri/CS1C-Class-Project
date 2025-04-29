@@ -87,6 +87,9 @@ private slots:
     // For modifying shape
     void onTreeWidgetItemChanged(QTreeWidgetItem*, int column);
 
+    void showTestimonialPrompt();
+    void showTestimonialsDisplay();
+
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;
@@ -121,6 +124,8 @@ private:
     static bool sortById(const Shape* a, const Shape* b);
     static bool sortByArea(const Shape* a, const Shape* b);
     static bool sortByPerimeter(const Shape* a, const Shape* b);
+    
+    void setupTestimonials();
 
 };
 
