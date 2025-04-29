@@ -143,10 +143,97 @@ int RenderArea::getShapeSelectedIndex() const
 void RenderArea::updateShapeDisplayCoords(Shape* item, const QPoint& position) const
 {
     auto children = item->getChildItems();
+    auto pointsChildren = item->getPointsItems();
+
+    const int pointsChildrenSize = pointsChildren.size();
+
     QString xStr = QString::number(position.x());
     QString yStr = QString::number(position.y());
-    children[2]->setText(1, xStr);
-    children[3]->setText(1, yStr);
+
+    // Setting new X and Y Coords
+    for (int i = 0; i < children.size(); ++i)
+    {
+        if (children[i]->text(0).startsWith("X"))
+        {
+            children[i]->setText(1, xStr);
+        }
+        else if (children[i]->text(0).startsWith("Y"))
+        {
+            children[i]->setText(1, yStr);
+        }
+    }
+
+    // Setting new points coords
+    switch (item->getShapeId())
+    {
+        case LINE:
+        {
+            Line* line = static_cast<Line*>(item);
+
+            QString xStartPointStr = QString::number(line->getStartPoint().x());
+            QString yStartPointStr = QString::number(line->getStartPoint().y());
+
+            QString xEndPointStr = QString::number(line->getEndPoint().x());
+            QString yEndPointStr = QString::number(line->getEndPoint().y());
+
+            pointsChildren[0]->setText(1, xStartPointStr);
+            pointsChildren[1]->setText(1, yStartPointStr);
+
+            pointsChildren[2]->setText(1, xEndPointStr);
+            pointsChildren[3]->setText(1, yEndPointStr);
+
+            break;
+        }
+
+        case POLYLINE:
+        {
+            Polyline* polyline = static_cast<Polyline*>(item);
+
+            const QPolygon pointsList = polyline->getPointsList();
+            const int pointsListSize  = pointsList.size();
+
+            alpha::vector<QString> coordStrings;
+
+            for (int i = 0; i < pointsListSize; ++i)
+            {
+                coordStrings.push_back(QString::number(pointsList[i].x()));
+                coordStrings.push_back(QString::number(pointsList[i].y()));
+            }
+
+            for (int i = 0; i < pointsChildrenSize; ++i)
+            {
+                pointsChildren[i]->setText(1, coordStrings[i]);
+            }
+
+            break;
+        }
+
+        case POLYGON:
+        {
+            Polygon* polygon = static_cast<Polygon*>(item);
+
+            const QPolygon pointsList = polygon->getPointsList();
+            const int pointsListSize  = pointsList.size();
+
+            alpha::vector<QString> coordStrings;
+
+            for (int i = 0; i < pointsListSize; ++i)
+            {
+                coordStrings.push_back(QString::number(pointsList[i].x()));
+                coordStrings.push_back(QString::number(pointsList[i].y()));
+            }
+
+            for (int i = 0; i < pointsChildrenSize; ++i)
+            {
+                pointsChildren[i]->setText(1, coordStrings[i]);
+            }
+
+            break;
+        }
+    }
+
+    //children[2]->setText(1, xStr);
+    //children[3]->setText(1, yStr);
 }
 
 
