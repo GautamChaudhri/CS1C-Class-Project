@@ -59,6 +59,14 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedSha
     statusBar()->addPermanentWidget(loginButton);
     connect(loginButton, &QPushButton::clicked, this, &MainWindow::onLoginClicked);
 
+    //Testimonials
+    QAction* testimonialsAction = new QAction(tr("Testimonials"), this);
+    QMenu* helpMenu = menuBar()->addMenu(tr("&Help"));
+    helpMenu->addAction(testimonialsAction);
+    connect(testimonialsAction,
+            &QAction::triggered,
+            this,
+            &MainWindow::showTestimonialsDisplay);
     setupTestimonials();
 }
 
@@ -435,7 +443,7 @@ void MainWindow::setupTestimonials() {
     TestimonialManager::getInstance().startTrackingTime();
     
     // show testimonials on startup
-    QTimer::singleShot(0, this, &MainWindow::showTestimonialsDisplay);
+    //QTimer::singleShot(0, this, &MainWindow::showTestimonialsDisplay);
 }
 
 void MainWindow::showTestimonialPrompt() {

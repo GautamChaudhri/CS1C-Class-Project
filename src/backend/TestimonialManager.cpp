@@ -22,6 +22,7 @@ TestimonialManager::TestimonialManager() : m_trackingTimer(new QTimer(this)) {
     // check every minute if we should show prompt
     connect(m_trackingTimer, &QTimer::timeout, this, &TestimonialManager::checkTimeAndPrompt);
     m_trackingTimer->setInterval(60000);
+    qDebug() << "Current path:" << QDir::currentPath();
 }
 
 // save testimonials when manager is destroyed
