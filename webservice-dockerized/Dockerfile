@@ -8,8 +8,14 @@ RUN sudo dnf install -y git make g++ nano && sudo dnf update -y && dnf clean all
 WORKDIR /webservice
 COPY . /webservice
 
-COPY database /webservice/database
+#create database directory and empty JSON files
+RUN mkdir -p /webservice/database \
+    && touch /webservice/database/shapes.json \
+    && touch /webservice/database/render_area.json \
+    && touch /webservice/database/users.json \
+    && touch /webservice/database/testimonials.json
 
+#intsall more dependencies
 RUN mkdir /webservice/crow \
    && git clone --recursive https://github.com/crowcpp/crow.git /webservice/crow
 RUN mkdir /webservice/asio \

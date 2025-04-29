@@ -256,7 +256,86 @@
              return crow::response(500, exception.what());
          }
      });
+
+
+
+    /**
+     * @brief Retrieves testimonial data.
+     *
+     * @details Reads the JSON array from "/webservice/database/testimonials.json",
+     *          sets Content-Type to "application/json", and returns the data.
+     *          Returns 500 if file cannot be opened or parsed.
+     */
+    CROW_ROUTE(app, "/testimonials").methods(crow::HTTPMethod::Get)
+    ([](){
+        try {
+            auto testimonials = get_json_file("/webservice/database/testimonials.json");
+            crow::json::wvalue w = testimonials;
+            crow::response resp;
+            resp.code = 200;
+            resp.add_header("Content-Type", "application/json");
+            resp.body = w.dump();
+            return resp;
+        }
+        catch (const std::exception& e) {
+            return crow::response(500, std::string("Error retrieving testimonials: ") + e.what());
+        }
+    });
+
+
+
+    /**
+     * @brief Creates or updates testimonial data.
+     *
+     * @details Accepts a POST with JSON body containing an array of testimonials
+     *          or a single testimonial object. Writes the body directly to
+     *          "/webservice/database/testimonials.json", creating the directory if needed.
+     *          Returns 200 on success or 500 on failure.
+     */
+    CROW_ROUTE(app, "/testimonials").methods(crow::HTTPMethod::Post)
+    ([](const crow::request& req){
+        try {
+            std::filesystem::create_directory("/webservice/database");
+            std::ofstream outfile("/webservice/database/testimonials.json", std::ios::binary | std::ios::trunc);
+            if (!outfile) {
+                return crow::response(500, "Error opening testimonials file for writing");
+            }
+            outfile << req.body;
+            outfile.close();
+            return crow::response(200, "Testimonials saved successfully");
+        }
+        catch (const std::exception& e) {
+            return crow::response(500, std::string("Error saving testimonials: ") + e.what());
+        }
+    });
+
+
+
+    /**
+     * @brief Clears all testimonial data.
+     *
+     * @details Truncates the testimonials.json file at "/webservice/database", writing an empty JSON array.
+     *          Returns 200 on success or 500 on failure.
+     */
+    CROW_ROUTE(app, "/testimonials").methods(crow::HTTPMethod::Delete)
+    ([](){
+        try {
+            std::filesystem::create_directory("/webservice/database");
+            std::ofstream file("/webservice/database/testimonials.json", std::ios::trunc);
+            if (!file) {
+                return crow::response(500, "Error clearing testimonials file");
+            }
+            file << "[]";
+            file.close();
+            return crow::response(200, "All testimonials cleared");
+        }
+        catch (const std::exception& e) {
+            return crow::response(500, std::string("Error clearing testimonials: ") + e.what());
+        }
+    });
      
+
+    
      // Run the server on port 8080 using multiple threads
      app.port(8080).multithreaded().run();
      return 0;

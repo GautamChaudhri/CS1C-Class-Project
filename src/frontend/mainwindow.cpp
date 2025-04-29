@@ -1,4 +1,10 @@
 #include "mainwindow.h"
+#include "../backend/TestimonialManager.h"
+#include "TestimonialDialog.h"
+#include "TestimonialsDisplayDialog.h"
+#include <QAction>
+#include <QTimer>
+#include <QMenuBar>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -13,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent)
     auto layout = new QVBoxLayout(ui->renderAreaContainer);
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(renderArea);
+
+    setupTestimonials();
 }
 
 MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser)
@@ -48,6 +56,16 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedSha
     auto *loginButton = new QPushButton("Login", this);
     statusBar()->addPermanentWidget(loginButton);
     connect(loginButton, &QPushButton::clicked, this, &MainWindow::onLoginClicked);
+
+    //Testimonials
+    QAction* testimonialsAction = new QAction(tr("Testimonials"), this);
+    QMenu* helpMenu = menuBar()->addMenu(tr("&Help"));
+    helpMenu->addAction(testimonialsAction);
+    connect(testimonialsAction,
+            &QAction::triggered,
+            this,
+            &MainWindow::showTestimonialsDisplay);
+    setupTestimonials();
 
     // This creates a separate window when clicked
     ui->menuFile->addAction(tr("Open Shape Report"), this, &MainWindow::createShapeTableTab);
@@ -429,6 +447,36 @@ void MainWindow::selection_sort(alpha::vector<Shape*>& shapes, bool (*compare)(c
         }
     }
 }
+
+void MainWindow::setupTestimonials() {
+    // add testimonials button to menu bar
+    auto testimonialsAction = new QAction("Testimonials", this);  // Capitalized
+    connect(testimonialsAction, &QAction::triggered, this, &MainWindow::showTestimonialsDisplay);
+    
+    // add to menu bar
+    menuBar()->addAction(testimonialsAction);
+    
+    // connect to testimonial manager for prompts
+    connect(&TestimonialManager::getInstance(), &TestimonialManager::shouldPromptForTestimonial,
+            this, &MainWindow::showTestimonialPrompt);
+            
+    // start tracking time
+    TestimonialManager::getInstance().startTrackingTime();
+    
+    // show testimonials on startup
+    //QTimer::singleShot(0, this, &MainWindow::showTestimonialsDisplay);
+}
+
+void MainWindow::showTestimonialPrompt() {
+    TestimonialDialog dialog(this);
+    dialog.exec();
+}
+
+void MainWindow::showTestimonialsDisplay() {
+    TestimonialsDisplayDialog dialog(this);
+    dialog.exec();
+}
+
 
 // Comparison functions
 bool MainWindow::sortById(const Shape* a, const Shape* b) {

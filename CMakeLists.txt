@@ -31,6 +31,16 @@ set(PROJECT_srcS
     src/frontend/renderarea.cpp
     src/frontend/renderarea.h
 
+    # testimonial system
+    src/frontend/TestimonialDialog.cpp
+    src/frontend/TestimonialDialog.h
+    src/frontend/TestimonialsDisplayDialog.cpp
+    src/frontend/TestimonialsDisplayDialog.h
+    src/backend/Testimonial.cpp
+    src/backend/Testimonial.h
+    src/backend/TestimonialManager.cpp
+    src/backend/TestimonialManager.h
+
     # Backend components used by Frontend
     src/backend/ApiClient.cpp
     src/backend/Parser.cpp
@@ -72,7 +82,6 @@ if(QT_VERSION_MAJOR GREATER_EQUAL 6)
     qt_add_executable(Frontend
         MANUAL_FINALIZATION
         ${PROJECT_srcS}
-
     )
 else()
     if(ANDROID)

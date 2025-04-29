@@ -55,6 +55,16 @@ public:
 
 
     /**
+     * @brief Makes a request to get all testimonials via GET /testimonials.
+     *
+     * @details Sends a GET to retrieve the JSON array of testimonials. Replies are
+     *          handled by AnalyzeGetReply().
+     */
+    void GetTestimonials();
+
+
+
+    /**
      * @brief Makes a request to get data from the Get /users API Endpoint
      * @file reads from database/users.json
      * 
@@ -107,6 +117,18 @@ public:
 
 
     /**
+     * @brief Makes a request to post testimonial data via POST /testimonials.
+     *
+     * @details Sends a POST with the JSON string of testimonials. Replies are
+     *          handled by AnalyzePostReply().
+     *
+     * @param json - JSON-formatted string representing testimonials array.
+     */
+    void PostTestimonials(std::string json);
+
+
+
+    /**
      * @brief Makes a request to delete all shapes via the Delete /shapes-all endpoint
      * @file deletes data from database/shapes.json
      * 
@@ -136,6 +158,16 @@ public:
      *          On completion of request, control is handed over to @see AnalyzeDeleteReply().
      */
     void DeleteUsersAll();
+
+
+    
+    /**
+     * @brief Makes a request to delete all testimonials via DELETE /testimonials.
+     *
+     * @details Sends a DELETE to clear the testimonials on the server. Replies are
+     *          handled by AnalyzeDeleteReply().
+     */
+    void DeleteTestimonialsAll();
 
 
 
