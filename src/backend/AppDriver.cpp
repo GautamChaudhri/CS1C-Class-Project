@@ -25,9 +25,8 @@ void AppDriver::run() {
     mainWindow->show();
 
     // Defer loading until after the event loop starts
-    qDebug() << "[AppDriver:run] initializing main window and deferring loadAllData until after event loop starts";
+    qDebug() << "[AppDriver:run] initializing main window";
     QTimer::singleShot(0, this, [this]() {
-        qDebug() << "[AppDriver:loadAllData] now running loadAllData";
         loadAllData();
     });
 }

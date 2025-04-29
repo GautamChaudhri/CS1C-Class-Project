@@ -248,7 +248,6 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
 
 
 void RenderAreaManager::deleteShape(const int trackerId) {
-    qDebug().noquote().nospace() << "[RenderAreaManager::deleteShape] deleting trackerId=" << trackerId;
     bool shapeFound = false;
 
     for (size_t i = 0; i < renderedShapes.size() && !shapeFound; ++i) {
@@ -271,7 +270,6 @@ void RenderAreaManager::deleteShape(const int trackerId) {
 
 
 void RenderAreaManager::deleteAllShapes() {
-    qDebug().noquote().nospace() << "[RenderAreaManager::deleteAllShapes] count=" << renderedShapes.size();
     for (Shape* shape : renderedShapes)
         delete shape;
     emit renderAreaChanged();
@@ -283,6 +281,7 @@ void RenderAreaManager::deleteAllShapes() {
 
 
 void RenderAreaManager::loadShapes() {
+    qDebug() << "[RenderAreaManager::loadShapes] requesting shapes from webservice";
     client.GetRenderArea();
     emit renderAreaChanged();
 }
@@ -290,7 +289,6 @@ void RenderAreaManager::loadShapes() {
 
 
 void RenderAreaManager::saveShapes() {
-    qDebug().noquote().nospace() << "[RenderAreaManager::saveShapes] posting count=" << renderedShapes.size();
     std::string renderedShapeData = parse.ShapesToJson(renderedShapes);
     client.PostRenderArea(renderedShapeData);
 }
@@ -298,7 +296,7 @@ void RenderAreaManager::saveShapes() {
 
 
 void RenderAreaManager::onGoodGetResponse(const QString &json) {
-    qDebug().noquote().nospace() << "[RenderAreaManager::onGoodGetResponse] json_length=" << json.size();
+    qDebug().noquote().nospace() << "[RenderAreaManager::onGoodGetResponse] data retrieved";
     std::string jsonStr = json.toStdString();
     renderedShapes = parse.JsonToShapes(jsonStr);
     emit statusMessage("Shapes loaded successfully.");
