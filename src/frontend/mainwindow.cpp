@@ -70,11 +70,9 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedSha
     // This creates a separate window when clicked
     ui->menuFile->addAction(tr("Open Shape Report"), this, &MainWindow::createShapeTableTab);
 
-    // This makes the Contact Us button just as the login one was made
-    auto *contactUsButton = new QPushButton("Contact Us", this);
-    statusBar()->addPermanentWidget(contactUsButton);
-    // This connects the contact menu to the contact us page.
-    connect(contactUsButton, &QPushButton::clicked, this, &MainWindow::onContactUsClicked);
+    QAction* contactUsButton = new QAction(tr("Contact Us"), this);
+    menuBar()->addAction(contactUsButton);
+    connect(contactUsButton, &QAction::triggered, this, &MainWindow::onContactUsClicked);
 }
 
 

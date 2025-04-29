@@ -69,9 +69,6 @@ public slots:
     void onUserAuthentication(const UserAccount* currUser);
     void onUserAuthenticationFailure(const QString& message);
 
-    // For contact us window
-    void onContactUsClicked();
-
 private slots:
 
     void onToggleStyle(bool checked = true);
@@ -94,6 +91,9 @@ private slots:
 
     void showTestimonialPrompt();
     void showTestimonialsDisplay();
+
+    // For contact us window
+    void onContactUsClicked();
 
 private:
     Ui::MainWindow *ui;
