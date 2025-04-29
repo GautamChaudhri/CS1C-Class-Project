@@ -75,6 +75,7 @@ public:
     QPainter& getPainter();
     QTreeWidgetItem* getParentItem();
     alpha::vector<QTreeWidgetItem*>& getChildItems();
+    alpha::vector<QTreeWidgetItem*>& getPointsItems();
 
     int          getPenWidth()     const;
     PenStyle     getPenStyle()     const;

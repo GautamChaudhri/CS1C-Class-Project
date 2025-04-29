@@ -55,6 +55,20 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
                 // Move entire line to new anchor Y
                 line->Move(line->getX(), value);
             }
+            else if (key == "X1:")
+            {
+                // Update the start-point X coordinate
+                QPoint startPoint = line->getStartPoint();
+                startPoint.setX(value);
+                line->setStartPoint(startPoint);
+            }
+            else if (key == "Y1:")
+            {
+                // Update the start-point Y coordinate
+                QPoint startPoint = line->getStartPoint();
+                startPoint.setY(value);
+                line->setStartPoint(startPoint);
+            }
             else if (key == "X2:")
             {
                 // Update the end-point X coordinate
@@ -263,7 +277,7 @@ void RenderAreaManager::deleteShape(const int trackerId) {
 
     if (!shapeFound) {
         qDebug().noquote().nospace() << "[RenderAreaManager::deleteShape] not_found trackerId=" << trackerId;
-        QString message = "Shape not found. TrackerId: " + trackerId;
+        QString message = "Shape not found. TrackerId: " + QString::number(trackerId);
         emit renderAreaNotChanged(message);
     }
 }

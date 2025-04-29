@@ -46,13 +46,13 @@ void Shape::CreateParentItem()
     parentItem->addChild(*(childItems.end() - 1));
     (*(childItems.end() - 1))->setText(0, "X:");
     (*(childItems.end() - 1))->setText(1, QString::number(getX()));
-    //(*(childItems.end() - 1))->setFlags((*(childItems.end()))->flags() | Qt::ItemIsEditable);
+    (*(childItems.end() - 1))->setFlags((*(childItems.end() - 1))->flags() | Qt::ItemIsEditable);
 
     childItems.push_back(new QTreeWidgetItem());
     parentItem->addChild(*(childItems.end() - 1));
-    (*(childItems.end() - 1))->setText(0, "Y");
+    (*(childItems.end() - 1))->setText(0, "Y:");
     (*(childItems.end() - 1))->setText(1, QString::number(getY()));
-    //(*(childItems.end() - 1))->setFlags((*(childItems.end()))->flags() | Qt::ItemIsEditable);
+    (*(childItems.end() - 1))->setFlags((*(childItems.end() - 1))->flags() | Qt::ItemIsEditable);
 }
 
 void Shape::AddPointsToParent(const int POINTS_NUM)
@@ -67,11 +67,13 @@ void Shape::AddPointsToParent(const int POINTS_NUM)
         (*(childItems.end() - 1))->addChild(*(pointsItems.end() - 1));
         (*(pointsItems.end() - 1))->setText(0, "X" + QString::number(i + 1) + ":");
         (*(pointsItems.end() - 1))->setText(1, QString::number(getX()));
+        (*(pointsItems.end() - 1))->setFlags((*(pointsItems.end() - 1))->flags() | Qt::ItemIsEditable);
 
         pointsItems.push_back(new QTreeWidgetItem());
         (*(childItems.end() - 1))->addChild(*(pointsItems.end() - 1));
         (*(pointsItems.end() - 1))->setText(0, "Y" + QString::number(i + 1) + ":");
         (*(pointsItems.end() - 1))->setText(1, QString::number(getY()));
+        (*(pointsItems.end() - 1))->setFlags((*(pointsItems.end() - 1))->flags() | Qt::ItemIsEditable);
     }
 }
 
@@ -88,6 +90,7 @@ int Shape::getY() const { return coords.y(); }
 QPainter& Shape::getPainter() { return painter; }
 QTreeWidgetItem* Shape::getParentItem() { return parentItem; }
 alpha::vector<QTreeWidgetItem*>& Shape::getChildItems() { return childItems; }
+alpha::vector<QTreeWidgetItem*>& Shape::getPointsItems() { return pointsItems; }
 
 int          Shape::getPenWidth()     const { return pen.width(); }
 PenStyle     Shape::getPenStyle()     const { return pen.style(); }
