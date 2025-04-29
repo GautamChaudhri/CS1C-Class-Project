@@ -36,7 +36,7 @@ private slots:
     // For when a new shape is added to the render area
     void onRenderShapeAdded(Shape* shape);
     // For when an existing shape is modified in the render area
-    void onRenderShapeChanged(Shape* shape);
+    void onRenderShapeChanged(Shape* shape, QString key, int value);
     // For when a single shape is deleted from the render area
     void onRenderShapeDeleted(const int trackerId);
     // For when all shapes are deleted from the render area

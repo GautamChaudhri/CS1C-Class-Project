@@ -24,6 +24,11 @@ public:
     int getLength() const;
     int getWidth()  const;
 
+    void setLength(int newLength);
+    void setWidth(int newWidth);
+    void setX(int newX);
+    void setY(int newY);
+
 private:
     int length;
     int width;

@@ -21,6 +21,8 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // wire up handler for edits in the tree
+    connect(ui->treeWidget, &QTreeWidget::itemChanged, this, &MainWindow::onTreeWidgetItemChanged);
 
     // Manually create the RenderArea and insert it into the placeholder container
     renderArea = new RenderArea(ui->renderAreaContainer);
@@ -73,6 +75,7 @@ void MainWindow::shapes_to_treeWidget()
 
         // Add top-level item to the tree widget
         ui->treeWidget->addTopLevelItem(item->getParentItem());
+        item->getParentItem()->setData(0, Qt::UserRole, QVariant::fromValue(item->getTrackerId()));
 
         // Add the comboboxes to the children
         switch (item->getShapeId())
@@ -131,6 +134,32 @@ void MainWindow::shapes_to_treeWidget()
             break;
         }
     }
+}
+
+void MainWindow::onTreeWidgetItemChanged(QTreeWidgetItem* item, int column) {
+    // Only proceed if changes made occurred in column 1 and in child items
+    if (column != 1 || !item->parent()) return;
+
+    QString key = item->text(0);
+    bool ok = false;
+    int value = item->text(1).toInt(&ok);
+    if (!ok) return;
+
+    int trackerId = item->parent()->data(0, Qt::UserRole).toInt();
+    Shape* shape = nullptr;
+    bool found = false;
+    for (Shape* targetShape : *renderShapes) {
+        if (targetShape->getTrackerId() == trackerId) {
+            shape = targetShape;
+            found = true;
+            break;
+        }
+    }
+    if (found)
+        emit shapeChanged(shape, key, value);
+    else
+        qDebug() << "[MainWindow::onTreeWidgetItemChanged] shape not found - trackerId:" << trackerId;
+    
 }
 
 RenderArea* MainWindow::getRenderAreaRef() {

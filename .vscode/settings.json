@@ -88,13 +88,16 @@
         "xstring": "cpp",
         "xmemory": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "__bit_reference": "cpp",
+        "__node_handle": "cpp",
+        "locale": "cpp"
     },
     "cSpell.words": [
         "webservice"
     ],
     "github.copilot.enable": {
-        "*": false,
+        "*": true,
         "plaintext": false,
         "markdown": false,
         "scminput": false,

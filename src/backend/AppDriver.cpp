@@ -45,13 +45,13 @@ void AppDriver::run() {
 }
 
 void AppDriver::shutdown() {
-    shapes->saveShapes();
+    //shapes->saveShapes();
     renderedShapes->saveShapes();
     user->saveUsers();
 }
 
 void AppDriver::loadAllData() {
-    shapes->loadShapes();
+    //shapes->loadShapes();
     renderedShapes->loadShapes();
     user->loadUsers();
 }
@@ -80,8 +80,8 @@ void AppDriver::onRenderShapeAdded(Shape* shape) {
     renderedShapes->addShape(shape);
 }
 
-void AppDriver::onRenderShapeChanged(Shape* shape) {
-    renderedShapes->modifyShape(shape);
+void AppDriver::onRenderShapeChanged(Shape* shape, QString key, int value) {
+    renderedShapes->modifyShape(shape, key, value);
 }
 
 void AppDriver::onRenderShapeDeleted(const int trackerId) {

@@ -1,13 +1,15 @@
 [
 {
-"ShapeId": 2,
-"TrackerId": 2670,
-"ShapeType": "Polyline",
-"ShapeDimensions": [20, 30, 40, 50, 60, 70],
-"PenColor": "lightGray",
+"ShapeId": 4,
+"TrackerId": 4383,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 40, 150, 100],
+"PenColor": "blue",
 "PenWidth": 2,
-"PenStyle": "SolidLine",
+"PenStyle": "DashDotLine",
 "PenCapStyle": "RoundCap",
-"PenJoinStyle": "MiterJoin"
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "cyan",
+"BrushStyle": "HorPattern"
 }
 ]

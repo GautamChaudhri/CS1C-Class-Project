@@ -21,6 +21,11 @@ public:
 
     int getR() const;
 
+    void setR(int radius);
+    void setX(int x);
+    void setY(int y);   
+    
+
 private:
     int r;
 };

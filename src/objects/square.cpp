@@ -99,3 +99,8 @@ bool Square::isPointInside(const QPoint& point) const
 int Square::getLength() const {return length;}
 /**********************************************/
 
+//************* MUTATOR FUNCTIONS *************/
+void Square::setLength(int newLength) { length = newLength; }
+void Square::setX(int newX) { Shape::setX(newX); }
+void Square::setY(int newY) { Shape::setY(newY); }
+/**********************************************/

@@ -23,6 +23,11 @@ public:
     int getA() const;
     int getB() const;
 
+    void setA(int newA);
+    void setB(int newB);
+    void setX(int newX);
+    void setY(int newY);
+
 private:
     int a; // rename a & b to semi major and minor axis?
     int b;

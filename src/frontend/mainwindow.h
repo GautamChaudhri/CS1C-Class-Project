@@ -39,7 +39,7 @@ public:
 signals:
     // These signals connect to the slots in the AppDriver class
     void shapeAdded(Shape* shape);
-    void shapeChanged(Shape* shape);
+    void shapeChanged(Shape* shape, QString key, int vaue);
     void shapeDeleted(int trackerId);
     void deleteAllShapes();
 
@@ -59,22 +59,17 @@ private slots:
     void onToggleStyle(bool checked = true);
 
     void on_actionnew_line_button_triggered();
-
     void on_actionnew_square_button_triggered();
-
     void on_actionnew_rectange_button_triggered();
-
     void on_actionnew_circle_button_triggered();
-
     void on_actionnew_ellipse_button_triggered();
-
     void on_actionnew_polyline_button_triggered();
-
     void on_actionnew_polygon_button_triggered();
-
     void on_actionnew_text_button_triggered();
-
     void on_actionremove_shape_button_triggered();
+    
+    // For modifying shape
+    void onTreeWidgetItemChanged(QTreeWidgetItem*, int column);
 
 private:
     Ui::MainWindow *ui;
