@@ -125,3 +125,9 @@ bool Polygon::isPointInside(const QPoint& point) const
 /************* ACCESSOR FUNCTIONS *************/
 QPolygon Polygon::getPointsList() const { return pointsList; }
 /**********************************************/
+
+/************* MUTATOR FUNCTIONS *************/
+void Polygon::setPointsList(const QPolygon& newPointsList) { pointsList = newPointsList; }
+void Polygon::setX(int newX) { Shape::setX(newX); }
+void Polygon::setY(int newY) { Shape::setY(newY); }
+/**********************************************/

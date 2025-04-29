@@ -92,3 +92,10 @@ bool Rectangle::isPointInside(const QPoint& point) const
 int Rectangle::getLength() const { return length; }
 int Rectangle::getWidth()  const { return width; }
 /**********************************************/
+
+//************* MUTATOR FUNCTIONS *************/
+void Rectangle::setLength(int newLength) { length = newLength; }
+void Rectangle::setWidth(int newWidth) { width = newWidth; }
+void Rectangle::setX(int newX) { Shape::setX(newX); }
+void Rectangle::setY(int newY) { Shape::setY(newY); }
+/**********************************************/

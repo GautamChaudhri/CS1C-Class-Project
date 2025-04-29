@@ -131,3 +131,9 @@ QPoint Line::getEndPoint()   const { return endPoint; }
 /**********************************************/
 
 
+/************* MUTATOR FUNCTIONS *************/
+void Line::setStartPoint(const QPoint& newStartPoint) { startPoint = newStartPoint; }
+void Line::setEndPoint(const QPoint& newEndPoint) { endPoint = newEndPoint; }
+void Line::setX(int newX) { Shape::setX(newX); }
+void Line::setY(int newY) { Shape::setY(newY); }
+/**********************************************/

@@ -2,16 +2,14 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "renderarea.h"
-#include "../backend/Parser.h"
-#include "../backend/ApiClient.h"
 #include <QApplication>
 #include <QGridLayout>
-#include "ui_mainwindow.h"
-#include "../backend/UserAccount.h"
 #include <QComboBox>
 #include <QFile>
 #include <QTimer>
+#include "ui_mainwindow.h"
+#include "renderarea.h"
+#include "../backend/UserAccount.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui{
@@ -25,13 +23,11 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    MainWindow(QWidget *parent, const alpha::vector<Shape*>* shapes,
-               const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser);
+    MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser);
     ~MainWindow();
 
     void setShapes2(const alpha::vector<Shape*>& shapes);
 
-    RenderArea* getRenderAreaRef();
     void drawShapes() const;
 
     void shapes_to_treeWidget();
@@ -39,16 +35,11 @@ public:
 signals:
     // These signals connect to the slots in the AppDriver class
     void shapeAdded(Shape* shape);
-    void shapeChanged(Shape* shape);
+    void shapeChanged(Shape* shape, QString key, int vaue);
     void shapeDeleted(int trackerId);
     void deleteAllShapes();
 
 public slots:
-    // Signals from ShapesManager class
-    void onShapesChanged();
-    void onShapesNotChanged(const QString& message);
-    void showShapesStatusMessage(const QString &message);
-
     // Signals for these slots come from RenderAreaManager class
     void onRenderAreaChanged();
     void onRenderAreaNotChanged(const QString& message);
@@ -59,28 +50,22 @@ private slots:
     void onToggleStyle(bool checked = true);
 
     void on_actionnew_line_button_triggered();
-
     void on_actionnew_square_button_triggered();
-
     void on_actionnew_rectange_button_triggered();
-
     void on_actionnew_circle_button_triggered();
-
     void on_actionnew_ellipse_button_triggered();
-
     void on_actionnew_polyline_button_triggered();
-
     void on_actionnew_polygon_button_triggered();
-
     void on_actionnew_text_button_triggered();
-
     void on_actionremove_shape_button_triggered();
+    
+    // For modifying shape
+    void onTreeWidgetItemChanged(QTreeWidgetItem*, int column);
 
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;
 
-    const alpha::vector<Shape*>* allShapes;         // Holds all possible shapes that can be rendered
     const alpha::vector<Shape*>* renderShapes;      // Holds currently renderedShapes
     const UserAccount* currUser;
 

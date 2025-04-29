@@ -108,3 +108,9 @@ int           Text::getFontStyle()     const { return font.style();}
 QFont::Weight Text::getFontWeight()    const { return font.weight();}
 /**********************************************/
 
+/************* MUTATOR FUNCTIONS *************/
+void Text::setLength(int newLength) { length = newLength; }
+void Text::setWidth(int newWidth) { width = newWidth; }
+void Text::setX(int newX) { Shape::setX(newX); }
+void Text::setY(int newY) { Shape::setY(newY); }
+/**************************************************/

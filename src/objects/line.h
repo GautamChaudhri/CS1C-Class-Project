@@ -28,7 +28,10 @@ public:
     QPoint getStartPoint() const;
     QPoint getEndPoint()   const;
 
-
+    void setStartPoint(const QPoint& newStartPoint);
+    void setEndPoint(const QPoint& newEndPoint);
+    void setX(int newX);
+    void setY(int newY);
 private:
     QPoint startPoint;
     QPoint endPoint;

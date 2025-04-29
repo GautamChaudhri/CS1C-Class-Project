@@ -3,11 +3,10 @@
 #include <QTimer>
 
 AppDriver::AppDriver(QObject* parent) 
-          : QObject{parent}, shapes{new ShapesManager}, renderedShapes{new RenderAreaManager}, 
+          : QObject{parent}, renderedShapes{new RenderAreaManager}, 
             user{new UserManager} {}
 
 AppDriver::~AppDriver() {
-    delete shapes;
     delete renderedShapes;
     delete user;
 }
@@ -15,10 +14,8 @@ AppDriver::~AppDriver() {
 void AppDriver::run() {
     // Construct the main window and grab its renderArea
     mainWindow = new MainWindow(nullptr,
-                    shapes->getShapesRef(),
                     renderedShapes->getShapesRef(),
                     user->getCurrUserRef());
-    renderArea = mainWindow->getRenderAreaRef();
 
     // Connect signals BEFORE loading data
     connectFrontendToDriver();
@@ -45,13 +42,13 @@ void AppDriver::run() {
 }
 
 void AppDriver::shutdown() {
-    shapes->saveShapes();
+    //shapes->saveShapes();
     renderedShapes->saveShapes();
     user->saveUsers();
 }
 
 void AppDriver::loadAllData() {
-    shapes->loadShapes();
+    //shapes->loadShapes();
     renderedShapes->loadShapes();
     user->loadUsers();
 }
@@ -60,28 +57,12 @@ void AppDriver::loadAllData() {
 
 //=========================================== SLOTS ===================================================
 
-void AppDriver::onShapeAdded(Shape* shape) {
-    shapes->addShape(shape);
-}
-
-void AppDriver::onShapeChanged(Shape* shape) {
-    shapes->modifyShape(shape);
-}
-
-void AppDriver::onShapeDeleted(const int trackerId) {
-    shapes->deleteShape(trackerId);
-}
-
-void AppDriver::onDeleteAllShapes() {
-    shapes->deleteAllShapes();
-}
-
 void AppDriver::onRenderShapeAdded(Shape* shape) {
     renderedShapes->addShape(shape);
 }
 
-void AppDriver::onRenderShapeChanged(Shape* shape) {
-    renderedShapes->modifyShape(shape);
+void AppDriver::onRenderShapeChanged(Shape* shape, QString key, int value) {
+    renderedShapes->modifyShape(shape, key, value);
 }
 
 void AppDriver::onRenderShapeDeleted(const int trackerId) {
@@ -114,11 +95,6 @@ void AppDriver::onLoginAttempt(const QString username, const QString password) {
 
 //Connects the signals from frontend to the slots in AppDriver
 void AppDriver::connectFrontendToDriver() {
-    //for shapes
-    // connect(mainWindow, &MainWindow::shapeAdded, this, &AppDriver::onShapeAdded);
-    // connect(mainWindow, &MainWindow::shapeChanged, this, &AppDriver::onShapeChanged);
-    // connect(mainWindow, &MainWindow::shapeDeleted, this, &AppDriver::onShapeDeleted);
-    // connect(mainWindow, &MainWindow::deleteAllShapes, this, &AppDriver::onDeleteAllShapes);
     //for rendered shapes
     connect(mainWindow, &MainWindow::shapeAdded, this, &AppDriver::onRenderShapeAdded);
     connect(mainWindow, &MainWindow::shapeChanged, this, &AppDriver::onRenderShapeChanged);
@@ -135,19 +111,10 @@ void AppDriver::connectFrontendToDriver() {
 //Connects the signals in the Manager Classes to the slots in Frontend
 void AppDriver::connectManagersToFrontend() {
     qDebug() << "AppDriver::connectManagersToFrontend() – hooking up shapesChanged → onShapesChanged";
-    //for shapes
-    connect(shapes, &ShapesManager::shapesChanged, mainWindow, &MainWindow::onShapesChanged);
-    connect(shapes, &ShapesManager::shapesNotChanged, mainWindow, &MainWindow::onShapesNotChanged);
-    connect(shapes, &ShapesManager::statusMessage, mainWindow, &MainWindow::showShapesStatusMessage);
     //for rendered shapes
     connect(renderedShapes, &RenderAreaManager::renderAreaChanged, mainWindow, &MainWindow::onRenderAreaChanged);
     connect(renderedShapes, &RenderAreaManager::renderAreaNotChanged, mainWindow, &MainWindow::onRenderAreaNotChanged);
     connect(renderedShapes, &RenderAreaManager::statusMessage, mainWindow, &MainWindow::showRenderStatusMessage);
-    // Debug: confirm signal arrives in AppDriver
-    connect(shapes, &ShapesManager::shapesChanged, this, [this]() {
-        qDebug() << "AppDriver: shapesChanged received, manager size ="
-                 << shapes->getShapesRef()->size();
-    });
     //for user accounts
     // connect(user, &UserManager::userChanged, loginWindow, &LoginWindow::onUsersChanged);
     // connect(user, &UserManager::userNotChanged, loginWindow, &LoginWindow::showStatusMessage);

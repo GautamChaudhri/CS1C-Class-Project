@@ -113,66 +113,14 @@
 "BrushStyle": "DiagCrossPattern"
 },
 {
-"ShapeId": 2,
-"TrackerId": 2670,
-"ShapeType": "Polyline",
-"ShapeDimensions": [20, 30, 40, 50, 60, 70],
-"PenColor": "lightGray",
-"PenWidth": 2,
-"PenStyle": "SolidLine",
-"PenCapStyle": "RoundCap",
-"PenJoinStyle": "MiterJoin"
-},
-{
-"ShapeId": 8,
-"TrackerId": 8999,
-"ShapeType": "Text",
-"ShapeDimensions": [200, 700, 400, 30],
-"TextString": "Test Shape Text",
-"TextPointSize": 12,
-"TextColor": "black",
-"TextAlignment": "AlignLeft",
-"TextFontFamily": "Courier",
-"TextFontStyle": "StyleItalic",
-"TextFontWeight": "Normal"
-},
-{
-"ShapeId": 6,
-"TrackerId": 6044,
-"ShapeType": "Ellipse",
-"ShapeDimensions": [150, 150, 90, 45],
-"PenColor": "cyan",
-"PenWidth": 3,
-"PenStyle": "DotLine",
-"PenCapStyle": "FlatCap",
-"PenJoinStyle": "MiterJoin",
-"BrushColor": "blue",
-"BrushStyle": "Dense1Pattern"
-},
-{
-"ShapeId": 3,
-"TrackerId": 3933,
-"ShapeType": "Polygon",
-"ShapeDimensions": [700, 100, 750, 50, 800, 100],
-"PenColor": "black",
+"ShapeId": 4,
+"TrackerId": 4383,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [458, 248, 150, 100],
+"PenColor": "blue",
 "PenWidth": 2,
 "PenStyle": "DashDotLine",
-"PenCapStyle": "FlatCap",
-"PenJoinStyle": "MiterJoin",
-"BrushColor": "gray",
-"BrushStyle": "CrossPattern"
-},
-{
-"ShapeId": 5,
-"TrackerId": 5012,
-"ShapeType": "Square",
-"ShapeDimensions": [100, 100, 120],
-"PenColor": "black",
-"PenWidth": 4,
-"PenStyle": "DashLine",
 "PenCapStyle": "RoundCap",
-"PenJoinStyle": "RoundJoin",
-"BrushColor": "red",
-"BrushStyle": "SolidPattern"
+"PenJoinStyle": "MiterJoin"
 }
 ]

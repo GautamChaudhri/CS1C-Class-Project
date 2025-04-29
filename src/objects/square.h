@@ -22,6 +22,10 @@ public:
 
     int getLength() const;
 
+    void setLength(int newLength);
+    void setX(int newX);
+    void setY(int newY);
+
 private:
     int length;
 };

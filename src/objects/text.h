@@ -23,6 +23,11 @@ public:
 
     bool isPointInside(const QPoint& point) const override;
 
+    void setLength(int newLength);
+    void setWidth(int newWidth);
+    void setX(int newX);
+    void setY(int newY);
+
     /************* ACCESSOR FUNCTIONS *************/
     int           getLength()        const;
     int           getWidth()         const;

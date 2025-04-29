@@ -431,4 +431,9 @@ QStatusBar
 
 }
 
+/*-----QFrame-----*/
+QFrame {
+    background-color: #f0f0f0;
+}
+
 

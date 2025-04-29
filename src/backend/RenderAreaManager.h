@@ -35,7 +35,7 @@ public:
      *          redrawn except for saveShapes
      */
     void addShape(Shape* shape);
-    void modifyShape(Shape* shape);
+    void modifyShape(Shape* shape, QString key, int value);
     void deleteShape(const int trackerId);
     void deleteAllShapes();
     void loadShapes();

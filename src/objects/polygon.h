@@ -22,6 +22,10 @@ public:
 
     QPolygon getPointsList() const;
 
+    void setPointsList(const QPolygon& newPointsList);
+    void setX(int newX);
+    void setY(int newY);
+
 private:
     QPolygon pointsList;
 };

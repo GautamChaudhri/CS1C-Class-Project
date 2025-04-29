@@ -96,4 +96,9 @@ int Ellipse::getA() const { return a; }
 int Ellipse::getB() const { return b; }
 /**********************************************/
 
-
+/************* MUTATOR FUNCTIONS *************/
+void Ellipse::setA(int newA) { a = newA; }
+void Ellipse::setB(int newB) { b = newB; }
+void Ellipse::setX(int newX) { Shape::setX(newX); }
+void Ellipse::setY(int newY) { Shape::setY(newY); }
+/**********************************************/

@@ -67,3 +67,9 @@ bool Circle::isPointInside(const QPoint& point) const
 /************* ACCESSOR FUNCTIONS *************/
 int Circle::getR() const { return r; }
 /**********************************************/
+
+/************* MUTATOR FUNCTIONS *************/
+void Circle::setR(int radius) { r = radius; }
+void Circle::setX(int x) { Shape::setX(x); }
+void Circle::setY(int y) { Shape::setY(y); } 
+/**********************************************/

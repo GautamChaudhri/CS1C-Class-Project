@@ -29,26 +29,218 @@ alpha::vector<Shape*>* RenderAreaManager::getShapesRef() {
 void RenderAreaManager::addShape(Shape* shape) {
     renderedShapes.push_back(shape);
     emit renderAreaChanged();
+    saveShapes();
 }
 
 
 
-void RenderAreaManager::modifyShape(Shape* shape) {
-    bool shapeFound = false;
+void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
+    int shapeId = shape->getShapeId();
+    int targetId = shape->getTrackerId();
 
-    for (size_t i = 0; i < renderedShapes.size() && !shapeFound; ++i) {
-        if (renderedShapes[i]->getTrackerId() == shape->getTrackerId()) {
-            delete renderedShapes[i];
-            renderedShapes[i] = shape;
+    switch (shapeId) {
+        case LINE:
+        {
+            Line* line = static_cast<Line*>(shape);
+
+            if (key == "X:")
+            {
+                // Move entire line to new anchor X
+                line->Move(value, line->getY());
+            }
+            else if (key == "Y:")
+            {
+                // Move entire line to new anchor Y
+                line->Move(line->getX(), value);
+            }
+            else if (key == "X2:")
+            {
+                // Update the end-point X coordinate
+                QPoint endPoint = line->getEndPoint();
+                endPoint.setX(value);
+                line->setEndPoint(endPoint);
+            }
+            else if (key == "Y2:")
+            {
+                // Update the end-point Y coordinate
+                QPoint endPoint = line->getEndPoint();
+                endPoint.setY(value);
+                line->setEndPoint(endPoint);
+            }
+
             emit renderAreaChanged();
-            saveShapes();
+            break;
         }
-    }
+        case POLYLINE:
+        {
+            Polyline* polyline = static_cast<Polyline*>(shape);
 
-    if (!shapeFound) {
-        QString message = "Shape not found. TrackerId: " + shape->getTrackerId();
-        emit renderAreaNotChanged(message);
+            if (key == "X:")
+            {
+                // Move entire polyline by delta X
+                polyline->Move(value, polyline->getY());
+            }
+            else if (key == "Y:")
+            {
+                // Move entire polyline by delta Y
+                polyline->Move(polyline->getX(), value);
+            }
+            else
+            {
+                // handle edits to specific points: "X2:", "Y2:", etc.
+                QPolygon points = polyline->getPointsList();
+                if (key.startsWith("X"))
+                {
+                    // extract the point index from the key (e.g., "X3:" → index 2)
+                    int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
+                    if (pointIndex >= 0 && pointIndex < points.size())
+                    {
+                        points[pointIndex].setX(value);
+                    }
+                }
+                else if (key.startsWith("Y"))
+                {
+                    int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
+                    if (pointIndex >= 0 && pointIndex < points.size())
+                    {
+                        points[pointIndex].setY(value);
+                    }
+                }
+                polyline->setPointsList(points);
+            }
+
+            emit renderAreaChanged();
+            break;
+        }
+        case POLYGON:
+        {
+            Polygon* polygon = static_cast<Polygon*>(shape);
+
+            if (key == "X:")
+            {
+                // Move entire polygon by delta X
+                polygon->Move(value, polygon->getY());
+            }
+            else if (key == "Y:")
+            {
+                // Move entire polygon by delta Y
+                polygon->Move(polygon->getX(), value);
+            }
+            else
+            {
+                // handle edits to specific points
+                QPolygon points = polygon->getPointsList();
+                if (key.startsWith("X"))
+                {
+                    int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
+                    if (pointIndex >= 0 && pointIndex < points.size())
+                    {
+                        points[pointIndex].setX(value);
+                    }
+                }
+                else if (key.startsWith("Y"))
+                {
+                    int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
+                    if (pointIndex >= 0 && pointIndex < points.size())
+                    {
+                        points[pointIndex].setY(value);
+                    }
+                }
+                polygon->setPointsList(points);
+            }
+
+            emit renderAreaChanged();
+            break;
+        }
+        case RECTANGLE:
+        {
+            Rectangle* pRectangle = static_cast<Rectangle*>(shape);
+            if (key == "X:") {
+                pRectangle->setX(value);
+            }
+            else if (key == "Y:") {
+                pRectangle->setY(value);
+            }
+            else if (key == "Length:") {
+                pRectangle->setLength(value);
+            }
+            else if (key == "Width:") {
+                pRectangle->setWidth(value);
+            }
+            emit renderAreaChanged();
+            break;
+        }
+        case SQUARE:
+        {
+            Square* pSquare = static_cast<Square*>(shape);
+            if (key == "X:") {
+                pSquare->setX(value);
+            }
+            else if (key == "Y:") {
+                pSquare->setY(value);
+            }
+            else if (key == "Length:") {
+                pSquare->setLength(value);
+            }
+            emit renderAreaChanged();
+            break;
+        }
+        case ELLIPSE:
+        {
+            Ellipse* pEllipse = static_cast<Ellipse*>(shape);
+            if (key == "X:") {
+                pEllipse->setX(value);
+            }
+            else if (key == "Y:") {
+                pEllipse->setY(value);
+            }
+            else if (key == "Semi-Minor Axis:") {
+                pEllipse->setA(value);
+            }
+            else if (key == "Semi-Major Axis:") {
+                pEllipse->setB(value);
+            }
+            emit renderAreaChanged();
+            break;
+        }
+        case CIRCLE:
+        {
+            Circle* pCircle = static_cast<Circle*>(shape);
+            if (key == "X:") {
+                pCircle->setX(value);
+            }
+            else if (key == "Y:") {
+                pCircle->setY(value);
+            }
+            else if (key == "Length:") {
+                pCircle->setR(value);
+            }
+            emit renderAreaChanged();
+            break;
+        }
+        case TEXT:
+        {
+            Text* pText = static_cast<Text*>(shape);
+            if (key == "X:") {
+                pText->setX(value);
+            }
+            else if (key == "Y:") {
+                pText->setY(value);
+            }
+            else if (key == "Length:") {
+                pText->setLength(value);
+            }
+            else if (key == "Width:") {
+                pText->setWidth(value);
+            }
+            emit renderAreaChanged();
+            break;
+        }
+        default:
+            qDebug() << "[RenderAreaManager::modifyShape] Unknown shape type. ShapeId: " << shapeId;
+            return;
     }
+    saveShapes();
 }
 
 

@@ -130,3 +130,9 @@ double Polyline::Perimeter() const
 /************* ACCESSOR FUNCTIONS *************/
 QPolygon Polyline::getPointsList() const { return pointsList; }
 /**********************************************/
+
+/************* MUTATOR FUNCTIONS *************/
+void Polyline::setPointsList(const QPolygon& newPointsList) { pointsList = newPointsList; }
+void Polyline::setX(int newX) { Shape::setX(newX); }
+void Polyline::setY(int newY) { Shape::setY(newY); }
+/**********************************************/

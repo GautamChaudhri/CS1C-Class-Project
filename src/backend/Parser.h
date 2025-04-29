@@ -7,7 +7,6 @@
 #include "../objects/all_shapes.h"
 #include "UserAccount.h"
 
-enum ShapeIDs {LINE = 1, POLYLINE, POLYGON, RECTANGLE, SQUARE, ELLIPSE, CIRCLE, TEXT};
 class Parser {
 public:
     //Use default constructor/destructor as this class doesn't store any data

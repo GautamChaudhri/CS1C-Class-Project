@@ -12,4 +12,6 @@
 #include "square.h"
 #include "text.h"
 
+enum ShapeIDs {LINE = 1, POLYLINE, POLYGON, RECTANGLE, SQUARE, ELLIPSE, CIRCLE, TEXT};
+
 #endif // ALL_SHAPES_H
