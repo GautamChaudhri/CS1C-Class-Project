@@ -18,6 +18,18 @@ Circle::Circle(string shapeType,
     setShapeId(7);
 
     CreateParentItem();
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+
+    auto endChild = (*(childItems.end() - 1));
+
+    endChild->setText(0, "Radius:");
+    endChild->setText(1, QString::number(r));
+    endChild->setFlags(endChild->flags() | Qt::ItemIsEditable);
+
+    CreatePenChild();
+    CreateBrushChild();
 }
 
 

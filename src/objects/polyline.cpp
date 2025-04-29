@@ -17,6 +17,7 @@ Polyline::Polyline(string shapeType,
     setShapeId(2);
     CreateParentItem();
     AddPointsToParent(getPointsList().size());
+    CreatePenChild();
 }
 
 void Polyline::Draw(QWidget* renderArea)

@@ -14,6 +14,18 @@ Square::Square(string shapeType,
 {
     setShapeId(5);
     CreateParentItem();
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+
+    auto endChild = (*(childItems.end() - 1));
+
+    endChild->setText(0, "Length:");
+    endChild->setText(1, QString::number(length));
+    endChild->setFlags(endChild->flags() | Qt::ItemIsEditable);
+
+    CreatePenChild();
+    CreateBrushChild();
 }
 
 void Square::Draw(QWidget* renderArea)

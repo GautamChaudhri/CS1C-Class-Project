@@ -18,6 +18,8 @@ Polygon::Polygon(string shapeType,
     setShapeId(3);
     CreateParentItem();
     AddPointsToParent(getPointsList().size());
+    CreatePenChild();
+    CreateBrushChild();
 }
 
 void Polygon::Draw(QWidget* renderArea)

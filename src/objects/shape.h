@@ -61,6 +61,8 @@ public:
     virtual bool isPointInside(const QPoint& point) const = 0;
 
     void CreateParentItem();
+    void CreatePenChild();
+    void CreateBrushChild();
     void AddPointsToParent(const int POINTS_NUM);
 
     /**************** ACCESSOR FUNCTIONS ****************/
@@ -86,6 +88,7 @@ public:
     QPen         getPen()          const;
     QBrush       getBrush()        const;
     QPoint       getPoints()       const;
+    int          getChildEnd()     const;
     /****************************************************/
 
     /***************** MUTATOR FUNCTIONS ****************/

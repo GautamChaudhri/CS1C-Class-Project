@@ -23,6 +23,7 @@ public:
 
     bool isPointInside(const QPoint& point) const override;
 
+    void setText(QString text);
     void setLength(int newLength);
     void setWidth(int newWidth);
     void setX(int newX);

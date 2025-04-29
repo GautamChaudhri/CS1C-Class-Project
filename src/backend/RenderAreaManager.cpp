@@ -34,8 +34,6 @@ void RenderAreaManager::addShape(Shape* shape) {
     saveShapes();
 }
 
-
-
 void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
     int shapeId = shape->getShapeId();
     int targetId = shape->getTrackerId();
@@ -214,7 +212,7 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
             else if (key == "Y:") {
                 pCircle->setY(value);
             }
-            else if (key == "Length:") {
+            else if (key == "Radius:") {
                 pCircle->setR(value);
             }
             emit renderAreaChanged();
@@ -234,6 +232,9 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
             }
             else if (key == "Width:") {
                 pText->setWidth(value);
+            }
+            else if (key == "Text:") {
+                pText->setText(pText->getChildItems()[4]->text(1));
             }
             emit renderAreaChanged();
             break;

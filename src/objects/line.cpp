@@ -20,6 +20,7 @@ Line::Line(string shapeType,
     setShapeId(1);
     CreateParentItem();
     AddPointsToParent(2);
+    CreatePenChild();
 }
 
 void Line::Draw(QWidget* renderArea)

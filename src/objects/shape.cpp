@@ -46,13 +46,36 @@ void Shape::CreateParentItem()
     parentItem->addChild(*(childItems.end() - 1));
     (*(childItems.end() - 1))->setText(0, "X:");
     (*(childItems.end() - 1))->setText(1, QString::number(getX()));
-    //(*(childItems.end() - 1))->setFlags((*(childItems.end()))->flags() | Qt::ItemIsEditable);
+    (*(childItems.end() - 1))->setFlags((*(childItems.end() - 1))->flags() | Qt::ItemIsEditable);
 
     childItems.push_back(new QTreeWidgetItem());
     parentItem->addChild(*(childItems.end() - 1));
-    (*(childItems.end() - 1))->setText(0, "Y");
+    (*(childItems.end() - 1))->setText(0, "Y:");
     (*(childItems.end() - 1))->setText(1, QString::number(getY()));
-    //(*(childItems.end() - 1))->setFlags((*(childItems.end()))->flags() | Qt::ItemIsEditable);
+    (*(childItems.end() - 1))->setFlags((*(childItems.end() - 1))->flags() | Qt::ItemIsEditable);
+}
+
+void Shape::CreatePenChild()
+{
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+
+    auto endChild = (*(childItems.end() - 1));
+
+    endChild->setText(0, "Pen:");
+    endChild->setFlags(endChild->flags() & ~Qt::ItemIsEditable);
+}
+
+void Shape::CreateBrushChild()
+{
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+
+    auto endChild = (*(childItems.end() - 1));
+
+    endChild->setText(0, "Brush:");
+    endChild->setFlags(endChild->flags() & ~Qt::ItemIsEditable);
+
 }
 
 void Shape::AddPointsToParent(const int POINTS_NUM)
@@ -99,6 +122,7 @@ BrushStyle   Shape::getBrushStyle()   const { return brush.style(); }
 QPen         Shape::getPen()          const { return pen; }
 QBrush       Shape::getBrush()        const { return brush; }
 QPoint       Shape::getPoints()       const { return coords;}
+int          Shape::getChildEnd()     const { return std::distance(childItems.begin(), childItems.end()) - 1;}
 /****************************************************/
 
 /***************** MUTATOR FUNCTIONS ****************/
