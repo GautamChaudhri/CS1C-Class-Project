@@ -43,19 +43,18 @@ void RenderArea::mouseMoveEvent(QMouseEvent* event)
 {
     if (shapeSelectedIndex >= 0 && shapeSelectedIndex < renderShapes->size())
     {
+        Shape* shape = (*renderShapes)[shapeSelectedIndex];
         QPoint newPos = mapFromGlobal(QCursor::pos());
 
-        // Get the current position of the selected shape
-        QPoint currentPos = (*renderShapes)[shapeSelectedIndex]->getPoints();
-
         // Only update if the new position is different from the current position
-        if (newPos != currentPos)
+        if (newPos != shape->getPoints())
         {
-            (*renderShapes)[shapeSelectedIndex]->Move(newPos.x(), newPos.y());
+            shape->Move(newPos.x(), newPos.y());
             update(); // Trigger repaint
         }
     }
 }
+
 
 void RenderArea::mouseDoubleClickEvent(QMouseEvent* event)
 {
@@ -64,6 +63,29 @@ void RenderArea::mouseDoubleClickEvent(QMouseEvent* event)
         (*renderShapes)[shapeSelectedIndex]->getParentItem()->setExpanded(true);
     }
 }
+
+void RenderArea::mouseReleaseEvent(QMouseEvent* event)
+{
+    if (shapeSelectedIndex < 0 || shapeSelectedIndex >= renderShapes->size())
+    {
+        // Validate the shapeSelectedIndex
+        return;
+    }
+
+    Shape* shape = (*renderShapes)[shapeSelectedIndex];
+    if (!shape)
+    {
+        // Check if the shape pointer is null
+        return;
+    }
+
+    QPoint newPos = mapFromGlobal(QCursor::pos());
+
+    // Update display coordinates
+    updateShapeDisplayCoords(shape, newPos);
+}
+
+
 
 void RenderArea::resetSelection()
 {
@@ -109,4 +131,14 @@ int RenderArea::getShapeSelectedIndex() const
 {
     return shapeSelectedIndex;
 }
+
+void RenderArea::updateShapeDisplayCoords(Shape* item, const QPoint& position) const
+{
+    auto children = item->getChildItems();
+    QString xStr = QString::number(position.x());
+    QString yStr = QString::number(position.y());
+    children[3]->setText(1, xStr);
+    children[4]->setText(1, yStr);
+}
+
 
