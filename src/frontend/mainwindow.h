@@ -14,6 +14,8 @@
 #include <QTimer>
 #include <QComboBox>
 #include <QStatusBar>
+#include <QVBoxLayout>
+#include <QPushButton>
 #include "ui_mainwindow.h"
 #include "renderarea.h"
 #include "loginwindow.h"
@@ -66,6 +68,9 @@ public slots:
     // responses from UserManager
     void onUserAuthentication(const UserAccount* currUser);
     void onUserAuthenticationFailure(const QString& message);
+
+    // For contact us window
+    void onContactUsClicked();
 
 private slots:
 
@@ -122,6 +127,10 @@ private:
     static bool sortByArea(const Shape* a, const Shape* b);
     static bool sortByPerimeter(const Shape* a, const Shape* b);
 
+    QWidget *contactUsWidget;
+    QLabel *logoLabel;
+    QLabel *teamNameLabel;
+    QWidget *contactWindow;
 };
 
 #endif // MAINWINDOW_H
