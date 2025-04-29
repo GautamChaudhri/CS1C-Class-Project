@@ -3,6 +3,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QApplication>
 #include <QGridLayout>
 #include <QLabel>
 #include <QFile>
@@ -26,19 +27,16 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    MainWindow(QWidget *parent,
-               const alpha::vector<Shape*>* renderedShapes,
-               const UserAccount* currUser);
+    MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser);
     ~MainWindow();
 
-    RenderArea* getRenderAreaRef();
     void drawShapes() const;
     void shapes_to_treeWidget();
 
 signals:
     // shape signals
     void shapeAdded(Shape* shape);
-    void shapeChanged(Shape* shape);
+    void shapeChanged(Shape* shape, QString key, int vaue);
     void shapeDeleted(int trackerId);
     void deleteAllShapes();
 
@@ -51,10 +49,7 @@ signals:
     void loginFailed(const QString &message);
 
 public slots:
-    // shape slots...
-    void onShapesChanged();
-    void onShapesNotChanged(const QString& message);
-    void showShapesStatusMessage(const QString &message);
+    // Signals for these slots come from RenderAreaManager class
     void onRenderAreaChanged();
     void onRenderAreaNotChanged(const QString& message);
     void showRenderStatusMessage(const QString &message);
@@ -80,11 +75,16 @@ private slots:
     void on_actionnew_polyline_button_triggered();
     void on_actionnew_polygon_button_triggered();
     void on_actionnew_text_button_triggered();
+    void on_actionremove_shape_button_triggered();
+    
+    // For modifying shape
+    void onTreeWidgetItemChanged(QTreeWidgetItem*, int column);
 
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;
-    const alpha::vector<Shape*>* renderShapes;
+
+    const alpha::vector<Shape*>* renderShapes;      // Holds currently renderedShapes
     const UserAccount* currUser;
     QLabel *userStatusLabel;
 
@@ -95,6 +95,12 @@ private:
     QComboBox* createShapeTypeComboBox(const QString& currentShapeType);
     QComboBox* createPenStyleComboBox(int currentPenStyle);
     QComboBox* createBrushStyleComboBox(int currentBrushStyle);
+
+    QComboBox* createAlignmentComboBox(AlignmentFlag currentAlignment);
+    QComboBox* createFontComboBox(QFont currentFont);
+    QComboBox* createFontStyleComboBox(int currentFontStyle);
+    QComboBox* createFontWeightComboBox(QFont::Weight currentFontWeight);
+
 };
 
 #endif // MAINWINDOW_H

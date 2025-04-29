@@ -4,23 +4,21 @@
 * derived class Polygon - Base Shape
 *****************************************************/
 
-Polygon::Polygon(int    shapeId,
-                 string shapeType,
+Polygon::Polygon(string shapeType,
                  QPoint coords,
                  QPen   pen,
                  QBrush brush,
                  QPolygon pointsList)
-               : Shape(shapeId,
-                       shapeType,
+               : Shape(shapeType,
                        coords,
                        pen,
                        brush),
                 pointsList{pointsList}
-{}
-
-
-Polygon::~Polygon() {}
-
+{
+    setShapeId(3);
+    CreateParentItem();
+    AddPointsToParent(getPointsList().size());
+}
 
 void Polygon::Draw(QWidget* renderArea)
 {
@@ -107,4 +105,10 @@ bool Polygon::isPointInside(const QPoint& point) const
 
 /************* ACCESSOR FUNCTIONS *************/
 QPolygon Polygon::getPointsList() const { return pointsList; }
+/**********************************************/
+
+/************* MUTATOR FUNCTIONS *************/
+void Polygon::setPointsList(const QPolygon& newPointsList) { pointsList = newPointsList; }
+void Polygon::setX(int newX) { Shape::setX(newX); }
+void Polygon::setY(int newY) { Shape::setY(newY); }
 /**********************************************/

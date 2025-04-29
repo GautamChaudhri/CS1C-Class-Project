@@ -6,8 +6,7 @@
 class Text : public Shape
 {
 public:
-    Text(int    shapeId,
-         string shapeType,
+    Text(string shapeType,
          QPoint coords,
          QString textString,
          GlobalColor   textColor,
@@ -24,6 +23,11 @@ public:
 
     bool isPointInside(const QPoint& point) const override;
 
+    void setLength(int newLength);
+    void setWidth(int newWidth);
+    void setX(int newX);
+    void setY(int newY);
+
     /************* ACCESSOR FUNCTIONS *************/
     int           getLength()        const;
     int           getWidth()         const;
@@ -31,6 +35,8 @@ public:
     GlobalColor   getTextColor()     const;
     QFont         getFont()          const;
     AlignmentFlag getTextAlignment() const;
+    int           getFontStyle()     const;
+    QFont::Weight getFontWeight()    const;
     /**********************************************/
 
 private:

@@ -3,22 +3,21 @@
 /****************************************************
 * derived class Polyline - Base Shape
 *****************************************************/
-Polyline::Polyline(int    shapeId,
-                    string shapeType,
+Polyline::Polyline(string shapeType,
                     QPoint coords,
                     QPen   pen,
                     QBrush brush,
                     QPolygon pointsList)
-                : Shape(shapeId,
-                        shapeType,
+                : Shape(shapeType,
                         coords,
                         pen,
                         brush),
                     pointsList{pointsList}
-{}
-
-Polyline::~Polyline() {}
-
+{
+    setShapeId(2);
+    CreateParentItem();
+    AddPointsToParent(getPointsList().size());
+}
 
 void Polyline::Draw(QWidget* renderArea)
 {
@@ -102,4 +101,10 @@ double Polyline::Perimeter() const
 
 /************* ACCESSOR FUNCTIONS *************/
 QPolygon Polyline::getPointsList() const { return pointsList; }
+/**********************************************/
+
+/************* MUTATOR FUNCTIONS *************/
+void Polyline::setPointsList(const QPolygon& newPointsList) { pointsList = newPointsList; }
+void Polyline::setX(int newX) { Shape::setX(newX); }
+void Polyline::setY(int newY) { Shape::setY(newY); }
 /**********************************************/

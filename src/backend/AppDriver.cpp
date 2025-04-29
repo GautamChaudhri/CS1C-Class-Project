@@ -16,7 +16,6 @@ void AppDriver::run() {
     mainWindow = new MainWindow(nullptr,
                     renderedShapes->getShapesRef(),
                     user->getCurrUserRef());
-    renderArea = mainWindow->getRenderAreaRef();
 
     // Connect signals BEFORE loading data
     connectFrontendToDriver();
@@ -51,8 +50,8 @@ void AppDriver::onRenderShapeAdded(Shape* shape) {
     renderedShapes->addShape(shape);
 }
 
-void AppDriver::onRenderShapeChanged(Shape* shape) {
-    renderedShapes->modifyShape(shape);
+void AppDriver::onRenderShapeChanged(Shape* shape, QString key, int value) {
+    renderedShapes->modifyShape(shape, key, value);
 }
 
 void AppDriver::onRenderShapeDeleted(const int trackerId) {
@@ -100,6 +99,7 @@ void AppDriver::connectFrontendToDriver() {
 
 //Connects the signals in the Manager Classes to the slots in Frontend
 void AppDriver::connectManagersToFrontend() {
+    qDebug() << "AppDriver::connectManagersToFrontend() – hooking up shapesChanged → onShapesChanged";
     //for rendered shapes
     connect(renderedShapes, &RenderAreaManager::renderAreaChanged, mainWindow, &MainWindow::onRenderAreaChanged);
     connect(renderedShapes, &RenderAreaManager::renderAreaNotChanged, mainWindow, &MainWindow::onRenderAreaNotChanged);

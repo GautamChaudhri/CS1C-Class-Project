@@ -10,8 +10,7 @@ class Line : public Shape
 {
 public:
 
-    Line(int    shapeId,
-         string shapeType,
+    Line(string shapeType,
          QPoint coords,
          QPen   pen,
          QBrush brush,
@@ -29,10 +28,14 @@ public:
     QPoint getStartPoint() const;
     QPoint getEndPoint()   const;
 
-
+    void setStartPoint(const QPoint& newStartPoint);
+    void setEndPoint(const QPoint& newEndPoint);
+    void setX(int newX);
+    void setY(int newY);
 private:
     QPoint startPoint;
     QPoint endPoint;
+    QPolygon pointsList[2];
 };
 
 #endif // LINE_H

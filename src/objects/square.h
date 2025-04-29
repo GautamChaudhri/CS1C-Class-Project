@@ -6,8 +6,7 @@
 class Square : public Shape
 {
 public:
-    Square(int    shapeId,
-           string shapeType,
+    Square(string shapeType,
            QPoint coords,
            QPen   pen,
            QBrush brush,
@@ -22,6 +21,10 @@ public:
     bool isPointInside(const QPoint& point) const override;
 
     int getLength() const;
+
+    void setLength(int newLength);
+    void setX(int newX);
+    void setY(int newY);
 
 private:
     int length;

@@ -6,8 +6,7 @@
 class Ellipse : public Shape
 {
 public:
-    Ellipse(int    shapeId,
-            string shapeType,
+    Ellipse(string shapeType,
             QPoint coords,
             QPen   pen,
             QBrush brush,
@@ -23,6 +22,11 @@ public:
 
     int getA() const;
     int getB() const;
+
+    void setA(int newA);
+    void setB(int newB);
+    void setX(int newX);
+    void setY(int newY);
 
 private:
     int a; // rename a & b to semi major and minor axis?

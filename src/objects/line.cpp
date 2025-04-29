@@ -4,22 +4,23 @@
 * derived class Line - Base Shape
 *****************************************************/
 
-Line::Line(int    shapeId,
-           string shapeType,
+Line::Line(string shapeType,
            QPoint coords,
            QPen   pen,
            QBrush brush,
            QPoint startPoint,
            QPoint endPoint)
-        :  Shape (shapeId,
-                  shapeType,
+        :  Shape (shapeType,
                   coords,
                   pen,
                   brush),
        startPoint{startPoint},
          endPoint{endPoint}
-{}
-
+{
+    setShapeId(1);
+    CreateParentItem();
+    AddPointsToParent(2);
+}
 
 void Line::Draw(QWidget* renderArea)
 {
@@ -110,3 +111,9 @@ QPoint Line::getEndPoint()   const { return endPoint; }
 /**********************************************/
 
 
+/************* MUTATOR FUNCTIONS *************/
+void Line::setStartPoint(const QPoint& newStartPoint) { startPoint = newStartPoint; }
+void Line::setEndPoint(const QPoint& newEndPoint) { endPoint = newEndPoint; }
+void Line::setX(int newX) { Shape::setX(newX); }
+void Line::setY(int newY) { Shape::setY(newY); }
+/**********************************************/

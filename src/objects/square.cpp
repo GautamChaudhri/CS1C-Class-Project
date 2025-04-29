@@ -4,16 +4,17 @@
 * derived class Square - Base Shape
 *****************************************************/
 
-Square::Square(int    shapeId,
-               string shapeType,
+Square::Square(string shapeType,
                QPoint coords,
                QPen   pen,
                QBrush brush,
                int length)
-             : Shape(shapeId, shapeType, coords, pen, brush),
+             : Shape(shapeType, coords, pen, brush),
                length{length}
-{}
-
+{
+    setShapeId(5);
+    CreateParentItem();
+}
 
 void Square::Draw(QWidget* renderArea)
 {
@@ -65,3 +66,8 @@ bool Square::isPointInside(const QPoint& point) const
 int Square::getLength() const {return length;}
 /**********************************************/
 
+//************* MUTATOR FUNCTIONS *************/
+void Square::setLength(int newLength) { length = newLength; }
+void Square::setX(int newX) { Shape::setX(newX); }
+void Square::setY(int newY) { Shape::setY(newY); }
+/**********************************************/

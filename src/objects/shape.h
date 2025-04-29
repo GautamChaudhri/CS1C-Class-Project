@@ -34,6 +34,8 @@ using Qt::AlignmentFlag;
 const double PI = 3.14;
 
 
+static int globalTracker = 0; // contains the highest tracker id
+
 /****************************************************
 * class Shape - Abstract Base Class
 *****************************************************/
@@ -44,8 +46,7 @@ class Shape
 
 public:
 
-    Shape(int    shapeId,
-          string shapeType,
+    Shape(string shapeType,
           QPoint coords,
           QPen   pen,
           QBrush brush);
@@ -58,6 +59,9 @@ public:
     virtual double Area()      const = 0;
 
     virtual bool isPointInside(const QPoint& point) const = 0;
+
+    void CreateParentItem();
+    void AddPointsToParent(const int POINTS_NUM);
 
     /**************** ACCESSOR FUNCTIONS ****************/
     int    getShapeId()   const;
@@ -97,9 +101,14 @@ public:
     void setBrush(GlobalColor brushColor, BrushStyle brushStyle);
     /****************************************************/
 
+protected:
+    QTreeWidgetItem* parentItem;
+    alpha::vector<QTreeWidgetItem*> childItems;
+    alpha::vector<QTreeWidgetItem*> pointsItems;
+
 private:
     int      shapeId;
-    int      trackerId;
+    int      trackerId = globalTracker++;
     string   shapeType;
 
     QPen     pen;
@@ -109,9 +118,6 @@ private:
     QPainter painter;
 
     bool isSelected = false;
-
-    QTreeWidgetItem* parentItem;
-    alpha::vector<QTreeWidgetItem*> childItems;
 
     // Disable Copy Operations
     Shape(Shape& shape) = delete;

@@ -6,8 +6,7 @@
 class Rectangle : public Shape
 {
 public:
-    Rectangle(int    shapeId,
-              string shapeType,
+    Rectangle(string shapeType,
               QPoint coords,
               QPen   pen,
               QBrush brush,
@@ -24,6 +23,11 @@ public:
 
     int getLength() const;
     int getWidth()  const;
+
+    void setLength(int newLength);
+    void setWidth(int newWidth);
+    void setX(int newX);
+    void setY(int newY);
 
 private:
     int length;

@@ -4,22 +4,20 @@
 * derived class Circle - Base Shape
 *****************************************************/
 
-Circle::Circle(int    shapeId,
-               string shapeType,
+Circle::Circle(string shapeType,
                QPoint coords,
                QPen   pen,
                QBrush brush,
                int    r)
-       : Shape(shapeId,
-               shapeType,
+       : Shape(shapeType,
                coords,
                pen,
                brush),
                r{r}
 {
-    getChildItems().push_back(new QTreeWidgetItem());
-    getParentItem()->addChild(getChildItems()[5]);
-    getChildItems()[5]->setText(0, "Radius:");
+    setShapeId(7);
+
+    CreateParentItem();
 }
 
 
@@ -68,4 +66,10 @@ bool Circle::isPointInside(const QPoint& point) const
 
 /************* ACCESSOR FUNCTIONS *************/
 int Circle::getR() const { return r; }
+/**********************************************/
+
+/************* MUTATOR FUNCTIONS *************/
+void Circle::setR(int radius) { r = radius; }
+void Circle::setX(int x) { Shape::setX(x); }
+void Circle::setY(int y) { Shape::setY(y); } 
 /**********************************************/

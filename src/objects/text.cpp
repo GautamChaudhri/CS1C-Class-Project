@@ -4,8 +4,7 @@
 * derived class Text - Base Shape
 *****************************************************/
 
-Text::Text(int    shapeId,
-           string shapeType,
+Text::Text(string shapeType,
            QPoint coords,
            QString textString,
            GlobalColor   textColor,
@@ -13,14 +12,17 @@ Text::Text(int    shapeId,
            QFont             font,
            int           length,
            int           width)
-        : Shape(shapeId, shapeType, coords, QPen(), QBrush()),
+        : Shape(shapeType, coords, QPen(), QBrush()),
             textString{textString},
             textColor{textColor},
             textAlignment{textAlignment},
             font{font},
             length{length},
             width{width}
-{}
+{
+    setShapeId(8);
+    CreateParentItem();
+}
 
 
 void Text::Draw(QWidget* renderArea)
@@ -77,4 +79,13 @@ QString       Text::getTextString()    const { return textString; }
 GlobalColor   Text::getTextColor()     const { return textColor; }
 QFont         Text::getFont()          const { return font; }
 AlignmentFlag Text::getTextAlignment() const { return textAlignment; }
+int           Text::getFontStyle()     const { return font.style();}
+QFont::Weight Text::getFontWeight()    const { return font.weight();}
 /**********************************************/
+
+/************* MUTATOR FUNCTIONS *************/
+void Text::setLength(int newLength) { length = newLength; }
+void Text::setWidth(int newWidth) { width = newWidth; }
+void Text::setX(int newX) { Shape::setX(newX); }
+void Text::setY(int newY) { Shape::setY(newY); }
+/**************************************************/

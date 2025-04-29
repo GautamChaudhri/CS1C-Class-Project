@@ -6,8 +6,7 @@
 class Circle : public Shape
 {
 public:
-    Circle(int    shapeId,
-           string shapeType,
+    Circle(string shapeType,
            QPoint coords,
            QPen   pen,
            QBrush brush,
@@ -21,6 +20,11 @@ public:
     bool isPointInside(const QPoint& point) const override;
 
     int getR() const;
+
+    void setR(int radius);
+    void setX(int x);
+    void setY(int y);   
+    
 
 private:
     int r;

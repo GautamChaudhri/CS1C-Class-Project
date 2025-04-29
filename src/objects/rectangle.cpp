@@ -4,17 +4,19 @@
 * derived class Rectangle - Base Shape
 *****************************************************/
 
-Rectangle::Rectangle(int    shapeId,
-                     string shapeType,
+Rectangle::Rectangle(string shapeType,
                      QPoint coords,
                      QPen   pen,
                      QBrush brush,
                      int length,
                      int width)
-                   : Shape(shapeId, shapeType, coords, pen, brush),
+                   : Shape(shapeType, coords, pen, brush),
                     length{length},
                     width{width}
-{}
+{
+    setShapeId(4);
+    CreateParentItem();
+}
 
 
 void Rectangle::Draw(QWidget* renderArea)
@@ -66,4 +68,11 @@ bool Rectangle::isPointInside(const QPoint& point) const
 /************* ACCESSOR FUNCTIONS *************/
 int Rectangle::getLength() const { return length; }
 int Rectangle::getWidth()  const { return width; }
+/**********************************************/
+
+//************* MUTATOR FUNCTIONS *************/
+void Rectangle::setLength(int newLength) { length = newLength; }
+void Rectangle::setWidth(int newWidth) { width = newWidth; }
+void Rectangle::setX(int newX) { Shape::setX(newX); }
+void Rectangle::setY(int newY) { Shape::setY(newY); }
 /**********************************************/
