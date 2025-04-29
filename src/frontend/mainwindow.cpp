@@ -275,6 +275,8 @@ void MainWindow::onUserAuthentication(const UserAccount* currUser) {
     this->currUser = currUser;
     userStatusLabel->setText("Logged in as: " + currUser->getUsername());   
     emit loginSuccess();
+
+    ui->toolBar->setEnabled(currUser->isAdmin());
 }
 
 void MainWindow::onUserAuthenticationFailure(const QString &message) {
