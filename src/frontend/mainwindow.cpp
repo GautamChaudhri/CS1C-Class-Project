@@ -59,12 +59,8 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedSha
 
     //Testimonials
     QAction* testimonialsAction = new QAction(tr("Testimonials"), this);
-    QMenu* helpMenu = menuBar()->addMenu(tr("&Help"));
     helpMenu->addAction(testimonialsAction);
-    connect(testimonialsAction,
-            &QAction::triggered,
-            this,
-            &MainWindow::showTestimonialsDisplay);
+    connect(testimonialsAction, &QAction::triggered, this, &MainWindow::showTestimonialsDisplay);
     setupTestimonials();
 
     // This creates a separate window when clicked
