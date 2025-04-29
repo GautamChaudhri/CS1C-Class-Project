@@ -46,11 +46,13 @@ void Shape::CreateParentItem()
     parentItem->addChild(*(childItems.end() - 1));
     (*(childItems.end() - 1))->setText(0, "X:");
     (*(childItems.end() - 1))->setText(1, QString::number(getX()));
+    //(*(childItems.end() - 1))->setFlags((*(childItems.end()))->flags() | Qt::ItemIsEditable);
 
     childItems.push_back(new QTreeWidgetItem());
     parentItem->addChild(*(childItems.end() - 1));
     (*(childItems.end() - 1))->setText(0, "Y");
     (*(childItems.end() - 1))->setText(1, QString::number(getY()));
+    //(*(childItems.end() - 1))->setFlags((*(childItems.end()))->flags() | Qt::ItemIsEditable);
 }
 
 void Shape::AddPointsToParent(const int POINTS_NUM)

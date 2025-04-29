@@ -145,8 +145,8 @@ void RenderArea::updateShapeDisplayCoords(Shape* item, const QPoint& position) c
     auto children = item->getChildItems();
     QString xStr = QString::number(position.x());
     QString yStr = QString::number(position.y());
-    children[3]->setText(1, xStr);
-    children[4]->setText(1, yStr);
+    children[2]->setText(1, xStr);
+    children[3]->setText(1, yStr);
 }
 
 

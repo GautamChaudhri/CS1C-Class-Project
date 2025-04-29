@@ -18,25 +18,6 @@ Polygon::Polygon(string shapeType,
     setShapeId(3);
     CreateParentItem();
     AddPointsToParent(getPointsList().size());
-
-
-    // for (int i = 0; i < 3; ++i)
-    // {
-    //     childItems.push_back(new QTreeWidgetItem());
-    //     parentItem->addChild(childItems[i + 2]);
-    // }
-
-    // childItems[5]->setText(0, "Pen:");
-    // childItems[6]->setText(0, "Brush:");
-
-    // childItems[7]->setText(0, "Points");
-    // for (int i = 0; i < getPointsList().size(); ++i)
-    // {
-    //     pointsItems.push_back(new QTreeWidgetItem());
-    //     childItems[7]->addChild(pointsItems[i]);
-
-    //     pointsItems[i]->setText(0, "Point " + QString::number(i + 1));
-    // }
 }
 
 void Polygon::Draw(QWidget* renderArea)

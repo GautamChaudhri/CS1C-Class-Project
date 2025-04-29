@@ -16,29 +16,6 @@ Rectangle::Rectangle(string shapeType,
 {
     setShapeId(4);
     CreateParentItem();
-
-
-    // parentItem->setText(0, QString::fromStdString(shapeType));
-
-    // for (int i = 0; i < 4; ++i)
-    // {
-    //     childItems.push_back(new QTreeWidgetItem());
-    //     parentItem->addChild(childItems[i + 5]);
-    // }
-
-    // childItems[5]->setText(0, "Length:");
-    // childItems[5]->setText(1, QString::number(getLength()));
-    // childItems[5]->setFlags(getChildItems()[5]->flags() | Qt::ItemIsEditable);
-
-    // childItems[6]->setText(0, "Width:");
-    // childItems[6]->setText(1, QString::number(getWidth()));
-    // childItems[6]->setFlags(getChildItems()[6]->flags() | Qt::ItemIsEditable);
-
-    // childItems[7]->setText(0, "Pen:");
-    // childItems[7]->setFlags(childItems[7]->flags() | Qt::ItemIsEditable);
-
-    // childItems[8]->setText(0, "Brush:");
-    // childItems[8]->setFlags(childItems[8]->flags() | Qt::ItemIsEditable);
 }
 
 

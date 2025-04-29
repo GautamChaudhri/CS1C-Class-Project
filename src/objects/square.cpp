@@ -14,25 +14,6 @@ Square::Square(string shapeType,
 {
     setShapeId(5);
     CreateParentItem();
-
-
-    // parentItem->setText(0, QString::fromStdString(shapeType));
-    
-    // for (int i = 0; i < 3; ++i)
-    // {
-    //     childItems.push_back(new QTreeWidgetItem());
-    //     parentItem->addChild(childItems[i + 5]);
-    // }
-
-    // childItems[5]->setText(0, "Length:");
-    // childItems[5]->setText(1, QString::number(getLength()));
-    // childItems[5]->setFlags(getChildItems()[5]->flags() | Qt::ItemIsEditable);
-
-    // childItems[6]->setText(0, "Pen:");
-    // childItems[6]->setFlags(childItems[6]->flags() | Qt::ItemIsEditable);
-
-    // childItems[7]->setText(0, "Brush:");
-    // childItems[7]->setFlags(childItems[7]->flags() | Qt::ItemIsEditable);
 }
 
 void Square::Draw(QWidget* renderArea)

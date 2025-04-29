@@ -17,34 +17,6 @@ Polyline::Polyline(string shapeType,
     setShapeId(2);
     CreateParentItem();
     AddPointsToParent(getPointsList().size());
-
-
-    // parentItem->setText(0, QString::fromStdString(shapeType));
-
-    // for (int i = 0; i < 7; ++i)
-    // {
-    //     childItems.push_back(new QTreeWidgetItem());
-    //     parentItem->addChild(childItems[i + 5]);
-    // }
-
-    // childItems[5]->setText(0, "X2:");
-    // childItems[5]->setText(1, QString::number(pointsList[1].x()));
-    // childItems[5]->setFlags(getChildItems()[5]->flags() | Qt::ItemIsEditable);
-
-    // childItems[6]->setText(0, "Y2:");
-    // childItems[6]->setText(1, QString::number(pointsList[1].y()));
-    // childItems[6]->setFlags(getChildItems()[6]->flags() | Qt::ItemIsEditable);
-
-    // childItems[7]->setText(0, "X3:");
-    // childItems[7]->setText(1, QString::number(pointsList[2].x()));
-    // childItems[7]->setFlags(getChildItems()[7]->flags() | Qt::ItemIsEditable);
-
-    // childItems[8]->setText(0, "Y3:");
-    // childItems[8]->setText(1, QString::number(pointsList[2].y()));
-    // childItems[8]->setFlags(getChildItems()[8]->flags() | Qt::ItemIsEditable);
-
-    // childItems[11]->setText(0, "Pen:");
-    // childItems[11]->setFlags(childItems[11]->flags() | Qt::ItemIsEditable);
 }
 
 void Polyline::Draw(QWidget* renderArea)
