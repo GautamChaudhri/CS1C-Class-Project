@@ -334,7 +334,7 @@ void MainWindow::onUserAuthentication(const UserAccount* currUser) {
     userStatusLabel->setText("Logged in as: " + currUser->getUsername());   
     emit loginSuccess();
 
-    //ui->toolBar->setEnabled(currUser->isAdmin()); //allows admin accounts to edit shapes
+    ui->toolBar->setEnabled(currUser->isAdmin()); //allows admin accounts to edit shapes
 }
 
 void MainWindow::onUserAuthenticationFailure(const QString &message) {
