@@ -2,16 +2,14 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "renderarea.h"
-#include "../backend/Parser.h"
-#include "../backend/ApiClient.h"
 #include <QApplication>
 #include <QGridLayout>
-#include "ui_mainwindow.h"
-#include "../backend/UserAccount.h"
 #include <QComboBox>
 #include <QFile>
 #include <QTimer>
+#include "ui_mainwindow.h"
+#include "renderarea.h"
+#include "../backend/UserAccount.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui{

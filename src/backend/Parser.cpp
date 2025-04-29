@@ -12,8 +12,6 @@ void Parser::PrintShapeVector(const alpha::vector<Shape*> &shapes) {
 
 
 alpha::vector<Shape*> Parser::JsonToShapes(const std::string& json) {   //Forward Parser (JSON string -> vector<Shape*>)
-    qDebug() << "JSON: " << json << Qt::endl;
-    qDebug() << "JSON Length: " << json.length() << Qt::endl;
     alpha::vector<Shape*> shapes;
     Shape* newShape = nullptr;
 
