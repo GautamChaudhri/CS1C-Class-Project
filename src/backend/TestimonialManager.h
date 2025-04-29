@@ -5,6 +5,8 @@
 #include <QObject>
 #include <QVector>
 #include <QTimer>
+#include "ApiClient.h"
+#include "Parser.h"
 
 class TestimonialManager : public QObject {
     Q_OBJECT
@@ -26,6 +28,13 @@ public:
     
 signals:
     void shouldPromptForTestimonial();
+
+private slots:
+    // Callbacks for API client responses
+    void onGoodGetResponse(const QString& json);
+    void onBadGetResponse(const QString& error);
+    void onGoodPostResponse();
+    void onBadPostResponse(const QString& error);
     
 private:
     TestimonialManager();
@@ -40,6 +49,9 @@ private:
     QTimer* m_trackingTimer;                     // tracks user time
     QHash<QString, bool> m_doNotShowAgain;       // stores user preferences
     QHash<QString, int> m_userTimeTracking;      // tracks time per user
+
+    ApiClient client;
+    Parser parse;
     
     // timing constants
     static const int INITIAL_PROMPT_TIME = 30 * 60;   // 30 min in seconds

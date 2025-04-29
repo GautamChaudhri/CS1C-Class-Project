@@ -148,6 +148,41 @@ std::string Parser::UsersToJson(const alpha::vector<UserAccount*>& users) {    /
     return json;
 }
 
+
+
+QVector<Testimonial> Parser::JsonToTestimonials(const std::string& json) {
+    QByteArray data = QByteArray::fromStdString(json);
+    QJsonParseError err;
+    QJsonDocument doc = QJsonDocument::fromJson(data, &err);
+    if (err.error != QJsonParseError::NoError) {
+        throw std::runtime_error("Failed to parse testimonials JSON: " +
+                                 err.errorString().toStdString());
+    }
+    if (!doc.isArray()) {
+        throw std::runtime_error("Expected JSON array for testimonials");
+    }
+    QVector<Testimonial> testimonials;
+    QJsonArray array = doc.array();
+    testimonials.reserve(array.size());
+    for (const QJsonValue& v : array) {
+        if (!v.isObject()) continue;
+        testimonials.append(Testimonial::fromJson(v.toObject()));
+    }
+    return testimonials;
+}
+
+
+
+std::string Parser::TestimonialsToJson(const QVector<Testimonial>& testimonials) {
+    QJsonArray array;
+    for (const Testimonial& t : testimonials) {
+        array.append(t.toJson());
+    }
+    QJsonDocument doc(array);
+    QByteArray bytes = doc.toJson(QJsonDocument::Indented);
+    return bytes.toStdString();
+}
+
 /*==================================== Forward Parser Subroutines ============================================*/
 
 Parser::MorphicShape Parser::ParseJsonObject(const std::string json, size_t &index) {

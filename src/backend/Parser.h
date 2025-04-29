@@ -3,9 +3,14 @@
 
 #include <iostream>
 #include <cctype>
+#include <QVector>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
 #include "../objects/vector.h"
 #include "../objects/all_shapes.h"
 #include "UserAccount.h"
+#include "Testimonial.h"
 
 class Parser {
 public:
@@ -56,6 +61,12 @@ public:
 
     // Reverse parser: vector<UserAccount> → JSON
     std::string UsersToJson(const alpha::vector<UserAccount*>& users);
+
+    // Forward parser for testimonials
+    static QVector<Testimonial> JsonToTestimonials(const std::string& json);
+
+    // Reverse parser for testimonials
+    static std::string TestimonialsToJson(const QVector<Testimonial>& testimonials);
 
 private:
     /*==================================== Forward Parser Subroutines ============================================*/
