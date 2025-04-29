@@ -31,8 +31,6 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedSha
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(renderArea);
 
-    
-
     // Store references for data
     this->renderShapes = renderedShapes;
     this->currUser = currUser;
@@ -50,6 +48,9 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedSha
     auto *loginButton = new QPushButton("Login", this);
     statusBar()->addPermanentWidget(loginButton);
     connect(loginButton, &QPushButton::clicked, this, &MainWindow::onLoginClicked);
+
+    // This creates a separate window when clicked
+    ui->menuFile->addAction(tr("Open Shape Report"), this, &MainWindow::createShapeTableTab);
 }
 
 
@@ -409,5 +410,163 @@ QComboBox* MainWindow::createFontWeightComboBox(QFont::Weight currentFontWeight)
     return box;
 }
 
+void MainWindow::selection_sort(alpha::vector<Shape*>& shapes, bool (*compare)(const Shape*, const Shape*), bool ascending) {
+    for (size_t i = 0; i < shapes.size(); ++i) {
+        size_t targetIdx = i;
+        for (size_t j = i + 1; j < shapes.size(); ++j) {
+            if (ascending ? compare(shapes[j], shapes[targetIdx]) : compare(shapes[targetIdx], shapes[j])) {
+                targetIdx = j;
+            }
+        }
+        if (targetIdx != i) {
+            std::swap(shapes[i], shapes[targetIdx]);
+        }
+    }
+}
 
+// Comparison functions
+bool MainWindow::sortById(const Shape* a, const Shape* b) {
+    return a->getShapeId() > b->getShapeId();
+}
 
+bool MainWindow::sortByArea(const Shape* a, const Shape* b) {
+    return a->Area() > b->Area();
+}
+
+bool MainWindow::sortByPerimeter(const Shape* a, const Shape* b) {
+    return a->Perimeter() > b->Perimeter();
+}
+ 
+// Populate the shape table with shape data
+void MainWindow::populateShapeTable(const alpha::vector<Shape*>& shapes) {
+    shapeTable->setRowCount(shapes.size());
+    for (size_t i = 0; i < shapes.size(); ++i) {
+        // Use actual shape ID instead of sequential numbers
+        QTableWidgetItem* idItem = new QTableWidgetItem(QString::number(shapes[i]->getShapeId()));
+        
+        QTableWidgetItem* typeItem = new QTableWidgetItem(QString::fromStdString(shapes[i]->getShapeType()));
+        QTableWidgetItem* areaItem = new QTableWidgetItem(QString::number(shapes[i]->Area()));
+        QTableWidgetItem* perimeterItem = new QTableWidgetItem(QString::number(shapes[i]->Perimeter()));
+
+        // Make the items uneditable
+        idItem->setFlags(idItem->flags() & ~Qt::ItemIsEditable);
+        typeItem->setFlags(typeItem->flags() & ~Qt::ItemIsEditable);
+        areaItem->setFlags(areaItem->flags() & ~Qt::ItemIsEditable);
+        perimeterItem->setFlags(perimeterItem->flags() & ~Qt::ItemIsEditable);
+
+        shapeTable->setItem(i, 0, idItem);
+        shapeTable->setItem(i, 1, typeItem);
+        shapeTable->setItem(i, 2, areaItem);
+        shapeTable->setItem(i, 3, perimeterItem);
+    }
+}
+void MainWindow::createShapeTableTab() {
+    // Create a new window for the shape report
+    QWidget* reportWindow = new QWidget();
+    reportWindow->setWindowTitle("Render Area Shape Report");
+    reportWindow->setAttribute(Qt::WA_DeleteOnClose); // Automatically delete the window when closed
+    reportWindow->resize(600, 400); // Set an initial size for the window
+
+    // Create a layout for the window
+    QVBoxLayout* layout = new QVBoxLayout(reportWindow);
+
+    // Create the dropdown for sorting methods
+    sortDropdown = new QComboBox(reportWindow);
+    sortDropdown->addItem("Sort by ID");
+    sortDropdown->addItem("Sort by Area");
+    sortDropdown->addItem("Sort by Perimeter");
+
+    // Create the dropdown for sorting order
+    sortOrderDropdown = new QComboBox(reportWindow);
+    sortOrderDropdown->addItem("Ascending");
+    sortOrderDropdown->addItem("Descending");
+
+    // Ensure the dropdown menus close automatically after selection
+    sortDropdown->view()->setSelectionMode(QAbstractItemView::SingleSelection);
+    sortDropdown->setEditable(false);
+    sortOrderDropdown->view()->setSelectionMode(QAbstractItemView::SingleSelection);
+    sortOrderDropdown->setEditable(false);
+
+    layout->addWidget(sortDropdown);
+    layout->addWidget(sortOrderDropdown);
+
+    // Connect the dropdowns to the sorting slot
+    connect(sortDropdown, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &MainWindow::onSortMethodChanged);
+    connect(sortOrderDropdown, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &MainWindow::onSortMethodChanged);
+
+    // Create the table to display shapes
+    shapeTable = new QTableWidget(reportWindow);
+    shapeTable->setColumnCount(4);
+    shapeTable->setHorizontalHeaderLabels({"Shape ID", "Shape Type", "Area", "Perimeter"});
+    shapeTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    
+    // Turn off alternating row colors for consistent appearance
+    shapeTable->setAlternatingRowColors(false);
+    
+    // Add grid lines to make table data more readable
+    shapeTable->setShowGrid(true);
+    shapeTable->setGridStyle(Qt::SolidLine);
+    
+    // Add border around the table for better definition
+    shapeTable->setFrameStyle(QFrame::Box | QFrame::Plain);
+    shapeTable->setFrameShape(QFrame::Box);
+    shapeTable->setLineWidth(1);
+    
+    // Use the application's current color scheme to ensure readability in all themes
+    QPalette palette = shapeTable->palette();
+    palette.setColor(QPalette::Base, palette.color(QPalette::Window));      // Match window background
+    palette.setColor(QPalette::Text, palette.color(QPalette::WindowText));  // Match window text color
+    palette.setColor(QPalette::Highlight, Qt::darkBlue);                    // Consistent selection color
+    palette.setColor(QPalette::HighlightedText, Qt::white);                 // Readable selected text
+    shapeTable->setPalette(palette);
+    
+    layout->addWidget(shapeTable);
+    
+    // Populate the table with the initial data
+    auto shapesCopy = *renderShapes; // Make a copy of the shapes
+    selection_sort(shapesCopy, sortById, true); // Default sorting by ID in ascending order
+    populateShapeTable(shapesCopy);
+
+    // Set the layout and show the window
+    reportWindow->setLayout(layout);
+    reportWindow->show();
+}
+
+void MainWindow::onSortMethodChanged(int) {
+    // Create a copy of shapes to sort without affecting the original data
+    auto shapesCopy = *renderShapes;
+    alpha::vector<Shape*> filteredShapes;
+    
+    // Determine the sorting method
+    bool ascending = (sortOrderDropdown->currentIndex() == 0);
+    
+    switch (sortDropdown->currentIndex()) {
+        case 0: // Sort by ID
+            filteredShapes = shapesCopy;
+            selection_sort(filteredShapes, sortById, ascending);
+            break;
+        case 1: // Sort by Area
+            // Only include shapes with valid area (greater than 0)
+            for (Shape* shape : shapesCopy) {
+                if (shape->Area() > 0) {
+                    filteredShapes.push_back(shape);
+                }
+            }
+            selection_sort(filteredShapes, sortByArea, ascending);
+            break;
+        case 2: // Sort by Perimeter
+            // Only include shapes with valid perimeter (greater than 0)
+            for (Shape* shape : shapesCopy) {
+                if (shape->Perimeter() > 0) {
+                    filteredShapes.push_back(shape);
+                }
+            }
+            selection_sort(filteredShapes, sortByPerimeter, ascending);
+            break;
+    }
+ 
+    // Update the displayed table with filtered and sorted data
+    populateShapeTable(filteredShapes);
+}

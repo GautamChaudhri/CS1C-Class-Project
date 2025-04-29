@@ -3,6 +3,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <algorithm>
+#include <QTabWidget>
+#include <QTableWidget>
+#include <QComboBox>
 #include <QApplication>
 #include <QGridLayout>
 #include <QLabel>
@@ -26,7 +30,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedShapes, const UserAccount* currUser);
     ~MainWindow();
 
@@ -76,6 +80,9 @@ private slots:
     void on_actionnew_polygon_button_triggered();
     void on_actionnew_text_button_triggered();
     void on_actionremove_shape_button_triggered();
+
+    // For Selection Sort Algo
+    void onSortMethodChanged(int index);
     
     // For modifying shape
     void onTreeWidgetItemChanged(QTreeWidgetItem*, int column);
@@ -100,6 +107,20 @@ private:
     QComboBox* createFontComboBox(QFont currentFont);
     QComboBox* createFontStyleComboBox(int currentFontStyle);
     QComboBox* createFontWeightComboBox(QFont::Weight currentFontWeight);
+
+    void createShapeTableTab();
+    QTabWidget* tabWidget; // Tab widget to manage tabs
+    QTableWidget* shapeTable; // Table to display shapes
+    QComboBox* sortDropdown; // Dropdown for sorting methods
+    QComboBox* sortOrderDropdown; // Dropdown for sorting order
+
+    void selection_sort(alpha::vector<Shape*>& shapes, bool (*compare)(const Shape*, const Shape*), bool ascending);
+
+    void populateShapeTable(const alpha::vector<Shape*>& shapes);
+
+    static bool sortById(const Shape* a, const Shape* b);
+    static bool sortByArea(const Shape* a, const Shape* b);
+    static bool sortByPerimeter(const Shape* a, const Shape* b);
 
 };
 
