@@ -155,7 +155,7 @@ void MainWindow::onTreeWidgetItemChanged(QTreeWidgetItem* item, int column) {
     while (parentItem->parent())
         parentItem = parentItem->parent();
 
-    int trackerId = item->parent()->data(0, Qt::UserRole).toInt();
+    int trackerId = parentItem->data(0, Qt::UserRole).toInt();
     Shape* shape = nullptr;
     bool found = false;
     for (Shape* targetShape : *renderShapes) {
@@ -168,8 +168,15 @@ void MainWindow::onTreeWidgetItemChanged(QTreeWidgetItem* item, int column) {
 
     if (found)
         emit shapeChanged(shape, key, value);
-    else
-        qDebug() << "[MainWindow::onTreeWidgetItemChanged] shape not found - trackerId:" << trackerId;
+    else {
+        //Print out shape details
+        //qDebug() << "[MainWindow::onTreeWidgetItemChanged] shape not found - trackerId:" << trackerId;
+        qDebug() << "[MainWindow::onTreeWidgetItemChanged] shape not found - shape details:";
+        qDebug() << "Shape ID:" << shape->getShapeId(); 
+        qDebug() << "Shape Name:" << shape->getShapeType();
+        qDebug() << "Shape Tracker ID:" << shape->getTrackerId();
+
+    }
 
 }
 
