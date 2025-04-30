@@ -57,25 +57,186 @@ void Shape::CreateParentItem()
 
 void Shape::CreatePenChild()
 {
-    childItems.push_back(new QTreeWidgetItem());
-    parentItem->addChild(*(childItems.end() - 1));
-
     auto endChild = (*(childItems.end() - 1));
 
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(endChild);
     endChild->setText(0, "Pen:");
-    endChild->setFlags(endChild->flags() & ~Qt::ItemIsEditable);
+
+    //endChild->setFlags(endChild->flags() & ~Qt::ItemIsEditable);
+
+    // Pen Color
+    penItems.push_back(new QTreeWidgetItem());
+    endChild->addChild(*(penItems.end() - 1));
+    (*(penItems.end() -1))->setText(0, "PenColor:");
+    (*(penItems.end() -1))->setFlags((*(penItems.end() - 1))->flags() | Qt::ItemIsEditable);
+
+    QString penColor;
+    if (pen.color() == Qt::red)
+        penColor = "red";
+    else if (pen.color() == Qt::green)
+        penColor = "green";
+    else if (pen.color() == Qt::yellow)
+        penColor = "yellow";
+    else if (pen.color() == Qt::cyan)
+        penColor = "cyan";
+    else if (pen.color() == Qt::magenta)
+        penColor = "magenta";
+    else if (pen.color() == Qt::gray)
+        penColor = "gray";
+    else if (pen.color() == Qt::blue)
+        penColor = "blue";
+    else if (pen.color() == Qt::white)
+        penColor = "white";
+    else if (pen.color() == Qt::lightGray)
+        penColor = "lightGray";
+    else if (pen.color() == Qt::darkGray)
+        penColor = "darkGray";
+    else if (pen.color() == Qt::black)
+        penColor = "black";
+    else if (pen.color() == Qt::transparent)
+        penColor = "transparent";
+    else
+        qDebug() << "[Shape::CreatePenChild] PenColor Error";
+    (*(penItems.end() - 1))->setText(1, penColor);
+
+    // Pen Width
+    penItems.push_back(new QTreeWidgetItem());
+    endChild->addChild(*(penItems.end() - 1));
+    (*(penItems.end() -1))->setText(0, "PenWidth:");
+    (*(penItems.end() -1))->setText(1, QString::number(pen.width()));
+    (*(penItems.end() -1))->setFlags((*(penItems.end() - 1))->flags() | Qt::ItemIsEditable);
+
+    // Pen Style
+    penItems.push_back(new QTreeWidgetItem());
+    endChild->addChild(*(penItems.end() - 1));
+    (*(penItems.end() -1))->setText(0, "PenStyle:");
+    (*(penItems.end() -1))->setFlags((*(penItems.end() - 1))->flags() | Qt::ItemIsEditable);
+
+    QString penStyle;
+    if (pen.style() == Qt::SolidLine)
+        penStyle = "SolidLine";
+    else if (pen.style() == Qt::DashLine)
+        penStyle = "DashLine";
+    else if (pen.style() == Qt::DotLine)
+        penStyle = "DotLine";
+    else if (pen.style() == Qt::DashDotLine)
+        penStyle = "DashDotLine";
+    else if (pen.style() == Qt::DashDotDotLine)
+        penStyle = "DashDotDotLine";
+    else
+        qDebug() << "[Shape::CreatePenChild] PenStyle Error";
+
+    (*(penItems.end() - 1))->setText(1, penStyle);
+
+    // Pen Cap Style
+    penItems.push_back(new QTreeWidgetItem());
+    endChild->addChild(*(penItems.end() - 1));
+    (*(penItems.end() -1))->setText(0, "PenCapStyle:");
+    (*(penItems.end() -1))->setFlags((*(penItems.end() - 1))->flags() | Qt::ItemIsEditable);
+
+    QString penCapStyle;
+    if (pen.capStyle() == Qt::FlatCap)
+        penCapStyle = "FlatCap";
+    else if (pen.capStyle() == Qt::SquareCap)
+        penCapStyle = "SquareCap";
+    else if (pen.capStyle() == Qt::RoundCap)
+        penCapStyle = "RoundCap";
+    else
+        qDebug() << "[Shape::CreatePenChild] PenCapStyle Error";
+
+    (*(penItems.end() - 1))->setText(1, penCapStyle);
+
+
+    // Pen Join Style
+    penItems.push_back(new QTreeWidgetItem());
+    endChild->addChild(*(penItems.end() - 1));
+    (*(penItems.end() -1))->setText(0, "PenJoinStyle:");
+    (*(penItems.end() -1))->setFlags((*(penItems.end() - 1))->flags() | Qt::ItemIsEditable);
+
+    QString penJoinStyle;
+    if (pen.joinStyle() == Qt::MiterJoin)
+        penJoinStyle = "MiterJoin";
+    else if (pen.joinStyle() == Qt::BevelJoin)
+        penJoinStyle = "BevelJoin";
+    else if (pen.joinStyle() == Qt::RoundJoin)
+        penJoinStyle = "RoundJoin";
+    else
+        qDebug() << "[Shape::CreatePenChild] PenJoinStyle Error";
+
+    (*(penItems.end() - 1))->setText(1, penJoinStyle);
+
 }
 
 void Shape::CreateBrushChild()
 {
-    childItems.push_back(new QTreeWidgetItem());
-    parentItem->addChild(*(childItems.end() - 1));
-
     auto endChild = (*(childItems.end() - 1));
 
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(endChild);
     endChild->setText(0, "Brush:");
-    endChild->setFlags(endChild->flags() & ~Qt::ItemIsEditable);
 
+    //endChild->setFlags(endChild->flags() & ~Qt::ItemIsEditable);
+
+    // Brush Color
+    brushItems.push_back(new QTreeWidgetItem());
+    endChild->addChild(*(brushItems.end() - 1));
+    (*(brushItems.end() - 1))->setText(0, "BrushColor:");
+
+    QString brushColor;
+    if (brush.color() == Qt::red)
+        brushColor = "red";
+    else if (brush.color() == Qt::green)
+        brushColor = "green";
+    else if (brush.color() == Qt::yellow)
+        brushColor = "yellow";
+    else if (brush.color() == Qt::cyan)
+        brushColor = "cyan";
+    else if (brush.color() == Qt::magenta)
+        brushColor = "magenta";
+    else if (brush.color() == Qt::gray)
+        brushColor = "gray";
+    else if (brush.color() == Qt::blue)
+        brushColor = "blue";
+    else if (brush.color() == Qt::white)
+        brushColor = "white";
+    else if (brush.color() == Qt::lightGray)
+        brushColor = "lightGray";
+    else if (brush.color() == Qt::darkGray)
+        brushColor = "darkGray";
+    else if (brush.color() == Qt::black)
+        brushColor = "black";
+    else if (brush.color() == Qt::transparent)
+        brushColor = "transparent";
+    else
+        qDebug() << "[Shape::CreateBrushChild] BrushColor Error";
+
+    (*(brushItems.end() - 1))->setText(1, brushColor);
+
+    // Brush Style
+    brushItems.push_back(new QTreeWidgetItem());
+    endChild->addChild(*(brushItems.end() - 1));
+    (*(brushItems.end() - 1))->setText(0, "BrushStyle:");
+
+    QString brushStyle;
+    if (brush.style() == Qt::SolidPattern)
+        brushStyle = "SolidPattern";
+    else if (brush.color() == Qt::VerPattern)
+        brushColor = "VerPattern";
+    else if (brush.color() == Qt::HorPattern)
+        brushColor = "HorPattern";
+    else if (brush.color() == Qt::Dense1Pattern)
+        brushColor = "Dense1Pattern";
+    else if (brush.color() == Qt::CrossPattern)
+        brushColor = "CrossPattern";
+    else if (brush.color() == Qt::DiagCrossPattern)
+        brushColor = "DiagCrossPattern";
+    else if (brush.color() == Qt::NoBrush)
+        brushColor = "NoBrush";
+    else
+        qDebug() << "[Shape::CreateBrushChild] BrushStyle Error";
+
+    (*(brushItems.end() - 1))->setText(1, brushStyle);
 }
 
 void Shape::AddPointsToParent(const int POINTS_NUM)

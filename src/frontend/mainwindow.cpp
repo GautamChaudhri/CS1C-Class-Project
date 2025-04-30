@@ -137,20 +137,23 @@ void MainWindow::shapes_to_treeWidget()
 }
 
 void MainWindow::onTreeWidgetItemChanged(QTreeWidgetItem* item, int column) {
-    // Only proceed if changes made occurred in column 1 and in child items
-    if (column != 1 || !item->parent()) return;
+    // Only proceed if changes made occurred in column 1
+    if (column != 1) return;
 
     QString key = item->text(0);
     bool ok = false;
     int value = item->text(1).toInt(&ok);
 
     // forces it to be ok if user is modifying text - a bit of a hack but it works
-    if (key == "Text:")
-    {
+    if (key == "Text:") {
         ok = true;
     }
-
     if (!ok) return;
+
+    // Climb to the top-most parent to get the root shape item
+    QTreeWidgetItem* parentItem = item;
+    while (parentItem->parent())
+        parentItem = parentItem->parent();
 
     int trackerId = item->parent()->data(0, Qt::UserRole).toInt();
     Shape* shape = nullptr;

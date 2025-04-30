@@ -109,6 +109,8 @@ protected:
     QTreeWidgetItem* parentItem;
     alpha::vector<QTreeWidgetItem*> childItems;
     alpha::vector<QTreeWidgetItem*> pointsItems;
+    alpha::vector<QTreeWidgetItem*> penItems;
+    alpha::vector<QTreeWidgetItem*> brushItems;
 
 private:
     int      shapeId;

@@ -216,7 +216,7 @@ void Parser::UpdateAccumulator(const std::string &key, const std::string &value,
     }
     else if (key == "PenWidth") {
         int width = std::stoi(value);
-        if (width < 0 || width > 12)
+        if (width < 0 || width > 20)
             throw std::runtime_error("Invalid pen width: " + value);
         else 
             tempShape.pen.setWidth(width);
@@ -334,7 +334,7 @@ void Parser::UpdateAccumulator(const std::string &key, const std::string &value,
     }
     else if (key == "TextPointSize") {
         int pointSize = std::stoi(value);
-        if (pointSize < 0 || pointSize > 100)
+        if (pointSize < -1 || pointSize > 50)
             throw std::runtime_error("Invalid point size: " + value);
         else 
             tempShape.font.setPointSize(pointSize);

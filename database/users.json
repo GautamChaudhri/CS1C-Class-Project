@@ -143,5 +143,10 @@
     "username": "test123",
     "password": "test123",
     "admin": false
+  },
+  {
+    "username": "admin",
+    "password": "admin",
+    "admin": true
   }
 ]
