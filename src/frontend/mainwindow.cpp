@@ -28,6 +28,21 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedSha
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // Increase toolbar and tree widget size on macos
+    #ifdef Q_OS_MAC
+    // make toolbar icons a bit larger
+    ui->toolBar->setIconSize(QSize(36,36));
+
+    // bump up the tree’s default font point-size by 2pt
+    QFont f = ui->treeWidget->font();
+    f.setPointSize(f.pointSize() + 5);
+    ui->treeWidget->setFont(f);
+
+    // if you have column widths in the tree you want to adjust:
+    ui->treeWidget->setColumnWidth(0, ui->treeWidget->columnWidth(0) + 36);
+    #endif
+
     // wire up handler for edits in the tree
     connect(ui->treeWidget, &QTreeWidget::itemChanged, this, &MainWindow::onTreeWidgetItemChanged);
 
