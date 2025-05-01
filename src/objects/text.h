@@ -28,7 +28,10 @@ public:
     void setWidth(int newWidth);
     void setX(int newX);
     void setY(int newY);
+    void setAlignment(Qt::AlignmentFlag alignment);
 
+    QFont& setInternalFont();
+    
     /************* ACCESSOR FUNCTIONS *************/
     int           getLength()        const;
     int           getWidth()         const;

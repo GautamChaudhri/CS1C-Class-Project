@@ -36,12 +36,14 @@ void RenderAreaManager::addShape(Shape* shape) {
     saveShapes();
 }
 
+
+
 void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
     qDebug() << "[modifyShape] called for shapeId=" << shape->getShapeId()
              << "  key=\"" << key << "\"  value=" << value;
-    
+
     int shapeId = shape->getShapeId();
-    int targetId = shape->getTrackerId();
+    bool shapeModified = false;
 
     switch (shapeId) {
         case LINE:
@@ -50,48 +52,78 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
 
             if (key == "X:")
             {
-                // Move entire line to new anchor X
                 line->Move(value, line->getY());
+                shapeModified = true;
             }
             else if (key == "Y:")
             {
-                // Move entire line to new anchor Y
                 line->Move(line->getX(), value);
+                shapeModified = true;
             }
             else if (key == "X1:")
             {
-                // Update the start-point X coordinate
                 QPoint startPoint = line->getStartPoint();
                 startPoint.setX(value);
                 line->setStartPoint(startPoint);
+                shapeModified = true;
             }
             else if (key == "Y1:")
             {
-                // Update the start-point Y coordinate
                 QPoint startPoint = line->getStartPoint();
                 startPoint.setY(value);
                 line->setStartPoint(startPoint);
+                shapeModified = true;
             }
             else if (key == "X2:")
             {
-                // Update the end-point X coordinate
                 QPoint endPoint = line->getEndPoint();
                 endPoint.setX(value);
                 line->setEndPoint(endPoint);
+                shapeModified = true;
             }
             else if (key == "Y2:")
             {
-                // Update the end-point Y coordinate
                 QPoint endPoint = line->getEndPoint();
                 endPoint.setY(value);
                 line->setEndPoint(endPoint);
+                shapeModified = true;
+            }
+            else if (key == "PenColor:")
+            {
+                shape->setInternalPen().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenWidth:")
+            {
+                if (value >= 0 && value <= 20)
+                {
+                    shape->setInternalPen().setWidth(value);
+                    shapeModified = true;
+                }
+                else
+                {
+                    qDebug() << "[RenderAreaManager::modifyShape] Invalid pen width:" << value;
+                }
+            }
+            else if (key == "PenStyle:")
+            {
+                shape->setInternalPen().setStyle(static_cast<Qt::PenStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenCapStyle:")
+            {
+                shape->setInternalPen().setCapStyle(static_cast<Qt::PenCapStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenJoinStyle:")
+            {
+                shape->setInternalPen().setJoinStyle(static_cast<Qt::PenJoinStyle>(value));
+                shapeModified = true;
             }
             else
             {
                  qDebug() << "[RenderAreaManager::modifyShape] Line - key not found:" << key;
             }
-
-            emit renderAreaChanged();
             break;
         }
         case POLYLINE:
@@ -100,26 +132,24 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
 
             if (key == "X:")
             {
-                // Move entire polyline by delta X
                 polyline->Move(value, polyline->getY());
+                shapeModified = true;
             }
             else if (key == "Y:")
             {
-                // Move entire polyline by delta Y
                 polyline->Move(polyline->getX(), value);
+                shapeModified = true;
             }
             else if (key.startsWith("X"))
             {
-                // handle edits to specific points: "X2:", "Y2:", etc.
                 QPolygon points = polyline->getPointsList();
-
-                // extract the point index from the key (e.g., "X3:" → index 2)
                 int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
                 if (pointIndex >= 0 && pointIndex < points.size())
                 {
                     points[pointIndex].setX(value);
+                    polyline->setPointsList(points);
+                    shapeModified = true;
                 }
-                polyline->setPointsList(points);
             }
             else if (key.startsWith("Y"))
             {
@@ -128,15 +158,46 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
                 if (pointIndex >= 0 && pointIndex < points.size())
                 {
                     points[pointIndex].setY(value);
+                    polyline->setPointsList(points);
+                    shapeModified = true;
                 }
-                polyline->setPointsList(points);
+            }
+             else if (key == "PenColor:")
+            {
+                shape->setInternalPen().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenWidth:")
+            {
+                 if (value >= 0 && value <= 20)
+                 {
+                    shape->setInternalPen().setWidth(value);
+                    shapeModified = true;
+                 }
+                 else
+                 {
+                    qDebug() << "[RenderAreaManager::modifyShape] Invalid pen width:" << value;
+                 }
+            }
+            else if (key == "PenStyle:")
+            {
+                shape->setInternalPen().setStyle(static_cast<Qt::PenStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenCapStyle:")
+            {
+                shape->setInternalPen().setCapStyle(static_cast<Qt::PenCapStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenJoinStyle:")
+            {
+                shape->setInternalPen().setJoinStyle(static_cast<Qt::PenJoinStyle>(value));
+                shapeModified = true;
             }
             else
             {
                  qDebug() << "[RenderAreaManager::modifyShape] Polyline - key not found:" << key;
             }
-
-            emit renderAreaChanged();
             break;
         }
         case POLYGON:
@@ -145,51 +206,87 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
 
             if (key == "X:")
             {
-                // Move entire polygon by delta X
                 polygon->Move(value, polygon->getY());
+                shapeModified = true;
             }
             else if (key == "Y:")
             {
-                // Move entire polygon by delta Y
                 polygon->Move(polygon->getX(), value);
+                shapeModified = true;
             }
             else if (key.startsWith("X"))
             {
-                // handle edits to specific points
                 QPolygon points = polygon->getPointsList();
                 int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
                 if (pointIndex >= 0 && pointIndex < points.size())
                 {
                     points[pointIndex].setX(value);
+                    polygon->setPointsList(points);
+                    shapeModified = true;
                 }
-                polygon->setPointsList(points);
             }
             else if (key.startsWith("Y"))
             {
-                // handle edits to specific points
                 QPolygon points = polygon->getPointsList();
                 int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
                 if (pointIndex >= 0 && pointIndex < points.size())
                 {
                     points[pointIndex].setY(value);
+                    polygon->setPointsList(points);
+                    shapeModified = true;
                 }
-                polygon->setPointsList(points);
             }
             else if (key == "Pen:")
             {
-                // add later
+                shape->setInternalPen().setStyle(static_cast<Qt::PenStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenColor:")
+            {
+                shape->setInternalPen().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenWidth:")
+            {
+                if (value >= 0 && value <= 20)
+                {
+                    shape->setInternalPen().setWidth(value);
+                    shapeModified = true;
+                }
+                else
+                {
+                    qDebug() << "[RenderAreaManager::modifyShape] Invalid pen width:" << value;
+                }
+            }
+            else if (key == "PenStyle:")
+            {
+                shape->setInternalPen().setStyle(static_cast<Qt::PenStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenCapStyle:")
+            {
+                shape->setInternalPen().setCapStyle(static_cast<Qt::PenCapStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenJoinStyle:")
+            {
+                shape->setInternalPen().setJoinStyle(static_cast<Qt::PenJoinStyle>(value));
+                shapeModified = true;
             }
             else if (key == "Brush:")
             {
-                // Convert the value to brush style and set the new brush style using reference
                 shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "BrushColor:")
+            {
+                shape->setInternalBrush().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
             }
             else
             {
                  qDebug() << "[RenderAreaManager::modifyShape] Polygon - key not found:" << key;
             }
-
-            emit renderAreaChanged();
             break;
         }
         case RECTANGLE:
@@ -197,31 +294,71 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
             Rectangle* pRectangle = static_cast<Rectangle*>(shape);
             if (key == "X:") {
                 pRectangle->setX(value);
+                shapeModified = true;
             }
             else if (key == "Y:") {
                 pRectangle->setY(value);
+                shapeModified = true;
             }
             else if (key == "Length:") {
                 pRectangle->setLength(value);
+                shapeModified = true;
             }
             else if (key == "Width:") {
                 pRectangle->setWidth(value);
+                shapeModified = true;
             }
             else if (key == "Pen:")
             {
-                // add later
-                shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+                shape->setInternalPen().setStyle(static_cast<Qt::PenStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenColor:")
+            {
+                shape->setInternalPen().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenWidth:")
+            {
+                if (value >= 0 && value <= 20)
+                {
+                    shape->setInternalPen().setWidth(value);
+                    shapeModified = true;
+                }
+                else
+                {
+                    qDebug() << "[RenderAreaManager::modifyShape] Invalid pen width:" << value;
+                }
+            }
+            else if (key == "PenStyle:")
+            {
+                shape->setInternalPen().setStyle(static_cast<Qt::PenStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenCapStyle:")
+            {
+                shape->setInternalPen().setCapStyle(static_cast<Qt::PenCapStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenJoinStyle:")
+            {
+                shape->setInternalPen().setJoinStyle(static_cast<Qt::PenJoinStyle>(value));
+                shapeModified = true;
             }
             else if (key == "Brush:")
             {
-                // Convert the value to brush style and set the new brush style using reference
                 shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "BrushColor:")
+            {
+                shape->setInternalBrush().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
             }
             else
             {
                  qDebug() << "[RenderAreaManager::modifyShape] Rectangle - key not found:" << key;
             }
-            emit renderAreaChanged();
             break;
         }
         case SQUARE:
@@ -229,27 +366,67 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
             Square* pSquare = static_cast<Square*>(shape);
             if (key == "X:") {
                 pSquare->setX(value);
+                shapeModified = true;
             }
             else if (key == "Y:") {
                 pSquare->setY(value);
+                shapeModified = true;
             }
             else if (key == "Length:") {
                 pSquare->setLength(value);
+                shapeModified = true;
             }
             else if (key == "Pen:")
             {
-                // add later
+                shape->setInternalPen().setStyle(static_cast<Qt::PenStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenColor:")
+            {
+                shape->setInternalPen().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenWidth:")
+            {
+                if (value >= 0 && value <= 20)
+                {
+                    shape->setInternalPen().setWidth(value);
+                    shapeModified = true;
+                }
+                else
+                {
+                    qDebug() << "[RenderAreaManager::modifyShape] Invalid pen width:" << value;
+                }
+            }
+            else if (key == "PenStyle:")
+            {
+                shape->setInternalPen().setStyle(static_cast<Qt::PenStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenCapStyle:")
+            {
+                shape->setInternalPen().setCapStyle(static_cast<Qt::PenCapStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenJoinStyle:")
+            {
+                shape->setInternalPen().setJoinStyle(static_cast<Qt::PenJoinStyle>(value));
+                shapeModified = true;
             }
             else if (key == "Brush:")
             {
-                // Convert the value to brush style and set the new brush style using reference
                 shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "BrushColor:")
+            {
+                shape->setInternalBrush().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
             }
             else
             {
                  qDebug() << "[RenderAreaManager::modifyShape] Square - key not found:" << key;
             }
-            emit renderAreaChanged();
             break;
         }
         case ELLIPSE:
@@ -257,30 +434,71 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
             Ellipse* pEllipse = static_cast<Ellipse*>(shape);
             if (key == "X:") {
                 pEllipse->setX(value);
+                shapeModified = true;
             }
             else if (key == "Y:") {
                 pEllipse->setY(value);
+                shapeModified = true;
             }
             else if (key == "Semi-Minor Axis:") {
                 pEllipse->setA(value);
+                shapeModified = true;
             }
             else if (key == "Semi-Major Axis:") {
                 pEllipse->setB(value);
+                shapeModified = true;
             }
             else if (key == "Pen:")
             {
-                // add later
+                shape->setInternalPen().setStyle(static_cast<Qt::PenStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenColor:")
+            {
+                shape->setInternalPen().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenWidth:")
+            {
+                if (value >= 0 && value <= 20)
+                {
+                    shape->setInternalPen().setWidth(value);
+                    shapeModified = true;
+                }
+                else
+                {
+                    qDebug() << "[RenderAreaManager::modifyShape] Invalid pen width:" << value;
+                }
+            }
+            else if (key == "PenStyle:")
+            {
+                shape->setInternalPen().setStyle(static_cast<Qt::PenStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenCapStyle:")
+            {
+                shape->setInternalPen().setCapStyle(static_cast<Qt::PenCapStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenJoinStyle:")
+            {
+                shape->setInternalPen().setJoinStyle(static_cast<Qt::PenJoinStyle>(value));
+                shapeModified = true;
             }
             else if (key == "Brush:")
             {
-                // Convert the value to brush style and set the new brush style using reference
                 shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "BrushColor:")
+            {
+                shape->setInternalBrush().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
             }
             else
             {
                  qDebug() << "[RenderAreaManager::modifyShape] Ellipse - key not found:" << key;
             }
-            emit renderAreaChanged();
             break;
         }
         case CIRCLE:
@@ -288,35 +506,67 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
             Circle* pCircle = static_cast<Circle*>(shape);
             if (key == "X:") {
                 pCircle->setX(value);
+                shapeModified = true;
             }
             else if (key == "Y:") {
                 pCircle->setY(value);
+                shapeModified = true;
             }
             else if (key == "Radius:") {
                 pCircle->setR(value);
+                shapeModified = true;
             }
             else if (key == "Pen:")
             {
-                // add later
-                shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+                shape->setInternalPen().setStyle(static_cast<Qt::PenStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenColor:")
+            {
+                shape->setInternalPen().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenWidth:")
+            {
+                if (value >= 0 && value <= 20)
+                {
+                    shape->setInternalPen().setWidth(value);
+                    shapeModified = true;
+                }
+                else
+                {
+                    qDebug() << "[RenderAreaManager::modifyShape] Invalid pen width:" << value;
+                }
+            }
+            else if (key == "PenStyle:")
+            {
+                shape->setInternalPen().setStyle(static_cast<Qt::PenStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenCapStyle:")
+            {
+                shape->setInternalPen().setCapStyle(static_cast<Qt::PenCapStyle>(value));
+                shapeModified = true;
+            }
+            else if (key == "PenJoinStyle:")
+            {
+                shape->setInternalPen().setJoinStyle(static_cast<Qt::PenJoinStyle>(value));
+                shapeModified = true;
             }
             else if (key == "Brush:")
             {
-                // Debug before change
-                qDebug() << "[modifyShape] Circle brush style before change:"
-                         << shape->getBrush().style();
-                // Convert the value to brush style and set the new brush style using reference
                 shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
-
-                // Debug after change
-                qDebug() << "[modifyShape] Circle brush style after change:"
-                         << shape->getBrush().style();
+                shapeModified = true;
+            }
+            else if (key == "BrushColor:")
+            {
+                shape->setInternalBrush().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
             }
             else
             {
                  qDebug() << "[RenderAreaManager::modifyShape] Circle - key not found:" << key;
             }
-            emit renderAreaChanged();
             break;
         }
         case TEXT:
@@ -324,32 +574,92 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
             Text* pText = static_cast<Text*>(shape);
             if (key == "X:") {
                 pText->setX(value);
+                shapeModified = true;
             }
             else if (key == "Y:") {
                 pText->setY(value);
+                shapeModified = true;
             }
             else if (key == "Length:") {
                 pText->setLength(value);
+                shapeModified = true;
             }
             else if (key == "Width:") {
                 pText->setWidth(value);
+                shapeModified = true;
             }
-            else if (key == "Text:") {
-                // Come back later
-                // pText->setText(pText->getChildItems()[4]->text(1)); 
-                 qDebug() << "[RenderAreaManager::modifyShape] Text modification needs string value, not int.";
+            else if (key == "Alignment:")
+            {
+                pText->setAlignment(static_cast<Qt::AlignmentFlag>(value));
+                shapeModified = true;
+            }
+            else if (key == "Font:")
+            {
+                switch (value) {
+                    case 0:
+                        pText->setInternalFont().setFamily("Arial");
+                        shapeModified = true;
+                        break;
+                    case 1:
+                        pText->setInternalFont().setFamily("Times New Roman");
+                        shapeModified = true;
+                        break;
+                    case 2:
+                        pText->setInternalFont().setFamily("Courier New");
+                        shapeModified = true;
+                        break;
+                    case 3:
+                        pText->setInternalFont().setFamily("Verdana");
+                        shapeModified = true;
+                        break;
+                    case 4:
+                        pText->setInternalFont().setFamily("Tahoma");
+                        shapeModified = true;
+                        break;
+                    case 5:
+                        pText->setInternalFont().setFamily("Comic Sans MS");
+                        shapeModified = true;
+                        break;
+                    default:
+                        qDebug() << "[RenderAreaManager::modifyShape] Unknown font index:" << value;
+                }
+            }
+            else if (key == "FontStyle:")
+            {
+                pText->setInternalFont().setStyle(static_cast<QFont::Style>(value));
+                shapeModified = true;
+            }
+            else if (key == "FontWeight:")
+            {
+                pText->setInternalFont().setWeight(static_cast<QFont::Weight>(value));
+                shapeModified = true;
+            }
+            else if (key == "TextColor:")
+            {
+                pText->setInternalPen().setColor(static_cast<Qt::GlobalColor>(value));
+                shapeModified = true;
             }
             else
             {
                  qDebug() << "[RenderAreaManager::modifyShape] Text - key not found:" << key;
             }
-            emit renderAreaChanged();
             break;
         }
         default:
             qDebug() << "[RenderAreaManager::modifyShape] Unknown shape type. ShapeId: " << shapeId;
             return;
     }
+
+    if (shapeModified) {
+        emit renderAreaChanged();
+        saveShapes();
+    }
+}
+
+
+void RenderAreaManager::modifyDisplayedText(Text* obj, QString newText) {
+    obj->setText(newText);
+    emit renderAreaChanged();
     saveShapes();
 }
 

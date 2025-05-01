@@ -62,11 +62,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::shapes_to_treeWidget()
 {
-    // Clear and redraw the tree
-    // while (ui->treeWidget->topLevelItemCount() > 0) {
-    //     ui->treeWidget->takeTopLevelItem(0);
-    // }
-
     Shape* item;
     int vecSize;
     int trackerId;
@@ -101,55 +96,76 @@ void MainWindow::shapes_to_treeWidget()
         ui->treeWidget->addTopLevelItem(item->getParentItem());
         item->getParentItem()->setData(0, Qt::UserRole, QVariant::fromValue(item->getTrackerId()));
 
-        // switch (item->getShapeId())
-        // {
-        // case LINE:
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1, penStyleCombo);
-        //     break;
+        switch (item->getShapeId())
+        {
+        case LINE:
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1, penStyleCombo);
+            break;
 
-        // case POLYLINE:
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1, penStyleCombo);
-        //     break;
+        case POLYLINE:
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1, penStyleCombo);
+            break;
 
-        // case POLYGON:
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
-        //     break;
+        case POLYGON:
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
+            break;
 
-        // case RECTANGLE:
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
-        //     break;
+        case RECTANGLE:
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
+            break;
 
-        // case SQUARE:
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
-        //     break;
+        case SQUARE:
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
+            break;
 
-        // case ELLIPSE:
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
-        //     break;
+        case ELLIPSE:
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
+            break;
 
-        // case CIRCLE:
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
-        //     break;
+        case CIRCLE:
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
+            break;
 
-        // case TEXT:
-        //     Text* text = static_cast<Text*>(item);
+        case TEXT:
+            Text* text = static_cast<Text*>(item);
 
-        //     QComboBox* alignmentCombo  = createAlignmentComboBox(text->getTextAlignment());
-        //     QComboBox* fontCombo       = createFontComboBox(text->getFont());
-        //     QComboBox* fontStyleCombo  = createFontStyleComboBox(text->getFontStyle());
-        //     QComboBox* fontWeightCombo = createFontWeightComboBox(text->getFontWeight());
+            QComboBox* alignmentCombo  = createAlignmentComboBox(text->getTextAlignment());
+            QComboBox* fontCombo       = createFontComboBox(text->getFont());
+            QComboBox* fontStyleCombo  = createFontStyleComboBox(text->getFontStyle());
+            QComboBox* fontWeightCombo = createFontWeightComboBox(text->getFontWeight());
 
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 3], 1, alignmentCombo);
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 2], 1, fontCombo);
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, fontStyleCombo);
-        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     fontWeightCombo);
-        //     break;
-        // }
+            // Tagging the boxes for easy modification 
+            alignmentCombo->setParent(ui->treeWidget);
+            alignmentCombo->setProperty("trackerId", trackerId);
+            alignmentCombo->setProperty("key", QStringLiteral("Alignment:"));
+            connect(alignmentCombo, &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);
+
+            fontCombo->setParent(ui->treeWidget);
+            fontCombo->setProperty("trackerId", trackerId);
+            fontCombo->setProperty("key", QStringLiteral("Font:"));
+            connect(fontCombo, &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);
+
+            fontStyleCombo->setParent(ui->treeWidget);
+            fontStyleCombo->setProperty("trackerId", trackerId);
+            fontStyleCombo->setProperty("key", QStringLiteral("FontStyle:"));
+            connect(fontStyleCombo, &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);
+
+            fontWeightCombo->setParent(ui->treeWidget);
+            fontWeightCombo->setProperty("trackerId", trackerId);
+            fontWeightCombo->setProperty("key", QStringLiteral("FontWeight:"));
+            connect(fontWeightCombo, &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);
+
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 3], 1, alignmentCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 2], 1, fontCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, fontStyleCombo);
+            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     fontWeightCombo);
+            break;
+        }
     }
 }
 
@@ -158,13 +174,33 @@ void MainWindow::onTreeWidgetItemChanged(QTreeWidgetItem* item, int column) {
     if (column != 1) return;
 
     QString key = item->text(0);
+    
+    // Handle edits to the displayed text in a Text Object seperately
+    if (key == "Text:") {
+        QString newText = item->text(1);
+        // find the top-level item to get the trackerId
+        QTreeWidgetItem* root = item;
+        while (root->parent()) root = root->parent();
+        int trackerId = root->data(0, Qt::UserRole).toInt();
+
+        // lookup the Text* in our shapes list
+        Text* textObj = nullptr;
+        for (Shape* shape : *renderShapes) {
+            if (shape->getTrackerId() == trackerId) {
+                textObj = static_cast<Text*>(shape);
+                break;
+            }
+        }
+        if (textObj) {
+            emit displayedTextChanged(textObj, newText);
+        } else {
+            qDebug() << "[onTreeWidgetItemChanged] text shape not found for trackerId" << trackerId;
+        }
+        return;
+    }
+
     bool ok = false;
     int value = item->text(1).toInt(&ok);
-
-    // forces it to be ok if user is modifying text - a bit of a hack but it works
-    if (key == "Text:") {
-        ok = true;
-    }
     if (!ok) return;
 
     // Climb to the top-most parent to get the root shape item
@@ -364,15 +400,15 @@ QComboBox* MainWindow::createBrushStyleComboBox(int currentBrushStyle)
     box->addItem("BDiagPattern", static_cast<int>(Qt::BDiagPattern));
     box->addItem("FDiagPattern", static_cast<int>(Qt::FDiagPattern));
     box->addItem("DiagCrossPattern", static_cast<int>(Qt::DiagCrossPattern));
-    //box->setCurrentIndex(currentBrushStyle);
+    box->setCurrentIndex(currentBrushStyle);
 
-    // Pick the index whose data matches our currentBrushStyle
-    for (int i = 0; i < box->count(); ++i) {
-        if (box->itemData(i).toInt() == currentBrushStyle) {
-            box->setCurrentIndex(i);
-            break;
-        }
-    }
+    // // Pick the index whose data matches our currentBrushStyle
+    // for (int i = 0; i < box->count(); ++i) {
+    //     if (box->itemData(i).toInt() == currentBrushStyle) {
+    //         box->setCurrentIndex(i);
+    //         break;
+    //     }
+    // }
     return box;
 }
 void MainWindow::onLoginClicked() {
