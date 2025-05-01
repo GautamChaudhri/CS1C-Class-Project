@@ -88,6 +88,7 @@ void AppDriver::connectFrontendToDriver() {
     connect(mainWindow, &MainWindow::shapeChanged, this, &AppDriver::onRenderShapeChanged);
     connect(mainWindow, &MainWindow::shapeDeleted, this, &AppDriver::onRenderShapeDeleted);
     connect(mainWindow, &MainWindow::deleteAllShapes, this, &AppDriver::onRenderDeleteAllShapes);
+    connect(mainWindow, &MainWindow::displayedTextChanged, renderedShapes, &RenderAreaManager::modifyDisplayedText);
     //for user accounts
     connect(mainWindow, &MainWindow::newUserAdded, this, &AppDriver::onNewUser);
     // connect(loginWindow, &LoginWindow::userModified, this, &AppDriver::onUserModified);

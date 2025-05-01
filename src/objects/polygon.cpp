@@ -17,6 +17,8 @@ Polygon::Polygon(string shapeType,
 {
     setShapeId(3);
     CreateParentItem();
+    CreatePenChild();
+    CreateBrushChild();
     AddPointsToParent(getPointsList().size());
 }
 

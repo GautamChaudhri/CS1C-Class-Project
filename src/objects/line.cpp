@@ -19,6 +19,7 @@ Line::Line(string shapeType,
 {
     setShapeId(1);
     CreateParentItem();
+    CreatePenChild();
     AddPointsToParent(2);
 }
 

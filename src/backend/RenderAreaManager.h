@@ -36,6 +36,7 @@ public:
      */
     void addShape(Shape* shape);
     void modifyShape(Shape* shape, QString key, int value);
+    void modifyDisplayedText(Text* obj, QString newText);
     void deleteShape(const int trackerId);
     void deleteAllShapes();
     void loadShapes();

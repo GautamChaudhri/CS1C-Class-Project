@@ -11,10 +11,8 @@
 #include <QList>
 #include <QPolygon>
 #include <QTreeWidget>
-
 #include "vector.h"
 
-//#include "renderarea.h"
 
 using std::string;
 
@@ -61,6 +59,8 @@ public:
     virtual bool isPointInside(const QPoint& point) const = 0;
 
     void CreateParentItem();
+    void CreatePenChild();
+    void CreateBrushChild();
     void AddPointsToParent(const int POINTS_NUM);
 
     /**************** ACCESSOR FUNCTIONS ****************/
@@ -75,6 +75,7 @@ public:
     QPainter& getPainter();
     QTreeWidgetItem* getParentItem();
     alpha::vector<QTreeWidgetItem*>& getChildItems();
+    alpha::vector<QTreeWidgetItem*>& getPointsItems();
 
     int          getPenWidth()     const;
     PenStyle     getPenStyle()     const;
@@ -86,6 +87,7 @@ public:
     QPen         getPen()          const;
     QBrush       getBrush()        const;
     QPoint       getPoints()       const;
+    int          getChildEnd()     const;
     /****************************************************/
 
     /***************** MUTATOR FUNCTIONS ****************/
@@ -99,12 +101,18 @@ public:
 
     void setPen(GlobalColor penColor, int penWidth, PenStyle penStyle, PenCapStyle penCapStyle, PenJoinStyle penJoinStyle);
     void setBrush(GlobalColor brushColor, BrushStyle brushStyle);
+
+    // These functions make it easier to change pen and brush properties in RenderAreaManager::modifyShape()
+    QPen& setInternalPen();
+    QBrush& setInternalBrush();
     /****************************************************/
 
 protected:
     QTreeWidgetItem* parentItem;
     alpha::vector<QTreeWidgetItem*> childItems;
     alpha::vector<QTreeWidgetItem*> pointsItems;
+    alpha::vector<QTreeWidgetItem*> penItems;
+    alpha::vector<QTreeWidgetItem*> brushItems;
 
 private:
     int      shapeId;

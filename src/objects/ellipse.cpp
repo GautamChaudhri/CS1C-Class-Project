@@ -20,6 +20,27 @@ Ellipse::Ellipse(string shapeType,
     setShapeId(6);
 
     CreateParentItem();
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+
+    auto endChild = (*(childItems.end() - 1));
+
+    endChild->setText(0, "Semi-Minor Axis:");
+    endChild->setText(1, QString::number(a));
+    endChild->setFlags(endChild->flags() | Qt::ItemIsEditable);
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+
+    endChild = (*(childItems.end() - 1));
+
+    endChild->setText(0, "Semi-Major Axis:");
+    endChild->setText(1, QString::number(b));
+    endChild->setFlags(endChild->flags() | Qt::ItemIsEditable);
+
+    CreatePenChild();
+    CreateBrushChild();
 }
 
 

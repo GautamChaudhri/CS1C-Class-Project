@@ -251,7 +251,7 @@ void Parser::UpdateAccumulator(const std::string &key, const std::string &value,
     }
     else if (key == "PenWidth") {
         int width = std::stoi(value);
-        if (width < 0 || width > 12)
+        if (width < 0 || width > 20)
             throw std::runtime_error("Invalid pen width: " + value);
         else 
             tempShape.pen.setWidth(width);
@@ -295,6 +295,8 @@ void Parser::UpdateAccumulator(const std::string &key, const std::string &value,
             tempShape.pen.setStyle(Qt::DashDotLine);
         else if (value == "DashDotDotLine")
             tempShape.pen.setStyle(Qt::DashDotDotLine);
+        else if (value == "NoPen")
+            tempShape.pen.setStyle(Qt::NoPen);
         else
             throw std::runtime_error("Unknown pen style: " + value);
     }
@@ -361,6 +363,22 @@ void Parser::UpdateAccumulator(const std::string &key, const std::string &value,
             tempShape.brush.setStyle(Qt::DiagCrossPattern);
         else if (value == "NoBrush")
             tempShape.brush.setStyle(Qt::NoBrush);
+        else if (value == "Dense2Pattern")
+            tempShape.brush.setStyle(Qt::Dense2Pattern);
+        else if (value == "Dense3Pattern")
+            tempShape.brush.setStyle(Qt::Dense3Pattern);
+        else if (value == "Dense4Pattern")
+            tempShape.brush.setStyle(Qt::Dense4Pattern);
+        else if (value == "Dense5Pattern")
+            tempShape.brush.setStyle(Qt::Dense5Pattern);
+        else if (value == "Dense6Pattern")
+            tempShape.brush.setStyle(Qt::Dense6Pattern);
+        else if (value == "Dense7Pattern")
+            tempShape.brush.setStyle(Qt::Dense7Pattern);
+        else if (value == "BDiagPattern")
+            tempShape.brush.setStyle(Qt::BDiagPattern);
+        else if (value == "FDiagPattern")
+            tempShape.brush.setStyle(Qt::FDiagPattern);
         else
             throw std::runtime_error("Unknown brush style: " + value);
     }
@@ -369,7 +387,7 @@ void Parser::UpdateAccumulator(const std::string &key, const std::string &value,
     }
     else if (key == "TextPointSize") {
         int pointSize = std::stoi(value);
-        if (pointSize < 0 || pointSize > 100)
+        if (pointSize < -1 || pointSize > 50)
             throw std::runtime_error("Invalid point size: " + value);
         else 
             tempShape.font.setPointSize(pointSize);
@@ -409,6 +427,16 @@ void Parser::UpdateAccumulator(const std::string &key, const std::string &value,
             tempShape.textAlignment = Qt::AlignRight;
         else if (value == "AlignCenter")
             tempShape.textAlignment = Qt::AlignCenter;
+        else if (value == "AlignHCenter")
+            tempShape.textAlignment = Qt::AlignHCenter;
+        else if (value == "AlignJustify")
+            tempShape.textAlignment = Qt::AlignJustify;
+        else if (value == "AlignTop")
+            tempShape.textAlignment = Qt::AlignTop;
+        else if (value == "AlignBottom")
+            tempShape.textAlignment = Qt::AlignBottom;
+        else if (value == "AlignVCenter")
+            tempShape.textAlignment = Qt::AlignVCenter;
         else
             throw std::runtime_error("Unknown text alignment: " + value);
     }
@@ -421,6 +449,14 @@ void Parser::UpdateAccumulator(const std::string &key, const std::string &value,
             tempShape.font.setFamily("Courier");
         else if (value == "Times")
             tempShape.font.setFamily("Times");
+        else if (value == "Times New Roman")
+            tempShape.font.setFamily("Times New Roman");
+        else if (value == "Courier New")
+            tempShape.font.setFamily("Courier New");
+        else if (value == "Verdana")
+            tempShape.font.setFamily("Verdana");
+        else if (value == "Tahoma")
+            tempShape.font.setFamily("Tahoma");
         else
             throw std::runtime_error("Unknown font family: " + value);
     }
@@ -435,12 +471,16 @@ void Parser::UpdateAccumulator(const std::string &key, const std::string &value,
             throw std::runtime_error("Unknown font style: " + value);
     }
     else if (key == "TextFontWeight") {
-        if (value == "Normal")
+        if (value == "Thin")
+            tempShape.font.setWeight(QFont::Thin);
+        else if (value == "Light")
+            tempShape.font.setWeight(QFont::Light);
+        else if (value == "Normal")
             tempShape.font.setWeight(QFont::Normal);
         else if (value == "Bold")
             tempShape.font.setWeight(QFont::Bold);
-        else if (value == "Light")
-            tempShape.font.setWeight(QFont::Light);
+        else if (value == "Black")
+            tempShape.font.setWeight(QFont::Black);
         else
             throw std::runtime_error("Unknown font weight: " + value);
     }
@@ -839,6 +879,8 @@ std::string Parser::GetPenStyle(const Shape* shape) {
         style = "DashDotLine";
     else if (penStyle == Qt::DashDotDotLine)
         style = "DashDotDotLine";
+    else if (penStyle == Qt::NoPen)
+        style = "NoPen";
     else
         throw std::runtime_error("Unknown pen style at ShapeId: " + shape->getShapeId());
     return style;
@@ -895,8 +937,24 @@ std::string Parser::GetBrushStyle(const Shape* shape) {
         style = "DiagCrossPattern";
     else if (brushStyle == Qt::NoBrush)
         style = "NoBrush";
+    else if (brushStyle == Qt::Dense2Pattern)
+        style = "Dense2Pattern";
+    else if (brushStyle == Qt::Dense3Pattern)
+        style = "Dense3Pattern";
+    else if (brushStyle == Qt::Dense4Pattern)
+        style = "Dense4Pattern";
+    else if (brushStyle == Qt::Dense5Pattern)
+        style = "Dense5Pattern";
+    else if (brushStyle == Qt::Dense6Pattern)
+        style = "Dense6Pattern";
+    else if (brushStyle == Qt::Dense7Pattern)
+        style = "Dense7Pattern";
+    else if (brushStyle == Qt::BDiagPattern)
+        style = "BDiagPattern";
+    else if (brushStyle == Qt::FDiagPattern)
+        style = "FDiagPattern";
     else
-        throw std::runtime_error("Unknown brush style at ShapeId: " + shape->getShapeId());
+        throw std::runtime_error("Unknown brush style at ShapeId: " + std::to_string(shape->getShapeId()));
     return style;
 }
 
@@ -942,12 +1000,16 @@ std::string Parser::GetFontStyle(const Text* text) {
 
 std::string Parser::GetFontWeight(const Text* text) {
     int weight = text->getFont().weight();
-    if (weight == QFont::Normal)
+    if (weight == QFont::Thin)
+        return "Thin";
+    else if (weight == QFont::Light)
+        return "Light";
+    else if (weight == QFont::Normal)
         return "Normal";
     else if (weight == QFont::Bold)
         return "Bold";
-    else if (weight == QFont::Light)
-        return "Light";
+    else if (weight == QFont::Black)
+        return "Black";
     else
         throw std::runtime_error("Unknown font weight encountered: " + std::to_string(weight));
 }

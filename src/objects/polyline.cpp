@@ -16,6 +16,7 @@ Polyline::Polyline(string shapeType,
 {
     setShapeId(2);
     CreateParentItem();
+    CreatePenChild();
     AddPointsToParent(getPointsList().size());
 }
 

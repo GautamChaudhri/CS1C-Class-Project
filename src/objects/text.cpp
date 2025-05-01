@@ -22,6 +22,43 @@ Text::Text(string shapeType,
 {
     setShapeId(8);
     CreateParentItem();
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+
+    auto endChild = (*(childItems.end() - 1));
+
+    endChild->setText(0, "Text:");
+    endChild->setText(1, getTextString());
+    endChild->setFlags(endChild->flags() | Qt::ItemIsEditable);
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+
+    endChild = (*(childItems.end() - 1));
+
+    endChild->setText(0, "Alignment:");
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+
+    endChild = (*(childItems.end() - 1));
+
+    endChild->setText(0, "Font:");
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+
+    endChild = (*(childItems.end() - 1));
+
+    endChild->setText(0, "Font Style:");
+
+    childItems.push_back(new QTreeWidgetItem());
+    parentItem->addChild(*(childItems.end() - 1));
+
+    endChild = (*(childItems.end() - 1));
+
+    endChild->setText(0, "Font Weight:");
 }
 
 
@@ -84,8 +121,12 @@ QFont::Weight Text::getFontWeight()    const { return font.weight();}
 /**********************************************/
 
 /************* MUTATOR FUNCTIONS *************/
+void Text::setText(QString text) { textString = text;}
 void Text::setLength(int newLength) { length = newLength; }
 void Text::setWidth(int newWidth) { width = newWidth; }
 void Text::setX(int newX) { Shape::setX(newX); }
 void Text::setY(int newY) { Shape::setY(newY); }
+void Text::setAlignment(Qt::AlignmentFlag alignment) { textAlignment = alignment; }
+
+QFont& Text::setInternalFont() { return font; }
 /**************************************************/

@@ -41,6 +41,7 @@ signals:
     // shape signals
     void shapeAdded(Shape* shape);
     void shapeChanged(Shape* shape, QString key, int vaue);
+    void displayedTextChanged(Text* text, QString newText);
     void shapeDeleted(int trackerId);
     void deleteAllShapes();
 
@@ -86,6 +87,7 @@ private slots:
     
     // For modifying shape
     void onTreeWidgetItemChanged(QTreeWidgetItem*, int column);
+    void onComboBoxChanged(int newIndex);
 
     void showTestimonialPrompt();
     void showTestimonialsDisplay();
