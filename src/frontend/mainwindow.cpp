@@ -142,13 +142,13 @@ void MainWindow::shapes_to_treeWidget()
         trackerId = item->getTrackerId();
 
         penColorCombo->setProperty("trackerId", trackerId);
-        penColorCombo->setProperty("key", QStringLiteral("Pen:"));
+        penColorCombo->setProperty("key", QStringLiteral("PenColor:"));
         penStyleCombo->setProperty("trackerId", trackerId);
-        penStyleCombo->setProperty("key", QStringLiteral("Pen:"));
+        penStyleCombo->setProperty("key", QStringLiteral("PenStyle:"));
         penCapStyleCombo->setProperty("trackerId", trackerId);
-        penCapStyleCombo->setProperty("key", QStringLiteral("Pen:"));
+        penCapStyleCombo->setProperty("key", QStringLiteral("PenCapStyle:"));
         penJoinStyleCombo->setProperty("trackerId", trackerId);
-        penJoinStyleCombo->setProperty("key", QStringLiteral("Pen:"));
+        penJoinStyleCombo->setProperty("key", QStringLiteral("PenJoinStyle:"));
 
         brushStyleCombo->setProperty("trackerId", trackerId);
         brushStyleCombo->setProperty("key",        QStringLiteral("Brush:"));
