@@ -19,8 +19,8 @@ Line::Line(string shapeType,
 {
     setShapeId(1);
     CreateParentItem();
-    AddPointsToParent(2);
     CreatePenChild();
+    AddPointsToParent(2);
 }
 
 void Line::Draw(QWidget* renderArea)

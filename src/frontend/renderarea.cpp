@@ -125,6 +125,11 @@ void RenderArea::setShapeSelectedIndex(int newIndex)
     shapeSelectedIndex = newIndex;
 }
 
+const alpha::vector<Shape*>& RenderArea::getShapes() const
+{
+    return *renderShapes;
+}
+
 int RenderArea::getShapeSelected() const
 {
     if(shapeSelectedIndex < 0)

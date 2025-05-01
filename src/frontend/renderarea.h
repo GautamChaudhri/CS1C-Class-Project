@@ -15,11 +15,7 @@ class RenderArea : public QWidget
 public:
     RenderArea(QWidget *parent = nullptr);
     void setRenderShapes(const alpha::vector<Shape*>* renderShapes);
-
-    const alpha::vector<Shape*>& getShapes() const
-    {
-        return *renderShapes;
-    }
+    const alpha::vector<Shape*>& getShapes() const;
 
     void mousePressEvent(QMouseEvent* event) override;
     void mouseMoveEvent(QMouseEvent* event) override;

@@ -63,9 +63,9 @@ MainWindow::~MainWindow()
 void MainWindow::shapes_to_treeWidget()
 {
     // Clear and redraw the tree
-    while (ui->treeWidget->topLevelItemCount() > 0) {
-        ui->treeWidget->takeTopLevelItem(0);
-    }
+    // while (ui->treeWidget->topLevelItemCount() > 0) {
+    //     ui->treeWidget->takeTopLevelItem(0);
+    // }
 
     Shape* item;
     int vecSize;
@@ -101,55 +101,55 @@ void MainWindow::shapes_to_treeWidget()
         ui->treeWidget->addTopLevelItem(item->getParentItem());
         item->getParentItem()->setData(0, Qt::UserRole, QVariant::fromValue(item->getTrackerId()));
 
-        switch (item->getShapeId())
-        {
-        case LINE:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1, penStyleCombo);
-            break;
+        // switch (item->getShapeId())
+        // {
+        // case LINE:
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1, penStyleCombo);
+        //     break;
 
-        case POLYLINE:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1, penStyleCombo);
-            break;
+        // case POLYLINE:
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1, penStyleCombo);
+        //     break;
 
-        case POLYGON:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
-            break;
+        // case POLYGON:
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
+        //     break;
 
-        case RECTANGLE:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
-            break;
+        // case RECTANGLE:
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
+        //     break;
 
-        case SQUARE:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
-            break;
+        // case SQUARE:
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
+        //     break;
 
-        case ELLIPSE:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
-            break;
+        // case ELLIPSE:
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
+        //     break;
 
-        case CIRCLE:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
-            break;
+        // case CIRCLE:
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
+        //     break;
 
-        case TEXT:
-            Text* text = static_cast<Text*>(item);
+        // case TEXT:
+        //     Text* text = static_cast<Text*>(item);
 
-            QComboBox* alignmentCombo  = createAlignmentComboBox(text->getTextAlignment());
-            QComboBox* fontCombo       = createFontComboBox(text->getFont());
-            QComboBox* fontStyleCombo  = createFontStyleComboBox(text->getFontStyle());
-            QComboBox* fontWeightCombo = createFontWeightComboBox(text->getFontWeight());
+        //     QComboBox* alignmentCombo  = createAlignmentComboBox(text->getTextAlignment());
+        //     QComboBox* fontCombo       = createFontComboBox(text->getFont());
+        //     QComboBox* fontStyleCombo  = createFontStyleComboBox(text->getFontStyle());
+        //     QComboBox* fontWeightCombo = createFontWeightComboBox(text->getFontWeight());
 
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 3], 1, alignmentCombo);
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 2], 1, fontCombo);
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, fontStyleCombo);
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     fontWeightCombo);
-            break;
-        }
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 3], 1, alignmentCombo);
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 2], 1, fontCombo);
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, fontStyleCombo);
+        //     ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     fontWeightCombo);
+        //     break;
+        // }
     }
 }
 

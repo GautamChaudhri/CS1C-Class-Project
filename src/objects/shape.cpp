@@ -57,9 +57,9 @@ void Shape::CreateParentItem()
 
 void Shape::CreatePenChild()
 {
+    childItems.push_back(new QTreeWidgetItem());
     auto endChild = (*(childItems.end() - 1));
 
-    childItems.push_back(new QTreeWidgetItem());
     parentItem->addChild(endChild);
     endChild->setText(0, "Pen:");
 
@@ -170,9 +170,9 @@ void Shape::CreatePenChild()
 
 void Shape::CreateBrushChild()
 {
+    childItems.push_back(new QTreeWidgetItem());
     auto endChild = (*(childItems.end() - 1));
 
-    childItems.push_back(new QTreeWidgetItem());
     parentItem->addChild(endChild);
     endChild->setText(0, "Brush:");
 
