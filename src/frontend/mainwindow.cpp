@@ -58,17 +58,31 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedSha
     connect(loginButton, &QPushButton::clicked, this, &MainWindow::onLoginClicked);
 
     //Testimonials
-    QAction* testimonialsAction = new QAction(tr("Testimonials"), this);
-    helpMenu->addAction(testimonialsAction);
-    connect(testimonialsAction, &QAction::triggered, this, &MainWindow::showTestimonialsDisplay);
-    setupTestimonials();
+    //QAction* testimonialsAction = new QAction(tr("Testimonials"), this);
+    //helpMenu->addAction(testimonialsAction);
+    //connect(testimonialsAction, &QAction::triggered, this, &MainWindow::showTestimonialsDisplay);
+    
 
     // This creates a separate window when clicked
     ui->menuFile->addAction(tr("Open Shape Report"), this, &MainWindow::createShapeTableTab);
 
-    QAction* contactUsButton = new QAction(tr("Contact Us"), this);
-    menuBar()->addAction(contactUsButton);
-    connect(contactUsButton, &QAction::triggered, this, &MainWindow::onContactUsClicked);
+    // QAction* contactUsButton = new QAction(tr("Contact Us"), this);
+    // menuBar()->addAction(contactUsButton);
+    //auto *contactMenu = menuBar()->addMenu(tr("Contact Us"));
+    // now add the one action into that menu
+    //QAction* contactUsButton = contactMenu->addAction(tr("Open Contact…"));
+    //connect(contactUsButton, &QAction::triggered, this, &MainWindow::onContactUsClicked);
+
+
+    QMenu* helpMenu = menuBar()->addMenu(tr("Help"));
+
+    QAction* contactUsAction = helpMenu->addAction(tr("Contact Us"));
+    connect(contactUsAction, &QAction::triggered, this, &MainWindow::onContactUsClicked);
+
+    QAction* testimonialsAction = helpMenu->addAction(tr("Testimonials"));
+    connect(testimonialsAction, &QAction::triggered, this, &MainWindow::showTestimonialsDisplay);
+
+    setupTestimonials();
 }
 
 

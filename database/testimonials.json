@@ -1,14 +1,7 @@
 [
     {
-        "author": "G",
-        "content": "oogabooga",
-        "isGuest": true,
-        "isSatisfactory": true,
-        "timestamp": "2025-04-29T13:47:49"
-    },
-    {
-        "author": "johnny test",
-        "content": "test2",
+        "author": "Johnny Test",
+        "content": "This is an amazing app! FIVE STARS!!!",
         "isGuest": true,
         "isSatisfactory": true,
         "timestamp": "2025-04-29T13:51:29"
