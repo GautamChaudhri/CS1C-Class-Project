@@ -479,8 +479,21 @@ QComboBox* MainWindow::createPenColorComboBox(int currentPenColor)
     box->addItem("darkGray",    static_cast<int>(Qt::darkGray));
     box->addItem("black",       static_cast<int>(Qt::black));
     box->addItem("transparent", static_cast<int>(Qt::transparent));
-    box->setCurrentIndex(currentPenColor);
 
+    // Convert the stored RGB value back into a QColor
+    QColor target = QColor::fromRgb(currentPenColor);
+
+    // Find which combo entry’s enum produces the same QColor
+    int index = 0;
+    for (int i = 0; i < box->count(); ++i) {
+        int enumVal = box->itemData(i).toInt();
+        if (QColor(static_cast<Qt::GlobalColor>(enumVal)) == target) {
+            index = i;
+            break;
+        }
+    }
+
+    box->setCurrentIndex(index);
     return box;
 }
 
@@ -505,7 +518,13 @@ QComboBox* MainWindow::createPenCapStyleComboBox(int currentPenCapStyle)
     box->addItem("FlatCap",   static_cast<int>(Qt::FlatCap));
     box->addItem("SquareCap", static_cast<int>(Qt::SquareCap));
     box->addItem("RoundCap",  static_cast<int>(Qt::RoundCap));
-    box->setCurrentIndex(currentPenCapStyle);
+    //box->setCurrentIndex(currentPenCapStyle);
+
+    // There is a mismatch between the enum values and their index in the combo box
+    // To fix, find the index of the style in this box and set the current index correctly
+    int index = box->findData(currentPenCapStyle);
+    // If we found a match, select it; otherwise fall back to the first entry.
+    box->setCurrentIndex(index != -1 ? index : 0);
 
     return box;
 }
@@ -516,7 +535,13 @@ QComboBox* MainWindow::createPenJoinStyleComboBox(int currentPenJoinStyle)
     box->addItem("MiterJoin", static_cast<int>(Qt::MiterJoin));
     box->addItem("BevelJoin", static_cast<int>(Qt::BevelJoin));
     box->addItem("RoundJoin", static_cast<int>(Qt::RoundJoin));
-    box->setCurrentIndex(currentPenJoinStyle);
+    //box->setCurrentIndex(currentPenJoinStyle);
+
+    // There is a mismatch between the enum values and their index in the combo box
+    // To fix, find the index of the style in this box and set the current index correctly
+    int index = box->findData(currentPenJoinStyle);
+    // If we found a match, select it; otherwise fall back to the first entry.
+    box->setCurrentIndex(index != -1 ? index : 0);
 
     return box;
 }
@@ -540,14 +565,7 @@ QComboBox* MainWindow::createBrushStyleComboBox(int currentBrushStyle)
     box->addItem("FDiagPattern", static_cast<int>(Qt::FDiagPattern));
     box->addItem("DiagCrossPattern", static_cast<int>(Qt::DiagCrossPattern));
     box->setCurrentIndex(currentBrushStyle);
-
-    // // Pick the index whose data matches our currentBrushStyle
-    // for (int i = 0; i < box->count(); ++i) {
-    //     if (box->itemData(i).toInt() == currentBrushStyle) {
-    //         box->setCurrentIndex(i);
-    //         break;
-    //     }
-    // }
+    
     return box;
 }
 void MainWindow::onLoginClicked() {
