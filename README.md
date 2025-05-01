@@ -23,12 +23,15 @@ Due Date: 05/01/2025
 - Eric Sears  (esears5@ivc.edu)  
   *Sprint 1 Role:* Development Team  
   *Sprint 2 Role:* Product Owner  
-- Name  (email)  
+- Brian Su  (bsu9@ivc.edu)  
   *Sprint 1 Role:* Development Team  
   *Sprint 2 Role:* Development Team  
 - Paul Tripodi (ptripod0@saddleback.edu)  
   *Sprint 1 Role:* Product Owner  
   *Sprint 2 Role:* Development Team  
+- Placeholder (email)  
+  *Sprint 1 Role:* Development Team  
+  *Sprint 2 Role:* Development Team 
 
 ---
 

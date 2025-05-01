@@ -28,7 +28,7 @@
    <string>2D Graphics Modeler</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset>
     <normaloff>:/icons/ProgramIcon2.png</normaloff>:/icons/ProgramIcon2.png</iconset>
   </property>
   <property name="layoutDirection">
@@ -185,71 +185,6 @@
    <addaction name="actionnew_polygon_button"/>
    <addaction name="actionnew_text_button"/>
    <addaction name="actionremove_shape_button"/>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1500</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>30</height>
-    </size>
-   </property>
-   <widget class="QMenu" name="menuSettings">
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="title">
-     <string>Settings</string>
-    </property>
-    <addaction name="toggleStyle"/>
-   </widget>
-   <widget class="QMenu" name="menuLogin">
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="title">
-     <string>Login</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuContact">
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="title">
-     <string>Contact</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuFile">
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="title">
-     <string>File</string>
-    </property>
-   </widget>
-   <addaction name="menuFile"/>
-   <addaction name="menuSettings"/>
-   <addaction name="menuLogin"/>
-   <addaction name="menuContact"/>
   </widget>
   <widget class="QDockWidget" name="dockWidget">
    <property name="enabled">
@@ -914,12 +849,65 @@
     </layout>
    </widget>
   </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1500</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>30</height>
+    </size>
+   </property>
+   <widget class="QMenu" name="menuSettings">
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="toggleStyle"/>
+   </widget>
+   <widget class="QMenu" name="menuLogin">
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="title">
+     <string>Login</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="title">
+     <string>File</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuLogin"/>
+  </widget>
   <action name="actionnew_line_button">
    <property name="enabled">
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/LineButtonIcon.png</normaloff>:/icons/LineButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -937,7 +925,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/SquareButtonIcon.png</normaloff>
      <normalon>:/icons/squareButtonTest.png</normalon>:/icons/SquareButtonIcon.png</iconset>
    </property>
@@ -953,7 +941,7 @@
   </action>
   <action name="actionnew_rectange_button">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/RectangleButtonIcon.png</normaloff>:/icons/RectangleButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -968,7 +956,7 @@
   </action>
   <action name="actionnew_circle_button">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/CircleButtonIcons.png</normaloff>:/icons/CircleButtonIcons.png</iconset>
    </property>
    <property name="text">
@@ -983,7 +971,7 @@
   </action>
   <action name="actionnew_ellipse_button">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/EllipseButtonIcon.png</normaloff>:/icons/EllipseButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -998,7 +986,7 @@
   </action>
   <action name="actionnew_polyline_button">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/PolylineButtonIcon.png</normaloff>:/icons/PolylineButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -1013,7 +1001,7 @@
   </action>
   <action name="actionnew_polygon_button">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/PolygonButtonIcon.png</normaloff>:/icons/PolygonButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -1028,7 +1016,7 @@
   </action>
   <action name="actionnew_text_button">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/TextButtonIcon.png</normaloff>:/icons/TextButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -1066,7 +1054,7 @@
   </action>
   <action name="actionremove_shape_button">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/RemoveButtonIcon.png</normaloff>:/icons/RemoveButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -1080,8 +1068,6 @@
    </property>
   </action>
  </widget>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

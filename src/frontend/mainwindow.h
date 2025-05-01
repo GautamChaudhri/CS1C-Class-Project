@@ -14,6 +14,8 @@
 #include <QTimer>
 #include <QComboBox>
 #include <QStatusBar>
+#include <QVBoxLayout>
+#include <QPushButton>
 #include "ui_mainwindow.h"
 #include "renderarea.h"
 #include "loginwindow.h"
@@ -92,6 +94,9 @@ private slots:
     void showTestimonialPrompt();
     void showTestimonialsDisplay();
 
+    // For contact us window
+    void onContactUsClicked();
+
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;
@@ -129,6 +134,10 @@ private:
     
     void setupTestimonials();
 
+    QWidget *contactUsWidget;
+    QLabel *logoLabel;
+    QLabel *teamNameLabel;
+    QWidget *contactWindow;
 };
 
 #endif // MAINWINDOW_H
