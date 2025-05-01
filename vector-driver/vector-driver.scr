@@ -1,0 +1,58 @@
+Script started on 2025-05-01 12:56:37-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="82" LINES="94"]
+[1m[7m#[27m[1m[0m                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\[0m[27m[24m[J
+[01;32m/CS1C-Class-Project/vector-driver[00m ⌚ [01;31m12:56:37[00m
+$ [K[?1h=[?2004h[A[A[0m[27m[24m[J
+[01;32m/CS1C-Class-Project/vector-driver[00m on [35m main[31m![00m ⌚ [01;31m12:56:37[00m
+$ [K[32md[39m[32md[39m[90mate[39m[1m[31md[1m[31ma[0m[39m[1m[31md[1m[31ma[1m[31mt[0m[39m[0m[32md[0m[32ma[0m[32mt[32me[39m[?1l>[?2004l
+]2;date]1;dateThu May  1 12:56:38 PDT 2025
+[1m[7m#[27m[1m[0m                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\[0m[27m[24m[J
+[01;32m/CS1C-Class-Project/vector-driver[00m on [35m main[31m![00m ⌚ [01;31m12:56:38[00m
+$ [K[?1h=[?2004h[32ml[39m[32ml[39m[90ms[39m[32ml[32ms[39m [90m-l[39m[36m-[39m[36m-[36ml[39m[?1l>[?2004l
+]2;eza -l]1;ls.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m4.7k[0m [1;33mroot[0m [34m 1 May 12:45[0m [1;33mmain.cpp[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m  [32m387[0m [1;33mroot[0m [34m 1 May 12:29[0m [1;4;33mMakefile[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m    [32m0[0m [1;33mroot[0m [34m 1 May 12:56[0m vector-driver.scr
+[1m[7m#[27m[1m[0m                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\[0m[27m[24m[J
+[01;32m/CS1C-Class-Project/vector-driver[00m on [35m main[31m![00m ⌚ [01;31m12:56:40[00m
+$ [K[?1h=[?2004h[1m[31mm[0m[39m[1m[31mm[0m[39m[90make clean[39m[9D[1m[31mm[1m[31ma[0m[39m[1m[31mm[1m[31ma[1m[31mk[0m[39m[0m[32mm[0m[32ma[0m[32mk[32me[39m[39m [39m [39m [39m [39m [39m [?1l>[?2004l
+]2;make]1;makeg++ -std=c++17 -g -O0 -c main.cpp -o main.o
+g++ -std=c++17 -g -O0 -o vector-driver main.o
+[1m[7m#[27m[1m[0m                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\[0m[27m[24m[J
+[01;32m/CS1C-Class-Project/vector-driver[00m on [35m main[31m![00m ⌚ [01;31m12:56:41[00m
+$ [K[?1h=[?2004h[32ml[39m[32ml[39m[90ms -l[39m[32ml[32ms[39m[39m [36m-[39m[36m-[36ml[39m[?1l>[?2004l
+]2;eza -l]1;ls.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m4.7k[0m [1;33mroot[0m [34m 1 May 12:45[0m [1;33mmain.cpp[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m  [1;32m58k[0m [1;33mroot[0m [34m 1 May 12:56[0m [33mmain.o[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m  [32m387[0m [1;33mroot[0m [34m 1 May 12:29[0m [1;4;33mMakefile[0m
+.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m  [1;32m97k[0m [1;33mroot[0m [34m 1 May 12:56[0m [1;32mvector-driver[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m    [32m0[0m [1;33mroot[0m [34m 1 May 12:56[0m vector-driver.scr
+[1m[7m#[27m[1m[0m                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\[0m[27m[24m[J
+[01;32m/CS1C-Class-Project/vector-driver[00m on [35m main[31m![00m ⌚ [01;31m12:56:43[00m
+$ [K[?1h=[?2004h[1m[31mv[0m[39m[1m[31mv[1m[31ma[0m[39m[1m[31mv[1m[31ma[1m[31ml[0m[39m[1m[31ml[1m[31mg[0m[39m[1m[31mg[1m[31mr[0m[39m[1m[31mr[1m[31mi[0m[39m[1m[31mi[1m[31mn[0m[39m[0m[32mv[0m[32ma[0m[32ml[0m[32mg[0m[32mr[0m[32mi[0m[32mn[32md[39m [36m-[39m[36m-[36m-[39m[36m-[36mt[39m[36mt[36mo[39m[36mo[36mo[39m[36mo[36ml[39m[36ml[36m=[39m[36m=[36mm[39m[36mm[36me[39m[36me[36mm[39m[36mm[36mc[39m[36mc[36mh[39m[36mh[36me[39m[36me[36mc[39m[36mc[36mk[39m [36m-[39m[36m-[36m-[39m[36m-[36ml[39m[36ml[36me[39m[36me[36ma[39m[36ma[36mk[39m[36mk[36m-[39m[36m-[36mc[39m[36mc[36mh[39m[36mh[36me[39m[36me[36mc[39m[36mc[36mk[39m[36mk[36m=[39m[36m=[36my[39m[36my[36me[39m[36me[36ms[39m [36m-[39m[36m-[36m-[39m[36m-[36ml[39m[36ml[36mo[39m[36mo[36mg[39m[36mg[36m-[39m[36m-[36mf[39m[36mf[36mi[39m[36mi[36ml[39m[36ml[36me[39m[36me[36m=[39m[36m=[36mv[39m[36mv[36ma[39m[36ma[36ml[39m[36ml[36mg[39m[36mg[36mr[39m[36mr[36mi[39m[36mi[36mn[39m[36mn[36md[39m[36md[36m_[39m[36m_[36mq[39m[36mq[36mt[39m[36mt[36m_[39m[36m_[36mv[39m[36mv[36me[39m[36me[36mc[39m[36mc[36mt[39m[36mt[36mo[39m[36mo[36mr[39m[36mr[36m_[39m[36m_[36md[39m[36md[36mr[39m[36mr[36mi[39m[36mi[36mv[39m[36mv[36me[39m[36me[36mr[39m[36mr[36m.[39m[36m.[36mr[39m [K[A[81C[36mr[36mp[39m[36mp[36mt[39m [36m-[39m[36m-[36ms[39m [4m[35m.[24m[39m[4m[35m.[4m[35m/[24m[39m[24m[39m.[24m[39m/vector-drive[14D[35m.[35m/[35mv[35me[35mc[35mt[35mo[35mr[35m-[35md[35mr[35mi[35mv[35me[35mr[39m[A[19D[39m[7mv[39m[7ma[39m[7ml[39m[7mg[39m[7mr[39m[7mi[39m[7mn[39m[7md[7m [39m[7m-[39m[7m-[39m[7mt[39m[7mo[39m[7mo[39m[7ml[39m[7m=[39m[7mm[39m[7me[39m[7mm[39m[7mc[39m[7mh[39m[7me[39m[7mc[39m[7mk[7m [39m[7m-[39m[7m-[39m[7ml[39m[7me[39m[7ma[39m[7mk[39m[7m-[39m[7mc[39m[7mh[39m[7me[39m[7mc[39m[7mk[39m[7m=[39m[7my[39m[7me[39m[7ms[7m [39m[7m-[39m[7m-[39m[7ml[39m[7mo[39m[7mg[39m[7m-[39m[7mf[39m[7mi[39m[7ml[39m[7me[39m[7m=[39m[7mv[39m[7ma[39m[7ml[39m[7mg[39m[7mr[39m[7mi[39m[7mn[39m[7md[39m[7m_[39m[7mq[39m[7mt[39m[7m_[39m[7mv[39m[7me[39m[7mc[39m[7mt[39m[7mo[39m[7mr[39m[7m_[39m[7md[39m[7mr[39m[7mi[39m[7mv[39m[7me[39m[7mr[39m[7m.[39m[7mr[7mp[39m[7mt[7m [39m[7m-[39m[7ms[7m [39m[7m.[39m[7m/[39m[7mv[39m[7me[39m[7mc[39m[7mt[39m[7mo[39m[7mr[39m[7m-[39m[7md[39m[7mr[39m[7mi[39m[7mv[39m[7me[39m[7mr[27m[A[19D[27mv[27ma[27ml[27mg[27mr[27mi[27mn[27md[27m [27m-[27m-[27mt[27mo[27mo[27ml[27m=[27mm[27me[27mm[27mc[27mh[27me[27mc[27mk[27m [27m-[27m-[27ml[27me[27ma[27mk[27m-[27mc[27mh[27me[27mc[27mk[27m=[27my[27me[27ms[27m [27m-[27m-[27ml[27mo[27mg[27m-[27mf[27mi[27ml[27me[27m=[27mv[27ma[27ml[27mg[27mr[27mi[27mn[27md[27m_[27mq[27mt[27m_[27mv[27me[27mc[27mt[27mo[27mr[27m_[27md[27mr[27mi[27mv[27me[27mr[27m.[27mrp[27mt[27m [27m-[27ms[27m [27m.[27m/[27mv[27me[27mc[27mt[27mo[27mr[27m-[27md[27mr[27mi[27mv[27me[27mr[?1l>[?2004l[A[19D[32mv[32ma[32ml[32mg[32mr[32mi[32mn[32md[39m [36m-[36m-[36mt[36mo[36mo[36ml[36m=[36mm[36me[36mm[36mc[36mh[36me[36mc[36mk[39m [36m-[36m-[36ml[36me[36ma[36mk[36m-[36mc[36mh[36me[36mc[36mk[36m=[36my[36me[36ms[39m [36m-[36m-[36ml[36mo[36mg[36m-[36mf[36mi[36ml[36me[36m=[36mv[36ma[36ml[36mg[36mr[36mi[36mn[36md[36m_[36mq[36mt[36m_[36mv[36me[36mc[36mt[36mo[36mr[36m_[36md[36mr[36mi[36mv[36me[36mr[36m.[36mr[36mp[36mt[39m [36m-[36ms[39m [35m.[35m/[35mv[35me[35mc[35mt[35mo[35mr[35m-[35md[35mr[35mi[35mv[35me[35mr[39m
+]2;valgrind --tool=memcheck --leak-check=yes  -s ./vector-driver]1;valgrindpush_back/operator[] test: PASSED
+reserve/capacity test: PASSED
+insert/erase test: PASSED
+resize test: PASSED
+copy constructor/assign test: PASSED
+move constructor/assign test: PASSED
+All tests completed. Overall result: PASSED
+[1m[7m#[27m[1m[0m                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\[0m[27m[24m[J
+[01;32m/CS1C-Class-Project/vector-driver[00m on [35m main[31m![00m ⌚ [01;31m12:56:51[00m
+$ [K[?1h=[?2004h[1m[31mc[0m[39m[1m[31mc[0m[39m[90mlear[39m[1m[31mc[1m[31ma[0m[39m[39m [39m [39m [90mt vector-driver.scr[39m[19D[0m[32mc[0m[32ma[32mt[39m[39m [39mv[39ma[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [15D[90mlgrind_qt_vector_driver.rpt[39m[27D[35mv[35ma[35ml[35mg[35mr[35mi[35mn[35md[35m_[35mq[35mt[35m_[35mv[35me[35mc[35mt[35mo[35mr[35m_[35md[35mr[35mi[35mv[35me[35mr[35m.[35mr[35mp[35mt[39m[1m [0m[0m [?1l>[?2004l
+]2;cat valgrind_qt_vector_driver.rpt]1;cat==34411== Memcheck, a memory error detector
+==34411== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==34411== Using Valgrind-3.24.0 and LibVEX; rerun with -h for copyright info
+==34411== Command: ./vector-driver
+==34411== Parent PID: 33997
+==34411== 
+==34411== 
+==34411== HEAP SUMMARY:
+==34411==     in use at exit: 0 bytes in 0 blocks
+==34411==   total heap usage: 40,020 allocs, 40,020 frees, 800,534,772 bytes allocated
+==34411== 
+==34411== All heap blocks were freed -- no leaks are possible
+==34411== 
+==34411== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+[1m[7m#[27m[1m[0m                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\[0m[27m[24m[J
+[01;32m/CS1C-Class-Project/vector-driver[00m on [35m main[31m![00m ⌚ [01;31m12:56:55[00m
+$ [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[90mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+]2;exit]1;exit
+Script done on 2025-05-01 12:57:00-07:00 [COMMAND_EXIT_CODE="0"]

@@ -28,6 +28,21 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedSha
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // Increase toolbar and tree widget size on macos
+    #ifdef Q_OS_MAC
+    // make toolbar icons a bit larger
+    ui->toolBar->setIconSize(QSize(36,36));
+
+    // bump up the tree’s default font point-size by 2pt
+    QFont f = ui->treeWidget->font();
+    f.setPointSize(f.pointSize() + 5);
+    ui->treeWidget->setFont(f);
+
+    // if you have column widths in the tree you want to adjust:
+    ui->treeWidget->setColumnWidth(0, ui->treeWidget->columnWidth(0) + 36);
+    #endif
+
     // wire up handler for edits in the tree
     connect(ui->treeWidget, &QTreeWidget::itemChanged, this, &MainWindow::onTreeWidgetItemChanged);
 
@@ -58,17 +73,31 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedSha
     connect(loginButton, &QPushButton::clicked, this, &MainWindow::onLoginClicked);
 
     //Testimonials
-    QAction* testimonialsAction = new QAction(tr("Testimonials"), this);
-    QMenu* helpMenu = menuBar()->addMenu(tr("&Help"));
-    helpMenu->addAction(testimonialsAction);
-    connect(testimonialsAction,
-            &QAction::triggered,
-            this,
-            &MainWindow::showTestimonialsDisplay);
-    setupTestimonials();
+    //QAction* testimonialsAction = new QAction(tr("Testimonials"), this);
+    //helpMenu->addAction(testimonialsAction);
+    //connect(testimonialsAction, &QAction::triggered, this, &MainWindow::showTestimonialsDisplay);
+    
 
     // This creates a separate window when clicked
     ui->menuFile->addAction(tr("Open Shape Report"), this, &MainWindow::createShapeTableTab);
+
+    // QAction* contactUsButton = new QAction(tr("Contact Us"), this);
+    // menuBar()->addAction(contactUsButton);
+    //auto *contactMenu = menuBar()->addMenu(tr("Contact Us"));
+    // now add the one action into that menu
+    //QAction* contactUsButton = contactMenu->addAction(tr("Open Contact…"));
+    //connect(contactUsButton, &QAction::triggered, this, &MainWindow::onContactUsClicked);
+
+
+    QMenu* helpMenu = menuBar()->addMenu(tr("Help"));
+
+    QAction* contactUsAction = helpMenu->addAction(tr("Contact Us"));
+    connect(contactUsAction, &QAction::triggered, this, &MainWindow::onContactUsClicked);
+
+    QAction* testimonialsAction = helpMenu->addAction(tr("Testimonials"));
+    connect(testimonialsAction, &QAction::triggered, this, &MainWindow::showTestimonialsDisplay);
+
+    setupTestimonials();
 }
 
 
@@ -866,4 +895,67 @@ void MainWindow::onSortMethodChanged(int) {
  
     // Update the displayed table with filtered and sorted data
     populateShapeTable(filteredShapes);
+}
+
+void MainWindow::onContactUsClicked() 
+{
+    // If already open, bring to front
+    if (contactWindow && contactWindow->isVisible()) {
+        contactWindow->raise();
+        contactWindow->activateWindow();
+        return;
+    }
+
+    // Create a new window for Contact Us (will be deleted when closed)
+    contactWindow = new QWidget(this, Qt::Window);
+    contactWindow->setAttribute(Qt::WA_DeleteOnClose);
+    contactWindow->setWindowTitle("Contact Us");
+    contactWindow->resize(600, 400); // Wider for better layout
+
+    // Team Logo (original size, left/top)
+    QLabel *logoLabel = new QLabel(contactWindow);
+    logoLabel->setPixmap(QPixmap(":/icons/logo.png"));
+    logoLabel->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+
+    // Team Name (big, bold, left)
+    QLabel *teamNameLabel = new QLabel("Team Alphawolves", contactWindow);
+    QFont teamFont = teamNameLabel->font();
+    teamFont.setPointSize(24); // Larger font
+    teamFont.setBold(true);
+    teamNameLabel->setFont(teamFont);
+    teamNameLabel->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+
+    // Team Members (big font, left)
+    QLabel *teamMembersLabel = new QLabel(
+        "<span style='font-size:16pt;'>"
+        "1. Kevin Azarbal (<b>kazarbal1@saddleback.edu</b>)<br>"
+        "2. Gautam Chaudhri (<b>gchaudhri0@ivc.edu</b>)<br>"
+        "3. Aspen Cristobal (<b>acristobal1@saddleback.edu</b>)<br>"
+        "4. Tim Nguyen (<b>tnguyen910@ivc.edu</b>)<br>"
+        "5. Luke Ortiz (<b>lortiz25@saddleback.edu</b>)<br>"
+        "6. Eric Sears (<b>esears5@ivc.edu</b>)<br>"
+        "7. Paul Tripodi (<b>ptripod0@saddleback.edu</b>)<br>"
+        "8. Placeholder for Aram<br>"
+        "9. Brian Su (<b>bsu9@ivc.edu</b>)"
+        "</span>",
+        contactWindow
+    );
+    teamMembersLabel->setTextFormat(Qt::RichText);
+    teamMembersLabel->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+
+    // Layout: logo left, text right (team name on top, members below)
+    QVBoxLayout *textLayout = new QVBoxLayout();
+    textLayout->addWidget(teamNameLabel);
+    textLayout->addWidget(teamMembersLabel);
+    textLayout->addStretch();
+
+    QHBoxLayout *mainLayout = new QHBoxLayout(contactWindow);
+    mainLayout->addWidget(logoLabel, 0, Qt::AlignTop | Qt::AlignLeft);
+    mainLayout->addLayout(textLayout);
+
+    contactWindow->setLayout(mainLayout);
+
+    connect(contactWindow, &QWidget::destroyed, this, [this]() { contactWindow = nullptr; });
+
+    contactWindow->show();
 }

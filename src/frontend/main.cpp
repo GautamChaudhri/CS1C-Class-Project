@@ -2,9 +2,14 @@
 
 
 int main(int argc, char *argv[]) {
-    QApplication a(argc, argv);
+    
+    // turn on per-monitor high-DPI scaling
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+    
+    QApplication app(argc, argv);
     AppDriver driver;
 
     driver.run();
-    return a.exec();
+    return app.exec();
 }

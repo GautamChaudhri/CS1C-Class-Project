@@ -17,5 +17,6 @@
         <file>ProgramIcon.png</file>
         <file>RemoveButtonIcon.png</file>
         <file>ProgramIcon2.png</file>
+        <file>logo.png</file>
     </qresource>
 </RCC>
