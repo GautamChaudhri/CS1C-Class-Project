@@ -1,0 +1,58 @@
+Script started on 2025-05-01 12:56:37-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="82" LINES="94"]
+#                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\
+/CS1C-Class-Project/vector-driver ⌚ 12:56:37
+$ [?1h=[?2004h
+/CS1C-Class-Project/vector-driver on  main! ⌚ 12:56:37
+$ ddatedadatdate[?1l>[?2004l
+]2;date]1;dateThu May  1 12:56:38 PDT 2025
+#                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\
+/CS1C-Class-Project/vector-driver on  main! ⌚ 12:56:38
+$ [?1h=[?2004hllsls -l--l[?1l>[?2004l
+]2;eza -l]1;ls.rw-r--r-- 4.7k root  1 May 12:45 main.cpp
+.rw-r--r--  387 root  1 May 12:29 Makefile
+.rw-r--r--    0 root  1 May 12:56 vector-driver.scr
+#                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\
+/CS1C-Class-Project/vector-driver on  main! ⌚ 12:56:40
+$ [?1h=[?2004hmmake cleanmamakmake      [?1l>[?2004l
+]2;make]1;makeg++ -std=c++17 -g -O0 -c main.cpp -o main.o
+g++ -std=c++17 -g -O0 -o vector-driver main.o
+#                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\
+/CS1C-Class-Project/vector-driver on  main! ⌚ 12:56:41
+$ [?1h=[?2004hlls -lls --l[?1l>[?2004l
+]2;eza -l]1;ls.rw-r--r-- 4.7k root  1 May 12:45 main.cpp
+.rw-r--r--  58k root  1 May 12:56 main.o
+.rw-r--r--  387 root  1 May 12:29 Makefile
+.rwxr-xr-x  97k root  1 May 12:56 vector-driver
+.rw-r--r--    0 root  1 May 12:56 vector-driver.scr
+#                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\
+/CS1C-Class-Project/vector-driver on  main! ⌚ 12:56:43
+$ [?1h=[?2004hvvavallggrriinvalgrind ----ttooooll==mmeemmcchheecck ----lleeaakk--cchheecckk==yyees ----lloogg--ffiillee==vvaallggrriinndd__qqtt__vveeccttoorr__ddrriivveerr..r rppt --s .././vector-drive./vector-drivervalgrind --tool=memcheck --leak-check=yes --log-file=valgrind_qt_vector_driver.rpt -s ./vector-drivervalgrind --tool=memcheck --leak-check=yes --log-file=valgrind_qt_vector_driver.rpt -s ./vector-driver[?1l>[?2004lvalgrind --tool=memcheck --leak-check=yes --log-file=valgrind_qt_vector_driver.rpt -s ./vector-driver
+]2;valgrind --tool=memcheck --leak-check=yes  -s ./vector-driver]1;valgrindpush_back/operator[] test: PASSED
+reserve/capacity test: PASSED
+insert/erase test: PASSED
+resize test: PASSED
+copy constructor/assign test: PASSED
+move constructor/assign test: PASSED
+All tests completed. Overall result: PASSED
+#                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\
+/CS1C-Class-Project/vector-driver on  main! ⌚ 12:56:51
+$ [?1h=[?2004hcclearca   t vector-driver.scrcat va               lgrind_qt_vector_driver.rptvalgrind_qt_vector_driver.rpt  [?1l>[?2004l
+]2;cat valgrind_qt_vector_driver.rpt]1;cat==34411== Memcheck, a memory error detector
+==34411== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==34411== Using Valgrind-3.24.0 and LibVEX; rerun with -h for copyright info
+==34411== Command: ./vector-driver
+==34411== Parent PID: 33997
+==34411== 
+==34411== 
+==34411== HEAP SUMMARY:
+==34411==     in use at exit: 0 bytes in 0 blocks
+==34411==   total heap usage: 40,020 allocs, 40,020 frees, 800,534,772 bytes allocated
+==34411== 
+==34411== All heap blocks were freed -- no leaks are possible
+==34411== 
+==34411== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+#                                                                                  ]2;root@d20af50ddf5c:/CS1C-Class-Project/vector-driver]1;..vector-driver]7;file://d20af50ddf5c/CS1C-Class-Project/vector-driver\
+/CS1C-Class-Project/vector-driver on  main! ⌚ 12:56:55
+$ [?1h=[?2004heexitexexiexit[?1l>[?2004l
+]2;exit]1;exit
+Script done on 2025-05-01 12:57:00-07:00 [COMMAND_EXIT_CODE="0"]

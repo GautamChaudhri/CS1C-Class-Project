@@ -303,15 +303,27 @@ class vector
             /*******************************************************************
              * CHECK IF ENOUGH SPACE
              ******************************************************************/
+            // record the index where we want to insert
+            int index = static_cast<int>(p - elem);
+
+            // grow storage if needed
             if (size_v == space) {
                 reserve(space + 1);
             }
 
-            iterator next = end();
-            while (next != p) {
-                *next = *(next - 1);
-                next--;
-            }
+            // iterator next = end();
+            // while (next != p) {
+            //     *next = *(next - 1);
+            //     next--;
+            // }
+
+            // recompute pointers into the (possibly moved) data
+            p = elem + index;
+            iterator end_it = elem + size_v;
+
+            // shift elements [index..size_v-1] one position to the right
+            for (iterator it = end_it; it != p; --it)
+                *it = *(it - 1);
 
             *p = v;
             size_v++;
