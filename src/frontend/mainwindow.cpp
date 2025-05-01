@@ -154,7 +154,7 @@ void MainWindow::shapes_to_treeWidget()
         brushStyleCombo->setProperty("trackerId", trackerId);
         brushStyleCombo->setProperty("key",        QStringLiteral("Brush:"));
         brushColorCombo->setProperty("trackerId", trackerId);
-        brushColorCombo->setProperty("key",        QStringLiteral("Brush:"));
+        brushColorCombo->setProperty("key",        QStringLiteral("BrushColor:"));
 
         // Connect the combo boxes to slot to handle shape change after a new value is chosen
         connect(penColorCombo,     &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);

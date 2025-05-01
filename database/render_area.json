@@ -142,13 +142,13 @@
 "ShapeId": 6,
 "TrackerId": 12,
 "ShapeType": "Ellipse",
-"ShapeDimensions": [939, 411, 120, 80],
+"ShapeDimensions": [881, 399, 120, 80],
 "PenColor": "red",
 "PenWidth": 3,
 "PenStyle": "SolidLine",
 "PenCapStyle": "SquareCap",
 "PenJoinStyle": "RoundJoin",
-"BrushColor": "white",
+"BrushColor": "magenta",
 "BrushStyle": "Dense5Pattern"
 },
 {
