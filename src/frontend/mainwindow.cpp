@@ -62,8 +62,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::shapes_to_treeWidget()
 {
+    // Clear and redraw the tree
+    while (ui->treeWidget->topLevelItemCount() > 0) {
+        ui->treeWidget->takeTopLevelItem(0);
+    }
+
     Shape* item;
     int vecSize;
+    int trackerId;
 
     item = nullptr;
     vecSize = renderArea->getShapes().size();
@@ -79,6 +85,17 @@ void MainWindow::shapes_to_treeWidget()
         // Set parent of combo box as treeWidget
         penStyleCombo->setParent(ui->treeWidget);
         brushStyleCombo->setParent(ui->treeWidget);
+
+        // Tag each combo box with the shape's trackerId and a key for easy shape modifications
+        trackerId = item->getTrackerId();
+        penStyleCombo->setProperty("trackerId", trackerId);
+        penStyleCombo->setProperty("key",        QStringLiteral("Pen:"));
+        brushStyleCombo->setProperty("trackerId", trackerId);
+        brushStyleCombo->setProperty("key",        QStringLiteral("Brush:"));
+
+        // Connect the combo boxes to slot to handle shape change after a new value is chosen
+        connect(penStyleCombo, &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);
+        connect(brushStyleCombo, &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);
 
         // Add top-level item to the tree widget
         ui->treeWidget->addTopLevelItem(item->getParentItem());
@@ -160,28 +177,55 @@ void MainWindow::onTreeWidgetItemChanged(QTreeWidgetItem* item, int column) {
     bool found = false;
     for (Shape* targetShape : *renderShapes) {
         if (targetShape->getTrackerId() == trackerId) {
-            shape = targetShape;
             found = true;
+            shape = targetShape;
+            emit shapeChanged(shape, key, value);
             break;
         }
     }
 
-    if (found)
-        emit shapeChanged(shape, key, value);
-    else {
-        //Print out shape details
-        //qDebug() << "[MainWindow::onTreeWidgetItemChanged] shape not found - trackerId:" << trackerId;
-        qDebug() << "[MainWindow::onTreeWidgetItemChanged] shape not found - shape details:";
-        qDebug() << "Shape ID:" << shape->getShapeId(); 
-        qDebug() << "Shape Name:" << shape->getShapeType();
-        qDebug() << "Shape Tracker ID:" << shape->getTrackerId();
+    if (!found)
+        qDebug() << "[MainWindow::onTreeWidgetItemChanged] shape not found - trackerId: " + trackerId;
 
+}
+
+void MainWindow::onComboBoxChanged(int newIndex) {
+    int trackerId;
+    QString key;
+    int newValue;
+    Shape* shape = nullptr;
+    
+    // Determine which QComboBox sent the changed signal
+    QComboBox* combo = qobject_cast<QComboBox*>(sender());
+    if (!combo)
+        return;
+
+    // Grab the key and trackerId that we tagged on to each combo box
+    trackerId = combo->property("trackerId").toInt();
+    key = combo->property("key").toString();
+
+    // Get the new value that was changed
+    newValue = combo->itemData(newIndex).toInt();
+
+    // Find the pointer to the shape that needs to be changed
+    bool found = false;
+    for (Shape* targetShape : *renderShapes) {
+        if (targetShape->getTrackerId() == trackerId) {
+            found = true;
+            shape = targetShape;
+            emit shapeChanged(shape, key, newValue);
+            break;
+        }
     }
+
+    if (!found)
+        qDebug() << "[MainWindow::onComboBoxChanged] shape not found - trackerId: " + trackerId;
 
 }
 
 void MainWindow::onRenderAreaChanged() {
-    update();
+    //update();
+    renderArea->update();
     shapes_to_treeWidget();
 }
 
@@ -320,7 +364,15 @@ QComboBox* MainWindow::createBrushStyleComboBox(int currentBrushStyle)
     box->addItem("BDiagPattern", static_cast<int>(Qt::BDiagPattern));
     box->addItem("FDiagPattern", static_cast<int>(Qt::FDiagPattern));
     box->addItem("DiagCrossPattern", static_cast<int>(Qt::DiagCrossPattern));
-    box->setCurrentIndex(currentBrushStyle);
+    //box->setCurrentIndex(currentBrushStyle);
+
+    // Pick the index whose data matches our currentBrushStyle
+    for (int i = 0; i < box->count(); ++i) {
+        if (box->itemData(i).toInt() == currentBrushStyle) {
+            box->setCurrentIndex(i);
+            break;
+        }
+    }
     return box;
 }
 void MainWindow::onLoginClicked() {

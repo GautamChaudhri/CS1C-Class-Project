@@ -79,6 +79,7 @@ private slots:
     
     // For modifying shape
     void onTreeWidgetItemChanged(QTreeWidgetItem*, int column);
+    void onComboBoxChanged(int newIndex);
 
 private:
     Ui::MainWindow *ui;

@@ -219,22 +219,42 @@ void Shape::CreateBrushChild()
     (*(brushItems.end() - 1))->setText(0, "BrushStyle:");
 
     QString brushStyle;
-    if (brush.style() == Qt::SolidPattern)
-        brushStyle = "SolidPattern";
-    else if (brush.color() == Qt::VerPattern)
-        brushColor = "VerPattern";
-    else if (brush.color() == Qt::HorPattern)
-        brushColor = "HorPattern";
-    else if (brush.color() == Qt::Dense1Pattern)
-        brushColor = "Dense1Pattern";
-    else if (brush.color() == Qt::CrossPattern)
-        brushColor = "CrossPattern";
-    else if (brush.color() == Qt::DiagCrossPattern)
-        brushColor = "DiagCrossPattern";
-    else if (brush.color() == Qt::NoBrush)
-        brushColor = "NoBrush";
-    else
-        qDebug() << "[Shape::CreateBrushChild] BrushStyle Error";
+    // if (brush.style() == Qt::SolidPattern)
+    //     brushStyle = "SolidPattern";
+    // else if (brush.color() == Qt::VerPattern)
+    //     brushColor = "VerPattern";
+    // else if (brush.color() == Qt::HorPattern)
+    //     brushColor = "HorPattern";
+    // else if (brush.color() == Qt::Dense1Pattern)
+    //     brushColor = "Dense1Pattern";
+    // else if (brush.color() == Qt::CrossPattern)
+    //     brushColor = "CrossPattern";
+    // else if (brush.color() == Qt::DiagCrossPattern)
+    //     brushColor = "DiagCrossPattern";
+    // else if (brush.color() == Qt::NoBrush)
+    //     brushColor = "NoBrush";
+    // else
+    //     qDebug() << "[Shape::CreateBrushChild] BrushStyle Error";
+
+    switch (brush.style()) {
+        case Qt::NoBrush:         brushStyle = "NoBrush";       break;
+        case Qt::SolidPattern:    brushStyle = "SolidPattern";  break;
+        case Qt::Dense1Pattern:   brushStyle = "Dense1Pattern"; break;
+        case Qt::Dense2Pattern:   brushStyle = "Dense2Pattern"; break;
+        case Qt::Dense3Pattern:   brushStyle = "Dense3Pattern"; break;
+        case Qt::Dense4Pattern:   brushStyle = "Dense4Pattern"; break;
+        case Qt::Dense5Pattern:   brushStyle = "Dense5Pattern"; break;
+        case Qt::Dense6Pattern:   brushStyle = "Dense6Pattern"; break;
+        case Qt::Dense7Pattern:   brushStyle = "Dense7Pattern"; break;
+        case Qt::HorPattern:      brushStyle = "HorPattern";    break;
+        case Qt::VerPattern:      brushStyle = "VerPattern";    break;
+        case Qt::CrossPattern:    brushStyle = "CrossPattern";  break;
+        case Qt::BDiagPattern:    brushStyle = "BDiagPattern";  break;
+        case Qt::FDiagPattern:    brushStyle = "FDiagPattern";  break;
+        case Qt::DiagCrossPattern:brushStyle = "DiagCrossPattern"; break;
+        default:
+            qDebug() << "[Shape::CreateBrushChild] BrushStyle Error";
+    }
 
     (*(brushItems.end() - 1))->setText(1, brushStyle);
 }
@@ -312,6 +332,10 @@ void Shape::setBrush(Qt::GlobalColor brushColor, Qt::BrushStyle brushStyle)
     this->brush.setColor(brushColor);
     this->brush.setStyle(brushStyle);
 }
+
+QPen& Shape::setInternalPen() { return pen; }
+
+QBrush& Shape::setInternalBrush() { return brush; }
 /****************************************************/
 
 // Overloaded Operators

@@ -1,6 +1,8 @@
 #include "RenderAreaManager.h"
 #include <QString>
 #include <QDebug>
+#include <QBrush>
+#include <QPen>
 
 RenderAreaManager::RenderAreaManager(QObject* parent) : QObject{parent}, client{}, parse{} {
     connect(&client, &ApiClient::GoodGetReply, this, &RenderAreaManager::onGoodGetResponse);
@@ -35,6 +37,9 @@ void RenderAreaManager::addShape(Shape* shape) {
 }
 
 void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
+    qDebug() << "[modifyShape] called for shapeId=" << shape->getShapeId()
+             << "  key=\"" << key << "\"  value=" << value;
+    
     int shapeId = shape->getShapeId();
     int targetId = shape->getTrackerId();
 
@@ -81,6 +86,10 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
                 endPoint.setY(value);
                 line->setEndPoint(endPoint);
             }
+            else
+            {
+                 qDebug() << "[RenderAreaManager::modifyShape] Line - key not found:" << key;
+            }
 
             emit renderAreaChanged();
             break;
@@ -99,28 +108,32 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
                 // Move entire polyline by delta Y
                 polyline->Move(polyline->getX(), value);
             }
-            else
+            else if (key.startsWith("X"))
             {
                 // handle edits to specific points: "X2:", "Y2:", etc.
                 QPolygon points = polyline->getPointsList();
-                if (key.startsWith("X"))
+
+                // extract the point index from the key (e.g., "X3:" → index 2)
+                int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
+                if (pointIndex >= 0 && pointIndex < points.size())
                 {
-                    // extract the point index from the key (e.g., "X3:" → index 2)
-                    int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
-                    if (pointIndex >= 0 && pointIndex < points.size())
-                    {
-                        points[pointIndex].setX(value);
-                    }
-                }
-                else if (key.startsWith("Y"))
-                {
-                    int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
-                    if (pointIndex >= 0 && pointIndex < points.size())
-                    {
-                        points[pointIndex].setY(value);
-                    }
+                    points[pointIndex].setX(value);
                 }
                 polyline->setPointsList(points);
+            }
+            else if (key.startsWith("Y"))
+            {
+                QPolygon points = polyline->getPointsList();
+                int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
+                if (pointIndex >= 0 && pointIndex < points.size())
+                {
+                    points[pointIndex].setY(value);
+                }
+                polyline->setPointsList(points);
+            }
+            else
+            {
+                 qDebug() << "[RenderAreaManager::modifyShape] Polyline - key not found:" << key;
             }
 
             emit renderAreaChanged();
@@ -140,27 +153,40 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
                 // Move entire polygon by delta Y
                 polygon->Move(polygon->getX(), value);
             }
-            else
+            else if (key.startsWith("X"))
             {
                 // handle edits to specific points
                 QPolygon points = polygon->getPointsList();
-                if (key.startsWith("X"))
+                int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
+                if (pointIndex >= 0 && pointIndex < points.size())
                 {
-                    int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
-                    if (pointIndex >= 0 && pointIndex < points.size())
-                    {
-                        points[pointIndex].setX(value);
-                    }
-                }
-                else if (key.startsWith("Y"))
-                {
-                    int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
-                    if (pointIndex >= 0 && pointIndex < points.size())
-                    {
-                        points[pointIndex].setY(value);
-                    }
+                    points[pointIndex].setX(value);
                 }
                 polygon->setPointsList(points);
+            }
+            else if (key.startsWith("Y"))
+            {
+                // handle edits to specific points
+                QPolygon points = polygon->getPointsList();
+                int pointIndex = key.mid(1, key.length() - 2).toInt() - 1;
+                if (pointIndex >= 0 && pointIndex < points.size())
+                {
+                    points[pointIndex].setY(value);
+                }
+                polygon->setPointsList(points);
+            }
+            else if (key == "Pen:")
+            {
+                // add later
+            }
+            else if (key == "Brush:")
+            {
+                // Convert the value to brush style and set the new brush style using reference
+                shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+            }
+            else
+            {
+                 qDebug() << "[RenderAreaManager::modifyShape] Polygon - key not found:" << key;
             }
 
             emit renderAreaChanged();
@@ -181,6 +207,20 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
             else if (key == "Width:") {
                 pRectangle->setWidth(value);
             }
+            else if (key == "Pen:")
+            {
+                // add later
+                shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+            }
+            else if (key == "Brush:")
+            {
+                // Convert the value to brush style and set the new brush style using reference
+                shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+            }
+            else
+            {
+                 qDebug() << "[RenderAreaManager::modifyShape] Rectangle - key not found:" << key;
+            }
             emit renderAreaChanged();
             break;
         }
@@ -195,6 +235,19 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
             }
             else if (key == "Length:") {
                 pSquare->setLength(value);
+            }
+            else if (key == "Pen:")
+            {
+                // add later
+            }
+            else if (key == "Brush:")
+            {
+                // Convert the value to brush style and set the new brush style using reference
+                shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+            }
+            else
+            {
+                 qDebug() << "[RenderAreaManager::modifyShape] Square - key not found:" << key;
             }
             emit renderAreaChanged();
             break;
@@ -214,6 +267,19 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
             else if (key == "Semi-Major Axis:") {
                 pEllipse->setB(value);
             }
+            else if (key == "Pen:")
+            {
+                // add later
+            }
+            else if (key == "Brush:")
+            {
+                // Convert the value to brush style and set the new brush style using reference
+                shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+            }
+            else
+            {
+                 qDebug() << "[RenderAreaManager::modifyShape] Ellipse - key not found:" << key;
+            }
             emit renderAreaChanged();
             break;
         }
@@ -228,6 +294,27 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
             }
             else if (key == "Radius:") {
                 pCircle->setR(value);
+            }
+            else if (key == "Pen:")
+            {
+                // add later
+                shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+            }
+            else if (key == "Brush:")
+            {
+                // Debug before change
+                qDebug() << "[modifyShape] Circle brush style before change:"
+                         << shape->getBrush().style();
+                // Convert the value to brush style and set the new brush style using reference
+                shape->setInternalBrush().setStyle(static_cast<Qt::BrushStyle>(value));
+
+                // Debug after change
+                qDebug() << "[modifyShape] Circle brush style after change:"
+                         << shape->getBrush().style();
+            }
+            else
+            {
+                 qDebug() << "[RenderAreaManager::modifyShape] Circle - key not found:" << key;
             }
             emit renderAreaChanged();
             break;
@@ -248,7 +335,13 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
                 pText->setWidth(value);
             }
             else if (key == "Text:") {
-                pText->setText(pText->getChildItems()[4]->text(1));
+                // Come back later
+                // pText->setText(pText->getChildItems()[4]->text(1)); 
+                 qDebug() << "[RenderAreaManager::modifyShape] Text modification needs string value, not int.";
+            }
+            else
+            {
+                 qDebug() << "[RenderAreaManager::modifyShape] Text - key not found:" << key;
             }
             emit renderAreaChanged();
             break;

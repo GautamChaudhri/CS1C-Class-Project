@@ -326,6 +326,22 @@ void Parser::UpdateAccumulator(const std::string &key, const std::string &value,
             tempShape.brush.setStyle(Qt::DiagCrossPattern);
         else if (value == "NoBrush")
             tempShape.brush.setStyle(Qt::NoBrush);
+        else if (value == "Dense2Pattern")
+            tempShape.brush.setStyle(Qt::Dense2Pattern);
+        else if (value == "Dense3Pattern")
+            tempShape.brush.setStyle(Qt::Dense3Pattern);
+        else if (value == "Dense4Pattern")
+            tempShape.brush.setStyle(Qt::Dense4Pattern);
+        else if (value == "Dense5Pattern")
+            tempShape.brush.setStyle(Qt::Dense5Pattern);
+        else if (value == "Dense6Pattern")
+            tempShape.brush.setStyle(Qt::Dense6Pattern);
+        else if (value == "Dense7Pattern")
+            tempShape.brush.setStyle(Qt::Dense7Pattern);
+        else if (value == "BDiagPattern")
+            tempShape.brush.setStyle(Qt::BDiagPattern);
+        else if (value == "FDiagPattern")
+            tempShape.brush.setStyle(Qt::FDiagPattern);
         else
             throw std::runtime_error("Unknown brush style: " + value);
     }
@@ -860,8 +876,24 @@ std::string Parser::GetBrushStyle(const Shape* shape) {
         style = "DiagCrossPattern";
     else if (brushStyle == Qt::NoBrush)
         style = "NoBrush";
+    else if (brushStyle == Qt::Dense2Pattern)
+        style = "Dense2Pattern";
+    else if (brushStyle == Qt::Dense3Pattern)
+        style = "Dense3Pattern";
+    else if (brushStyle == Qt::Dense4Pattern)
+        style = "Dense4Pattern";
+    else if (brushStyle == Qt::Dense5Pattern)
+        style = "Dense5Pattern";
+    else if (brushStyle == Qt::Dense6Pattern)
+        style = "Dense6Pattern";
+    else if (brushStyle == Qt::Dense7Pattern)
+        style = "Dense7Pattern";
+    else if (brushStyle == Qt::BDiagPattern)
+        style = "BDiagPattern";
+    else if (brushStyle == Qt::FDiagPattern)
+        style = "FDiagPattern";
     else
-        throw std::runtime_error("Unknown brush style at ShapeId: " + shape->getShapeId());
+        throw std::runtime_error("Unknown brush style at ShapeId: " + std::to_string(shape->getShapeId()));
     return style;
 }
 

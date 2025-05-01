@@ -11,10 +11,8 @@
 #include <QList>
 #include <QPolygon>
 #include <QTreeWidget>
-
 #include "vector.h"
 
-//#include "renderarea.h"
 
 using std::string;
 
@@ -103,6 +101,10 @@ public:
 
     void setPen(GlobalColor penColor, int penWidth, PenStyle penStyle, PenCapStyle penCapStyle, PenJoinStyle penJoinStyle);
     void setBrush(GlobalColor brushColor, BrushStyle brushStyle);
+
+    // These functions make it easier to change pen and brush properties in RenderAreaManager::modifyShape()
+    QPen& setInternalPen();
+    QBrush& setInternalBrush();
     /****************************************************/
 
 protected:
