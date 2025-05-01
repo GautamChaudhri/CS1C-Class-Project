@@ -276,22 +276,24 @@ int Shape::getY() const { return coords.y(); }
 
 QPainter& Shape::getPainter() { return painter; }
 QTreeWidgetItem* Shape::getParentItem() { return parentItem; }
-alpha::vector<QTreeWidgetItem*>& Shape::getChildItems() { return childItems; }
+alpha::vector<QTreeWidgetItem*>& Shape::getChildItems()  { return childItems; }
 alpha::vector<QTreeWidgetItem*>& Shape::getPointsItems() { return pointsItems; }
-alpha::vector<QTreeWidgetItem*>& Shape::getPenItems() { return penItems; }
+alpha::vector<QTreeWidgetItem*>& Shape::getPenItems()    { return penItems; }
+alpha::vector<QTreeWidgetItem*>& Shape::getBrushItems()  { return brushItems; }
 
-int          Shape::getPenWidth()     const { return pen.width(); }
-PenStyle     Shape::getPenStyle()     const { return pen.style(); }
-PenCapStyle  Shape::getPenCapStyle()  const { return pen.capStyle(); }
-PenJoinStyle Shape::getPenJoinStyle() const { return pen.joinStyle(); }
-QColor       Shape::getPenColor()     const { return pen.color(); }
-QColor       Shape::getBrushColor()   const { return brush.color(); }
-BrushStyle   Shape::getBrushStyle()   const { return brush.style(); }
-QPen         Shape::getPen()          const { return pen; }
-QBrush       Shape::getBrush()        const { return brush; }
-QPoint       Shape::getPoints()       const { return coords;}
-int          Shape::getChildEnd()     const { return std::distance(childItems.begin(), childItems.end()) - 1; }
-int          Shape::getPenItemsEnd()  const { return std::distance(penItems.begin(),   penItems.end()) - 1; }
+int          Shape::getPenWidth()      const { return pen.width(); }
+PenStyle     Shape::getPenStyle()      const { return pen.style(); }
+PenCapStyle  Shape::getPenCapStyle()   const { return pen.capStyle(); }
+PenJoinStyle Shape::getPenJoinStyle()  const { return pen.joinStyle(); }
+QColor       Shape::getPenColor()      const { return pen.color(); }
+QColor       Shape::getBrushColor()    const { return brush.color(); }
+BrushStyle   Shape::getBrushStyle()    const { return brush.style(); }
+QPen         Shape::getPen()           const { return pen; }
+QBrush       Shape::getBrush()         const { return brush; }
+QPoint       Shape::getPoints()        const { return coords;}
+int          Shape::getChildEnd()      const { return std::distance(childItems.begin(), childItems.end()) - 1; }
+int          Shape::getPenItemsEnd()   const { return std::distance(penItems.begin(),   penItems.end())   - 1; }
+int          Shape::getBrushItemsEnd() const { return std::distance(brushItems.begin(), brushItems.end()) - 1; }
 /****************************************************/
 
 /***************** MUTATOR FUNCTIONS ****************/

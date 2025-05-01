@@ -111,7 +111,7 @@ private:
 
     QComboBox* createShapeTypeComboBox(const QString& currentShapeType);
 
-    QComboBox* createPenColorComboBox(int currentPenColor);
+    QComboBox* createColorComboBox(int currentColor);
     QComboBox* createPenStyleComboBox(int currentPenStyle);
     QComboBox* createPenCapStyleComboBox(int currentPenCapStyle);
     QComboBox* createPenJoinStyleComboBox(int currentPenJoinStyle);
