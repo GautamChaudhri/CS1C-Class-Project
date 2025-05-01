@@ -76,6 +76,7 @@ public:
     QTreeWidgetItem* getParentItem();
     alpha::vector<QTreeWidgetItem*>& getChildItems();
     alpha::vector<QTreeWidgetItem*>& getPointsItems();
+    alpha::vector<QTreeWidgetItem*>& getPenItems();
 
     int          getPenWidth()     const;
     PenStyle     getPenStyle()     const;
@@ -88,6 +89,7 @@ public:
     QBrush       getBrush()        const;
     QPoint       getPoints()       const;
     int          getChildEnd()     const;
+    int          getPenItemsEnd()  const;
     /****************************************************/
 
     /***************** MUTATOR FUNCTIONS ****************/

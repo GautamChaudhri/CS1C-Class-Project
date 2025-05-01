@@ -93,22 +93,43 @@ void MainWindow::shapes_to_treeWidget()
         item = renderArea->getShapes()[i];
 
         // Creates the objects to hold the combo boxes
-        QComboBox* penStyleCombo = createPenStyleComboBox(item->getPenStyle());
+        QComboBox* penColorCombo     = createPenColorComboBox(item->getPenColor().rgb());
+        // penWidth
+        QComboBox* penStyleCombo     = createPenStyleComboBox(item->getPenStyle());
+        QComboBox* penCapStyleCombo  = createPenCapStyleComboBox(item->getPenCapStyle());
+        QComboBox* penJoinStyleCombo = createPenJoinStyleComboBox(item->getPenJoinStyle());
+
         QComboBox* brushStyleCombo = createBrushStyleComboBox(item->getBrushStyle());
 
         // Set parent of combo box as treeWidget
+        penColorCombo->setParent(ui->treeWidget);
         penStyleCombo->setParent(ui->treeWidget);
+        penCapStyleCombo->setParent(ui->treeWidget);
+        penJoinStyleCombo->setParent(ui->treeWidget);
+
         brushStyleCombo->setParent(ui->treeWidget);
 
         // Tag each combo box with the shape's trackerId and a key for easy shape modifications
         trackerId = item->getTrackerId();
+
+        penColorCombo->setProperty("trackerId", trackerId);
+        penColorCombo->setProperty("key", QStringLiteral("Pen:"));
         penStyleCombo->setProperty("trackerId", trackerId);
-        penStyleCombo->setProperty("key",        QStringLiteral("Pen:"));
+        penStyleCombo->setProperty("key", QStringLiteral("Pen:"));
+        penCapStyleCombo->setProperty("trackerId", trackerId);
+        penCapStyleCombo->setProperty("key", QStringLiteral("Pen:"));
+        penJoinStyleCombo->setProperty("trackerId", trackerId);
+        penJoinStyleCombo->setProperty("key", QStringLiteral("Pen:"));
+
         brushStyleCombo->setProperty("trackerId", trackerId);
         brushStyleCombo->setProperty("key",        QStringLiteral("Brush:"));
 
         // Connect the combo boxes to slot to handle shape change after a new value is chosen
-        connect(penStyleCombo, &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);
+        connect(penColorCombo,     &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);
+        connect(penStyleCombo,     &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);
+        connect(penCapStyleCombo,  &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);
+        connect(penJoinStyleCombo, &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);
+
         connect(brushStyleCombo, &QComboBox::currentIndexChanged, this, &MainWindow::onComboBoxChanged);
 
         // Add top-level item to the tree widget
@@ -118,35 +139,61 @@ void MainWindow::shapes_to_treeWidget()
         switch (item->getShapeId())
         {
         case LINE:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 4], 1, penColorCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 2], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 1], 1, penCapStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd()],     1, penJoinStyleCombo);
             break;
 
         case POLYLINE:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 4], 1, penColorCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 2], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 1], 1, penCapStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd()],     1, penJoinStyleCombo);
             break;
 
         case POLYGON:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 4], 1, penColorCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 2], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 1], 1, penCapStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd()],     1, penJoinStyleCombo);
+
             ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
             break;
 
         case RECTANGLE:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 4], 1, penColorCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 2], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 1], 1, penCapStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd()],     1, penJoinStyleCombo);
+
             ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
             break;
 
         case SQUARE:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 4], 1, penColorCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 2], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 1], 1, penCapStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd()],     1, penJoinStyleCombo);
+
             ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
             break;
 
         case ELLIPSE:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 4], 1, penColorCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 2], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 1], 1, penCapStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd()],     1, penJoinStyleCombo);
+
             ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
             break;
 
         case CIRCLE:
-            ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd() - 1], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 4], 1, penColorCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 2], 1, penStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd() - 1], 1, penCapStyleCombo);
+            ui->treeWidget->setItemWidget(item->getPenItems()[item->getPenItemsEnd()],     1, penJoinStyleCombo);
+
             ui->treeWidget->setItemWidget(item->getChildItems()[item->getChildEnd()], 1,     brushStyleCombo);
             break;
 
@@ -240,7 +287,7 @@ void MainWindow::onTreeWidgetItemChanged(QTreeWidgetItem* item, int column) {
     }
 
     if (!found)
-        qDebug() << "[MainWindow::onTreeWidgetItemChanged] shape not found - trackerId: " + trackerId;
+        qDebug() << "[MainWindow::onTreeWidgetItemChanged] shape not found - trackerId: " << trackerId;
 
 }
 
@@ -274,7 +321,7 @@ void MainWindow::onComboBoxChanged(int newIndex) {
     }
 
     if (!found)
-        qDebug() << "[MainWindow::onComboBoxChanged] shape not found - trackerId: " + trackerId;
+        qDebug() << "[MainWindow::onComboBoxChanged] shape not found - trackerId: " << trackerId;
 
 }
 
@@ -388,6 +435,26 @@ void MainWindow::onToggleStyle(bool checked) {
     qApp->setStyleSheet(style);
 }
 
+QComboBox* MainWindow::createPenColorComboBox(int currentPenColor)
+{
+    QComboBox* box = new QComboBox();
+    box->addItem("red",         static_cast<int>(Qt::red));
+    box->addItem("green",       static_cast<int>(Qt::green));
+    box->addItem("yellow",      static_cast<int>(Qt::yellow));
+    box->addItem("cyan",        static_cast<int>(Qt::cyan));
+    box->addItem("magenta",     static_cast<int>(Qt::magenta));
+    box->addItem("gray",        static_cast<int>(Qt::gray));
+    box->addItem("blue",        static_cast<int>(Qt::blue));
+    box->addItem("white",       static_cast<int>(Qt::white));
+    box->addItem("lightGray",   static_cast<int>(Qt::lightGray));
+    box->addItem("darkGray",    static_cast<int>(Qt::darkGray));
+    box->addItem("black",       static_cast<int>(Qt::black));
+    box->addItem("transparent", static_cast<int>(Qt::transparent));
+    box->setCurrentIndex(currentPenColor);
+
+    return box;
+}
+
 QComboBox* MainWindow::createPenStyleComboBox(int currentPenStyle)
 {
     QComboBox* box = new QComboBox();
@@ -398,6 +465,30 @@ QComboBox* MainWindow::createPenStyleComboBox(int currentPenStyle)
     box->addItem("DashDotLine", static_cast<int>(Qt::DashDotLine));
     box->addItem("DashDotDotLine", static_cast<int>(Qt::DashDotDotLine));
     box->setCurrentIndex(currentPenStyle);
+    return box;
+}
+
+
+
+QComboBox* MainWindow::createPenCapStyleComboBox(int currentPenCapStyle)
+{
+    QComboBox* box = new QComboBox();
+    box->addItem("FlatCap",   static_cast<int>(Qt::FlatCap));
+    box->addItem("SquareCap", static_cast<int>(Qt::SquareCap));
+    box->addItem("RoundCap",  static_cast<int>(Qt::RoundCap));
+    box->setCurrentIndex(currentPenCapStyle);
+
+    return box;
+}
+
+QComboBox* MainWindow::createPenJoinStyleComboBox(int currentPenJoinStyle)
+{
+    QComboBox* box = new QComboBox();
+    box->addItem("MiterJoin", static_cast<int>(Qt::MiterJoin));
+    box->addItem("BevelJoin", static_cast<int>(Qt::BevelJoin));
+    box->addItem("RoundJoin", static_cast<int>(Qt::RoundJoin));
+    box->setCurrentIndex(currentPenJoinStyle);
+
     return box;
 }
 

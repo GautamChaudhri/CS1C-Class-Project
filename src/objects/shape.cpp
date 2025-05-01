@@ -219,23 +219,6 @@ void Shape::CreateBrushChild()
     (*(brushItems.end() - 1))->setText(0, "BrushStyle:");
 
     QString brushStyle;
-    // if (brush.style() == Qt::SolidPattern)
-    //     brushStyle = "SolidPattern";
-    // else if (brush.color() == Qt::VerPattern)
-    //     brushColor = "VerPattern";
-    // else if (brush.color() == Qt::HorPattern)
-    //     brushColor = "HorPattern";
-    // else if (brush.color() == Qt::Dense1Pattern)
-    //     brushColor = "Dense1Pattern";
-    // else if (brush.color() == Qt::CrossPattern)
-    //     brushColor = "CrossPattern";
-    // else if (brush.color() == Qt::DiagCrossPattern)
-    //     brushColor = "DiagCrossPattern";
-    // else if (brush.color() == Qt::NoBrush)
-    //     brushColor = "NoBrush";
-    // else
-    //     qDebug() << "[Shape::CreateBrushChild] BrushStyle Error";
-
     switch (brush.style()) {
         case Qt::NoBrush:         brushStyle = "NoBrush";       break;
         case Qt::SolidPattern:    brushStyle = "SolidPattern";  break;
@@ -295,6 +278,7 @@ QPainter& Shape::getPainter() { return painter; }
 QTreeWidgetItem* Shape::getParentItem() { return parentItem; }
 alpha::vector<QTreeWidgetItem*>& Shape::getChildItems() { return childItems; }
 alpha::vector<QTreeWidgetItem*>& Shape::getPointsItems() { return pointsItems; }
+alpha::vector<QTreeWidgetItem*>& Shape::getPenItems() { return penItems; }
 
 int          Shape::getPenWidth()     const { return pen.width(); }
 PenStyle     Shape::getPenStyle()     const { return pen.style(); }
@@ -306,7 +290,8 @@ BrushStyle   Shape::getBrushStyle()   const { return brush.style(); }
 QPen         Shape::getPen()          const { return pen; }
 QBrush       Shape::getBrush()        const { return brush; }
 QPoint       Shape::getPoints()       const { return coords;}
-int          Shape::getChildEnd()     const { return std::distance(childItems.begin(), childItems.end()) - 1;}
+int          Shape::getChildEnd()     const { return std::distance(childItems.begin(), childItems.end()) - 1; }
+int          Shape::getPenItemsEnd()  const { return std::distance(penItems.begin(),   penItems.end()) - 1; }
 /****************************************************/
 
 /***************** MUTATOR FUNCTIONS ****************/

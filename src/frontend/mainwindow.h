@@ -105,7 +105,12 @@ private:
     QString loadStyleSheet(const QString &path);
 
     QComboBox* createShapeTypeComboBox(const QString& currentShapeType);
+
+    QComboBox* createPenColorComboBox(int currentPenColor);
     QComboBox* createPenStyleComboBox(int currentPenStyle);
+    QComboBox* createPenCapStyleComboBox(int currentPenCapStyle);
+    QComboBox* createPenJoinStyleComboBox(int currentPenJoinStyle);
+
     QComboBox* createBrushStyleComboBox(int currentBrushStyle);
 
     QComboBox* createAlignmentComboBox(AlignmentFlag currentAlignment);
