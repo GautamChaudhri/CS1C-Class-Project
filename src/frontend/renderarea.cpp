@@ -41,7 +41,7 @@ void RenderArea::mousePressEvent(QMouseEvent* event)
 
 void RenderArea::mouseMoveEvent(QMouseEvent* event)
 {
-    if (shapeSelectedIndex >= 0 && shapeSelectedIndex < renderShapes->size())
+    if (shapeSelectedIndex >= 0 && shapeSelectedIndex < renderShapes->size() && allowEditing)
     {
         Shape* shape = (*renderShapes)[shapeSelectedIndex];
         QPoint newPos = mapFromGlobal(QCursor::pos());
@@ -55,6 +55,10 @@ void RenderArea::mouseMoveEvent(QMouseEvent* event)
     }
 }
 
+void RenderArea::setEditPrivileges(bool edit)
+{
+    allowEditing = edit;
+}
 
 void RenderArea::mouseDoubleClickEvent(QMouseEvent* event)
 {
@@ -74,23 +78,26 @@ void RenderArea::mouseDoubleClickEvent(QMouseEvent* event)
 
 void RenderArea::mouseReleaseEvent(QMouseEvent* event)
 {
-    if (shapeSelectedIndex < 0 || shapeSelectedIndex >= renderShapes->size())
+    if(allowEditing)
     {
-        // Validate the shapeSelectedIndex
-        return;
+        if (shapeSelectedIndex < 0 || shapeSelectedIndex >= renderShapes->size())
+        {
+            // Validate the shapeSelectedIndex
+            return;
+        }
+
+        Shape* shape = (*renderShapes)[shapeSelectedIndex];
+        if (!shape)
+        {
+            // Check if the shape pointer is null
+            return;
+        }
+
+        QPoint newPos = mapFromGlobal(QCursor::pos());
+
+        // Update display coordinates
+        updateShapeDisplayCoords(shape, newPos);
     }
-
-    Shape* shape = (*renderShapes)[shapeSelectedIndex];
-    if (!shape)
-    {
-        // Check if the shape pointer is null
-        return;
-    }
-
-    QPoint newPos = mapFromGlobal(QCursor::pos());
-
-    // Update display coordinates
-    updateShapeDisplayCoords(shape, newPos);
 }
 
 

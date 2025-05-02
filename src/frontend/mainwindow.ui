@@ -28,7 +28,7 @@
    <string>2D Graphics Modeler</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="resources.qrc">
     <normaloff>:/icons/ProgramIcon2.png</normaloff>:/icons/ProgramIcon2.png</iconset>
   </property>
   <property name="layoutDirection">
@@ -907,7 +907,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/LineButtonIcon.png</normaloff>:/icons/LineButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -925,7 +925,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/SquareButtonIcon.png</normaloff>
      <normalon>:/icons/squareButtonTest.png</normalon>:/icons/SquareButtonIcon.png</iconset>
    </property>
@@ -941,7 +941,7 @@
   </action>
   <action name="actionnew_rectange_button">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/RectangleButtonIcon.png</normaloff>:/icons/RectangleButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -956,7 +956,7 @@
   </action>
   <action name="actionnew_circle_button">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/CircleButtonIcons.png</normaloff>:/icons/CircleButtonIcons.png</iconset>
    </property>
    <property name="text">
@@ -971,7 +971,7 @@
   </action>
   <action name="actionnew_ellipse_button">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/EllipseButtonIcon.png</normaloff>:/icons/EllipseButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -986,7 +986,7 @@
   </action>
   <action name="actionnew_polyline_button">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/PolylineButtonIcon.png</normaloff>:/icons/PolylineButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -1001,7 +1001,7 @@
   </action>
   <action name="actionnew_polygon_button">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/PolygonButtonIcon.png</normaloff>:/icons/PolygonButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -1016,7 +1016,7 @@
   </action>
   <action name="actionnew_text_button">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/TextButtonIcon.png</normaloff>:/icons/TextButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -1054,7 +1054,7 @@
   </action>
   <action name="actionremove_shape_button">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/RemoveButtonIcon.png</normaloff>:/icons/RemoveButtonIcon.png</iconset>
    </property>
    <property name="text">
@@ -1068,6 +1068,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

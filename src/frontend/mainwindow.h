@@ -19,6 +19,7 @@
 #include "ui_mainwindow.h"
 #include "renderarea.h"
 #include "loginwindow.h"
+#include "ColumnEditDelegate.h"
 #include "../backend/UserAccount.h"
 
 QT_BEGIN_NAMESPACE
@@ -106,6 +107,7 @@ private:
     QLabel *userStatusLabel;
 
     void addToShapeTree(Shape* shape);
+    ColumnEditDelegate* delegate;
 
     QString loadStyleSheet(const QString &path);
 

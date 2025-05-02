@@ -24,6 +24,7 @@ public:
 
     void setShapeSelectedIndex(int newIndex);
     void resetSelection();
+    void setEditPrivileges(bool edit);
 
     void updateShapeDisplayCoords(Shape* item, const QPoint& position) const;
     int  getShapeSelected() const;
@@ -35,4 +36,5 @@ protected:
 private:
     const alpha::vector<Shape*>* renderShapes;      // Holds currently renderedShapes
     int shapeSelectedIndex; // This is the vector index of the current shape selected, this is done so we prevent multiple shapes being selected at once
+    bool allowEditing = false; // by default you cannot edit shapes
 };

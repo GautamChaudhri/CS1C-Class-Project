@@ -29,6 +29,10 @@ MainWindow::MainWindow(QWidget *parent, const alpha::vector<Shape*>* renderedSha
 {
     ui->setupUi(this);
 
+    delegate = new ColumnEditDelegate(this);
+
+    ui->treeWidget->setItemDelegate(delegate);
+
     // Increase toolbar and tree widget size on macos
     #ifdef Q_OS_MAC
     // make toolbar icons a bit larger
@@ -130,6 +134,13 @@ void MainWindow::shapes_to_treeWidget()
 
         QComboBox* brushStyleCombo = createBrushStyleComboBox(item->getBrushStyle());
         QComboBox* brushColorCombo = createColorComboBox(item->getBrushColor().rgb());
+
+        penColorCombo->setEnabled(currUser->isAdmin());
+        penStyleCombo->setEnabled(currUser->isAdmin());
+        penCapStyleCombo->setEnabled(currUser->isAdmin());
+        penJoinStyleCombo->setEnabled(currUser->isAdmin());
+        brushStyleCombo->setEnabled(currUser->isAdmin());
+        brushColorCombo->setEnabled(currUser->isAdmin());
 
         // Set parent of combo box as treeWidget
         penColorCombo->setParent(ui->treeWidget);
@@ -274,6 +285,9 @@ void MainWindow::shapes_to_treeWidget()
 }
 
 void MainWindow::onTreeWidgetItemChanged(QTreeWidgetItem* item, int column) {
+
+    if(!currUser->isAdmin()) {return;}
+
     // Only proceed if changes made occurred in column 1
     if (column != 1) return;
 
@@ -335,6 +349,8 @@ void MainWindow::onComboBoxChanged(int newIndex) {
     int newValue;
     Shape* shape = nullptr;
     
+    if(!currUser->isAdmin()) {return;}
+
     // Determine which QComboBox sent the changed signal
     QComboBox* combo = qobject_cast<QComboBox*>(sender());
     if (!combo)
@@ -598,7 +614,12 @@ void MainWindow::onUserAuthentication(const UserAccount* currUser) {
     userStatusLabel->setText("Logged in as: " + currUser->getUsername());   
     emit loginSuccess();
 
-    ui->toolBar->setEnabled(currUser->isAdmin()); //allows admin accounts to edit shapes
+    // allows admin accounts to edit shapes
+    ui->toolBar->setEnabled(currUser->isAdmin());
+    renderArea->setEditPrivileges(currUser->isAdmin());
+    delegate->setCanEdit(currUser->isAdmin());
+
+    shapes_to_treeWidget();
 }
 
 void MainWindow::onUserAuthenticationFailure(const QString &message) {
@@ -665,7 +686,6 @@ QComboBox* MainWindow::createFontComboBox(QFont currentFont)
     box->addItem("Tahoma", 4);
     box->addItem("Comic Sans MS", 5);
 
-    // This sucks but TOO BAD!!!
     int index = 0;
     if (currentFont.family() == "Arial")
     {

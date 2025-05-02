@@ -82,6 +82,7 @@ if(QT_VERSION_MAJOR GREATER_EQUAL 6)
     qt_add_executable(Frontend
         MANUAL_FINALIZATION
         ${PROJECT_srcS}
+        src/frontend/ColumnEditDelegate.h
     )
 else()
     if(ANDROID)
