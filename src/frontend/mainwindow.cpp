@@ -733,20 +733,6 @@ QComboBox* MainWindow::createFontWeightComboBox(QFont::Weight currentFontWeight)
     return box;
 }
 
-void MainWindow::selection_sort(alpha::vector<Shape*>& shapes, bool (*compare)(const Shape*, const Shape*), bool ascending) {
-    for (size_t i = 0; i < shapes.size(); ++i) {
-        size_t targetIdx = i;
-        for (size_t j = i + 1; j < shapes.size(); ++j) {
-            if (ascending ? compare(shapes[j], shapes[targetIdx]) : compare(shapes[targetIdx], shapes[j])) {
-                targetIdx = j;
-            }
-        }
-        if (targetIdx != i) {
-            std::swap(shapes[i], shapes[targetIdx]);
-        }
-    }
-}
-
 void MainWindow::setupTestimonials() {
     // add testimonials button to menu bar
     auto testimonialsAction = new QAction("Testimonials", this);  // Capitalized
@@ -776,6 +762,19 @@ void MainWindow::showTestimonialsDisplay() {
     dialog.exec();
 }
 
+void MainWindow::selection_sort(alpha::vector<Shape*>& shapes, bool (*compare)(const Shape*, const Shape*), bool ascending) {
+    for (size_t i = 0; i < shapes.size(); ++i) {
+        size_t targetIdx = i;
+        for (size_t j = i + 1; j < shapes.size(); ++j) {
+            if (ascending ? compare(shapes[j], shapes[targetIdx]) : compare(shapes[targetIdx], shapes[j])) {
+                targetIdx = j;
+            }
+        }
+        if (targetIdx != i) {
+            std::swap(shapes[i], shapes[targetIdx]);
+        }
+    }
+}
 
 // Comparison functions
 bool MainWindow::sortById(const Shape* a, const Shape* b) {
