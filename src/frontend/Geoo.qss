@@ -32,7 +32,7 @@ QWidget
 /*-----QLabel-----*/
 QLabel
 {
-	background-color: transparent;
+        background-color: transparent;
         color: #fff;
 
 }
@@ -246,4 +246,24 @@ QToolBar {
 /*-----QFrame-----*/
 QFrame {
     background-color: #444;
+}
+
+QTableWidget::indicator {
+    background-color: #444;
+}
+
+QHeaderView::section {
+    background-color: #444;
+    color: #aaa;
+    font-weight: bold;
+}
+
+QTableWidget QHeaderView::section {
+    background-color: #444;
+    color: #aaa;
+}
+
+QTableView::corner {
+    background-color: #444;
+    border: 1px solid #222;
 }

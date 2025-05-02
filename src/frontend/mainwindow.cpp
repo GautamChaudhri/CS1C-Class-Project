@@ -848,6 +848,10 @@ void MainWindow::createShapeTableTab() {
     // Create a layout for the window
     QVBoxLayout* layout = new QVBoxLayout(reportWindow);
 
+    // Sets the icon of the report window
+    QIcon customIcon(":icons/ProgramIcon2.png");
+    reportWindow->setWindowIcon(customIcon);
+
     // Create the dropdown for sorting methods
     sortDropdown = new QComboBox(reportWindow);
     sortDropdown->addItem("Sort by ID");
