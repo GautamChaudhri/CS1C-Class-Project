@@ -254,6 +254,12 @@ void MainWindow::shapes_to_treeWidget()
             QComboBox* fontStyleCombo  = createFontStyleComboBox(text->getFontStyle());
             QComboBox* fontWeightCombo = createFontWeightComboBox(text->getFontWeight());
 
+            alignmentCombo->setEnabled(currUser->isAdmin());
+            fontCombo->setEnabled(currUser->isAdmin());
+            fontStyleCombo->setEnabled(currUser->isAdmin());
+            fontWeightCombo->setEnabled(currUser->isAdmin());
+
+
             // Tagging the boxes for easy modification 
             alignmentCombo->setParent(ui->treeWidget);
             alignmentCombo->setProperty("trackerId", trackerId);
