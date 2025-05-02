@@ -16,6 +16,7 @@
 #include <QStatusBar>
 #include <QVBoxLayout>
 #include <QPushButton>
+#include <QSpinBox>
 #include "ui_mainwindow.h"
 #include "renderarea.h"
 #include "loginwindow.h"
@@ -91,6 +92,7 @@ private slots:
     // For modifying shape
     void onTreeWidgetItemChanged(QTreeWidgetItem*, int column);
     void onComboBoxChanged(int newIndex);
+    void onSpinBoxChanged();
 
     void showTestimonialPrompt();
     void showTestimonialsDisplay();
@@ -113,6 +115,7 @@ private:
 
     QComboBox* createShapeTypeComboBox(const QString& currentShapeType);
 
+    QSpinBox*  createPenWidthSpinBox(int currentPenWidth);
     QComboBox* createColorComboBox(int currentColor);
     QComboBox* createPenStyleComboBox(int currentPenStyle);
     QComboBox* createPenCapStyleComboBox(int currentPenCapStyle);
