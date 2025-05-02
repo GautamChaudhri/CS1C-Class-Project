@@ -15,7 +15,7 @@ RUN mkdir -p /webservice/database \
     && touch /webservice/database/users.json \
     && touch /webservice/database/testimonials.json
 
-#intsall more dependencies
+#install more dependencies
 RUN mkdir /webservice/crow \
    && git clone --recursive https://github.com/crowcpp/crow.git /webservice/crow
 RUN mkdir /webservice/asio \

@@ -62,7 +62,15 @@ Due Date: 05/01/2025
     and be modifiable in the Qt IDE. All targets can be built and ran from within the IDE.
 
 
-**Docker Setup for Backend and Webservice (not necessary)**
+**Webservice Setup**
+To ensure data persistence across executions, the HTTP webservice (built with the Crow framework) must be running before launching the application:
+   - **Via Qt**  
+    Follow the **Qt Setup** steps above, then build and run the `webservice` target.
+   - **Via Docker**  
+    Refer to `webservice-dockerized/README.md` for Docker launch instructions.
+ 
+
+**Development Setup for Backend and Webservice using Dev Containers (not necessary)**
  - This workflow is optional and best suited for working specifically on the backend and webservice components when not needing to interact with the frontend and Qt's IDE.
 
 1. **Install Docker Desktop** (necessary for automatic install of dependencies):
@@ -77,20 +85,9 @@ Due Date: 05/01/2025
    - The first time you do this, it may take **up to 3 minutes** as Docker downloads and configures everything.
    - When it’s done, the integrated terminal will look different, indicating you’re now in the container.
 
-5. **To start the webservice**:
+5. **To start the webservice from within the dev container for simplicity**:
    ```bash
    cd src/webservice
    make
    ./webservice
    ```
-
-6. **To start the backend and test API requests**:
-   ```bash
-   cd src/backend
-   make
-   ./MyApp
-   ```
-   - You should see two JSON outputs in the console, confirming everything is working.
-
-7. **Stop both executables**:
-   - Press `Ctrl + C` in each terminal tab.
