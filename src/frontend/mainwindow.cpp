@@ -426,7 +426,7 @@ void MainWindow::onSpinBoxChanged()
             found = true;
             shape = targetShape;
             qDebug() << shape->getTrackerId();
-            emit shapeChanged(shape, key, newValue);
+            shape->getPenItems()[shape->getPenItemsEnd() - 3]->setText(1, QString::number(newValue));
             break;
         }
     }
@@ -598,9 +598,11 @@ QSpinBox* MainWindow::createPenWidthSpinBox(int currentPenWidth)
 
     QSpinBox* box = new QSpinBox();
     box->setRange(MIN, MAX);
+    box->setValue(qBound(MIN, currentPenWidth, MAX)); // Ensures the value is within range
 
     return box;
 }
+
 
 QComboBox* MainWindow::createPenCapStyleComboBox(int currentPenCapStyle)
 {
