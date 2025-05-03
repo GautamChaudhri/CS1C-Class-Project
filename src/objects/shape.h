@@ -29,7 +29,8 @@ const double PI = 3.14; /// Global constant PI used for calculating perimater an
 static int globalTracker = 0; /// Global static int used for creating trackerIds
 
 /**
- * @defgroup Shape
+ * \defgroup <Shape> Shapes
+ * \interface <Shape> shape.h "objects/shape.h"
  *
  * @brief The Shape Abstract Base Class
  */
