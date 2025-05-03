@@ -39,7 +39,7 @@ void RenderAreaManager::addShape(Shape* shape) {
 
 
 void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
-    qDebug() << "[modifyShape] called for shapeId=" << shape->getShapeId()
+    qDebug() << "[modifyShape] called for trackerId=" << shape->getTrackerId()
              << "  key=\"" << key << "\"  value=" << value;
 
     int shapeId = shape->getShapeId();

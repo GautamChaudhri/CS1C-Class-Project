@@ -25,9 +25,6 @@ using Qt::AlignmentFlag;
 
 const double PI = 3.14; /// Global constant PI used for calculating perimater and area
 
-
-static int globalTracker = 0; /// Global static int used for creating trackerIds
-
 /**
  * \defgroup <Shape> Shapes
  * \interface <Shape> shape.h "objects/shape.h"
@@ -70,6 +67,9 @@ public:
      * @brief ~Shape Destructor
      */
     virtual ~Shape();
+
+    static int nextTracker[9];
+    static bool trackersInUse[9000]; 
 
     /**
      * @brief Draw - Draws the shape to the associated renderArea
@@ -165,9 +165,11 @@ public:
 
     /// Mutator Functions - Sets the data of the item to the passed param
     void setShapeId(int shapeId);
-    void setTrackerId(int trackerId);
     void setShapeType(string shapeType);
     void setSelected(bool selected);
+
+    void setTrackerId(int trackerId);
+    void allocateTrackerId(int shapeId);
 
     void setX(int x);
     void setY(int y);
@@ -189,7 +191,7 @@ protected:
 
 private:
     int      shapeId; ///< int representing the id of a shape, each shapeType is given one id, Line = 1, Polyline = 2, etc.
-    int      trackerId = globalTracker++; ///< int representing the unique id of each shape, each individual shape has its own trackerId
+    int      trackerId; ///< int representing the unique id of each shape, each individual shape has its own trackerId
     string   shapeType; ///< string representing the type of shape, (Line, Circle, etc)
 
     QPen     pen;    ///< QPen for the outline
@@ -198,7 +200,7 @@ private:
 
     QPainter painter; ///< QPainter used to paint the shape onto a rendering area
 
-    bool isSelected = false; ///< Shows the state of the shape, if it is currently selected by the user
+    bool isSelected = false; ///< Shows the state of the shape, if it is currently selected by the user 
 
     // Disable Copy Operations
     Shape(Shape& shape) = delete;

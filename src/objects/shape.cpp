@@ -2,6 +2,32 @@
 #include <QComboBox>
 
 /****************************************************
+ * Static Initialization
+*****************************************************/
+int Shape::nextTracker[9] = {};     // Default initialized to all zeros
+bool Shape::trackersInUse[9000] = {}; // Default initialized to all false
+
+// One-time static initialization of tracker arrays
+namespace {
+struct TrackerLogicInit {
+    TrackerLogicInit() {
+        // Initialize nextTracker for each shape type
+        Shape::nextTracker[0] = 0;
+        for (int i = 1; i < 9; ++i)
+            Shape::nextTracker[i] = i * 1000;
+
+        // Reserve all IDs 0–999: never hand them out
+        for (int i = 0; i < 1000; ++i)
+            Shape::trackersInUse[i] = true;
+        // Make IDs 1000–8999 available
+        for (int i = 1000; i < 9000; ++i)
+            Shape::trackersInUse[i] = false;
+    }
+} trackerLogicInit;
+}
+
+
+/****************************************************
 * class Shape - Abstract Base Class
 *****************************************************/
 
@@ -15,6 +41,7 @@ Shape::Shape(string shapeType,
              brush{brush},
              parentItem{new QTreeWidgetItem()}
 {
+    allocateTrackerId(shapeId);
 }
 
 Shape::~Shape()
@@ -298,9 +325,50 @@ int          Shape::getBrushItemsEnd() const { return std::distance(brushItems.b
 
 /***************** MUTATOR FUNCTIONS ****************/
 void Shape::setShapeId(int shapeId)        { this->shapeId   = shapeId; }
-void Shape::setTrackerId(int trackerId)    { this->trackerId = trackerId;} //This causes issues
 void Shape::setShapeType(string shapeType) { this->shapeType = shapeType; }
 void Shape::setSelected(bool selected)     { isSelected = selected;}
+
+void Shape::setTrackerId(int desiredId) {
+    // If desiredId is in valid range and not already in use, assign it directly
+    if (desiredId >= 0 && desiredId < 9000 && !trackersInUse[desiredId]) {
+        trackersInUse[desiredId] = true;
+        trackerId = desiredId;
+        // Advance nextTracker for this shape type if needed
+        int type = shapeId;
+        if (nextTracker[type] <= desiredId) {
+            nextTracker[type] = desiredId + 1;
+        }
+    } else {
+        // desiredId was in use or out of range: allocate the next free ID
+        qDebug() << "[Shape::setTrackerId] Desired ID " << desiredId 
+               << " is in use or out of range. Allocating a new tracker ID.";
+        allocateTrackerId(shapeId);
+    }
+    // After assigning trackerId, refresh the tree widget entry:
+    for (auto item : childItems) {
+        if (item->text(0) == "Tracker ID:") {
+            item->setText(1, QString::number(trackerId));
+            break;
+        }
+    }
+}
+
+void Shape::allocateTrackerId(int shapeId) {
+    int potentialId;
+    bool idFound = false;
+
+    while (!idFound) {
+        potentialId = nextTracker[shapeId];
+
+        if (trackersInUse[potentialId])         //check to see if next trackerId is already in use
+            nextTracker[shapeId]++;             //if in use, increment trackerId and loop to check again
+        else {                                  
+            trackersInUse[potentialId] = true;  //when unused trackerId is found, assign it 
+            this->trackerId = potentialId;      //and mark it as used 
+            idFound = true;
+        }
+    }
+}
 
 void Shape::setX(int x) { coords.rx() = x; }
 void Shape::setY(int y) { coords.ry() = y; }
