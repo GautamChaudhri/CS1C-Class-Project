@@ -19,7 +19,7 @@ Polygon::Polygon(string shapeType,
     CreateParentItem();
     CreatePenChild();
     CreateBrushChild();
-    AddPointsToParent(getPointsList().size());
+    CreatePointsChild(getPointsList().size());
 }
 
 void Polygon::Draw(QWidget* renderArea)

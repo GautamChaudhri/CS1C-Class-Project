@@ -242,7 +242,7 @@ void Shape::CreateBrushChild()
     (*(brushItems.end() - 1))->setText(1, brushStyle);
 }
 
-void Shape::AddPointsToParent(const int POINTS_NUM)
+void Shape::CreatePointsChild(const int POINTS_NUM)
 {
     childItems.push_back(new QTreeWidgetItem());
     parentItem->addChild(*(childItems.end() - 1));
