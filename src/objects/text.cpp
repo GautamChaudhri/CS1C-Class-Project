@@ -12,7 +12,7 @@ Text::Text(string shapeType,
            QFont             font,
            int           length,
            int           width)
-        : Shape(shapeType, coords, QPen(), QBrush()),
+        : Shape(8, shapeType, coords, QPen(), QBrush()),
             textString{textString},
             textColor{textColor},
             textAlignment{textAlignment},
@@ -20,7 +20,6 @@ Text::Text(string shapeType,
             length{length},
             width{width}
 {
-    setShapeId(8);
     CreateParentItem();
 
     childItems.push_back(new QTreeWidgetItem());

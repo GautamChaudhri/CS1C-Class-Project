@@ -31,11 +31,13 @@ struct TrackerLogicInit {
 * class Shape - Abstract Base Class
 *****************************************************/
 
-Shape::Shape(string shapeType,
+Shape::Shape(int shapeId,
+             string shapeType,
              QPoint coords,
              QPen   pen,
              QBrush brush)
-           : shapeType{shapeType},
+           : shapeId{shapeId},
+             shapeType{shapeType},
              coords{coords},
              pen{pen},
              brush{brush},
@@ -324,7 +326,6 @@ int          Shape::getBrushItemsEnd() const { return std::distance(brushItems.b
 /****************************************************/
 
 /***************** MUTATOR FUNCTIONS ****************/
-void Shape::setShapeId(int shapeId)        { this->shapeId   = shapeId; }
 void Shape::setShapeType(string shapeType) { this->shapeType = shapeType; }
 void Shape::setSelected(bool selected)     { isSelected = selected;}
 

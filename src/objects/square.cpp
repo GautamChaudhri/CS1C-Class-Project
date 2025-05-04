@@ -9,10 +9,9 @@ Square::Square(string shapeType,
                QPen   pen,
                QBrush brush,
                int length)
-             : Shape(shapeType, coords, pen, brush),
+             : Shape(5, shapeType, coords, pen, brush),
                length{length}
 {
-    setShapeId(5);
     CreateParentItem();
 
     childItems.push_back(new QTreeWidgetItem());

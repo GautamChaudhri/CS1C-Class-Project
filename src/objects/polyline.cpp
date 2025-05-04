@@ -8,13 +8,13 @@ Polyline::Polyline(string shapeType,
                     QPen   pen,
                     QBrush brush,
                     QPolygon pointsList)
-                : Shape(shapeType,
+                : Shape(2,                  //set shapeId
+                        shapeType,
                         coords,
                         pen,
                         brush),
                     pointsList{pointsList}
 {
-    setShapeId(2);
     CreateParentItem();
     CreatePenChild();
     CreatePointsChild(getPointsList().size());

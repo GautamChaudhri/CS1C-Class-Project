@@ -9,13 +9,13 @@ Circle::Circle(string shapeType,
                QPen   pen,
                QBrush brush,
                int    r)
-       : Shape(shapeType,
+       : Shape(7,                   //set shapeId
+               shapeType,
                coords,
                pen,
                brush),
                r{r}
 {
-    setShapeId(7);
 
     CreateParentItem();
 

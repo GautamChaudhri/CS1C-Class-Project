@@ -10,11 +10,10 @@ Rectangle::Rectangle(string shapeType,
                      QBrush brush,
                      int length,
                      int width)
-                   : Shape(shapeType, coords, pen, brush),
+                   : Shape(4, shapeType, coords, pen, brush),
                     length{length},
                     width{width}
 {
-    setShapeId(4);
     CreateParentItem();
 
     childItems.push_back(new QTreeWidgetItem());

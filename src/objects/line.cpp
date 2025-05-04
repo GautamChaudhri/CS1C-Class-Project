@@ -10,14 +10,14 @@ Line::Line(string shapeType,
            QBrush brush,
            QPoint startPoint,
            QPoint endPoint)
-        :  Shape (shapeType,
+        :  Shape (1,            //shapeId
+                  shapeType,
                   coords,
                   pen,
                   brush),
        startPoint{startPoint},
          endPoint{endPoint}
 {
-    setShapeId(1);
     CreateParentItem();
     CreatePenChild();
     CreatePointsChild(2);

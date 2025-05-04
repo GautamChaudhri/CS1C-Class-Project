@@ -10,15 +10,14 @@ Ellipse::Ellipse(string shapeType,
                   QBrush brush,
                   int    a,
                   int    b)
-                 : Shape(shapeType,
+                 : Shape(6,             //set shapeId
+                         shapeType,
                          coords,
                          pen,
                          brush),
                  a{a},
                  b{b}
 {
-    setShapeId(6);
-
     CreateParentItem();
 
     childItems.push_back(new QTreeWidgetItem());

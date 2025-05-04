@@ -58,7 +58,8 @@ public:
      * @param pen - QPen for the outline of the shape
      * @param brush - QBrush for the fill of the shape
      */
-    Shape(string shapeType,
+    Shape(int shapeId,
+          string shapeType,
           QPoint coords,
           QPen   pen,
           QBrush brush);
@@ -164,7 +165,6 @@ public:
     /// Accessor Functions
 
     /// Mutator Functions - Sets the data of the item to the passed param
-    void setShapeId(int shapeId);
     void setShapeType(string shapeType);
     void setSelected(bool selected);
 
@@ -190,7 +190,7 @@ protected:
     alpha::vector<QTreeWidgetItem*> brushItems;  ///< vector of QTreeWidgetItem* holding data of all brush items
 
 private:
-    int      shapeId; ///< int representing the id of a shape, each shapeType is given one id, Line = 1, Polyline = 2, etc.
+    const int shapeId; ///< int representing the id of a shape, each shapeType is given one id, Line = 1, Polyline = 2, etc.
     int      trackerId; ///< int representing the unique id of each shape, each individual shape has its own trackerId
     string   shapeType; ///< string representing the type of shape, (Line, Circle, etc)
 

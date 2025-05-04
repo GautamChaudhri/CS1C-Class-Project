@@ -9,13 +9,13 @@ Polygon::Polygon(string shapeType,
                  QPen   pen,
                  QBrush brush,
                  QPolygon pointsList)
-               : Shape(shapeType,
+               : Shape(3,                   //set shapeId
+                       shapeType,
                        coords,
                        pen,
                        brush),
                 pointsList{pointsList}
 {
-    setShapeId(3);
     CreateParentItem();
     CreatePenChild();
     CreateBrushChild();

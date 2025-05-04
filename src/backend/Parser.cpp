@@ -498,7 +498,6 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             QPoint endPoint(tempShape.shapeDimensions[2], tempShape.shapeDimensions[3]);
             tempShape.coords = startPoint;
             shape = new Line(tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, startPoint, endPoint);
-            shape->setShapeId(tempShape.shapeId);
             shape->setTrackerId(tempShape.trackerId);
             break;
         }
@@ -512,7 +511,6 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             }
             tempShape.coords = pointsList[0];
             shape = new Polyline(tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, pointsList);
-            shape->setShapeId(tempShape.shapeId);
             shape->setTrackerId(tempShape.trackerId);
             break;
         }
@@ -526,7 +524,6 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             }
             tempShape.coords = pointsList[0];
             shape = new Polygon(tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, pointsList);
-            shape->setShapeId(tempShape.shapeId);
             shape->setTrackerId(tempShape.trackerId);
             break;
         }
@@ -535,7 +532,6 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             int length = tempShape.shapeDimensions[2];
             int width = tempShape.shapeDimensions[3];
             shape = new Rectangle(tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, length, width);
-            shape->setShapeId(tempShape.shapeId);
             shape->setTrackerId(tempShape.trackerId);
             break;
         }
@@ -543,7 +539,6 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
             int length = tempShape.shapeDimensions[2];
             shape = new Square(tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, length);
-            shape->setShapeId(tempShape.shapeId);
             shape->setTrackerId(tempShape.trackerId);
             break;
         }
@@ -552,7 +547,6 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             int a = tempShape.shapeDimensions[2];
             int b = tempShape.shapeDimensions[3];
             shape = new Ellipse(tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, a, b);
-            shape->setShapeId(tempShape.shapeId);
             shape->setTrackerId(tempShape.trackerId);
             break;
         }
@@ -560,7 +554,6 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             tempShape.coords = QPoint(tempShape.shapeDimensions[0], tempShape.shapeDimensions[1]);
             int r = tempShape.shapeDimensions[2];
             shape = new Circle(tempShape.shapeType, tempShape.coords, tempShape.pen, tempShape.brush, r);
-            shape->setShapeId(tempShape.shapeId);
             shape->setTrackerId(tempShape.trackerId);
             break;
         }
@@ -569,7 +562,6 @@ Shape* Parser::BuildShape(MorphicShape tempShape) {
             int length = tempShape.shapeDimensions[2];
             int width = tempShape.shapeDimensions[3];
             shape = new Text(tempShape.shapeType, tempShape.coords, tempShape.textString, tempShape.textColor, tempShape.textAlignment, tempShape.font, length, width);
-            shape->setShapeId(tempShape.shapeId);
             shape->setTrackerId(tempShape.trackerId);
             break;
         }
