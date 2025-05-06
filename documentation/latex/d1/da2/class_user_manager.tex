@@ -1,0 +1,381 @@
+\doxysection{User\+Manager Class Reference}
+\hypertarget{class_user_manager}{}\label{class_user_manager}\index{UserManager@{UserManager}}
+
+
+Manages user accounts, including creation, authentication, and persistence.  
+
+
+
+
+{\ttfamily \#include $<$User\+Manager.\+h$>$}
+
+Inheritance diagram for User\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d1/da2/class_user_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{Indent}\textbf{ User Status Signals}\par
+{\em Signals for UI interaction and status updates.
+
+These signals are emitted to notify the frontend about changes in user data, authentication status, or general operational messages. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_user_manager_a62b1030933c092e59c9b2ad10e36415c}{user\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Emitted when the list of users changes (add, modify, delete). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_a971a7f0b550dd6ac2c314a977aea395b}{user\+Not\+Changed}} (const QString \&message)
+\begin{DoxyCompactList}\small\item\em Emitted when an operation that would change users fails (e.\+g., user not found, username taken). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_ad725cb6519b4256e254da21ff5741e78}{status\+Message}} (const QString \&message)
+\begin{DoxyCompactList}\small\item\em Emitted to provide general status updates or error messages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_abc36e1a0307e39413bf7e1ef9c487d61}{user\+Authenticated}} (const \mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_user_manager_a3cd03267433d02b5a1aae0de1f4443c2}{curr\+User}})
+\begin{DoxyCompactList}\small\item\em Emitted upon successful user authentication, providing the authenticated user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_ab930b67c285d8ba31325a2621fe5ea5d}{authentication\+Failed}} (const QString \&message)
+\begin{DoxyCompactList}\small\item\em Emitted when user authentication fails. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructor and Destructor}\par
+{\em Manages the lifecycle of \doxylink{class_user_manager}{User\+Manager} objects.
+
+Handles the initialization and cleanup of the \doxylink{class_user_manager}{User\+Manager}. The constructor sets up connections to the \doxylink{class_api_client}{Api\+Client} for handling responses to user data requests and loads initial user data. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_manager_aefc22181e82f255ad68cb91d98373077}{User\+Manager}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor. Initializes \doxylink{class_api_client}{Api\+Client} connections and loads users. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_manager_ad6f661321c38b332c0e0eff3a933e753}{\texorpdfstring{$\sim$}{\string~}\+User\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Cleans up dynamically allocated \doxylink{class_user_account}{User\+Account} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Current User Access}\par
+{\em Accessor for the current user.
+
+Provides a reference to the currently authenticated user account. If no user is authenticated, this typically points to a guest account. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_user_manager_a8a493a94c7d19f694abf481e1f764e8e}{get\+Curr\+User\+Ref}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the currently authenticated \doxylink{class_user_account}{User\+Account} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ User Account Management}\par
+{\em Core functions for managing user accounts.
+
+These methods provide functionalities to add, modify, delete, load, save, and authenticate user accounts. Most operations will trigger signals to update the UI or indicate status. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_user_manager_a8860588081ca0e6a7f88fc5b689fb235}{add\+User}} (const QString username, const QString password, const bool admin)
+\item 
+void \mbox{\hyperlink{class_user_manager_a718dde56eb80e6bf05d74550f2dd723a}{modify\+User}} (const QString username, const QString password, const bool admin)
+\item 
+void \mbox{\hyperlink{class_user_manager_a290e8e3f0e751870db0331bb685751c3}{delete\+User}} (QString username)
+\begin{DoxyCompactList}\small\item\em Deletes a specific user account by username. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_ab319dea2171804401ca54d825514972e}{delete\+All\+Users}} ()
+\begin{DoxyCompactList}\small\item\em Deletes all user accounts from the backend. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_a7764b08b3185569f4c433140e0b36666}{load\+Users}} ()
+\begin{DoxyCompactList}\small\item\em Initiates loading of all user accounts from the webservice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_ae723fce00890079d4702ba901f7d39a9}{save\+Users}} ()
+\begin{DoxyCompactList}\small\item\em Saves all current user accounts to the webservice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_a65e90a5565b65c8feb3b9299872d609d}{authenticate}} (const QString username, const QString password)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Slots}
+\begin{Indent}\textbf{ API Response Slots}\par
+{\em API client response handlers.
+
+These private slots are connected to signals from the \doxylink{class_api_client}{Api\+Client} to process the results of network requests related to user data. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_user_manager_a3b3f078e58e742fd67185a8438d06fd4}{on\+Good\+Get\+Response}} (const QString \&json)
+\begin{DoxyCompactList}\small\item\em Slot called when a GET request for user data succeeds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_acac58c863dc2d027a297c28725d91c93}{on\+Bad\+Get\+Response}} (const QString \&error\+Msg)
+\begin{DoxyCompactList}\small\item\em Slot called when a GET request for user data fails. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_a6c96002eef3fbb7981f569d43e163a64}{on\+Good\+Post\+Response}} ()
+\begin{DoxyCompactList}\small\item\em Slot called when a POST request to save user data succeeds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_adaa13ba1ac6af2a667cde728a593ad83}{on\+Bad\+Post\+Response}} (const QString \&error\+Msg)
+\begin{DoxyCompactList}\small\item\em Slot called when a POST request to save user data fails. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_aaae30b6ea45379ce5ecba8958d1a0a6f}{on\+Good\+Delete\+Response}} ()
+\begin{DoxyCompactList}\small\item\em Slot called when a DELETE request for user data succeeds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_manager_a93243af98a0b172c5b6ff685f8d196a0}{on\+Bad\+Delete\+Response}} (const QString \&error\+Msg)
+\begin{DoxyCompactList}\small\item\em Slot called when a DELETE request for user data fails. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Attributes}
+\begin{Indent}\textbf{ Member Data}\par
+{\em Private member variables for \doxylink{class_user_manager}{User\+Manager}.
+
+These members store the current user, all known users, and utility objects. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_user_manager_a3cd03267433d02b5a1aae0de1f4443c2}{curr\+User}}
+\begin{DoxyCompactList}\small\item\em Pointer to the currently authenticated user. Defaults to a guest user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_user_manager_a3a27297fe374b3bd977afbd824ca7df4}{users}}
+\begin{DoxyCompactList}\small\item\em Vector storing pointers to all loaded \doxylink{class_user_account}{User\+Account} objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_api_client}{Api\+Client}} \mbox{\hyperlink{class_user_manager_a25c42809d2f5c44761e300f617f5c675}{client}}
+\begin{DoxyCompactList}\small\item\em API client instance for network communication with the user data backend. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_parser}{Parser}} \mbox{\hyperlink{class_user_manager_abe151637c9c8c42442d21361efef30c8}{parse}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_parser}{Parser} instance for JSON serialization/deserialization of user data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Manages user accounts, including creation, authentication, and persistence. 
+
+This class handles all operations related to user accounts, such as adding, modifying, deleting, and authenticating users. It interacts with an \doxylink{class_api_client}{Api\+Client} to load and save user data from/to a webservice and uses a \doxylink{class_parser}{Parser} for data serialization/deserialization. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_user_manager_aefc22181e82f255ad68cb91d98373077}\index{UserManager@{UserManager}!UserManager@{UserManager}}
+\index{UserManager@{UserManager}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{UserManager()}{UserManager()}}
+{\footnotesize\ttfamily \label{class_user_manager_aefc22181e82f255ad68cb91d98373077} 
+User\+Manager\+::\+User\+Manager (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. Initializes \doxylink{class_api_client}{Api\+Client} connections and loads users. 
+
+\Hypertarget{class_user_manager_ad6f661321c38b332c0e0eff3a933e753}\index{UserManager@{UserManager}!````~UserManager@{\texorpdfstring{$\sim$}{\string~}UserManager}}
+\index{````~UserManager@{\texorpdfstring{$\sim$}{\string~}UserManager}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}UserManager()}{\string~UserManager()}}
+{\footnotesize\ttfamily \label{class_user_manager_ad6f661321c38b332c0e0eff3a933e753} 
+User\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+User\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. Cleans up dynamically allocated \doxylink{class_user_account}{User\+Account} objects. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_user_manager_a8860588081ca0e6a7f88fc5b689fb235}\index{UserManager@{UserManager}!addUser@{addUser}}
+\index{addUser@{addUser}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{addUser()}{addUser()}}
+{\footnotesize\ttfamily \label{class_user_manager_a8860588081ca0e6a7f88fc5b689fb235} 
+void User\+Manager\+::add\+User (\begin{DoxyParamCaption}\item[{const QString}]{username}{, }\item[{const QString}]{password}{, }\item[{const bool}]{admin}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Adds a new user account and attempts to authenticate with the new credentials. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_manager_a65e90a5565b65c8feb3b9299872d609d}\index{UserManager@{UserManager}!authenticate@{authenticate}}
+\index{authenticate@{authenticate}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{authenticate()}{authenticate()}}
+{\footnotesize\ttfamily \label{class_user_manager_a65e90a5565b65c8feb3b9299872d609d} 
+void User\+Manager\+::authenticate (\begin{DoxyParamCaption}\item[{const QString}]{username}{, }\item[{const QString}]{password}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Authenticates a user against the loaded user accounts. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_manager_ab930b67c285d8ba31325a2621fe5ea5d}\index{UserManager@{UserManager}!authenticationFailed@{authenticationFailed}}
+\index{authenticationFailed@{authenticationFailed}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{authenticationFailed}{authenticationFailed}}
+{\footnotesize\ttfamily \label{class_user_manager_ab930b67c285d8ba31325a2621fe5ea5d} 
+void User\+Manager\+::authentication\+Failed (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when user authentication fails. 
+
+\Hypertarget{class_user_manager_ab319dea2171804401ca54d825514972e}\index{UserManager@{UserManager}!deleteAllUsers@{deleteAllUsers}}
+\index{deleteAllUsers@{deleteAllUsers}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{deleteAllUsers()}{deleteAllUsers()}}
+{\footnotesize\ttfamily \label{class_user_manager_ab319dea2171804401ca54d825514972e} 
+void User\+Manager\+::delete\+All\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Deletes all user accounts from the backend. 
+
+\Hypertarget{class_user_manager_a290e8e3f0e751870db0331bb685751c3}\index{UserManager@{UserManager}!deleteUser@{deleteUser}}
+\index{deleteUser@{deleteUser}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{deleteUser()}{deleteUser()}}
+{\footnotesize\ttfamily \label{class_user_manager_a290e8e3f0e751870db0331bb685751c3} 
+void User\+Manager\+::delete\+User (\begin{DoxyParamCaption}\item[{QString}]{username}{}\end{DoxyParamCaption})}
+
+
+
+Deletes a specific user account by username. 
+
+\Hypertarget{class_user_manager_a8a493a94c7d19f694abf481e1f764e8e}\index{UserManager@{UserManager}!getCurrUserRef@{getCurrUserRef}}
+\index{getCurrUserRef@{getCurrUserRef}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{getCurrUserRef()}{getCurrUserRef()}}
+{\footnotesize\ttfamily \label{class_user_manager_a8a493a94c7d19f694abf481e1f764e8e} 
+\mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*} User\+Manager\+::get\+Curr\+User\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the currently authenticated \doxylink{class_user_account}{User\+Account} object. 
+
+\Hypertarget{class_user_manager_a7764b08b3185569f4c433140e0b36666}\index{UserManager@{UserManager}!loadUsers@{loadUsers}}
+\index{loadUsers@{loadUsers}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{loadUsers()}{loadUsers()}}
+{\footnotesize\ttfamily \label{class_user_manager_a7764b08b3185569f4c433140e0b36666} 
+void User\+Manager\+::load\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initiates loading of all user accounts from the webservice. 
+
+\Hypertarget{class_user_manager_a718dde56eb80e6bf05d74550f2dd723a}\index{UserManager@{UserManager}!modifyUser@{modifyUser}}
+\index{modifyUser@{modifyUser}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{modifyUser()}{modifyUser()}}
+{\footnotesize\ttfamily \label{class_user_manager_a718dde56eb80e6bf05d74550f2dd723a} 
+void User\+Manager\+::modify\+User (\begin{DoxyParamCaption}\item[{const QString}]{username}{, }\item[{const QString}]{password}{, }\item[{const bool}]{admin}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Modifies an existing user account\textquotesingle{}s details (password, admin status). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_manager_a93243af98a0b172c5b6ff685f8d196a0}\index{UserManager@{UserManager}!onBadDeleteResponse@{onBadDeleteResponse}}
+\index{onBadDeleteResponse@{onBadDeleteResponse}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{onBadDeleteResponse}{onBadDeleteResponse}}
+{\footnotesize\ttfamily \label{class_user_manager_a93243af98a0b172c5b6ff685f8d196a0} 
+void User\+Manager\+::on\+Bad\+Delete\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{error\+Msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot called when a DELETE request for user data fails. 
+
+\Hypertarget{class_user_manager_acac58c863dc2d027a297c28725d91c93}\index{UserManager@{UserManager}!onBadGetResponse@{onBadGetResponse}}
+\index{onBadGetResponse@{onBadGetResponse}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{onBadGetResponse}{onBadGetResponse}}
+{\footnotesize\ttfamily \label{class_user_manager_acac58c863dc2d027a297c28725d91c93} 
+void User\+Manager\+::on\+Bad\+Get\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{error\+Msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot called when a GET request for user data fails. 
+
+\Hypertarget{class_user_manager_adaa13ba1ac6af2a667cde728a593ad83}\index{UserManager@{UserManager}!onBadPostResponse@{onBadPostResponse}}
+\index{onBadPostResponse@{onBadPostResponse}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{onBadPostResponse}{onBadPostResponse}}
+{\footnotesize\ttfamily \label{class_user_manager_adaa13ba1ac6af2a667cde728a593ad83} 
+void User\+Manager\+::on\+Bad\+Post\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{error\+Msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot called when a POST request to save user data fails. 
+
+\Hypertarget{class_user_manager_aaae30b6ea45379ce5ecba8958d1a0a6f}\index{UserManager@{UserManager}!onGoodDeleteResponse@{onGoodDeleteResponse}}
+\index{onGoodDeleteResponse@{onGoodDeleteResponse}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{onGoodDeleteResponse}{onGoodDeleteResponse}}
+{\footnotesize\ttfamily \label{class_user_manager_aaae30b6ea45379ce5ecba8958d1a0a6f} 
+void User\+Manager\+::on\+Good\+Delete\+Response (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot called when a DELETE request for user data succeeds. 
+
+\Hypertarget{class_user_manager_a3b3f078e58e742fd67185a8438d06fd4}\index{UserManager@{UserManager}!onGoodGetResponse@{onGoodGetResponse}}
+\index{onGoodGetResponse@{onGoodGetResponse}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{onGoodGetResponse}{onGoodGetResponse}}
+{\footnotesize\ttfamily \label{class_user_manager_a3b3f078e58e742fd67185a8438d06fd4} 
+void User\+Manager\+::on\+Good\+Get\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot called when a GET request for user data succeeds. 
+
+\Hypertarget{class_user_manager_a6c96002eef3fbb7981f569d43e163a64}\index{UserManager@{UserManager}!onGoodPostResponse@{onGoodPostResponse}}
+\index{onGoodPostResponse@{onGoodPostResponse}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{onGoodPostResponse}{onGoodPostResponse}}
+{\footnotesize\ttfamily \label{class_user_manager_a6c96002eef3fbb7981f569d43e163a64} 
+void User\+Manager\+::on\+Good\+Post\+Response (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot called when a POST request to save user data succeeds. 
+
+\Hypertarget{class_user_manager_ae723fce00890079d4702ba901f7d39a9}\index{UserManager@{UserManager}!saveUsers@{saveUsers}}
+\index{saveUsers@{saveUsers}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{saveUsers()}{saveUsers()}}
+{\footnotesize\ttfamily \label{class_user_manager_ae723fce00890079d4702ba901f7d39a9} 
+void User\+Manager\+::save\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Saves all current user accounts to the webservice. 
+
+\Hypertarget{class_user_manager_ad725cb6519b4256e254da21ff5741e78}\index{UserManager@{UserManager}!statusMessage@{statusMessage}}
+\index{statusMessage@{statusMessage}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{statusMessage}{statusMessage}}
+{\footnotesize\ttfamily \label{class_user_manager_ad725cb6519b4256e254da21ff5741e78} 
+void User\+Manager\+::status\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted to provide general status updates or error messages. 
+
+\Hypertarget{class_user_manager_abc36e1a0307e39413bf7e1ef9c487d61}\index{UserManager@{UserManager}!userAuthenticated@{userAuthenticated}}
+\index{userAuthenticated@{userAuthenticated}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{userAuthenticated}{userAuthenticated}}
+{\footnotesize\ttfamily \label{class_user_manager_abc36e1a0307e39413bf7e1ef9c487d61} 
+void User\+Manager\+::user\+Authenticated (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*}}]{curr\+User}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted upon successful user authentication, providing the authenticated user. 
+
+\Hypertarget{class_user_manager_a62b1030933c092e59c9b2ad10e36415c}\index{UserManager@{UserManager}!userChanged@{userChanged}}
+\index{userChanged@{userChanged}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{userChanged}{userChanged}}
+{\footnotesize\ttfamily \label{class_user_manager_a62b1030933c092e59c9b2ad10e36415c} 
+void User\+Manager\+::user\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when the list of users changes (add, modify, delete). 
+
+\Hypertarget{class_user_manager_a971a7f0b550dd6ac2c314a977aea395b}\index{UserManager@{UserManager}!userNotChanged@{userNotChanged}}
+\index{userNotChanged@{userNotChanged}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{userNotChanged}{userNotChanged}}
+{\footnotesize\ttfamily \label{class_user_manager_a971a7f0b550dd6ac2c314a977aea395b} 
+void User\+Manager\+::user\+Not\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when an operation that would change users fails (e.\+g., user not found, username taken). 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_user_manager_a25c42809d2f5c44761e300f617f5c675}\index{UserManager@{UserManager}!client@{client}}
+\index{client@{client}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily \label{class_user_manager_a25c42809d2f5c44761e300f617f5c675} 
+\mbox{\hyperlink{class_api_client}{Api\+Client}} User\+Manager\+::client\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+API client instance for network communication with the user data backend. 
+
+\Hypertarget{class_user_manager_a3cd03267433d02b5a1aae0de1f4443c2}\index{UserManager@{UserManager}!currUser@{currUser}}
+\index{currUser@{currUser}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{currUser}{currUser}}
+{\footnotesize\ttfamily \label{class_user_manager_a3cd03267433d02b5a1aae0de1f4443c2} 
+\mbox{\hyperlink{class_user_account}{User\+Account}}\texorpdfstring{$\ast$}{*} User\+Manager\+::curr\+User\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the currently authenticated user. Defaults to a guest user. 
+
+\Hypertarget{class_user_manager_abe151637c9c8c42442d21361efef30c8}\index{UserManager@{UserManager}!parse@{parse}}
+\index{parse@{parse}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{parse}{parse}}
+{\footnotesize\ttfamily \label{class_user_manager_abe151637c9c8c42442d21361efef30c8} 
+\mbox{\hyperlink{class_parser}{Parser}} User\+Manager\+::parse\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_parser}{Parser} instance for JSON serialization/deserialization of user data. 
+
+\Hypertarget{class_user_manager_a3a27297fe374b3bd977afbd824ca7df4}\index{UserManager@{UserManager}!users@{users}}
+\index{users@{users}!UserManager@{UserManager}}
+\doxysubsubsection{\texorpdfstring{users}{users}}
+{\footnotesize\ttfamily \label{class_user_manager_a3a27297fe374b3bd977afbd824ca7df4} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$\mbox{\hyperlink{class_user_account}{User\+Account}}\texorpdfstring{$\ast$}{*}$>$ User\+Manager\+::users\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector storing pointers to all loaded \doxylink{class_user_account}{User\+Account} objects. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/backend/\mbox{\hyperlink{_user_manager_8h}{User\+Manager.\+h}}\item 
+src/backend/\mbox{\hyperlink{moc___user_manager_8cpp}{moc\+\_\+\+User\+Manager.\+cpp}}\item 
+src/backend/\mbox{\hyperlink{_user_manager_8cpp}{User\+Manager.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+\doxysection{loginwindow.\+h}
+\hypertarget{loginwindow_8h_source}{}\label{loginwindow_8h_source}\index{src/frontend/loginwindow.h@{src/frontend/loginwindow.h}}
+\mbox{\hyperlink{loginwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LOGIN\_WINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LOGIN\_WINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QStackedWidget>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QFormLayout>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QHBoxLayout>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_login_window_aa4c04d26b299de00156bbf3c32b2a082}{LoginWindow}}\ :\ \textcolor{keyword}{public}\ QDialog\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_login_window_aa4c04d26b299de00156bbf3c32b2a082}{LoginWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ QString\ \mbox{\hyperlink{class_login_window_a2b28bf4bc7080e39afb0d096d212e0a0}{username}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ QString\ \mbox{\hyperlink{class_login_window_ab207055cd16762112d1facbd35da9c25}{password}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ signals:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_a075f5a5f9da1f4b202aec66d6bd7ec76}{loginRequested}}(\textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_login_window_a2b28bf4bc7080e39afb0d096d212e0a0}{username}},\ \textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_login_window_ab207055cd16762112d1facbd35da9c25}{password}});}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_ae166943123818d0b0a3dcdcf66380994}{signupRequested}}(\textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_login_window_a2b28bf4bc7080e39afb0d096d212e0a0}{username}},\ \textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_login_window_ab207055cd16762112d1facbd35da9c25}{password}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ admin);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_a090d7c9a09bfc32e168c090c95f6cb54}{showSignupPage}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_ac5d204dd749d28fdbdcda5a6080339b4}{showLoginPage}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_a4677fdb497a115ea633069d51eb03944}{attemptLogin}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_window_a70f65bf3f12674754e167540444b7009}{attemptSignup}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ QStackedWidget\ *\mbox{\hyperlink{class_login_window_a68afd4c7d12003f162c202a37a180625}{stack}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ login\ page\ widgets}}
+\DoxyCodeLine{00036\ \ \ \ \ QWidget\ *\mbox{\hyperlink{class_login_window_aea779547c3fdf5adeba9b3a37d999fb2}{loginPage}};}
+\DoxyCodeLine{00037\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_login_window_ac72ac7a79c869375966bd6619d534a29}{loginUserEdit}};}
+\DoxyCodeLine{00038\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_login_window_a0f13f0dc71a1557e0701c9a14e6bccdb}{loginPassEdit}};}
+\DoxyCodeLine{00039\ \ \ \ \ QPushButton\ *\mbox{\hyperlink{class_login_window_afc0fb88b9ee3a8581b10eaca178ed008}{loginBtn}};}
+\DoxyCodeLine{00040\ \ \ \ \ QPushButton\ *\mbox{\hyperlink{class_login_window_a1aa058da600286ac1956a1ddb4e3bb49}{toSignupBtn}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ signup\ page\ widgets}}
+\DoxyCodeLine{00043\ \ \ \ \ QWidget\ *\mbox{\hyperlink{class_login_window_a8ab29b2a04b9f0f6f52151b790ac7a01}{signupPage}};}
+\DoxyCodeLine{00044\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_login_window_a94c8dbea36fdc2b31c7358191c2b088b}{signupUserEdit}};}
+\DoxyCodeLine{00045\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_login_window_ad5f00572cefbba064f3723352657d87d}{signupPassEdit}};}
+\DoxyCodeLine{00046\ \ \ \ \ QPushButton\ *\mbox{\hyperlink{class_login_window_a69b71ef56685dc774e10ac8f877fa8cf}{signupBtn}};}
+\DoxyCodeLine{00047\ \ \ \ \ QPushButton\ *\mbox{\hyperlink{class_login_window_a57c19b3fb6eb05bfa6695d05ebc93c54}{backToLoginBtn}};}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LOGINDIALOG\_H}}
+
+\end{DoxyCode}

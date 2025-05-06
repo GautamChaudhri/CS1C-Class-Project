@@ -1,0 +1,95 @@
+\doxysection{Parser\+::Raw\+User Struct Reference}
+\hypertarget{struct_parser_1_1_raw_user}{}\label{struct_parser_1_1_raw_user}\index{Parser::RawUser@{Parser::RawUser}}
+
+
+Internal accumulator structure for parsing user account data from JSON.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{struct_parser_1_1_raw_user_a14ca863b3eafed85191a91b42da8c2e7}{username}}
+\begin{DoxyCompactList}\small\item\em The username of the user. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{struct_parser_1_1_raw_user_a39eddd9b71987d3303db7c79858a9f70}{password}}
+\begin{DoxyCompactList}\small\item\em The password of the user. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_parser_1_1_raw_user_a702dc4df334ae06f495c9304570afc90}{admin}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the user has admin privileges. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_parser_1_1_raw_user_ae06a5fc9667285d6c63c7b33f2dffd49}{has\+Username}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the username was found during parsing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_parser_1_1_raw_user_a581a12b2db90d07701a7c9a2bb43a467}{has\+Password}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the password was found during parsing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_parser_1_1_raw_user_a6178de903a60d3467399404b6b3bc860}{has\+Admin}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the admin status was found during parsing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Internal accumulator structure for parsing user account data from JSON. 
+
+This structure temporarily holds the properties of a user account as they are parsed from a JSON object, along with flags to track if fields were found. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_parser_1_1_raw_user_a702dc4df334ae06f495c9304570afc90}\index{Parser::RawUser@{Parser::RawUser}!admin@{admin}}
+\index{admin@{admin}!Parser::RawUser@{Parser::RawUser}}
+\doxysubsubsection{\texorpdfstring{admin}{admin}}
+{\footnotesize\ttfamily \label{struct_parser_1_1_raw_user_a702dc4df334ae06f495c9304570afc90} 
+bool Parser\+::\+Raw\+User\+::admin = false}
+
+
+
+Flag indicating if the user has admin privileges. 
+
+\Hypertarget{struct_parser_1_1_raw_user_a6178de903a60d3467399404b6b3bc860}\index{Parser::RawUser@{Parser::RawUser}!hasAdmin@{hasAdmin}}
+\index{hasAdmin@{hasAdmin}!Parser::RawUser@{Parser::RawUser}}
+\doxysubsubsection{\texorpdfstring{hasAdmin}{hasAdmin}}
+{\footnotesize\ttfamily \label{struct_parser_1_1_raw_user_a6178de903a60d3467399404b6b3bc860} 
+bool Parser\+::\+Raw\+User\+::has\+Admin = false}
+
+
+
+Flag indicating if the admin status was found during parsing. 
+
+\Hypertarget{struct_parser_1_1_raw_user_a581a12b2db90d07701a7c9a2bb43a467}\index{Parser::RawUser@{Parser::RawUser}!hasPassword@{hasPassword}}
+\index{hasPassword@{hasPassword}!Parser::RawUser@{Parser::RawUser}}
+\doxysubsubsection{\texorpdfstring{hasPassword}{hasPassword}}
+{\footnotesize\ttfamily \label{struct_parser_1_1_raw_user_a581a12b2db90d07701a7c9a2bb43a467} 
+bool Parser\+::\+Raw\+User\+::has\+Password = false}
+
+
+
+Flag indicating if the password was found during parsing. 
+
+\Hypertarget{struct_parser_1_1_raw_user_ae06a5fc9667285d6c63c7b33f2dffd49}\index{Parser::RawUser@{Parser::RawUser}!hasUsername@{hasUsername}}
+\index{hasUsername@{hasUsername}!Parser::RawUser@{Parser::RawUser}}
+\doxysubsubsection{\texorpdfstring{hasUsername}{hasUsername}}
+{\footnotesize\ttfamily \label{struct_parser_1_1_raw_user_ae06a5fc9667285d6c63c7b33f2dffd49} 
+bool Parser\+::\+Raw\+User\+::has\+Username = false}
+
+
+
+Flag indicating if the username was found during parsing. 
+
+\Hypertarget{struct_parser_1_1_raw_user_a39eddd9b71987d3303db7c79858a9f70}\index{Parser::RawUser@{Parser::RawUser}!password@{password}}
+\index{password@{password}!Parser::RawUser@{Parser::RawUser}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily \label{struct_parser_1_1_raw_user_a39eddd9b71987d3303db7c79858a9f70} 
+QString Parser\+::\+Raw\+User\+::password}
+
+
+
+The password of the user. 
+
+\Hypertarget{struct_parser_1_1_raw_user_a14ca863b3eafed85191a91b42da8c2e7}\index{Parser::RawUser@{Parser::RawUser}!username@{username}}
+\index{username@{username}!Parser::RawUser@{Parser::RawUser}}
+\doxysubsubsection{\texorpdfstring{username}{username}}
+{\footnotesize\ttfamily \label{struct_parser_1_1_raw_user_a14ca863b3eafed85191a91b42da8c2e7} 
+QString Parser\+::\+Raw\+User\+::username}
+
+
+
+The username of the user. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/backend/\mbox{\hyperlink{_parser_8h}{Parser.\+h}}\end{DoxyCompactItemize}

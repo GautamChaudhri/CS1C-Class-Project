@@ -77,11 +77,7 @@
 "ShapeId": 7,
 "TrackerId": 7001,
 "ShapeType": "Circle",
-<<<<<<< Updated upstream
-"ShapeDimensions": [201, 292, 90],
-=======
 "ShapeDimensions": [176, 343, 90],
->>>>>>> Stashed changes
 "PenColor": "black",
 "PenWidth": 10,
 "PenStyle": "DashLine",
@@ -146,14 +142,14 @@
 "ShapeId": 6,
 "TrackerId": 6003,
 "ShapeType": "Ellipse",
-"ShapeDimensions": [730, 449, 120, 80],
+"ShapeDimensions": [698, 445, 120, 80],
 "PenColor": "lightGray",
 "PenWidth": 10,
 "PenStyle": "DashDotLine",
 "PenCapStyle": "RoundCap",
 "PenJoinStyle": "BevelJoin",
 "BrushColor": "blue",
-"BrushStyle": "Dense4Pattern"
+"BrushStyle": "CrossPattern"
 },
 {
 "ShapeId": 2,

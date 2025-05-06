@@ -1,0 +1,778 @@
+\doxysection{Shape Interface Reference}
+\hypertarget{class_shape}{}\label{class_shape}\index{Shape@{Shape}}
+
+
+The \doxylink{class_shape}{Shape} Abstract Base Class.  
+
+
+
+
+{\ttfamily \#include "{}objects/shape.\+h"{}}
+
+Inheritance diagram for Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{d7/da7/class_shape}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_shape_a3fffc5f799f419e3e608e03ab1f3e913}{Shape}} (int \mbox{\hyperlink{class_shape_aedd6a6a0b1f3ed1dc6db30c0e6c64829}{shape\+Id}}, string \mbox{\hyperlink{class_shape_a111c6b066e3ca18af54f6757eb747133}{shape\+Type}}, QPoint \mbox{\hyperlink{class_shape_ae41de79d5410bce4f090b9c70be6658d}{coords}}, QPen \mbox{\hyperlink{class_shape_a75d192b68eddd2622bdea8a4ac1058d1}{pen}}, QBrush \mbox{\hyperlink{class_shape_aa67647c3a5d39d1e3f63a241208e59f2}{brush}})
+\begin{DoxyCompactList}\small\item\em \doxylink{class_shape}{Shape} Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_shape_a935afc9e576015f967d90de56977167d}{\texorpdfstring{$\sim$}{\string~}\+Shape}} ()
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$\sim$}{\string~}\+Shape Destructor \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_shape_ad0354f8f7dd350c77a3c133f1e184e83}{Draw}} (QWidget \texorpdfstring{$\ast$}{*}render\+Area)=0
+\begin{DoxyCompactList}\small\item\em Draw -\/ Draws the shape to the associated render\+Area. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_shape_a92caf93f740dc9f39677632151be9341}{Move}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Move -\/ Moves the shape to the x and y coords. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_shape_ac33d1f4554e4b4d9cbbe7159411b111c}{Perimeter}} () const =0
+\begin{DoxyCompactList}\small\item\em Perimeter -\/ Returns the perimeter of the shape. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_shape_a7d09aae7e39d5ecb7ced4e8026ff5c6c}{Area}} () const =0
+\begin{DoxyCompactList}\small\item\em Area -\/ Returns the area of the shape. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_shape_a2fce5671013fc8a15c3eef116c760c1f}{is\+Point\+Inside}} (const QPoint \&point) const =0
+\begin{DoxyCompactList}\small\item\em is\+Point\+Inside -\/ Returns true if point is inside the shape \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_ad3725fd4cfb43613897c2d3f3e647842}{Create\+Parent\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Create\+Parent\+Item -\/ Adds data cooresponding to all shapes to parent\+Item for a QTree\+Widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_a54f827e6bce6b42cdb4b70c443d2c005}{Create\+Pen\+Child}} ()
+\begin{DoxyCompactList}\small\item\em Create\+Pen\+Child -\/ Adds pen data to pen\+Items vector for a QTree\+Widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_a4a45883fd666ce244e518e808a0bd7ca}{Create\+Brush\+Child}} ()
+\begin{DoxyCompactList}\small\item\em Create\+Brush\+Child -\/ Adds brush data to brush\+Items vector for a QTree\+Widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_aa7c347f6f5b1add61d6cad5a01f1c7a4}{Create\+Points\+Child}} (const int POINTS\+\_\+\+NUM)
+\begin{DoxyCompactList}\small\item\em Create\+Points\+Child -\/ Adds points data to points\+Items vector for a QTree\+Widget. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_a4b502262ae5a22122456b9624d5ccb3d}{get\+Shape\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Accessor Functions -\/ Returns the data named after them. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_aec4675c2b06d40373eefac4b982af242}{get\+Tracker\+Id}} () const
+\item 
+string \mbox{\hyperlink{class_shape_ab89b48cc1a361849a094c894075361e1}{get\+Shape\+Type}} () const
+\item 
+bool \mbox{\hyperlink{class_shape_aebeb671fc243de273dc49f07ba71bac6}{get\+Selected}} () const
+\item 
+int \mbox{\hyperlink{class_shape_af604de36aa616c585bb30dedf5e5c68b}{getX}} () const
+\item 
+int \mbox{\hyperlink{class_shape_a2e87ea4122381ffb83474f4b69247ded}{getY}} () const
+\item 
+QPainter \& \mbox{\hyperlink{class_shape_a754ef1fcea3fbe3c3612da480ba8dd75}{get\+Painter}} ()
+\item 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_shape_a3cca235345ab6f173c4e52a8598ee6b1}{get\+Parent\+Item}} ()
+\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_shape_a8e5d4c7be5890c73cab44af6005573d4}{get\+Child\+Items}} ()
+\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_shape_a516fb93ee4883eabf72c7dc1dc9cd25f}{get\+Points\+Items}} ()
+\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_shape_a633352978d8776c142b848b8d682587a}{get\+Pen\+Items}} ()
+\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_shape_a32f4199b1d1c9283c88e4199e787be2e}{get\+Brush\+Items}} ()
+\item 
+int \mbox{\hyperlink{class_shape_a400f7b5ca58fc561b106a3a672f3f432}{get\+Pen\+Width}} () const
+\item 
+Pen\+Style \mbox{\hyperlink{class_shape_ad336858f193d765d831deb9ce29246aa}{get\+Pen\+Style}} () const
+\item 
+Pen\+Cap\+Style \mbox{\hyperlink{class_shape_a1eaba6ddbc4404e64fc6910fa9a9fa11}{get\+Pen\+Cap\+Style}} () const
+\item 
+Pen\+Join\+Style \mbox{\hyperlink{class_shape_a7cf1547b5328248b8a4c066b4c714efa}{get\+Pen\+Join\+Style}} () const
+\item 
+QColor \mbox{\hyperlink{class_shape_a4cbfcdf734ed9633dfb4dad1dab1cb6f}{get\+Pen\+Color}} () const
+\item 
+QColor \mbox{\hyperlink{class_shape_a8b5e05c84e401dddad339a15fa7d8ab1}{get\+Brush\+Color}} () const
+\item 
+Brush\+Style \mbox{\hyperlink{class_shape_a32e7b26329177063e40671687a0c62be}{get\+Brush\+Style}} () const
+\item 
+QPen \mbox{\hyperlink{class_shape_a16aad057da1ce3475f666cbdd27da042}{get\+Pen}} () const
+\item 
+QBrush \mbox{\hyperlink{class_shape_acbb9f9354579fdaad31853d714653e0d}{get\+Brush}} () const
+\item 
+QPoint \mbox{\hyperlink{class_shape_ab1cc10b4862f2e16db50622e2df278f3}{get\+Points}} () const
+\item 
+int \mbox{\hyperlink{class_shape_a4718fe1b6fc5d30e83a8761175b77344}{get\+Child\+End}} () const
+\item 
+int \mbox{\hyperlink{class_shape_a581611275dae291b4d82927dcd6114b7}{get\+Pen\+Items\+End}} () const
+\item 
+int \mbox{\hyperlink{class_shape_af9f3e91f66f410f59065a28bb8021d4d}{get\+Brush\+Items\+End}} () const
+\item 
+void \mbox{\hyperlink{class_shape_a07a95646de974c81cb2e28364fee1808}{set\+Shape\+Type}} (string \mbox{\hyperlink{class_shape_a111c6b066e3ca18af54f6757eb747133}{shape\+Type}})
+\begin{DoxyCompactList}\small\item\em Accessor Functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_ab9fa1e90a965a353ab64d872dab5058c}{set\+Selected}} (bool selected)
+\item 
+void \mbox{\hyperlink{class_shape_af00c8cc69ddcc455d010997254e5d84f}{set\+Tracker\+Id}} (int \mbox{\hyperlink{class_shape_aad65e657a6ae43982c73ca5e29e729c7}{tracker\+Id}})
+\item 
+void \mbox{\hyperlink{class_shape_a520308cc2273f60cb19bf5664570bcf8}{allocate\+Tracker\+Id}} (int \mbox{\hyperlink{class_shape_aedd6a6a0b1f3ed1dc6db30c0e6c64829}{shape\+Id}})
+\item 
+void \mbox{\hyperlink{class_shape_a2d8fd6861bf7906e0152a699ce6054c8}{setX}} (int x)
+\item 
+void \mbox{\hyperlink{class_shape_aa2b8845b186bf95781ca5d5e22316343}{setY}} (int y)
+\item 
+void \mbox{\hyperlink{class_shape_aeb62a59aa4c28f56a4340e8b88a70f9a}{set\+Pen}} (Global\+Color pen\+Color, int pen\+Width, Pen\+Style pen\+Style, Pen\+Cap\+Style pen\+Cap\+Style, Pen\+Join\+Style pen\+Join\+Style)
+\item 
+void \mbox{\hyperlink{class_shape_a3a775d5f726194499cd980dd684a35e6}{set\+Brush}} (Global\+Color brush\+Color, Brush\+Style brush\+Style)
+\item 
+QPen \& \mbox{\hyperlink{class_shape_a449ae62e090456be37e884ae4193aa17}{set\+Internal\+Pen}} ()
+\item 
+QBrush \& \mbox{\hyperlink{class_shape_a95c2a44566c8506bfa158e6b6a7a80aa}{set\+Internal\+Brush}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_shape_a3b98a70277f465133cceee668f8bd940}{next\+Tracker}} \mbox{[}9\mbox{]} = \{\}
+\item 
+static bool \mbox{\hyperlink{class_shape_a04ee02e3660e0e0f55b8feedf5f30ab5}{trackers\+In\+Use}} \mbox{[}9000\mbox{]} = \{\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_shape_ac44201a246969df4fb441832a4bf41ec}{parent\+Item}}
+\begin{DoxyCompactList}\small\item\em Mutator Functions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_shape_a6a42f52ab8e5f85f41e639632b16e416}{child\+Items}}
+\begin{DoxyCompactList}\small\item\em vector of QTree\+Widget\+Item\texorpdfstring{$\ast$}{*} holding data of all child items in parent\+Item \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_shape_a16cdcdbb0f5931d3cfc24bae88ad05fa}{points\+Items}}
+\begin{DoxyCompactList}\small\item\em vector of QTree\+Widget\+Item\texorpdfstring{$\ast$}{*} holding data of all points (besides coords) in parent\+Item \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_shape_a8ae3aab9b1aa7020d14ec0e8f1313641}{pen\+Items}}
+\begin{DoxyCompactList}\small\item\em vector of QTree\+Widget\+Item\texorpdfstring{$\ast$}{*} holding data of all pen items \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_shape_a6eb5b30f4e681b199ab8a0eaabc90b1f}{brush\+Items}}
+\begin{DoxyCompactList}\small\item\em vector of QTree\+Widget\+Item\texorpdfstring{$\ast$}{*} holding data of all brush items \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_shape_a7eda07b6d943d13721e1787f2e527a25}{Shape}} (\mbox{\hyperlink{class_shape}{Shape}} \&shape)=delete
+\item 
+\mbox{\hyperlink{class_shape}{Shape}} \& \mbox{\hyperlink{class_shape_a7828d1802cccac883bb941c058207996}{operator=}} (\mbox{\hyperlink{class_shape}{Shape}} \&object)=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_shape_aedd6a6a0b1f3ed1dc6db30c0e6c64829}{shape\+Id}}
+\begin{DoxyCompactList}\small\item\em int representing the id of a shape, each shape\+Type is given one id, \doxylink{class_line}{Line} = 1, \doxylink{class_polyline}{Polyline} = 2, etc. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_aad65e657a6ae43982c73ca5e29e729c7}{tracker\+Id}}
+\begin{DoxyCompactList}\small\item\em int representing the unique id of each shape, each individual shape has its own tracker\+Id \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_shape_a111c6b066e3ca18af54f6757eb747133}{shape\+Type}}
+\begin{DoxyCompactList}\small\item\em string representing the type of shape, (\doxylink{class_line}{Line}, \doxylink{class_circle}{Circle}, etc) \end{DoxyCompactList}\item 
+QPen \mbox{\hyperlink{class_shape_a75d192b68eddd2622bdea8a4ac1058d1}{pen}}
+\begin{DoxyCompactList}\small\item\em QPen for the outline. \end{DoxyCompactList}\item 
+QBrush \mbox{\hyperlink{class_shape_aa67647c3a5d39d1e3f63a241208e59f2}{brush}}
+\begin{DoxyCompactList}\small\item\em QBrush for the fill. \end{DoxyCompactList}\item 
+QPoint \mbox{\hyperlink{class_shape_ae41de79d5410bce4f090b9c70be6658d}{coords}}
+\begin{DoxyCompactList}\small\item\em QPoint for the coordinates of the shape. \end{DoxyCompactList}\item 
+QPainter \mbox{\hyperlink{class_shape_a761a117dfc4b157944e512b8a4c89fde}{painter}}
+\begin{DoxyCompactList}\small\item\em QPainter used to paint the shape onto a rendering area. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_shape_a9d40806043dc68976c2e29bc63d6a994}{is\+Selected}} = false
+\begin{DoxyCompactList}\small\item\em Shows the state of the shape, if it is currently selected by the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_shape_aae03c0cb0523a8e5efa15e40176ebdbd}{operator==}} (const \mbox{\hyperlink{class_shape}{Shape}} \&shape1, const \mbox{\hyperlink{class_shape}{Shape}} \&shape2)
+\begin{DoxyCompactList}\small\item\em operator == -\/ Overloaded equality operator for comparing two shape\+Id\textquotesingle{}s \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_shape_a2582cd6fab0db2870c09baff73db0f7a}{operator$<$}} (const \mbox{\hyperlink{class_shape}{Shape}} \&shape1, const \mbox{\hyperlink{class_shape}{Shape}} \&shape2)
+\begin{DoxyCompactList}\small\item\em operator \texorpdfstring{$<$}{<} -\/ Overloaded less than operator for comparing two shape\+Id\textquotesingle{}s \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_shape}{Shape} Abstract Base Class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_shape_a3fffc5f799f419e3e608e03ab1f3e913}\index{Shape@{Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_shape_a3fffc5f799f419e3e608e03ab1f3e913} 
+Shape\+::\+Shape (\begin{DoxyParamCaption}\item[{int}]{shape\+Id}{, }\item[{string}]{shape\+Type}{, }\item[{QPoint}]{coords}{, }\item[{QPen}]{pen}{, }\item[{QBrush}]{brush}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_shape}{Shape} Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape\+Type} & -\/ string representing shape type, (\doxylink{class_line}{Line}, \doxylink{class_circle}{Circle}, etc) \\
+\hline
+{\em coords} & -\/ QPoint with coordinates of the shape \\
+\hline
+{\em pen} & -\/ QPen for the outline of the shape \\
+\hline
+{\em brush} & -\/ QBrush for the fill of the shape \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_shape_a935afc9e576015f967d90de56977167d}\index{Shape@{Shape}!````~Shape@{\texorpdfstring{$\sim$}{\string~}Shape}}
+\index{````~Shape@{\texorpdfstring{$\sim$}{\string~}Shape}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Shape()}{\string~Shape()}}
+{\footnotesize\ttfamily \label{class_shape_a935afc9e576015f967d90de56977167d} 
+Shape\+::\texorpdfstring{$\sim$}{\string~}\+Shape (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\texorpdfstring{$\sim$}{\string~}\+Shape Destructor 
+
+\Hypertarget{class_shape_a7eda07b6d943d13721e1787f2e527a25}\index{Shape@{Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_shape_a7eda07b6d943d13721e1787f2e527a25} 
+Shape\+::\+Shape (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shape}{Shape}} \&}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_shape_a520308cc2273f60cb19bf5664570bcf8}\index{Shape@{Shape}!allocateTrackerId@{allocateTrackerId}}
+\index{allocateTrackerId@{allocateTrackerId}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{allocateTrackerId()}{allocateTrackerId()}}
+{\footnotesize\ttfamily \label{class_shape_a520308cc2273f60cb19bf5664570bcf8} 
+void Shape\+::allocate\+Tracker\+Id (\begin{DoxyParamCaption}\item[{int}]{shape\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_a7d09aae7e39d5ecb7ced4e8026ff5c6c}\index{Shape@{Shape}!Area@{Area}}
+\index{Area@{Area}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{Area()}{Area()}}
+{\footnotesize\ttfamily \label{class_shape_a7d09aae7e39d5ecb7ced4e8026ff5c6c} 
+virtual double Shape\+::\+Area (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Area -\/ Returns the area of the shape. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_circle_a3e846c7ae071835770ed8e85a547abce}{Circle}}, \mbox{\hyperlink{class_ellipse_a307ce4000c0f9b7b3bb8c6c6092dd21c}{Ellipse}}, \mbox{\hyperlink{class_line_a030fad2ad9fcd103999865e795920abf}{Line}}, \mbox{\hyperlink{class_polygon_a93ef0eca98ac03a244866f9d53a7ab4d}{Polygon}}, \mbox{\hyperlink{class_polyline_a735645897d4b7b3744614ca518aea396}{Polyline}}, \mbox{\hyperlink{class_rectangle_a1125fa495f517be6ba282f0939d035f0}{Rectangle}}, \mbox{\hyperlink{class_square_aebf797cc3d34c481a0dbd2349d976282}{Square}}, and \mbox{\hyperlink{class_text_a8f4e662b3295bef18b518af55a59d909}{Text}}.
+
+\Hypertarget{class_shape_a4a45883fd666ce244e518e808a0bd7ca}\index{Shape@{Shape}!CreateBrushChild@{CreateBrushChild}}
+\index{CreateBrushChild@{CreateBrushChild}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{CreateBrushChild()}{CreateBrushChild()}}
+{\footnotesize\ttfamily \label{class_shape_a4a45883fd666ce244e518e808a0bd7ca} 
+void Shape\+::\+Create\+Brush\+Child (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Create\+Brush\+Child -\/ Adds brush data to brush\+Items vector for a QTree\+Widget. 
+
+\Hypertarget{class_shape_ad3725fd4cfb43613897c2d3f3e647842}\index{Shape@{Shape}!CreateParentItem@{CreateParentItem}}
+\index{CreateParentItem@{CreateParentItem}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{CreateParentItem()}{CreateParentItem()}}
+{\footnotesize\ttfamily \label{class_shape_ad3725fd4cfb43613897c2d3f3e647842} 
+void Shape\+::\+Create\+Parent\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Create\+Parent\+Item -\/ Adds data cooresponding to all shapes to parent\+Item for a QTree\+Widget. 
+
+\Hypertarget{class_shape_a54f827e6bce6b42cdb4b70c443d2c005}\index{Shape@{Shape}!CreatePenChild@{CreatePenChild}}
+\index{CreatePenChild@{CreatePenChild}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{CreatePenChild()}{CreatePenChild()}}
+{\footnotesize\ttfamily \label{class_shape_a54f827e6bce6b42cdb4b70c443d2c005} 
+void Shape\+::\+Create\+Pen\+Child (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Create\+Pen\+Child -\/ Adds pen data to pen\+Items vector for a QTree\+Widget. 
+
+\Hypertarget{class_shape_aa7c347f6f5b1add61d6cad5a01f1c7a4}\index{Shape@{Shape}!CreatePointsChild@{CreatePointsChild}}
+\index{CreatePointsChild@{CreatePointsChild}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{CreatePointsChild()}{CreatePointsChild()}}
+{\footnotesize\ttfamily \label{class_shape_aa7c347f6f5b1add61d6cad5a01f1c7a4} 
+void Shape\+::\+Create\+Points\+Child (\begin{DoxyParamCaption}\item[{const int}]{POINTS\+\_\+\+NUM}{}\end{DoxyParamCaption})}
+
+
+
+Create\+Points\+Child -\/ Adds points data to points\+Items vector for a QTree\+Widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em POINTS\+\_\+\+NUM} & -\/ Number of points being added \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_shape_ad0354f8f7dd350c77a3c133f1e184e83}\index{Shape@{Shape}!Draw@{Draw}}
+\index{Draw@{Draw}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{class_shape_ad0354f8f7dd350c77a3c133f1e184e83} 
+virtual void Shape\+::\+Draw (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{render\+Area}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Draw -\/ Draws the shape to the associated render\+Area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em render\+Area} & -\/ QWidget to be drawn on \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_circle_ac05f869cde1af46ac56ff2e0318980bb}{Circle}}, \mbox{\hyperlink{class_ellipse_a76eaec1becd0860f48dd5c39bb00dabf}{Ellipse}}, \mbox{\hyperlink{class_line_ad68aeb558c52eace258a55e24f45d11e}{Line}}, \mbox{\hyperlink{class_polygon_ae6ac66f1548f1d4baf2ceea00feea940}{Polygon}}, \mbox{\hyperlink{class_polyline_a554e950db881f3d67e05f453c1f22e77}{Polyline}}, \mbox{\hyperlink{class_rectangle_a146fede0215e7c98fbc99b6c302ed743}{Rectangle}}, \mbox{\hyperlink{class_square_a76509a6807c851fb2fd88713cd856f64}{Square}}, and \mbox{\hyperlink{class_text_aac7609b2292703561a26921d23aa2541}{Text}}.
+
+\Hypertarget{class_shape_acbb9f9354579fdaad31853d714653e0d}\index{Shape@{Shape}!getBrush@{getBrush}}
+\index{getBrush@{getBrush}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getBrush()}{getBrush()}}
+{\footnotesize\ttfamily \label{class_shape_acbb9f9354579fdaad31853d714653e0d} 
+QBrush Shape\+::get\+Brush (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_a8b5e05c84e401dddad339a15fa7d8ab1}\index{Shape@{Shape}!getBrushColor@{getBrushColor}}
+\index{getBrushColor@{getBrushColor}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getBrushColor()}{getBrushColor()}}
+{\footnotesize\ttfamily \label{class_shape_a8b5e05c84e401dddad339a15fa7d8ab1} 
+QColor Shape\+::get\+Brush\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_a32f4199b1d1c9283c88e4199e787be2e}\index{Shape@{Shape}!getBrushItems@{getBrushItems}}
+\index{getBrushItems@{getBrushItems}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getBrushItems()}{getBrushItems()}}
+{\footnotesize\ttfamily \label{class_shape_a32f4199b1d1c9283c88e4199e787be2e} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} $>$ \& Shape\+::get\+Brush\+Items (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_af9f3e91f66f410f59065a28bb8021d4d}\index{Shape@{Shape}!getBrushItemsEnd@{getBrushItemsEnd}}
+\index{getBrushItemsEnd@{getBrushItemsEnd}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getBrushItemsEnd()}{getBrushItemsEnd()}}
+{\footnotesize\ttfamily \label{class_shape_af9f3e91f66f410f59065a28bb8021d4d} 
+int Shape\+::get\+Brush\+Items\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns the dereferenced pen\+Items.\+end() -\/ 1 for the last initialized element of the vector \Hypertarget{class_shape_a32e7b26329177063e40671687a0c62be}\index{Shape@{Shape}!getBrushStyle@{getBrushStyle}}
+\index{getBrushStyle@{getBrushStyle}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getBrushStyle()}{getBrushStyle()}}
+{\footnotesize\ttfamily \label{class_shape_a32e7b26329177063e40671687a0c62be} 
+Brush\+Style Shape\+::get\+Brush\+Style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_a4718fe1b6fc5d30e83a8761175b77344}\index{Shape@{Shape}!getChildEnd@{getChildEnd}}
+\index{getChildEnd@{getChildEnd}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getChildEnd()}{getChildEnd()}}
+{\footnotesize\ttfamily \label{class_shape_a4718fe1b6fc5d30e83a8761175b77344} 
+int Shape\+::get\+Child\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_a8e5d4c7be5890c73cab44af6005573d4}\index{Shape@{Shape}!getChildItems@{getChildItems}}
+\index{getChildItems@{getChildItems}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getChildItems()}{getChildItems()}}
+{\footnotesize\ttfamily \label{class_shape_a8e5d4c7be5890c73cab44af6005573d4} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} $>$ \& Shape\+::get\+Child\+Items (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_a754ef1fcea3fbe3c3612da480ba8dd75}\index{Shape@{Shape}!getPainter@{getPainter}}
+\index{getPainter@{getPainter}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getPainter()}{getPainter()}}
+{\footnotesize\ttfamily \label{class_shape_a754ef1fcea3fbe3c3612da480ba8dd75} 
+QPainter \& Shape\+::get\+Painter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_a3cca235345ab6f173c4e52a8598ee6b1}\index{Shape@{Shape}!getParentItem@{getParentItem}}
+\index{getParentItem@{getParentItem}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getParentItem()}{getParentItem()}}
+{\footnotesize\ttfamily \label{class_shape_a3cca235345ab6f173c4e52a8598ee6b1} 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} Shape\+::get\+Parent\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_a16aad057da1ce3475f666cbdd27da042}\index{Shape@{Shape}!getPen@{getPen}}
+\index{getPen@{getPen}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getPen()}{getPen()}}
+{\footnotesize\ttfamily \label{class_shape_a16aad057da1ce3475f666cbdd27da042} 
+QPen Shape\+::get\+Pen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_a1eaba6ddbc4404e64fc6910fa9a9fa11}\index{Shape@{Shape}!getPenCapStyle@{getPenCapStyle}}
+\index{getPenCapStyle@{getPenCapStyle}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getPenCapStyle()}{getPenCapStyle()}}
+{\footnotesize\ttfamily \label{class_shape_a1eaba6ddbc4404e64fc6910fa9a9fa11} 
+Pen\+Cap\+Style Shape\+::get\+Pen\+Cap\+Style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_a4cbfcdf734ed9633dfb4dad1dab1cb6f}\index{Shape@{Shape}!getPenColor@{getPenColor}}
+\index{getPenColor@{getPenColor}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getPenColor()}{getPenColor()}}
+{\footnotesize\ttfamily \label{class_shape_a4cbfcdf734ed9633dfb4dad1dab1cb6f} 
+QColor Shape\+::get\+Pen\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_a633352978d8776c142b848b8d682587a}\index{Shape@{Shape}!getPenItems@{getPenItems}}
+\index{getPenItems@{getPenItems}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getPenItems()}{getPenItems()}}
+{\footnotesize\ttfamily \label{class_shape_a633352978d8776c142b848b8d682587a} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} $>$ \& Shape\+::get\+Pen\+Items (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_a581611275dae291b4d82927dcd6114b7}\index{Shape@{Shape}!getPenItemsEnd@{getPenItemsEnd}}
+\index{getPenItemsEnd@{getPenItemsEnd}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getPenItemsEnd()}{getPenItemsEnd()}}
+{\footnotesize\ttfamily \label{class_shape_a581611275dae291b4d82927dcd6114b7} 
+int Shape\+::get\+Pen\+Items\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns the dereferenced child\+Items.\+end() -\/ 1 for the last initialized element of the vector \Hypertarget{class_shape_a7cf1547b5328248b8a4c066b4c714efa}\index{Shape@{Shape}!getPenJoinStyle@{getPenJoinStyle}}
+\index{getPenJoinStyle@{getPenJoinStyle}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getPenJoinStyle()}{getPenJoinStyle()}}
+{\footnotesize\ttfamily \label{class_shape_a7cf1547b5328248b8a4c066b4c714efa} 
+Pen\+Join\+Style Shape\+::get\+Pen\+Join\+Style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_ad336858f193d765d831deb9ce29246aa}\index{Shape@{Shape}!getPenStyle@{getPenStyle}}
+\index{getPenStyle@{getPenStyle}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getPenStyle()}{getPenStyle()}}
+{\footnotesize\ttfamily \label{class_shape_ad336858f193d765d831deb9ce29246aa} 
+Pen\+Style Shape\+::get\+Pen\+Style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_a400f7b5ca58fc561b106a3a672f3f432}\index{Shape@{Shape}!getPenWidth@{getPenWidth}}
+\index{getPenWidth@{getPenWidth}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getPenWidth()}{getPenWidth()}}
+{\footnotesize\ttfamily \label{class_shape_a400f7b5ca58fc561b106a3a672f3f432} 
+int Shape\+::get\+Pen\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_ab1cc10b4862f2e16db50622e2df278f3}\index{Shape@{Shape}!getPoints@{getPoints}}
+\index{getPoints@{getPoints}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getPoints()}{getPoints()}}
+{\footnotesize\ttfamily \label{class_shape_ab1cc10b4862f2e16db50622e2df278f3} 
+QPoint Shape\+::get\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_a516fb93ee4883eabf72c7dc1dc9cd25f}\index{Shape@{Shape}!getPointsItems@{getPointsItems}}
+\index{getPointsItems@{getPointsItems}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getPointsItems()}{getPointsItems()}}
+{\footnotesize\ttfamily \label{class_shape_a516fb93ee4883eabf72c7dc1dc9cd25f} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} $>$ \& Shape\+::get\+Points\+Items (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_aebeb671fc243de273dc49f07ba71bac6}\index{Shape@{Shape}!getSelected@{getSelected}}
+\index{getSelected@{getSelected}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getSelected()}{getSelected()}}
+{\footnotesize\ttfamily \label{class_shape_aebeb671fc243de273dc49f07ba71bac6} 
+bool Shape\+::get\+Selected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_a4b502262ae5a22122456b9624d5ccb3d}\index{Shape@{Shape}!getShapeId@{getShapeId}}
+\index{getShapeId@{getShapeId}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getShapeId()}{getShapeId()}}
+{\footnotesize\ttfamily \label{class_shape_a4b502262ae5a22122456b9624d5ccb3d} 
+int Shape\+::get\+Shape\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Accessor Functions -\/ Returns the data named after them. 
+
+\Hypertarget{class_shape_ab89b48cc1a361849a094c894075361e1}\index{Shape@{Shape}!getShapeType@{getShapeType}}
+\index{getShapeType@{getShapeType}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getShapeType()}{getShapeType()}}
+{\footnotesize\ttfamily \label{class_shape_ab89b48cc1a361849a094c894075361e1} 
+string Shape\+::get\+Shape\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_aec4675c2b06d40373eefac4b982af242}\index{Shape@{Shape}!getTrackerId@{getTrackerId}}
+\index{getTrackerId@{getTrackerId}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getTrackerId()}{getTrackerId()}}
+{\footnotesize\ttfamily \label{class_shape_aec4675c2b06d40373eefac4b982af242} 
+int Shape\+::get\+Tracker\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_af604de36aa616c585bb30dedf5e5c68b}\index{Shape@{Shape}!getX@{getX}}
+\index{getX@{getX}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily \label{class_shape_af604de36aa616c585bb30dedf5e5c68b} 
+int Shape\+::getX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_a2e87ea4122381ffb83474f4b69247ded}\index{Shape@{Shape}!getY@{getY}}
+\index{getY@{getY}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily \label{class_shape_a2e87ea4122381ffb83474f4b69247ded} 
+int Shape\+::getY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_shape_a2fce5671013fc8a15c3eef116c760c1f}\index{Shape@{Shape}!isPointInside@{isPointInside}}
+\index{isPointInside@{isPointInside}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{isPointInside()}{isPointInside()}}
+{\footnotesize\ttfamily \label{class_shape_a2fce5671013fc8a15c3eef116c760c1f} 
+virtual bool Shape\+::is\+Point\+Inside (\begin{DoxyParamCaption}\item[{const QPoint \&}]{point}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+is\+Point\+Inside -\/ Returns true if point is inside the shape 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & -\/ QPoint being checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_circle_aaf2531a14efd9446e7b9c8775eb9874a}{Circle}}, \mbox{\hyperlink{class_ellipse_a7bdfa634aa63d5380b31b45fa38921d9}{Ellipse}}, \mbox{\hyperlink{class_line_ab3d7b54cb9f00bd0687a0959574c1f0d}{Line}}, \mbox{\hyperlink{class_polygon_aa7b011cd2aaee7c7d581aab2bd9861ee}{Polygon}}, \mbox{\hyperlink{class_polyline_a243bc5b0629be484e3baa49d8448ef11}{Polyline}}, \mbox{\hyperlink{class_rectangle_a15db47c277092fbef7cb2a4ea0026e32}{Rectangle}}, \mbox{\hyperlink{class_square_a5ba5f957a402decfcc2a6b425f43b464}{Square}}, and \mbox{\hyperlink{class_text_afa809544954f7c4b3d9102692c6db53f}{Text}}.
+
+\Hypertarget{class_shape_a92caf93f740dc9f39677632151be9341}\index{Shape@{Shape}!Move@{Move}}
+\index{Move@{Move}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \label{class_shape_a92caf93f740dc9f39677632151be9341} 
+void Shape\+::\+Move (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move -\/ Moves the shape to the x and y coords. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ x coordinate \\
+\hline
+{\em y} & -\/ y coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_line_a09745a7cb17e1639c4f63fbdf7716795}{Line}}, \mbox{\hyperlink{class_polygon_ab1d251a36ab0d229313daa05ef43ebe3}{Polygon}}, and \mbox{\hyperlink{class_polyline_a98f16a2f50d4ce8ef70444c284e299d7}{Polyline}}.
+
+\Hypertarget{class_shape_a7828d1802cccac883bb941c058207996}\index{Shape@{Shape}!operator=@{operator=}}
+\index{operator=@{operator=}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_shape_a7828d1802cccac883bb941c058207996} 
+\mbox{\hyperlink{class_shape}{Shape}} \& Shape\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shape}{Shape}} \&}]{object}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\Hypertarget{class_shape_ac33d1f4554e4b4d9cbbe7159411b111c}\index{Shape@{Shape}!Perimeter@{Perimeter}}
+\index{Perimeter@{Perimeter}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{Perimeter()}{Perimeter()}}
+{\footnotesize\ttfamily \label{class_shape_ac33d1f4554e4b4d9cbbe7159411b111c} 
+virtual double Shape\+::\+Perimeter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Perimeter -\/ Returns the perimeter of the shape. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_circle_ae5b08b5d3958e12ebdd0a548b7cd2a0b}{Circle}}, \mbox{\hyperlink{class_ellipse_a2b7fbc810bb7e134f857d9daa1b6c73d}{Ellipse}}, \mbox{\hyperlink{class_line_a021cff6530ca6c86e757edca228f3bc6}{Line}}, \mbox{\hyperlink{class_polygon_a7d13b3e258dafa8991568d2e5aca000d}{Polygon}}, \mbox{\hyperlink{class_polyline_a317e01b61e2fb4b4eefd94a20bae7505}{Polyline}}, \mbox{\hyperlink{class_rectangle_a76dac2e37763e04a507509af0df877ca}{Rectangle}}, \mbox{\hyperlink{class_square_a3100c84469b5c7774c53cd439f24a398}{Square}}, and \mbox{\hyperlink{class_text_a2d5dfd13e7b92add0bdade0190d32d21}{Text}}.
+
+\Hypertarget{class_shape_a3a775d5f726194499cd980dd684a35e6}\index{Shape@{Shape}!setBrush@{setBrush}}
+\index{setBrush@{setBrush}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{setBrush()}{setBrush()}}
+{\footnotesize\ttfamily \label{class_shape_a3a775d5f726194499cd980dd684a35e6} 
+void Shape\+::set\+Brush (\begin{DoxyParamCaption}\item[{Global\+Color}]{brush\+Color}{, }\item[{Brush\+Style}]{brush\+Style}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_a95c2a44566c8506bfa158e6b6a7a80aa}\index{Shape@{Shape}!setInternalBrush@{setInternalBrush}}
+\index{setInternalBrush@{setInternalBrush}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{setInternalBrush()}{setInternalBrush()}}
+{\footnotesize\ttfamily \label{class_shape_a95c2a44566c8506bfa158e6b6a7a80aa} 
+QBrush \& Shape\+::set\+Internal\+Brush (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_a449ae62e090456be37e884ae4193aa17}\index{Shape@{Shape}!setInternalPen@{setInternalPen}}
+\index{setInternalPen@{setInternalPen}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{setInternalPen()}{setInternalPen()}}
+{\footnotesize\ttfamily \label{class_shape_a449ae62e090456be37e884ae4193aa17} 
+QPen \& Shape\+::set\+Internal\+Pen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_aeb62a59aa4c28f56a4340e8b88a70f9a}\index{Shape@{Shape}!setPen@{setPen}}
+\index{setPen@{setPen}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{setPen()}{setPen()}}
+{\footnotesize\ttfamily \label{class_shape_aeb62a59aa4c28f56a4340e8b88a70f9a} 
+void Shape\+::set\+Pen (\begin{DoxyParamCaption}\item[{Global\+Color}]{pen\+Color}{, }\item[{int}]{pen\+Width}{, }\item[{Pen\+Style}]{pen\+Style}{, }\item[{Pen\+Cap\+Style}]{pen\+Cap\+Style}{, }\item[{Pen\+Join\+Style}]{pen\+Join\+Style}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_ab9fa1e90a965a353ab64d872dab5058c}\index{Shape@{Shape}!setSelected@{setSelected}}
+\index{setSelected@{setSelected}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{setSelected()}{setSelected()}}
+{\footnotesize\ttfamily \label{class_shape_ab9fa1e90a965a353ab64d872dab5058c} 
+void Shape\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_a07a95646de974c81cb2e28364fee1808}\index{Shape@{Shape}!setShapeType@{setShapeType}}
+\index{setShapeType@{setShapeType}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{setShapeType()}{setShapeType()}}
+{\footnotesize\ttfamily \label{class_shape_a07a95646de974c81cb2e28364fee1808} 
+void Shape\+::set\+Shape\+Type (\begin{DoxyParamCaption}\item[{string}]{shape\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Accessor Functions. 
+
+Returns the dereferenced brush\+Items.\+end() -\/ 1 for the last initialized element of the vector Mutator Functions -\/ Sets the data of the item to the passed param \Hypertarget{class_shape_af00c8cc69ddcc455d010997254e5d84f}\index{Shape@{Shape}!setTrackerId@{setTrackerId}}
+\index{setTrackerId@{setTrackerId}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{setTrackerId()}{setTrackerId()}}
+{\footnotesize\ttfamily \label{class_shape_af00c8cc69ddcc455d010997254e5d84f} 
+void Shape\+::set\+Tracker\+Id (\begin{DoxyParamCaption}\item[{int}]{tracker\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shape_a2d8fd6861bf7906e0152a699ce6054c8}\index{Shape@{Shape}!setX@{setX}}
+\index{setX@{setX}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily \label{class_shape_a2d8fd6861bf7906e0152a699ce6054c8} 
+void Shape\+::setX (\begin{DoxyParamCaption}\item[{int}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_circle_a3285002c730183acf265f57eaae5e267}{Circle}}, \mbox{\hyperlink{class_ellipse_a9ce9a1de3f181bac0a9c4e914ffc3c2d}{Ellipse}}, \mbox{\hyperlink{class_line_ace1900e93794a3f8bfbfdc8ac1b0ed13}{Line}}, \mbox{\hyperlink{class_polygon_a9d5e9087bf324719995b4af2931c77f3}{Polygon}}, \mbox{\hyperlink{class_polyline_aa681c72b6c1193af016b4fe521eb2e86}{Polyline}}, \mbox{\hyperlink{class_rectangle_a2d6f53490569f61403e0030d13411fd8}{Rectangle}}, \mbox{\hyperlink{class_square_a33c07be8d278b4cc9275654a9a9d5680}{Square}}, and \mbox{\hyperlink{class_text_a351027602090f29a33adf048d8adafc3}{Text}}.
+
+\Hypertarget{class_shape_aa2b8845b186bf95781ca5d5e22316343}\index{Shape@{Shape}!setY@{setY}}
+\index{setY@{setY}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily \label{class_shape_aa2b8845b186bf95781ca5d5e22316343} 
+void Shape\+::setY (\begin{DoxyParamCaption}\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_circle_a5bbf6038b1804c3021977591fc5efd91}{Circle}}, \mbox{\hyperlink{class_ellipse_abf28da910ea7cf3349b3e45b07a972a3}{Ellipse}}, \mbox{\hyperlink{class_line_a1b3068a1d2a5e4d6141511e637f1d1d9}{Line}}, \mbox{\hyperlink{class_polygon_ab19e68c8d4d2546262ec5880a33053af}{Polygon}}, \mbox{\hyperlink{class_polyline_ae29af65ed91787a955b03a7ebc983a76}{Polyline}}, \mbox{\hyperlink{class_rectangle_a04023199272ad6fd47c4233dd4bd148e}{Rectangle}}, \mbox{\hyperlink{class_square_a7452aa576879876e14cb83a69180cb42}{Square}}, and \mbox{\hyperlink{class_text_a4613df74877faca400d0510f418ece15}{Text}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_shape_a2582cd6fab0db2870c09baff73db0f7a}\index{Shape@{Shape}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{operator$<$}{operator<}}
+{\footnotesize\ttfamily \label{class_shape_a2582cd6fab0db2870c09baff73db0f7a} 
+bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \&}]{shape1}{, }\item[{const \mbox{\hyperlink{class_shape}{Shape}} \&}]{shape2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+operator \texorpdfstring{$<$}{<} -\/ Overloaded less than operator for comparing two shape\+Id\textquotesingle{}s 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape1} & \\
+\hline
+{\em shape2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_shape_aae03c0cb0523a8e5efa15e40176ebdbd}\index{Shape@{Shape}!operator==@{operator==}}
+\index{operator==@{operator==}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{class_shape_aae03c0cb0523a8e5efa15e40176ebdbd} 
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \&}]{shape1}{, }\item[{const \mbox{\hyperlink{class_shape}{Shape}} \&}]{shape2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+operator == -\/ Overloaded equality operator for comparing two shape\+Id\textquotesingle{}s 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape1} & \\
+\hline
+{\em shape2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_shape_aa67647c3a5d39d1e3f63a241208e59f2}\index{Shape@{Shape}!brush@{brush}}
+\index{brush@{brush}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{brush}{brush}}
+{\footnotesize\ttfamily \label{class_shape_aa67647c3a5d39d1e3f63a241208e59f2} 
+QBrush Shape\+::brush\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+QBrush for the fill. 
+
+\Hypertarget{class_shape_a6eb5b30f4e681b199ab8a0eaabc90b1f}\index{Shape@{Shape}!brushItems@{brushItems}}
+\index{brushItems@{brushItems}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{brushItems}{brushItems}}
+{\footnotesize\ttfamily \label{class_shape_a6eb5b30f4e681b199ab8a0eaabc90b1f} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$QTree\+Widget\+Item\texorpdfstring{$\ast$}{*}$>$ Shape\+::brush\+Items\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+vector of QTree\+Widget\+Item\texorpdfstring{$\ast$}{*} holding data of all brush items 
+
+\Hypertarget{class_shape_a6a42f52ab8e5f85f41e639632b16e416}\index{Shape@{Shape}!childItems@{childItems}}
+\index{childItems@{childItems}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{childItems}{childItems}}
+{\footnotesize\ttfamily \label{class_shape_a6a42f52ab8e5f85f41e639632b16e416} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$QTree\+Widget\+Item\texorpdfstring{$\ast$}{*}$>$ Shape\+::child\+Items\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+vector of QTree\+Widget\+Item\texorpdfstring{$\ast$}{*} holding data of all child items in parent\+Item 
+
+\Hypertarget{class_shape_ae41de79d5410bce4f090b9c70be6658d}\index{Shape@{Shape}!coords@{coords}}
+\index{coords@{coords}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{coords}{coords}}
+{\footnotesize\ttfamily \label{class_shape_ae41de79d5410bce4f090b9c70be6658d} 
+QPoint Shape\+::coords\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+QPoint for the coordinates of the shape. 
+
+\Hypertarget{class_shape_a9d40806043dc68976c2e29bc63d6a994}\index{Shape@{Shape}!isSelected@{isSelected}}
+\index{isSelected@{isSelected}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{isSelected}{isSelected}}
+{\footnotesize\ttfamily \label{class_shape_a9d40806043dc68976c2e29bc63d6a994} 
+bool Shape\+::is\+Selected = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Shows the state of the shape, if it is currently selected by the user. 
+
+\Hypertarget{class_shape_a3b98a70277f465133cceee668f8bd940}\index{Shape@{Shape}!nextTracker@{nextTracker}}
+\index{nextTracker@{nextTracker}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{nextTracker}{nextTracker}}
+{\footnotesize\ttfamily \label{class_shape_a3b98a70277f465133cceee668f8bd940} 
+int Shape\+::next\+Tracker = \{\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_shape_a761a117dfc4b157944e512b8a4c89fde}\index{Shape@{Shape}!painter@{painter}}
+\index{painter@{painter}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{painter}{painter}}
+{\footnotesize\ttfamily \label{class_shape_a761a117dfc4b157944e512b8a4c89fde} 
+QPainter Shape\+::painter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+QPainter used to paint the shape onto a rendering area. 
+
+\Hypertarget{class_shape_ac44201a246969df4fb441832a4bf41ec}\index{Shape@{Shape}!parentItem@{parentItem}}
+\index{parentItem@{parentItem}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{parentItem}{parentItem}}
+{\footnotesize\ttfamily \label{class_shape_ac44201a246969df4fb441832a4bf41ec} 
+QTree\+Widget\+Item\texorpdfstring{$\ast$}{*} Shape\+::parent\+Item\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Mutator Functions. 
+
+QTree\+Widget\+Item\texorpdfstring{$\ast$}{*} holding tree\+Widget data of each shape \Hypertarget{class_shape_a75d192b68eddd2622bdea8a4ac1058d1}\index{Shape@{Shape}!pen@{pen}}
+\index{pen@{pen}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{pen}{pen}}
+{\footnotesize\ttfamily \label{class_shape_a75d192b68eddd2622bdea8a4ac1058d1} 
+QPen Shape\+::pen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+QPen for the outline. 
+
+\Hypertarget{class_shape_a8ae3aab9b1aa7020d14ec0e8f1313641}\index{Shape@{Shape}!penItems@{penItems}}
+\index{penItems@{penItems}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{penItems}{penItems}}
+{\footnotesize\ttfamily \label{class_shape_a8ae3aab9b1aa7020d14ec0e8f1313641} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$QTree\+Widget\+Item\texorpdfstring{$\ast$}{*}$>$ Shape\+::pen\+Items\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+vector of QTree\+Widget\+Item\texorpdfstring{$\ast$}{*} holding data of all pen items 
+
+\Hypertarget{class_shape_a16cdcdbb0f5931d3cfc24bae88ad05fa}\index{Shape@{Shape}!pointsItems@{pointsItems}}
+\index{pointsItems@{pointsItems}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{pointsItems}{pointsItems}}
+{\footnotesize\ttfamily \label{class_shape_a16cdcdbb0f5931d3cfc24bae88ad05fa} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$QTree\+Widget\+Item\texorpdfstring{$\ast$}{*}$>$ Shape\+::points\+Items\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+vector of QTree\+Widget\+Item\texorpdfstring{$\ast$}{*} holding data of all points (besides coords) in parent\+Item 
+
+\Hypertarget{class_shape_aedd6a6a0b1f3ed1dc6db30c0e6c64829}\index{Shape@{Shape}!shapeId@{shapeId}}
+\index{shapeId@{shapeId}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{shapeId}{shapeId}}
+{\footnotesize\ttfamily \label{class_shape_aedd6a6a0b1f3ed1dc6db30c0e6c64829} 
+const int Shape\+::shape\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+int representing the id of a shape, each shape\+Type is given one id, \doxylink{class_line}{Line} = 1, \doxylink{class_polyline}{Polyline} = 2, etc. 
+
+\Hypertarget{class_shape_a111c6b066e3ca18af54f6757eb747133}\index{Shape@{Shape}!shapeType@{shapeType}}
+\index{shapeType@{shapeType}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{shapeType}{shapeType}}
+{\footnotesize\ttfamily \label{class_shape_a111c6b066e3ca18af54f6757eb747133} 
+string Shape\+::shape\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+string representing the type of shape, (\doxylink{class_line}{Line}, \doxylink{class_circle}{Circle}, etc) 
+
+\Hypertarget{class_shape_aad65e657a6ae43982c73ca5e29e729c7}\index{Shape@{Shape}!trackerId@{trackerId}}
+\index{trackerId@{trackerId}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{trackerId}{trackerId}}
+{\footnotesize\ttfamily \label{class_shape_aad65e657a6ae43982c73ca5e29e729c7} 
+int Shape\+::tracker\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+int representing the unique id of each shape, each individual shape has its own tracker\+Id 
+
+\Hypertarget{class_shape_a04ee02e3660e0e0f55b8feedf5f30ab5}\index{Shape@{Shape}!trackersInUse@{trackersInUse}}
+\index{trackersInUse@{trackersInUse}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{trackersInUse}{trackersInUse}}
+{\footnotesize\ttfamily \label{class_shape_a04ee02e3660e0e0f55b8feedf5f30ab5} 
+bool Shape\+::trackers\+In\+Use = \{\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this interface was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/objects/\mbox{\hyperlink{shape_8h}{shape.\+h}}\item 
+src/objects/\mbox{\hyperlink{shape_8cpp}{shape.\+cpp}}\end{DoxyCompactItemize}

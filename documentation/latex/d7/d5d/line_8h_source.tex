@@ -1,0 +1,45 @@
+\doxysection{line.\+h}
+\hypertarget{line_8h_source}{}\label{line_8h_source}\index{src/objects/line.h@{src/objects/line.h}}
+\mbox{\hyperlink{line_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LINE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LINE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{shape_8h}{shape.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_line_aab2a9c230d1bbb8a9e07f4c554e00c26}{Line}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_shape_a3fffc5f799f419e3e608e03ab1f3e913}{Shape}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_line_aab2a9c230d1bbb8a9e07f4c554e00c26}{Line}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_shape_a111c6b066e3ca18af54f6757eb747133}{shapeType}},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ QPoint\ \mbox{\hyperlink{class_shape_ae41de79d5410bce4f090b9c70be6658d}{coords}},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ QPen\ \ \ \mbox{\hyperlink{class_shape_a75d192b68eddd2622bdea8a4ac1058d1}{pen}},}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ QBrush\ \mbox{\hyperlink{class_shape_aa67647c3a5d39d1e3f63a241208e59f2}{brush}},}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ QPoint\ \mbox{\hyperlink{class_line_a30d1bcf7fc6bc46a19630079ab8ec018}{startPoint}},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ QPoint\ \mbox{\hyperlink{class_line_a52cc244f26d9f0ab314cd9d723e93cd1}{endPoint}});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_line_ad68aeb558c52eace258a55e24f45d11e}{Draw}}(QWidget*\ renderArea)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_line_a09745a7cb17e1639c4f63fbdf7716795}{Move}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_line_a021cff6530ca6c86e757edca228f3bc6}{Perimeter}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_line_a030fad2ad9fcd103999865e795920abf}{Area}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ 0;\ \}\ \ \textcolor{comment}{//\ Need\ to\ implement\ this\ to\ instantiate\ Line}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_line_ab3d7b54cb9f00bd0687a0959574c1f0d}{isPointInside}}(\textcolor{keyword}{const}\ QPoint\&\ point)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_line_ae0c35900f7e283b3559263455ac18669}{getStartPoint}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_line_aedb630a8121c423320ef5e369e17f65f}{getEndPoint}}()\ \ \ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_line_a23a358eb316f8ba28dd50afc8e8ddf48}{setStartPoint}}(\textcolor{keyword}{const}\ QPoint\&\ newStartPoint);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_line_a14bf0cfa1cc22cac72b26ed445d38577}{setEndPoint}}(\textcolor{keyword}{const}\ QPoint\&\ newEndPoint);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_line_ace1900e93794a3f8bfbfdc8ac1b0ed13}{setX}}(\textcolor{keywordtype}{int}\ newX);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_line_a1b3068a1d2a5e4d6141511e637f1d1d9}{setY}}(\textcolor{keywordtype}{int}\ newY);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00074\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_line_a30d1bcf7fc6bc46a19630079ab8ec018}{startPoint}};\ }
+\DoxyCodeLine{00075\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_line_a52cc244f26d9f0ab314cd9d723e93cd1}{endPoint}};\ }
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LINE\_H}}
+
+\end{DoxyCode}

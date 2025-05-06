@@ -1,0 +1,1047 @@
+\doxysection{Main\+Window Class Reference}
+\hypertarget{class_main_window}{}\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+The main window of the 2D Graphics Modeler application.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d9/dc6/class_main_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{Indent}\textbf{ Render\+Area\+Manager Response Slots}\par
+{\em Slots for handling responses from \doxylink{class_render_area_manager}{Render\+Area\+Manager}.
+
+These slots are connected to signals from the \doxylink{class_render_area_manager}{Render\+Area\+Manager} to update the UI when the state of rendered shapes changes or status messages are available. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a841a40f673ad191cd737b49591568446}{on\+Render\+Area\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the render area\textquotesingle{}s content has changed, requiring a UI update. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_afe338c1075cc046cc71b300b920bcaaa}{on\+Render\+Area\+Not\+Changed}} (const QString \&message)
+\begin{DoxyCompactList}\small\item\em Slot triggered when an operation on the render area did not result in a change (e.\+g., error). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a5bc872b86e5f798a2079dae098d73288}{show\+Render\+Status\+Message}} (const QString \&message)
+\begin{DoxyCompactList}\small\item\em Displays a status message related to rendering operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Login Process Management Slots}\par
+{\em Slots for managing the login process.
+
+These slots handle user interactions related to logging in and signing up. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a44b1462463b23490276f54034ab12325}{on\+Login\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when the login button is clicked, typically opening a login dialog. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a92cfa580b2445cdcb78fedea04dece1f}{on\+Login\+Request}} (const QString \&username, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Slot triggered by a login dialog to initiate a login attempt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_adc5a0eea13e703cb3826e9221e19df22}{on\+Signup\+Request}} (const QString \&username, const QString \&password, const bool admin)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ User\+Manager Response Slots}\par
+{\em Slots for handling responses from \doxylink{class_user_manager}{User\+Manager}.
+
+These slots are connected to signals from the \doxylink{class_user_manager}{User\+Manager} to update the UI based on the outcome of user authentication attempts. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a04d9898f7479308e0e7e2b8796426c2b}{on\+User\+Authentication}} (const \mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_main_window_a045ae7761e9f4824fd60da4421d2e317}{curr\+User}})
+\begin{DoxyCompactList}\small\item\em Slot triggered upon successful user authentication. Updates UI with user info. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a1a3b782f396969a9fa4316bc4841865d}{on\+User\+Authentication\+Failure}} (const QString \&message)
+\begin{DoxyCompactList}\small\item\em Slot triggered when user authentication fails. Displays an error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Signals}
+\begin{Indent}\textbf{ Shape Manipulation Signals}\par
+{\em Signals related to shape manipulation.
+
+These signals are emitted to notify other components (likely \doxylink{class_app_driver}{App\+Driver} or \doxylink{class_render_area_manager}{Render\+Area\+Manager}) about actions performed on shapes by the user through the UI. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_af82d1897a3213375ae0f1c7d7652150a}{shape\+Added}} (\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\begin{DoxyCompactList}\small\item\em Emitted when a new shape is added by the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_af971d03f10fd514287332e2adfd79bea}{shape\+Changed}} (\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape, QString key, int value)
+\begin{DoxyCompactList}\small\item\em Emitted when a property of an existing shape is changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a1f2cddcea15650f8ef72e8862fd945df}{displayed\+Text\+Changed}} (\mbox{\hyperlink{class_text}{Text}} \texorpdfstring{$\ast$}{*}text, QString new\+Text)
+\begin{DoxyCompactList}\small\item\em Emitted when the displayed text of a \doxylink{class_text}{Text} shape is changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a906062572c910e53ece385587548e981}{shape\+Deleted}} (int tracker\+Id)
+\begin{DoxyCompactList}\small\item\em Emitted when a shape is requested to be deleted. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a4d205f76440a771278bf5b64df8de0b2}{delete\+All\+Shapes}} ()
+\begin{DoxyCompactList}\small\item\em Emitted when a request to delete all shapes is made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ User Authentication Signals}\par
+{\em Signals related to user login and signup.
+
+These signals are emitted to the \doxylink{class_app_driver}{App\+Driver} or \doxylink{class_user_manager}{User\+Manager} to handle user authentication and account creation processes. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a3f4e695043359e8f535699cd7da3d15c}{login\+Attempt}} (const QString \&username, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Emitted when a user attempts to log in. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a4ca72692ae6775c322b3534c18f3e9aa}{new\+User\+Added}} (const QString \&username, const QString \&password, const bool admin)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Dialog Flow Control Signals}\par
+{\em Signals for controlling dialog flow.
+
+These signals are used to communicate the success or failure of operations like login, often to control the state of dialog windows. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a8cdec14167c6164f6efa118d09e501f5}{login\+Success}} ()
+\begin{DoxyCompactList}\small\item\em Emitted when a login attempt is successful. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ad0a0e42c1ba16a5dc05e7653bad32207}{login\+Failed}} (const QString \&message)
+\begin{DoxyCompactList}\small\item\em Emitted when a login attempt fails, providing an error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors and Destructor}\par
+{\em Manages the lifecycle of \doxylink{class_main_window}{Main\+Window} objects.
+
+These methods handle the creation, initialization, and cleanup of the \doxylink{class_main_window}{Main\+Window} object. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_main_window_a25d06b6f11a1eb7fa2239f01e853ae29}{Main\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent, const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}rendered\+Shapes, const \mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_main_window_a045ae7761e9f4824fd60da4421d2e317}{curr\+User}})
+\item 
+\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\texorpdfstring{$\sim$}{\string~}\+Main\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Cleans up UI elements and other resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Shape Display Interface}\par
+{\em Public interface methods for shape display.
+
+These methods are responsible for drawing shapes on the render area and populating the tree widget with shape information. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a7236f52ff2ccf3c98d3fd86fe3bb864d}{draw\+Shapes}} () const
+\begin{DoxyCompactList}\small\item\em Instructs the render area to draw the current shapes. (Note\+: Actual drawing is typically triggered by {\ttfamily render\+Area-\/\texorpdfstring{$>$}{>}update()}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a5ff173340d6b138bee993d26454d2aaa}{shapes\+\_\+to\+\_\+tree\+Widget}} ()
+\begin{DoxyCompactList}\small\item\em Populates the tree widget with details of the current shapes and sets up editing controls. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Slots}
+\begin{Indent}\textbf{ UI Customization Slots}\par
+{\em Slot for UI style toggling.
+
+This slot handles changes to the application\textquotesingle{}s visual style. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a2cffa46e8e27e187a30438c2aa0fe04b}{on\+Toggle\+Style}} (bool checked=true)
+\begin{DoxyCompactList}\small\item\em Toggles the application\textquotesingle{}s stylesheet between predefined styles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Shape Creation Action Slots}\par
+{\em Slots for shape creation actions.
+
+These slots are connected to toolbar buttons or menu actions that allow the user to add new shapes to the canvas. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_abd3987548635bfd1133f8f0d5e0a1879}{on\+\_\+actionnew\+\_\+line\+\_\+button\+\_\+triggered}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered to create and add a new \doxylink{class_line}{Line} shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a7d1d40640f58ce6dd36eabcee8ecdc6e}{on\+\_\+actionnew\+\_\+square\+\_\+button\+\_\+triggered}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered to create and add a new \doxylink{class_square}{Square} shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_af65e6b1a5513198eece131b1d164a978}{on\+\_\+actionnew\+\_\+rectange\+\_\+button\+\_\+triggered}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered to create and add a new \doxylink{class_rectangle}{Rectangle} shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a9b9bf9b3d640e2bcace3cbfdc5d75d8b}{on\+\_\+actionnew\+\_\+circle\+\_\+button\+\_\+triggered}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered to create and add a new \doxylink{class_circle}{Circle} shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a4e25fe2c6dd72b44efdf2d1b1e9c1846}{on\+\_\+actionnew\+\_\+ellipse\+\_\+button\+\_\+triggered}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered to create and add a new \doxylink{class_ellipse}{Ellipse} shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ab4fc6a65cac38759157fd77d12497a89}{on\+\_\+actionnew\+\_\+polyline\+\_\+button\+\_\+triggered}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered to create and add a new \doxylink{class_polyline}{Polyline} shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a28e2b0b2efac43e0553aef6a8d23aee5}{on\+\_\+actionnew\+\_\+polygon\+\_\+button\+\_\+triggered}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered to create and add a new \doxylink{class_polygon}{Polygon} shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_aebcb152e26ef6d6bd4fc348e815fe8c8}{on\+\_\+actionnew\+\_\+text\+\_\+button\+\_\+triggered}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered to create and add a new \doxylink{class_text}{Text} shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a9412a0e88fa1892ccdbc8a35b85f66b7}{on\+\_\+actionremove\+\_\+shape\+\_\+button\+\_\+triggered}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered to remove the currently selected shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Shape Report Sorting Slots}\par
+{\em Slots for shape sorting functionality in the shape report.
+
+This slot handles changes in the sorting criteria for the shape table. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a755e3ce5cc1f97792cc7f7eff9da3858}{on\+Sort\+Method\+Changed}} (int index)
+\begin{DoxyCompactList}\small\item\em Slot triggered when the sort method or order in the shape report table changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Tree Widget Editing Slots}\par
+{\em Slots for modifying shape properties via the tree widget.
+
+These slots respond to user edits made in the shape properties tree, updating the corresponding shape attributes. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a29a83bfdca71f74fbfdf49686763a843}{on\+Tree\+Widget\+Item\+Changed}} (QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}item, int column)
+\begin{DoxyCompactList}\small\item\em Slot triggered when an item in the shape properties tree widget is changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ab5aea14b9366d3d78c9d6e9353e8f5d0}{on\+Combo\+Box\+Changed}} (int new\+Index)
+\begin{DoxyCompactList}\small\item\em Slot triggered when a QCombo\+Box value in the tree widget changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a7d524432f3c348d51c52b6bbca13df57}{on\+Spin\+Box\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered when a QSpin\+Box value in the tree widget changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Testimonial UI Slots}\par
+{\em Slots for testimonial UI.
+
+These slots handle the display of testimonial prompts and the testimonial viewing dialog. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_ade3d9ed9b1c685f1ba1044cf10a401a4}{show\+Testimonial\+Prompt}} ()
+\begin{DoxyCompactList}\small\item\em Displays a dialog prompting the user to submit a testimonial. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a415d10b19b2dd2e7ba99d0dd5fcb76da}{show\+Testimonials\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Displays a dialog showing existing testimonials. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Contact Information Slot}\par
+{\em Slot for displaying the "{}\+Contact Us"{} window.
+
+This slot is triggered by a menu action to show contact information. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a08aabefeb8da2cc2907774a47495246e}{on\+Contact\+Us\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em Slot triggered to display the \textquotesingle{}Contact Us\textquotesingle{} information window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Member Functions}
+\begin{Indent}\textbf{ UI Management Helpers}\par
+{\em Private helper methods for UI management.
+
+These methods assist in managing UI elements, such as adding shapes to the tree widget and loading stylesheets. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_afe8619a02bba82d0ad5e05065d6c0ea1}{add\+To\+Shape\+Tree}} (\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\begin{DoxyCompactList}\small\item\em Adds a given shape to the properties tree widget and emits shape\+Added signal. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_main_window_af8ba728f629c102e77ac09defa25d3cc}{load\+Style\+Sheet}} (const QString \&path)
+\begin{DoxyCompactList}\small\item\em Loads a Qt stylesheet from the specified file path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Editor Widget Factories}\par
+{\em Factory methods for creating QCombo\+Box and QSpin\+Box widgets.
+
+These methods are used to dynamically create and configure editor widgets (like QCombo\+Boxes for color, style, etc., and QSpin\+Boxes for numerical values) for the shape properties tree. Each method initializes the widget with items and sets its current value based on the shape\textquotesingle{}s property. }\begin{DoxyCompactItemize}
+\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a294a1e513ce26c7581e1d7b239527135}{create\+Shape\+Type\+Combo\+Box}} (const QString \&current\+Shape\+Type)
+\begin{DoxyCompactList}\small\item\em Creates and configures a QCombo\+Box for selecting shape types. \end{DoxyCompactList}\item 
+QSpin\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a78611ff63653443ba2244f2f94ad67b2}{create\+Pen\+Width\+Spin\+Box}} (int current\+Pen\+Width)
+\begin{DoxyCompactList}\small\item\em Creates and configures a QSpin\+Box for editing pen width. \end{DoxyCompactList}\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a13cf8174967b39a40231f9a98dd21565}{create\+Color\+Combo\+Box}} (int current\+Color)
+\begin{DoxyCompactList}\small\item\em Creates and configures a QCombo\+Box for selecting colors. \end{DoxyCompactList}\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a55eed5bdf9b2ec38f0d86c661acddcb5}{create\+Pen\+Style\+Combo\+Box}} (int current\+Pen\+Style)
+\begin{DoxyCompactList}\small\item\em Creates and configures a QCombo\+Box for selecting pen styles. \end{DoxyCompactList}\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_ad2ca8de275eb8d22001fc8ae43a5b263}{create\+Pen\+Cap\+Style\+Combo\+Box}} (int current\+Pen\+Cap\+Style)
+\begin{DoxyCompactList}\small\item\em Creates and configures a QCombo\+Box for selecting pen cap styles. \end{DoxyCompactList}\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_ae585cf395690d3bf28b9ff94f8506a03}{create\+Pen\+Join\+Style\+Combo\+Box}} (int current\+Pen\+Join\+Style)
+\begin{DoxyCompactList}\small\item\em Creates and configures a QCombo\+Box for selecting pen join styles. \end{DoxyCompactList}\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a77d4dace8cb3dab4130649f4dd61f90e}{create\+Brush\+Style\+Combo\+Box}} (int current\+Brush\+Style)
+\begin{DoxyCompactList}\small\item\em Creates and configures a QCombo\+Box for selecting brush styles. \end{DoxyCompactList}\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a405427dd9586218cba7d02d495bb88cc}{create\+Alignment\+Combo\+Box}} (Qt\+::\+Alignment\+Flag current\+Alignment)
+\begin{DoxyCompactList}\small\item\em Creates and configures a QCombo\+Box for selecting text alignment. \end{DoxyCompactList}\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a3785b3b7329dcdaf51f45312abe7dd6a}{create\+Font\+Combo\+Box}} (QFont current\+Font)
+\begin{DoxyCompactList}\small\item\em Creates and configures a QCombo\+Box for selecting font families. \end{DoxyCompactList}\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a59688ddfdfc0f919ff7058dfcda42fa1}{create\+Font\+Style\+Combo\+Box}} (int current\+Font\+Style)
+\begin{DoxyCompactList}\small\item\em Creates and configures a QCombo\+Box for selecting font styles (normal, italic, oblique). \end{DoxyCompactList}\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_aca7d4f5f2149d757046f5d7cd8d5f8f7}{create\+Font\+Weight\+Combo\+Box}} (QFont\+::\+Weight current\+Font\+Weight)
+\begin{DoxyCompactList}\small\item\em Creates and configures a QCombo\+Box for selecting font weights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Testimonial Feature Setup}\par
+{\em \doxylink{class_testimonial}{Testimonial} feature setup.
+
+This method initializes components related to the testimonial feature. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_aa2910dbb80e3e72ef731d27d70100d8e}{setup\+Testimonials}} ()
+\begin{DoxyCompactList}\small\item\em Sets up connections and UI elements for the testimonial feature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Attributes}
+\begin{Indent}\textbf{ Core UI Components and Data}\par
+{\em Core UI components and data pointers.
+
+These members are essential for the \doxylink{class_main_window}{Main\+Window}\textquotesingle{}s operation, including the UI definition, rendering area, and pointers to shared data. }\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Main\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}}
+\begin{DoxyCompactList}\small\item\em Pointer to the auto-\/generated UI class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_render_area}{Render\+Area}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a55c8e8eae9e774a691bc908420705f8f}{render\+Area}}
+\begin{DoxyCompactList}\small\item\em Pointer to the custom widget responsible for drawing shapes. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a3bf08c8f76587c444e23b9533159e274}{render\+Shapes}}
+\begin{DoxyCompactList}\small\item\em Pointer to the vector of shapes currently being rendered. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a045ae7761e9f4824fd60da4421d2e317}{curr\+User}}
+\begin{DoxyCompactList}\small\item\em Pointer to the currently logged-\/in user account. \end{DoxyCompactList}\item 
+QLabel \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a5da4b2711fb5e72b9ff79dd13de71cb5}{user\+Status\+Label}}
+\begin{DoxyCompactList}\small\item\em Label in the status bar to display the current user\textquotesingle{}s login status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_column_edit_delegate}{Column\+Edit\+Delegate}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a88ce5c8f353d48adafb6f2d241703cb7}{delegate}}
+\begin{DoxyCompactList}\small\item\em Custom delegate for editing items in the shape properties tree widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Contact Us Window Members}\par
+{\em Members for the "{}\+Contact Us"{} window.
+
+Pointers to widgets used in the "{}\+Contact Us"{} information display. }\begin{DoxyCompactItemize}
+\item 
+QWidget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a40910a727b9406a869a6027ddb4ca8ac}{contact\+Us\+Widget}}
+\begin{DoxyCompactList}\small\item\em Pointer to the main widget for the Contact Us display. \end{DoxyCompactList}\item 
+QLabel \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a14d571ce729b49c457cbbd68cd304e68}{logo\+Label}}
+\begin{DoxyCompactList}\small\item\em Label to display the team logo in the Contact Us display. \end{DoxyCompactList}\item 
+QLabel \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_ae2619b49448d9745a75bb6caf8ff0e0c}{team\+Name\+Label}}
+\begin{DoxyCompactList}\small\item\em Label to display the team name in the Contact Us display. \end{DoxyCompactList}\item 
+QWidget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_abf214998873bd15ab035e0dbe54602f5}{contact\+Window}}
+\begin{DoxyCompactList}\small\item\em Pointer to the QWidget that serves as the \textquotesingle{}Contact Us\textquotesingle{} window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Shape Report Table Management}
+Methods and members related to the shape report table.
+
+These are used to create, populate, and manage the tab/window that displays a sortable table of shape properties. \begin{DoxyCompactItemize}
+\item 
+QTab\+Widget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a545e481058060c9fdf9ba6566b98e641}{tab\+Widget}}
+\begin{DoxyCompactList}\small\item\em Pointer to the tab widget (if used for the shape report, otherwise could be for other purposes). \end{DoxyCompactList}\item 
+QTable\+Widget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a104a8053a55b33b30d8508de728a4aef}{shape\+Table}}
+\begin{DoxyCompactList}\small\item\em Pointer to the table widget used to display shape properties in the report. \end{DoxyCompactList}\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_a559efcc059749b731442989f713a450c}{sort\+Dropdown}}
+\begin{DoxyCompactList}\small\item\em Dropdown QCombo\+Box for selecting the sorting criterion in the shape report. \end{DoxyCompactList}\item 
+QCombo\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_main_window_aa7271fb35a573b1d327a5db3f994626f}{sort\+Order\+Dropdown}}
+\begin{DoxyCompactList}\small\item\em Dropdown QCombo\+Box for selecting the sorting order (ascending/descending) in the shape report. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ac4c479f9beafaee136b98e7fac6761ee}{create\+Shape\+Table\+Tab}} ()
+\begin{DoxyCompactList}\small\item\em Creates and displays a new tab or window containing the shape report table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Shape Sorting Logic}
+Sorting algorithm and comparison functions for the shape report.
+
+Implements a selection sort algorithm and provides static comparison functions used to sort shapes by different criteria. \begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_ae822357dee3e9aad5cf276768b7f8019}{selection\+\_\+sort}} (\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \&shapes, bool(\texorpdfstring{$\ast$}{*}compare)(const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}), bool ascending)
+\item 
+void \mbox{\hyperlink{class_main_window_a90f63362e90934cea68694f0207dd7dc}{populate\+Shape\+Table}} (const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \&shapes)
+\begin{DoxyCompactList}\small\item\em Populates the shape report table with data from the provided vector of shapes. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_main_window_a517b645d625b741b3d8aae6d62abe3cb}{sort\+By\+Id}} (const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}a, const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Static comparison function to sort shapes by their ID. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_main_window_affcce0444db65d4438f852dbd97424bd}{sort\+By\+Area}} (const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}a, const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Static comparison function to sort shapes by their calculated area. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_main_window_a792a6a99346642416c84649e67e85125}{sort\+By\+Perimeter}} (const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}a, const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Static comparison function to sort shapes by their calculated perimeter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main window of the 2D Graphics Modeler application. 
+
+This class serves as the primary user interface, managing shape rendering, user interactions, login, testimonials, and displaying shape information. It coordinates between the UI elements and backend logic. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_main_window_a996c5a2b6f77944776856f08ec30858d} 
+Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{class_main_window_a25d06b6f11a1eb7fa2239f01e853ae29}\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_main_window_a25d06b6f11a1eb7fa2239f01e853ae29} 
+Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{, }\item[{const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}}]{rendered\+Shapes}{, }\item[{const \mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*}}]{curr\+User}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Constructor initializing with shapes and user data. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\index{MainWindow@{MainWindow}!````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}}
+\index{````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MainWindow()}{\string~MainWindow()}}
+{\footnotesize\ttfamily \label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7} 
+Main\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Main\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. Cleans up UI elements and other resources. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_window_afe8619a02bba82d0ad5e05065d6c0ea1}\index{MainWindow@{MainWindow}!addToShapeTree@{addToShapeTree}}
+\index{addToShapeTree@{addToShapeTree}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{addToShapeTree()}{addToShapeTree()}}
+{\footnotesize\ttfamily \label{class_main_window_afe8619a02bba82d0ad5e05065d6c0ea1} 
+void Main\+Window\+::add\+To\+Shape\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adds a given shape to the properties tree widget and emits shape\+Added signal. 
+
+\Hypertarget{class_main_window_a405427dd9586218cba7d02d495bb88cc}\index{MainWindow@{MainWindow}!createAlignmentComboBox@{createAlignmentComboBox}}
+\index{createAlignmentComboBox@{createAlignmentComboBox}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createAlignmentComboBox()}{createAlignmentComboBox()}}
+{\footnotesize\ttfamily \label{class_main_window_a405427dd9586218cba7d02d495bb88cc} 
+QCombo\+Box \texorpdfstring{$\ast$}{*} Main\+Window\+::create\+Alignment\+Combo\+Box (\begin{DoxyParamCaption}\item[{Qt\+::\+Alignment\+Flag}]{current\+Alignment}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and configures a QCombo\+Box for selecting text alignment. 
+
+\Hypertarget{class_main_window_a77d4dace8cb3dab4130649f4dd61f90e}\index{MainWindow@{MainWindow}!createBrushStyleComboBox@{createBrushStyleComboBox}}
+\index{createBrushStyleComboBox@{createBrushStyleComboBox}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createBrushStyleComboBox()}{createBrushStyleComboBox()}}
+{\footnotesize\ttfamily \label{class_main_window_a77d4dace8cb3dab4130649f4dd61f90e} 
+QCombo\+Box \texorpdfstring{$\ast$}{*} Main\+Window\+::create\+Brush\+Style\+Combo\+Box (\begin{DoxyParamCaption}\item[{int}]{current\+Brush\+Style}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and configures a QCombo\+Box for selecting brush styles. 
+
+\Hypertarget{class_main_window_a13cf8174967b39a40231f9a98dd21565}\index{MainWindow@{MainWindow}!createColorComboBox@{createColorComboBox}}
+\index{createColorComboBox@{createColorComboBox}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createColorComboBox()}{createColorComboBox()}}
+{\footnotesize\ttfamily \label{class_main_window_a13cf8174967b39a40231f9a98dd21565} 
+QCombo\+Box \texorpdfstring{$\ast$}{*} Main\+Window\+::create\+Color\+Combo\+Box (\begin{DoxyParamCaption}\item[{int}]{current\+Color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and configures a QCombo\+Box for selecting colors. 
+
+\Hypertarget{class_main_window_a3785b3b7329dcdaf51f45312abe7dd6a}\index{MainWindow@{MainWindow}!createFontComboBox@{createFontComboBox}}
+\index{createFontComboBox@{createFontComboBox}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createFontComboBox()}{createFontComboBox()}}
+{\footnotesize\ttfamily \label{class_main_window_a3785b3b7329dcdaf51f45312abe7dd6a} 
+QCombo\+Box \texorpdfstring{$\ast$}{*} Main\+Window\+::create\+Font\+Combo\+Box (\begin{DoxyParamCaption}\item[{QFont}]{current\+Font}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and configures a QCombo\+Box for selecting font families. 
+
+\Hypertarget{class_main_window_a59688ddfdfc0f919ff7058dfcda42fa1}\index{MainWindow@{MainWindow}!createFontStyleComboBox@{createFontStyleComboBox}}
+\index{createFontStyleComboBox@{createFontStyleComboBox}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createFontStyleComboBox()}{createFontStyleComboBox()}}
+{\footnotesize\ttfamily \label{class_main_window_a59688ddfdfc0f919ff7058dfcda42fa1} 
+QCombo\+Box \texorpdfstring{$\ast$}{*} Main\+Window\+::create\+Font\+Style\+Combo\+Box (\begin{DoxyParamCaption}\item[{int}]{current\+Font\+Style}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and configures a QCombo\+Box for selecting font styles (normal, italic, oblique). 
+
+\Hypertarget{class_main_window_aca7d4f5f2149d757046f5d7cd8d5f8f7}\index{MainWindow@{MainWindow}!createFontWeightComboBox@{createFontWeightComboBox}}
+\index{createFontWeightComboBox@{createFontWeightComboBox}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createFontWeightComboBox()}{createFontWeightComboBox()}}
+{\footnotesize\ttfamily \label{class_main_window_aca7d4f5f2149d757046f5d7cd8d5f8f7} 
+QCombo\+Box \texorpdfstring{$\ast$}{*} Main\+Window\+::create\+Font\+Weight\+Combo\+Box (\begin{DoxyParamCaption}\item[{QFont\+::\+Weight}]{current\+Font\+Weight}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and configures a QCombo\+Box for selecting font weights. 
+
+\Hypertarget{class_main_window_ad2ca8de275eb8d22001fc8ae43a5b263}\index{MainWindow@{MainWindow}!createPenCapStyleComboBox@{createPenCapStyleComboBox}}
+\index{createPenCapStyleComboBox@{createPenCapStyleComboBox}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createPenCapStyleComboBox()}{createPenCapStyleComboBox()}}
+{\footnotesize\ttfamily \label{class_main_window_ad2ca8de275eb8d22001fc8ae43a5b263} 
+QCombo\+Box \texorpdfstring{$\ast$}{*} Main\+Window\+::create\+Pen\+Cap\+Style\+Combo\+Box (\begin{DoxyParamCaption}\item[{int}]{current\+Pen\+Cap\+Style}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and configures a QCombo\+Box for selecting pen cap styles. 
+
+\Hypertarget{class_main_window_ae585cf395690d3bf28b9ff94f8506a03}\index{MainWindow@{MainWindow}!createPenJoinStyleComboBox@{createPenJoinStyleComboBox}}
+\index{createPenJoinStyleComboBox@{createPenJoinStyleComboBox}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createPenJoinStyleComboBox()}{createPenJoinStyleComboBox()}}
+{\footnotesize\ttfamily \label{class_main_window_ae585cf395690d3bf28b9ff94f8506a03} 
+QCombo\+Box \texorpdfstring{$\ast$}{*} Main\+Window\+::create\+Pen\+Join\+Style\+Combo\+Box (\begin{DoxyParamCaption}\item[{int}]{current\+Pen\+Join\+Style}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and configures a QCombo\+Box for selecting pen join styles. 
+
+\Hypertarget{class_main_window_a55eed5bdf9b2ec38f0d86c661acddcb5}\index{MainWindow@{MainWindow}!createPenStyleComboBox@{createPenStyleComboBox}}
+\index{createPenStyleComboBox@{createPenStyleComboBox}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createPenStyleComboBox()}{createPenStyleComboBox()}}
+{\footnotesize\ttfamily \label{class_main_window_a55eed5bdf9b2ec38f0d86c661acddcb5} 
+QCombo\+Box \texorpdfstring{$\ast$}{*} Main\+Window\+::create\+Pen\+Style\+Combo\+Box (\begin{DoxyParamCaption}\item[{int}]{current\+Pen\+Style}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and configures a QCombo\+Box for selecting pen styles. 
+
+\Hypertarget{class_main_window_a78611ff63653443ba2244f2f94ad67b2}\index{MainWindow@{MainWindow}!createPenWidthSpinBox@{createPenWidthSpinBox}}
+\index{createPenWidthSpinBox@{createPenWidthSpinBox}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createPenWidthSpinBox()}{createPenWidthSpinBox()}}
+{\footnotesize\ttfamily \label{class_main_window_a78611ff63653443ba2244f2f94ad67b2} 
+QSpin\+Box \texorpdfstring{$\ast$}{*} Main\+Window\+::create\+Pen\+Width\+Spin\+Box (\begin{DoxyParamCaption}\item[{int}]{current\+Pen\+Width}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and configures a QSpin\+Box for editing pen width. 
+
+\Hypertarget{class_main_window_ac4c479f9beafaee136b98e7fac6761ee}\index{MainWindow@{MainWindow}!createShapeTableTab@{createShapeTableTab}}
+\index{createShapeTableTab@{createShapeTableTab}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createShapeTableTab()}{createShapeTableTab()}}
+{\footnotesize\ttfamily \label{class_main_window_ac4c479f9beafaee136b98e7fac6761ee} 
+void Main\+Window\+::create\+Shape\+Table\+Tab (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and displays a new tab or window containing the shape report table. 
+
+\Hypertarget{class_main_window_a294a1e513ce26c7581e1d7b239527135}\index{MainWindow@{MainWindow}!createShapeTypeComboBox@{createShapeTypeComboBox}}
+\index{createShapeTypeComboBox@{createShapeTypeComboBox}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createShapeTypeComboBox()}{createShapeTypeComboBox()}}
+{\footnotesize\ttfamily \label{class_main_window_a294a1e513ce26c7581e1d7b239527135} 
+QCombo\+Box \texorpdfstring{$\ast$}{*} Main\+Window\+::create\+Shape\+Type\+Combo\+Box (\begin{DoxyParamCaption}\item[{const QString \&}]{current\+Shape\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and configures a QCombo\+Box for selecting shape types. 
+
+\Hypertarget{class_main_window_a4d205f76440a771278bf5b64df8de0b2}\index{MainWindow@{MainWindow}!deleteAllShapes@{deleteAllShapes}}
+\index{deleteAllShapes@{deleteAllShapes}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{deleteAllShapes}{deleteAllShapes}}
+{\footnotesize\ttfamily \label{class_main_window_a4d205f76440a771278bf5b64df8de0b2} 
+void Main\+Window\+::delete\+All\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when a request to delete all shapes is made. 
+
+\Hypertarget{class_main_window_a1f2cddcea15650f8ef72e8862fd945df}\index{MainWindow@{MainWindow}!displayedTextChanged@{displayedTextChanged}}
+\index{displayedTextChanged@{displayedTextChanged}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{displayedTextChanged}{displayedTextChanged}}
+{\footnotesize\ttfamily \label{class_main_window_a1f2cddcea15650f8ef72e8862fd945df} 
+void Main\+Window\+::displayed\+Text\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_text}{Text}} \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{QString}]{new\+Text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when the displayed text of a \doxylink{class_text}{Text} shape is changed. 
+
+\Hypertarget{class_main_window_a7236f52ff2ccf3c98d3fd86fe3bb864d}\index{MainWindow@{MainWindow}!drawShapes@{drawShapes}}
+\index{drawShapes@{drawShapes}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{drawShapes()}{drawShapes()}}
+{\footnotesize\ttfamily \label{class_main_window_a7236f52ff2ccf3c98d3fd86fe3bb864d} 
+void Main\+Window\+::draw\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Instructs the render area to draw the current shapes. (Note\+: Actual drawing is typically triggered by {\ttfamily render\+Area-\/\texorpdfstring{$>$}{>}update()}). 
+
+\Hypertarget{class_main_window_af8ba728f629c102e77ac09defa25d3cc}\index{MainWindow@{MainWindow}!loadStyleSheet@{loadStyleSheet}}
+\index{loadStyleSheet@{loadStyleSheet}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{loadStyleSheet()}{loadStyleSheet()}}
+{\footnotesize\ttfamily \label{class_main_window_af8ba728f629c102e77ac09defa25d3cc} 
+QString Main\+Window\+::load\+Style\+Sheet (\begin{DoxyParamCaption}\item[{const QString \&}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads a Qt stylesheet from the specified file path. 
+
+\Hypertarget{class_main_window_a3f4e695043359e8f535699cd7da3d15c}\index{MainWindow@{MainWindow}!loginAttempt@{loginAttempt}}
+\index{loginAttempt@{loginAttempt}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{loginAttempt}{loginAttempt}}
+{\footnotesize\ttfamily \label{class_main_window_a3f4e695043359e8f535699cd7da3d15c} 
+void Main\+Window\+::login\+Attempt (\begin{DoxyParamCaption}\item[{const QString \&}]{username}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when a user attempts to log in. 
+
+\Hypertarget{class_main_window_ad0a0e42c1ba16a5dc05e7653bad32207}\index{MainWindow@{MainWindow}!loginFailed@{loginFailed}}
+\index{loginFailed@{loginFailed}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{loginFailed}{loginFailed}}
+{\footnotesize\ttfamily \label{class_main_window_ad0a0e42c1ba16a5dc05e7653bad32207} 
+void Main\+Window\+::login\+Failed (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when a login attempt fails, providing an error message. 
+
+\Hypertarget{class_main_window_a8cdec14167c6164f6efa118d09e501f5}\index{MainWindow@{MainWindow}!loginSuccess@{loginSuccess}}
+\index{loginSuccess@{loginSuccess}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{loginSuccess}{loginSuccess}}
+{\footnotesize\ttfamily \label{class_main_window_a8cdec14167c6164f6efa118d09e501f5} 
+void Main\+Window\+::login\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when a login attempt is successful. 
+
+\Hypertarget{class_main_window_a4ca72692ae6775c322b3534c18f3e9aa}\index{MainWindow@{MainWindow}!newUserAdded@{newUserAdded}}
+\index{newUserAdded@{newUserAdded}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{newUserAdded}{newUserAdded}}
+{\footnotesize\ttfamily \label{class_main_window_a4ca72692ae6775c322b3534c18f3e9aa} 
+void Main\+Window\+::new\+User\+Added (\begin{DoxyParamCaption}\item[{const QString \&}]{username}{, }\item[{const QString \&}]{password}{, }\item[{const bool}]{admin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em password} & Emitted when a new user account is requested to be created. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_window_a9b9bf9b3d640e2bcace3cbfdc5d75d8b}\index{MainWindow@{MainWindow}!on\_actionnew\_circle\_button\_triggered@{on\_actionnew\_circle\_button\_triggered}}
+\index{on\_actionnew\_circle\_button\_triggered@{on\_actionnew\_circle\_button\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionnew\_circle\_button\_triggered}{on\_actionnew\_circle\_button\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_a9b9bf9b3d640e2bcace3cbfdc5d75d8b} 
+void Main\+Window\+::on\+\_\+actionnew\+\_\+circle\+\_\+button\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered to create and add a new \doxylink{class_circle}{Circle} shape. 
+
+\Hypertarget{class_main_window_a4e25fe2c6dd72b44efdf2d1b1e9c1846}\index{MainWindow@{MainWindow}!on\_actionnew\_ellipse\_button\_triggered@{on\_actionnew\_ellipse\_button\_triggered}}
+\index{on\_actionnew\_ellipse\_button\_triggered@{on\_actionnew\_ellipse\_button\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionnew\_ellipse\_button\_triggered}{on\_actionnew\_ellipse\_button\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_a4e25fe2c6dd72b44efdf2d1b1e9c1846} 
+void Main\+Window\+::on\+\_\+actionnew\+\_\+ellipse\+\_\+button\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered to create and add a new \doxylink{class_ellipse}{Ellipse} shape. 
+
+\Hypertarget{class_main_window_abd3987548635bfd1133f8f0d5e0a1879}\index{MainWindow@{MainWindow}!on\_actionnew\_line\_button\_triggered@{on\_actionnew\_line\_button\_triggered}}
+\index{on\_actionnew\_line\_button\_triggered@{on\_actionnew\_line\_button\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionnew\_line\_button\_triggered}{on\_actionnew\_line\_button\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_abd3987548635bfd1133f8f0d5e0a1879} 
+void Main\+Window\+::on\+\_\+actionnew\+\_\+line\+\_\+button\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered to create and add a new \doxylink{class_line}{Line} shape. 
+
+\Hypertarget{class_main_window_a28e2b0b2efac43e0553aef6a8d23aee5}\index{MainWindow@{MainWindow}!on\_actionnew\_polygon\_button\_triggered@{on\_actionnew\_polygon\_button\_triggered}}
+\index{on\_actionnew\_polygon\_button\_triggered@{on\_actionnew\_polygon\_button\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionnew\_polygon\_button\_triggered}{on\_actionnew\_polygon\_button\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_a28e2b0b2efac43e0553aef6a8d23aee5} 
+void Main\+Window\+::on\+\_\+actionnew\+\_\+polygon\+\_\+button\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered to create and add a new \doxylink{class_polygon}{Polygon} shape. 
+
+\Hypertarget{class_main_window_ab4fc6a65cac38759157fd77d12497a89}\index{MainWindow@{MainWindow}!on\_actionnew\_polyline\_button\_triggered@{on\_actionnew\_polyline\_button\_triggered}}
+\index{on\_actionnew\_polyline\_button\_triggered@{on\_actionnew\_polyline\_button\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionnew\_polyline\_button\_triggered}{on\_actionnew\_polyline\_button\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_ab4fc6a65cac38759157fd77d12497a89} 
+void Main\+Window\+::on\+\_\+actionnew\+\_\+polyline\+\_\+button\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered to create and add a new \doxylink{class_polyline}{Polyline} shape. 
+
+\Hypertarget{class_main_window_af65e6b1a5513198eece131b1d164a978}\index{MainWindow@{MainWindow}!on\_actionnew\_rectange\_button\_triggered@{on\_actionnew\_rectange\_button\_triggered}}
+\index{on\_actionnew\_rectange\_button\_triggered@{on\_actionnew\_rectange\_button\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionnew\_rectange\_button\_triggered}{on\_actionnew\_rectange\_button\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_af65e6b1a5513198eece131b1d164a978} 
+void Main\+Window\+::on\+\_\+actionnew\+\_\+rectange\+\_\+button\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered to create and add a new \doxylink{class_rectangle}{Rectangle} shape. 
+
+\Hypertarget{class_main_window_a7d1d40640f58ce6dd36eabcee8ecdc6e}\index{MainWindow@{MainWindow}!on\_actionnew\_square\_button\_triggered@{on\_actionnew\_square\_button\_triggered}}
+\index{on\_actionnew\_square\_button\_triggered@{on\_actionnew\_square\_button\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionnew\_square\_button\_triggered}{on\_actionnew\_square\_button\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_a7d1d40640f58ce6dd36eabcee8ecdc6e} 
+void Main\+Window\+::on\+\_\+actionnew\+\_\+square\+\_\+button\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered to create and add a new \doxylink{class_square}{Square} shape. 
+
+\Hypertarget{class_main_window_aebcb152e26ef6d6bd4fc348e815fe8c8}\index{MainWindow@{MainWindow}!on\_actionnew\_text\_button\_triggered@{on\_actionnew\_text\_button\_triggered}}
+\index{on\_actionnew\_text\_button\_triggered@{on\_actionnew\_text\_button\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionnew\_text\_button\_triggered}{on\_actionnew\_text\_button\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_aebcb152e26ef6d6bd4fc348e815fe8c8} 
+void Main\+Window\+::on\+\_\+actionnew\+\_\+text\+\_\+button\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered to create and add a new \doxylink{class_text}{Text} shape. 
+
+\Hypertarget{class_main_window_a9412a0e88fa1892ccdbc8a35b85f66b7}\index{MainWindow@{MainWindow}!on\_actionremove\_shape\_button\_triggered@{on\_actionremove\_shape\_button\_triggered}}
+\index{on\_actionremove\_shape\_button\_triggered@{on\_actionremove\_shape\_button\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionremove\_shape\_button\_triggered}{on\_actionremove\_shape\_button\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_a9412a0e88fa1892ccdbc8a35b85f66b7} 
+void Main\+Window\+::on\+\_\+actionremove\+\_\+shape\+\_\+button\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered to remove the currently selected shape. 
+
+\Hypertarget{class_main_window_ab5aea14b9366d3d78c9d6e9353e8f5d0}\index{MainWindow@{MainWindow}!onComboBoxChanged@{onComboBoxChanged}}
+\index{onComboBoxChanged@{onComboBoxChanged}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onComboBoxChanged}{onComboBoxChanged}}
+{\footnotesize\ttfamily \label{class_main_window_ab5aea14b9366d3d78c9d6e9353e8f5d0} 
+void Main\+Window\+::on\+Combo\+Box\+Changed (\begin{DoxyParamCaption}\item[{int}]{new\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered when a QCombo\+Box value in the tree widget changes. 
+
+\Hypertarget{class_main_window_a08aabefeb8da2cc2907774a47495246e}\index{MainWindow@{MainWindow}!onContactUsClicked@{onContactUsClicked}}
+\index{onContactUsClicked@{onContactUsClicked}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onContactUsClicked}{onContactUsClicked}}
+{\footnotesize\ttfamily \label{class_main_window_a08aabefeb8da2cc2907774a47495246e} 
+void Main\+Window\+::on\+Contact\+Us\+Clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered to display the \textquotesingle{}Contact Us\textquotesingle{} information window. 
+
+\Hypertarget{class_main_window_a44b1462463b23490276f54034ab12325}\index{MainWindow@{MainWindow}!onLoginClicked@{onLoginClicked}}
+\index{onLoginClicked@{onLoginClicked}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onLoginClicked}{onLoginClicked}}
+{\footnotesize\ttfamily \label{class_main_window_a44b1462463b23490276f54034ab12325} 
+void Main\+Window\+::on\+Login\+Clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot triggered when the login button is clicked, typically opening a login dialog. 
+
+\Hypertarget{class_main_window_a92cfa580b2445cdcb78fedea04dece1f}\index{MainWindow@{MainWindow}!onLoginRequest@{onLoginRequest}}
+\index{onLoginRequest@{onLoginRequest}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onLoginRequest}{onLoginRequest}}
+{\footnotesize\ttfamily \label{class_main_window_a92cfa580b2445cdcb78fedea04dece1f} 
+void Main\+Window\+::on\+Login\+Request (\begin{DoxyParamCaption}\item[{const QString \&}]{username}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot triggered by a login dialog to initiate a login attempt. 
+
+\Hypertarget{class_main_window_a841a40f673ad191cd737b49591568446}\index{MainWindow@{MainWindow}!onRenderAreaChanged@{onRenderAreaChanged}}
+\index{onRenderAreaChanged@{onRenderAreaChanged}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onRenderAreaChanged}{onRenderAreaChanged}}
+{\footnotesize\ttfamily \label{class_main_window_a841a40f673ad191cd737b49591568446} 
+void Main\+Window\+::on\+Render\+Area\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot triggered when the render area\textquotesingle{}s content has changed, requiring a UI update. 
+
+\Hypertarget{class_main_window_afe338c1075cc046cc71b300b920bcaaa}\index{MainWindow@{MainWindow}!onRenderAreaNotChanged@{onRenderAreaNotChanged}}
+\index{onRenderAreaNotChanged@{onRenderAreaNotChanged}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onRenderAreaNotChanged}{onRenderAreaNotChanged}}
+{\footnotesize\ttfamily \label{class_main_window_afe338c1075cc046cc71b300b920bcaaa} 
+void Main\+Window\+::on\+Render\+Area\+Not\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot triggered when an operation on the render area did not result in a change (e.\+g., error). 
+
+\Hypertarget{class_main_window_adc5a0eea13e703cb3826e9221e19df22}\index{MainWindow@{MainWindow}!onSignupRequest@{onSignupRequest}}
+\index{onSignupRequest@{onSignupRequest}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onSignupRequest}{onSignupRequest}}
+{\footnotesize\ttfamily \label{class_main_window_adc5a0eea13e703cb3826e9221e19df22} 
+void Main\+Window\+::on\+Signup\+Request (\begin{DoxyParamCaption}\item[{const QString \&}]{username}{, }\item[{const QString \&}]{password}{, }\item[{const bool}]{admin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em password} & Slot triggered by a login/signup dialog to initiate account creation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_window_a755e3ce5cc1f97792cc7f7eff9da3858}\index{MainWindow@{MainWindow}!onSortMethodChanged@{onSortMethodChanged}}
+\index{onSortMethodChanged@{onSortMethodChanged}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onSortMethodChanged}{onSortMethodChanged}}
+{\footnotesize\ttfamily \label{class_main_window_a755e3ce5cc1f97792cc7f7eff9da3858} 
+void Main\+Window\+::on\+Sort\+Method\+Changed (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered when the sort method or order in the shape report table changes. 
+
+\Hypertarget{class_main_window_a7d524432f3c348d51c52b6bbca13df57}\index{MainWindow@{MainWindow}!onSpinBoxChanged@{onSpinBoxChanged}}
+\index{onSpinBoxChanged@{onSpinBoxChanged}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onSpinBoxChanged}{onSpinBoxChanged}}
+{\footnotesize\ttfamily \label{class_main_window_a7d524432f3c348d51c52b6bbca13df57} 
+void Main\+Window\+::on\+Spin\+Box\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered when a QSpin\+Box value in the tree widget changes. 
+
+\Hypertarget{class_main_window_a2cffa46e8e27e187a30438c2aa0fe04b}\index{MainWindow@{MainWindow}!onToggleStyle@{onToggleStyle}}
+\index{onToggleStyle@{onToggleStyle}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onToggleStyle}{onToggleStyle}}
+{\footnotesize\ttfamily \label{class_main_window_a2cffa46e8e27e187a30438c2aa0fe04b} 
+void Main\+Window\+::on\+Toggle\+Style (\begin{DoxyParamCaption}\item[{bool}]{checked}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Toggles the application\textquotesingle{}s stylesheet between predefined styles. 
+
+\Hypertarget{class_main_window_a29a83bfdca71f74fbfdf49686763a843}\index{MainWindow@{MainWindow}!onTreeWidgetItemChanged@{onTreeWidgetItemChanged}}
+\index{onTreeWidgetItemChanged@{onTreeWidgetItemChanged}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onTreeWidgetItemChanged}{onTreeWidgetItemChanged}}
+{\footnotesize\ttfamily \label{class_main_window_a29a83bfdca71f74fbfdf49686763a843} 
+void Main\+Window\+::on\+Tree\+Widget\+Item\+Changed (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}}]{item}{, }\item[{int}]{column}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot triggered when an item in the shape properties tree widget is changed. 
+
+\Hypertarget{class_main_window_a04d9898f7479308e0e7e2b8796426c2b}\index{MainWindow@{MainWindow}!onUserAuthentication@{onUserAuthentication}}
+\index{onUserAuthentication@{onUserAuthentication}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onUserAuthentication}{onUserAuthentication}}
+{\footnotesize\ttfamily \label{class_main_window_a04d9898f7479308e0e7e2b8796426c2b} 
+void Main\+Window\+::on\+User\+Authentication (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*}}]{curr\+User}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot triggered upon successful user authentication. Updates UI with user info. 
+
+\Hypertarget{class_main_window_a1a3b782f396969a9fa4316bc4841865d}\index{MainWindow@{MainWindow}!onUserAuthenticationFailure@{onUserAuthenticationFailure}}
+\index{onUserAuthenticationFailure@{onUserAuthenticationFailure}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onUserAuthenticationFailure}{onUserAuthenticationFailure}}
+{\footnotesize\ttfamily \label{class_main_window_a1a3b782f396969a9fa4316bc4841865d} 
+void Main\+Window\+::on\+User\+Authentication\+Failure (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot triggered when user authentication fails. Displays an error message. 
+
+\Hypertarget{class_main_window_a90f63362e90934cea68694f0207dd7dc}\index{MainWindow@{MainWindow}!populateShapeTable@{populateShapeTable}}
+\index{populateShapeTable@{populateShapeTable}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{populateShapeTable()}{populateShapeTable()}}
+{\footnotesize\ttfamily \label{class_main_window_a90f63362e90934cea68694f0207dd7dc} 
+void Main\+Window\+::populate\+Shape\+Table (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \&}]{shapes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Populates the shape report table with data from the provided vector of shapes. 
+
+\Hypertarget{class_main_window_ae822357dee3e9aad5cf276768b7f8019}\index{MainWindow@{MainWindow}!selection\_sort@{selection\_sort}}
+\index{selection\_sort@{selection\_sort}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{selection\_sort()}{selection\_sort()}}
+{\footnotesize\ttfamily \label{class_main_window_ae822357dee3e9aad5cf276768b7f8019} 
+void Main\+Window\+::selection\+\_\+sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \&}]{shapes}{, }\item[{bool(\texorpdfstring{$\ast$}{*}}]{compare~}{)(const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}), }\item[{bool}]{ascending}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em shapes} & Implements the selection sort algorithm for a vector of shapes. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_window_aa2910dbb80e3e72ef731d27d70100d8e}\index{MainWindow@{MainWindow}!setupTestimonials@{setupTestimonials}}
+\index{setupTestimonials@{setupTestimonials}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setupTestimonials()}{setupTestimonials()}}
+{\footnotesize\ttfamily \label{class_main_window_aa2910dbb80e3e72ef731d27d70100d8e} 
+void Main\+Window\+::setup\+Testimonials (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets up connections and UI elements for the testimonial feature. 
+
+\Hypertarget{class_main_window_af82d1897a3213375ae0f1c7d7652150a}\index{MainWindow@{MainWindow}!shapeAdded@{shapeAdded}}
+\index{shapeAdded@{shapeAdded}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{shapeAdded}{shapeAdded}}
+{\footnotesize\ttfamily \label{class_main_window_af82d1897a3213375ae0f1c7d7652150a} 
+void Main\+Window\+::shape\+Added (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when a new shape is added by the user. 
+
+\Hypertarget{class_main_window_af971d03f10fd514287332e2adfd79bea}\index{MainWindow@{MainWindow}!shapeChanged@{shapeChanged}}
+\index{shapeChanged@{shapeChanged}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{shapeChanged}{shapeChanged}}
+{\footnotesize\ttfamily \label{class_main_window_af971d03f10fd514287332e2adfd79bea} 
+void Main\+Window\+::shape\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{, }\item[{QString}]{key}{, }\item[{int}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when a property of an existing shape is changed. 
+
+\Hypertarget{class_main_window_a906062572c910e53ece385587548e981}\index{MainWindow@{MainWindow}!shapeDeleted@{shapeDeleted}}
+\index{shapeDeleted@{shapeDeleted}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{shapeDeleted}{shapeDeleted}}
+{\footnotesize\ttfamily \label{class_main_window_a906062572c910e53ece385587548e981} 
+void Main\+Window\+::shape\+Deleted (\begin{DoxyParamCaption}\item[{int}]{tracker\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when a shape is requested to be deleted. 
+
+\Hypertarget{class_main_window_a5ff173340d6b138bee993d26454d2aaa}\index{MainWindow@{MainWindow}!shapes\_to\_treeWidget@{shapes\_to\_treeWidget}}
+\index{shapes\_to\_treeWidget@{shapes\_to\_treeWidget}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{shapes\_to\_treeWidget()}{shapes\_to\_treeWidget()}}
+{\footnotesize\ttfamily \label{class_main_window_a5ff173340d6b138bee993d26454d2aaa} 
+void Main\+Window\+::shapes\+\_\+to\+\_\+tree\+Widget (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Populates the tree widget with details of the current shapes and sets up editing controls. 
+
+\Hypertarget{class_main_window_a5bc872b86e5f798a2079dae098d73288}\index{MainWindow@{MainWindow}!showRenderStatusMessage@{showRenderStatusMessage}}
+\index{showRenderStatusMessage@{showRenderStatusMessage}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{showRenderStatusMessage}{showRenderStatusMessage}}
+{\footnotesize\ttfamily \label{class_main_window_a5bc872b86e5f798a2079dae098d73288} 
+void Main\+Window\+::show\+Render\+Status\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Displays a status message related to rendering operations. 
+
+\Hypertarget{class_main_window_ade3d9ed9b1c685f1ba1044cf10a401a4}\index{MainWindow@{MainWindow}!showTestimonialPrompt@{showTestimonialPrompt}}
+\index{showTestimonialPrompt@{showTestimonialPrompt}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{showTestimonialPrompt}{showTestimonialPrompt}}
+{\footnotesize\ttfamily \label{class_main_window_ade3d9ed9b1c685f1ba1044cf10a401a4} 
+void Main\+Window\+::show\+Testimonial\+Prompt (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Displays a dialog prompting the user to submit a testimonial. 
+
+\Hypertarget{class_main_window_a415d10b19b2dd2e7ba99d0dd5fcb76da}\index{MainWindow@{MainWindow}!showTestimonialsDisplay@{showTestimonialsDisplay}}
+\index{showTestimonialsDisplay@{showTestimonialsDisplay}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{showTestimonialsDisplay}{showTestimonialsDisplay}}
+{\footnotesize\ttfamily \label{class_main_window_a415d10b19b2dd2e7ba99d0dd5fcb76da} 
+void Main\+Window\+::show\+Testimonials\+Display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Displays a dialog showing existing testimonials. 
+
+\Hypertarget{class_main_window_affcce0444db65d4438f852dbd97424bd}\index{MainWindow@{MainWindow}!sortByArea@{sortByArea}}
+\index{sortByArea@{sortByArea}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sortByArea()}{sortByArea()}}
+{\footnotesize\ttfamily \label{class_main_window_affcce0444db65d4438f852dbd97424bd} 
+bool Main\+Window\+::sort\+By\+Area (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Static comparison function to sort shapes by their calculated area. 
+
+\Hypertarget{class_main_window_a517b645d625b741b3d8aae6d62abe3cb}\index{MainWindow@{MainWindow}!sortById@{sortById}}
+\index{sortById@{sortById}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sortById()}{sortById()}}
+{\footnotesize\ttfamily \label{class_main_window_a517b645d625b741b3d8aae6d62abe3cb} 
+bool Main\+Window\+::sort\+By\+Id (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Static comparison function to sort shapes by their ID. 
+
+\Hypertarget{class_main_window_a792a6a99346642416c84649e67e85125}\index{MainWindow@{MainWindow}!sortByPerimeter@{sortByPerimeter}}
+\index{sortByPerimeter@{sortByPerimeter}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sortByPerimeter()}{sortByPerimeter()}}
+{\footnotesize\ttfamily \label{class_main_window_a792a6a99346642416c84649e67e85125} 
+bool Main\+Window\+::sort\+By\+Perimeter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Static comparison function to sort shapes by their calculated perimeter. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_main_window_a40910a727b9406a869a6027ddb4ca8ac}\index{MainWindow@{MainWindow}!contactUsWidget@{contactUsWidget}}
+\index{contactUsWidget@{contactUsWidget}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{contactUsWidget}{contactUsWidget}}
+{\footnotesize\ttfamily \label{class_main_window_a40910a727b9406a869a6027ddb4ca8ac} 
+QWidget\texorpdfstring{$\ast$}{*} Main\+Window\+::contact\+Us\+Widget\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the main widget for the Contact Us display. 
+
+\Hypertarget{class_main_window_abf214998873bd15ab035e0dbe54602f5}\index{MainWindow@{MainWindow}!contactWindow@{contactWindow}}
+\index{contactWindow@{contactWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{contactWindow}{contactWindow}}
+{\footnotesize\ttfamily \label{class_main_window_abf214998873bd15ab035e0dbe54602f5} 
+QWidget\texorpdfstring{$\ast$}{*} Main\+Window\+::contact\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the QWidget that serves as the \textquotesingle{}Contact Us\textquotesingle{} window. 
+
+\Hypertarget{class_main_window_a045ae7761e9f4824fd60da4421d2e317}\index{MainWindow@{MainWindow}!currUser@{currUser}}
+\index{currUser@{currUser}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{currUser}{currUser}}
+{\footnotesize\ttfamily \label{class_main_window_a045ae7761e9f4824fd60da4421d2e317} 
+const \mbox{\hyperlink{class_user_account}{User\+Account}}\texorpdfstring{$\ast$}{*} Main\+Window\+::curr\+User\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the currently logged-\/in user account. 
+
+\Hypertarget{class_main_window_a88ce5c8f353d48adafb6f2d241703cb7}\index{MainWindow@{MainWindow}!delegate@{delegate}}
+\index{delegate@{delegate}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{delegate}{delegate}}
+{\footnotesize\ttfamily \label{class_main_window_a88ce5c8f353d48adafb6f2d241703cb7} 
+\mbox{\hyperlink{class_column_edit_delegate}{Column\+Edit\+Delegate}}\texorpdfstring{$\ast$}{*} Main\+Window\+::delegate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Custom delegate for editing items in the shape properties tree widget. 
+
+\Hypertarget{class_main_window_a14d571ce729b49c457cbbd68cd304e68}\index{MainWindow@{MainWindow}!logoLabel@{logoLabel}}
+\index{logoLabel@{logoLabel}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{logoLabel}{logoLabel}}
+{\footnotesize\ttfamily \label{class_main_window_a14d571ce729b49c457cbbd68cd304e68} 
+QLabel\texorpdfstring{$\ast$}{*} Main\+Window\+::logo\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Label to display the team logo in the Contact Us display. 
+
+\Hypertarget{class_main_window_a55c8e8eae9e774a691bc908420705f8f}\index{MainWindow@{MainWindow}!renderArea@{renderArea}}
+\index{renderArea@{renderArea}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{renderArea}{renderArea}}
+{\footnotesize\ttfamily \label{class_main_window_a55c8e8eae9e774a691bc908420705f8f} 
+\mbox{\hyperlink{class_render_area}{Render\+Area}}\texorpdfstring{$\ast$}{*} Main\+Window\+::render\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the custom widget responsible for drawing shapes. 
+
+\Hypertarget{class_main_window_a3bf08c8f76587c444e23b9533159e274}\index{MainWindow@{MainWindow}!renderShapes@{renderShapes}}
+\index{renderShapes@{renderShapes}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{renderShapes}{renderShapes}}
+{\footnotesize\ttfamily \label{class_main_window_a3bf08c8f76587c444e23b9533159e274} 
+const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$\mbox{\hyperlink{class_shape}{Shape}}\texorpdfstring{$\ast$}{*}$>$\texorpdfstring{$\ast$}{*} Main\+Window\+::render\+Shapes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the vector of shapes currently being rendered. 
+
+\Hypertarget{class_main_window_a104a8053a55b33b30d8508de728a4aef}\index{MainWindow@{MainWindow}!shapeTable@{shapeTable}}
+\index{shapeTable@{shapeTable}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{shapeTable}{shapeTable}}
+{\footnotesize\ttfamily \label{class_main_window_a104a8053a55b33b30d8508de728a4aef} 
+QTable\+Widget\texorpdfstring{$\ast$}{*} Main\+Window\+::shape\+Table\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the table widget used to display shape properties in the report. 
+
+\Hypertarget{class_main_window_a559efcc059749b731442989f713a450c}\index{MainWindow@{MainWindow}!sortDropdown@{sortDropdown}}
+\index{sortDropdown@{sortDropdown}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sortDropdown}{sortDropdown}}
+{\footnotesize\ttfamily \label{class_main_window_a559efcc059749b731442989f713a450c} 
+QCombo\+Box\texorpdfstring{$\ast$}{*} Main\+Window\+::sort\+Dropdown\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dropdown QCombo\+Box for selecting the sorting criterion in the shape report. 
+
+\Hypertarget{class_main_window_aa7271fb35a573b1d327a5db3f994626f}\index{MainWindow@{MainWindow}!sortOrderDropdown@{sortOrderDropdown}}
+\index{sortOrderDropdown@{sortOrderDropdown}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sortOrderDropdown}{sortOrderDropdown}}
+{\footnotesize\ttfamily \label{class_main_window_aa7271fb35a573b1d327a5db3f994626f} 
+QCombo\+Box\texorpdfstring{$\ast$}{*} Main\+Window\+::sort\+Order\+Dropdown\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dropdown QCombo\+Box for selecting the sorting order (ascending/descending) in the shape report. 
+
+\Hypertarget{class_main_window_a545e481058060c9fdf9ba6566b98e641}\index{MainWindow@{MainWindow}!tabWidget@{tabWidget}}
+\index{tabWidget@{tabWidget}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{tabWidget}{tabWidget}}
+{\footnotesize\ttfamily \label{class_main_window_a545e481058060c9fdf9ba6566b98e641} 
+QTab\+Widget\texorpdfstring{$\ast$}{*} Main\+Window\+::tab\+Widget\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the tab widget (if used for the shape report, otherwise could be for other purposes). 
+
+\Hypertarget{class_main_window_ae2619b49448d9745a75bb6caf8ff0e0c}\index{MainWindow@{MainWindow}!teamNameLabel@{teamNameLabel}}
+\index{teamNameLabel@{teamNameLabel}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{teamNameLabel}{teamNameLabel}}
+{\footnotesize\ttfamily \label{class_main_window_ae2619b49448d9745a75bb6caf8ff0e0c} 
+QLabel\texorpdfstring{$\ast$}{*} Main\+Window\+::team\+Name\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Label to display the team name in the Contact Us display. 
+
+\Hypertarget{class_main_window_a35466a70ed47252a0191168126a352a5}\index{MainWindow@{MainWindow}!ui@{ui}}
+\index{ui@{ui}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \label{class_main_window_a35466a70ed47252a0191168126a352a5} 
+Ui\+::\+Main\+Window\texorpdfstring{$\ast$}{*} Main\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the auto-\/generated UI class. 
+
+\Hypertarget{class_main_window_a5da4b2711fb5e72b9ff79dd13de71cb5}\index{MainWindow@{MainWindow}!userStatusLabel@{userStatusLabel}}
+\index{userStatusLabel@{userStatusLabel}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{userStatusLabel}{userStatusLabel}}
+{\footnotesize\ttfamily \label{class_main_window_a5da4b2711fb5e72b9ff79dd13de71cb5} 
+QLabel\texorpdfstring{$\ast$}{*} Main\+Window\+::user\+Status\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Label in the status bar to display the current user\textquotesingle{}s login status. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/frontend/\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+src/frontend/\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

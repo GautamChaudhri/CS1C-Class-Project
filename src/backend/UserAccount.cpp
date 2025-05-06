@@ -82,13 +82,13 @@ bool UserAccount::isAdmin() const {
 
 
 
-void UserAccount::setUsername(QString& username) {
+void UserAccount::setUsername(const QString& username) {
     this->username = username;
 }
 
 
 
-void UserAccount::setPassword(QString& password) {
+void UserAccount::setPassword(const QString& password) {
     this->password = password;
 }
 
@@ -100,7 +100,7 @@ void UserAccount::setAdmin(bool admin) {
 
 
 
-void UserAccount::setUserAccount(QString& username, QString& password, bool admin) {
+void UserAccount::setUserAccount(const QString& username, const QString& password, const bool admin) {
     this->username = username;
     this->password = password;
     this->admin = admin;

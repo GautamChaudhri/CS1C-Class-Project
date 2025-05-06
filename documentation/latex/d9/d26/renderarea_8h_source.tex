@@ -1,0 +1,46 @@
+\doxysection{renderarea.\+h}
+\hypertarget{renderarea_8h_source}{}\label{renderarea_8h_source}\index{src/frontend/renderarea.h@{src/frontend/renderarea.h}}
+\mbox{\hyperlink{renderarea_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QPen>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QMouseEvent>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{all__shapes_8h}{../objects/all\_shapes.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector_8h}{../objects/vector.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_render_area_a6fa5a406003dc132605f8bc07763e946}{RenderArea}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_render_area_a6fa5a406003dc132605f8bc07763e946}{RenderArea}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_af58a7ec752975a179d00b38438e0ad56}{setRenderShapes}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classalpha_1_1vector}{alpha::vector<Shape*>}}*\ \mbox{\hyperlink{class_render_area_a8e9169655992507f4a10a7d07a465d6a}{renderShapes}});}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classalpha_1_1vector}{alpha::vector<Shape*>}}\&\ \mbox{\hyperlink{class_render_area_ac11f36dbcf91d5bd7829a2bbae5ae205}{getShapes}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_a3cd0a45651ea634ff4e1f08350142b12}{mousePressEvent}}(QMouseEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_afc1cb0383844d8cba93282f0b0a440c6}{mouseMoveEvent}}(QMouseEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_ab2f952d8f4b508eff3479337fca8763b}{mouseDoubleClickEvent}}(QMouseEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_a84f2ea379248266648d22338e3904b45}{mouseReleaseEvent}}(QMouseEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_afed868717799e2db61ffc0850caf23a5}{setShapeSelectedIndex}}(\textcolor{keywordtype}{int}\ newIndex);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_a8acb8eab4cf597b06c622da85a314e9b}{resetSelection}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_acfbf1767eb7c30e382552297101f34de}{setEditPrivileges}}(\textcolor{keywordtype}{bool}\ edit);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_a7fd734dcf63055b10a414b143a45a226}{updateShapeDisplayCoords}}(\mbox{\hyperlink{class_shape}{Shape}}*\ item,\ \textcolor{keyword}{const}\ QPoint\&\ position)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_render_area_ab0ebe4428b3099a69bcfcde7fa85e3b1}{getShapeSelected}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_render_area_a728f9c553ea51ab4f21a994ea1f71199}{getShapeSelectedIndex}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_ae9b5a1573f3b06590c717c7598ffaae4}{paintEvent}}(QPaintEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classalpha_1_1vector}{alpha::vector<Shape*>}}*\ \mbox{\hyperlink{class_render_area_a8e9169655992507f4a10a7d07a465d6a}{renderShapes}};\ \ \ \ \ \ \textcolor{comment}{//\ Holds\ currently\ renderedShapes}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_render_area_a057fc6d3f8359a5f2e193308d550d2ff}{shapeSelectedIndex}};\ \textcolor{comment}{//\ This\ is\ the\ vector\ index\ of\ the\ current\ shape\ selected,\ this\ is\ done\ so\ we\ prevent\ multiple\ shapes\ being\ selected\ at\ once}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_render_area_a3ebef6f39ab46c334145616c1e481ac3}{allowEditing}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ by\ default\ you\ cannot\ edit\ shapes}}
+\DoxyCodeLine{00040\ \};}
+
+\end{DoxyCode}

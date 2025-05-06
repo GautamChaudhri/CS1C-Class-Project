@@ -1,0 +1,60 @@
+\doxysection{text.\+h}
+\hypertarget{text_8h_source}{}\label{text_8h_source}\index{src/objects/text.h@{src/objects/text.h}}
+\mbox{\hyperlink{text_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TEXT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TEXT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{shape_8h}{shape.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_text_a3c521086182cf14349dc8c120afd9d09}{Text}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_shape_a3fffc5f799f419e3e608e03ab1f3e913}{Shape}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_text_a3c521086182cf14349dc8c120afd9d09}{Text}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_shape_a111c6b066e3ca18af54f6757eb747133}{shapeType}},}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ QPoint\ \mbox{\hyperlink{class_shape_ae41de79d5410bce4f090b9c70be6658d}{coords}},}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_text_ab3a83a24efa168e41f8703461f3437fc}{textString}},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ GlobalColor\ \ \ \mbox{\hyperlink{class_text_adab485b3c57d232b11f5fd772010c72e}{textColor}},}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ AlignmentFlag\ \mbox{\hyperlink{class_text_a3e9cc03215ee14dfcd6721b3717eedc6}{textAlignment}},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ QFont\ \mbox{\hyperlink{class_text_aafbc87056bd5a3250299f2459078bf67}{font}},}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_text_a757739b913a5c9cb008ba175d7624d6c}{length}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_text_a430a4945727b044dcb471554b97dd4ee}{width}});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_text_aac7609b2292703561a26921d23aa2541}{Draw}}(QWidget*\ renderArea)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_text_a2d5dfd13e7b92add0bdade0190d32d21}{Perimeter}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_text_a8f4e662b3295bef18b518af55a59d909}{Area}}()\ \ \ \ \ \ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_text_afa809544954f7c4b3d9102692c6db53f}{isPointInside}}(\textcolor{keyword}{const}\ QPoint\&\ point)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_text_aa538b21160165d28fbaf706c51221ef3}{getLength}}()\ \ \ \ \ \ \ \ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_text_ad24ce301552aff8f9231d438ff9bd1e4}{getWidth}}()\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_text_ac4d54ea22e31be28700336bbc5bde23e}{getTextString}}()\ \ \ \ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ \ \ \ \ GlobalColor\ \ \ \mbox{\hyperlink{class_text_af3456aea5e1ce4ac424465a189e31294}{getTextColor}}()\ \ \ \ \ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ \ \ \ \ QFont\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_text_ace6ab02148fe23efffcd3f7c3dde9183}{getFont}}()\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ \ \ \ \ AlignmentFlag\ \mbox{\hyperlink{class_text_a3d6716fc88f895932e2c96940188c647}{getTextAlignment}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_text_a0a3c00384e73eed7af1d20cffca51b18}{getFontStyle}}()\ \ \ \ \ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ \ \ \ \ QFont::Weight\ \mbox{\hyperlink{class_text_a4b4b411734e3f6ceace9e73d293e2f64}{getFontWeight}}()\ \ \ \ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_text_ad9de0026ba5817e2eb18d1d58875a9aa}{setText}}(QString\ text);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_text_a8300e72c29ad82dc2e44d3175bf3ad10}{setLength}}(\textcolor{keywordtype}{int}\ newLength);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_text_afa0c12687c0aa5118e9fb0bea3925374}{setWidth}}(\textcolor{keywordtype}{int}\ newWidth);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_text_a351027602090f29a33adf048d8adafc3}{setX}}(\textcolor{keywordtype}{int}\ newX);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_text_a4613df74877faca400d0510f418ece15}{setY}}(\textcolor{keywordtype}{int}\ newY);}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_text_a1de163b0a17d3363a5581e9bdf30c99b}{setAlignment}}(Qt::AlignmentFlag\ alignment);}
+\DoxyCodeLine{00077\ \ \ \ \ QFont\&\ \mbox{\hyperlink{class_text_aa39ae29edaf2ff92176ba65beeaf5de2}{setInternalFont}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_text_a757739b913a5c9cb008ba175d7624d6c}{length}};\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_text_a430a4945727b044dcb471554b97dd4ee}{width}};\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_text_ab3a83a24efa168e41f8703461f3437fc}{textString}};\ }
+\DoxyCodeLine{00085\ \ \ \ \ GlobalColor\ \ \ \mbox{\hyperlink{class_text_adab485b3c57d232b11f5fd772010c72e}{textColor}};\ }
+\DoxyCodeLine{00086\ \ \ \ \ QFont\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_text_aafbc87056bd5a3250299f2459078bf67}{font}};\ }
+\DoxyCodeLine{00087\ \ \ \ \ AlignmentFlag\ \mbox{\hyperlink{class_text_a3e9cc03215ee14dfcd6721b3717eedc6}{textAlignment}};\ }
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TEXT\_H}}
+
+\end{DoxyCode}

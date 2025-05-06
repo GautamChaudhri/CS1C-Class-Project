@@ -1,0 +1,226 @@
+\doxysection{Shapes\+Manager Class Reference}
+\hypertarget{class_shapes_manager}{}\label{class_shapes_manager}\index{ShapesManager@{ShapesManager}}
+
+
+{\ttfamily \#include $<$Shapes\+Manager.\+h$>$}
+
+Inheritance diagram for Shapes\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d3/dde/class_shapes_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_shapes_manager_a401502eb4c12357f6f5ae53953c3b3de}{shapes\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_shapes_manager_aefe8d8daf30445ae70b4035831f857dc}{shapes\+Not\+Changed}} (const QString \&messsage)
+\item 
+void \mbox{\hyperlink{class_shapes_manager_a4d0a61ed21a16e9e7b428641549afbd2}{status\+Message}} (const QString \&message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_shapes_manager_ab717143ddccb519cf74e28a27793112a}{Shapes\+Manager}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_shapes_manager_a75eca9ea14d8a59c6ee105e49fc5ecbe}{\texorpdfstring{$\sim$}{\string~}\+Shapes\+Manager}} ()
+\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_shapes_manager_a77522233649cbb3430c5b0197d3886be}{get\+Shapes\+Ref}} ()
+\begin{DoxyCompactList}\small\item\em Returns the shapes vector as a reference. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shapes_manager_ae851cda2501ba8af0f6f44d5361a5348}{add\+Shape}} (\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\begin{DoxyCompactList}\small\item\em These functions are used to add, delete, and load shapes in the \doxylink{class_shapes_manager}{Shapes\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shapes_manager_aeb0348ac6e97b3248dfc262bfd4eceaa}{modify\+Shape}} (\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\item 
+void \mbox{\hyperlink{class_shapes_manager_a00d9c085c697132f0ce4ad260c3b9147}{delete\+Shape}} (const int tracker\+Id)
+\item 
+void \mbox{\hyperlink{class_shapes_manager_a3f497ccd5877aa974e3811df954f149b}{delete\+All\+Shapes}} ()
+\item 
+void \mbox{\hyperlink{class_shapes_manager_a63508e1ec120815a0d3b18124ce6fe48}{load\+Shapes}} ()
+\item 
+void \mbox{\hyperlink{class_shapes_manager_a1b76d87eb372f56453320d1b0bf566ac}{save\+Shapes}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_shapes_manager_a1f4218728de2c529424149d6a9b61ce3}{on\+Good\+Get\+Response}} (const QString \&json)
+\item 
+void \mbox{\hyperlink{class_shapes_manager_ae61c2dac370eba6bcb9d941b8a24f57b}{on\+Bad\+Get\+Response}} (const QString \&error\+Msg)
+\item 
+void \mbox{\hyperlink{class_shapes_manager_abdb8e613c7e219d5eef0c6c54107bacc}{on\+Good\+Post\+Response}} ()
+\item 
+void \mbox{\hyperlink{class_shapes_manager_a54d9f7249989e2ef04258fbfa75fce07}{on\+Bad\+Post\+Response}} (const QString \&error\+Msg)
+\item 
+void \mbox{\hyperlink{class_shapes_manager_a5fccd5114bcd112aaf83b1a555df8aa2}{on\+Good\+Delete\+Response}} ()
+\item 
+void \mbox{\hyperlink{class_shapes_manager_a7343341db18a456c331b3a9f7664e414}{on\+Bad\+Delete\+Response}} (const QString \&error\+Msg)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_shapes_manager_ac1b1381cbe84f94eb40d22c549ed5321}{shapes}}
+\item 
+\mbox{\hyperlink{class_api_client}{Api\+Client}} \mbox{\hyperlink{class_shapes_manager_a8563e1306615c5e2050f65ebc8320f69}{client}}
+\item 
+\mbox{\hyperlink{class_parser}{Parser}} \mbox{\hyperlink{class_shapes_manager_a871849fcebeadfe30b69b6f8748401e1}{parse}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_shapes_manager_ab717143ddccb519cf74e28a27793112a}\index{ShapesManager@{ShapesManager}!ShapesManager@{ShapesManager}}
+\index{ShapesManager@{ShapesManager}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{ShapesManager()}{ShapesManager()}}
+{\footnotesize\ttfamily \label{class_shapes_manager_ab717143ddccb519cf74e28a27793112a} 
+Shapes\+Manager\+::\+Shapes\+Manager (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Default Constructor. 
+
+This constructor initializes the \doxylink{class_shapes_manager}{Shapes\+Manager} object and connects to the \doxylink{class_api_client}{Api\+Client} signals for handling shape data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & -\/ any QObject to tie this instantiation to ensure automatic deletion \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_shapes_manager_a75eca9ea14d8a59c6ee105e49fc5ecbe}\index{ShapesManager@{ShapesManager}!````~ShapesManager@{\texorpdfstring{$\sim$}{\string~}ShapesManager}}
+\index{````~ShapesManager@{\texorpdfstring{$\sim$}{\string~}ShapesManager}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ShapesManager()}{\string~ShapesManager()}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a75eca9ea14d8a59c6ee105e49fc5ecbe} 
+Shapes\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Shapes\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_shapes_manager_ae851cda2501ba8af0f6f44d5361a5348}\index{ShapesManager@{ShapesManager}!addShape@{addShape}}
+\index{addShape@{addShape}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{addShape()}{addShape()}}
+{\footnotesize\ttfamily \label{class_shapes_manager_ae851cda2501ba8af0f6f44d5361a5348} 
+void Shapes\+Manager\+::add\+Shape (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})}
+
+
+
+These functions are used to add, delete, and load shapes in the \doxylink{class_shapes_manager}{Shapes\+Manager}. 
+
+All of these functions emit the \doxylink{class_shapes_manager_a401502eb4c12357f6f5ae53953c3b3de}{shapes\+Changed()} signal to notify the frontend that the shapes have changed and need to be redrawn except for \doxylink{class_shapes_manager_a1b76d87eb372f56453320d1b0bf566ac}{save\+Shapes()}. \Hypertarget{class_shapes_manager_a3f497ccd5877aa974e3811df954f149b}\index{ShapesManager@{ShapesManager}!deleteAllShapes@{deleteAllShapes}}
+\index{deleteAllShapes@{deleteAllShapes}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{deleteAllShapes()}{deleteAllShapes()}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a3f497ccd5877aa974e3811df954f149b} 
+void Shapes\+Manager\+::delete\+All\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shapes_manager_a00d9c085c697132f0ce4ad260c3b9147}\index{ShapesManager@{ShapesManager}!deleteShape@{deleteShape}}
+\index{deleteShape@{deleteShape}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{deleteShape()}{deleteShape()}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a00d9c085c697132f0ce4ad260c3b9147} 
+void Shapes\+Manager\+::delete\+Shape (\begin{DoxyParamCaption}\item[{const int}]{tracker\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shapes_manager_a77522233649cbb3430c5b0197d3886be}\index{ShapesManager@{ShapesManager}!getShapesRef@{getShapesRef}}
+\index{getShapesRef@{getShapesRef}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{getShapesRef()}{getShapesRef()}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a77522233649cbb3430c5b0197d3886be} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} Shapes\+Manager\+::get\+Shapes\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the shapes vector as a reference. 
+
+\Hypertarget{class_shapes_manager_a63508e1ec120815a0d3b18124ce6fe48}\index{ShapesManager@{ShapesManager}!loadShapes@{loadShapes}}
+\index{loadShapes@{loadShapes}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{loadShapes()}{loadShapes()}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a63508e1ec120815a0d3b18124ce6fe48} 
+void Shapes\+Manager\+::load\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shapes_manager_aeb0348ac6e97b3248dfc262bfd4eceaa}\index{ShapesManager@{ShapesManager}!modifyShape@{modifyShape}}
+\index{modifyShape@{modifyShape}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{modifyShape()}{modifyShape()}}
+{\footnotesize\ttfamily \label{class_shapes_manager_aeb0348ac6e97b3248dfc262bfd4eceaa} 
+void Shapes\+Manager\+::modify\+Shape (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shapes_manager_a7343341db18a456c331b3a9f7664e414}\index{ShapesManager@{ShapesManager}!onBadDeleteResponse@{onBadDeleteResponse}}
+\index{onBadDeleteResponse@{onBadDeleteResponse}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{onBadDeleteResponse}{onBadDeleteResponse}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a7343341db18a456c331b3a9f7664e414} 
+void Shapes\+Manager\+::on\+Bad\+Delete\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{error\+Msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\Hypertarget{class_shapes_manager_ae61c2dac370eba6bcb9d941b8a24f57b}\index{ShapesManager@{ShapesManager}!onBadGetResponse@{onBadGetResponse}}
+\index{onBadGetResponse@{onBadGetResponse}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{onBadGetResponse}{onBadGetResponse}}
+{\footnotesize\ttfamily \label{class_shapes_manager_ae61c2dac370eba6bcb9d941b8a24f57b} 
+void Shapes\+Manager\+::on\+Bad\+Get\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{error\+Msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\Hypertarget{class_shapes_manager_a54d9f7249989e2ef04258fbfa75fce07}\index{ShapesManager@{ShapesManager}!onBadPostResponse@{onBadPostResponse}}
+\index{onBadPostResponse@{onBadPostResponse}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{onBadPostResponse}{onBadPostResponse}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a54d9f7249989e2ef04258fbfa75fce07} 
+void Shapes\+Manager\+::on\+Bad\+Post\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{error\+Msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\Hypertarget{class_shapes_manager_a5fccd5114bcd112aaf83b1a555df8aa2}\index{ShapesManager@{ShapesManager}!onGoodDeleteResponse@{onGoodDeleteResponse}}
+\index{onGoodDeleteResponse@{onGoodDeleteResponse}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{onGoodDeleteResponse}{onGoodDeleteResponse}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a5fccd5114bcd112aaf83b1a555df8aa2} 
+void Shapes\+Manager\+::on\+Good\+Delete\+Response (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\Hypertarget{class_shapes_manager_a1f4218728de2c529424149d6a9b61ce3}\index{ShapesManager@{ShapesManager}!onGoodGetResponse@{onGoodGetResponse}}
+\index{onGoodGetResponse@{onGoodGetResponse}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{onGoodGetResponse}{onGoodGetResponse}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a1f4218728de2c529424149d6a9b61ce3} 
+void Shapes\+Manager\+::on\+Good\+Get\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+These slot functions receive signals from the \doxylink{class_api_client}{Api\+Client} class and hold the code on what to do next after one of these responses from the webservice. \Hypertarget{class_shapes_manager_abdb8e613c7e219d5eef0c6c54107bacc}\index{ShapesManager@{ShapesManager}!onGoodPostResponse@{onGoodPostResponse}}
+\index{onGoodPostResponse@{onGoodPostResponse}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{onGoodPostResponse}{onGoodPostResponse}}
+{\footnotesize\ttfamily \label{class_shapes_manager_abdb8e613c7e219d5eef0c6c54107bacc} 
+void Shapes\+Manager\+::on\+Good\+Post\+Response (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\Hypertarget{class_shapes_manager_a1b76d87eb372f56453320d1b0bf566ac}\index{ShapesManager@{ShapesManager}!saveShapes@{saveShapes}}
+\index{saveShapes@{saveShapes}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{saveShapes()}{saveShapes()}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a1b76d87eb372f56453320d1b0bf566ac} 
+void Shapes\+Manager\+::save\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_shapes_manager_a401502eb4c12357f6f5ae53953c3b3de}\index{ShapesManager@{ShapesManager}!shapesChanged@{shapesChanged}}
+\index{shapesChanged@{shapesChanged}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{shapesChanged}{shapesChanged}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a401502eb4c12357f6f5ae53953c3b3de} 
+void Shapes\+Manager\+::shapes\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+These signals are meant to connect to the Shapes window in the frontend. -\/\doxylink{class_shapes_manager_a401502eb4c12357f6f5ae53953c3b3de}{shapes\+Changed()}\+: signal for when the shapes vector is changed in any way so that the frontend knows to refresh the window and redraw the shapes -\/\doxylink{class_shapes_manager_a4d0a61ed21a16e9e7b428641549afbd2}{status\+Message()}\+: signal for slot functions below. It passes the message to the frontend so it can display a popup saying the shapes were saved successfully, or whatever the message is for the user. \Hypertarget{class_shapes_manager_aefe8d8daf30445ae70b4035831f857dc}\index{ShapesManager@{ShapesManager}!shapesNotChanged@{shapesNotChanged}}
+\index{shapesNotChanged@{shapesNotChanged}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{shapesNotChanged}{shapesNotChanged}}
+{\footnotesize\ttfamily \label{class_shapes_manager_aefe8d8daf30445ae70b4035831f857dc} 
+void Shapes\+Manager\+::shapes\+Not\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{messsage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_shapes_manager_a4d0a61ed21a16e9e7b428641549afbd2}\index{ShapesManager@{ShapesManager}!statusMessage@{statusMessage}}
+\index{statusMessage@{statusMessage}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{statusMessage}{statusMessage}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a4d0a61ed21a16e9e7b428641549afbd2} 
+void Shapes\+Manager\+::status\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_shapes_manager_a8563e1306615c5e2050f65ebc8320f69}\index{ShapesManager@{ShapesManager}!client@{client}}
+\index{client@{client}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a8563e1306615c5e2050f65ebc8320f69} 
+\mbox{\hyperlink{class_api_client}{Api\+Client}} Shapes\+Manager\+::client\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_shapes_manager_a871849fcebeadfe30b69b6f8748401e1}\index{ShapesManager@{ShapesManager}!parse@{parse}}
+\index{parse@{parse}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{parse}{parse}}
+{\footnotesize\ttfamily \label{class_shapes_manager_a871849fcebeadfe30b69b6f8748401e1} 
+\mbox{\hyperlink{class_parser}{Parser}} Shapes\+Manager\+::parse\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_shapes_manager_ac1b1381cbe84f94eb40d22c549ed5321}\index{ShapesManager@{ShapesManager}!shapes@{shapes}}
+\index{shapes@{shapes}!ShapesManager@{ShapesManager}}
+\doxysubsubsection{\texorpdfstring{shapes}{shapes}}
+{\footnotesize\ttfamily \label{class_shapes_manager_ac1b1381cbe84f94eb40d22c549ed5321} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$\mbox{\hyperlink{class_shape}{Shape}}\texorpdfstring{$\ast$}{*}$>$ Shapes\+Manager\+::shapes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/backend/\mbox{\hyperlink{_shapes_manager_8h}{Shapes\+Manager.\+h}}\item 
+src/backend/\mbox{\hyperlink{_shapes_manager_8cpp}{Shapes\+Manager.\+cpp}}\end{DoxyCompactItemize}

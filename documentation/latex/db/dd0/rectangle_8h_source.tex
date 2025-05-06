@@ -1,0 +1,44 @@
+\doxysection{rectangle.\+h}
+\hypertarget{rectangle_8h_source}{}\label{rectangle_8h_source}\index{src/objects/rectangle.h@{src/objects/rectangle.h}}
+\mbox{\hyperlink{rectangle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RECTANGLE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RECTANGLE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{shape_8h}{shape.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_rectangle_af84479273a72d93294cd210732117dd7}{Rectangle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_shape_a3fffc5f799f419e3e608e03ab1f3e913}{Shape}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_rectangle_af84479273a72d93294cd210732117dd7}{Rectangle}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_shape_a111c6b066e3ca18af54f6757eb747133}{shapeType}},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QPoint\ \mbox{\hyperlink{class_shape_ae41de79d5410bce4f090b9c70be6658d}{coords}},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QPen\ \ \ \mbox{\hyperlink{class_shape_a75d192b68eddd2622bdea8a4ac1058d1}{pen}},}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QBrush\ \mbox{\hyperlink{class_shape_aa67647c3a5d39d1e3f63a241208e59f2}{brush}},}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rectangle_ae59ba4b220bd28539821b64b48553b75}{length}},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rectangle_a019ed802523594472e0032953b6062d4}{width}});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rectangle_a146fede0215e7c98fbc99b6c302ed743}{Draw}}(QWidget*\ renderArea)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_rectangle_a76dac2e37763e04a507509af0df877ca}{Perimeter}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_rectangle_a1125fa495f517be6ba282f0939d035f0}{Area}}()\ \ \ \ \ \ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_rectangle_a15db47c277092fbef7cb2a4ea0026e32}{isPointInside}}(\textcolor{keyword}{const}\ QPoint\&\ point)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rectangle_af86510135f0d97d2295bbc304ea932bf}{getLength}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rectangle_ab38bbfcd0c11b39e0ef58ffd0b5c5069}{getWidth}}()\ \ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rectangle_a25dd24650ea0f4a712f63abd889f1b7b}{setLength}}(\textcolor{keywordtype}{int}\ newLength);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rectangle_a25a30c3f97a5df57e880b8f65e525223}{setWidth}}(\textcolor{keywordtype}{int}\ newWidth);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rectangle_a2d6f53490569f61403e0030d13411fd8}{setX}}(\textcolor{keywordtype}{int}\ newX);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rectangle_a04023199272ad6fd47c4233dd4bd148e}{setY}}(\textcolor{keywordtype}{int}\ newY);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rectangle_ae59ba4b220bd28539821b64b48553b75}{length}};\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rectangle_a019ed802523594472e0032953b6062d4}{width}};\ }
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RECTANGLE\_H}}
+\DoxyCodeLine{00072\ }
+
+\end{DoxyCode}

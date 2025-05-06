@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['addshape_0',['addShape',['../d8/d08/class_render_area_manager.html#af43a9dc571803450ae63b62a234c8d21',1,'RenderAreaManager::addShape()'],['../d3/dde/class_shapes_manager.html#ae851cda2501ba8af0f6f44d5361a5348',1,'ShapesManager::addShape()']]],
+  ['addtestimonial_1',['addTestimonial',['../d4/d0d/class_testimonial_manager.html#ab5c9dca488f9037b051263dfd8005c48',1,'TestimonialManager']]],
+  ['addtoshapetree_2',['addToShapeTree',['../d9/dc6/class_main_window.html#afe8619a02bba82d0ad5e05065d6c0ea1',1,'MainWindow']]],
+  ['adduser_3',['addUser',['../d1/da2/class_user_manager.html#a8860588081ca0e6a7f88fc5b689fb235',1,'UserManager']]],
+  ['allocatetrackerid_4',['allocateTrackerId',['../d7/da7/class_shape.html#a520308cc2273f60cb19bf5664570bcf8',1,'Shape']]],
+  ['analyzedeletereply_5',['AnalyzeDeleteReply',['../d2/dd1/class_api_client.html#addc68bb9473d31fdf49098377f48d17b',1,'ApiClient']]],
+  ['analyzegetreply_6',['AnalyzeGetReply',['../d2/dd1/class_api_client.html#a6b63bb2faeed34e082d84c1c624dda39',1,'ApiClient']]],
+  ['analyzepostreply_7',['AnalyzePostReply',['../d2/dd1/class_api_client.html#aeaa808b2a23ba8e6f5e5520a991127e3',1,'ApiClient']]],
+  ['apiclient_8',['ApiClient',['../d2/dd1/class_api_client.html#a7ac17ab761c4ee56fa63802573b343e3',1,'ApiClient']]],
+  ['appdriver_9',['AppDriver',['../d7/de6/class_app_driver.html#a6f7fb1285aeb86dc6d9734d07793c5dc',1,'AppDriver']]],
+  ['appendbrushdata_10',['AppendBrushData',['../dc/db7/class_parser.html#a4947ae95392cd961660d9202d4c12e5e',1,'Parser']]],
+  ['appendcommonshapedata_11',['AppendCommonShapeData',['../dc/db7/class_parser.html#a8f8932bed758cd3e61de3669fdef1110',1,'Parser']]],
+  ['appendtextdata_12',['AppendTextData',['../dc/db7/class_parser.html#a3c8d6dcf6e07231eaedb036ebe90b51f',1,'Parser']]],
+  ['area_13',['Area',['../d0/d88/class_circle.html#a3e846c7ae071835770ed8e85a547abce',1,'Circle::Area()'],['../dc/d25/class_ellipse.html#a307ce4000c0f9b7b3bb8c6c6092dd21c',1,'Ellipse::Area()'],['../dd/db4/class_line.html#a030fad2ad9fcd103999865e795920abf',1,'Line::Area()'],['../d1/db0/class_polygon.html#a93ef0eca98ac03a244866f9d53a7ab4d',1,'Polygon::Area()'],['../d1/d42/class_polyline.html#a735645897d4b7b3744614ca518aea396',1,'Polyline::Area()'],['../d9/dc7/class_rectangle.html#a1125fa495f517be6ba282f0939d035f0',1,'Rectangle::Area()'],['../d7/da7/class_shape.html#a7d09aae7e39d5ecb7ced4e8026ff5c6c',1,'Shape::Area()'],['../d9/d0c/class_square.html#aebf797cc3d34c481a0dbd2349d976282',1,'Square::Area()'],['../da/d0e/class_text.html#a8f4e662b3295bef18b518af55a59d909',1,'Text::Area()']]],
+  ['attemptlogin_14',['attemptLogin',['../de/d74/class_login_window.html#a4677fdb497a115ea633069d51eb03944',1,'LoginWindow']]],
+  ['attemptsignup_15',['attemptSignup',['../de/d74/class_login_window.html#a70f65bf3f12674754e167540444b7009',1,'LoginWindow']]],
+  ['authenticate_16',['authenticate',['../d1/da2/class_user_manager.html#a65e90a5565b65c8feb3b9299872d609d',1,'UserManager']]],
+  ['authenticationfailed_17',['authenticationFailed',['../d1/da2/class_user_manager.html#ab930b67c285d8ba31325a2621fe5ea5d',1,'UserManager']]]
+];

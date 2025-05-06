@@ -1,0 +1,116 @@
+\doxysection{src/backend/main.cpp File Reference}
+\hypertarget{src_2backend_2main_8cpp}{}\label{src_2backend_2main_8cpp}\index{src/backend/main.cpp@{src/backend/main.cpp}}
+{\ttfamily \#include $<$QCore\+Application$>$}\newline
+{\ttfamily \#include $<$QObject$>$}\newline
+{\ttfamily \#include "{}Api\+Client.\+h"{}}\newline
+{\ttfamily \#include "{}Parser.\+h"{}}\newline
+{\ttfamily \#include "{}User\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}App\+Driver.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{src_2backend_2main_8cpp_a2f995475b829848fd01d70876f3dbe7a}{On\+Good\+Get\+Response\+Test}} (const std\+::string \&json)
+\item 
+void \mbox{\hyperlink{src_2backend_2main_8cpp_a2bf8954f452b7b34c515bd1dbd5f6432}{On\+Bad\+Get\+Response\+Test}} (const std\+::string \&error\+Msg)
+\item 
+void \mbox{\hyperlink{src_2backend_2main_8cpp_a148239a6f56d9c80d24ea359591b0a93}{On\+Good\+Post\+Response\+Test}} ()
+\item 
+void \mbox{\hyperlink{src_2backend_2main_8cpp_a053bf2cadac23eba9b4db4e26ee9498e}{On\+Bad\+Post\+Response\+Test}} (const std\+::string \&error\+Msg)
+\item 
+\mbox{\hyperlink{class_api_client}{Api\+Client}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{src_2backend_2main_8cpp_a84072597d0db9696c164a2f9e30706f9}{Get\+Connected\+Client}} ()
+\item 
+std\+::string \mbox{\hyperlink{src_2backend_2main_8cpp_a830bbf2a7569239c4cf037e3f88e85d5}{Get\+Users\+Test\+String}} ()
+\item 
+std\+::string \mbox{\hyperlink{src_2backend_2main_8cpp_a0590a7ba659d0032c40c1cb2aa699761}{Get\+Shape\+Test\+String}} ()
+\item 
+std\+::string \mbox{\hyperlink{src_2backend_2main_8cpp_a1f750da467460fff67493b3c19437e94}{Get\+Render\+Area\+Test\+String}} ()
+\item 
+int \mbox{\hyperlink{src_2backend_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+QCore\+Application \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{src_2backend_2main_8cpp_a3f8376dfdcf71fc51073c74cb4f27760}{p\+App}} = nullptr
+\item 
+\mbox{\hyperlink{class_api_client}{Api\+Client}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{src_2backend_2main_8cpp_afcae992d315f7ac4b94c24c1fd350112}{p\+Client}} = nullptr
+\item 
+\mbox{\hyperlink{class_parser}{Parser}} \mbox{\hyperlink{src_2backend_2main_8cpp_a2de922baadc2903869a8500feb065ff6}{parse}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{src_2backend_2main_8cpp_a84072597d0db9696c164a2f9e30706f9}\index{main.cpp@{main.cpp}!GetConnectedClient@{GetConnectedClient}}
+\index{GetConnectedClient@{GetConnectedClient}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GetConnectedClient()}{GetConnectedClient()}}
+{\footnotesize\ttfamily \label{src_2backend_2main_8cpp_a84072597d0db9696c164a2f9e30706f9} 
+\mbox{\hyperlink{class_api_client}{Api\+Client}} \texorpdfstring{$\ast$}{*} Get\+Connected\+Client (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{src_2backend_2main_8cpp_a1f750da467460fff67493b3c19437e94}\index{main.cpp@{main.cpp}!GetRenderAreaTestString@{GetRenderAreaTestString}}
+\index{GetRenderAreaTestString@{GetRenderAreaTestString}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GetRenderAreaTestString()}{GetRenderAreaTestString()}}
+{\footnotesize\ttfamily \label{src_2backend_2main_8cpp_a1f750da467460fff67493b3c19437e94} 
+std\+::string Get\+Render\+Area\+Test\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{src_2backend_2main_8cpp_a0590a7ba659d0032c40c1cb2aa699761}\index{main.cpp@{main.cpp}!GetShapeTestString@{GetShapeTestString}}
+\index{GetShapeTestString@{GetShapeTestString}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GetShapeTestString()}{GetShapeTestString()}}
+{\footnotesize\ttfamily \label{src_2backend_2main_8cpp_a0590a7ba659d0032c40c1cb2aa699761} 
+std\+::string Get\+Shape\+Test\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{src_2backend_2main_8cpp_a830bbf2a7569239c4cf037e3f88e85d5}\index{main.cpp@{main.cpp}!GetUsersTestString@{GetUsersTestString}}
+\index{GetUsersTestString@{GetUsersTestString}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GetUsersTestString()}{GetUsersTestString()}}
+{\footnotesize\ttfamily \label{src_2backend_2main_8cpp_a830bbf2a7569239c4cf037e3f88e85d5} 
+std\+::string Get\+Users\+Test\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{src_2backend_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{src_2backend_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+\Hypertarget{src_2backend_2main_8cpp_a2bf8954f452b7b34c515bd1dbd5f6432}\index{main.cpp@{main.cpp}!OnBadGetResponseTest@{OnBadGetResponseTest}}
+\index{OnBadGetResponseTest@{OnBadGetResponseTest}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{OnBadGetResponseTest()}{OnBadGetResponseTest()}}
+{\footnotesize\ttfamily \label{src_2backend_2main_8cpp_a2bf8954f452b7b34c515bd1dbd5f6432} 
+void On\+Bad\+Get\+Response\+Test (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{error\+Msg}{}\end{DoxyParamCaption})}
+
+\Hypertarget{src_2backend_2main_8cpp_a053bf2cadac23eba9b4db4e26ee9498e}\index{main.cpp@{main.cpp}!OnBadPostResponseTest@{OnBadPostResponseTest}}
+\index{OnBadPostResponseTest@{OnBadPostResponseTest}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{OnBadPostResponseTest()}{OnBadPostResponseTest()}}
+{\footnotesize\ttfamily \label{src_2backend_2main_8cpp_a053bf2cadac23eba9b4db4e26ee9498e} 
+void On\+Bad\+Post\+Response\+Test (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{error\+Msg}{}\end{DoxyParamCaption})}
+
+\Hypertarget{src_2backend_2main_8cpp_a2f995475b829848fd01d70876f3dbe7a}\index{main.cpp@{main.cpp}!OnGoodGetResponseTest@{OnGoodGetResponseTest}}
+\index{OnGoodGetResponseTest@{OnGoodGetResponseTest}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{OnGoodGetResponseTest()}{OnGoodGetResponseTest()}}
+{\footnotesize\ttfamily \label{src_2backend_2main_8cpp_a2f995475b829848fd01d70876f3dbe7a} 
+void On\+Good\+Get\+Response\+Test (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json}{}\end{DoxyParamCaption})}
+
+\Hypertarget{src_2backend_2main_8cpp_a148239a6f56d9c80d24ea359591b0a93}\index{main.cpp@{main.cpp}!OnGoodPostResponseTest@{OnGoodPostResponseTest}}
+\index{OnGoodPostResponseTest@{OnGoodPostResponseTest}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{OnGoodPostResponseTest()}{OnGoodPostResponseTest()}}
+{\footnotesize\ttfamily \label{src_2backend_2main_8cpp_a148239a6f56d9c80d24ea359591b0a93} 
+void On\+Good\+Post\+Response\+Test (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{src_2backend_2main_8cpp_a3f8376dfdcf71fc51073c74cb4f27760}\index{main.cpp@{main.cpp}!pApp@{pApp}}
+\index{pApp@{pApp}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{pApp}{pApp}}
+{\footnotesize\ttfamily \label{src_2backend_2main_8cpp_a3f8376dfdcf71fc51073c74cb4f27760} 
+QCore\+Application\texorpdfstring{$\ast$}{*} p\+App = nullptr}
+
+\Hypertarget{src_2backend_2main_8cpp_a2de922baadc2903869a8500feb065ff6}\index{main.cpp@{main.cpp}!parse@{parse}}
+\index{parse@{parse}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{parse}{parse}}
+{\footnotesize\ttfamily \label{src_2backend_2main_8cpp_a2de922baadc2903869a8500feb065ff6} 
+\mbox{\hyperlink{class_parser}{Parser}} parse}
+
+\Hypertarget{src_2backend_2main_8cpp_afcae992d315f7ac4b94c24c1fd350112}\index{main.cpp@{main.cpp}!pClient@{pClient}}
+\index{pClient@{pClient}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{pClient}{pClient}}
+{\footnotesize\ttfamily \label{src_2backend_2main_8cpp_afcae992d315f7ac4b94c24c1fd350112} 
+\mbox{\hyperlink{class_api_client}{Api\+Client}}\texorpdfstring{$\ast$}{*} p\+Client = nullptr}
+

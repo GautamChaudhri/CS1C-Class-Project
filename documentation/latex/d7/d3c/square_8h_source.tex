@@ -1,0 +1,39 @@
+\doxysection{square.\+h}
+\hypertarget{square_8h_source}{}\label{square_8h_source}\index{src/objects/square.h@{src/objects/square.h}}
+\mbox{\hyperlink{square_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SQUARE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SQUARE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{shape_8h}{shape.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_square_a4b6e69fc0dda7084eb3db5d3fe92dfb3}{Square}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_shape_a3fffc5f799f419e3e608e03ab1f3e913}{Shape}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_square_a4b6e69fc0dda7084eb3db5d3fe92dfb3}{Square}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_shape_a111c6b066e3ca18af54f6757eb747133}{shapeType}},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ QPoint\ \mbox{\hyperlink{class_shape_ae41de79d5410bce4f090b9c70be6658d}{coords}},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ QPen\ \ \ \mbox{\hyperlink{class_shape_a75d192b68eddd2622bdea8a4ac1058d1}{pen}},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ QBrush\ \mbox{\hyperlink{class_shape_aa67647c3a5d39d1e3f63a241208e59f2}{brush}},}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_square_adb73a47a09f9244a20c7c35b25c6c51e}{length}});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_square_a76509a6807c851fb2fd88713cd856f64}{Draw}}(QWidget*\ renderArea)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_square_a3100c84469b5c7774c53cd439f24a398}{Perimeter}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_square_aebf797cc3d34c481a0dbd2349d976282}{Area}}()\ \ \ \ \ \ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_square_a5ba5f957a402decfcc2a6b425f43b464}{isPointInside}}(\textcolor{keyword}{const}\ QPoint\&\ point)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_square_a8f3f73c6ceea3fba1c09dcaba56f49af}{getLength}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_square_af9f9f3cd2a3f3d31510c14c5a0834f69}{setLength}}(\textcolor{keywordtype}{int}\ newLength);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_square_a33c07be8d278b4cc9275654a9a9d5680}{setX}}(\textcolor{keywordtype}{int}\ newX);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_square_a7452aa576879876e14cb83a69180cb42}{setY}}(\textcolor{keywordtype}{int}\ newY);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_square_adb73a47a09f9244a20c7c35b25c6c51e}{length}};\ }
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SQUARE\_H}}
+
+\end{DoxyCode}

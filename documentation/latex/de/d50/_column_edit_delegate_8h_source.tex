@@ -1,0 +1,39 @@
+\doxysection{Column\+Edit\+Delegate.\+h}
+\hypertarget{_column_edit_delegate_8h_source}{}\label{_column_edit_delegate_8h_source}\index{src/frontend/ColumnEditDelegate.h@{src/frontend/ColumnEditDelegate.h}}
+\mbox{\hyperlink{_column_edit_delegate_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COLUMNEDITDELEGATE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COLUMNEDITDELEGATE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QStyledItemDelegate>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_column_edit_delegate_ad4b692943952371917da882f62598297}{ColumnEditDelegate}}\ :\ \textcolor{keyword}{public}\ QStyledItemDelegate}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_column_edit_delegate_ad4b692943952371917da882f62598297}{ColumnEditDelegate}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr})\ :\ QStyledItemDelegate(parent)\ \{\}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ QWidget\ *\mbox{\hyperlink{class_column_edit_delegate_a1b2e6a9a783b8252381314b3c2fc4f68}{createEditor}}(QWidget\ *parent,}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QStyleOptionViewItem\ \&option,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QModelIndex\ \&index)\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index.column()\ !=\ 1\ ||\ !\mbox{\hyperlink{class_column_edit_delegate_a4788498c6192c784003068bcb62e5769}{canEdit}})}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};\ \ \textcolor{comment}{//\ Only\ allows\ editing\ in\ column\ 1}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QStyledItemDelegate::createEditor(parent,\ option,\ index);}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_column_edit_delegate_a79fd9616c2e647102a23347b53868ff7}{setCanEdit}}(\textcolor{keywordtype}{bool}\ edit)}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_column_edit_delegate_a4788498c6192c784003068bcb62e5769}{canEdit}}\ =\ edit;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_column_edit_delegate_a4788498c6192c784003068bcb62e5769}{canEdit}}\ =\ \textcolor{keyword}{false};\ \ \textcolor{comment}{//\ Flag\ to\ control\ whether\ editing\ is\ allowed}}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COLUMNEDITDELEGATE\_H}}
+
+\end{DoxyCode}

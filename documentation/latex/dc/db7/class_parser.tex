@@ -1,0 +1,824 @@
+\doxysection{Parser Class Reference}
+\hypertarget{class_parser}{}\label{class_parser}\index{Parser@{Parser}}
+
+
+Provides functionality for parsing JSON data to C++ objects and vice-\/versa.  
+
+
+
+
+{\ttfamily \#include $<$Parser.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_parser_1_1_morphic_shape}{Morphic\+Shape}}
+\begin{DoxyCompactList}\small\item\em Internal accumulator structure for parsing shape data from JSON. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_parser_1_1_raw_user}{Raw\+User}}
+\begin{DoxyCompactList}\small\item\em Internal accumulator structure for parsing user account data from JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_parser_a5208129b497bfdf7c8ecceeb70e4bba8}{Parser}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes a \doxylink{class_parser}{Parser} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_parser_a95734193a58a199b4c6d820a6a730c42}{\texorpdfstring{$\sim$}{\string~}\+Parser}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. Cleans up resources used by the \doxylink{class_parser}{Parser} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_parser_a48044a8caa14a251cb4dad9fb363658e}{Parser}} (const \mbox{\hyperlink{class_parser}{Parser}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor to prevent copying \doxylink{class_parser}{Parser} objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_parser}{Parser}} \& \mbox{\hyperlink{class_parser_a4492f2702ae0fc9e5b23a2fa546ee7f3}{operator=}} (const \mbox{\hyperlink{class_parser}{Parser}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator to prevent copying \doxylink{class_parser}{Parser} objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_parser_aacd10e8fbc4e04201570a437198d8c61}{Parser}} (\mbox{\hyperlink{class_parser}{Parser}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor to prevent moving \doxylink{class_parser}{Parser} objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_parser}{Parser}} \& \mbox{\hyperlink{class_parser_adfbcdfe39e81929129e00fba8b546ed9}{operator=}} (\mbox{\hyperlink{class_parser}{Parser}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator to prevent moving \doxylink{class_parser}{Parser} objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_parser_ae118a7f13833108b4f01902af8a260b8}{Print\+Shape\+Vector}} (const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \&shapes)
+\begin{DoxyCompactList}\small\item\em Prints properties of shapes in a vector to the console. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_parser_a9c4bd21d0d23be70682e026d6e702ec9}{Json\+To\+Shapes}} (const std\+::string \&json)
+\begin{DoxyCompactList}\small\item\em Converts a JSON string representation into a vector of \doxylink{class_shape}{Shape} objects. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_ac0dc74d228421b62ece9d9e93511509e}{Shapes\+To\+Json}} (const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \&shapes)
+\begin{DoxyCompactList}\small\item\em Converts a vector of \doxylink{class_shape}{Shape} pointers into a JSON string representation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_parser_a7e0c6d8559fd28407b48e9eef05496d8}{Json\+To\+Users}} (const std\+::string \&json)
+\begin{DoxyCompactList}\small\item\em Converts a JSON string representation into a vector of \doxylink{class_user_account}{User\+Account} objects. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_aec700c3508cbac1197ff4010160be3cb}{Users\+To\+Json}} (const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*} $>$ \&users)
+\begin{DoxyCompactList}\small\item\em Converts a vector of \doxylink{class_user_account}{User\+Account} pointers into a JSON string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QVector$<$ \mbox{\hyperlink{class_testimonial}{Testimonial}} $>$ \mbox{\hyperlink{class_parser_afde14aac82ddca80d32462cc085e71d9}{Json\+To\+Testimonials}} (const std\+::string \&json)
+\begin{DoxyCompactList}\small\item\em Converts a JSON string representation into a QVector of \doxylink{class_testimonial}{Testimonial} objects. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_parser_a37a8828ed47a09c969ed966865da186d}{Testimonials\+To\+Json}} (const QVector$<$ \mbox{\hyperlink{class_testimonial}{Testimonial}} $>$ \&testimonials)
+\begin{DoxyCompactList}\small\item\em Converts a QVector of \doxylink{class_testimonial}{Testimonial} objects into a JSON string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_parser_1_1_morphic_shape}{Morphic\+Shape}} \mbox{\hyperlink{class_parser_a4d2c4035d6109be0ceca773cfbcff523}{Parse\+Json\+Object}} (const std\+::string json, size\+\_\+t \&index)
+\begin{DoxyCompactList}\small\item\em Parses a single JSON object (data within \textquotesingle{}\{\}\textquotesingle{}) into a \doxylink{struct_parser_1_1_morphic_shape}{Morphic\+Shape}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_parser_ac3bb64fa743348c1b31eb1118c6d4e0f}{Update\+Accumulator}} (const std\+::string \&key, const std\+::string \&value, \mbox{\hyperlink{struct_parser_1_1_morphic_shape}{Morphic\+Shape}} \&temp\+Shape)
+\begin{DoxyCompactList}\small\item\em Updates a \doxylink{struct_parser_1_1_morphic_shape}{Morphic\+Shape} accumulator with a parsed key-\/value pair. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_parser_a991032ca21e8e64a0fa274b8056cc669}{Build\+Shape}} (\mbox{\hyperlink{struct_parser_1_1_morphic_shape}{Morphic\+Shape}} temp\+Shape)
+\begin{DoxyCompactList}\small\item\em Constructs a concrete \doxylink{class_shape}{Shape} object from a populated \doxylink{struct_parser_1_1_morphic_shape}{Morphic\+Shape} accumulator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_parser_a49fad6dc437bab644ea477090320cbe8}{Skip\+Whitespace}} (const std\+::string \&json, size\+\_\+t \&index)
+\begin{DoxyCompactList}\small\item\em Advances the parsing index past any whitespace characters. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_a6658bb70a8b63f8edab2c0a6c7c65d9a}{Extract\+Key}} (const std\+::string \&json, size\+\_\+t \&index)
+\begin{DoxyCompactList}\small\item\em Extracts a JSON key (a string enclosed in double quotes) from the input string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_ade9641ed520d4e9b73600e3cc049af46}{Extract\+Value}} (const std\+::string \&json, size\+\_\+t \&index)
+\begin{DoxyCompactList}\small\item\em Extracts a JSON value from the input string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_a30398a0f28f70626124609a1071f7f60}{Extract\+Integer}} (const std\+::string \&json, size\+\_\+t \&index)
+\begin{DoxyCompactList}\small\item\em Extracts an integer value from the JSON string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_acabd71dccc533b85de37e566cda47abe}{Extract\+Array}} (const std\+::string \&json, size\+\_\+t \&index)
+\begin{DoxyCompactList}\small\item\em Extracts a JSON array (content within \textquotesingle{}\mbox{[}\mbox{]}\textquotesingle{}) as a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_a9dbc99f343ea14baa4e3c8d84066b83e}{Extract\+Literal}} (const std\+::string \&json, size\+\_\+t \&index)
+\begin{DoxyCompactList}\small\item\em Extracts a JSON literal (true, false, null) as a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ int $>$ \mbox{\hyperlink{class_parser_a0a4c2a3664d2d2c1f5444c18271a1cf4}{String\+To\+Vector}} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Converts a string representation of a JSON array of integers into an \doxylink{classalpha_1_1vector}{alpha\+::vector$<$int$>$}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_a8f8932bed758cd3e61de3669fdef1110}{Append\+Common\+Shape\+Data}} (const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\begin{DoxyCompactList}\small\item\em Appends common shape properties (ID, Type, Dimensions, Pen properties) to a JSON string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_a4947ae95392cd961660d9202d4c12e5e}{Append\+Brush\+Data}} (const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\begin{DoxyCompactList}\small\item\em Appends QBrush properties (Brush\+Color, Brush\+Style) to a JSON string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_a3c8d6dcf6e07231eaedb036ebe90b51f}{Append\+Text\+Data}} (const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\begin{DoxyCompactList}\small\item\em Appends all properties specific to \doxylink{class_text}{Text} objects to a JSON string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_af246a0732ef6c7518e5aaee1043d12e4}{Get\+Shape\+Dimensions}} (const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\begin{DoxyCompactList}\small\item\em Gets the geometric dimensions of a shape as a JSON array string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_a873d052551342d31e66e6746b09d2fe9}{Get\+Color}} (const QColor \&object\+Color)
+\begin{DoxyCompactList}\small\item\em Converts a QColor object to its string representation (e.\+g., "{}red"{}, "{}blue"{}). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_af303a9796fe246709fd2da137248e6d2}{Get\+Pen\+Style}} (const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\begin{DoxyCompactList}\small\item\em Gets the pen style of a shape as a string (e.\+g., "{}\+Solid\+Line"{}, "{}\+Dash\+Line"{}). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_a4cc8c1d3938f5f55be6074830f96090e}{Get\+Pen\+Cap\+Style}} (const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\begin{DoxyCompactList}\small\item\em Gets the pen cap style of a shape as a string (e.\+g., "{}\+Flat\+Cap"{}, "{}\+Round\+Cap"{}). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_aacdb18c8e63721594a5ee98f94e160c3}{Get\+Pen\+Join\+Style}} (const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\begin{DoxyCompactList}\small\item\em Gets the pen join style of a shape as a string (e.\+g., "{}\+Miter\+Join"{}, "{}\+Bevel\+Join"{}). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_a2ae1381ec08a2e3b54077c753d4dbf34}{Get\+Brush\+Style}} (const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\begin{DoxyCompactList}\small\item\em Gets the brush style of a shape as a string (e.\+g., "{}\+Solid\+Pattern"{}, "{}\+No\+Brush"{}). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_a34f89825a62c101002365cdc06188b0b}{Get\+Alignment\+Flag}} (const \mbox{\hyperlink{class_text}{Text}} \texorpdfstring{$\ast$}{*}text)
+\begin{DoxyCompactList}\small\item\em Gets the text alignment of a \doxylink{class_text}{Text} object as a string (e.\+g., "{}\+Align\+Left"{}, "{}\+Align\+Center"{}). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_a772810a8efbdda40d51d9a81125a45c0}{Get\+Font\+Style}} (const \mbox{\hyperlink{class_text}{Text}} \texorpdfstring{$\ast$}{*}text)
+\begin{DoxyCompactList}\small\item\em Gets the font style of a \doxylink{class_text}{Text} object as a string (e.\+g., "{}\+Style\+Normal"{}, "{}\+Style\+Italic"{}). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_parser_ae8599ff5bde69ad1ceb08f81b955539d}{Get\+Font\+Weight}} (const \mbox{\hyperlink{class_text}{Text}} \texorpdfstring{$\ast$}{*}text)
+\begin{DoxyCompactList}\small\item\em Gets the font weight of a \doxylink{class_text}{Text} object as a string (e.\+g., "{}\+Normal"{}, "{}\+Bold"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_parser_abd4e33be5c6b2f9e92412f598da0a78c}{Update\+User\+Accumulator}} (const std\+::string \&key, const std\+::string \&value, \mbox{\hyperlink{struct_parser_1_1_raw_user}{Raw\+User}} \&acc)
+\begin{DoxyCompactList}\small\item\em Updates a \doxylink{struct_parser_1_1_raw_user}{Raw\+User} accumulator with a parsed key-\/value pair for user data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality for parsing JSON data to C++ objects and vice-\/versa. 
+
+The \doxylink{class_parser}{Parser} class handles the serialization and deserialization of various data structures used in the application, such as Shapes, User\+Accounts, and Testimonials, converting them to and from JSON string representations. It includes methods for both forward parsing (JSON to object) and reverse parsing (object to JSON). This class does not store any data itself and its copy/move operations are disabled. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_parser_a5208129b497bfdf7c8ecceeb70e4bba8}\index{Parser@{Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{Parser()}{Parser()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_parser_a5208129b497bfdf7c8ecceeb70e4bba8} 
+Parser\+::\+Parser (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. Initializes a \doxylink{class_parser}{Parser} object. 
+
+\Hypertarget{class_parser_a95734193a58a199b4c6d820a6a730c42}\index{Parser@{Parser}!````~Parser@{\texorpdfstring{$\sim$}{\string~}Parser}}
+\index{````~Parser@{\texorpdfstring{$\sim$}{\string~}Parser}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Parser()}{\string~Parser()}}
+{\footnotesize\ttfamily \label{class_parser_a95734193a58a199b4c6d820a6a730c42} 
+Parser\+::\texorpdfstring{$\sim$}{\string~}\+Parser (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. Cleans up resources used by the \doxylink{class_parser}{Parser} object. 
+
+\Hypertarget{class_parser_a48044a8caa14a251cb4dad9fb363658e}\index{Parser@{Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{Parser()}{Parser()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_parser_a48044a8caa14a251cb4dad9fb363658e} 
+Parser\+::\+Parser (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_parser}{Parser}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy constructor to prevent copying \doxylink{class_parser}{Parser} objects. 
+
+\Hypertarget{class_parser_aacd10e8fbc4e04201570a437198d8c61}\index{Parser@{Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{Parser()}{Parser()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_parser_aacd10e8fbc4e04201570a437198d8c61} 
+Parser\+::\+Parser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_parser}{Parser}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted move constructor to prevent moving \doxylink{class_parser}{Parser} objects. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_parser_a4947ae95392cd961660d9202d4c12e5e}\index{Parser@{Parser}!AppendBrushData@{AppendBrushData}}
+\index{AppendBrushData@{AppendBrushData}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{AppendBrushData()}{AppendBrushData()}}
+{\footnotesize\ttfamily \label{class_parser_a4947ae95392cd961660d9202d4c12e5e} 
+std\+::string Parser\+::\+Append\+Brush\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Appends QBrush properties (Brush\+Color, Brush\+Style) to a JSON string. 
+
+This helper function is used for shapes that have fill properties. 
+\begin{DoxyParams}{Parameters}
+{\em shape} & A constant pointer to the \doxylink{class_shape}{Shape} object whose brush data is to be serialized. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string containing the JSON representation of brush data. 
+\end{DoxyReturn}
+\Hypertarget{class_parser_a8f8932bed758cd3e61de3669fdef1110}\index{Parser@{Parser}!AppendCommonShapeData@{AppendCommonShapeData}}
+\index{AppendCommonShapeData@{AppendCommonShapeData}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{AppendCommonShapeData()}{AppendCommonShapeData()}}
+{\footnotesize\ttfamily \label{class_parser_a8f8932bed758cd3e61de3669fdef1110} 
+std\+::string Parser\+::\+Append\+Common\+Shape\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Appends common shape properties (ID, Type, Dimensions, Pen properties) to a JSON string. 
+
+This helper function is used during the serialization of shapes to JSON. It formats 9 common key-\/value pairs. 
+\begin{DoxyParams}{Parameters}
+{\em shape} & A constant pointer to the \doxylink{class_shape}{Shape} object to serialize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string containing the JSON representation of common shape data. 
+\end{DoxyReturn}
+\Hypertarget{class_parser_a3c8d6dcf6e07231eaedb036ebe90b51f}\index{Parser@{Parser}!AppendTextData@{AppendTextData}}
+\index{AppendTextData@{AppendTextData}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{AppendTextData()}{AppendTextData()}}
+{\footnotesize\ttfamily \label{class_parser_a3c8d6dcf6e07231eaedb036ebe90b51f} 
+std\+::string Parser\+::\+Append\+Text\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Appends all properties specific to \doxylink{class_text}{Text} objects to a JSON string. 
+
+Serializes properties like Text\+String, Point\+Size, Color, Alignment, Font. 
+\begin{DoxyParams}{Parameters}
+{\em shape} & A constant pointer to the \doxylink{class_shape}{Shape} object, expected to be a \doxylink{class_text}{Text} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string containing the JSON representation of text data. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the provided shape cannot be cast to \doxylink{class_text}{Text}. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_a991032ca21e8e64a0fa274b8056cc669}\index{Parser@{Parser}!BuildShape@{BuildShape}}
+\index{BuildShape@{BuildShape}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{BuildShape()}{BuildShape()}}
+{\footnotesize\ttfamily \label{class_parser_a991032ca21e8e64a0fa274b8056cc669} 
+\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} Parser\+::\+Build\+Shape (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_parser_1_1_morphic_shape}{Morphic\+Shape}}}]{temp\+Shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constructs a concrete \doxylink{class_shape}{Shape} object from a populated \doxylink{struct_parser_1_1_morphic_shape}{Morphic\+Shape} accumulator. 
+
+Based on the {\ttfamily shape\+Id} in {\ttfamily temp\+Shape}, this function dynamically allocates and initializes the appropriate derived \doxylink{class_shape}{Shape} object (e.\+g., \doxylink{class_line}{Line}, \doxylink{class_circle}{Circle}). 
+\begin{DoxyParams}{Parameters}
+{\em temp\+Shape} & The \doxylink{struct_parser_1_1_morphic_shape}{Morphic\+Shape} object containing the data for the new shape. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly instantiated \doxylink{class_shape}{Shape} object, or nullptr if construction fails. 
+\end{DoxyReturn}
+\Hypertarget{class_parser_acabd71dccc533b85de37e566cda47abe}\index{Parser@{Parser}!ExtractArray@{ExtractArray}}
+\index{ExtractArray@{ExtractArray}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{ExtractArray()}{ExtractArray()}}
+{\footnotesize\ttfamily \label{class_parser_acabd71dccc533b85de37e566cda47abe} 
+std\+::string Parser\+::\+Extract\+Array (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json}{, }\item[{size\+\_\+t \&}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Extracts a JSON array (content within \textquotesingle{}\mbox{[}\mbox{]}\textquotesingle{}) as a string. 
+
+Assumes {\ttfamily index} is at the opening bracket of the array. Modifies {\ttfamily index} to point after the closing bracket of the array. 
+\begin{DoxyParams}{Parameters}
+{\em json} & The JSON string being parsed. \\
+\hline
+{\em index} & A reference to the current parsing index, modified by the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The extracted array (including brackets) as a std\+::string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the closing bracket is missing. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_a30398a0f28f70626124609a1071f7f60}\index{Parser@{Parser}!ExtractInteger@{ExtractInteger}}
+\index{ExtractInteger@{ExtractInteger}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{ExtractInteger()}{ExtractInteger()}}
+{\footnotesize\ttfamily \label{class_parser_a30398a0f28f70626124609a1071f7f60} 
+std\+::string Parser\+::\+Extract\+Integer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json}{, }\item[{size\+\_\+t \&}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Extracts an integer value from the JSON string. 
+
+Assumes {\ttfamily index} is at the first digit of the integer. Modifies {\ttfamily index} to point after the last digit of the integer. 
+\begin{DoxyParams}{Parameters}
+{\em json} & The JSON string being parsed. \\
+\hline
+{\em index} & A reference to the current parsing index, modified by the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The extracted integer as a std\+::string. 
+\end{DoxyReturn}
+\Hypertarget{class_parser_a6658bb70a8b63f8edab2c0a6c7c65d9a}\index{Parser@{Parser}!ExtractKey@{ExtractKey}}
+\index{ExtractKey@{ExtractKey}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{ExtractKey()}{ExtractKey()}}
+{\footnotesize\ttfamily \label{class_parser_a6658bb70a8b63f8edab2c0a6c7c65d9a} 
+std\+::string Parser\+::\+Extract\+Key (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json}{, }\item[{size\+\_\+t \&}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Extracts a JSON key (a string enclosed in double quotes) from the input string. 
+
+Assumes {\ttfamily index} is at the opening double quote of the key. Modifies {\ttfamily index} to point immediately after the closing double quote of the key. 
+\begin{DoxyParams}{Parameters}
+{\em json} & The JSON string being parsed. \\
+\hline
+{\em index} & A reference to the current parsing index, modified by the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The extracted key as a std\+::string. 
+\end{DoxyReturn}
+\Hypertarget{class_parser_a9dbc99f343ea14baa4e3c8d84066b83e}\index{Parser@{Parser}!ExtractLiteral@{ExtractLiteral}}
+\index{ExtractLiteral@{ExtractLiteral}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{ExtractLiteral()}{ExtractLiteral()}}
+{\footnotesize\ttfamily \label{class_parser_a9dbc99f343ea14baa4e3c8d84066b83e} 
+std\+::string Parser\+::\+Extract\+Literal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json}{, }\item[{size\+\_\+t \&}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Extracts a JSON literal (true, false, null) as a string. 
+
+Assumes {\ttfamily index} is at the first character of the literal. Modifies {\ttfamily index} to point after the last character of the literal. 
+\begin{DoxyParams}{Parameters}
+{\em json} & The JSON string being parsed. \\
+\hline
+{\em index} & A reference to the current parsing index, modified by the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The extracted literal as a std\+::string. 
+\end{DoxyReturn}
+\Hypertarget{class_parser_ade9641ed520d4e9b73600e3cc049af46}\index{Parser@{Parser}!ExtractValue@{ExtractValue}}
+\index{ExtractValue@{ExtractValue}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{ExtractValue()}{ExtractValue()}}
+{\footnotesize\ttfamily \label{class_parser_ade9641ed520d4e9b73600e3cc049af46} 
+std\+::string Parser\+::\+Extract\+Value (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json}{, }\item[{size\+\_\+t \&}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Extracts a JSON value from the input string. 
+
+Handles strings, numbers, arrays, and boolean literals. Modifies {\ttfamily index} to point after the extracted value. 
+\begin{DoxyParams}{Parameters}
+{\em json} & The JSON string being parsed. \\
+\hline
+{\em index} & A reference to the current parsing index, modified by the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The extracted value as a std\+::string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the value type is unexpected. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_a34f89825a62c101002365cdc06188b0b}\index{Parser@{Parser}!GetAlignmentFlag@{GetAlignmentFlag}}
+\index{GetAlignmentFlag@{GetAlignmentFlag}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{GetAlignmentFlag()}{GetAlignmentFlag()}}
+{\footnotesize\ttfamily \label{class_parser_a34f89825a62c101002365cdc06188b0b} 
+std\+::string Parser\+::\+Get\+Alignment\+Flag (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_text}{Text}} \texorpdfstring{$\ast$}{*}}]{text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the text alignment of a \doxylink{class_text}{Text} object as a string (e.\+g., "{}\+Align\+Left"{}, "{}\+Align\+Center"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & A constant pointer to the \doxylink{class_text}{Text} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string representing the text alignment. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the alignment flag is unknown. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_a2ae1381ec08a2e3b54077c753d4dbf34}\index{Parser@{Parser}!GetBrushStyle@{GetBrushStyle}}
+\index{GetBrushStyle@{GetBrushStyle}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{GetBrushStyle()}{GetBrushStyle()}}
+{\footnotesize\ttfamily \label{class_parser_a2ae1381ec08a2e3b54077c753d4dbf34} 
+std\+::string Parser\+::\+Get\+Brush\+Style (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the brush style of a shape as a string (e.\+g., "{}\+Solid\+Pattern"{}, "{}\+No\+Brush"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & A constant pointer to the \doxylink{class_shape}{Shape} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string representing the brush style. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the brush style is unknown. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_a873d052551342d31e66e6746b09d2fe9}\index{Parser@{Parser}!GetColor@{GetColor}}
+\index{GetColor@{GetColor}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{GetColor()}{GetColor()}}
+{\footnotesize\ttfamily \label{class_parser_a873d052551342d31e66e6746b09d2fe9} 
+std\+::string Parser\+::\+Get\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{object\+Color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Converts a QColor object to its string representation (e.\+g., "{}red"{}, "{}blue"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Color} & The QColor to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string representing the color name. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the color is not one of the predefined known colors. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_a772810a8efbdda40d51d9a81125a45c0}\index{Parser@{Parser}!GetFontStyle@{GetFontStyle}}
+\index{GetFontStyle@{GetFontStyle}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{GetFontStyle()}{GetFontStyle()}}
+{\footnotesize\ttfamily \label{class_parser_a772810a8efbdda40d51d9a81125a45c0} 
+std\+::string Parser\+::\+Get\+Font\+Style (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_text}{Text}} \texorpdfstring{$\ast$}{*}}]{text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the font style of a \doxylink{class_text}{Text} object as a string (e.\+g., "{}\+Style\+Normal"{}, "{}\+Style\+Italic"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & A constant pointer to the \doxylink{class_text}{Text} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string representing the font style. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the font style is unknown. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_ae8599ff5bde69ad1ceb08f81b955539d}\index{Parser@{Parser}!GetFontWeight@{GetFontWeight}}
+\index{GetFontWeight@{GetFontWeight}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{GetFontWeight()}{GetFontWeight()}}
+{\footnotesize\ttfamily \label{class_parser_ae8599ff5bde69ad1ceb08f81b955539d} 
+std\+::string Parser\+::\+Get\+Font\+Weight (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_text}{Text}} \texorpdfstring{$\ast$}{*}}]{text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the font weight of a \doxylink{class_text}{Text} object as a string (e.\+g., "{}\+Normal"{}, "{}\+Bold"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & A constant pointer to the \doxylink{class_text}{Text} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string representing the font weight. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the font weight is unknown. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_a4cc8c1d3938f5f55be6074830f96090e}\index{Parser@{Parser}!GetPenCapStyle@{GetPenCapStyle}}
+\index{GetPenCapStyle@{GetPenCapStyle}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{GetPenCapStyle()}{GetPenCapStyle()}}
+{\footnotesize\ttfamily \label{class_parser_a4cc8c1d3938f5f55be6074830f96090e} 
+std\+::string Parser\+::\+Get\+Pen\+Cap\+Style (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the pen cap style of a shape as a string (e.\+g., "{}\+Flat\+Cap"{}, "{}\+Round\+Cap"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & A constant pointer to the \doxylink{class_shape}{Shape} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string representing the pen cap style. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the pen cap style is unknown. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_aacdb18c8e63721594a5ee98f94e160c3}\index{Parser@{Parser}!GetPenJoinStyle@{GetPenJoinStyle}}
+\index{GetPenJoinStyle@{GetPenJoinStyle}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{GetPenJoinStyle()}{GetPenJoinStyle()}}
+{\footnotesize\ttfamily \label{class_parser_aacdb18c8e63721594a5ee98f94e160c3} 
+std\+::string Parser\+::\+Get\+Pen\+Join\+Style (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the pen join style of a shape as a string (e.\+g., "{}\+Miter\+Join"{}, "{}\+Bevel\+Join"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & A constant pointer to the \doxylink{class_shape}{Shape} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string representing the pen join style. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the pen join style is unknown. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_af303a9796fe246709fd2da137248e6d2}\index{Parser@{Parser}!GetPenStyle@{GetPenStyle}}
+\index{GetPenStyle@{GetPenStyle}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{GetPenStyle()}{GetPenStyle()}}
+{\footnotesize\ttfamily \label{class_parser_af303a9796fe246709fd2da137248e6d2} 
+std\+::string Parser\+::\+Get\+Pen\+Style (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the pen style of a shape as a string (e.\+g., "{}\+Solid\+Line"{}, "{}\+Dash\+Line"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & A constant pointer to the \doxylink{class_shape}{Shape} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string representing the pen style. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the pen style is unknown. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_af246a0732ef6c7518e5aaee1043d12e4}\index{Parser@{Parser}!GetShapeDimensions@{GetShapeDimensions}}
+\index{GetShapeDimensions@{GetShapeDimensions}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{GetShapeDimensions()}{GetShapeDimensions()}}
+{\footnotesize\ttfamily \label{class_parser_af246a0732ef6c7518e5aaee1043d12e4} 
+std\+::string Parser\+::\+Get\+Shape\+Dimensions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the geometric dimensions of a shape as a JSON array string. 
+
+The specific dimensions depend on the shape type (e.\+g., coordinates for \doxylink{class_line}{Line}, points for Polyline/\+Polygon, x,y,length,width for \doxylink{class_rectangle}{Rectangle}). 
+\begin{DoxyParams}{Parameters}
+{\em shape} & A constant pointer to the \doxylink{class_shape}{Shape} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::string representing a JSON array of the shape\textquotesingle{}s dimensions. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the shape type is unknown or casting fails. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_a9c4bd21d0d23be70682e026d6e702ec9}\index{Parser@{Parser}!JsonToShapes@{JsonToShapes}}
+\index{JsonToShapes@{JsonToShapes}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{JsonToShapes()}{JsonToShapes()}}
+{\footnotesize\ttfamily \label{class_parser_a9c4bd21d0d23be70682e026d6e702ec9} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ Parser\+::\+Json\+To\+Shapes (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json}{}\end{DoxyParamCaption})}
+
+
+
+Converts a JSON string representation into a vector of \doxylink{class_shape}{Shape} objects. 
+
+This is a forward parsing method that takes a JSON string, parses it, and constructs a vector of dynamically allocated \doxylink{class_shape}{Shape} objects. 
+\begin{DoxyParams}{Parameters}
+{\em json} & A constant reference to a string containing the JSON data for shapes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \doxylink{classalpha_1_1vector}{alpha\+::vector} of \doxylink{class_shape}{Shape} pointers, each pointing to an instantiated \doxylink{class_shape}{Shape} object. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the JSON string is malformed or parsing fails. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_afde14aac82ddca80d32462cc085e71d9}\index{Parser@{Parser}!JsonToTestimonials@{JsonToTestimonials}}
+\index{JsonToTestimonials@{JsonToTestimonials}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{JsonToTestimonials()}{JsonToTestimonials()}}
+{\footnotesize\ttfamily \label{class_parser_afde14aac82ddca80d32462cc085e71d9} 
+QVector$<$ \mbox{\hyperlink{class_testimonial}{Testimonial}} $>$ Parser\+::\+Json\+To\+Testimonials (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts a JSON string representation into a QVector of \doxylink{class_testimonial}{Testimonial} objects. 
+
+This static forward parsing method uses Qt\textquotesingle{}s JSON utilities to parse testimonials. 
+\begin{DoxyParams}{Parameters}
+{\em json} & A constant reference to a string containing the JSON data for testimonials. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A QVector of \doxylink{class_testimonial}{Testimonial} objects. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If JSON parsing fails or the top-\/level structure is not an array. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_a7e0c6d8559fd28407b48e9eef05496d8}\index{Parser@{Parser}!JsonToUsers@{JsonToUsers}}
+\index{JsonToUsers@{JsonToUsers}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{JsonToUsers()}{JsonToUsers()}}
+{\footnotesize\ttfamily \label{class_parser_a7e0c6d8559fd28407b48e9eef05496d8} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*} $>$ Parser\+::\+Json\+To\+Users (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json}{}\end{DoxyParamCaption})}
+
+
+
+Converts a JSON string representation into a vector of \doxylink{class_user_account}{User\+Account} objects. 
+
+This forward parsing method processes a JSON string to create \doxylink{class_user_account}{User\+Account} objects. 
+\begin{DoxyParams}{Parameters}
+{\em json} & A constant reference to a string containing the JSON data for user accounts. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \doxylink{classalpha_1_1vector}{alpha\+::vector} of \doxylink{class_user_account}{User\+Account} pointers. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the JSON string is malformed or essential user data is missing. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_a4492f2702ae0fc9e5b23a2fa546ee7f3}\index{Parser@{Parser}!operator=@{operator=}}
+\index{operator=@{operator=}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_parser_a4492f2702ae0fc9e5b23a2fa546ee7f3} 
+\mbox{\hyperlink{class_parser}{Parser}} \& Parser\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_parser}{Parser}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy assignment operator to prevent copying \doxylink{class_parser}{Parser} objects. 
+
+\Hypertarget{class_parser_adfbcdfe39e81929129e00fba8b546ed9}\index{Parser@{Parser}!operator=@{operator=}}
+\index{operator=@{operator=}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_parser_adfbcdfe39e81929129e00fba8b546ed9} 
+\mbox{\hyperlink{class_parser}{Parser}} \& Parser\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_parser}{Parser}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted move assignment operator to prevent moving \doxylink{class_parser}{Parser} objects. 
+
+\Hypertarget{class_parser_a4d2c4035d6109be0ceca773cfbcff523}\index{Parser@{Parser}!ParseJsonObject@{ParseJsonObject}}
+\index{ParseJsonObject@{ParseJsonObject}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{ParseJsonObject()}{ParseJsonObject()}}
+{\footnotesize\ttfamily \label{class_parser_a4d2c4035d6109be0ceca773cfbcff523} 
+\mbox{\hyperlink{struct_parser_1_1_morphic_shape}{Parser\+::\+Morphic\+Shape}} Parser\+::\+Parse\+Json\+Object (\begin{DoxyParamCaption}\item[{const std\+::string}]{json}{, }\item[{size\+\_\+t \&}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parses a single JSON object (data within \textquotesingle{}\{\}\textquotesingle{}) into a \doxylink{struct_parser_1_1_morphic_shape}{Morphic\+Shape}. 
+
+This helper function processes one JSON object from the input string, extracting key-\/value pairs and populating a \doxylink{struct_parser_1_1_morphic_shape}{Morphic\+Shape} accumulator. 
+\begin{DoxyParams}{Parameters}
+{\em json} & The JSON string being parsed. \\
+\hline
+{\em index} & A reference to the current parsing index within the JSON string, modified by the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_parser_1_1_morphic_shape}{Morphic\+Shape} object containing the parsed data. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the JSON object is malformed. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_ae118a7f13833108b4f01902af8a260b8}\index{Parser@{Parser}!PrintShapeVector@{PrintShapeVector}}
+\index{PrintShapeVector@{PrintShapeVector}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{PrintShapeVector()}{PrintShapeVector()}}
+{\footnotesize\ttfamily \label{class_parser_ae118a7f13833108b4f01902af8a260b8} 
+void Parser\+::\+Print\+Shape\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \&}]{shapes}{}\end{DoxyParamCaption})}
+
+
+
+Prints properties of shapes in a vector to the console. 
+
+Iterates through a vector of \doxylink{class_shape}{Shape} pointers and prints their ID, Tracker\+Id, and Shape\+Type to standard output. Primarily for debugging purposes. 
+\begin{DoxyParams}{Parameters}
+{\em shapes} & A constant reference to an \doxylink{classalpha_1_1vector}{alpha\+::vector} of \doxylink{class_shape}{Shape} pointers. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_parser_ac0dc74d228421b62ece9d9e93511509e}\index{Parser@{Parser}!ShapesToJson@{ShapesToJson}}
+\index{ShapesToJson@{ShapesToJson}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{ShapesToJson()}{ShapesToJson()}}
+{\footnotesize\ttfamily \label{class_parser_ac0dc74d228421b62ece9d9e93511509e} 
+std\+::string Parser\+::\+Shapes\+To\+Json (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \&}]{shapes}{}\end{DoxyParamCaption})}
+
+
+
+Converts a vector of \doxylink{class_shape}{Shape} pointers into a JSON string representation. 
+
+This is a reverse parsing method that takes a vector of \doxylink{class_shape}{Shape} objects and serializes them into a JSON formatted string. 
+\begin{DoxyParams}{Parameters}
+{\em shapes} & A constant reference to an \doxylink{classalpha_1_1vector}{alpha\+::vector} of \doxylink{class_shape}{Shape} pointers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string formatted in JSON containing all key\+:value pairs for the shapes. 
+\end{DoxyReturn}
+\Hypertarget{class_parser_a49fad6dc437bab644ea477090320cbe8}\index{Parser@{Parser}!SkipWhitespace@{SkipWhitespace}}
+\index{SkipWhitespace@{SkipWhitespace}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{SkipWhitespace()}{SkipWhitespace()}}
+{\footnotesize\ttfamily \label{class_parser_a49fad6dc437bab644ea477090320cbe8} 
+void Parser\+::\+Skip\+Whitespace (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json}{, }\item[{size\+\_\+t \&}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Advances the parsing index past any whitespace characters. 
+
+Modifies {\ttfamily index} to point to the next non-\/whitespace character in the {\ttfamily json} string. 
+\begin{DoxyParams}{Parameters}
+{\em json} & The JSON string being parsed. \\
+\hline
+{\em index} & A reference to the current parsing index, modified by the function. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_parser_a0a4c2a3664d2d2c1f5444c18271a1cf4}\index{Parser@{Parser}!StringToVector@{StringToVector}}
+\index{StringToVector@{StringToVector}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{StringToVector()}{StringToVector()}}
+{\footnotesize\ttfamily \label{class_parser_a0a4c2a3664d2d2c1f5444c18271a1cf4} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ int $>$ Parser\+::\+String\+To\+Vector (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Converts a string representation of a JSON array of integers into an \doxylink{classalpha_1_1vector}{alpha\+::vector$<$int$>$}. 
+
+Parses a string like "{}\mbox{[}20, 32, 41, 64\mbox{]}"{} into a vector of integers. 
+\begin{DoxyParams}{Parameters}
+{\em value} & The string representation of the integer array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \doxylink{classalpha_1_1vector}{alpha\+::vector$<$int$>$} containing the parsed integers. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the string format is invalid. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_a37a8828ed47a09c969ed966865da186d}\index{Parser@{Parser}!TestimonialsToJson@{TestimonialsToJson}}
+\index{TestimonialsToJson@{TestimonialsToJson}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{TestimonialsToJson()}{TestimonialsToJson()}}
+{\footnotesize\ttfamily \label{class_parser_a37a8828ed47a09c969ed966865da186d} 
+std\+::string Parser\+::\+Testimonials\+To\+Json (\begin{DoxyParamCaption}\item[{const QVector$<$ \mbox{\hyperlink{class_testimonial}{Testimonial}} $>$ \&}]{testimonials}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts a QVector of \doxylink{class_testimonial}{Testimonial} objects into a JSON string representation. 
+
+This static reverse parsing method uses Qt\textquotesingle{}s JSON utilities to serialize testimonials. 
+\begin{DoxyParams}{Parameters}
+{\em testimonials} & A constant reference to a QVector of \doxylink{class_testimonial}{Testimonial} objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string formatted in JSON representing the testimonials. 
+\end{DoxyReturn}
+\Hypertarget{class_parser_ac3bb64fa743348c1b31eb1118c6d4e0f}\index{Parser@{Parser}!UpdateAccumulator@{UpdateAccumulator}}
+\index{UpdateAccumulator@{UpdateAccumulator}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{UpdateAccumulator()}{UpdateAccumulator()}}
+{\footnotesize\ttfamily \label{class_parser_ac3bb64fa743348c1b31eb1118c6d4e0f} 
+void Parser\+::\+Update\+Accumulator (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key}{, }\item[{const std\+::string \&}]{value}{, }\item[{\mbox{\hyperlink{struct_parser_1_1_morphic_shape}{Morphic\+Shape}} \&}]{temp\+Shape}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates a \doxylink{struct_parser_1_1_morphic_shape}{Morphic\+Shape} accumulator with a parsed key-\/value pair. 
+
+Converts the string {\ttfamily value} to its appropriate C++ type based on the {\ttfamily key} and stores it in the corresponding member of the {\ttfamily temp\+Shape} accumulator. 
+\begin{DoxyParams}{Parameters}
+{\em key} & The JSON key as a string. \\
+\hline
+{\em value} & The JSON value as a string. \\
+\hline
+{\em temp\+Shape} & A reference to the \doxylink{struct_parser_1_1_morphic_shape}{Morphic\+Shape} accumulator to be updated. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the key is unknown or the value is invalid for the key. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_abd4e33be5c6b2f9e92412f598da0a78c}\index{Parser@{Parser}!UpdateUserAccumulator@{UpdateUserAccumulator}}
+\index{UpdateUserAccumulator@{UpdateUserAccumulator}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{UpdateUserAccumulator()}{UpdateUserAccumulator()}}
+{\footnotesize\ttfamily \label{class_parser_abd4e33be5c6b2f9e92412f598da0a78c} 
+void Parser\+::\+Update\+User\+Accumulator (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key}{, }\item[{const std\+::string \&}]{value}{, }\item[{\mbox{\hyperlink{struct_parser_1_1_raw_user}{Raw\+User}} \&}]{acc}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Updates a \doxylink{struct_parser_1_1_raw_user}{Raw\+User} accumulator with a parsed key-\/value pair for user data. 
+
+Converts the string {\ttfamily value} to its appropriate C++ type based on the {\ttfamily key} (username, password, admin) and stores it in the {\ttfamily acc} accumulator. Also sets flags in {\ttfamily acc} to indicate which fields were found. 
+\begin{DoxyParams}{Parameters}
+{\em key} & The JSON key as a string. \\
+\hline
+{\em value} & The JSON value as a string. \\
+\hline
+{\em acc} & A reference to the \doxylink{struct_parser_1_1_raw_user}{Raw\+User} accumulator to be updated. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the value for \textquotesingle{}admin\textquotesingle{} is not "{}true"{} or "{}false"{}. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_aec700c3508cbac1197ff4010160be3cb}\index{Parser@{Parser}!UsersToJson@{UsersToJson}}
+\index{UsersToJson@{UsersToJson}!Parser@{Parser}}
+\doxysubsubsection{\texorpdfstring{UsersToJson()}{UsersToJson()}}
+{\footnotesize\ttfamily \label{class_parser_aec700c3508cbac1197ff4010160be3cb} 
+std\+::string Parser\+::\+Users\+To\+Json (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_user_account}{User\+Account}} \texorpdfstring{$\ast$}{*} $>$ \&}]{users}{}\end{DoxyParamCaption})}
+
+
+
+Converts a vector of \doxylink{class_user_account}{User\+Account} pointers into a JSON string representation. 
+
+This reverse parsing method serializes \doxylink{class_user_account}{User\+Account} objects into a JSON string. 
+\begin{DoxyParams}{Parameters}
+{\em users} & A constant reference to an \doxylink{classalpha_1_1vector}{alpha\+::vector} of \doxylink{class_user_account}{User\+Account} pointers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string formatted in JSON representing the user accounts. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/backend/\mbox{\hyperlink{_parser_8h}{Parser.\+h}}\item 
+src/backend/\mbox{\hyperlink{_parser_8cpp}{Parser.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,1686 @@
+\begin{theindex}
+
+  \item {$>$ Shapes}, \hyperpage{11}
+  \item {\texorpdfstring{$\sim$}{\string~}AppDriver}
+    \subitem {AppDriver}, \hyperpage{22}
+  \item {\texorpdfstring{$\sim$}{\string~}MainWindow}
+    \subitem {MainWindow}, \hyperpage{52}
+  \item {\texorpdfstring{$\sim$}{\string~}Parser}
+    \subitem {Parser}, \hyperpage{67}
+  \item {\texorpdfstring{$\sim$}{\string~}RenderAreaManager}
+    \subitem {RenderAreaManager}, \hyperpage{101}
+  \item {\texorpdfstring{$\sim$}{\string~}Shape}
+    \subitem {Shape}, \hyperpage{108}
+  \item {\texorpdfstring{$\sim$}{\string~}ShapesManager}
+    \subitem {ShapesManager}, \hyperpage{118}
+  \item {\texorpdfstring{$\sim$}{\string~}TestimonialManager}
+    \subitem {TestimonialManager}, \hyperpage{133}
+  \item {\texorpdfstring{$\sim$}{\string~}UserAccount}
+    \subitem {UserAccount}, \hyperpage{147}
+  \item {\texorpdfstring{$\sim$}{\string~}UserManager}
+    \subitem {UserManager}, \hyperpage{152}
+  \item {\texorpdfstring{$\sim$}{\string~}vector}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{157}
+
+  \indexspace
+
+  \item {a}
+    \subitem {Ellipse}, \hyperpage{37}
+  \item {addShape}
+    \subitem {RenderAreaManager}, \hyperpage{102}
+    \subitem {ShapesManager}, \hyperpage{118}
+  \item {addTestimonial}
+    \subitem {TestimonialManager}, \hyperpage{134}
+  \item {addToShapeTree}
+    \subitem {MainWindow}, \hyperpage{53}
+  \item {addUser}
+    \subitem {UserManager}, \hyperpage{152}
+  \item {admin}
+    \subitem {Parser::RawUser}, \hyperpage{91}
+    \subitem {UserAccount}, \hyperpage{149}
+  \item {all\_shapes.h}
+    \subitem {CIRCLE}, \hyperpage{187}
+    \subitem {ELLIPSE}, \hyperpage{187}
+    \subitem {LINE}, \hyperpage{187}
+    \subitem {POLYGON}, \hyperpage{187}
+    \subitem {POLYLINE}, \hyperpage{187}
+    \subitem {RECTANGLE}, \hyperpage{187}
+    \subitem {ShapeIDs}, \hyperpage{186}
+    \subitem {SQUARE}, \hyperpage{187}
+    \subitem {TEXT}, \hyperpage{187}
+  \item {allocateTrackerId}
+    \subitem {Shape}, \hyperpage{108}
+  \item {allowEditing}
+    \subitem {RenderArea}, \hyperpage{99}
+  \item {alpha}, \hyperpage{13}
+  \item {alpha::vector$<$ T $>$}, \hyperpage{156}
+    \subitem {\texorpdfstring{$\sim$}{\string~}vector}, \hyperpage{157}
+    \subitem {begin}, \hyperpage{157}
+    \subitem {capacity}, \hyperpage{157}
+    \subitem {const\_iterator}, \hyperpage{156}
+    \subitem {elem}, \hyperpage{159}
+    \subitem {end}, \hyperpage{157, 158}
+    \subitem {erase}, \hyperpage{158}
+    \subitem {insert}, \hyperpage{158}
+    \subitem {iterator}, \hyperpage{156}
+    \subitem {operator=}, \hyperpage{158}
+    \subitem {operator[]}, \hyperpage{158}
+    \subitem {push\_back}, \hyperpage{158}
+    \subitem {reserve}, \hyperpage{159}
+    \subitem {resize}, \hyperpage{159}
+    \subitem {size}, \hyperpage{159}
+    \subitem {size\_v}, \hyperpage{159}
+    \subitem {space}, \hyperpage{159}
+    \subitem {vector}, \hyperpage{157}
+  \item {ALPHA\_VECTOR\_H}
+    \subitem {vector.h}, \hyperpage{198}
+  \item {AnalyzeDeleteReply}
+    \subitem {ApiClient}, \hyperpage{17}
+  \item {AnalyzeGetReply}
+    \subitem {ApiClient}, \hyperpage{17}
+  \item {AnalyzePostReply}
+    \subitem {ApiClient}, \hyperpage{17}
+  \item {ApiClient}, \hyperpage{15}
+    \subitem {AnalyzeDeleteReply}, \hyperpage{17}
+    \subitem {AnalyzeGetReply}, \hyperpage{17}
+    \subitem {AnalyzePostReply}, \hyperpage{17}
+    \subitem {ApiClient}, \hyperpage{17}
+    \subitem {BadDeleteReply}, \hyperpage{18}
+    \subitem {BadGetReply}, \hyperpage{18}
+    \subitem {BadPostReply}, \hyperpage{18}
+    \subitem {DeleteRenderAreaAll}, \hyperpage{18}
+    \subitem {DeleteShapesAll}, \hyperpage{18}
+    \subitem {DeleteTestimonialsAll}, \hyperpage{18}
+    \subitem {DeleteUsersAll}, \hyperpage{18}
+    \subitem {GetRenderArea}, \hyperpage{19}
+    \subitem {GetShapes}, \hyperpage{19}
+    \subitem {GetTestimonials}, \hyperpage{19}
+    \subitem {GetUsers}, \hyperpage{19}
+    \subitem {GoodDeleteReply}, \hyperpage{19}
+    \subitem {GoodGetReply}, \hyperpage{19}
+    \subitem {GoodPostReply}, \hyperpage{19}
+    \subitem {manager}, \hyperpage{20}
+    \subitem {PostRenderArea}, \hyperpage{20}
+    \subitem {PostShapes}, \hyperpage{20}
+    \subitem {PostTestimonials}, \hyperpage{20}
+    \subitem {PostUsers}, \hyperpage{20}
+  \item {AppDriver}, \hyperpage{21}
+    \subitem {\texorpdfstring{$\sim$}{\string~}AppDriver}, 
+		\hyperpage{22}
+    \subitem {AppDriver}, \hyperpage{22}
+    \subitem {connectFrontendToDriver}, \hyperpage{23}
+    \subitem {connectManagersToFrontend}, \hyperpage{23}
+    \subitem {loadAllData}, \hyperpage{23}
+    \subitem {mainWindow}, \hyperpage{25}
+    \subitem {onDeleteAllUsers}, \hyperpage{23}
+    \subitem {onLoginAttempt}, \hyperpage{23}
+    \subitem {onNewUser}, \hyperpage{23}
+    \subitem {onRenderDeleteAllShapes}, \hyperpage{23}
+    \subitem {onRenderShapeAdded}, \hyperpage{24}
+    \subitem {onRenderShapeChanged}, \hyperpage{24}
+    \subitem {onRenderShapeDeleted}, \hyperpage{24}
+    \subitem {onUserDeleted}, \hyperpage{24}
+    \subitem {onUserModified}, \hyperpage{24}
+    \subitem {renderedShapes}, \hyperpage{25}
+    \subitem {run}, \hyperpage{25}
+    \subitem {shutdown}, \hyperpage{25}
+    \subitem {user}, \hyperpage{25}
+  \item {AppendBrushData}
+    \subitem {Parser}, \hyperpage{67}
+  \item {AppendCommonShapeData}
+    \subitem {Parser}, \hyperpage{68}
+  \item {AppendTextData}
+    \subitem {Parser}, \hyperpage{68}
+  \item {Area}
+    \subitem {Circle}, \hyperpage{28}
+    \subitem {Ellipse}, \hyperpage{35}
+    \subitem {Line}, \hyperpage{40}
+    \subitem {Polygon}, \hyperpage{82}
+    \subitem {Polyline}, \hyperpage{88}
+    \subitem {Rectangle}, \hyperpage{94}
+    \subitem {Shape}, \hyperpage{108}
+    \subitem {Square}, \hyperpage{124}
+    \subitem {Text}, \hyperpage{142}
+  \item {attemptLogin}
+    \subitem {LoginWindow}, \hyperpage{44}
+  \item {attemptSignup}
+    \subitem {LoginWindow}, \hyperpage{44}
+  \item {authenticate}
+    \subitem {UserManager}, \hyperpage{152}
+  \item {authenticationFailed}
+    \subitem {UserManager}, \hyperpage{152}
+
+  \indexspace
+
+  \item {b}
+    \subitem {Ellipse}, \hyperpage{37}
+  \item {backToLoginBtn}
+    \subitem {LoginWindow}, \hyperpage{45}
+  \item {BadDeleteReply}
+    \subitem {ApiClient}, \hyperpage{18}
+  \item {BadGetReply}
+    \subitem {ApiClient}, \hyperpage{18}
+  \item {BadPostReply}
+    \subitem {ApiClient}, \hyperpage{18}
+  \item {begin}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{157}
+  \item {brush}
+    \subitem {Parser::MorphicShape}, \hyperpage{63}
+    \subitem {Shape}, \hyperpage{115}
+  \item {brushItems}
+    \subitem {Shape}, \hyperpage{115}
+  \item {BuildShape}
+    \subitem {Parser}, \hyperpage{68}
+
+  \indexspace
+
+  \item {canEdit}
+    \subitem {ColumnEditDelegate}, \hyperpage{32}
+  \item {capacity}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{157}
+  \item {checkTimeAndPrompt}
+    \subitem {TestimonialManager}, \hyperpage{134}
+  \item {childItems}
+    \subitem {Shape}, \hyperpage{115}
+  \item {CIRCLE}
+    \subitem {all\_shapes.h}, \hyperpage{187}
+  \item {Circle}, \hyperpage{26}
+    \subitem {Area}, \hyperpage{28}
+    \subitem {Circle}, \hyperpage{28}
+    \subitem {Draw}, \hyperpage{28}
+    \subitem {getR}, \hyperpage{30}
+    \subitem {isPointInside}, \hyperpage{30}
+    \subitem {Perimeter}, \hyperpage{30}
+    \subitem {r}, \hyperpage{31}
+    \subitem {setR}, \hyperpage{30}
+    \subitem {setX}, \hyperpage{31}
+    \subitem {setY}, \hyperpage{31}
+  \item {client}
+    \subitem {RenderAreaManager}, \hyperpage{104}
+    \subitem {ShapesManager}, \hyperpage{120}
+    \subitem {TestimonialManager}, \hyperpage{136}
+    \subitem {UserManager}, \hyperpage{155}
+  \item {ColumnEditDelegate}, \hyperpage{31}
+    \subitem {canEdit}, \hyperpage{32}
+    \subitem {ColumnEditDelegate}, \hyperpage{32}
+    \subitem {createEditor}, \hyperpage{32}
+    \subitem {setCanEdit}, \hyperpage{32}
+  \item {connectFrontendToDriver}
+    \subitem {AppDriver}, \hyperpage{23}
+  \item {connectManagersToFrontend}
+    \subitem {AppDriver}, \hyperpage{23}
+  \item {const\_iterator}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{156}
+  \item {contactUsWidget}
+    \subitem {MainWindow}, \hyperpage{61}
+  \item {contactWindow}
+    \subitem {MainWindow}, \hyperpage{61}
+  \item {coords}
+    \subitem {Parser::MorphicShape}, \hyperpage{63}
+    \subitem {Shape}, \hyperpage{115}
+  \item {createAlignmentComboBox}
+    \subitem {MainWindow}, \hyperpage{53}
+  \item {CreateBrushChild}
+    \subitem {Shape}, \hyperpage{108}
+  \item {createBrushStyleComboBox}
+    \subitem {MainWindow}, \hyperpage{53}
+  \item {createColorComboBox}
+    \subitem {MainWindow}, \hyperpage{53}
+  \item {createEditor}
+    \subitem {ColumnEditDelegate}, \hyperpage{32}
+  \item {createFontComboBox}
+    \subitem {MainWindow}, \hyperpage{53}
+  \item {createFontStyleComboBox}
+    \subitem {MainWindow}, \hyperpage{53}
+  \item {createFontWeightComboBox}
+    \subitem {MainWindow}, \hyperpage{53}
+  \item {CreateParentItem}
+    \subitem {Shape}, \hyperpage{109}
+  \item {createPenCapStyleComboBox}
+    \subitem {MainWindow}, \hyperpage{54}
+  \item {CreatePenChild}
+    \subitem {Shape}, \hyperpage{109}
+  \item {createPenJoinStyleComboBox}
+    \subitem {MainWindow}, \hyperpage{54}
+  \item {createPenStyleComboBox}
+    \subitem {MainWindow}, \hyperpage{54}
+  \item {createPenWidthSpinBox}
+    \subitem {MainWindow}, \hyperpage{54}
+  \item {CreatePointsChild}
+    \subitem {Shape}, \hyperpage{109}
+  \item {createShapeTableTab}
+    \subitem {MainWindow}, \hyperpage{54}
+  \item {createShapeTypeComboBox}
+    \subitem {MainWindow}, \hyperpage{54}
+  \item {currUser}
+    \subitem {MainWindow}, \hyperpage{61}
+    \subitem {UserManager}, \hyperpage{155}
+
+  \indexspace
+
+  \item {delegate}
+    \subitem {MainWindow}, \hyperpage{61}
+  \item {deleteAllShapes}
+    \subitem {MainWindow}, \hyperpage{54}
+    \subitem {RenderAreaManager}, \hyperpage{102}
+    \subitem {ShapesManager}, \hyperpage{118}
+  \item {deleteAllUsers}
+    \subitem {UserManager}, \hyperpage{153}
+  \item {DeleteRenderAreaAll}
+    \subitem {ApiClient}, \hyperpage{18}
+  \item {deleteShape}
+    \subitem {RenderAreaManager}, \hyperpage{102}
+    \subitem {ShapesManager}, \hyperpage{119}
+  \item {DeleteShapesAll}
+    \subitem {ApiClient}, \hyperpage{18}
+  \item {DeleteTestimonialsAll}
+    \subitem {ApiClient}, \hyperpage{18}
+  \item {deleteUser}
+    \subitem {UserManager}, \hyperpage{153}
+  \item {DeleteUsersAll}
+    \subitem {ApiClient}, \hyperpage{18}
+  \item {displayedTextChanged}
+    \subitem {MainWindow}, \hyperpage{55}
+  \item {Draw}
+    \subitem {Circle}, \hyperpage{28}
+    \subitem {Ellipse}, \hyperpage{35}
+    \subitem {Line}, \hyperpage{40}
+    \subitem {Polygon}, \hyperpage{82}
+    \subitem {Polyline}, \hyperpage{88}
+    \subitem {Rectangle}, \hyperpage{94}
+    \subitem {Shape}, \hyperpage{109}
+    \subitem {Square}, \hyperpage{124}
+    \subitem {Text}, \hyperpage{142}
+  \item {drawShapes}
+    \subitem {MainWindow}, \hyperpage{55}
+
+  \indexspace
+
+  \item {elem}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{159}
+  \item {ELLIPSE}
+    \subitem {all\_shapes.h}, \hyperpage{187}
+  \item {Ellipse}, \hyperpage{33}
+    \subitem {a}, \hyperpage{37}
+    \subitem {Area}, \hyperpage{35}
+    \subitem {b}, \hyperpage{37}
+    \subitem {Draw}, \hyperpage{35}
+    \subitem {Ellipse}, \hyperpage{35}
+    \subitem {getA}, \hyperpage{36}
+    \subitem {getB}, \hyperpage{36}
+    \subitem {isPointInside}, \hyperpage{36}
+    \subitem {Perimeter}, \hyperpage{36}
+    \subitem {setA}, \hyperpage{36}
+    \subitem {setB}, \hyperpage{37}
+    \subitem {setX}, \hyperpage{37}
+    \subitem {setY}, \hyperpage{37}
+  \item {end}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{157, 158}
+  \item {endPoint}
+    \subitem {Line}, \hyperpage{43}
+  \item {erase}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{158}
+  \item {ExtractArray}
+    \subitem {Parser}, \hyperpage{69}
+  \item {ExtractInteger}
+    \subitem {Parser}, \hyperpage{69}
+  \item {ExtractKey}
+    \subitem {Parser}, \hyperpage{69}
+  \item {ExtractLiteral}
+    \subitem {Parser}, \hyperpage{70}
+  \item {ExtractValue}
+    \subitem {Parser}, \hyperpage{70}
+
+  \indexspace
+
+  \item {font}
+    \subitem {Parser::MorphicShape}, \hyperpage{64}
+    \subitem {Text}, \hyperpage{144}
+  \item {fromJson}
+    \subitem {Testimonial}, \hyperpage{127}
+
+  \indexspace
+
+  \item {get\_json\_file}
+    \subitem {main.cpp}, \hyperpage{179}
+    \subitem {webservice.cpp}, \hyperpage{205}
+  \item {getA}
+    \subitem {Ellipse}, \hyperpage{36}
+  \item {GetAlignmentFlag}
+    \subitem {Parser}, \hyperpage{71}
+  \item {getAuthor}
+    \subitem {Testimonial}, \hyperpage{127}
+  \item {getB}
+    \subitem {Ellipse}, \hyperpage{36}
+  \item {getBrush}
+    \subitem {Shape}, \hyperpage{109}
+  \item {getBrushColor}
+    \subitem {Shape}, \hyperpage{109}
+  \item {getBrushItems}
+    \subitem {Shape}, \hyperpage{110}
+  \item {getBrushItemsEnd}
+    \subitem {Shape}, \hyperpage{110}
+  \item {GetBrushStyle}
+    \subitem {Parser}, \hyperpage{71}
+  \item {getBrushStyle}
+    \subitem {Shape}, \hyperpage{110}
+  \item {getChildEnd}
+    \subitem {Shape}, \hyperpage{110}
+  \item {getChildItems}
+    \subitem {Shape}, \hyperpage{110}
+  \item {GetColor}
+    \subitem {Parser}, \hyperpage{72}
+  \item {GetConnectedClient}
+    \subitem {main.cpp}, \hyperpage{177}
+  \item {getContent}
+    \subitem {Testimonial}, \hyperpage{127}
+  \item {getCurrUserRef}
+    \subitem {UserManager}, \hyperpage{153}
+  \item {getDoNotShowAgain}
+    \subitem {TestimonialManager}, \hyperpage{134}
+  \item {getEndPoint}
+    \subitem {Line}, \hyperpage{41}
+  \item {getFont}
+    \subitem {Text}, \hyperpage{142}
+  \item {GetFontStyle}
+    \subitem {Parser}, \hyperpage{72}
+  \item {getFontStyle}
+    \subitem {Text}, \hyperpage{142}
+  \item {GetFontWeight}
+    \subitem {Parser}, \hyperpage{72}
+  \item {getFontWeight}
+    \subitem {Text}, \hyperpage{142}
+  \item {getInstance}
+    \subitem {TestimonialManager}, \hyperpage{134}
+  \item {getLength}
+    \subitem {Rectangle}, \hyperpage{95}
+    \subitem {Square}, \hyperpage{124}
+    \subitem {Text}, \hyperpage{142}
+  \item {getPainter}
+    \subitem {Shape}, \hyperpage{110}
+  \item {getParentItem}
+    \subitem {Shape}, \hyperpage{110}
+  \item {getPassword}
+    \subitem {UserAccount}, \hyperpage{148}
+  \item {getPen}
+    \subitem {Shape}, \hyperpage{110}
+  \item {GetPenCapStyle}
+    \subitem {Parser}, \hyperpage{73}
+  \item {getPenCapStyle}
+    \subitem {Shape}, \hyperpage{110}
+  \item {getPenColor}
+    \subitem {Shape}, \hyperpage{110}
+  \item {getPenItems}
+    \subitem {Shape}, \hyperpage{111}
+  \item {getPenItemsEnd}
+    \subitem {Shape}, \hyperpage{111}
+  \item {GetPenJoinStyle}
+    \subitem {Parser}, \hyperpage{73}
+  \item {getPenJoinStyle}
+    \subitem {Shape}, \hyperpage{111}
+  \item {GetPenStyle}
+    \subitem {Parser}, \hyperpage{74}
+  \item {getPenStyle}
+    \subitem {Shape}, \hyperpage{111}
+  \item {getPenWidth}
+    \subitem {Shape}, \hyperpage{111}
+  \item {getPoints}
+    \subitem {Shape}, \hyperpage{111}
+  \item {getPointsItems}
+    \subitem {Shape}, \hyperpage{111}
+  \item {getPointsList}
+    \subitem {Polygon}, \hyperpage{83}
+    \subitem {Polyline}, \hyperpage{88}
+  \item {getR}
+    \subitem {Circle}, \hyperpage{30}
+  \item {GetRenderArea}
+    \subitem {ApiClient}, \hyperpage{19}
+  \item {GetRenderAreaTestString}
+    \subitem {main.cpp}, \hyperpage{177}
+  \item {getSatisfactoryTestimonials}
+    \subitem {TestimonialManager}, \hyperpage{134}
+  \item {getSelected}
+    \subitem {Shape}, \hyperpage{111}
+  \item {GetShapeDimensions}
+    \subitem {Parser}, \hyperpage{74}
+  \item {getShapeId}
+    \subitem {Shape}, \hyperpage{111}
+  \item {GetShapes}
+    \subitem {ApiClient}, \hyperpage{19}
+  \item {getShapes}
+    \subitem {RenderArea}, \hyperpage{97}
+  \item {getShapeSelected}
+    \subitem {RenderArea}, \hyperpage{97}
+  \item {getShapeSelectedIndex}
+    \subitem {RenderArea}, \hyperpage{98}
+  \item {getShapesRef}
+    \subitem {RenderAreaManager}, \hyperpage{102}
+    \subitem {ShapesManager}, \hyperpage{119}
+  \item {GetShapeTestString}
+    \subitem {main.cpp}, \hyperpage{177}
+  \item {getShapeType}
+    \subitem {Shape}, \hyperpage{111}
+  \item {getStartPoint}
+    \subitem {Line}, \hyperpage{41}
+  \item {GetTestimonials}
+    \subitem {ApiClient}, \hyperpage{19}
+  \item {getTextAlignment}
+    \subitem {Text}, \hyperpage{142}
+  \item {getTextColor}
+    \subitem {Text}, \hyperpage{143}
+  \item {getTextString}
+    \subitem {Text}, \hyperpage{143}
+  \item {getTimestamp}
+    \subitem {Testimonial}, \hyperpage{128}
+  \item {getTrackerId}
+    \subitem {Shape}, \hyperpage{112}
+  \item {getUsername}
+    \subitem {UserAccount}, \hyperpage{148}
+  \item {GetUsers}
+    \subitem {ApiClient}, \hyperpage{19}
+  \item {GetUsersTestString}
+    \subitem {main.cpp}, \hyperpage{177}
+  \item {getWidth}
+    \subitem {Rectangle}, \hyperpage{95}
+    \subitem {Text}, \hyperpage{143}
+  \item {getX}
+    \subitem {Shape}, \hyperpage{112}
+  \item {getY}
+    \subitem {Shape}, \hyperpage{112}
+  \item {GoodDeleteReply}
+    \subitem {ApiClient}, \hyperpage{19}
+  \item {GoodGetReply}
+    \subitem {ApiClient}, \hyperpage{19}
+  \item {GoodPostReply}
+    \subitem {ApiClient}, \hyperpage{19}
+
+  \indexspace
+
+  \item {hasAdmin}
+    \subitem {Parser::RawUser}, \hyperpage{91}
+  \item {hasPassword}
+    \subitem {Parser::RawUser}, \hyperpage{91}
+  \item {hasUserGivenTestimonial}
+    \subitem {TestimonialManager}, \hyperpage{134}
+  \item {hasUsername}
+    \subitem {Parser::RawUser}, \hyperpage{91}
+
+  \indexspace
+
+  \item {INITIAL\_PROMPT\_TIME}
+    \subitem {TestimonialManager}, \hyperpage{136}
+  \item {insert}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{158}
+  \item {isAdmin}
+    \subitem {UserAccount}, \hyperpage{148}
+  \item {isGuest}
+    \subitem {Testimonial}, \hyperpage{128}
+  \item {isPointInside}
+    \subitem {Circle}, \hyperpage{30}
+    \subitem {Ellipse}, \hyperpage{36}
+    \subitem {Line}, \hyperpage{41}
+    \subitem {Polygon}, \hyperpage{83}
+    \subitem {Polyline}, \hyperpage{88}
+    \subitem {Rectangle}, \hyperpage{95}
+    \subitem {Shape}, \hyperpage{112}
+    \subitem {Square}, \hyperpage{124}
+    \subitem {Text}, \hyperpage{143}
+  \item {isSatisfactory}
+    \subitem {Testimonial}, \hyperpage{128}
+  \item {isSelected}
+    \subitem {Shape}, \hyperpage{115}
+  \item {iterator}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{156}
+
+  \indexspace
+
+  \item {JsonToShapes}
+    \subitem {Parser}, \hyperpage{74}
+  \item {JsonToTestimonials}
+    \subitem {Parser}, \hyperpage{75}
+  \item {JsonToUsers}
+    \subitem {Parser}, \hyperpage{75}
+
+  \indexspace
+
+  \item {length}
+    \subitem {Rectangle}, \hyperpage{96}
+    \subitem {Square}, \hyperpage{125}
+    \subitem {Text}, \hyperpage{144}
+  \item {LINE}
+    \subitem {all\_shapes.h}, \hyperpage{187}
+  \item {Line}, \hyperpage{38}
+    \subitem {Area}, \hyperpage{40}
+    \subitem {Draw}, \hyperpage{40}
+    \subitem {endPoint}, \hyperpage{43}
+    \subitem {getEndPoint}, \hyperpage{41}
+    \subitem {getStartPoint}, \hyperpage{41}
+    \subitem {isPointInside}, \hyperpage{41}
+    \subitem {Line}, \hyperpage{40}
+    \subitem {Move}, \hyperpage{41}
+    \subitem {Perimeter}, \hyperpage{42}
+    \subitem {setEndPoint}, \hyperpage{42}
+    \subitem {setStartPoint}, \hyperpage{42}
+    \subitem {setX}, \hyperpage{42}
+    \subitem {setY}, \hyperpage{42}
+    \subitem {startPoint}, \hyperpage{43}
+  \item {loadAllData}
+    \subitem {AppDriver}, \hyperpage{23}
+  \item {loadShapes}
+    \subitem {RenderAreaManager}, \hyperpage{102}
+    \subitem {ShapesManager}, \hyperpage{119}
+  \item {loadStyleSheet}
+    \subitem {MainWindow}, \hyperpage{55}
+  \item {loadTestimonials}
+    \subitem {TestimonialManager}, \hyperpage{134}
+  \item {loadUsers}
+    \subitem {UserManager}, \hyperpage{153}
+  \item {loginAttempt}
+    \subitem {MainWindow}, \hyperpage{55}
+  \item {loginBtn}
+    \subitem {LoginWindow}, \hyperpage{45}
+  \item {loginFailed}
+    \subitem {MainWindow}, \hyperpage{55}
+  \item {loginPage}
+    \subitem {LoginWindow}, \hyperpage{45}
+  \item {loginPassEdit}
+    \subitem {LoginWindow}, \hyperpage{45}
+  \item {loginRequested}
+    \subitem {LoginWindow}, \hyperpage{44}
+  \item {loginSuccess}
+    \subitem {MainWindow}, \hyperpage{55}
+  \item {loginUserEdit}
+    \subitem {LoginWindow}, \hyperpage{45}
+  \item {LoginWindow}, \hyperpage{43}
+    \subitem {attemptLogin}, \hyperpage{44}
+    \subitem {attemptSignup}, \hyperpage{44}
+    \subitem {backToLoginBtn}, \hyperpage{45}
+    \subitem {loginBtn}, \hyperpage{45}
+    \subitem {loginPage}, \hyperpage{45}
+    \subitem {loginPassEdit}, \hyperpage{45}
+    \subitem {loginRequested}, \hyperpage{44}
+    \subitem {loginUserEdit}, \hyperpage{45}
+    \subitem {LoginWindow}, \hyperpage{44}
+    \subitem {password}, \hyperpage{44}
+    \subitem {showLoginPage}, \hyperpage{44}
+    \subitem {showSignupPage}, \hyperpage{44}
+    \subitem {signupBtn}, \hyperpage{45}
+    \subitem {signupPage}, \hyperpage{45}
+    \subitem {signupPassEdit}, \hyperpage{46}
+    \subitem {signupRequested}, \hyperpage{45}
+    \subitem {signupUserEdit}, \hyperpage{46}
+    \subitem {stack}, \hyperpage{46}
+    \subitem {toSignupBtn}, \hyperpage{46}
+    \subitem {username}, \hyperpage{45}
+  \item {logoLabel}
+    \subitem {MainWindow}, \hyperpage{61}
+
+  \indexspace
+
+  \item {m\_author}
+    \subitem {Testimonial}, \hyperpage{128}
+  \item {m\_authorEdit}
+    \subitem {TestimonialDialog}, \hyperpage{130}
+  \item {m\_content}
+    \subitem {Testimonial}, \hyperpage{128}
+  \item {m\_contentEdit}
+    \subitem {TestimonialDialog}, \hyperpage{130}
+  \item {m\_doNotShowAgain}
+    \subitem {TestimonialDialog}, \hyperpage{130}
+    \subitem {TestimonialManager}, \hyperpage{136}
+  \item {m\_isGuest}
+    \subitem {Testimonial}, \hyperpage{129}
+  \item {m\_isSatisfactory}
+    \subitem {Testimonial}, \hyperpage{129}
+  \item {m\_testimonials}
+    \subitem {TestimonialManager}, \hyperpage{136}
+  \item {m\_testimonialsLayout}
+    \subitem {TestimonialsDisplayDialog}, \hyperpage{138}
+  \item {m\_timestamp}
+    \subitem {Testimonial}, \hyperpage{129}
+  \item {m\_trackingTimer}
+    \subitem {TestimonialManager}, \hyperpage{136}
+  \item {m\_userTimeTracking}
+    \subitem {TestimonialManager}, \hyperpage{136}
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{177--179}
+    \subitem {webservice.cpp}, \hyperpage{206}
+  \item {main.cpp}
+    \subitem {get\_json\_file}, \hyperpage{179}
+    \subitem {GetConnectedClient}, \hyperpage{177}
+    \subitem {GetRenderAreaTestString}, \hyperpage{177}
+    \subitem {GetShapeTestString}, \hyperpage{177}
+    \subitem {GetUsersTestString}, \hyperpage{177}
+    \subitem {main}, \hyperpage{177--179}
+    \subitem {OnBadGetResponseTest}, \hyperpage{177}
+    \subitem {OnBadPostResponseTest}, \hyperpage{177}
+    \subitem {OnGoodGetResponseTest}, \hyperpage{177}
+    \subitem {OnGoodPostResponseTest}, \hyperpage{178}
+    \subitem {pApp}, \hyperpage{178}
+    \subitem {parse}, \hyperpage{178}
+    \subitem {pClient}, \hyperpage{178}
+  \item {MainWindow}, \hyperpage{46}
+    \subitem {\texorpdfstring{$\sim$}{\string~}MainWindow}, 
+		\hyperpage{52}
+    \subitem {addToShapeTree}, \hyperpage{53}
+    \subitem {contactUsWidget}, \hyperpage{61}
+    \subitem {contactWindow}, \hyperpage{61}
+    \subitem {createAlignmentComboBox}, \hyperpage{53}
+    \subitem {createBrushStyleComboBox}, \hyperpage{53}
+    \subitem {createColorComboBox}, \hyperpage{53}
+    \subitem {createFontComboBox}, \hyperpage{53}
+    \subitem {createFontStyleComboBox}, \hyperpage{53}
+    \subitem {createFontWeightComboBox}, \hyperpage{53}
+    \subitem {createPenCapStyleComboBox}, \hyperpage{54}
+    \subitem {createPenJoinStyleComboBox}, \hyperpage{54}
+    \subitem {createPenStyleComboBox}, \hyperpage{54}
+    \subitem {createPenWidthSpinBox}, \hyperpage{54}
+    \subitem {createShapeTableTab}, \hyperpage{54}
+    \subitem {createShapeTypeComboBox}, \hyperpage{54}
+    \subitem {currUser}, \hyperpage{61}
+    \subitem {delegate}, \hyperpage{61}
+    \subitem {deleteAllShapes}, \hyperpage{54}
+    \subitem {displayedTextChanged}, \hyperpage{55}
+    \subitem {drawShapes}, \hyperpage{55}
+    \subitem {loadStyleSheet}, \hyperpage{55}
+    \subitem {loginAttempt}, \hyperpage{55}
+    \subitem {loginFailed}, \hyperpage{55}
+    \subitem {loginSuccess}, \hyperpage{55}
+    \subitem {logoLabel}, \hyperpage{61}
+    \subitem {MainWindow}, \hyperpage{52}
+    \subitem {newUserAdded}, \hyperpage{55}
+    \subitem {on\_actionnew\_circle\_button\_triggered}, \hyperpage{56}
+    \subitem {on\_actionnew\_ellipse\_button\_triggered}, 
+		\hyperpage{56}
+    \subitem {on\_actionnew\_line\_button\_triggered}, \hyperpage{56}
+    \subitem {on\_actionnew\_polygon\_button\_triggered}, 
+		\hyperpage{56}
+    \subitem {on\_actionnew\_polyline\_button\_triggered}, 
+		\hyperpage{56}
+    \subitem {on\_actionnew\_rectange\_button\_triggered}, 
+		\hyperpage{56}
+    \subitem {on\_actionnew\_square\_button\_triggered}, \hyperpage{56}
+    \subitem {on\_actionnew\_text\_button\_triggered}, \hyperpage{56}
+    \subitem {on\_actionremove\_shape\_button\_triggered}, 
+		\hyperpage{57}
+    \subitem {onComboBoxChanged}, \hyperpage{57}
+    \subitem {onContactUsClicked}, \hyperpage{57}
+    \subitem {onLoginClicked}, \hyperpage{57}
+    \subitem {onLoginRequest}, \hyperpage{57}
+    \subitem {onRenderAreaChanged}, \hyperpage{57}
+    \subitem {onRenderAreaNotChanged}, \hyperpage{57}
+    \subitem {onSignupRequest}, \hyperpage{57}
+    \subitem {onSortMethodChanged}, \hyperpage{58}
+    \subitem {onSpinBoxChanged}, \hyperpage{58}
+    \subitem {onToggleStyle}, \hyperpage{58}
+    \subitem {onTreeWidgetItemChanged}, \hyperpage{58}
+    \subitem {onUserAuthentication}, \hyperpage{58}
+    \subitem {onUserAuthenticationFailure}, \hyperpage{58}
+    \subitem {populateShapeTable}, \hyperpage{58}
+    \subitem {renderArea}, \hyperpage{61}
+    \subitem {renderShapes}, \hyperpage{61}
+    \subitem {selection\_sort}, \hyperpage{59}
+    \subitem {setupTestimonials}, \hyperpage{59}
+    \subitem {shapeAdded}, \hyperpage{59}
+    \subitem {shapeChanged}, \hyperpage{59}
+    \subitem {shapeDeleted}, \hyperpage{59}
+    \subitem {shapes\_to\_treeWidget}, \hyperpage{59}
+    \subitem {shapeTable}, \hyperpage{61}
+    \subitem {showRenderStatusMessage}, \hyperpage{60}
+    \subitem {showTestimonialPrompt}, \hyperpage{60}
+    \subitem {showTestimonialsDisplay}, \hyperpage{60}
+    \subitem {sortByArea}, \hyperpage{60}
+    \subitem {sortById}, \hyperpage{60}
+    \subitem {sortByPerimeter}, \hyperpage{60}
+    \subitem {sortDropdown}, \hyperpage{62}
+    \subitem {sortOrderDropdown}, \hyperpage{62}
+    \subitem {tabWidget}, \hyperpage{62}
+    \subitem {teamNameLabel}, \hyperpage{62}
+    \subitem {ui}, \hyperpage{62}
+    \subitem {userStatusLabel}, \hyperpage{62}
+  \item {mainWindow}
+    \subitem {AppDriver}, \hyperpage{25}
+  \item {manager}
+    \subitem {ApiClient}, \hyperpage{20}
+  \item {moc\_ApiClient.cpp}
+    \subitem {Q\_CONSTINIT}, \hyperpage{164}
+    \subitem {qt\_meta\_data\_ZN9ApiClientE}, \hyperpage{164}
+  \item {moc\_UserManager.cpp}
+    \subitem {Q\_CONSTINIT}, \hyperpage{165}
+    \subitem {qt\_meta\_data\_ZN11UserManagerE}, \hyperpage{165}
+  \item {modifyDisplayedText}
+    \subitem {RenderAreaManager}, \hyperpage{102}
+  \item {modifyShape}
+    \subitem {RenderAreaManager}, \hyperpage{102}
+    \subitem {ShapesManager}, \hyperpage{119}
+  \item {modifyUser}
+    \subitem {UserManager}, \hyperpage{153}
+  \item {mouseDoubleClickEvent}
+    \subitem {RenderArea}, \hyperpage{98}
+  \item {mouseMoveEvent}
+    \subitem {RenderArea}, \hyperpage{98}
+  \item {mousePressEvent}
+    \subitem {RenderArea}, \hyperpage{98}
+  \item {mouseReleaseEvent}
+    \subitem {RenderArea}, \hyperpage{98}
+  \item {Move}
+    \subitem {Line}, \hyperpage{41}
+    \subitem {Polygon}, \hyperpage{83}
+    \subitem {Polyline}, \hyperpage{88}
+    \subitem {Shape}, \hyperpage{112}
+
+  \indexspace
+
+  \item {newUserAdded}
+    \subitem {MainWindow}, \hyperpage{55}
+  \item {nextTracker}
+    \subitem {Shape}, \hyperpage{115}
+
+  \indexspace
+
+  \item {on\_actionnew\_circle\_button\_triggered}
+    \subitem {MainWindow}, \hyperpage{56}
+  \item {on\_actionnew\_ellipse\_button\_triggered}
+    \subitem {MainWindow}, \hyperpage{56}
+  \item {on\_actionnew\_line\_button\_triggered}
+    \subitem {MainWindow}, \hyperpage{56}
+  \item {on\_actionnew\_polygon\_button\_triggered}
+    \subitem {MainWindow}, \hyperpage{56}
+  \item {on\_actionnew\_polyline\_button\_triggered}
+    \subitem {MainWindow}, \hyperpage{56}
+  \item {on\_actionnew\_rectange\_button\_triggered}
+    \subitem {MainWindow}, \hyperpage{56}
+  \item {on\_actionnew\_square\_button\_triggered}
+    \subitem {MainWindow}, \hyperpage{56}
+  \item {on\_actionnew\_text\_button\_triggered}
+    \subitem {MainWindow}, \hyperpage{56}
+  \item {on\_actionremove\_shape\_button\_triggered}
+    \subitem {MainWindow}, \hyperpage{57}
+  \item {onBadDeleteResponse}
+    \subitem {RenderAreaManager}, \hyperpage{103}
+    \subitem {ShapesManager}, \hyperpage{119}
+    \subitem {UserManager}, \hyperpage{153}
+  \item {onBadGetResponse}
+    \subitem {RenderAreaManager}, \hyperpage{103}
+    \subitem {ShapesManager}, \hyperpage{119}
+    \subitem {TestimonialManager}, \hyperpage{134}
+    \subitem {UserManager}, \hyperpage{153}
+  \item {OnBadGetResponseTest}
+    \subitem {main.cpp}, \hyperpage{177}
+  \item {onBadPostResponse}
+    \subitem {RenderAreaManager}, \hyperpage{103}
+    \subitem {ShapesManager}, \hyperpage{119}
+    \subitem {TestimonialManager}, \hyperpage{135}
+    \subitem {UserManager}, \hyperpage{154}
+  \item {OnBadPostResponseTest}
+    \subitem {main.cpp}, \hyperpage{177}
+  \item {onCancel}
+    \subitem {TestimonialDialog}, \hyperpage{130}
+  \item {onComboBoxChanged}
+    \subitem {MainWindow}, \hyperpage{57}
+  \item {onContactUsClicked}
+    \subitem {MainWindow}, \hyperpage{57}
+  \item {onDeleteAllUsers}
+    \subitem {AppDriver}, \hyperpage{23}
+  \item {onGoodDeleteResponse}
+    \subitem {RenderAreaManager}, \hyperpage{103}
+    \subitem {ShapesManager}, \hyperpage{119}
+    \subitem {UserManager}, \hyperpage{154}
+  \item {onGoodGetResponse}
+    \subitem {RenderAreaManager}, \hyperpage{103}
+    \subitem {ShapesManager}, \hyperpage{119}
+    \subitem {TestimonialManager}, \hyperpage{135}
+    \subitem {UserManager}, \hyperpage{154}
+  \item {OnGoodGetResponseTest}
+    \subitem {main.cpp}, \hyperpage{177}
+  \item {onGoodPostResponse}
+    \subitem {RenderAreaManager}, \hyperpage{103}
+    \subitem {ShapesManager}, \hyperpage{120}
+    \subitem {TestimonialManager}, \hyperpage{135}
+    \subitem {UserManager}, \hyperpage{154}
+  \item {OnGoodPostResponseTest}
+    \subitem {main.cpp}, \hyperpage{178}
+  \item {onLoginAttempt}
+    \subitem {AppDriver}, \hyperpage{23}
+  \item {onLoginClicked}
+    \subitem {MainWindow}, \hyperpage{57}
+  \item {onLoginRequest}
+    \subitem {MainWindow}, \hyperpage{57}
+  \item {onNewUser}
+    \subitem {AppDriver}, \hyperpage{23}
+  \item {onRenderAreaChanged}
+    \subitem {MainWindow}, \hyperpage{57}
+  \item {onRenderAreaNotChanged}
+    \subitem {MainWindow}, \hyperpage{57}
+  \item {onRenderDeleteAllShapes}
+    \subitem {AppDriver}, \hyperpage{23}
+  \item {onRenderShapeAdded}
+    \subitem {AppDriver}, \hyperpage{24}
+  \item {onRenderShapeChanged}
+    \subitem {AppDriver}, \hyperpage{24}
+  \item {onRenderShapeDeleted}
+    \subitem {AppDriver}, \hyperpage{24}
+  \item {onSignupRequest}
+    \subitem {MainWindow}, \hyperpage{57}
+  \item {onSortMethodChanged}
+    \subitem {MainWindow}, \hyperpage{58}
+  \item {onSpinBoxChanged}
+    \subitem {MainWindow}, \hyperpage{58}
+  \item {onSubmit}
+    \subitem {TestimonialDialog}, \hyperpage{130}
+  \item {onToggleStyle}
+    \subitem {MainWindow}, \hyperpage{58}
+  \item {onTreeWidgetItemChanged}
+    \subitem {MainWindow}, \hyperpage{58}
+  \item {onUserAuthentication}
+    \subitem {MainWindow}, \hyperpage{58}
+  \item {onUserAuthenticationFailure}
+    \subitem {MainWindow}, \hyperpage{58}
+  \item {onUserDeleted}
+    \subitem {AppDriver}, \hyperpage{24}
+  \item {onUserModified}
+    \subitem {AppDriver}, \hyperpage{24}
+  \item {operator$<$}
+    \subitem {Shape}, \hyperpage{114}
+    \subitem {shape.cpp}, \hyperpage{193}
+  \item {operator=}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{158}
+    \subitem {Parser}, \hyperpage{76}
+    \subitem {Shape}, \hyperpage{112}
+    \subitem {UserAccount}, \hyperpage{148}
+  \item {operator==}
+    \subitem {Shape}, \hyperpage{114}
+    \subitem {shape.cpp}, \hyperpage{193}
+  \item {operator[]}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{158}
+
+  \indexspace
+
+  \item {painter}
+    \subitem {Shape}, \hyperpage{115}
+  \item {paintEvent}
+    \subitem {RenderArea}, \hyperpage{98}
+  \item {pApp}
+    \subitem {main.cpp}, \hyperpage{178}
+  \item {parentItem}
+    \subitem {Shape}, \hyperpage{116}
+  \item {parse}
+    \subitem {main.cpp}, \hyperpage{178}
+    \subitem {RenderAreaManager}, \hyperpage{104}
+    \subitem {ShapesManager}, \hyperpage{120}
+    \subitem {TestimonialManager}, \hyperpage{137}
+    \subitem {UserManager}, \hyperpage{155}
+  \item {ParseJsonObject}
+    \subitem {Parser}, \hyperpage{76}
+  \item {Parser}, \hyperpage{65}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Parser}, \hyperpage{67}
+    \subitem {AppendBrushData}, \hyperpage{67}
+    \subitem {AppendCommonShapeData}, \hyperpage{68}
+    \subitem {AppendTextData}, \hyperpage{68}
+    \subitem {BuildShape}, \hyperpage{68}
+    \subitem {ExtractArray}, \hyperpage{69}
+    \subitem {ExtractInteger}, \hyperpage{69}
+    \subitem {ExtractKey}, \hyperpage{69}
+    \subitem {ExtractLiteral}, \hyperpage{70}
+    \subitem {ExtractValue}, \hyperpage{70}
+    \subitem {GetAlignmentFlag}, \hyperpage{71}
+    \subitem {GetBrushStyle}, \hyperpage{71}
+    \subitem {GetColor}, \hyperpage{72}
+    \subitem {GetFontStyle}, \hyperpage{72}
+    \subitem {GetFontWeight}, \hyperpage{72}
+    \subitem {GetPenCapStyle}, \hyperpage{73}
+    \subitem {GetPenJoinStyle}, \hyperpage{73}
+    \subitem {GetPenStyle}, \hyperpage{74}
+    \subitem {GetShapeDimensions}, \hyperpage{74}
+    \subitem {JsonToShapes}, \hyperpage{74}
+    \subitem {JsonToTestimonials}, \hyperpage{75}
+    \subitem {JsonToUsers}, \hyperpage{75}
+    \subitem {operator=}, \hyperpage{76}
+    \subitem {ParseJsonObject}, \hyperpage{76}
+    \subitem {Parser}, \hyperpage{67}
+    \subitem {PrintShapeVector}, \hyperpage{76}
+    \subitem {ShapesToJson}, \hyperpage{77}
+    \subitem {SkipWhitespace}, \hyperpage{77}
+    \subitem {StringToVector}, \hyperpage{77}
+    \subitem {TestimonialsToJson}, \hyperpage{78}
+    \subitem {UpdateAccumulator}, \hyperpage{78}
+    \subitem {UpdateUserAccumulator}, \hyperpage{79}
+    \subitem {UsersToJson}, \hyperpage{79}
+  \item {Parser::MorphicShape}, \hyperpage{63}
+    \subitem {brush}, \hyperpage{63}
+    \subitem {coords}, \hyperpage{63}
+    \subitem {font}, \hyperpage{64}
+    \subitem {pen}, \hyperpage{64}
+    \subitem {shapeDimensions}, \hyperpage{64}
+    \subitem {shapeId}, \hyperpage{64}
+    \subitem {shapeType}, \hyperpage{64}
+    \subitem {textAlignment}, \hyperpage{64}
+    \subitem {textColor}, \hyperpage{64}
+    \subitem {textString}, \hyperpage{64}
+    \subitem {trackerId}, \hyperpage{65}
+  \item {Parser::RawUser}, \hyperpage{90}
+    \subitem {admin}, \hyperpage{91}
+    \subitem {hasAdmin}, \hyperpage{91}
+    \subitem {hasPassword}, \hyperpage{91}
+    \subitem {hasUsername}, \hyperpage{91}
+    \subitem {password}, \hyperpage{91}
+    \subitem {username}, \hyperpage{91}
+  \item {password}
+    \subitem {LoginWindow}, \hyperpage{44}
+    \subitem {Parser::RawUser}, \hyperpage{91}
+    \subitem {UserAccount}, \hyperpage{149}
+  \item {pClient}
+    \subitem {main.cpp}, \hyperpage{178}
+  \item {pen}
+    \subitem {Parser::MorphicShape}, \hyperpage{64}
+    \subitem {Shape}, \hyperpage{116}
+  \item {penItems}
+    \subitem {Shape}, \hyperpage{116}
+  \item {Perimeter}
+    \subitem {Circle}, \hyperpage{30}
+    \subitem {Ellipse}, \hyperpage{36}
+    \subitem {Line}, \hyperpage{42}
+    \subitem {Polygon}, \hyperpage{84}
+    \subitem {Polyline}, \hyperpage{89}
+    \subitem {Rectangle}, \hyperpage{95}
+    \subitem {Shape}, \hyperpage{113}
+    \subitem {Square}, \hyperpage{124}
+    \subitem {Text}, \hyperpage{143}
+  \item {PI}
+    \subitem {shape.h}, \hyperpage{194}
+  \item {pointsItems}
+    \subitem {Shape}, \hyperpage{116}
+  \item {pointsList}
+    \subitem {Polygon}, \hyperpage{85}
+    \subitem {Polyline}, \hyperpage{90}
+  \item {POLYGON}
+    \subitem {all\_shapes.h}, \hyperpage{187}
+  \item {Polygon}, \hyperpage{80}
+    \subitem {Area}, \hyperpage{82}
+    \subitem {Draw}, \hyperpage{82}
+    \subitem {getPointsList}, \hyperpage{83}
+    \subitem {isPointInside}, \hyperpage{83}
+    \subitem {Move}, \hyperpage{83}
+    \subitem {Perimeter}, \hyperpage{84}
+    \subitem {pointsList}, \hyperpage{85}
+    \subitem {Polygon}, \hyperpage{82}
+    \subitem {setPointsList}, \hyperpage{84}
+    \subitem {setX}, \hyperpage{84}
+    \subitem {setY}, \hyperpage{84}
+  \item {POLYLINE}
+    \subitem {all\_shapes.h}, \hyperpage{187}
+  \item {Polyline}, \hyperpage{85}
+    \subitem {Area}, \hyperpage{88}
+    \subitem {Draw}, \hyperpage{88}
+    \subitem {getPointsList}, \hyperpage{88}
+    \subitem {isPointInside}, \hyperpage{88}
+    \subitem {Move}, \hyperpage{88}
+    \subitem {Perimeter}, \hyperpage{89}
+    \subitem {pointsList}, \hyperpage{90}
+    \subitem {Polyline}, \hyperpage{87}
+    \subitem {setPointsList}, \hyperpage{89}
+    \subitem {setX}, \hyperpage{89}
+    \subitem {setY}, \hyperpage{89}
+  \item {populateShapeTable}
+    \subitem {MainWindow}, \hyperpage{58}
+  \item {PostRenderArea}
+    \subitem {ApiClient}, \hyperpage{20}
+  \item {PostShapes}
+    \subitem {ApiClient}, \hyperpage{20}
+  \item {PostTestimonials}
+    \subitem {ApiClient}, \hyperpage{20}
+  \item {PostUsers}
+    \subitem {ApiClient}, \hyperpage{20}
+  \item {PrintShapeVector}
+    \subitem {Parser}, \hyperpage{76}
+  \item {push\_back}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{158}
+
+  \indexspace
+
+  \item {Q\_CONSTINIT}
+    \subitem {moc\_ApiClient.cpp}, \hyperpage{164}
+    \subitem {moc\_UserManager.cpp}, \hyperpage{165}
+  \item {qt\_meta\_data\_ZN11UserManagerE}
+    \subitem {moc\_UserManager.cpp}, \hyperpage{165}
+  \item {qt\_meta\_data\_ZN9ApiClientE}
+    \subitem {moc\_ApiClient.cpp}, \hyperpage{164}
+  \item {QT\_WARNING\_DISABLE\_DEPRECATED}, \hyperpage{13}
+  \item {QT\_WARNING\_DISABLE\_DEPRECATED::qt\_meta\_tag\_ZN11UserManagerE\_t}, 
+		\hyperpage{90}
+  \item {QT\_WARNING\_DISABLE\_DEPRECATED::qt\_meta\_tag\_ZN9ApiClientE\_t}, 
+		\hyperpage{90}
+
+  \indexspace
+
+  \item {r}
+    \subitem {Circle}, \hyperpage{31}
+  \item {RECTANGLE}
+    \subitem {all\_shapes.h}, \hyperpage{187}
+  \item {Rectangle}, \hyperpage{92}
+    \subitem {Area}, \hyperpage{94}
+    \subitem {Draw}, \hyperpage{94}
+    \subitem {getLength}, \hyperpage{95}
+    \subitem {getWidth}, \hyperpage{95}
+    \subitem {isPointInside}, \hyperpage{95}
+    \subitem {length}, \hyperpage{96}
+    \subitem {Perimeter}, \hyperpage{95}
+    \subitem {Rectangle}, \hyperpage{94}
+    \subitem {setLength}, \hyperpage{95}
+    \subitem {setWidth}, \hyperpage{96}
+    \subitem {setX}, \hyperpage{96}
+    \subitem {setY}, \hyperpage{96}
+    \subitem {width}, \hyperpage{96}
+  \item {refreshTestimonials}
+    \subitem {TestimonialsDisplayDialog}, \hyperpage{138}
+  \item {RenderArea}, \hyperpage{97}
+    \subitem {allowEditing}, \hyperpage{99}
+    \subitem {getShapes}, \hyperpage{97}
+    \subitem {getShapeSelected}, \hyperpage{97}
+    \subitem {getShapeSelectedIndex}, \hyperpage{98}
+    \subitem {mouseDoubleClickEvent}, \hyperpage{98}
+    \subitem {mouseMoveEvent}, \hyperpage{98}
+    \subitem {mousePressEvent}, \hyperpage{98}
+    \subitem {mouseReleaseEvent}, \hyperpage{98}
+    \subitem {paintEvent}, \hyperpage{98}
+    \subitem {RenderArea}, \hyperpage{97}
+    \subitem {renderShapes}, \hyperpage{99}
+    \subitem {resetSelection}, \hyperpage{98}
+    \subitem {setEditPrivileges}, \hyperpage{98}
+    \subitem {setRenderShapes}, \hyperpage{98}
+    \subitem {setShapeSelectedIndex}, \hyperpage{99}
+    \subitem {shapeSelectedIndex}, \hyperpage{99}
+    \subitem {updateShapeDisplayCoords}, \hyperpage{99}
+  \item {renderArea}
+    \subitem {MainWindow}, \hyperpage{61}
+  \item {renderAreaChanged}
+    \subitem {RenderAreaManager}, \hyperpage{103}
+  \item {RenderAreaManager}, \hyperpage{99}
+    \subitem {\texorpdfstring{$\sim$}{\string~}RenderAreaManager}, 
+		\hyperpage{101}
+    \subitem {addShape}, \hyperpage{102}
+    \subitem {client}, \hyperpage{104}
+    \subitem {deleteAllShapes}, \hyperpage{102}
+    \subitem {deleteShape}, \hyperpage{102}
+    \subitem {getShapesRef}, \hyperpage{102}
+    \subitem {loadShapes}, \hyperpage{102}
+    \subitem {modifyDisplayedText}, \hyperpage{102}
+    \subitem {modifyShape}, \hyperpage{102}
+    \subitem {onBadDeleteResponse}, \hyperpage{103}
+    \subitem {onBadGetResponse}, \hyperpage{103}
+    \subitem {onBadPostResponse}, \hyperpage{103}
+    \subitem {onGoodDeleteResponse}, \hyperpage{103}
+    \subitem {onGoodGetResponse}, \hyperpage{103}
+    \subitem {onGoodPostResponse}, \hyperpage{103}
+    \subitem {parse}, \hyperpage{104}
+    \subitem {renderAreaChanged}, \hyperpage{103}
+    \subitem {RenderAreaManager}, \hyperpage{101}
+    \subitem {renderAreaNotChanged}, \hyperpage{104}
+    \subitem {renderedShapes}, \hyperpage{104}
+    \subitem {saveShapes}, \hyperpage{104}
+    \subitem {statusMessage}, \hyperpage{104}
+  \item {renderAreaNotChanged}
+    \subitem {RenderAreaManager}, \hyperpage{104}
+  \item {renderedShapes}
+    \subitem {AppDriver}, \hyperpage{25}
+    \subitem {RenderAreaManager}, \hyperpage{104}
+  \item {renderShapes}
+    \subitem {MainWindow}, \hyperpage{61}
+    \subitem {RenderArea}, \hyperpage{99}
+  \item {REPEAT\_PROMPT\_TIME}
+    \subitem {TestimonialManager}, \hyperpage{137}
+  \item {reserve}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{159}
+  \item {resetSelection}
+    \subitem {RenderArea}, \hyperpage{98}
+  \item {resize}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{159}
+  \item {run}
+    \subitem {AppDriver}, \hyperpage{25}
+
+  \indexspace
+
+  \item {saveShapes}
+    \subitem {RenderAreaManager}, \hyperpage{104}
+    \subitem {ShapesManager}, \hyperpage{120}
+  \item {saveTestimonials}
+    \subitem {TestimonialManager}, \hyperpage{135}
+  \item {saveUsers}
+    \subitem {UserManager}, \hyperpage{154}
+  \item {selection\_sort}
+    \subitem {MainWindow}, \hyperpage{59}
+  \item {setA}
+    \subitem {Ellipse}, \hyperpage{36}
+  \item {setAdmin}
+    \subitem {UserAccount}, \hyperpage{148}
+  \item {setAlignment}
+    \subitem {Text}, \hyperpage{143}
+  \item {setB}
+    \subitem {Ellipse}, \hyperpage{37}
+  \item {setBrush}
+    \subitem {Shape}, \hyperpage{113}
+  \item {setCanEdit}
+    \subitem {ColumnEditDelegate}, \hyperpage{32}
+  \item {setDoNotShowAgain}
+    \subitem {TestimonialManager}, \hyperpage{135}
+  \item {setEditPrivileges}
+    \subitem {RenderArea}, \hyperpage{98}
+  \item {setEndPoint}
+    \subitem {Line}, \hyperpage{42}
+  \item {setInternalBrush}
+    \subitem {Shape}, \hyperpage{113}
+  \item {setInternalFont}
+    \subitem {Text}, \hyperpage{144}
+  \item {setInternalPen}
+    \subitem {Shape}, \hyperpage{113}
+  \item {setIsSatisfactory}
+    \subitem {Testimonial}, \hyperpage{128}
+  \item {setLength}
+    \subitem {Rectangle}, \hyperpage{95}
+    \subitem {Square}, \hyperpage{125}
+    \subitem {Text}, \hyperpage{144}
+  \item {setPassword}
+    \subitem {UserAccount}, \hyperpage{148}
+  \item {setPen}
+    \subitem {Shape}, \hyperpage{113}
+  \item {setPointsList}
+    \subitem {Polygon}, \hyperpage{84}
+    \subitem {Polyline}, \hyperpage{89}
+  \item {setR}
+    \subitem {Circle}, \hyperpage{30}
+  \item {setRenderShapes}
+    \subitem {RenderArea}, \hyperpage{98}
+  \item {setSelected}
+    \subitem {Shape}, \hyperpage{113}
+  \item {setShapeSelectedIndex}
+    \subitem {RenderArea}, \hyperpage{99}
+  \item {setShapeType}
+    \subitem {Shape}, \hyperpage{113}
+  \item {setStartPoint}
+    \subitem {Line}, \hyperpage{42}
+  \item {setText}
+    \subitem {Text}, \hyperpage{144}
+  \item {setTrackerId}
+    \subitem {Shape}, \hyperpage{114}
+  \item {setupTestimonials}
+    \subitem {MainWindow}, \hyperpage{59}
+  \item {setUserAccount}
+    \subitem {UserAccount}, \hyperpage{149}
+  \item {setUsername}
+    \subitem {UserAccount}, \hyperpage{149}
+  \item {setWidth}
+    \subitem {Rectangle}, \hyperpage{96}
+    \subitem {Text}, \hyperpage{144}
+  \item {setX}
+    \subitem {Circle}, \hyperpage{31}
+    \subitem {Ellipse}, \hyperpage{37}
+    \subitem {Line}, \hyperpage{42}
+    \subitem {Polygon}, \hyperpage{84}
+    \subitem {Polyline}, \hyperpage{89}
+    \subitem {Rectangle}, \hyperpage{96}
+    \subitem {Shape}, \hyperpage{114}
+    \subitem {Square}, \hyperpage{125}
+    \subitem {Text}, \hyperpage{144}
+  \item {setY}
+    \subitem {Circle}, \hyperpage{31}
+    \subitem {Ellipse}, \hyperpage{37}
+    \subitem {Line}, \hyperpage{42}
+    \subitem {Polygon}, \hyperpage{84}
+    \subitem {Polyline}, \hyperpage{89}
+    \subitem {Rectangle}, \hyperpage{96}
+    \subitem {Shape}, \hyperpage{114}
+    \subitem {Square}, \hyperpage{125}
+    \subitem {Text}, \hyperpage{144}
+  \item {Shape}, \hyperpage{105}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Shape}, \hyperpage{108}
+    \subitem {allocateTrackerId}, \hyperpage{108}
+    \subitem {Area}, \hyperpage{108}
+    \subitem {brush}, \hyperpage{115}
+    \subitem {brushItems}, \hyperpage{115}
+    \subitem {childItems}, \hyperpage{115}
+    \subitem {coords}, \hyperpage{115}
+    \subitem {CreateBrushChild}, \hyperpage{108}
+    \subitem {CreateParentItem}, \hyperpage{109}
+    \subitem {CreatePenChild}, \hyperpage{109}
+    \subitem {CreatePointsChild}, \hyperpage{109}
+    \subitem {Draw}, \hyperpage{109}
+    \subitem {getBrush}, \hyperpage{109}
+    \subitem {getBrushColor}, \hyperpage{109}
+    \subitem {getBrushItems}, \hyperpage{110}
+    \subitem {getBrushItemsEnd}, \hyperpage{110}
+    \subitem {getBrushStyle}, \hyperpage{110}
+    \subitem {getChildEnd}, \hyperpage{110}
+    \subitem {getChildItems}, \hyperpage{110}
+    \subitem {getPainter}, \hyperpage{110}
+    \subitem {getParentItem}, \hyperpage{110}
+    \subitem {getPen}, \hyperpage{110}
+    \subitem {getPenCapStyle}, \hyperpage{110}
+    \subitem {getPenColor}, \hyperpage{110}
+    \subitem {getPenItems}, \hyperpage{111}
+    \subitem {getPenItemsEnd}, \hyperpage{111}
+    \subitem {getPenJoinStyle}, \hyperpage{111}
+    \subitem {getPenStyle}, \hyperpage{111}
+    \subitem {getPenWidth}, \hyperpage{111}
+    \subitem {getPoints}, \hyperpage{111}
+    \subitem {getPointsItems}, \hyperpage{111}
+    \subitem {getSelected}, \hyperpage{111}
+    \subitem {getShapeId}, \hyperpage{111}
+    \subitem {getShapeType}, \hyperpage{111}
+    \subitem {getTrackerId}, \hyperpage{112}
+    \subitem {getX}, \hyperpage{112}
+    \subitem {getY}, \hyperpage{112}
+    \subitem {isPointInside}, \hyperpage{112}
+    \subitem {isSelected}, \hyperpage{115}
+    \subitem {Move}, \hyperpage{112}
+    \subitem {nextTracker}, \hyperpage{115}
+    \subitem {operator$<$}, \hyperpage{114}
+    \subitem {operator=}, \hyperpage{112}
+    \subitem {operator==}, \hyperpage{114}
+    \subitem {painter}, \hyperpage{115}
+    \subitem {parentItem}, \hyperpage{116}
+    \subitem {pen}, \hyperpage{116}
+    \subitem {penItems}, \hyperpage{116}
+    \subitem {Perimeter}, \hyperpage{113}
+    \subitem {pointsItems}, \hyperpage{116}
+    \subitem {setBrush}, \hyperpage{113}
+    \subitem {setInternalBrush}, \hyperpage{113}
+    \subitem {setInternalPen}, \hyperpage{113}
+    \subitem {setPen}, \hyperpage{113}
+    \subitem {setSelected}, \hyperpage{113}
+    \subitem {setShapeType}, \hyperpage{113}
+    \subitem {setTrackerId}, \hyperpage{114}
+    \subitem {setX}, \hyperpage{114}
+    \subitem {setY}, \hyperpage{114}
+    \subitem {Shape}, \hyperpage{108}
+    \subitem {shapeId}, \hyperpage{116}
+    \subitem {shapeType}, \hyperpage{116}
+    \subitem {trackerId}, \hyperpage{116}
+    \subitem {trackersInUse}, \hyperpage{117}
+  \item {shape.cpp}
+    \subitem {operator$<$}, \hyperpage{193}
+    \subitem {operator==}, \hyperpage{193}
+  \item {shape.h}
+    \subitem {PI}, \hyperpage{194}
+  \item {shapeAdded}
+    \subitem {MainWindow}, \hyperpage{59}
+  \item {shapeChanged}
+    \subitem {MainWindow}, \hyperpage{59}
+  \item {shapeDeleted}
+    \subitem {MainWindow}, \hyperpage{59}
+  \item {shapeDimensions}
+    \subitem {Parser::MorphicShape}, \hyperpage{64}
+  \item {shapeId}
+    \subitem {Parser::MorphicShape}, \hyperpage{64}
+    \subitem {Shape}, \hyperpage{116}
+  \item {ShapeIDs}
+    \subitem {all\_shapes.h}, \hyperpage{186}
+  \item {shapes}
+    \subitem {ShapesManager}, \hyperpage{120}
+  \item {shapes\_to\_treeWidget}
+    \subitem {MainWindow}, \hyperpage{59}
+  \item {shapesChanged}
+    \subitem {ShapesManager}, \hyperpage{120}
+  \item {shapeSelectedIndex}
+    \subitem {RenderArea}, \hyperpage{99}
+  \item {ShapesManager}, \hyperpage{117}
+    \subitem {\texorpdfstring{$\sim$}{\string~}ShapesManager}, 
+		\hyperpage{118}
+    \subitem {addShape}, \hyperpage{118}
+    \subitem {client}, \hyperpage{120}
+    \subitem {deleteAllShapes}, \hyperpage{118}
+    \subitem {deleteShape}, \hyperpage{119}
+    \subitem {getShapesRef}, \hyperpage{119}
+    \subitem {loadShapes}, \hyperpage{119}
+    \subitem {modifyShape}, \hyperpage{119}
+    \subitem {onBadDeleteResponse}, \hyperpage{119}
+    \subitem {onBadGetResponse}, \hyperpage{119}
+    \subitem {onBadPostResponse}, \hyperpage{119}
+    \subitem {onGoodDeleteResponse}, \hyperpage{119}
+    \subitem {onGoodGetResponse}, \hyperpage{119}
+    \subitem {onGoodPostResponse}, \hyperpage{120}
+    \subitem {parse}, \hyperpage{120}
+    \subitem {saveShapes}, \hyperpage{120}
+    \subitem {shapes}, \hyperpage{120}
+    \subitem {shapesChanged}, \hyperpage{120}
+    \subitem {ShapesManager}, \hyperpage{118}
+    \subitem {shapesNotChanged}, \hyperpage{120}
+    \subitem {statusMessage}, \hyperpage{120}
+  \item {shapesNotChanged}
+    \subitem {ShapesManager}, \hyperpage{120}
+  \item {ShapesToJson}
+    \subitem {Parser}, \hyperpage{77}
+  \item {shapeTable}
+    \subitem {MainWindow}, \hyperpage{61}
+  \item {shapeType}
+    \subitem {Parser::MorphicShape}, \hyperpage{64}
+    \subitem {Shape}, \hyperpage{116}
+  \item {shouldPromptForTestimonial}
+    \subitem {TestimonialManager}, \hyperpage{135}
+  \item {showLoginPage}
+    \subitem {LoginWindow}, \hyperpage{44}
+  \item {showRenderStatusMessage}
+    \subitem {MainWindow}, \hyperpage{60}
+  \item {showSignupPage}
+    \subitem {LoginWindow}, \hyperpage{44}
+  \item {showTestimonialPrompt}
+    \subitem {MainWindow}, \hyperpage{60}
+  \item {showTestimonialsDisplay}
+    \subitem {MainWindow}, \hyperpage{60}
+  \item {shutdown}
+    \subitem {AppDriver}, \hyperpage{25}
+  \item {signupBtn}
+    \subitem {LoginWindow}, \hyperpage{45}
+  \item {signupPage}
+    \subitem {LoginWindow}, \hyperpage{45}
+  \item {signupPassEdit}
+    \subitem {LoginWindow}, \hyperpage{46}
+  \item {signupRequested}
+    \subitem {LoginWindow}, \hyperpage{45}
+  \item {signupUserEdit}
+    \subitem {LoginWindow}, \hyperpage{46}
+  \item {size}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{159}
+  \item {size\_v}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{159}
+  \item {SkipWhitespace}
+    \subitem {Parser}, \hyperpage{77}
+  \item {sortByArea}
+    \subitem {MainWindow}, \hyperpage{60}
+  \item {sortById}
+    \subitem {MainWindow}, \hyperpage{60}
+  \item {sortByPerimeter}
+    \subitem {MainWindow}, \hyperpage{60}
+  \item {sortDropdown}
+    \subitem {MainWindow}, \hyperpage{62}
+  \item {sortOrderDropdown}
+    \subitem {MainWindow}, \hyperpage{62}
+  \item {space}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{159}
+  \item {SQUARE}
+    \subitem {all\_shapes.h}, \hyperpage{187}
+  \item {Square}, \hyperpage{121}
+    \subitem {Area}, \hyperpage{124}
+    \subitem {Draw}, \hyperpage{124}
+    \subitem {getLength}, \hyperpage{124}
+    \subitem {isPointInside}, \hyperpage{124}
+    \subitem {length}, \hyperpage{125}
+    \subitem {Perimeter}, \hyperpage{124}
+    \subitem {setLength}, \hyperpage{125}
+    \subitem {setX}, \hyperpage{125}
+    \subitem {setY}, \hyperpage{125}
+    \subitem {Square}, \hyperpage{123}
+  \item {src/backend/ApiClient.cpp}, \hyperpage{161}
+  \item {src/backend/ApiClient.h}, \hyperpage{161, 162}
+  \item {src/backend/AppDriver.cpp}, \hyperpage{162}
+  \item {src/backend/AppDriver.h}, \hyperpage{162, 163}
+  \item {src/backend/main.cpp}, \hyperpage{176}
+  \item {src/backend/moc\_ApiClient.cpp}, \hyperpage{164}
+  \item {src/backend/moc\_UserManager.cpp}, \hyperpage{164}
+  \item {src/backend/Parser.cpp}, \hyperpage{165}
+  \item {src/backend/Parser.h}, \hyperpage{165, 166}
+  \item {src/backend/RenderAreaManager.cpp}, \hyperpage{167}
+  \item {src/backend/RenderAreaManager.h}, \hyperpage{167, 168}
+  \item {src/backend/ShapesManager.cpp}, \hyperpage{168}
+  \item {src/backend/ShapesManager.h}, \hyperpage{169}
+  \item {src/backend/Testimonial.cpp}, \hyperpage{170}
+  \item {src/backend/Testimonial.h}, \hyperpage{170}
+  \item {src/backend/TestimonialManager.cpp}, \hyperpage{171}
+  \item {src/backend/TestimonialManager.h}, \hyperpage{171}
+  \item {src/backend/UserAccount.cpp}, \hyperpage{172}
+  \item {src/backend/UserAccount.h}, \hyperpage{172}
+  \item {src/backend/UserManager.cpp}, \hyperpage{173}
+  \item {src/backend/UserManager.h}, \hyperpage{173}
+  \item {src/frontend/ColumnEditDelegate.h}, \hyperpage{174}
+  \item {src/frontend/darkstyle.qss}, \hyperpage{175}
+  \item {src/frontend/Geoo.qss}, \hyperpage{175}
+  \item {src/frontend/lightstyle.qss}, \hyperpage{175}
+  \item {src/frontend/loginwindow.cpp}, \hyperpage{175}
+  \item {src/frontend/loginwindow.h}, \hyperpage{175, 176}
+  \item {src/frontend/main.cpp}, \hyperpage{178}
+  \item {src/frontend/mainwindow.cpp}, \hyperpage{181}
+  \item {src/frontend/mainwindow.h}, \hyperpage{181}
+  \item {src/frontend/mainwindow.ui}, \hyperpage{183}
+  \item {src/frontend/Medize.qss}, \hyperpage{183}
+  \item {src/frontend/renderarea.cpp}, \hyperpage{183}
+  \item {src/frontend/renderarea.h}, \hyperpage{183, 184}
+  \item {src/frontend/resources.qrc}, \hyperpage{184}
+  \item {src/frontend/TestimonialDialog.cpp}, \hyperpage{184}
+  \item {src/frontend/TestimonialDialog.h}, \hyperpage{185}
+  \item {src/frontend/TestimonialsDisplayDialog.cpp}, \hyperpage{185}
+  \item {src/frontend/TestimonialsDisplayDialog.h}, \hyperpage{186}
+  \item {src/objects/all\_shapes.h}, \hyperpage{186, 187}
+  \item {src/objects/circle.cpp}, \hyperpage{187}
+  \item {src/objects/circle.h}, \hyperpage{187, 188}
+  \item {src/objects/ellipse.cpp}, \hyperpage{188}
+  \item {src/objects/ellipse.h}, \hyperpage{188, 189}
+  \item {src/objects/line.cpp}, \hyperpage{189}
+  \item {src/objects/line.h}, \hyperpage{189, 190}
+  \item {src/objects/polygon.cpp}, \hyperpage{190}
+  \item {src/objects/polygon.h}, \hyperpage{190, 191}
+  \item {src/objects/polyline.cpp}, \hyperpage{191}
+  \item {src/objects/polyline.h}, \hyperpage{191, 192}
+  \item {src/objects/rectangle.cpp}, \hyperpage{192}
+  \item {src/objects/rectangle.h}, \hyperpage{192, 193}
+  \item {src/objects/shape.cpp}, \hyperpage{193}
+  \item {src/objects/shape.h}, \hyperpage{194, 195}
+  \item {src/objects/square.cpp}, \hyperpage{196}
+  \item {src/objects/square.h}, \hyperpage{196, 197}
+  \item {src/objects/text.cpp}, \hyperpage{197}
+  \item {src/objects/text.h}, \hyperpage{197}
+  \item {src/objects/vector.h}, \hyperpage{198, 199}
+  \item {src/webservice/webservice.cpp}, \hyperpage{203}
+  \item {stack}
+    \subitem {LoginWindow}, \hyperpage{46}
+  \item {startPoint}
+    \subitem {Line}, \hyperpage{43}
+  \item {startTrackingTime}
+    \subitem {TestimonialManager}, \hyperpage{135}
+  \item {statusMessage}
+    \subitem {RenderAreaManager}, \hyperpage{104}
+    \subitem {ShapesManager}, \hyperpage{120}
+    \subitem {UserManager}, \hyperpage{154}
+  \item {stopTrackingTime}
+    \subitem {TestimonialManager}, \hyperpage{136}
+  \item {StringToVector}
+    \subitem {Parser}, \hyperpage{77}
+
+  \indexspace
+
+  \item {tabWidget}
+    \subitem {MainWindow}, \hyperpage{62}
+  \item {teamNameLabel}
+    \subitem {MainWindow}, \hyperpage{62}
+  \item {Testimonial}, \hyperpage{126}
+    \subitem {fromJson}, \hyperpage{127}
+    \subitem {getAuthor}, \hyperpage{127}
+    \subitem {getContent}, \hyperpage{127}
+    \subitem {getTimestamp}, \hyperpage{128}
+    \subitem {isGuest}, \hyperpage{128}
+    \subitem {isSatisfactory}, \hyperpage{128}
+    \subitem {m\_author}, \hyperpage{128}
+    \subitem {m\_content}, \hyperpage{128}
+    \subitem {m\_isGuest}, \hyperpage{129}
+    \subitem {m\_isSatisfactory}, \hyperpage{129}
+    \subitem {m\_timestamp}, \hyperpage{129}
+    \subitem {setIsSatisfactory}, \hyperpage{128}
+    \subitem {Testimonial}, \hyperpage{127}
+    \subitem {toJson}, \hyperpage{128}
+  \item {TestimonialDialog}, \hyperpage{129}
+    \subitem {m\_authorEdit}, \hyperpage{130}
+    \subitem {m\_contentEdit}, \hyperpage{130}
+    \subitem {m\_doNotShowAgain}, \hyperpage{130}
+    \subitem {onCancel}, \hyperpage{130}
+    \subitem {onSubmit}, \hyperpage{130}
+    \subitem {TestimonialDialog}, \hyperpage{130}
+  \item {TestimonialManager}, \hyperpage{131}
+    \subitem {\texorpdfstring{$\sim$}{\string~}TestimonialManager}, 
+		\hyperpage{133}
+    \subitem {addTestimonial}, \hyperpage{134}
+    \subitem {checkTimeAndPrompt}, \hyperpage{134}
+    \subitem {client}, \hyperpage{136}
+    \subitem {getDoNotShowAgain}, \hyperpage{134}
+    \subitem {getInstance}, \hyperpage{134}
+    \subitem {getSatisfactoryTestimonials}, \hyperpage{134}
+    \subitem {hasUserGivenTestimonial}, \hyperpage{134}
+    \subitem {INITIAL\_PROMPT\_TIME}, \hyperpage{136}
+    \subitem {loadTestimonials}, \hyperpage{134}
+    \subitem {m\_doNotShowAgain}, \hyperpage{136}
+    \subitem {m\_testimonials}, \hyperpage{136}
+    \subitem {m\_trackingTimer}, \hyperpage{136}
+    \subitem {m\_userTimeTracking}, \hyperpage{136}
+    \subitem {onBadGetResponse}, \hyperpage{134}
+    \subitem {onBadPostResponse}, \hyperpage{135}
+    \subitem {onGoodGetResponse}, \hyperpage{135}
+    \subitem {onGoodPostResponse}, \hyperpage{135}
+    \subitem {parse}, \hyperpage{137}
+    \subitem {REPEAT\_PROMPT\_TIME}, \hyperpage{137}
+    \subitem {saveTestimonials}, \hyperpage{135}
+    \subitem {setDoNotShowAgain}, \hyperpage{135}
+    \subitem {shouldPromptForTestimonial}, \hyperpage{135}
+    \subitem {startTrackingTime}, \hyperpage{135}
+    \subitem {stopTrackingTime}, \hyperpage{136}
+    \subitem {TestimonialManager}, \hyperpage{133}
+  \item {TestimonialsDisplayDialog}, \hyperpage{137}
+    \subitem {m\_testimonialsLayout}, \hyperpage{138}
+    \subitem {refreshTestimonials}, \hyperpage{138}
+    \subitem {TestimonialsDisplayDialog}, \hyperpage{138}
+  \item {TestimonialsToJson}
+    \subitem {Parser}, \hyperpage{78}
+  \item {TEXT}
+    \subitem {all\_shapes.h}, \hyperpage{187}
+  \item {Text}, \hyperpage{138}
+    \subitem {Area}, \hyperpage{142}
+    \subitem {Draw}, \hyperpage{142}
+    \subitem {font}, \hyperpage{144}
+    \subitem {getFont}, \hyperpage{142}
+    \subitem {getFontStyle}, \hyperpage{142}
+    \subitem {getFontWeight}, \hyperpage{142}
+    \subitem {getLength}, \hyperpage{142}
+    \subitem {getTextAlignment}, \hyperpage{142}
+    \subitem {getTextColor}, \hyperpage{143}
+    \subitem {getTextString}, \hyperpage{143}
+    \subitem {getWidth}, \hyperpage{143}
+    \subitem {isPointInside}, \hyperpage{143}
+    \subitem {length}, \hyperpage{144}
+    \subitem {Perimeter}, \hyperpage{143}
+    \subitem {setAlignment}, \hyperpage{143}
+    \subitem {setInternalFont}, \hyperpage{144}
+    \subitem {setLength}, \hyperpage{144}
+    \subitem {setText}, \hyperpage{144}
+    \subitem {setWidth}, \hyperpage{144}
+    \subitem {setX}, \hyperpage{144}
+    \subitem {setY}, \hyperpage{144}
+    \subitem {Text}, \hyperpage{141}
+    \subitem {textAlignment}, \hyperpage{145}
+    \subitem {textColor}, \hyperpage{145}
+    \subitem {textString}, \hyperpage{145}
+    \subitem {width}, \hyperpage{145}
+  \item {textAlignment}
+    \subitem {Parser::MorphicShape}, \hyperpage{64}
+    \subitem {Text}, \hyperpage{145}
+  \item {textColor}
+    \subitem {Parser::MorphicShape}, \hyperpage{64}
+    \subitem {Text}, \hyperpage{145}
+  \item {textString}
+    \subitem {Parser::MorphicShape}, \hyperpage{64}
+    \subitem {Text}, \hyperpage{145}
+  \item {toJson}
+    \subitem {Testimonial}, \hyperpage{128}
+  \item {toSignupBtn}
+    \subitem {LoginWindow}, \hyperpage{46}
+  \item {trackerId}
+    \subitem {Parser::MorphicShape}, \hyperpage{65}
+    \subitem {Shape}, \hyperpage{116}
+  \item {trackersInUse}
+    \subitem {Shape}, \hyperpage{117}
+
+  \indexspace
+
+  \item {Ui}, \hyperpage{13}
+  \item {ui}
+    \subitem {MainWindow}, \hyperpage{62}
+  \item {UpdateAccumulator}
+    \subitem {Parser}, \hyperpage{78}
+  \item {updateShapeDisplayCoords}
+    \subitem {RenderArea}, \hyperpage{99}
+  \item {UpdateUserAccumulator}
+    \subitem {Parser}, \hyperpage{79}
+  \item {user}
+    \subitem {AppDriver}, \hyperpage{25}
+  \item {UserAccount}, \hyperpage{145}
+    \subitem {\texorpdfstring{$\sim$}{\string~}UserAccount}, 
+		\hyperpage{147}
+    \subitem {admin}, \hyperpage{149}
+    \subitem {getPassword}, \hyperpage{148}
+    \subitem {getUsername}, \hyperpage{148}
+    \subitem {isAdmin}, \hyperpage{148}
+    \subitem {operator=}, \hyperpage{148}
+    \subitem {password}, \hyperpage{149}
+    \subitem {setAdmin}, \hyperpage{148}
+    \subitem {setPassword}, \hyperpage{148}
+    \subitem {setUserAccount}, \hyperpage{149}
+    \subitem {setUsername}, \hyperpage{149}
+    \subitem {UserAccount}, \hyperpage{147}
+    \subitem {username}, \hyperpage{149}
+  \item {userAuthenticated}
+    \subitem {UserManager}, \hyperpage{154}
+  \item {userChanged}
+    \subitem {UserManager}, \hyperpage{155}
+  \item {UserManager}, \hyperpage{150}
+    \subitem {\texorpdfstring{$\sim$}{\string~}UserManager}, 
+		\hyperpage{152}
+    \subitem {addUser}, \hyperpage{152}
+    \subitem {authenticate}, \hyperpage{152}
+    \subitem {authenticationFailed}, \hyperpage{152}
+    \subitem {client}, \hyperpage{155}
+    \subitem {currUser}, \hyperpage{155}
+    \subitem {deleteAllUsers}, \hyperpage{153}
+    \subitem {deleteUser}, \hyperpage{153}
+    \subitem {getCurrUserRef}, \hyperpage{153}
+    \subitem {loadUsers}, \hyperpage{153}
+    \subitem {modifyUser}, \hyperpage{153}
+    \subitem {onBadDeleteResponse}, \hyperpage{153}
+    \subitem {onBadGetResponse}, \hyperpage{153}
+    \subitem {onBadPostResponse}, \hyperpage{154}
+    \subitem {onGoodDeleteResponse}, \hyperpage{154}
+    \subitem {onGoodGetResponse}, \hyperpage{154}
+    \subitem {onGoodPostResponse}, \hyperpage{154}
+    \subitem {parse}, \hyperpage{155}
+    \subitem {saveUsers}, \hyperpage{154}
+    \subitem {statusMessage}, \hyperpage{154}
+    \subitem {userAuthenticated}, \hyperpage{154}
+    \subitem {userChanged}, \hyperpage{155}
+    \subitem {UserManager}, \hyperpage{152}
+    \subitem {userNotChanged}, \hyperpage{155}
+    \subitem {users}, \hyperpage{155}
+  \item {username}
+    \subitem {LoginWindow}, \hyperpage{45}
+    \subitem {Parser::RawUser}, \hyperpage{91}
+    \subitem {UserAccount}, \hyperpage{149}
+  \item {userNotChanged}
+    \subitem {UserManager}, \hyperpage{155}
+  \item {users}
+    \subitem {UserManager}, \hyperpage{155}
+  \item {userStatusLabel}
+    \subitem {MainWindow}, \hyperpage{62}
+  \item {UsersToJson}
+    \subitem {Parser}, \hyperpage{79}
+
+  \indexspace
+
+  \item {vector}
+    \subitem {alpha::vector$<$ T $>$}, \hyperpage{157}
+  \item {vector.h}
+    \subitem {ALPHA\_VECTOR\_H}, \hyperpage{198}
+
+  \indexspace
+
+  \item {webservice-\/dockerized/main.cpp}, \hyperpage{179}
+  \item {webservice.cpp}
+    \subitem {get\_json\_file}, \hyperpage{205}
+    \subitem {main}, \hyperpage{206}
+  \item {width}
+    \subitem {Rectangle}, \hyperpage{96}
+    \subitem {Text}, \hyperpage{145}
+
+\end{theindex}
