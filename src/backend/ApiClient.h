@@ -11,266 +11,103 @@
 #ifndef API_CLIENT_H
 #define API_CLIENT_H
                                     ///Documentation Qt Version 6.9.0
-#include <QObject>                  // https://doc.qt.io/qt-6/qobject.html 
-#include <QNetworkAccessManager>    // https://doc.qt.io/qt-6/qnetworkaccessmanager.html 
-#include <QNetworkReply>            // https://doc.qt.io/qt-6/qnetworkreply.html      
-#include <QNetworkRequest>          // https://doc.qt.io/qt-6/qnetworkrequest.html 
-#include <QUrl>                     // https://doc.qt.io/qt-6/qurl.html  
-#include <QByteArray>               // https://doc.qt.io/qt-6/qbytearray.html 
-#include <QString>                  // https://doc.qt.io/qt-6/qstring.html 
+#include <QObject>                  // https://doc.qt.io/qt-6/qobject.html
+#include <QNetworkAccessManager>    // https://doc.qt.io/qt-6/qnetworkaccessmanager.html
+#include <QNetworkReply>            // https://doc.qt.io/qt-6/qnetworkreply.html
+#include <QNetworkRequest>          // https://doc.qt.io/qt-6/qnetworkrequest.html
+#include <QUrl>                     // https://doc.qt.io/qt-6/qurl.html
+#include <QByteArray>               // https://doc.qt.io/qt-6/qbytearray.html
+#include <QString>                  // https://doc.qt.io/qt-6/qstring.html
 
+/**
+ * @brief Manages network communication with the backend API.
+ *
+ * This class provides methods to perform GET, POST, and DELETE requests
+ * to various endpoints of the webservice. It uses QNetworkAccessManager
+ * for handling network operations and emits signals to indicate the success
+ * or failure of these requests.
+ */
 class ApiClient : public QObject {
     Q_OBJECT    //necessary macro for qt's compiler
 
 public:
     /**
-     * @brief Default Constructor
-     * 
-     * @param parent - any QObject to tie this instantiation to ensure automatic deletion
+     * @brief Public methods for ApiClient.
+     * @details This section includes the constructor and functions for making API requests.
      */
-    explicit ApiClient(QObject* parent = nullptr);
-
+    explicit ApiClient(QObject* parent = nullptr);                  /** @brief Default Constructor. */
 
 
     /**
-     * @brief Makes a request to get data from the Get /shapes API Endpoint
-     * @file reads from database/shapes.json
+     * @brief API endpoints for managing Shape data.
+     * @details These functions interact with the `/shapes` and `/shapes-all` endpoints
+     *          to retrieve, submit, or delete shape information.
      * 
-     * @details This function submits a request to the Get /shapes API in the webservice. 
-     *          On completion of request, control is handed over to @see AnalyzeGetReply().
+     * @note These endpoints are deprecated 
      */
-    void GetShapes();
-
+    void GetShapes();                                               /** @brief Makes a request to get data from the Get /shapes API Endpoint. */
+    void PostShapes(std::string json);                              /** @brief Makes a request to send data to the Post /shapes API Endpoint. */
+    void DeleteShapesAll();                                         /** @brief Makes a request to delete all shapes via the Delete /shapes-all endpoint. */
 
 
     /**
-     * @brief Makes a request to get data from the Get /render_area API Endpoint
-     * @file reads from database/render_area.json
-     * 
-     * @details This function submits a request to the Get /render_area API in the webservice. 
-     *          On completion of request, control is handed over to @see AnalyzeGetReply().
+     * @brief API endpoints for managing Render Area data.
+     * @details These functions interact with the `/render_area` and `/render_area-all` endpoints
+     *          to retrieve, submit, or delete render area configurations.
      */
-    void GetRenderArea();
-
+    void GetRenderArea();                                           /** @brief Makes a request to get data from the Get /render_area API Endpoint. */
+    void PostRenderArea(std::string json);                          /** @brief Makes a request to send data to the Post /render_area API Endpoint. */
+    void DeleteRenderAreaAll();                                     /** @brief Makes a request to delete all render area data via Delete /render_area-all. */
 
 
     /**
-     * @brief Makes a request to get all testimonials via GET /testimonials.
-     *
-     * @details Sends a GET to retrieve the JSON array of testimonials. Replies are
-     *          handled by AnalyzeGetReply().
+     * @brief API endpoints for managing User data.
+     * @details These functions interact with the `/users` and `/users-all` endpoints
+     *          to retrieve, submit, or delete user information.
      */
-    void GetTestimonials();
-
+    void GetUsers();                                                /** @brief Makes a request to get data from the Get /users API Endpoint. */
+    void PostUsers(std::string json);                               /** @brief Makes a request to send data to the Post /users API Endpoint. */
+    void DeleteUsersAll();                                          /** @brief Makes a request to delete all user data via Delete /users-all. */
 
 
     /**
-     * @brief Makes a request to get data from the Get /users API Endpoint
-     * @file reads from database/users.json
-     * 
-     * @details This function submits a request to the Get /users API in the webservice. 
-     *          On completion of request, control is handed over to @see AnalyzeGetReply().
+     * @brief API endpoints for managing Testimonial data.
+     * @details These functions interact with the `/testimonials` endpoint
+     *          to retrieve, submit, or delete testimonial entries.
      */
-    void GetUsers();
-
-
-
-    /**
-     * @brief Makes a request to send data to the Post /shapes API Endpoint
-     * @file writes to database/shapes.json
-     * 
-     * @details This function submits a request to the Post /shapes API in the webservice. 
-     *          On completion of request, control is handed over to @see AnalyzeReply(). 
-     * 
-     * @param json - contains data for all possible shapes that can be rendered by the 
-     *               application; formatted in JSON
-     */
-    void PostShapes(std::string json);
-
-
-
-    /**
-     * @brief Makes a request to send data to the Post /render_area API Endpoint
-     * @file writes to database/render_area.json
-     * 
-     * @details This function submits a request to the Post /render_area API in the webservice. 
-     *          On completion of request, control is handed over to @see AnalyzeReply().
-     * 
-     * @param json - contains data for all shapes currently in the render window in the 
-     *               frontend UI; formatted in JSON
-     */
-    void PostRenderArea(std::string json);
-    
-    
-    /**
-     * @brief Makes a request to send data to the Post /users API Endpoint
-     * @file writes to database/users.json
-     * 
-     * @details This function submits a request to the Post /users API in the webservice. 
-     *          On completion of request, control is handed over to @see AnalyzePostReply().
-     * 
-     * @param json - contains data for all shapes currently in the render window in the 
-     *               frontend UI; formatted in JSON
-     */
-    void PostUsers(std::string json);
-
-
-
-    /**
-     * @brief Makes a request to post testimonial data via POST /testimonials.
-     *
-     * @details Sends a POST with the JSON string of testimonials. Replies are
-     *          handled by AnalyzePostReply().
-     *
-     * @param json - JSON-formatted string representing testimonials array.
-     */
-    void PostTestimonials(std::string json);
-
-
-
-    /**
-     * @brief Makes a request to delete all shapes via the Delete /shapes-all endpoint
-     * @file deletes data from database/shapes.json
-     * 
-     * @details This function submits a request to the Delete /shapes-all API in the webservice. 
-     *          On completion of request, control is handed over to @see AnalyzeDeleteReply().
-     */
-    void DeleteShapesAll();
-
-
-
-    /**
-     * @brief Makes a request to delete all render area data via Delete /render_area-all
-     * @file deletes data from database/render_area.json
-     * 
-     * @details This function submits a request to the Delete /render_area API in the webservice. 
-     *          On completion of request, control is handed over to @see AnalyzeDeleteReply().
-     */
-    void DeleteRenderAreaAll();
-
-
-
-    /**
-     * @brief Makes a request to delete all user data via Delete /users-all
-     * @file deletes data from database/users.json
-     * 
-     * @details This function submits a request to the Delete /users-all API in the webservice. 
-     *          On completion of request, control is handed over to @see AnalyzeDeleteReply().
-     */
-    void DeleteUsersAll();
-
-
-    
-    /**
-     * @brief Makes a request to delete all testimonials via DELETE /testimonials.
-     *
-     * @details Sends a DELETE to clear the testimonials on the server. Replies are
-     *          handled by AnalyzeDeleteReply().
-     */
-    void DeleteTestimonialsAll();
-
+    void GetTestimonials();                                         /** @brief Makes a request to get all testimonials via GET /testimonials. */
+    void PostTestimonials(std::string json);                        /** @brief Makes a request to post testimonial data via POST /testimonials. */
+    void DeleteTestimonialsAll();                                   /** @brief Makes a request to delete all testimonials via DELETE /testimonials. */
 
 
 signals:
     /**
-     * @brief Signal for a successful request sent to a Get endpoint
-     * 
-     * @details When this signal is emitted, the ApiClient object contains the data that we want 
-     *          formatted in JSON.
-     * 
-     * @param json - contains data received from whichever Get endpoint was called and is formatted in JSON.
+     * @brief Signals emitted by ApiClient to communicate request outcomes.
+     * @details These signals notify listeners about the success or failure of
+     *          GET, POST, and DELETE operations.
      */
-    void GoodGetReply(const QString& json);
-
-
-
-    /**
-     * @brief Signal for a failed request sent to a Get endpoint
-     * 
-     * @details When this signal is emitted, the ApiClient object does not have the data we want. Instead, 
-     *          it contains an error message on what went wrong.
-     * 
-     * @param error - the error message indicating what went wrong
-     */
-    void BadGetReply(const QString& error);
-
-
-
-    /**
-     * @brief Signal for a successful request sent to a Post endpoint
-     * 
-     * @details When this signal is emitted, then the data was successfully received by the API.
-     */
-    void GoodPostReply();
-
-
-
-    /**
-     * @brief Signal for a failed request sent to a Post endpoint
-     * 
-     * @details When this signal is emitted, then the API was not able to properly update the file it needed to. 
-     *          Assume the data sent was not saved.
-     * 
-     * @param error - the error message indicating what went wrong
-     */
-    void BadPostReply(const QString& error);
-
-
-
-    /**
-     * @brief Signal for a successful request sent to a Delete endpoint
-     * 
-     * @details When this signal is emitted, then the data was successfully deleted by the API.
-     */
-    void GoodDeleteReply();
-
-
-
-    /**
-     * @brief Signal for a failed request sent to a Delete endpoint
-     * 
-     * @details When this signal is emitted, then the API was not able to properly delete the file it needed to. 
-     *          Assume the data sent was not deleted.
-     * 
-     * @param error - the error message indicating what went wrong
-     */
-    void BadDeleteReply(const QString& error);
-
+    void GoodGetReply(const QString& json);                         /** @brief Signal for a successful request sent to a Get endpoint. */
+    void BadGetReply(const QString& error);                         /** @brief Signal for a failed request sent to a Get endpoint. */
+    void GoodPostReply();                                           /** @brief Signal for a successful request sent to a Post endpoint. */
+    void BadPostReply(const QString& error);                        /** @brief Signal for a failed request sent to a Post endpoint. */
+    void GoodDeleteReply();                                         /** @brief Signal for a successful request sent to a Delete endpoint. */
+    void BadDeleteReply(const QString& error);                      /** @brief Signal for a failed request sent to a Delete endpoint. */
 
 
 private slots:
     /**
-     * @brief Analyzes the reply to discover if the Get request sent was successful or a failure.
-     * 
-     * @details A successful reply emits the @see GoodGetReply signal. An errored reply emits the 
-     *          @see BadGetReply signal. 
+     * @brief Private slots for analyzing network replies.
+     * @details These slots are connected to the `finished` signal of QNetworkReply
+     *          and determine whether the operation was successful, emitting the
+     *          appropriate signal (Good/Bad Get/Post/Delete Reply).
      */
-    void AnalyzeGetReply();
-
-
-
-    /**
-     * @brief Analyzes the reply to discover if the Post request sent was successful or a failure.
-     * 
-     * @details A successful reply emits the @see GoodPostReply signal. An errored reply emits the 
-     *          @see BadPostReply signal. 
-     */
-    void AnalyzePostReply();
-
-
-
-    /**
-     * @brief Analyzes the reply to discover if the Delete request sent was successful or a failure.
-     * 
-     * @details A successful reply emits the @see GoodDeleteReply signal. An errored reply emits the 
-     *          @see BadDeleteReply signal.
-     */
-    void AnalyzeDeleteReply();
-
+    void AnalyzeGetReply();                                         /** @brief Analyzes the reply for GET requests. */
+    void AnalyzePostReply();                                        /** @brief Analyzes the reply for POST requests. */
+    void AnalyzeDeleteReply();                                      /** @brief Analyzes the reply for DELETE requests. */
 
     
 private:
-    QNetworkAccessManager* manager;  // Manages all network operations for the client
+    QNetworkAccessManager* manager;                                 /** @brief Manages all network operations for the client. */
 };
 
 #endif //API_CLIENT_H

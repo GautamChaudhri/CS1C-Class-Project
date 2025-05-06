@@ -10,14 +10,10 @@ RenderAreaManager::RenderAreaManager(QObject* parent) : QObject{parent}, client{
     //loadShapes();
 }
 
-
-
 RenderAreaManager::~RenderAreaManager() {
     for (size_t i = 0; i < renderedShapes.size(); ++i)
         delete renderedShapes[i];
 }
-
-
 
 alpha::vector<Shape*>* RenderAreaManager::getShapesRef() {
     return &renderedShapes;
@@ -31,8 +27,6 @@ void RenderAreaManager::addShape(Shape* shape) {
     emit renderAreaChanged();
     saveShapes();
 }
-
-
 
 void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
     qDebug() << "[modifyShape] called for trackerId=" << shape->getTrackerId()
@@ -652,14 +646,11 @@ void RenderAreaManager::modifyShape(Shape* shape, QString key, int value) {
     }
 }
 
-
 void RenderAreaManager::modifyDisplayedText(Text* obj, QString newText) {
     obj->setText(newText);
     emit renderAreaChanged();
     saveShapes();
 }
-
-
 
 void RenderAreaManager::deleteShape(const int trackerId) {
     bool shapeFound = false;
@@ -681,8 +672,6 @@ void RenderAreaManager::deleteShape(const int trackerId) {
     }
 }
 
-
-
 void RenderAreaManager::deleteAllShapes() {
     for (Shape* shape : renderedShapes)
         delete shape;
@@ -692,22 +681,17 @@ void RenderAreaManager::deleteAllShapes() {
     qDebug().noquote().nospace() << "[RenderAreaManager::deleteAllShapes] requested_all_delete";
 }
 
-
-
 void RenderAreaManager::loadShapes() {
     qDebug() << "[RenderAreaManager::loadShapes] requesting shapes from webservice";
     client.GetRenderArea();
-    emit renderAreaChanged();
 }
-
-
 
 void RenderAreaManager::saveShapes() {
     std::string renderedShapeData = parse.ShapesToJson(renderedShapes);
     client.PostRenderArea(renderedShapeData);
 }
 
-
+//=========================================== SLOTS ===================================================
 
 void RenderAreaManager::onGoodGetResponse(const QString &json) {
     qDebug().noquote().nospace() << "[RenderAreaManager::onGoodGetResponse] data retrieved";
@@ -717,34 +701,24 @@ void RenderAreaManager::onGoodGetResponse(const QString &json) {
     emit renderAreaChanged();
 }
 
-
-
 void RenderAreaManager::onBadGetResponse(const QString &errorMsg) {
     qDebug().noquote().nospace() << "[RenderAreaManager::onBadGetResponse] errorMsg=\"" << errorMsg << "\"";
     emit statusMessage("Error in receiving data: " + errorMsg);
 }
 
-
-
 void RenderAreaManager::onGoodPostResponse() {
     emit statusMessage("Shapes saved successfully.");
 }
-
-
 
 void RenderAreaManager::onBadPostResponse(const QString &errorMsg) {
     qDebug().noquote().nospace() << "[RenderAreaManager::onBadPostResponse] errorMsg=\"" << errorMsg << "\"";
     emit statusMessage("Error in saving shapes: " + errorMsg);
 }
 
-
-
 void RenderAreaManager::onGoodDeleteResponse() {
     qDebug().noquote().nospace() << "[RenderAreaManager::onGoodDeleteResponse] delete_all_success";
     emit statusMessage("All shapes deleted successfully.");
 }
-
-
 
 void RenderAreaManager::onBadDeleteResponse(const QString &errorMsg) {
     qDebug().noquote().nospace() << "[RenderAreaManager::onBadDeleteResponse] errorMsg=\"" << errorMsg << "\"";

@@ -77,7 +77,11 @@
 "ShapeId": 7,
 "TrackerId": 7001,
 "ShapeType": "Circle",
+<<<<<<< Updated upstream
 "ShapeDimensions": [201, 292, 90],
+=======
+"ShapeDimensions": [176, 343, 90],
+>>>>>>> Stashed changes
 "PenColor": "black",
 "PenWidth": 10,
 "PenStyle": "DashLine",
@@ -142,13 +146,13 @@
 "ShapeId": 6,
 "TrackerId": 6003,
 "ShapeType": "Ellipse",
-"ShapeDimensions": [564, 364, 120, 80],
-"PenColor": "red",
-"PenWidth": 1,
-"PenStyle": "SolidLine",
+"ShapeDimensions": [730, 449, 120, 80],
+"PenColor": "lightGray",
+"PenWidth": 10,
+"PenStyle": "DashDotLine",
 "PenCapStyle": "RoundCap",
-"PenJoinStyle": "RoundJoin",
-"BrushColor": "red",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "blue",
 "BrushStyle": "Dense4Pattern"
 },
 {
@@ -218,7 +222,7 @@
 "ShapeId": 4,
 "TrackerId": 4005,
 "ShapeType": "Rectangle",
-"ShapeDimensions": [281, 693, 100, 200],
+"ShapeDimensions": [275, 648, 100, 200],
 "PenColor": "white",
 "PenWidth": 3,
 "PenStyle": "SolidLine",

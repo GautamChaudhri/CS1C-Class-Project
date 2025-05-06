@@ -1,3 +1,9 @@
+/**
+ * @file ShapesManager.h 
+ * 
+ * @note This class is deprecated and no longer used.
+ */
+
 #ifndef SHAPES_MANAGER
 #define SHAPES_MANAGER
 

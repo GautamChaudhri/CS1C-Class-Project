@@ -37,7 +37,39 @@ Due Date: 05/01/2025
 
 **Description:**
 
-(Project description here)
+2D Graphics Modeler Inc. is a **C++17 cross‑platform desktop application** that lets users create, view, and manipulate a rich variety of 2D geometric shapes through an intuitive GUI, a robust in‑memory backend logic layer, and a lightweight HTTP webservice for persistence.
+
+The project is organized with a clear separation of concerns:
+
+- **Frontend Logic** – the Qt 6‑based GUI handles all rendering, user input, interactive canvas operations (zoom, pan, drag‑and‑drop), and a live property editor with full undo/redo support.
+- **Backend Logic** – an in‑memory management layer that maintains and validates shape, user, and testimonial data, formats data for the frontend, and orchestrates all CRUD operations by communicating with the webservice.
+- **Webservice** – a Crow + Asio micro‑framework HTTP server that hydrates the backend on startup by loading JSON files, exposes secure CRUD endpoints for shapes, users, and testimonials, and writes changes back to JSON for durable storage. It can run natively or within Docker.
+
+### Key Features
+- **Shape Creation & Editing** – draw and customize Lines, Polylines, Polygons, Rectangles, Squares, Ellipses, Circles, and Text with full control over pen, brush, and text properties.
+- **Interactive UI** – a dynamic canvas for manipulation, a tree‑view properties panel, and a sortable shape report table for quick overviews by ID, area, or perimeter.
+- **User Account Management** – guest and registered user roles, secure registration and login dialogs, and optional admin privileges for managing data.
+- **Testimonial System** – prompt users for feedback, collect testimonials, and provide moderation controls with opt‑out preferences.
+- **Persistence & Sync** – backend logic forwards all changes to the Crow webservice, which persists to JSON files and reloads on application launch.
+- **JSON Import/Export** – full project snapshots can be saved or loaded as human‑readable JSON for easy sharing and version control.
+- **Modular Architecture** – distinct frontend, backend, and webservice modules for maintainability and extensibility.
+- **Cross‑Platform Compatibility** – runs seamlessly on macOS, Windows, and Linux.
+- **Dockerized Deployment** – the webservice can be launched in a Docker container for consistent, simplified setup.
+
+
+### Technology Stack
+
+| Layer            | Framework / Library                          | Purpose                                                                                 |
+|------------------|----------------------------------------------|-----------------------------------------------------------------------------------------|
+| Frontend (UI)    | **Qt 6**                                     | Rendering, user input, interactive canvas operations, live property editor, undo/redo   |
+| Backend Logic    | Custom C++ modules                           | In-memory management of shapes, users, and testimonials; data validation and formatting |
+| Webservice       | **Crow** + **Asio**                          | HTTP API for persistence; hydrates backend on startup and exposes CRUD JSON endpoints   |
+| Storage          | File-based JSON files                        | Durable storage for shapes, users, and testimonials                                     |
+| Parser           | Custom hand-rolled JSON parser               | Serialize/deserialize JSON without external libraries                                   |
+| Build System     | **CMake**                                    | Cross-platform build configuration and compilation                                      |
+| Containerisation | **Docker**, **devcontainers-cli**            | Containerized deployment for the webservice and development environments                |
+
+The project therefore showcases an end‑to‑end **C++17** solution—from GUI to web service to database — suitable both for classroom instruction and as a portfolio‑ready demonstration of modern C++ practices.
 
 ---
 

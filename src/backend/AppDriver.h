@@ -10,51 +10,81 @@
 #include "../frontend/mainwindow.h"
 #include "../frontend/renderarea.h"
 
+/**
+ * @brief Orchestrates the main application logic and connections.
+ *
+ * The AppDriver class is responsible for initializing and managing the main components
+ * of the application, including the RenderAreaManager, UserManager, and the MainWindow.
+ * It handles the setup of signal-slot connections between the frontend UI elements
+ * and the backend data managers. It also manages the application lifecycle,
+ * including startup, data loading, and shutdown procedures.
+ */
 class AppDriver : public QObject {
     Q_OBJECT
 public:
-    AppDriver(QObject* parent = nullptr);
-    ~AppDriver();
+    /**
+     * @brief Public interface for the AppDriver.
+     * @details This section includes the constructor, destructor, and core methods
+     *          for running, shutting down, and loading data for the application.
+     */
+    AppDriver(QObject* parent = nullptr);                   /** @brief Constructs the AppDriver and initializes manager objects. */
+    ~AppDriver();                                           /** @brief Destroys the AppDriver and cleans up manager objects. */
 
-    void run();
-    void shutdown();
-
-    void loadAllData();
+    void run();                                             /** @brief Initializes and shows the main application window and loads initial data. */
+    void shutdown();                                        /** @brief Saves data from managers before the application closes. */
+    void loadAllData();                                     /** @brief Triggers the loading of all necessary data by the managers. */
 
 
 private slots:
-    /// @brief These slots connect the render area UI to the RenderAreaManager data
-    // For when a new shape is added to the render area
-    void onRenderShapeAdded(Shape* shape);
-    // For when an existing shape is modified in the render area
-    void onRenderShapeChanged(Shape* shape, QString key, int value);
-    // For when a single shape is deleted from the render area
-    void onRenderShapeDeleted(const int trackerId);
-    // For when all shapes are deleted from the render area
-    void onRenderDeleteAllShapes();
+    /**
+     * @brief Slots connecting the render area UI to RenderAreaManager data.
+     * @details These slots handle signals from the frontend render area, such as
+     *          shape additions, modifications, and deletions, and delegate these
+     *          actions to the RenderAreaManager.
+     */
+    void onRenderShapeAdded(Shape* shape);                  /** @brief Handles the addition of a new shape from the render area. */
+    void onRenderShapeChanged(Shape* shape,                 /** @brief Handles modifications to an existing shape from the render area. */
+                              QString key, 
+                              int value);                   
+    void onRenderShapeDeleted(const int trackerId);         /** @brief Handles the deletion of a single shape from the render area. */
+    void onRenderDeleteAllShapes();                         /** @brief Handles the request to delete all shapes from the render area. */
 
-    /// @brief These slots connect the user login UI to the UserManager data
-    // For when a new user is created
-    void onNewUser(const QString username, const QString password, const bool admin);
-    // For when an existing user's login credentials are modified
-    void onUserModified(const QString username, const QString password, const bool admin);
-    // For when a single user is deleted
-    void onUserDeleted(const QString username);
-    // For when all users are deleted
-    void onDeleteAllUsers();
-    // For when a user attempts to login
-    void onLoginAttempt(const QString username, const QString password);
+    /**
+     * @brief Slots connecting the user login UI to UserManager data.
+     * @details These slots handle signals related to user management from the
+     *          frontend, such as new user creation, credential modification,
+     *          user deletion, and login attempts, delegating these actions
+     *          to the UserManager.
+     */
+    void onNewUser(const QString username,                  /** @brief Handles the creation of a new user. */
+                   const QString password, 
+                   const bool admin);                       
+    void onUserModified(const QString username,             /** @brief Handles modification of an existing user's credentials. */
+                        const QString password, 
+                        const bool admin);                  
+    void onUserDeleted(const QString username);             /** @brief Handles the deletion of a single user. */
+    void onDeleteAllUsers();                                /** @brief Handles the request to delete all users. */
+    void onLoginAttempt(const QString username,             /** @brief Handles a user login attempt. */
+                        const QString password);            
 
 
 private:
-    RenderAreaManager* renderedShapes;      // Manages all the shapes that are currently rendered
-    UserManager* user;                      // Manages the current user and holds all existing users to authenticate against     
+    /**
+     * @brief Private member variables for the AppDriver.
+     * @details These members hold pointers to the core manager classes and the main window.
+     */
+    MainWindow* mainWindow;                                 /** @brief Pointer to the main application window. */
+    RenderAreaManager* renderedShapes;                      /** @brief Manages all the shapes that are currently rendered. */
+    UserManager* user;                                      /** @brief Manages the current user and holds all existing users to authenticate against. */
+    
 
-    MainWindow* mainWindow;
-
-    //Subroutines
-    void connectFrontendToDriver();
-    void connectManagersToFrontend();
+    /**
+     * @brief Private helper methods for setting up connections.
+     * @details These subroutines are called during initialization to establish
+     *          signal-slot connections between different components of the application.
+     */
+    void connectFrontendToDriver();                         /** @brief Connects signals from the frontend UI to slots in this AppDriver. */
+    void connectManagersToFrontend();                       /** @brief Connects signals from backend managers to slots in the frontend UI. */
 };
 
 #endif // APP_DRIVER_H

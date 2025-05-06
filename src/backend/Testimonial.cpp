@@ -5,10 +5,33 @@ Testimonial::Testimonial(const QString& author, const QString& content, bool isG
     , m_content(content)
     , m_timestamp(QDateTime::currentDateTime())
     , m_isGuest(isGuest)
-    , m_isSatisfactory(true) // start as satisfactory until moderated (this is not really used but meant to be for bad/inapprpriate reviews)
+    , m_isSatisfactory(true) // start as satisfactory until moderated
 {}
 
-// convert testimonial to json for saving
+QString Testimonial::getAuthor() const {
+    return m_author;
+}
+
+QString Testimonial::getContent() const {
+    return m_content;
+}
+
+QDateTime Testimonial::getTimestamp() const {
+    return m_timestamp;
+}
+
+bool Testimonial::isGuest() const {
+    return m_isGuest;
+}
+
+bool Testimonial::isSatisfactory() const {
+    return m_isSatisfactory;
+}
+
+void Testimonial::setIsSatisfactory(bool value) {
+    m_isSatisfactory = value;
+}
+
 QJsonObject Testimonial::toJson() const {
     QJsonObject json;
     json["author"] = m_author;
@@ -19,7 +42,6 @@ QJsonObject Testimonial::toJson() const {
     return json;
 }
 
-// create testimonial from json when loading
 Testimonial Testimonial::fromJson(const QJsonObject& json) {
     Testimonial testimonial;
     testimonial.m_author = json["author"].toString();

@@ -13,424 +13,344 @@
 #include "UserAccount.h"
 #include "Testimonial.h"
 
+/**
+ * @brief Provides functionality for parsing JSON data to C++ objects and vice-versa.
+ *
+ * @details The Parser class handles the serialization and deserialization of various
+ *          data structures used in the application, such as Shapes, UserAccounts,
+ *          and Testimonials, converting them to and from JSON string representations.
+ *          It includes methods for both forward parsing (JSON to object) and
+ *          reverse parsing (object to JSON). This class does not store any data itself
+ *          and its copy/move operations are disabled.
+ */
 class Parser {
 public:
-    //Use default constructor/destructor as this class doesn't store any data
+    /** @brief Default constructor. Initializes a Parser object. */
     Parser() = default;
+    /** @brief Default destructor. Cleans up resources used by the Parser object. */
     ~Parser() = default;
 
     //Disable copying and moving
+    /** @brief Deleted copy constructor to prevent copying Parser objects. */
     Parser(const Parser&) = delete;
+    /** @brief Deleted copy assignment operator to prevent copying Parser objects. */
     Parser& operator=(const Parser&) = delete;
+    /** @brief Deleted move constructor to prevent moving Parser objects. */
     Parser(Parser&&) = delete;
+    /** @brief Deleted move assignment operator to prevent moving Parser objects. */
     Parser& operator=(Parser&&) = delete;
 
     /**
-     * @brief This function takes in a vector of Shape pointers and prints
-     *        some of their primitive data type properties.
-     * 
-     * @param shapes - a vector of Shape pointers
-     * 
+     * @brief Prints properties of shapes in a vector to the console.
+     * @details Iterates through a vector of Shape pointers and prints their ID,
+     *          TrackerId, and ShapeType to standard output. Primarily for debugging purposes.
+     * @param shapes A constant reference to an alpha::vector of Shape pointers.
      */
     void PrintShapeVector(const alpha::vector<Shape*> &shapes);
 
     /**
-     * @brief This function takes in a vector of Shape pointers and prints
-     *        some of their primitive data type properties.
-     * 
-     * @param shapes - a string formatted in json
-     * 
-     * @return a vector of Shape pointers all pointing to instantiated Shapes
-     * 
+     * @brief Converts a JSON string representation into a vector of Shape objects.
+     * @details This is a forward parsing method that takes a JSON string,
+     *          parses it, and constructs a vector of dynamically allocated Shape objects.
+     * @param json A constant reference to a string containing the JSON data for shapes.
+     * @return An alpha::vector of Shape pointers, each pointing to an instantiated Shape object.
+     * @throws std::runtime_error If the JSON string is malformed or parsing fails.
      */
-    alpha::vector<Shape*> JsonToShapes(const std::string& json);    //Forward Parser (JSON string -> vector<Shape*>)
+    alpha::vector<Shape*> JsonToShapes(const std::string& json);
 
     /**
-     * @brief This function takes in a vector of Shape pointers and converts
-     *        them into a string formatted in json.
-     * 
-     * @param shapes - a vector of Shape pointers
-     * 
-     * @return a string formatted in json containing all of the key:value pairs
-     *         in the correct json format
-     * 
+     * @brief Converts a vector of Shape pointers into a JSON string representation.
+     * @details This is a reverse parsing method that takes a vector of Shape objects
+     *          and serializes them into a JSON formatted string.
+     * @param shapes A constant reference to an alpha::vector of Shape pointers.
+     * @return A string formatted in JSON containing all key:value pairs for the shapes.
      */
-    std::string ShapesToJson(const alpha::vector<Shape*>& shapes);  //Reverse Parser (vector<Shape*> -> JSON string)
+    std::string ShapesToJson(const alpha::vector<Shape*>& shapes);
 
-    // Forward parser: JSON → vector<UserAccount>
+    /**
+     * @brief Converts a JSON string representation into a vector of UserAccount objects.
+     * @details This forward parsing method processes a JSON string to create UserAccount objects.
+     * @param json A constant reference to a string containing the JSON data for user accounts.
+     * @return An alpha::vector of UserAccount pointers.
+     * @throws std::runtime_error If the JSON string is malformed or essential user data is missing.
+     */
     alpha::vector<UserAccount*> JsonToUsers(const std::string& json);
 
-    // Reverse parser: vector<UserAccount> → JSON
+    /**
+     * @brief Converts a vector of UserAccount pointers into a JSON string representation.
+     * @details This reverse parsing method serializes UserAccount objects into a JSON string.
+     * @param users A constant reference to an alpha::vector of UserAccount pointers.
+     * @return A string formatted in JSON representing the user accounts.
+     */
     std::string UsersToJson(const alpha::vector<UserAccount*>& users);
 
-    // Forward parser for testimonials
+    /**
+     * @brief Converts a JSON string representation into a QVector of Testimonial objects.
+     * @details This static forward parsing method uses Qt's JSON utilities to parse testimonials.
+     * @param json A constant reference to a string containing the JSON data for testimonials.
+     * @return A QVector of Testimonial objects.
+     * @throws std::runtime_error If JSON parsing fails or the top-level structure is not an array.
+     */
     static QVector<Testimonial> JsonToTestimonials(const std::string& json);
 
-    // Reverse parser for testimonials
+    /**
+     * @brief Converts a QVector of Testimonial objects into a JSON string representation.
+     * @details This static reverse parsing method uses Qt's JSON utilities to serialize testimonials.
+     * @param testimonials A constant reference to a QVector of Testimonial objects.
+     * @return A string formatted in JSON representing the testimonials.
+     */
     static std::string TestimonialsToJson(const QVector<Testimonial>& testimonials);
 
 private:
     /*==================================== Forward Parser Subroutines ============================================*/
     /**
-     * @details This object works as an accumulator. As ParseJsonObject() works
-     * through an object, it stores the values it finds into this accumulator. 
-     * This is done because the parser is built so that the key - value pairs
-     * can be "jumbled" around within an object but this parser will still work correctly
-     * in spite of that. Furthermore, when the values are stored in this object,
-     * they are not stored as strings, but instead, the true data type they are referring to.
-     * This process is accomplished by @see UpdateAccumulator(). This object is defined
-     * in the private section so it cannot be instantiated outside this class.
+     * @brief Internal accumulator structure for parsing shape data from JSON.
+     * @details This structure temporarily holds the properties of a shape as they are
+     *          parsed from a JSON object. It allows for jumbled key-value pairs
+     *          and converts string values to their appropriate C++ types before a
+     *          final Shape object is constructed.
      */
     struct MorphicShape {
-        std::string shapeType = "";
-        int shapeId = 0;
-        int trackerId = 0;
-        alpha::vector<int> shapeDimensions;
-        QPen pen = QPen();
-        QBrush brush = QBrush();
-        QPoint coords = QPoint();
+        std::string shapeType = "";             /**< @brief The type of the shape (e.g., "Line", "Circle"). */
+        int shapeId = 0;                        /**< @brief The unique identifier for the shape type. */
+        int trackerId = 0;                      /**< @brief A tracking ID for the shape instance. */
+        alpha::vector<int> shapeDimensions;     /**< @brief A vector holding the geometric dimensions of the shape. */
+        QPen pen = QPen();                      /**< @brief The QPen object defining the shape's outline properties. */
+        QBrush brush = QBrush();                /**< @brief The QBrush object defining the shape's fill properties. */
+        QPoint coords = QPoint();               /**< @brief The primary coordinates (e.g., top-left point) of the shape. */
 
-        QString textString;
-        GlobalColor textColor;
-        QFont font;
-        AlignmentFlag textAlignment;
+        QString textString;                     /**< @brief The string content for Text shapes. */
+        GlobalColor textColor;                  /**< @brief The color of the text for Text shapes. */
+        QFont font;                             /**< @brief The QFont object for Text shapes. */
+        AlignmentFlag textAlignment;            /**< @brief The alignment for Text shapes. */
     };
 
-    //Accumulator for user account objects
+    /**
+     * @brief Internal accumulator structure for parsing user account data from JSON.
+     * @details This structure temporarily holds the properties of a user account as they are
+     *          parsed from a JSON object, along with flags to track if fields were found.
+     */
     struct RawUser {
-            QString username;
-            QString password;
-            bool    admin       = false;
-            bool    hasUsername = false;
-            bool    hasPassword = false;
-            bool    hasAdmin    = false;
+            QString username;                   /**< @brief The username of the user. */
+            QString password;                   /**< @brief The password of the user. */
+            bool    admin       = false;        /**< @brief Flag indicating if the user has admin privileges. */
+            bool    hasUsername = false;        /**< @brief Flag indicating if the username was found during parsing. */
+            bool    hasPassword = false;        /**< @brief Flag indicating if the password was found during parsing. */
+            bool    hasAdmin    = false;        /**< @brief Flag indicating if the admin status was found during parsing. */
         };
 
     /**
-     * @brief Parses a single object in the Json 
-     * 
-     * @details A single object is all of the data between a single {} block 
-     * in the json string. This function parses just one of those objects and 
-     * returns a MorphicShape. A MorphicShape object just serves as the placeholder 
-     * to gather values as the object is parsed. The MorphicShape is then used to
-     * instantiate an actual Shape object in JsonToShapes.
-     * 
-     * @param json - a string formatted in json
-     * 
-     * @param index - the index the parser is currently at in the json string
-     * 
-     * @return a MorphicShape object holding all of the data from the parsed json object
-     * 
+     * @brief Parses a single JSON object (data within '{}') into a MorphicShape.
+     * @details This helper function processes one JSON object from the input string,
+     *          extracting key-value pairs and populating a MorphicShape accumulator.
+     * @param json The JSON string being parsed.
+     * @param index A reference to the current parsing index within the JSON string, modified by the function.
+     * @return A MorphicShape object containing the parsed data.
+     * @throws std::runtime_error If the JSON object is malformed.
      */
     MorphicShape ParseJsonObject(const std::string json, size_t &index);
 
     /**
-     * @brief Stores the extracted value as its proper data type into a MorphicShape object
-     * 
-     * @details The key is used to decide which data member the value will be stored in inside
-     *          MorphicShape object. Before the value is stored, it is converted from a string
-     *          to its actual data type. (e.g. if the value is 1 as a string, it is stored as
-     *          an integer into the MorphicShape object; if the value is green brush color, it
-     *          it changes the QBrush data member object's color value to green; etc.)
-     * 
-     * @param key - the key extracted from the json as a string value
-     * 
-     * @param value - the key's corresponding value as a string
-     * 
-     * @param tempShape - a MorphicShape object where the value will be stored when it is converted
-     *                    to its true data type
-     * 
+     * @brief Updates a MorphicShape accumulator with a parsed key-value pair.
+     * @details Converts the string `value` to its appropriate C++ type based on the `key`
+     *          and stores it in the corresponding member of the `tempShape` accumulator.
+     * @param key The JSON key as a string.
+     * @param value The JSON value as a string.
+     * @param tempShape A reference to the MorphicShape accumulator to be updated.
+     * @throws std::runtime_error If the key is unknown or the value is invalid for the key.
      */
     void UpdateAccumulator(const std::string &key, const std::string &value, MorphicShape &tempShape);
 
     /**
-     * @brief Takes the data from a MorphicShape and instantiates it into a true
-     *        shape object, based on the data stored within it. Returns a pointer
-     *        to the new shape object
-     * 
-     * @param tempShape - a MorphicShape object that holds all of the data that is
-     *        waiting to be converted into a true Shape object.
-     * 
-     * @return a pointer to the newly instantiated shape object is returned
-     * 
+     * @brief Constructs a concrete Shape object from a populated MorphicShape accumulator.
+     * @details Based on the `shapeId` in `tempShape`, this function dynamically allocates
+     *          and initializes the appropriate derived Shape object (e.g., Line, Circle).
+     * @param tempShape The MorphicShape object containing the data for the new shape.
+     * @return A pointer to the newly instantiated Shape object, or nullptr if construction fails.
      */
     Shape* BuildShape(MorphicShape tempShape);
 
     /**
-     * @brief Forwards the index to the next non whitespace value
-     * 
-     * @details If the index is currently at a whitespace value, the index is 
-     *          moved forward until a non whitespace value is encountered. If the current
-     *          index is already not a whitespace, the index is returned as is.
-     * 
-     * @param json - a string formatted in json
-     * 
-     * @param index - the index the parser is currently at in the json string
-     * 
+     * @brief Advances the parsing index past any whitespace characters.
+     * @details Modifies `index` to point to the next non-whitespace character in the `json` string.
+     * @param json The JSON string being parsed.
+     * @param index A reference to the current parsing index, modified by the function.
      */
     void SkipWhitespace(const std::string& json, size_t& index);
 
     /**
-     * @brief Extracts a "key" from the json as a string
-     * 
-     * @details A "key" is isolated from the json string and "extracted" and returned
-     *          as a string. The extracted key has no special characters (e.g. " , :)
-     *          A key is a string surrounded by "" and is right before the colon
-     * 
-     * @param json - a string formatted in json
-     * 
-     * @param index - the index the parser is currently at in the json string
-     * 
-     * @return the "key" is returned as a string
-     * 
+     * @brief Extracts a JSON key (a string enclosed in double quotes) from the input string.
+     * @details Assumes `index` is at the opening double quote of the key. Modifies `index`
+     *          to point immediately after the closing double quote of the key.
+     * @param json The JSON string being parsed.
+     * @param index A reference to the current parsing index, modified by the function.
+     * @return The extracted key as a std::string.
      */
     std::string ExtractKey(const std::string& json, size_t &index);
 
     /**
-     * @brief Extracts a "value" from the json as a string
-     * 
-     * @details A "value" is isolated from the json string and "extracted" and returned
-     *          as a string. A value is anything right after the : and before the , or ]. 
-     *          The following values are extracted: 
-     *              - a string like the ShapeType or BrushColor
-     *              - an integer by itself like from ShapeId
-     *              - a null value from TrackerId keys
-     *              - an array for ShapeDimension keys, it is extracted with brackets
-     * 
-     * @param json - a string formatted in json
-     * 
-     * @param index - the index the parser is currently at in the json string
-     * 
-     * @return the "value" is returned as a string
-     * 
+     * @brief Extracts a JSON value from the input string.
+     * @details Handles strings, numbers, arrays, and boolean literals. Modifies `index`
+     *          to point after the extracted value.
+     * @param json The JSON string being parsed.
+     * @param index A reference to the current parsing index, modified by the function.
+     * @return The extracted value as a std::string.
+     * @throws std::runtime_error If the value type is unexpected.
      */
     std::string ExtractValue(const std::string& json, size_t &index);
 
     /**
-     * @brief Extracts an Integer from the value portion of json
-     * 
-     * @details Called by ExtractValue() when the value is found to be an integer.
-     *          No special characters are included.
-     * 
-     * @param json - a string formatted in json
-     * 
-     * @param index - the index the parser is currently at in the json string
-     * 
-     * @return the integer is as a string
-     * 
+     * @brief Extracts an integer value from the JSON string.
+     * @details Assumes `index` is at the first digit of the integer. Modifies `index`
+     *          to point after the last digit of the integer.
+     * @param json The JSON string being parsed.
+     * @param index A reference to the current parsing index, modified by the function.
+     * @return The extracted integer as a std::string.
      */
     std::string ExtractInteger(const std::string& json, size_t &index);
 
     /**
-     * @brief Extracts an Array from the value portion of json
-     * 
-     * @details Called by ExtractValue() when the value is found to be an Array.
-     *          The extracted array is enclosed in [] and the values separated by
-     *          commas.
-     * 
-     * @param json - a string formatted in json
-     * 
-     * @param index - the index the parser is currently at in the json string
-     * 
-     * @return the array as a string
-     * 
+     * @brief Extracts a JSON array (content within '[]') as a string.
+     * @details Assumes `index` is at the opening bracket of the array. Modifies `index`
+     *          to point after the closing bracket of the array.
+     * @param json The JSON string being parsed.
+     * @param index A reference to the current parsing index, modified by the function.
+     * @return The extracted array (including brackets) as a std::string.
+     * @throws std::runtime_error If the closing bracket is missing.
      */
     std::string ExtractArray(const std::string& json, size_t &index);
 
+    /**
+     * @brief Extracts a JSON literal (true, false, null) as a string.
+     * @details Assumes `index` is at the first character of the literal. Modifies `index`
+     *          to point after the last character of the literal.
+     * @param json The JSON string being parsed.
+     * @param index A reference to the current parsing index, modified by the function.
+     * @return The extracted literal as a std::string.
+     */
     std::string ExtractLiteral(const std::string& json, size_t& index);
     
     /**
-     * @brief Converts an array that is currently a string value into an actual 
-     *        vector of integers
-     * 
-     * @details Takes in a string like "[20, 32, 41, 64]" and converts it into a vector
-     *          of integers with the same values.
-     * 
-     * @param value - the array that is currently a string
-     * 
-     * @return a vector of integers that can be used in C++
-     * 
+     * @brief Converts a string representation of a JSON array of integers into an alpha::vector<int>.
+     * @details Parses a string like "[20, 32, 41, 64]" into a vector of integers.
+     * @param value The string representation of the integer array.
+     * @return An alpha::vector<int> containing the parsed integers.
+     * @throws std::runtime_error If the string format is invalid.
      */
     alpha::vector<int> StringToVector(const std::string &value);
 
     /*==================================== Reverse Parser Subroutines ============================================*/
 
     /**
-     * @brief Returns JSON data for the 9 common key:value pairs in all shapes except Text
-     * 
-     * @details Only looks at one shape object and calls the necessary Get functions below.
-     *          The 9 key:value pairs: 
-     *          - ShapeId
-     *          - TrackerId
-     *          - ShapeType
-     *          - ShapeDimensions
-     *          - PenColor
-     *          - PenWidth
-     *          - PenStyle
-     *          - PenCapStyle
-     *          - PenJoinStyle
-     * 
-     * @param shape - a Shape pointer that only points to one instantiated shape object and not
-     *                an array or vector.
-     * 
-     * @return a string that is formatted in json containing containing all of the key:value pairs
-     *         in the correct json format
+     * @brief Appends common shape properties (ID, Type, Dimensions, Pen properties) to a JSON string.
+     * @details This helper function is used during the serialization of shapes to JSON.
+     *          It formats 9 common key-value pairs.
+     * @param shape A constant pointer to the Shape object to serialize.
+     * @return A std::string containing the JSON representation of common shape data.
      */
     std::string AppendCommonShapeData(const Shape* shape);
 
     /**
-     * @brief Returns JSON data for QBrush key:value pairs to shapes that have a QBrush Object
-     * 
-     * @details Only looks at one shape object and calls the necessary Get functions below.
-     *          The 2 key:value pairs: 
-     *          - BrushColor
-     *          - BrushStyle
-     * 
-     * @param shape - a Shape pointer that only points to one instantiated shape object and not
-     *                an array or vector.
-     * 
-     * @return a string that is formatted in json containing containing all of the key:value pairs
-     *         in the correct json format
+     * @brief Appends QBrush properties (BrushColor, BrushStyle) to a JSON string.
+     * @details This helper function is used for shapes that have fill properties.
+     * @param shape A constant pointer to the Shape object whose brush data is to be serialized.
+     * @return A std::string containing the JSON representation of brush data.
      */
     std::string AppendBrushData(const Shape* shape);
 
     /**
-     * @brief Adds JSON data for all key:value pairs in Text objects
-     * 
-     * @details Only looks at one shape object and calls the necessary Get functions below.
-     *          The 11 key:value pairs: 
-     *          - ShapeId
-     *          - TrackerId
-     *          - ShapeType
-     *          - ShapeDimensions
-     *          - TextString
-     *          - TextPointSize
-     *          - TextColor
-     *          - TextAlignment
-     *          - TextFontFamily
-     *          - TextFontStyle
-     *          - TextFontWeight
-     * 
-     * @param shape - a Shape pointer that only points to one instantiated shape object and not
-     *                an array or vector.
-     * 
-     * @return a string that is formatted in json containing containing all of the key:value pairs
-     *         in the correct json format
+     * @brief Appends all properties specific to Text objects to a JSON string.
+     * @details Serializes properties like TextString, PointSize, Color, Alignment, Font.
+     * @param shape A constant pointer to the Shape object, expected to be a Text object.
+     * @return A std::string containing the JSON representation of text data.
+     * @throws std::runtime_error If the provided shape cannot be cast to Text.
      */
     std::string AppendTextData(const Shape* shape);
 
     /**
-     * @brief Returns the shape dimensions as a string within brackets
-     * 
-     * @details The shape dimensions are returned as a string formatted in json
-     *          with brackets and commas separating the values. The shape dimensions are derived
-     *          from the shape coordinates and any other extra values like length, width, etc.
-     * 
-     * @param shape - a Shape pointer that only points to one instantiated shape object and not
-     *                an array or vector.
-     * 
-     * @return the shape dimensions as a string within brackets
+     * @brief Gets the geometric dimensions of a shape as a JSON array string.
+     * @details The specific dimensions depend on the shape type (e.g., coordinates for Line,
+     *          points for Polyline/Polygon, x,y,length,width for Rectangle).
+     * @param shape A constant pointer to the Shape object.
+     * @return A std::string representing a JSON array of the shape's dimensions.
+     * @throws std::runtime_error If the shape type is unknown or casting fails.
      */
     std::string GetShapeDimensions(const Shape* shape);
 
     /**
-     * @brief Returns the color as a string
-     * 
-     * @details The color is returned as a string formatted in json. The color is derived
-     *          from a QPen or QBrush object, whichever is passed.
-     * 
-     * @param objectColor - the color of the object passed as a QColor object
-     * 
-     * @return the color as a string
+     * @brief Converts a QColor object to its string representation (e.g., "red", "blue").
+     * @param objectColor The QColor to be converted.
+     * @return A std::string representing the color name.
+     * @throws std::runtime_error If the color is not one of the predefined known colors.
      */
     std::string GetColor(const QColor &objectColor);
 
     /**
-     * @brief Returns the pen style as a string
-     * 
-     * @details The pen style is returned as a string formatted in json. 
-     * 
-     * @param shape - a Shape pointer that only points to one instantiated shape object and not
-     *                an array or vector.
-     * 
-     * @return the pen style as a string
+     * @brief Gets the pen style of a shape as a string (e.g., "SolidLine", "DashLine").
+     * @param shape A constant pointer to the Shape object.
+     * @return A std::string representing the pen style.
+     * @throws std::runtime_error If the pen style is unknown.
      */
     std::string GetPenStyle(const Shape* shape);
 
     /**
-     * @brief Returns the pen cap style as a string
-     * 
-     * @details The pen cap style is returned as a string formatted in json. 
-     * 
-     * @param shape - a Shape pointer that only points to one instantiated shape object and not
-     *                an array or vector.
-     * 
-     * @return the pen cap style as a string
+     * @brief Gets the pen cap style of a shape as a string (e.g., "FlatCap", "RoundCap").
+     * @param shape A constant pointer to the Shape object.
+     * @return A std::string representing the pen cap style.
+     * @throws std::runtime_error If the pen cap style is unknown.
      */
     std::string GetPenCapStyle(const Shape* shape);
 
     /**
-     * @brief Returns the pen join style as a string
-     * 
-     * @details The pen join style is returned as a string formatted in json. 
-     * 
-     * @param shape - a Shape pointer that only points to one instantiated shape object and not
-     *                an array or vector.
-     * 
-     * @return the pen join style as a string
+     * @brief Gets the pen join style of a shape as a string (e.g., "MiterJoin", "BevelJoin").
+     * @param shape A constant pointer to the Shape object.
+     * @return A std::string representing the pen join style.
+     * @throws std::runtime_error If the pen join style is unknown.
      */
     std::string GetPenJoinStyle(const Shape* shape);
 
     /**
-     * @brief Returns the brush style as a string
-     * 
-     * @details The brush style is returned as a string formatted in json. 
-     * 
-     * @param shape - a Shape pointer that only points to one instantiated shape object and not
-     *                an array or vector.
-     * 
-     * @return the brush style as a string
+     * @brief Gets the brush style of a shape as a string (e.g., "SolidPattern", "NoBrush").
+     * @param shape A constant pointer to the Shape object.
+     * @return A std::string representing the brush style.
+     * @throws std::runtime_error If the brush style is unknown.
      */
     std::string GetBrushStyle(const Shape* shape);
 
     /**
-     * @brief Returns the text color as a string
-     * 
-     * @details The text color is returned as a string formatted in json. 
-     * 
-     * @param text - a Text pointer that only points to one instantiated text object and not
-     *                an array or vector.
-     * 
-     * @return the text color as a string
+     * @brief Gets the text alignment of a Text object as a string (e.g., "AlignLeft", "AlignCenter").
+     * @param text A constant pointer to the Text object.
+     * @return A std::string representing the text alignment.
+     * @throws std::runtime_error If the alignment flag is unknown.
      */
     std::string GetAlignmentFlag(const Text* text);
 
     /**
-     * @brief Returns the text alignment as a string
-     * 
-     * @details The text alignment is returned as a string formatted in json. 
-     * 
-     * @param text - a Text pointer that only points to one instantiated text object and not
-     *                an array or vector.
-     * 
-     * @return the text alignment as a string
+     * @brief Gets the font style of a Text object as a string (e.g., "StyleNormal", "StyleItalic").
+     * @param text A constant pointer to the Text object.
+     * @return A std::string representing the font style.
+     * @throws std::runtime_error If the font style is unknown.
      */
     std::string GetFontStyle(const Text* text);
 
     /**
-     * @brief Returns the text font family as a string
-     * 
-     * @details The text font family is returned as a string formatted in json. 
-     * 
-     * @param text - a Text pointer that only points to one instantiated text object and not
-     *                an array or vector.
-     * 
-     * @return the text font family as a string
+     * @brief Gets the font weight of a Text object as a string (e.g., "Normal", "Bold").
+     * @param text A constant pointer to the Text object.
+     * @return A std::string representing the font weight.
+     * @throws std::runtime_error If the font weight is unknown.
      */
     std::string GetFontWeight(const Text* text);
 
-
-
+    /**
+     * @brief Updates a RawUser accumulator with a parsed key-value pair for user data.
+     * @details Converts the string `value` to its appropriate C++ type based on the `key`
+     *          (username, password, admin) and stores it in the `acc` accumulator.
+     *          Also sets flags in `acc` to indicate which fields were found.
+     * @param key The JSON key as a string.
+     * @param value The JSON value as a string.
+     * @param acc A reference to the RawUser accumulator to be updated.
+     * @throws std::runtime_error If the value for 'admin' is not "true" or "false".
+     */
     static void   UpdateUserAccumulator(const std::string& key, const std::string& value, RawUser& acc);
 };
 

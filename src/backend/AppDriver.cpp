@@ -79,7 +79,6 @@ void AppDriver::onLoginAttempt(const QString username, const QString password) {
     user->authenticate(username, password);
 }
 
-//Connects the signals from frontend to the slots in AppDriver
 void AppDriver::connectFrontendToDriver() {
     //for rendered shapes
     connect(mainWindow, &MainWindow::shapeAdded, this, &AppDriver::onRenderShapeAdded);
@@ -95,7 +94,6 @@ void AppDriver::connectFrontendToDriver() {
     connect(mainWindow, &MainWindow::loginAttempt, this, &AppDriver::onLoginAttempt);
 }
 
-//Connects the signals in the Manager Classes to the slots in Frontend
 void AppDriver::connectManagersToFrontend() {
     qDebug() << "AppDriver::connectManagersToFrontend() – hooking up shapesChanged → onShapesChanged";
     //for rendered shapes
