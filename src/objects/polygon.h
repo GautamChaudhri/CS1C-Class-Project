@@ -67,12 +67,11 @@ public:
     /// Mutator Functions
     /**
      * @brief setPointsList - Sets the pointsList to the passed newPointsList
-     * @param newPointsList
+     * @param newPointsList - New list of points for pointsList to take
      */
     void setPointsList(const QPolygon& newPointsList);
     void setX(int newX);
     void setY(int newY);
-    /// Mutator Functions
 
 private:
     QPolygon pointsList; ///< list of points

@@ -63,14 +63,12 @@ public:
     /// Accessor Functions
     QPoint getStartPoint() const;
     QPoint getEndPoint()   const;
-    /// Accessor Functions
 
     /// Mutator Functions
     void setStartPoint(const QPoint& newStartPoint);
     void setEndPoint(const QPoint& newEndPoint);
     void setX(int newX);
     void setY(int newY);
-    /// Mutator Functions
 
 private:
     QPoint startPoint; ///< Starting point of the Line
