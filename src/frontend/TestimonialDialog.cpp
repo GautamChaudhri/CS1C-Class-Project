@@ -1,9 +1,5 @@
 #include "TestimonialDialog.h"
 #include "../backend/TestimonialManager.h"
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QPushButton>
-#include <QLabel>
 
 TestimonialDialog::TestimonialDialog(QWidget* parent)
     : QDialog(parent)

@@ -1,6 +1,4 @@
-#include <QDebug>
 #include "AppDriver.h"
-#include <QTimer>
 
 AppDriver::AppDriver(QObject* parent) 
           : QObject{parent}, renderedShapes{new RenderAreaManager}, 

@@ -1,10 +1,4 @@
 #include "TestimonialManager.h"
-#include <QFile>
-#include <QJsonDocument>
-#include <QJsonArray>
-#include <QJsonObject>
-#include <QDir>
-#include <QDebug>
 
 // singleton instance getter
 TestimonialManager& TestimonialManager::getInstance() {

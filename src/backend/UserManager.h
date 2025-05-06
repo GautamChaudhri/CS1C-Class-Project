@@ -2,6 +2,7 @@
 #define USER_MANAGER_H
 #include <QObject>
 #include <QString>
+#include <QDebug>
 #include <cctype>
 #include <string>
 #include "ApiClient.h"

@@ -1,10 +1,4 @@
 #include "mainwindow.h"
-#include "../backend/TestimonialManager.h"
-#include "TestimonialDialog.h"
-#include "TestimonialsDisplayDialog.h"
-#include <QAction>
-#include <QTimer>
-#include <QMenuBar>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)

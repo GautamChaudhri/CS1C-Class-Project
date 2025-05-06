@@ -1,5 +1,4 @@
 #include "Parser.h"
-#include <string>
 
 // Public functions
 void Parser::PrintShapeVector(const alpha::vector<Shape*> &shapes) {

@@ -1,7 +1,4 @@
 #include "Testimonial.h"
-#include <QJsonObject>
-#include <QJsonArray>
-#include <QJsonValue>
 
 Testimonial::Testimonial(const QString& author, const QString& content, bool isGuest)
     : m_author(author)

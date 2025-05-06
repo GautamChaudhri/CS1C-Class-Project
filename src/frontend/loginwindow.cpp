@@ -1,9 +1,5 @@
 // loginwindow.cpp
 #include "loginwindow.h"
-#include <QVBoxLayout>
-#include <QFormLayout>
-#include <QHBoxLayout>
-#include <QLabel>
 
 LoginWindow::LoginWindow(QWidget *parent)
     : QDialog(parent)

@@ -1,10 +1,5 @@
 #include "TestimonialsDisplayDialog.h"
 #include "../backend/TestimonialManager.h"
-#include "TestimonialDialog.h"
-#include <QPushButton>
-#include <QLabel>
-#include <QScrollArea>
-#include <QFrame>
 
 TestimonialsDisplayDialog::TestimonialsDisplayDialog(QWidget* parent)
     : QDialog(parent)

@@ -4,6 +4,8 @@
 #include <QString>
 #include <QDateTime>
 #include <QJsonObject>
+#include <QJsonArray>
+#include <QJsonValue>
 
 class Testimonial {
 public:

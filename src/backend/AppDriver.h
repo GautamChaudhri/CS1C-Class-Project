@@ -3,6 +3,8 @@
 #include <QCoreApplication>
 #include <QApplication>
 #include <QObject>
+#include <QTimer>
+#include <QDebug>
 #include "RenderAreaManager.h"
 #include "UserManager.h"
 #include "../frontend/mainwindow.h"

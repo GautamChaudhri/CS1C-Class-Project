@@ -1,5 +1,4 @@
-#include <QDebug>
- #include "ShapesManager.h"
+#include "ShapesManager.h"
  
  ShapesManager::ShapesManager(QObject* parent)
    : QObject(parent), client(), parse()

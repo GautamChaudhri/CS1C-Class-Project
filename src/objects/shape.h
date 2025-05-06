@@ -11,6 +11,7 @@
 #include <QList>
 #include <QPolygon>
 #include <QTreeWidget>
+#include <QComboBox>
 #include "vector.h"
 
 

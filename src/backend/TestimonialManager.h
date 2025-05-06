@@ -1,10 +1,17 @@
 #ifndef TESTIMONIALMANAGER_H
 #define TESTIMONIALMANAGER_H
 
-#include "Testimonial.h"
 #include <QObject>
 #include <QVector>
 #include <QTimer>
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QDir>
+#include <QDebug>
+
+#include "Testimonial.h"
 #include "ApiClient.h"
 #include "Parser.h"
 

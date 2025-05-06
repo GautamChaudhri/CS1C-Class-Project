@@ -1,5 +1,4 @@
 #include "shape.h"
-#include <QComboBox>
 
 /****************************************************
  * Static Initialization

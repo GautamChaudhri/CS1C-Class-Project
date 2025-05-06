@@ -1,8 +1,4 @@
 #include "RenderAreaManager.h"
-#include <QString>
-#include <QDebug>
-#include <QBrush>
-#include <QPen>
 
 RenderAreaManager::RenderAreaManager(QObject* parent) : QObject{parent}, client{}, parse{} {
     connect(&client, &ApiClient::GoodGetReply, this, &RenderAreaManager::onGoodGetResponse);

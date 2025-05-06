@@ -5,6 +5,10 @@
 #include <QStackedWidget>
 #include <QLineEdit>
 #include <QPushButton>
+#include <QVBoxLayout>
+#include <QFormLayout>
+#include <QHBoxLayout>
+#include <QLabel>
 
 class LoginWindow : public QDialog {
     Q_OBJECT

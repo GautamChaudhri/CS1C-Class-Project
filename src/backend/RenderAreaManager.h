@@ -1,9 +1,14 @@
 #ifndef RENDER_AREA_MANAGER
 #define RENDER_AREA_MANAGER
+
 #include <QObject>
+#include <QString>
+#include <QDebug>
+#include <QBrush>
+#include <QPen>
+
 #include "ApiClient.h"
 #include "Parser.h"
-#include <QString>
 #include "../objects/all_shapes.h"
 #include "../objects/vector.h"
 

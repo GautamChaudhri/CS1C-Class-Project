@@ -7,6 +7,7 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <string>
 #include "../objects/vector.h"
 #include "../objects/all_shapes.h"
 #include "UserAccount.h"

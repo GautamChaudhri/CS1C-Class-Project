@@ -5,6 +5,11 @@
 #include <QCheckBox>
 #include <QTextEdit>
 #include <QLineEdit>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QPushButton>
+#include <QLabel>
+#include <QScrollArea>
 
 // dialog for submitting new testimonials
 class TestimonialDialog : public QDialog {

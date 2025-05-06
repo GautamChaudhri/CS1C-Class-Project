@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QDebug>
 #include "ApiClient.h"
 #include "Parser.h"
 #include "../objects/all_shapes.h"

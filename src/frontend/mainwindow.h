@@ -17,11 +17,17 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QSpinBox>
+#include <QAction>
+#include <QTimer>
+#include <QMenuBar>
 #include "ui_mainwindow.h"
 #include "renderarea.h"
 #include "loginwindow.h"
 #include "ColumnEditDelegate.h"
 #include "../backend/UserAccount.h"
+#include "../backend/TestimonialManager.h"
+#include "TestimonialDialog.h"
+#include "TestimonialsDisplayDialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

@@ -1,6 +1,4 @@
 #include "UserManager.h"
-#include <QString>
-#include <QDebug>
 
 UserManager::UserManager(QObject* parent) : QObject{parent}, currUser{new UserAccount}, client{}, parse{} {
     connect(&client, &ApiClient::GoodGetReply, this, &UserManager::onGoodGetResponse);

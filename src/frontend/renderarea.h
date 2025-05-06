@@ -3,10 +3,10 @@
 #include <QWidget>
 #include <QPainter>
 #include <QPen>
+#include <QMouseEvent>
 
 #include "../objects/all_shapes.h"
 #include "../objects/vector.h"
-#include <QMouseEvent>
 
 class RenderArea : public QWidget
 {
