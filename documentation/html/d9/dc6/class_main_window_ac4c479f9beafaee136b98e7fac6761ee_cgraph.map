@@ -1,0 +1,31 @@
+<map id="MainWindow::createShapeTableTab" name="MainWindow::createShapeTableTab">
+<area shape="rect" id="Node000001" title="Creates and displays a new tab or window containing the shape report table." alt="" coords="5,100,235,125"/>
+<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#a755e3ce5cc1f97792cc7f7eff9da3858" title="Slot triggered when the sort method or order in the shape report table changes." alt="" coords="283,120,468,161"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,122,267,126,267,131,235,128"/>
+<area shape="rect" id="Node000003" href="$d9/dc6/class_main_window.html#a90f63362e90934cea68694f0207dd7dc" title="Populates the shape report table with data from the provided vector of shapes." alt="" coords="520,5,710,46"/>
+<area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="183,96,282,76,504,39,505,45,283,82,184,101"/>
+<area shape="rect" id="Node000007" href="$d9/dc6/class_main_window.html#ae822357dee3e9aad5cf276768b7f8019" title=" " alt="" coords="522,70,708,96"/>
+<area shape="poly" id="edge15_Node000001_Node000007" title=" " alt="" coords="235,103,507,87,507,92,235,108"/>
+<area shape="rect" id="Node000010" href="$d9/dc6/class_main_window.html#a517b645d625b741b3d8aae6d62abe3cb" title="Static comparison function to sort shapes by their ID." alt="" coords="538,268,692,293"/>
+<area shape="poly" id="edge16_Node000001_Node000010" title=" " alt="" coords="155,123,310,183,517,254,541,261,539,266,515,259,308,188,153,128"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="406,117,456,86,515,55,529,49,531,54,517,60,459,91,409,122"/>
+<area shape="rect" id="Node000005" href="$db/d35/classalpha_1_1vector.html#a8305c181181e4739a1c5f29cf3a2c144" title=" " alt="" coords="532,120,699,145"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="468,135,516,133,516,138,468,140"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="463,117,543,97,544,103,464,122"/>
+<area shape="rect" id="Node000008" href="$d9/dc6/class_main_window.html#affcce0444db65d4438f852dbd97424bd" title="Static comparison function to sort shapes by their calculated area." alt="" coords="530,169,700,194"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="469,154,522,163,521,168,468,159"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="402,159,469,216,517,254,529,259,527,264,515,259,465,220,399,163"/>
+<area shape="rect" id="Node000012" href="$d9/dc6/class_main_window.html#a792a6a99346642416c84649e67e85125" title="Static comparison function to sort shapes by their calculated perimeter." alt="" coords="516,218,714,244"/>
+<area shape="poly" id="edge12_Node000002_Node000012" title=" " alt="" coords="416,159,464,182,517,204,537,211,536,216,515,210,461,187,414,164"/>
+<area shape="rect" id="Node000004" href="$db/d35/classalpha_1_1vector.html#a78b5e138cba3b9bc0f9d569c6dd96156" title=" " alt="" coords="772,42,900,68"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="711,36,757,42,756,47,711,41"/>
+<area shape="rect" id="Node000006" href="$db/d35/classalpha_1_1vector.html#a6dd9585078696eb1d5e7186435f0e41c" title=" " alt="" coords="762,120,910,145"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="699,130,747,130,747,135,699,135"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="708,69,756,62,757,68,709,74"/>
+<area shape="rect" id="Node000009" href="$d7/da7/class_shape.html#a7d09aae7e39d5ecb7ced4e8026ff5c6c" title="Area &#45; Returns the area of the shape." alt="" coords="789,169,883,194"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="700,179,774,179,774,184,700,184"/>
+<area shape="rect" id="Node000011" href="$d7/da7/class_shape.html#a4b502262ae5a22122456b9624d5ccb3d" title="Accessor Functions &#45; Returns the data named after them." alt="" coords="770,268,902,293"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="692,278,754,278,754,283,692,283"/>
+<area shape="rect" id="Node000013" href="$d7/da7/class_shape.html#ac33d1f4554e4b4d9cbbe7159411b111c" title="Perimeter &#45; Returns the perimeter of the shape." alt="" coords="775,218,897,244"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="715,228,759,228,759,234,715,234"/>
+</map>

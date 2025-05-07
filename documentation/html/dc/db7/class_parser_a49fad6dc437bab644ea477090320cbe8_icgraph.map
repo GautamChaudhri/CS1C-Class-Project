@@ -1,0 +1,15 @@
+<map id="Parser::SkipWhitespace" name="Parser::SkipWhitespace">
+<area shape="rect" id="Node000001" title="Advances the parsing index past any whitespace characters." alt="" coords="854,65,1016,91"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#a9c4bd21d0d23be70682e026d6e702ec9" title="Converts a JSON string representation into a vector of Shape objects." alt="" coords="5,40,159,65"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="893,60,852,43,805,30,716,17,625,10,533,8,444,11,282,24,158,42,158,36,282,19,444,6,533,3,625,4,717,11,806,24,853,38,895,55"/>
+<area shape="rect" id="Node000003" href="$dc/db7/class_parser.html#a7e0c6d8559fd28407b48e9eef05496d8" title="Converts a JSON string representation into a vector of UserAccount objects." alt="" coords="657,40,801,65"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="838,68,801,64,802,59,839,63"/>
+<area shape="rect" id="Node000004" href="$dc/db7/class_parser.html#a4d2c4035d6109be0ceca773cfbcff523" title="Parses a single JSON object (data within &#39;{}&#39;) into a MorphicShape." alt="" coords="207,90,374,116"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="838,84,374,102,374,97,838,79"/>
+<area shape="rect" id="Node000005" href="$dc/db7/class_parser.html#a0a4c2a3664d2d2c1f5444c18271a1cf4" title="Converts a string representation of a JSON array of integers into an alpha::vector&lt;int&gt;." alt="" coords="652,141,806,167"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="884,99,767,143,765,138,882,94"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="219,88,137,68,138,63,220,83"/>
+<area shape="rect" id="Node000006" href="$dc/db7/class_parser.html#ac3bb64fa743348c1b31eb1118c6d4e0f" title="Updates a MorphicShape accumulator with a parsed key&#45;value pair." alt="" coords="422,141,604,167"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="637,156,605,156,605,151,637,151"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="438,139,349,119,351,114,439,134"/>
+</map>

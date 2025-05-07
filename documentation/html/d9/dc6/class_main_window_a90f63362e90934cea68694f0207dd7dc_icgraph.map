@@ -1,0 +1,10 @@
+<map id="MainWindow::populateShapeTable" name="MainWindow::populateShapeTable">
+<area shape="rect" id="Node000001" title="Populates the shape report table with data from the provided vector of shapes." alt="" coords="743,5,934,46"/>
+<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#ac4c479f9beafaee136b98e7fac6761ee" title="Creates and displays a new tab or window containing the shape report table." alt="" coords="233,13,462,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="728,25,695,24,510,24,462,25,462,20,510,19,695,19,728,20"/>
+<area shape="rect" id="Node000004" href="$d9/dc6/class_main_window.html#a755e3ce5cc1f97792cc7f7eff9da3858" title="Slot triggered when the sort method or order in the shape report table changes." alt="" coords="510,33,695,74"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="728,41,696,45,696,40,728,36"/>
+<area shape="rect" id="Node000003" href="$d9/dc6/class_main_window.html#a25d06b6f11a1eb7fa2239f01e853ae29" title=" " alt="" coords="5,13,185,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="217,28,185,28,185,23,217,23"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="494,44,462,41,463,36,494,39"/>
+</map>

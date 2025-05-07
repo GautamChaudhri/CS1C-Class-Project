@@ -1,0 +1,5 @@
+<map id="UserManager::onGoodDeleteResponse" name="UserManager::onGoodDeleteResponse">
+<area shape="rect" id="Node000001" title="Slot called when a DELETE request for user data succeeds." alt="" coords="239,5,429,46"/>
+<area shape="rect" id="Node000002" href="$d1/da2/class_user_manager.html#aefc22181e82f255ad68cb91d98373077" title="Constructor. Initializes ApiClient connections and loads users." alt="" coords="5,13,191,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,28,191,28,191,23,223,23"/>
+</map>

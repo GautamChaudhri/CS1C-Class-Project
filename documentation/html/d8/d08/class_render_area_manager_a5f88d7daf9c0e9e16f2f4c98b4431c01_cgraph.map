@@ -1,0 +1,9 @@
+<map id="RenderAreaManager::deleteShape" name="RenderAreaManager::deleteShape">
+<area shape="rect" id="Node000001" title="Deletes a shape identified by its tracker ID." alt="" coords="5,71,154,111"/>
+<area shape="rect" id="Node000002" href="$d8/d08/class_render_area_manager.html#a8ae2b40cb4cd008dff584aa8cfd14870" title="Emitted when the render area has changed and needs redrawing." alt="" coords="206,5,354,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,68,200,49,202,54,145,73"/>
+<area shape="rect" id="Node000003" href="$d8/d08/class_render_area_manager.html#a56824396a14f64eb605061ce4cc45898" title="Emitted when an operation completes without changing the render area, often with a message." alt="" coords="202,71,359,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,88,186,88,186,94,154,94"/>
+<area shape="rect" id="Node000004" href="$d8/d08/class_render_area_manager.html#a0c224de3ad3bbe2f6c81e5c40e640f64" title="Initiates saving the current shapes to the backend webservice." alt="" coords="206,136,354,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="145,109,202,128,200,133,143,114"/>
+</map>

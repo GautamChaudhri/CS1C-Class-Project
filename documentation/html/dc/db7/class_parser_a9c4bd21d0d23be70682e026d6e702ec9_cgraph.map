@@ -1,0 +1,37 @@
+<map id="Parser::JsonToShapes" name="Parser::JsonToShapes">
+<area shape="rect" id="Node000001" title="Converts a JSON string representation into a vector of Shape objects." alt="" coords="5,305,159,331"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#a991032ca21e8e64a0fa274b8056cc669" title="Constructs a concrete Shape object from a populated MorphicShape accumulator." alt="" coords="224,55,357,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,303,267,90,271,94,96,306"/>
+<area shape="rect" id="Node000006" href="$dc/db7/class_parser.html#a4d2c4035d6109be0ceca773cfbcff523" title="Parses a single JSON object (data within &#39;{}&#39;) into a MorphicShape." alt="" coords="207,255,374,280"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="137,302,219,282,220,287,139,307"/>
+<area shape="rect" id="Node000012" href="$dc/db7/class_parser.html#a49fad6dc437bab644ea477090320cbe8" title="Advances the parsing index past any whitespace characters." alt="" coords="869,305,1032,331"/>
+<area shape="poly" id="edge19_Node000001_Node000012" title=" " alt="" coords="159,325,285,337,449,347,633,350,727,347,818,341,877,332,878,337,819,346,727,353,633,355,449,352,285,342,159,330"/>
+<area shape="rect" id="Node000015" href="$db/d35/classalpha_1_1vector.html#a8305c181181e4739a1c5f29cf3a2c144" title=" " alt="" coords="867,380,1034,406"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="127,329,207,348,384,369,561,382,722,389,851,391,851,396,722,394,561,388,384,375,206,353,126,334"/>
+<area shape="rect" id="Node000003" href="$d7/da7/class_shape.html#af00c8cc69ddcc455d010997254e5d84f" title=" " alt="" coords="444,5,583,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="351,51,437,32,438,38,352,57"/>
+<area shape="rect" id="Node000005" href="$db/d35/classalpha_1_1vector.html#a78b5e138cba3b9bc0f9d569c6dd96156" title=" " alt="" coords="449,55,577,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="357,65,433,65,433,70,357,70"/>
+<area shape="rect" id="Node000004" href="$d7/da7/class_shape.html#a520308cc2273f60cb19bf5664570bcf8" title=" " alt="" coords="652,5,819,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="583,16,637,16,637,21,583,21"/>
+<area shape="rect" id="Node000007" href="$dc/db7/class_parser.html#a6658bb70a8b63f8edab2c0a6c7c65d9a" title="Extracts a JSON key (a string enclosed in double quotes) from the input string." alt="" coords="669,56,802,82"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="300,253,347,198,382,167,421,141,463,125,523,108,654,80,655,86,524,113,465,130,423,146,385,172,351,202,304,256"/>
+<area shape="rect" id="Node000008" href="$dc/db7/class_parser.html#ade9641ed520d4e9b73600e3cc049af46" title="Extracts a JSON value from the input string." alt="" coords="442,156,584,182"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="320,252,467,186,469,191,322,257"/>
+<area shape="poly" id="edge12_Node000006_Node000012" title=" " alt="" coords="375,265,577,271,698,278,819,290,875,299,874,304,818,295,698,284,577,276,375,270"/>
+<area shape="rect" id="Node000013" href="$dc/db7/class_parser.html#ac3bb64fa743348c1b31eb1118c6d4e0f" title="Updates a MorphicShape accumulator with a parsed key&#45;value pair." alt="" coords="422,305,604,331"/>
+<area shape="poly" id="edge13_Node000006_Node000013" title=" " alt="" coords="351,278,439,299,438,304,349,284"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="562,153,603,135,617,124,626,113,636,102,651,91,661,86,663,90,654,95,639,106,630,116,621,128,606,139,564,158"/>
+<area shape="rect" id="Node000009" href="$dc/db7/class_parser.html#acabd71dccc533b85de37e566cda47abe" title="Extracts a JSON array (content within &#39;[]&#39;) as a string." alt="" coords="665,105,806,131"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="572,153,661,132,662,138,573,158"/>
+<area shape="rect" id="Node000010" href="$dc/db7/class_parser.html#a30398a0f28f70626124609a1071f7f60" title="Extracts an integer value from the JSON string." alt="" coords="661,155,810,180"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="584,166,645,165,645,171,584,171"/>
+<area shape="rect" id="Node000011" href="$dc/db7/class_parser.html#a9dbc99f343ea14baa4e3c8d84066b83e" title="Extracts a JSON literal (true, false, null) as a string." alt="" coords="663,204,808,230"/>
+<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="577,180,658,198,657,203,576,185"/>
+<area shape="rect" id="Node000014" href="$dc/db7/class_parser.html#a0a4c2a3664d2d2c1f5444c18271a1cf4" title="Converts a string representation of a JSON array of integers into an alpha::vector&lt;int&gt;." alt="" coords="659,305,812,331"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="604,316,643,316,643,321,604,321"/>
+<area shape="poly" id="edge17_Node000014_Node000012" title=" " alt="" coords="813,316,853,316,853,321,813,321"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="776,329,897,372,895,377,774,334"/>
+<area shape="rect" id="Node000016" href="$db/d35/classalpha_1_1vector.html#a6dd9585078696eb1d5e7186435f0e41c" title=" " alt="" coords="1082,380,1229,406"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="1034,390,1067,390,1067,396,1034,396"/>
+</map>

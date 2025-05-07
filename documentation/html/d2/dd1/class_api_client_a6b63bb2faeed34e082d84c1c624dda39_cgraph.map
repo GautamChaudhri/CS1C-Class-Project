@@ -1,0 +1,7 @@
+<map id="ApiClient::AnalyzeGetReply" name="ApiClient::AnalyzeGetReply">
+<area shape="rect" id="Node000001" title="Analyzes the reply for GET requests." alt="" coords="5,31,190,56"/>
+<area shape="rect" id="Node000002" href="$d2/dd1/class_api_client.html#ae22339e302eb27bc51fbdfc1b7c1a4ec" title="Signal for a failed request sent to a Get endpoint." alt="" coords="242,5,402,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,30,226,26,227,32,191,36"/>
+<area shape="rect" id="Node000003" href="$d2/dd1/class_api_client.html#a940bf610f9fa472fc660e1ab60203de7" title="Signal for a successful request sent to a Get endpoint." alt="" coords="238,55,406,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,51,222,54,222,59,190,56"/>
+</map>

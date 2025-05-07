@@ -1,0 +1,5 @@
+<map id="Parser::GetFontWeight" name="Parser::GetFontWeight">
+<area shape="rect" id="Node000001" title="Gets the font weight of a Text object as a string (e.g., &quot;Normal&quot;, &quot;Bold&quot;)." alt="" coords="5,5,160,31"/>
+<area shape="rect" id="Node000002" href="$da/d0e/class_text.html#ace6ab02148fe23efffcd3f7c3dde9183" title=" " alt="" coords="208,5,306,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,16,192,16,192,21,160,21"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="UserManager" name="UserManager">
+<area shape="rect" id="Node000001" title="Manages user accounts, including creation, authentication, and persistence." alt="" coords="5,120,208,1600"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="78,5,136,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,87,110,120,104,120,104,87"/>
+</map>

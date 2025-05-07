@@ -1,0 +1,9 @@
+<map id="AppDriver::onNewUser" name="AppDriver::onNewUser">
+<area shape="rect" id="Node000001" title=" " alt="" coords="488,13,645,38"/>
+<area shape="rect" id="Node000002" href="$d7/de6/class_app_driver.html#ad4932bc7c7019e2522503886c01ffe33" title="Connects signals from the frontend UI to slots in this AppDriver." alt="" coords="256,5,440,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="473,28,441,28,441,23,473,23"/>
+<area shape="rect" id="Node000003" href="$d7/de6/class_app_driver.html#af5bf7b6bd96161d95a0a67cc7693127d" title="Initializes and shows the main application window and loads initial data." alt="" coords="103,13,208,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="240,28,208,28,208,23,240,23"/>
+<area shape="rect" id="Node000004" href="$d8/d80/src_2backend_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,28,55,28,55,23,87,23"/>
+</map>

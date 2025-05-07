@@ -1,0 +1,9 @@
+<map id="Parser::BuildShape" name="Parser::BuildShape">
+<area shape="rect" id="Node000001" title="Constructs a concrete Shape object from a populated MorphicShape accumulator." alt="" coords="5,31,139,56"/>
+<area shape="rect" id="Node000002" href="$d7/da7/class_shape.html#af00c8cc69ddcc455d010997254e5d84f" title=" " alt="" coords="187,5,326,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,32,171,27,172,32,139,37"/>
+<area shape="rect" id="Node000004" href="$db/d35/classalpha_1_1vector.html#a78b5e138cba3b9bc0f9d569c6dd96156" title=" " alt="" coords="192,55,320,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="139,50,177,55,176,60,139,55"/>
+<area shape="rect" id="Node000003" href="$d7/da7/class_shape.html#a520308cc2273f60cb19bf5664570bcf8" title=" " alt="" coords="374,5,540,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="326,16,358,16,358,21,326,21"/>
+</map>

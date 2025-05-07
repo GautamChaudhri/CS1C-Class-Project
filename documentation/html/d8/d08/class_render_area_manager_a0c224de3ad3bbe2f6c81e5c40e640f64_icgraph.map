@@ -1,0 +1,17 @@
+<map id="RenderAreaManager::saveShapes" name="RenderAreaManager::saveShapes">
+<area shape="rect" id="Node000001" title="Initiates saving the current shapes to the backend webservice." alt="" coords="685,104,833,145"/>
+<area shape="rect" id="Node000002" href="$d8/d08/class_render_area_manager.html#af43a9dc571803450ae63b62a234c8d21" title="Adds a new shape to the rendering list and triggers a save." alt="" coords="488,5,637,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="706,99,635,61,610,49,612,44,638,57,709,94"/>
+<area shape="rect" id="Node000003" href="$d8/d08/class_render_area_manager.html#a5f88d7daf9c0e9e16f2f4c98b4431c01" title="Deletes a shape identified by its tracker ID." alt="" coords="488,71,637,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="669,112,637,106,638,101,670,107"/>
+<area shape="rect" id="Node000004" href="$d8/d08/class_render_area_manager.html#a47f13c07bb02a5904a1ff2d162ab13b1" title="Modifies the displayed text of a Text shape." alt="" coords="488,136,637,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="670,142,638,147,637,142,669,136"/>
+<area shape="rect" id="Node000008" href="$d8/d08/class_render_area_manager.html#af37e63015f3671115d0da8aff234a805" title="Modifies a property of an existing shape based on a key&#45;value pair." alt="" coords="488,201,637,242"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="707,155,638,191,612,203,610,198,635,186,705,150"/>
+<area shape="rect" id="Node000005" href="$d7/de6/class_app_driver.html#ad4932bc7c7019e2522503886c01ffe33" title="Connects signals from the frontend UI to slots in this AppDriver." alt="" coords="256,136,440,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="473,159,441,159,441,154,473,154"/>
+<area shape="rect" id="Node000006" href="$d7/de6/class_app_driver.html#af5bf7b6bd96161d95a0a67cc7693127d" title="Initializes and shows the main application window and loads initial data." alt="" coords="103,144,208,169"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="240,159,208,159,208,154,240,154"/>
+<area shape="rect" id="Node000007" href="$d8/d80/src_2backend_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,144,55,169"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="87,159,55,159,55,154,87,154"/>
+</map>

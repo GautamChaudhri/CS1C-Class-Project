@@ -1,0 +1,7 @@
+<map id="ApiClient::AnalyzeDeleteReply" name="ApiClient::AnalyzeDeleteReply">
+<area shape="rect" id="Node000001" title="Analyzes the reply for DELETE requests." alt="" coords="5,23,173,64"/>
+<area shape="rect" id="Node000002" href="$d2/dd1/class_api_client.html#a2362fb6ae6555400e50840bd2138fa3c" title="Signal for a failed request sent to a Delete endpoint." alt="" coords="225,5,402,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,31,209,27,209,33,173,37"/>
+<area shape="rect" id="Node000003" href="$d2/dd1/class_api_client.html#a36b7d26e91c582a56da7c3bcfbdccbd9" title="Signal for a successful request sent to a Delete endpoint." alt="" coords="221,55,406,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,50,205,53,205,59,173,55"/>
+</map>

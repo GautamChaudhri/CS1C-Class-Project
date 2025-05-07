@@ -1,0 +1,7 @@
+<map id="Parser::GetFontStyle" name="Parser::GetFontStyle">
+<area shape="rect" id="Node000001" title="Gets the font style of a Text object as a string (e.g., &quot;StyleNormal&quot;, &quot;StyleItalic&quot;)." alt="" coords="419,5,563,31"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#a3c8d6dcf6e07231eaedb036ebe90b51f" title="Appends all properties specific to Text objects to a JSON string." alt="" coords="207,5,371,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="404,21,371,21,371,16,404,16"/>
+<area shape="rect" id="Node000003" href="$dc/db7/class_parser.html#ac0dc74d228421b62ece9d9e93511509e" title="Converts a vector of Shape pointers into a JSON string representation." alt="" coords="5,5,159,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,21,159,21,159,16,191,16"/>
+</map>

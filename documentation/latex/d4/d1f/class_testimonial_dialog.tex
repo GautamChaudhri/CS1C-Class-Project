@@ -2,36 +2,68 @@
 \hypertarget{class_testimonial_dialog}{}\label{class_testimonial_dialog}\index{TestimonialDialog@{TestimonialDialog}}
 
 
+The \doxylink{class_testimonial_dialog}{Testimonial\+Dialog} class provides a user interface for submitting testimonials.  
+
+
+
+
 {\ttfamily \#include $<$Testimonial\+Dialog.\+h$>$}
 
-Inheritance diagram for Testimonial\+Dialog\+:\begin{figure}[H]
+
+
+Inheritance diagram for Testimonial\+Dialog\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{d4/d1f/class_testimonial_dialog}
+\includegraphics[width=250pt]{d8/d98/class_testimonial_dialog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Testimonial\+Dialog\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{d6/dc2/class_testimonial_dialog__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_testimonial_dialog_aa4e46d387d1d8fd4793ede8c2deb0fd4}{Testimonial\+Dialog}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_testimonial_dialog}{Testimonial\+Dialog}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Slots}
-\begin{DoxyCompactItemize}
+\begin{Indent}\textbf{ Event Handling Slots}\par
+{\em Slots for handling UI events.
+
+These slots are connected to button clicks within the dialog. }\begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_testimonial_dialog_a98f2520e872b1eabda8e66a3807ef39e}{on\+Submit}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Handles the submission of a new testimonial. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_testimonial_dialog_a4a73a410e9fd8c28b794fe0584976414}{on\+Cancel}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Handles the cancellation of the testimonial submission. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
 \doxysubsubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
+\begin{Indent}\textbf{ UI Elements}\par
+{\em Private member variables representing UI components.
+
+These members store pointers to the various input fields and controls used within the testimonial dialog. }\begin{DoxyCompactItemize}
 \item 
 QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_testimonial_dialog_a8a18ee003abbad4c6a2dce48d0f3a73c}{m\+\_\+author\+Edit}}
-\item 
+\begin{DoxyCompactList}\small\item\em Input field for the author\textquotesingle{}s name. \end{DoxyCompactList}\item 
 QText\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_testimonial_dialog_af17a5a97e87209826a624e16c131fcf6}{m\+\_\+content\+Edit}}
-\item 
+\begin{DoxyCompactList}\small\item\em Input field for the testimonial content. \end{DoxyCompactList}\item 
 QCheck\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_testimonial_dialog_ad706ae2d67c75fb64da11cf72d84b370}{m\+\_\+do\+Not\+Show\+Again}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checkbox to control future display of the prompt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
 
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_testimonial_dialog}{Testimonial\+Dialog} class provides a user interface for submitting testimonials. 
+
+This dialog includes fields for the author\textquotesingle{}s name, the testimonial content, and an option to prevent future prompts. It handles the submission and cancellation of testimonials. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_testimonial_dialog_aa4e46d387d1d8fd4793ede8c2deb0fd4}\index{TestimonialDialog@{TestimonialDialog}!TestimonialDialog@{TestimonialDialog}}
@@ -42,6 +74,23 @@ Testimonial\+Dialog\+::\+Testimonial\+Dialog (\begin{DoxyParamCaption}\item[{QWi
 
 
 
+Constructs a \doxylink{class_testimonial_dialog}{Testimonial\+Dialog}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget of this dialog. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1f/class_testimonial_dialog_aa4e46d387d1d8fd4793ede8c2deb0fd4_cgraph}
+\end{center}
+\end{figure}
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_testimonial_dialog_a4a73a410e9fd8c28b794fe0584976414}\index{TestimonialDialog@{TestimonialDialog}!onCancel@{onCancel}}
 \index{onCancel@{onCancel}!TestimonialDialog@{TestimonialDialog}}
@@ -49,12 +98,52 @@ Testimonial\+Dialog\+::\+Testimonial\+Dialog (\begin{DoxyParamCaption}\item[{QWi
 {\footnotesize\ttfamily \label{class_testimonial_dialog_a4a73a410e9fd8c28b794fe0584976414} 
 void Testimonial\+Dialog\+::on\+Cancel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
+
+
+Handles the cancellation of the testimonial submission. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1f/class_testimonial_dialog_a4a73a410e9fd8c28b794fe0584976414_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{d4/d1f/class_testimonial_dialog_a4a73a410e9fd8c28b794fe0584976414_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_dialog_a98f2520e872b1eabda8e66a3807ef39e}\index{TestimonialDialog@{TestimonialDialog}!onSubmit@{onSubmit}}
 \index{onSubmit@{onSubmit}!TestimonialDialog@{TestimonialDialog}}
 \doxysubsubsection{\texorpdfstring{onSubmit}{onSubmit}}
 {\footnotesize\ttfamily \label{class_testimonial_dialog_a98f2520e872b1eabda8e66a3807ef39e} 
 void Testimonial\+Dialog\+::on\+Submit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
+
+
+Handles the submission of a new testimonial. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d1f/class_testimonial_dialog_a98f2520e872b1eabda8e66a3807ef39e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{d4/d1f/class_testimonial_dialog_a98f2520e872b1eabda8e66a3807ef39e_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Data Documentation}
@@ -64,11 +153,19 @@ void Testimonial\+Dialog\+::on\+Submit (\begin{DoxyParamCaption}{}{}\end{DoxyPar
 {\footnotesize\ttfamily \label{class_testimonial_dialog_a8a18ee003abbad4c6a2dce48d0f3a73c} 
 QLine\+Edit\texorpdfstring{$\ast$}{*} Testimonial\+Dialog\+::m\+\_\+author\+Edit\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Input field for the author\textquotesingle{}s name. 
+
 \Hypertarget{class_testimonial_dialog_af17a5a97e87209826a624e16c131fcf6}\index{TestimonialDialog@{TestimonialDialog}!m\_contentEdit@{m\_contentEdit}}
 \index{m\_contentEdit@{m\_contentEdit}!TestimonialDialog@{TestimonialDialog}}
 \doxysubsubsection{\texorpdfstring{m\_contentEdit}{m\_contentEdit}}
 {\footnotesize\ttfamily \label{class_testimonial_dialog_af17a5a97e87209826a624e16c131fcf6} 
 QText\+Edit\texorpdfstring{$\ast$}{*} Testimonial\+Dialog\+::m\+\_\+content\+Edit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Input field for the testimonial content. 
 
 \Hypertarget{class_testimonial_dialog_ad706ae2d67c75fb64da11cf72d84b370}\index{TestimonialDialog@{TestimonialDialog}!m\_doNotShowAgain@{m\_doNotShowAgain}}
 \index{m\_doNotShowAgain@{m\_doNotShowAgain}!TestimonialDialog@{TestimonialDialog}}
@@ -78,7 +175,11 @@ QCheck\+Box\texorpdfstring{$\ast$}{*} Testimonial\+Dialog\+::m\+\_\+do\+Not\+Sho
 
 
 
+Checkbox to control future display of the prompt. 
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/frontend/\mbox{\hyperlink{_testimonial_dialog_8h}{Testimonial\+Dialog.\+h}}\item 
-src/frontend/\mbox{\hyperlink{_testimonial_dialog_8cpp}{Testimonial\+Dialog.\+cpp}}\end{DoxyCompactItemize}
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/frontend/\mbox{\hyperlink{_testimonial_dialog_8h}{Testimonial\+Dialog.\+h}}\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/frontend/\mbox{\hyperlink{_testimonial_dialog_8cpp}{Testimonial\+Dialog.\+cpp}}\end{DoxyCompactItemize}

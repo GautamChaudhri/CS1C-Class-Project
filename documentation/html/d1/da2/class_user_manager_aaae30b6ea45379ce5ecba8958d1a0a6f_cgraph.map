@@ -1,0 +1,5 @@
+<map id="UserManager::onGoodDeleteResponse" name="UserManager::onGoodDeleteResponse">
+<area shape="rect" id="Node000001" title="Slot called when a DELETE request for user data succeeds." alt="" coords="5,5,196,46"/>
+<area shape="rect" id="Node000002" href="$d1/da2/class_user_manager.html#ad725cb6519b4256e254da21ff5741e78" title="Emitted to provide general status updates or error messages." alt="" coords="244,13,440,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,23,228,23,228,28,196,28"/>
+</map>

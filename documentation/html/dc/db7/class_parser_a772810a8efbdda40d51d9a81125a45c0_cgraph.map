@@ -1,0 +1,5 @@
+<map id="Parser::GetFontStyle" name="Parser::GetFontStyle">
+<area shape="rect" id="Node000001" title="Gets the font style of a Text object as a string (e.g., &quot;StyleNormal&quot;, &quot;StyleItalic&quot;)." alt="" coords="5,5,150,31"/>
+<area shape="rect" id="Node000002" href="$da/d0e/class_text.html#ace6ab02148fe23efffcd3f7c3dde9183" title=" " alt="" coords="198,5,296,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,16,182,16,182,21,150,21"/>
+</map>

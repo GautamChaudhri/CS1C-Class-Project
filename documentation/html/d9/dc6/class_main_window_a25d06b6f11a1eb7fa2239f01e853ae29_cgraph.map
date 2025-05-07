@@ -1,0 +1,109 @@
+<map id="MainWindow::MainWindow" name="MainWindow::MainWindow">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,745,185,771"/>
+<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#ac4c479f9beafaee136b98e7fac6761ee" title="Creates and displays a new tab or window containing the shape report table." alt="" coords="233,161,462,187"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,744,332,200,337,202,104,746"/>
+<area shape="rect" id="Node000015" href="$d9/dc6/class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title="Default constructor." alt="" coords="258,619,437,644"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="110,743,162,703,231,661,269,647,270,652,234,666,165,707,113,747"/>
+<area shape="rect" id="Node000016" href="$d9/dc6/class_main_window.html#aa2910dbb80e3e72ef731d27d70100d8e" title="Sets up connections and UI elements for the testimonial feature." alt="" coords="510,619,719,644"/>
+<area shape="poly" id="edge57_Node000001_Node000016" title=" " alt="" coords="133,742,232,712,387,674,526,645,527,650,388,679,233,717,135,747"/>
+<area shape="rect" id="Node000032" href="$d9/dc6/class_main_window.html#a415d10b19b2dd2e7ba99d0dd5fcb76da" title="Displays a dialog showing existing testimonials." alt="" coords="767,727,976,768"/>
+<area shape="poly" id="edge58_Node000001_Node000032" title=" " alt="" coords="185,754,752,746,752,752,185,760"/>
+<area shape="rect" id="Node000034" href="$d9/dc6/class_main_window.html#a08aabefeb8da2cc2907774a47495246e" title="Slot triggered to display the &#39;Contact Us&#39; information window." alt="" coords="235,771,460,796"/>
+<area shape="poly" id="edge39_Node000001_Node000034" title=" " alt="" coords="185,765,220,768,219,773,185,770"/>
+<area shape="rect" id="Node000035" href="$d9/dc6/class_main_window.html#a44b1462463b23490276f54034ab12325" title="Slot triggered when the login button is clicked, typically opening a login dialog." alt="" coords="251,845,444,871"/>
+<area shape="poly" id="edge40_Node000001_Node000035" title=" " alt="" coords="131,769,300,837,298,842,129,774"/>
+<area shape="rect" id="Node000045" href="$d9/dc6/class_main_window.html#a2cffa46e8e27e187a30438c2aa0fe04b" title="Toggles the application&#39;s stylesheet between predefined styles." alt="" coords="254,944,440,970"/>
+<area shape="poly" id="edge52_Node000001_Node000045" title=" " alt="" coords="111,769,163,820,234,881,312,934,309,938,231,886,160,824,107,773"/>
+<area shape="rect" id="Node000047" href="$d9/dc6/class_main_window.html#a29a83bfdca71f74fbfdf49686763a843" title="Slot triggered when an item in the shape properties tree widget is changed." alt="" coords="255,1067,440,1108"/>
+<area shape="poly" id="edge54_Node000001_Node000047" title=" " alt="" coords="105,770,154,862,192,922,235,980,272,1021,310,1055,306,1059,268,1024,231,984,188,925,150,864,101,773"/>
+<area shape="rect" id="Node000003" href="$d9/dc6/class_main_window.html#a755e3ce5cc1f97792cc7f7eff9da3858" title="Slot triggered when the sort method or order in the shape report table changes." alt="" coords="522,154,707,194"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="462,172,507,172,507,177,462,177"/>
+<area shape="rect" id="Node000004" href="$d9/dc6/class_main_window.html#a90f63362e90934cea68694f0207dd7dc" title="Populates the shape report table with data from the provided vector of shapes." alt="" coords="776,55,967,96"/>
+<area shape="poly" id="edge15_Node000002_Node000004" title=" " alt="" coords="415,158,509,140,760,93,761,98,511,145,416,163"/>
+<area shape="rect" id="Node000008" href="$d9/dc6/class_main_window.html#ae822357dee3e9aad5cf276768b7f8019" title=" " alt="" coords="779,5,964,31"/>
+<area shape="poly" id="edge16_Node000002_Node000008" title=" " alt="" coords="375,158,436,131,509,102,653,61,783,32,785,37,655,66,511,107,438,136,377,163"/>
+<area shape="rect" id="Node000011" href="$d9/dc6/class_main_window.html#a517b645d625b741b3d8aae6d62abe3cb" title="Static comparison function to sort shapes by their ID." alt="" coords="795,268,948,294"/>
+<area shape="poly" id="edge17_Node000002_Node000011" title=" " alt="" coords="415,185,790,262,789,267,414,190"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="659,151,766,105,784,99,785,104,768,110,661,156"/>
+<area shape="rect" id="Node000006" href="$db/d35/classalpha_1_1vector.html#a8305c181181e4739a1c5f29cf3a2c144" title=" " alt="" coords="788,219,955,244"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="708,192,796,212,795,217,707,197"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="632,152,688,96,725,66,766,41,782,34,784,39,769,46,728,71,692,100,636,155"/>
+<area shape="rect" id="Node000009" href="$d9/dc6/class_main_window.html#affcce0444db65d4438f852dbd97424bd" title="Static comparison function to sort shapes by their calculated area." alt="" coords="787,120,956,146"/>
+<area shape="poly" id="edge9_Node000003_Node000009" title=" " alt="" coords="707,157,772,146,773,151,708,162"/>
+<area shape="poly" id="edge11_Node000003_Node000011" title=" " alt="" coords="654,193,768,254,787,261,786,266,766,259,652,198"/>
+<area shape="rect" id="Node000013" href="$d9/dc6/class_main_window.html#a792a6a99346642416c84649e67e85125" title="Static comparison function to sort shapes by their calculated perimeter." alt="" coords="772,169,971,195"/>
+<area shape="poly" id="edge13_Node000003_Node000013" title=" " alt="" coords="708,174,757,176,757,181,708,180"/>
+<area shape="rect" id="Node000005" href="$db/d35/classalpha_1_1vector.html#a78b5e138cba3b9bc0f9d569c6dd96156" title=" " alt="" coords="1033,35,1162,60"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="966,61,1017,55,1018,60,967,66"/>
+<area shape="rect" id="Node000007" href="$db/d35/classalpha_1_1vector.html#a6dd9585078696eb1d5e7186435f0e41c" title=" " alt="" coords="1024,219,1171,244"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="955,229,1008,229,1008,234,955,234"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="965,28,1018,35,1017,40,964,33"/>
+<area shape="rect" id="Node000010" href="$d7/da7/class_shape.html#a7d09aae7e39d5ecb7ced4e8026ff5c6c" title="Area &#45; Returns the area of the shape." alt="" coords="1051,120,1144,146"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="957,130,1035,130,1035,136,957,136"/>
+<area shape="rect" id="Node000012" href="$d7/da7/class_shape.html#a4b502262ae5a22122456b9624d5ccb3d" title="Accessor Functions &#45; Returns the data named after them." alt="" coords="1031,268,1164,294"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="948,278,1016,278,1016,284,948,284"/>
+<area shape="rect" id="Node000014" href="$d7/da7/class_shape.html#ac33d1f4554e4b4d9cbbe7159411b111c" title="Perimeter &#45; Returns the perimeter of the shape." alt="" coords="1036,169,1158,195"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="971,180,1021,180,1021,185,971,185"/>
+<area shape="poly" id="edge19_Node000015_Node000015" title=" " alt="" coords="306,620,298,610,302,600,319,594,347,592,379,595,394,602,392,607,377,600,347,597,320,599,306,604,303,609,310,617"/>
+<area shape="poly" id="edge20_Node000015_Node000016" title=" " alt="" coords="438,629,494,629,494,634,438,634"/>
+<area shape="rect" id="Node000017" href="$d4/d0d/class_testimonial_manager.html#a7b05489ceb9a8bd5e94e955c50b9515f" title="Returns a reference to the singleton TestimonialManager instance." alt="" coords="803,399,940,440"/>
+<area shape="poly" id="edge21_Node000016_Node000017" title=" " alt="" coords="630,616,832,448,835,452,634,620"/>
+<area shape="rect" id="Node000024" href="$d4/d0d/class_testimonial_manager.html#ade7e70f55550c1417ab7d0ca7b3b3142" title="Emitted to prompt the user for a testimonial." alt="" coords="1441,462,1636,502"/>
+<area shape="poly" id="edge35_Node000016_Node000024" title=" " alt="" coords="651,616,705,598,767,582,861,567,942,560,1081,559,1219,557,1299,549,1393,532,1475,506,1476,511,1394,537,1300,554,1219,562,1081,565,943,566,862,573,768,587,706,603,652,621"/>
+<area shape="rect" id="Node000031" href="$d9/dc6/class_main_window.html#ade3d9ed9b1c685f1ba1044cf10a401a4" title="Displays a dialog prompting the user to submit a testimonial." alt="" coords="771,596,972,637"/>
+<area shape="poly" id="edge36_Node000016_Node000031" title=" " alt="" coords="720,623,755,621,756,626,720,628"/>
+<area shape="poly" id="edge37_Node000016_Node000032" title=" " alt="" coords="639,643,696,676,768,712,787,719,785,724,766,717,694,681,636,647"/>
+<area shape="rect" id="Node000033" href="$d4/d0d/class_testimonial_manager.html#a06504060ff2ed420035a8433e03d8fa5" title="Starts the timer for tracking user activity time." alt="" coords="803,662,940,702"/>
+<area shape="poly" id="edge38_Node000016_Node000033" title=" " alt="" coords="684,642,788,663,787,668,683,648"/>
+<area shape="rect" id="Node000018" href="$d4/d0d/class_testimonial_manager.html#aded0ef0783e1e67e701f7c3bf3a80072" title="Private constructor to enforce singleton pattern. Initializes API connections and timer." alt="" coords="1025,318,1170,358"/>
+<area shape="poly" id="edge22_Node000017_Node000018" title=" " alt="" coords="929,396,1024,362,1026,367,931,401"/>
+<area shape="rect" id="Node000019" href="$d2/dd1/class_api_client.html#ae22339e302eb27bc51fbdfc1b7c1a4ec" title="Signal for a failed request sent to a Get endpoint." alt="" coords="1226,219,1386,244"/>
+<area shape="poly" id="edge23_Node000018_Node000019" title=" " alt="" coords="1151,315,1169,304,1183,291,1192,279,1202,266,1218,253,1227,248,1229,253,1220,258,1206,270,1197,282,1187,295,1173,308,1154,320"/>
+<area shape="rect" id="Node000020" href="$d2/dd1/class_api_client.html#ac0f68b238bace3703854d7de15a3bb38" title="Signal for a failed request sent to a Post endpoint." alt="" coords="1223,268,1389,294"/>
+<area shape="poly" id="edge24_Node000018_Node000020" title=" " alt="" coords="1169,316,1242,296,1243,301,1171,321"/>
+<area shape="rect" id="Node000021" href="$d4/d0d/class_testimonial_manager.html#a69979eb09835fcb35d804fa169b63f0f" title="Checks accumulated user time and emits shouldPromptForTestimonial if criteria are met." alt="" coords="1227,318,1385,358"/>
+<area shape="poly" id="edge25_Node000018_Node000021" title=" " alt="" coords="1170,336,1211,336,1211,341,1170,341"/>
+<area shape="rect" id="Node000025" href="$d2/dd1/class_api_client.html#a940bf610f9fa472fc660e1ab60203de7" title="Signal for a successful request sent to a Get endpoint." alt="" coords="1222,383,1390,408"/>
+<area shape="poly" id="edge29_Node000018_Node000025" title=" " alt="" coords="1171,355,1243,376,1242,381,1169,361"/>
+<area shape="rect" id="Node000026" href="$d2/dd1/class_api_client.html#aa2e03a2c693acb0052f80415b453e279" title="Signal for a successful request sent to a Post endpoint." alt="" coords="1219,432,1393,458"/>
+<area shape="poly" id="edge30_Node000018_Node000026" title=" " alt="" coords="1125,357,1168,388,1220,418,1234,424,1232,429,1218,423,1165,393,1122,361"/>
+<area shape="rect" id="Node000027" href="$d4/d0d/class_testimonial_manager.html#aa256bebedcc689ce416c7a2fcade3900" title="Slot called when a GET request for testimonials fails." alt="" coords="1233,482,1379,522"/>
+<area shape="poly" id="edge31_Node000018_Node000027" title=" " alt="" coords="1115,357,1158,412,1188,442,1221,468,1227,472,1224,477,1217,472,1184,446,1154,415,1111,361"/>
+<area shape="rect" id="Node000028" href="$d4/d0d/class_testimonial_manager.html#acfda7a2d454b513c1c75d8d030a43dd9" title="Slot called when a POST request to save testimonials fails." alt="" coords="1230,23,1382,64"/>
+<area shape="poly" id="edge32_Node000018_Node000028" title=" " alt="" coords="1157,315,1169,304,1187,275,1194,247,1195,219,1192,191,1189,163,1190,134,1198,105,1217,75,1219,72,1223,76,1221,78,1203,107,1195,135,1194,163,1197,191,1200,219,1199,248,1192,277,1173,308,1161,319"/>
+<area shape="rect" id="Node000029" href="$d4/d0d/class_testimonial_manager.html#a2a9ada04ab15847f2c1b3c81deb994d7" title="Slot called when a GET request for testimonials succeeds." alt="" coords="1229,88,1383,129"/>
+<area shape="poly" id="edge33_Node000018_Node000029" title=" " alt="" coords="1156,315,1169,304,1183,284,1190,264,1192,224,1194,183,1202,162,1217,140,1221,137,1224,141,1221,144,1207,164,1199,184,1197,224,1195,265,1188,286,1173,308,1160,319"/>
+<area shape="rect" id="Node000030" href="$d4/d0d/class_testimonial_manager.html#ad384569c01fdadf0bb38e053a7bee337" title="Slot called when a POST request to save testimonials succeeds." alt="" coords="1226,154,1386,194"/>
+<area shape="poly" id="edge34_Node000018_Node000030" title=" " alt="" coords="1155,315,1169,304,1186,280,1192,255,1199,230,1217,204,1220,202,1223,206,1221,208,1204,232,1197,256,1191,282,1173,308,1158,319"/>
+<area shape="rect" id="Node000022" href="$d4/d0d/class_testimonial_manager.html#a1ebec1a781a7508501e398bb042a0b2d" title="Retrieves the &quot;do not show again&quot; preference for a user." alt="" coords="1463,351,1614,392"/>
+<area shape="poly" id="edge26_Node000021_Node000022" title=" " alt="" coords="1386,347,1447,356,1447,361,1386,352"/>
+<area shape="rect" id="Node000023" href="$d4/d0d/class_testimonial_manager.html#a9466acdac4dddfe8947b41cb637cb556" title="Checks if a user with the given username has already submitted a testimonial." alt="" coords="1449,286,1628,326"/>
+<area shape="poly" id="edge27_Node000021_Node000023" title=" " alt="" coords="1386,325,1434,318,1434,323,1386,330"/>
+<area shape="poly" id="edge28_Node000021_Node000024" title=" " alt="" coords="1372,357,1395,368,1444,403,1503,450,1499,454,1441,407,1392,372,1369,361"/>
+<area shape="rect" id="Node000036" href="$de/d74/class_login_window.html#a075f5a5f9da1f4b202aec66d6bd7ec76" title="Emitted when the user attempts to log in with the provided credentials." alt="" coords="516,820,713,846"/>
+<area shape="poly" id="edge41_Node000035_Node000036" title=" " alt="" coords="444,846,500,841,501,846,445,852"/>
+<area shape="rect" id="Node000039" href="$d9/dc6/class_main_window.html#a8cdec14167c6164f6efa118d09e501f5" title="Emitted when a login attempt is successful." alt="" coords="524,869,706,895"/>
+<area shape="poly" id="edge44_Node000035_Node000039" title=" " alt="" coords="445,864,508,870,508,875,444,870"/>
+<area shape="rect" id="Node000040" href="$d9/dc6/class_main_window.html#a92cfa580b2445cdcb78fedea04dece1f" title="Slot triggered by a login dialog to initiate a login attempt." alt="" coords="516,968,714,994"/>
+<area shape="poly" id="edge45_Node000035_Node000040" title=" " alt="" coords="370,869,443,916,511,954,528,961,526,966,509,959,440,921,367,874"/>
+<area shape="rect" id="Node000042" href="$d9/dc6/class_main_window.html#adc5a0eea13e703cb3826e9221e19df22" title=" " alt="" coords="511,771,718,796"/>
+<area shape="poly" id="edge47_Node000035_Node000042" title=" " alt="" coords="387,842,509,805,537,798,538,803,511,810,389,847"/>
+<area shape="rect" id="Node000044" href="$de/d74/class_login_window.html#ae166943123818d0b0a3dcdcf66380994" title="Emitted when the user attempts to sign up with the provided credentials. (Admin flag is currently har..." alt="" coords="510,919,719,944"/>
+<area shape="poly" id="edge49_Node000035_Node000044" title=" " alt="" coords="391,869,511,905,539,912,537,917,509,910,389,874"/>
+<area shape="rect" id="Node000037" href="$de/d74/class_login_window.html#ab207055cd16762112d1facbd35da9c25" title="Returns the password entered in the currently active input field (login or signup)." alt="" coords="790,848,953,874"/>
+<area shape="poly" id="edge42_Node000036_Node000037" title=" " alt="" coords="714,841,775,848,774,853,714,846"/>
+<area shape="rect" id="Node000038" href="$de/d74/class_login_window.html#a2b28bf4bc7080e39afb0d096d212e0a0" title="Returns the username entered in the currently active input field (login or signup)." alt="" coords="789,908,954,934"/>
+<area shape="poly" id="edge43_Node000036_Node000038" title=" " alt="" coords="688,844,720,854,745,869,769,884,810,900,808,905,766,889,742,873,718,859,687,849"/>
+<area shape="rect" id="Node000041" href="$d9/dc6/class_main_window.html#a3f4e695043359e8f535699cd7da3d15c" title="Emitted when a user attempts to log in." alt="" coords="783,968,960,994"/>
+<area shape="poly" id="edge46_Node000040_Node000041" title=" " alt="" coords="714,978,767,978,767,984,714,984"/>
+<area shape="rect" id="Node000043" href="$d9/dc6/class_main_window.html#a4ca72692ae6775c322b3534c18f3e9aa" title=" " alt="" coords="775,792,968,818"/>
+<area shape="poly" id="edge48_Node000042_Node000043" title=" " alt="" coords="719,789,760,793,759,798,718,795"/>
+<area shape="poly" id="edge50_Node000044_Node000037" title=" " alt="" coords="677,915,719,905,814,876,816,882,720,910,678,921"/>
+<area shape="poly" id="edge51_Node000044_Node000038" title=" " alt="" coords="719,924,773,922,774,928,719,930"/>
+<area shape="rect" id="Node000046" href="$d9/dc6/class_main_window.html#af8ba728f629c102e77ac09defa25d3cc" title="Loads a Qt stylesheet from the specified file path." alt="" coords="518,1017,711,1043"/>
+<area shape="poly" id="edge53_Node000045_Node000046" title=" " alt="" coords="391,968,511,1004,539,1011,537,1016,509,1009,389,973"/>
+<area shape="rect" id="Node000048" href="$d9/dc6/class_main_window.html#a1f2cddcea15650f8ef72e8862fd945df" title="Emitted when the displayed text of a Text shape is changed." alt="" coords="522,1067,707,1108"/>
+<area shape="poly" id="edge55_Node000047_Node000048" title=" " alt="" coords="440,1085,507,1085,507,1090,440,1090"/>
+<area shape="rect" id="Node000049" href="$d9/dc6/class_main_window.html#af971d03f10fd514287332e2adfd79bea" title="Emitted when a property of an existing shape is changed." alt="" coords="519,1132,710,1158"/>
+<area shape="poly" id="edge56_Node000047_Node000049" title=" " alt="" coords="441,1105,537,1126,536,1131,440,1110"/>
+</map>

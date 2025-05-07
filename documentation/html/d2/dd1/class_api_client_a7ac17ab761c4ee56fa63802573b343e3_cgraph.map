@@ -1,0 +1,9 @@
+<map id="ApiClient::ApiClient" name="ApiClient::ApiClient">
+<area shape="rect" id="Node000001" title="Default Constructor." alt="" coords="5,31,141,56"/>
+<area shape="rect" id="Node000002" href="$d2/dd1/class_api_client.html#a6b63bb2faeed34e082d84c1c624dda39" title="Analyzes the reply for GET requests." alt="" coords="189,31,373,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,41,173,41,173,46,141,46"/>
+<area shape="rect" id="Node000003" href="$d2/dd1/class_api_client.html#ae22339e302eb27bc51fbdfc1b7c1a4ec" title="Signal for a failed request sent to a Get endpoint." alt="" coords="425,5,585,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="373,30,409,26,410,32,374,36"/>
+<area shape="rect" id="Node000004" href="$d2/dd1/class_api_client.html#a940bf610f9fa472fc660e1ab60203de7" title="Signal for a successful request sent to a Get endpoint." alt="" coords="421,55,589,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="374,51,405,54,405,59,373,56"/>
+</map>

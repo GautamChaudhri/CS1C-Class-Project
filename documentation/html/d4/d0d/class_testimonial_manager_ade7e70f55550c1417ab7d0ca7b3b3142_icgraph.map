@@ -1,0 +1,29 @@
+<map id="TestimonialManager::shouldPromptForTestimonial" name="TestimonialManager::shouldPromptForTestimonial">
+<area shape="rect" id="Node000001" title="Emitted to prompt the user for a testimonial." alt="" coords="1306,165,1501,206"/>
+<area shape="rect" id="Node000002" href="$d4/d0d/class_testimonial_manager.html#a69979eb09835fcb35d804fa169b63f0f" title="Checks accumulated user time and emits shouldPromptForTestimonial if criteria are met." alt="" coords="1100,136,1258,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1291,174,1259,169,1259,164,1292,168"/>
+<area shape="rect" id="Node000010" href="$d9/dc6/class_main_window.html#aa2910dbb80e3e72ef731d27d70100d8e" title="Sets up connections and UI elements for the testimonial feature." alt="" coords="464,201,673,226"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="1291,192,674,213,674,208,1291,187"/>
+<area shape="rect" id="Node000003" href="$d4/d0d/class_testimonial_manager.html#aded0ef0783e1e67e701f7c3bf3a80072" title="Private constructor to enforce singleton pattern. Initializes API connections and timer." alt="" coords="907,136,1052,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1084,159,1052,159,1052,154,1084,154"/>
+<area shape="rect" id="Node000004" href="$d4/d0d/class_testimonial_manager.html#a7b05489ceb9a8bd5e94e955c50b9515f" title="Returns a reference to the singleton TestimonialManager instance." alt="" coords="721,136,859,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="891,159,859,159,859,154,891,154"/>
+<area shape="rect" id="Node000005" href="$d4/d1f/class_testimonial_dialog.html#a4a73a410e9fd8c28b794fe0584976414" title="Handles the cancellation of the testimonial submission." alt="" coords="502,5,635,46"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="757,127,718,93,672,61,634,45,636,40,675,57,721,89,760,123"/>
+<area shape="rect" id="Node000007" href="$d4/d1f/class_testimonial_dialog.html#a98f2520e872b1eabda8e66a3807ef39e" title="Handles the submission of a new testimonial." alt="" coords="502,71,635,111"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="706,134,635,113,636,108,707,129"/>
+<area shape="rect" id="Node000008" href="$d8/d62/class_testimonials_display_dialog.html#a3176c00727ade2c7890937cf50b58d6f" title="Refreshes the displayed list of testimonials." alt="" coords="481,136,656,177"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="706,159,657,159,657,154,706,154"/>
+<area shape="poly" id="edge10_Node000004_Node000010" title=" " alt="" coords="707,182,674,191,627,203,626,198,673,186,706,177"/>
+<area shape="rect" id="Node000006" href="$d4/d1f/class_testimonial_dialog.html#aa4e46d387d1d8fd4793ede8c2deb0fd4" title="Constructs a TestimonialDialog." alt="" coords="258,37,390,78"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="487,39,391,52,391,46,487,34"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="487,83,391,69,391,64,487,77"/>
+<area shape="rect" id="Node000009" href="$d8/d62/class_testimonials_display_dialog.html#a4e2ab02e7129d2f299f13a6dc4538272" title="Constructs a TestimonialsDisplayDialog." alt="" coords="233,136,416,177"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="466,159,416,159,416,154,466,154"/>
+<area shape="rect" id="Node000011" href="$d9/dc6/class_main_window.html#a25d06b6f11a1eb7fa2239f01e853ae29" title=" " alt="" coords="5,238,185,264"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="449,225,233,242,185,246,185,240,232,236,448,220"/>
+<area shape="rect" id="Node000012" href="$d9/dc6/class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title="Default constructor." alt="" coords="235,276,414,301"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="510,234,370,277,369,272,509,229"/>
+<area shape="poly" id="edge13_Node000012_Node000011" title=" " alt="" coords="226,275,178,267,178,262,226,270"/>
+<area shape="poly" id="edge14_Node000012_Node000012" title=" " alt="" coords="364,263,351,257,324,254,300,256,287,261,284,266,290,273,286,277,279,267,283,257,299,251,324,249,352,252,367,258"/>
+</map>

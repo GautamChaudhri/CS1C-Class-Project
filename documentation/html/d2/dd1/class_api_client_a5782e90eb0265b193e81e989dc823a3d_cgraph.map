@@ -1,0 +1,9 @@
+<map id="ApiClient::GetUsers" name="ApiClient::GetUsers">
+<area shape="rect" id="Node000001" title="Makes a request to get data from the Get /users API Endpoint." alt="" coords="5,31,144,56"/>
+<area shape="rect" id="Node000002" href="$d2/dd1/class_api_client.html#a6b63bb2faeed34e082d84c1c624dda39" title="Analyzes the reply for GET requests." alt="" coords="192,31,376,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,41,176,41,176,46,144,46"/>
+<area shape="rect" id="Node000003" href="$d2/dd1/class_api_client.html#ae22339e302eb27bc51fbdfc1b7c1a4ec" title="Signal for a failed request sent to a Get endpoint." alt="" coords="428,5,588,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="376,30,412,26,413,32,377,36"/>
+<area shape="rect" id="Node000004" href="$d2/dd1/class_api_client.html#a940bf610f9fa472fc660e1ab60203de7" title="Signal for a successful request sent to a Get endpoint." alt="" coords="424,55,592,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="377,51,408,54,408,59,376,56"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="Parser::GetColor" name="Parser::GetColor">
+<area shape="rect" id="Node000001" title="Converts a QColor object to its string representation (e.g., &quot;red&quot;, &quot;blue&quot;)." alt="" coords="484,55,603,80"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#a4947ae95392cd961660d9202d4c12e5e" title="Appends QBrush properties (BrushColor, BrushStyle) to a JSON string." alt="" coords="235,5,408,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="472,53,435,45,387,34,388,29,437,40,473,48"/>
+<area shape="rect" id="Node000004" href="$dc/db7/class_parser.html#a8f8932bed758cd3e61de3669fdef1110" title="Appends common shape properties (ID, Type, Dimensions, Pen properties) to a JSON string." alt="" coords="207,55,436,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="468,70,436,70,436,65,468,65"/>
+<area shape="rect" id="Node000005" href="$dc/db7/class_parser.html#a3c8d6dcf6e07231eaedb036ebe90b51f" title="Appends all properties specific to Text objects to a JSON string." alt="" coords="239,104,404,130"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="473,87,437,95,388,106,387,101,435,90,472,82"/>
+<area shape="rect" id="Node000003" href="$dc/db7/class_parser.html#ac0dc74d228421b62ece9d9e93511509e" title="Converts a vector of Shape pointers into a JSON string representation." alt="" coords="5,55,159,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="241,37,148,57,147,51,240,32"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="191,70,159,70,159,65,191,65"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="240,103,147,84,148,78,241,98"/>
+</map>
