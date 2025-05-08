@@ -4,10 +4,24 @@
 
 {\ttfamily \#include $<$Shapes\+Manager.\+h$>$}
 
-Inheritance diagram for Shapes\+Manager\+:\begin{figure}[H]
+
+
+Inheritance diagram for Shapes\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{d3/dde/class_shapes_manager}
+\includegraphics[height=550pt]{d5/d73/class_shapes_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Shapes\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/dda/class_shapes_manager__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Signals}
@@ -84,6 +98,14 @@ This constructor initializes the \doxylink{class_shapes_manager}{Shapes\+Manager
 {\em parent} & -\/ any QObject to tie this instantiation to ensure automatic deletion \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_ab717143ddccb519cf74e28a27793112a_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_shapes_manager_a75eca9ea14d8a59c6ee105e49fc5ecbe}\index{ShapesManager@{ShapesManager}!````~ShapesManager@{\texorpdfstring{$\sim$}{\string~}ShapesManager}}
 \index{````~ShapesManager@{\texorpdfstring{$\sim$}{\string~}ShapesManager}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ShapesManager()}{\string~ShapesManager()}}
@@ -103,18 +125,42 @@ void Shapes\+Manager\+::add\+Shape (\begin{DoxyParamCaption}\item[{\mbox{\hyperl
 
 These functions are used to add, delete, and load shapes in the \doxylink{class_shapes_manager}{Shapes\+Manager}. 
 
-All of these functions emit the \doxylink{class_shapes_manager_a401502eb4c12357f6f5ae53953c3b3de}{shapes\+Changed()} signal to notify the frontend that the shapes have changed and need to be redrawn except for \doxylink{class_shapes_manager_a1b76d87eb372f56453320d1b0bf566ac}{save\+Shapes()}. \Hypertarget{class_shapes_manager_a3f497ccd5877aa974e3811df954f149b}\index{ShapesManager@{ShapesManager}!deleteAllShapes@{deleteAllShapes}}
+All of these functions emit the \doxylink{class_shapes_manager_a401502eb4c12357f6f5ae53953c3b3de}{shapes\+Changed()} signal to notify the frontend that the shapes have changed and need to be redrawn except for \doxylink{class_shapes_manager_a1b76d87eb372f56453320d1b0bf566ac}{save\+Shapes()}. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_ae851cda2501ba8af0f6f44d5361a5348_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_shapes_manager_a3f497ccd5877aa974e3811df954f149b}\index{ShapesManager@{ShapesManager}!deleteAllShapes@{deleteAllShapes}}
 \index{deleteAllShapes@{deleteAllShapes}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{deleteAllShapes()}{deleteAllShapes()}}
 {\footnotesize\ttfamily \label{class_shapes_manager_a3f497ccd5877aa974e3811df954f149b} 
 void Shapes\+Manager\+::delete\+All\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a3f497ccd5877aa974e3811df954f149b_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_shapes_manager_a00d9c085c697132f0ce4ad260c3b9147}\index{ShapesManager@{ShapesManager}!deleteShape@{deleteShape}}
 \index{deleteShape@{deleteShape}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{deleteShape()}{deleteShape()}}
 {\footnotesize\ttfamily \label{class_shapes_manager_a00d9c085c697132f0ce4ad260c3b9147} 
 void Shapes\+Manager\+::delete\+Shape (\begin{DoxyParamCaption}\item[{const int}]{tracker\+Id}{}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a00d9c085c697132f0ce4ad260c3b9147_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_shapes_manager_a77522233649cbb3430c5b0197d3886be}\index{ShapesManager@{ShapesManager}!getShapesRef@{getShapesRef}}
 \index{getShapesRef@{getShapesRef}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{getShapesRef()}{getShapesRef()}}
@@ -137,66 +183,202 @@ void Shapes\+Manager\+::load\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 {\footnotesize\ttfamily \label{class_shapes_manager_aeb0348ac6e97b3248dfc262bfd4eceaa} 
 void Shapes\+Manager\+::modify\+Shape (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_aeb0348ac6e97b3248dfc262bfd4eceaa_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_shapes_manager_a7343341db18a456c331b3a9f7664e414}\index{ShapesManager@{ShapesManager}!onBadDeleteResponse@{onBadDeleteResponse}}
 \index{onBadDeleteResponse@{onBadDeleteResponse}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{onBadDeleteResponse}{onBadDeleteResponse}}
 {\footnotesize\ttfamily \label{class_shapes_manager_a7343341db18a456c331b3a9f7664e414} 
 void Shapes\+Manager\+::on\+Bad\+Delete\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{error\+Msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a7343341db18a456c331b3a9f7664e414_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a7343341db18a456c331b3a9f7664e414_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_shapes_manager_ae61c2dac370eba6bcb9d941b8a24f57b}\index{ShapesManager@{ShapesManager}!onBadGetResponse@{onBadGetResponse}}
 \index{onBadGetResponse@{onBadGetResponse}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{onBadGetResponse}{onBadGetResponse}}
 {\footnotesize\ttfamily \label{class_shapes_manager_ae61c2dac370eba6bcb9d941b8a24f57b} 
 void Shapes\+Manager\+::on\+Bad\+Get\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{error\+Msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_ae61c2dac370eba6bcb9d941b8a24f57b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_ae61c2dac370eba6bcb9d941b8a24f57b_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_shapes_manager_a54d9f7249989e2ef04258fbfa75fce07}\index{ShapesManager@{ShapesManager}!onBadPostResponse@{onBadPostResponse}}
 \index{onBadPostResponse@{onBadPostResponse}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{onBadPostResponse}{onBadPostResponse}}
 {\footnotesize\ttfamily \label{class_shapes_manager_a54d9f7249989e2ef04258fbfa75fce07} 
 void Shapes\+Manager\+::on\+Bad\+Post\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{error\+Msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a54d9f7249989e2ef04258fbfa75fce07_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a54d9f7249989e2ef04258fbfa75fce07_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_shapes_manager_a5fccd5114bcd112aaf83b1a555df8aa2}\index{ShapesManager@{ShapesManager}!onGoodDeleteResponse@{onGoodDeleteResponse}}
 \index{onGoodDeleteResponse@{onGoodDeleteResponse}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{onGoodDeleteResponse}{onGoodDeleteResponse}}
 {\footnotesize\ttfamily \label{class_shapes_manager_a5fccd5114bcd112aaf83b1a555df8aa2} 
 void Shapes\+Manager\+::on\+Good\+Delete\+Response (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a5fccd5114bcd112aaf83b1a555df8aa2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a5fccd5114bcd112aaf83b1a555df8aa2_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_shapes_manager_a1f4218728de2c529424149d6a9b61ce3}\index{ShapesManager@{ShapesManager}!onGoodGetResponse@{onGoodGetResponse}}
 \index{onGoodGetResponse@{onGoodGetResponse}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{onGoodGetResponse}{onGoodGetResponse}}
 {\footnotesize\ttfamily \label{class_shapes_manager_a1f4218728de2c529424149d6a9b61ce3} 
 void Shapes\+Manager\+::on\+Good\+Get\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
-These slot functions receive signals from the \doxylink{class_api_client}{Api\+Client} class and hold the code on what to do next after one of these responses from the webservice. \Hypertarget{class_shapes_manager_abdb8e613c7e219d5eef0c6c54107bacc}\index{ShapesManager@{ShapesManager}!onGoodPostResponse@{onGoodPostResponse}}
+These slot functions receive signals from the \doxylink{class_api_client}{Api\+Client} class and hold the code on what to do next after one of these responses from the webservice. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a1f4218728de2c529424149d6a9b61ce3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a1f4218728de2c529424149d6a9b61ce3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_shapes_manager_abdb8e613c7e219d5eef0c6c54107bacc}\index{ShapesManager@{ShapesManager}!onGoodPostResponse@{onGoodPostResponse}}
 \index{onGoodPostResponse@{onGoodPostResponse}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{onGoodPostResponse}{onGoodPostResponse}}
 {\footnotesize\ttfamily \label{class_shapes_manager_abdb8e613c7e219d5eef0c6c54107bacc} 
 void Shapes\+Manager\+::on\+Good\+Post\+Response (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_abdb8e613c7e219d5eef0c6c54107bacc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_abdb8e613c7e219d5eef0c6c54107bacc_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_shapes_manager_a1b76d87eb372f56453320d1b0bf566ac}\index{ShapesManager@{ShapesManager}!saveShapes@{saveShapes}}
 \index{saveShapes@{saveShapes}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{saveShapes()}{saveShapes()}}
 {\footnotesize\ttfamily \label{class_shapes_manager_a1b76d87eb372f56453320d1b0bf566ac} 
 void Shapes\+Manager\+::save\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a1b76d87eb372f56453320d1b0bf566ac_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_shapes_manager_a401502eb4c12357f6f5ae53953c3b3de}\index{ShapesManager@{ShapesManager}!shapesChanged@{shapesChanged}}
 \index{shapesChanged@{shapesChanged}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{shapesChanged}{shapesChanged}}
 {\footnotesize\ttfamily \label{class_shapes_manager_a401502eb4c12357f6f5ae53953c3b3de} 
 void Shapes\+Manager\+::shapes\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-These signals are meant to connect to the Shapes window in the frontend. -\/\doxylink{class_shapes_manager_a401502eb4c12357f6f5ae53953c3b3de}{shapes\+Changed()}\+: signal for when the shapes vector is changed in any way so that the frontend knows to refresh the window and redraw the shapes -\/\doxylink{class_shapes_manager_a4d0a61ed21a16e9e7b428641549afbd2}{status\+Message()}\+: signal for slot functions below. It passes the message to the frontend so it can display a popup saying the shapes were saved successfully, or whatever the message is for the user. \Hypertarget{class_shapes_manager_aefe8d8daf30445ae70b4035831f857dc}\index{ShapesManager@{ShapesManager}!shapesNotChanged@{shapesNotChanged}}
+These signals are meant to connect to the Shapes window in the frontend. -\/\doxylink{class_shapes_manager_a401502eb4c12357f6f5ae53953c3b3de}{shapes\+Changed()}\+: signal for when the shapes vector is changed in any way so that the frontend knows to refresh the window and redraw the shapes -\/\doxylink{class_shapes_manager_a4d0a61ed21a16e9e7b428641549afbd2}{status\+Message()}\+: signal for slot functions below. It passes the message to the frontend so it can display a popup saying the shapes were saved successfully, or whatever the message is for the user. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a401502eb4c12357f6f5ae53953c3b3de_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_shapes_manager_aefe8d8daf30445ae70b4035831f857dc}\index{ShapesManager@{ShapesManager}!shapesNotChanged@{shapesNotChanged}}
 \index{shapesNotChanged@{shapesNotChanged}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{shapesNotChanged}{shapesNotChanged}}
 {\footnotesize\ttfamily \label{class_shapes_manager_aefe8d8daf30445ae70b4035831f857dc} 
 void Shapes\+Manager\+::shapes\+Not\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{messsage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_aefe8d8daf30445ae70b4035831f857dc_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_shapes_manager_a4d0a61ed21a16e9e7b428641549afbd2}\index{ShapesManager@{ShapesManager}!statusMessage@{statusMessage}}
 \index{statusMessage@{statusMessage}!ShapesManager@{ShapesManager}}
 \doxysubsubsection{\texorpdfstring{statusMessage}{statusMessage}}
 {\footnotesize\ttfamily \label{class_shapes_manager_a4d0a61ed21a16e9e7b428641549afbd2} 
 void Shapes\+Manager\+::status\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dde/class_shapes_manager_a4d0a61ed21a16e9e7b428641549afbd2_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Data Documentation}
@@ -222,5 +404,5 @@ void Shapes\+Manager\+::status\+Message (\begin{DoxyParamCaption}\item[{const QS
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/backend/\mbox{\hyperlink{_shapes_manager_8h}{Shapes\+Manager.\+h}}\item 
-src/backend/\mbox{\hyperlink{_shapes_manager_8cpp}{Shapes\+Manager.\+cpp}}\end{DoxyCompactItemize}
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/backend/\mbox{\hyperlink{_shapes_manager_8h}{Shapes\+Manager.\+h}}\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/backend/\mbox{\hyperlink{_shapes_manager_8cpp}{Shapes\+Manager.\+cpp}}\end{DoxyCompactItemize}

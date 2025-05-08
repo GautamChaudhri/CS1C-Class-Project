@@ -1,5 +1,5 @@
-\doxysection{src/webservice/webservice.cpp File Reference}
-\hypertarget{webservice_8cpp}{}\label{webservice_8cpp}\index{src/webservice/webservice.cpp@{src/webservice/webservice.cpp}}
+\doxysection{/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/webservice/webservice.cpp File Reference}
+\hypertarget{webservice_8cpp}{}\label{webservice_8cpp}\index{/Users/gautam/Local/Forge/Team-\/Alphawolves/2D-\/Graphics-\/Modeler/src/webservice/webservice.cpp@{/Users/gautam/Local/Forge/Team-\/Alphawolves/2D-\/Graphics-\/Modeler/src/webservice/webservice.cpp}}
 
 
 Implements the Crow web service for handling shapes, render area, user, and testimonial data.  
@@ -10,6 +10,14 @@ Implements the Crow web service for handling shapes, render area, user, and test
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$filesystem$>$}\newline
+Include dependency graph for webservice.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d63/webservice_8cpp__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -93,6 +101,14 @@ Opens the file at the specified path, loads its contents into a stringstream, an
 \begin{DoxyReturn}{Returns}
 crow\+::json\+::rvalue The parsed JSON data. 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{d5/d64/webservice_8cpp_af9466afe60ee1564414067c53dcc52ce_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{webservice_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{webservice.cpp@{webservice.cpp}!main@{main}}
 \index{main@{main}!webservice.cpp@{webservice.cpp}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
@@ -149,4 +165,11 @@ Accepts a POST with JSON body containing an array of testimonials or a single te
 
 Clears all testimonial data.
 
-Truncates the testimonials.\+json file, writing an empty JSON array. Returns 200 on success or 500 on failure.
+Truncates the testimonials.\+json file, writing an empty JSON array. Returns 200 on success or 500 on failure.Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{d5/d64/webservice_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}

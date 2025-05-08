@@ -2,66 +2,113 @@
 \hypertarget{class_render_area}{}\label{class_render_area}\index{RenderArea@{RenderArea}}
 
 
+The \doxylink{class_render_area}{Render\+Area} class provides a canvas for drawing 2D shapes.  
+
+
+
+
 {\ttfamily \#include $<$renderarea.\+h$>$}
 
-Inheritance diagram for Render\+Area\+:\begin{figure}[H]
+
+
+Inheritance diagram for Render\+Area\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{d9/ddf/class_render_area}
+\includegraphics[height=550pt]{dd/d3d/class_render_area__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Render\+Area\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d6/d27/class_render_area__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_render_area_a6fa5a406003dc132605f8bc07763e946}{Render\+Area}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
-\item 
-void \mbox{\hyperlink{class_render_area_af58a7ec752975a179d00b38438e0ad56}{set\+Render\+Shapes}} (const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_render_area_a8e9169655992507f4a10a7d07a465d6a}{render\+Shapes}})
-\item 
-const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_render_area_ac11f36dbcf91d5bd7829a2bbae5ae205}{get\+Shapes}} () const
+\begin{DoxyCompactList}\small\item\em \doxylink{class_render_area}{Render\+Area} Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Core Interaction and Display Management}\par
+{\em Handles user mouse input for selecting and manipulating shapes, manages shape selection state, and updates display coordinates. }\begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_render_area_a3cd0a45651ea634ff4e1f08350142b12}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event) override
-\item 
+\begin{DoxyCompactList}\small\item\em Handles mouse press events to detect clicks on shapes for selection. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_render_area_afc1cb0383844d8cba93282f0b0a440c6}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event) override
-\item 
+\begin{DoxyCompactList}\small\item\em Handles mouse move events to drag selected shapes if editing is allowed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_render_area_ab2f952d8f4b508eff3479337fca8763b}{mouse\+Double\+Click\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event) override
-\item 
+\begin{DoxyCompactList}\small\item\em Handles mouse double-\/click events, e.\+g., for expanding shape details. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_render_area_a84f2ea379248266648d22338e3904b45}{mouse\+Release\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event) override
-\item 
-void \mbox{\hyperlink{class_render_area_afed868717799e2db61ffc0850caf23a5}{set\+Shape\+Selected\+Index}} (int new\+Index)
-\item 
+\begin{DoxyCompactList}\small\item\em Handles mouse release events to finalize a shape move operation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_render_area_a8acb8eab4cf597b06c622da85a314e9b}{reset\+Selection}} ()
-\item 
-void \mbox{\hyperlink{class_render_area_acfbf1767eb7c30e382552297101f34de}{set\+Edit\+Privileges}} (bool edit)
-\item 
+\begin{DoxyCompactList}\small\item\em Resets the selection state of all shapes, clearing the current selection. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_render_area_a7fd734dcf63055b10a414b143a45a226}{update\+Shape\+Display\+Coords}} (\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}item, const QPoint \&position) const
+\begin{DoxyCompactList}\small\item\em Updates display coordinates of a shape\textquotesingle{}s properties, typically in an associated view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Accessor Functions}\par
+{\em Getters for \doxylink{class_render_area}{Render\+Area} properties and state. }\begin{DoxyCompactItemize}
 \item 
+const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_render_area_ac11f36dbcf91d5bd7829a2bbae5ae205}{get\+Shapes}} () const
+\begin{DoxyCompactList}\small\item\em Returns a const reference to the vector of shapes being rendered. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_render_area_ab0ebe4428b3099a69bcfcde7fa85e3b1}{get\+Shape\+Selected}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the tracker ID of the currently selected shape, or -\/1 if no shape is selected. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_render_area_a728f9c553ea51ab4f21a994ea1f71199}{get\+Shape\+Selected\+Index}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the index of the currently selected shape in the {\ttfamily render\+Shapes} vector, or -\/1 if none. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Mutator Functions}\par
+{\em Setters for \doxylink{class_render_area}{Render\+Area} properties and state. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_render_area_af58a7ec752975a179d00b38438e0ad56}{set\+Render\+Shapes}} (const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_render_area_a8e9169655992507f4a10a7d07a465d6a}{render\+Shapes}})
+\begin{DoxyCompactList}\small\item\em Sets the vector of shapes to be rendered. The \doxylink{class_render_area}{Render\+Area} does not own these shapes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_afed868717799e2db61ffc0850caf23a5}{set\+Shape\+Selected\+Index}} (int new\+Index)
+\begin{DoxyCompactList}\small\item\em Sets the index of the currently selected shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_acfbf1767eb7c30e382552297101f34de}{set\+Edit\+Privileges}} (bool edit)
+\begin{DoxyCompactList}\small\item\em Sets whether shapes can be edited (e.\+g., moved) on the canvas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_render_area_ae9b5a1573f3b06590c717c7598ffaae4}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Handles paint events to draw all shapes onto the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
+\begin{Indent}\textbf{ Private Members}\par
+{\em Internal data members for managing state and rendered content. }\begin{DoxyCompactItemize}
 \item 
 const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_render_area_a8e9169655992507f4a10a7d07a465d6a}{render\+Shapes}}
-\item 
+\begin{DoxyCompactList}\small\item\em Pointer to the external vector holding shapes to be rendered. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_render_area_a057fc6d3f8359a5f2e193308d550d2ff}{shape\+Selected\+Index}}
-\item 
+\begin{DoxyCompactList}\small\item\em Index of the currently selected shape in {\ttfamily render\+Shapes}. -\/1 if no shape is selected. This ensures only one shape can be selected at a time. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_render_area_a3ebef6f39ab46c334145616c1e481ac3}{allow\+Editing}} = false
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Flag indicating whether shapes can be moved/edited. Defaults to false. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
 
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_render_area}{Render\+Area} class provides a canvas for drawing 2D shapes. 
+
+This widget handles mouse events for selecting and moving shapes, and it uses QPainter to render shapes provided to it. It also manages the selection state of shapes and editing privileges. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_render_area_a6fa5a406003dc132605f8bc07763e946}\index{RenderArea@{RenderArea}!RenderArea@{RenderArea}}
 \index{RenderArea@{RenderArea}!RenderArea@{RenderArea}}
 \doxysubsubsection{\texorpdfstring{RenderArea()}{RenderArea()}}
 {\footnotesize\ttfamily \label{class_render_area_a6fa5a406003dc132605f8bc07763e946} 
-Render\+Area\+::\+Render\+Area (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+Render\+Area\+::\+Render\+Area (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
+
+
+\doxylink{class_render_area}{Render\+Area} Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent QWidget, if any. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -71,11 +118,19 @@ Render\+Area\+::\+Render\+Area (\begin{DoxyParamCaption}\item[{QWidget \texorpdf
 {\footnotesize\ttfamily \label{class_render_area_ac11f36dbcf91d5bd7829a2bbae5ae205} 
 const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \& Render\+Area\+::get\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
+
+
+Returns a const reference to the vector of shapes being rendered. 
+
 \Hypertarget{class_render_area_ab0ebe4428b3099a69bcfcde7fa85e3b1}\index{RenderArea@{RenderArea}!getShapeSelected@{getShapeSelected}}
 \index{getShapeSelected@{getShapeSelected}!RenderArea@{RenderArea}}
 \doxysubsubsection{\texorpdfstring{getShapeSelected()}{getShapeSelected()}}
 {\footnotesize\ttfamily \label{class_render_area_ab0ebe4428b3099a69bcfcde7fa85e3b1} 
 int Render\+Area\+::get\+Shape\+Selected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the tracker ID of the currently selected shape, or -\/1 if no shape is selected. 
 
 \Hypertarget{class_render_area_a728f9c553ea51ab4f21a994ea1f71199}\index{RenderArea@{RenderArea}!getShapeSelectedIndex@{getShapeSelectedIndex}}
 \index{getShapeSelectedIndex@{getShapeSelectedIndex}!RenderArea@{RenderArea}}
@@ -83,11 +138,19 @@ int Render\+Area\+::get\+Shape\+Selected (\begin{DoxyParamCaption}{}{}\end{DoxyP
 {\footnotesize\ttfamily \label{class_render_area_a728f9c553ea51ab4f21a994ea1f71199} 
 int Render\+Area\+::get\+Shape\+Selected\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
+
+
+Returns the index of the currently selected shape in the {\ttfamily render\+Shapes} vector, or -\/1 if none. 
+
 \Hypertarget{class_render_area_ab2f952d8f4b508eff3479337fca8763b}\index{RenderArea@{RenderArea}!mouseDoubleClickEvent@{mouseDoubleClickEvent}}
 \index{mouseDoubleClickEvent@{mouseDoubleClickEvent}!RenderArea@{RenderArea}}
 \doxysubsubsection{\texorpdfstring{mouseDoubleClickEvent()}{mouseDoubleClickEvent()}}
 {\footnotesize\ttfamily \label{class_render_area_ab2f952d8f4b508eff3479337fca8763b} 
 void Render\+Area\+::mouse\+Double\+Click\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Handles mouse double-\/click events, e.\+g., for expanding shape details. 
 
 \Hypertarget{class_render_area_afc1cb0383844d8cba93282f0b0a440c6}\index{RenderArea@{RenderArea}!mouseMoveEvent@{mouseMoveEvent}}
 \index{mouseMoveEvent@{mouseMoveEvent}!RenderArea@{RenderArea}}
@@ -95,11 +158,27 @@ void Render\+Area\+::mouse\+Double\+Click\+Event (\begin{DoxyParamCaption}\item[
 {\footnotesize\ttfamily \label{class_render_area_afc1cb0383844d8cba93282f0b0a440c6} 
 void Render\+Area\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
+
+
+Handles mouse move events to drag selected shapes if editing is allowed. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/ddf/class_render_area_afc1cb0383844d8cba93282f0b0a440c6_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_render_area_a3cd0a45651ea634ff4e1f08350142b12}\index{RenderArea@{RenderArea}!mousePressEvent@{mousePressEvent}}
 \index{mousePressEvent@{mousePressEvent}!RenderArea@{RenderArea}}
 \doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
 {\footnotesize\ttfamily \label{class_render_area_a3cd0a45651ea634ff4e1f08350142b12} 
 void Render\+Area\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Handles mouse press events to detect clicks on shapes for selection. 
 
 \Hypertarget{class_render_area_a84f2ea379248266648d22338e3904b45}\index{RenderArea@{RenderArea}!mouseReleaseEvent@{mouseReleaseEvent}}
 \index{mouseReleaseEvent@{mouseReleaseEvent}!RenderArea@{RenderArea}}
@@ -107,17 +186,42 @@ void Render\+Area\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\
 {\footnotesize\ttfamily \label{class_render_area_a84f2ea379248266648d22338e3904b45} 
 void Render\+Area\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
 
+
+
+Handles mouse release events to finalize a shape move operation. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/ddf/class_render_area_a84f2ea379248266648d22338e3904b45_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_render_area_ae9b5a1573f3b06590c717c7598ffaae4}\index{RenderArea@{RenderArea}!paintEvent@{paintEvent}}
 \index{paintEvent@{paintEvent}!RenderArea@{RenderArea}}
 \doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
 {\footnotesize\ttfamily \label{class_render_area_ae9b5a1573f3b06590c717c7598ffaae4} 
 void Render\+Area\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
 
+
+
+Handles paint events to draw all shapes onto the widget. 
+
+Iterates through the {\ttfamily render\+Shapes} vector and calls the {\ttfamily Draw} method for each shape. 
+\begin{DoxyParams}{Parameters}
+{\em event} & The QPaint\+Event object. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_render_area_a8acb8eab4cf597b06c622da85a314e9b}\index{RenderArea@{RenderArea}!resetSelection@{resetSelection}}
 \index{resetSelection@{resetSelection}!RenderArea@{RenderArea}}
 \doxysubsubsection{\texorpdfstring{resetSelection()}{resetSelection()}}
 {\footnotesize\ttfamily \label{class_render_area_a8acb8eab4cf597b06c622da85a314e9b} 
 void Render\+Area\+::reset\+Selection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Resets the selection state of all shapes, clearing the current selection. 
 
 \Hypertarget{class_render_area_acfbf1767eb7c30e382552297101f34de}\index{RenderArea@{RenderArea}!setEditPrivileges@{setEditPrivileges}}
 \index{setEditPrivileges@{setEditPrivileges}!RenderArea@{RenderArea}}
@@ -125,17 +229,29 @@ void Render\+Area\+::reset\+Selection (\begin{DoxyParamCaption}{}{}\end{DoxyPara
 {\footnotesize\ttfamily \label{class_render_area_acfbf1767eb7c30e382552297101f34de} 
 void Render\+Area\+::set\+Edit\+Privileges (\begin{DoxyParamCaption}\item[{bool}]{edit}{}\end{DoxyParamCaption})}
 
+
+
+Sets whether shapes can be edited (e.\+g., moved) on the canvas. 
+
 \Hypertarget{class_render_area_af58a7ec752975a179d00b38438e0ad56}\index{RenderArea@{RenderArea}!setRenderShapes@{setRenderShapes}}
 \index{setRenderShapes@{setRenderShapes}!RenderArea@{RenderArea}}
 \doxysubsubsection{\texorpdfstring{setRenderShapes()}{setRenderShapes()}}
 {\footnotesize\ttfamily \label{class_render_area_af58a7ec752975a179d00b38438e0ad56} 
 void Render\+Area\+::set\+Render\+Shapes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}}]{render\+Shapes}{}\end{DoxyParamCaption})}
 
+
+
+Sets the vector of shapes to be rendered. The \doxylink{class_render_area}{Render\+Area} does not own these shapes. 
+
 \Hypertarget{class_render_area_afed868717799e2db61ffc0850caf23a5}\index{RenderArea@{RenderArea}!setShapeSelectedIndex@{setShapeSelectedIndex}}
 \index{setShapeSelectedIndex@{setShapeSelectedIndex}!RenderArea@{RenderArea}}
 \doxysubsubsection{\texorpdfstring{setShapeSelectedIndex()}{setShapeSelectedIndex()}}
 {\footnotesize\ttfamily \label{class_render_area_afed868717799e2db61ffc0850caf23a5} 
 void Render\+Area\+::set\+Shape\+Selected\+Index (\begin{DoxyParamCaption}\item[{int}]{new\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Sets the index of the currently selected shape. 
 
 \Hypertarget{class_render_area_a7fd734dcf63055b10a414b143a45a226}\index{RenderArea@{RenderArea}!updateShapeDisplayCoords@{updateShapeDisplayCoords}}
 \index{updateShapeDisplayCoords@{updateShapeDisplayCoords}!RenderArea@{RenderArea}}
@@ -145,6 +261,26 @@ void Render\+Area\+::update\+Shape\+Display\+Coords (\begin{DoxyParamCaption}\it
 
 
 
+Updates display coordinates of a shape\textquotesingle{}s properties, typically in an associated view. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/ddf/class_render_area_a7fd734dcf63055b10a414b143a45a226_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/ddf/class_render_area_a7fd734dcf63055b10a414b143a45a226_icgraph}
+\end{center}
+\end{figure}
+
+
 \doxysubsection{Member Data Documentation}
 \Hypertarget{class_render_area_a3ebef6f39ab46c334145616c1e481ac3}\index{RenderArea@{RenderArea}!allowEditing@{allowEditing}}
 \index{allowEditing@{allowEditing}!RenderArea@{RenderArea}}
@@ -152,11 +288,19 @@ void Render\+Area\+::update\+Shape\+Display\+Coords (\begin{DoxyParamCaption}\it
 {\footnotesize\ttfamily \label{class_render_area_a3ebef6f39ab46c334145616c1e481ac3} 
 bool Render\+Area\+::allow\+Editing = false\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Flag indicating whether shapes can be moved/edited. Defaults to false. 
+
 \Hypertarget{class_render_area_a8e9169655992507f4a10a7d07a465d6a}\index{RenderArea@{RenderArea}!renderShapes@{renderShapes}}
 \index{renderShapes@{renderShapes}!RenderArea@{RenderArea}}
 \doxysubsubsection{\texorpdfstring{renderShapes}{renderShapes}}
 {\footnotesize\ttfamily \label{class_render_area_a8e9169655992507f4a10a7d07a465d6a} 
 const \mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$\mbox{\hyperlink{class_shape}{Shape}}\texorpdfstring{$\ast$}{*}$>$\texorpdfstring{$\ast$}{*} Render\+Area\+::render\+Shapes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the external vector holding shapes to be rendered. 
 
 \Hypertarget{class_render_area_a057fc6d3f8359a5f2e193308d550d2ff}\index{RenderArea@{RenderArea}!shapeSelectedIndex@{shapeSelectedIndex}}
 \index{shapeSelectedIndex@{shapeSelectedIndex}!RenderArea@{RenderArea}}
@@ -166,7 +310,11 @@ int Render\+Area\+::shape\+Selected\+Index\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
+Index of the currently selected shape in {\ttfamily render\+Shapes}. -\/1 if no shape is selected. This ensures only one shape can be selected at a time. 
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/frontend/\mbox{\hyperlink{renderarea_8h}{renderarea.\+h}}\item 
-src/frontend/\mbox{\hyperlink{renderarea_8cpp}{renderarea.\+cpp}}\end{DoxyCompactItemize}
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/frontend/\mbox{\hyperlink{renderarea_8h}{renderarea.\+h}}\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/frontend/\mbox{\hyperlink{renderarea_8cpp}{renderarea.\+cpp}}\end{DoxyCompactItemize}

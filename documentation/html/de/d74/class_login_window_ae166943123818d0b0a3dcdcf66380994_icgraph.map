@@ -1,0 +1,11 @@
+<map id="LoginWindow::signupRequested" name="LoginWindow::signupRequested">
+<area shape="rect" id="Node000001" title="Emitted when the user attempts to sign up with the provided credentials. (Admin flag is currently har..." alt="" coords="480,31,688,56"/>
+<area shape="rect" id="Node000002" href="$de/d74/class_login_window.html#a70f65bf3f12674754e167540444b7009" title="Emits the signupRequested signal with current input from signup fields." alt="" coords="240,5,431,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="464,34,431,31,432,25,465,29"/>
+<area shape="rect" id="Node000004" href="$d9/dc6/class_main_window.html#a44b1462463b23490276f54034ab12325" title="Slot triggered when the login button is clicked, typically opening a login dialog." alt="" coords="239,55,432,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="465,58,433,61,432,55,464,52"/>
+<area shape="rect" id="Node000003" href="$de/d74/class_login_window.html#aa4c04d26b299de00156bbf3c32b2a082" title="Constructor that sets up the UI components for login and signup." alt="" coords="5,5,191,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,21,191,21,191,16,224,16"/>
+<area shape="rect" id="Node000005" href="$d9/dc6/class_main_window.html#a25d06b6f11a1eb7fa2239f01e853ae29" title=" " alt="" coords="8,55,188,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="223,70,188,70,188,65,223,65"/>
+</map>

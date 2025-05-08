@@ -1,0 +1,22 @@
+<map id="/Users/gautam/Local/Forge/Team&#45;Alphawolves/2D&#45;Graphics&#45;Modeler/src/frontend/TestimonialDialog.h" name="/Users/gautam/Local/Forge/Team&#45;Alphawolves/2D&#45;Graphics&#45;Modeler/src/frontend/TestimonialDialog.h">
+<area shape="rect" id="Node000001" title="Defines the TestimonialDialog class for submitting user testimonials." alt="" coords="259,5,449,76"/>
+<area shape="rect" id="Node000002" href="$da/d08/_testimonial_dialog_8cpp.html" title=" " alt="" coords="5,124,210,195"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="268,85,182,126,180,121,266,81"/>
+<area shape="rect" id="Node000003" href="$da/d83/_testimonials_display_dialog_8h.html" title="Defines the TestimonialsDisplayDialog class for showing customer testimonials." alt="" coords="234,124,475,195"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="357,91,357,124,352,124,352,91"/>
+<area shape="rect" id="Node000005" href="$d9/d53/mainwindow_8h.html" title=" " alt="" coords="427,243,599,313"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="449,83,471,101,490,123,504,152,513,183,518,242,512,242,508,184,499,154,485,125,467,105,446,87"/>
+<area shape="rect" id="Node000004" href="$d6/db1/_testimonials_display_dialog_8cpp.html" title=" " alt="" coords="148,243,403,313"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="325,209,301,244,297,241,320,206"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="415,202,467,240,464,244,412,206"/>
+<area shape="rect" id="Node000006" href="$dc/dbb/_app_driver_8h.html" title=" " alt="" coords="328,361,500,432"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="476,327,445,363,441,359,472,323"/>
+<area shape="rect" id="Node000010" href="$d8/dd9/mainwindow_8cpp.html" title=" " alt="" coords="524,361,696,432"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="553,323,583,359,579,363,549,327"/>
+<area shape="rect" id="Node000007" href="$dc/df3/_app_driver_8cpp.html" title=" " alt="" coords="132,480,304,551"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="345,442,278,482,275,477,342,438"/>
+<area shape="rect" id="Node000008" href="$d8/d80/src_2backend_2main_8cpp.html" title=" " alt="" coords="328,480,500,551"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="417,447,417,480,412,480,412,447"/>
+<area shape="rect" id="Node000009" href="$d2/d21/src_2frontend_2main_8cpp.html" title="Main entry point for the 2D Graphics Modeler application." alt="" coords="524,480,696,551"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="486,438,553,477,550,482,484,442"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="MainWindow::showTestimonialsDisplay" name="MainWindow::showTestimonialsDisplay">
+<area shape="rect" id="Node000001" title="Displays a dialog showing existing testimonials." alt="" coords="717,5,926,46"/>
+<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#a25d06b6f11a1eb7fa2239f01e853ae29" title=" " alt="" coords="5,38,185,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="702,25,484,24,358,27,233,35,185,40,184,35,232,30,358,22,483,19,702,19"/>
+<area shape="rect" id="Node000003" href="$d9/dc6/class_main_window.html#aa2910dbb80e3e72ef731d27d70100d8e" title="Sets up connections and UI elements for the testimonial feature." alt="" coords="460,38,669,64"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="702,40,670,43,669,38,701,35"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="444,54,185,54,185,48,444,48"/>
+<area shape="rect" id="Node000004" href="$d9/dc6/class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title="Default constructor." alt="" coords="233,113,412,138"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="507,71,368,115,366,110,505,66"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="266,110,136,67,138,62,268,105"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="362,100,349,94,322,91,298,94,285,98,282,104,289,111,285,114,277,104,282,94,297,88,322,86,350,89,364,96"/>
+</map>

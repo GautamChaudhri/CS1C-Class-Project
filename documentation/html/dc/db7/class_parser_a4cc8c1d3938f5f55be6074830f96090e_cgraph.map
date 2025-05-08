@@ -1,0 +1,7 @@
+<map id="Parser::GetPenCapStyle" name="Parser::GetPenCapStyle">
+<area shape="rect" id="Node000001" title="Gets the pen cap style of a shape as a string (e.g., &quot;FlatCap&quot;, &quot;RoundCap&quot;)." alt="" coords="5,31,171,56"/>
+<area shape="rect" id="Node000002" href="$d7/da7/class_shape.html#a1eaba6ddbc4404e64fc6910fa9a9fa11" title=" " alt="" coords="219,5,380,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,31,203,27,203,32,172,36"/>
+<area shape="rect" id="Node000003" href="$d7/da7/class_shape.html#a4b502262ae5a22122456b9624d5ccb3d" title="Accessor Functions &#45; Returns the data named after them." alt="" coords="233,55,366,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,50,218,56,218,61,171,56"/>
+</map>

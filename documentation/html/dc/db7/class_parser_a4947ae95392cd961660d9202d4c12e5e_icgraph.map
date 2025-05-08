@@ -1,0 +1,5 @@
+<map id="Parser::AppendBrushData" name="Parser::AppendBrushData">
+<area shape="rect" id="Node000001" title="Appends QBrush properties (BrushColor, BrushStyle) to a JSON string." alt="" coords="207,5,380,31"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#ac0dc74d228421b62ece9d9e93511509e" title="Converts a vector of Shape pointers into a JSON string representation." alt="" coords="5,5,159,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,21,159,21,159,16,191,16"/>
+</map>

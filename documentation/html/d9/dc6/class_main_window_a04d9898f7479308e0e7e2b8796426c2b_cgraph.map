@@ -1,0 +1,76 @@
+<map id="MainWindow::onUserAuthentication" name="MainWindow::onUserAuthentication">
+<area shape="rect" id="Node000001" title="Slot triggered upon successful user authentication. Updates UI with user info." alt="" coords="5,870,235,896"/>
+<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#a8cdec14167c6164f6efa118d09e501f5" title="Emitted when a login attempt is successful." alt="" coords="283,841,465,866"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,867,267,863,267,869,235,872"/>
+<area shape="rect" id="Node000003" href="$d9/dc6/class_main_window.html#a5ff173340d6b138bee993d26454d2aaa" title="Populates the tree widget with details of the current shapes and sets up editing controls." alt="" coords="301,891,447,931"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,893,285,899,285,904,235,898"/>
+<area shape="rect" id="Node000004" href="$d9/dc6/class_main_window.html#a405427dd9586218cba7d02d495bb88cc" title="Creates and configures a QComboBox for selecting text alignment." alt="" coords="532,5,730,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="446,893,463,877,480,846,491,807,498,761,500,709,496,593,485,468,474,343,470,227,473,175,480,129,492,89,511,57,517,50,521,54,515,61,497,91,485,130,478,175,475,227,479,342,490,467,501,593,505,709,503,762,496,808,485,848,467,881,449,897"/>
+<area shape="rect" id="Node000005" href="$d9/dc6/class_main_window.html#a77d4dace8cb3dab4130649f4dd61f90e" title="Creates and configures a QComboBox for selecting brush styles." alt="" coords="529,71,733,111"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="446,892,463,877,479,849,489,813,495,770,498,723,494,615,484,500,475,384,472,277,475,229,482,187,494,150,511,121,515,117,519,120,515,125,498,153,487,188,480,230,478,277,480,384,490,499,499,615,503,723,501,771,494,814,484,851,467,881,449,896"/>
+<area shape="rect" id="Node000006" href="$d9/dc6/class_main_window.html#a13cf8174967b39a40231f9a98dd21565" title="Creates and configures a QComboBox for selecting colors." alt="" coords="513,136,749,161"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="446,892,463,877,478,851,487,817,493,777,495,732,492,632,483,523,475,415,473,315,476,270,483,231,494,197,511,171,512,170,516,173,515,174,499,200,488,232,481,271,478,315,480,415,488,523,497,631,501,732,498,778,493,818,483,853,467,881,449,896"/>
+<area shape="rect" id="Node000007" href="$d9/dc6/class_main_window.html#a3785b3b7329dcdaf51f45312abe7dd6a" title="Creates and configures a QComboBox for selecting font families." alt="" coords="516,185,747,210"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="446,892,463,877,477,853,486,821,494,743,491,650,484,549,476,449,475,356,478,314,484,277,495,246,511,221,513,219,517,222,515,225,500,248,490,279,483,315,480,356,482,448,489,549,496,649,499,743,491,822,482,855,467,881,449,896"/>
+<area shape="rect" id="Node000008" href="$d9/dc6/class_main_window.html#a59688ddfdfc0f919ff7058dfcda42fa1" title="Creates and configures a QComboBox for selecting font styles (normal, italic, oblique)." alt="" coords="533,235,729,275"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="446,892,463,877,475,855,484,827,492,757,491,673,485,583,480,493,479,409,488,338,497,309,511,287,518,279,522,283,515,290,502,312,493,339,484,409,485,492,490,583,496,673,497,757,489,828,480,857,467,881,449,896"/>
+<area shape="rect" id="Node000009" href="$d9/dc6/class_main_window.html#aca7d4f5f2149d757046f5d7cd8d5f8f7" title="Creates and configures a QComboBox for selecting font weights." alt="" coords="528,300,734,341"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="446,892,463,877,474,858,482,833,490,770,489,696,485,616,481,535,481,461,490,398,499,372,511,352,514,349,518,352,515,355,503,375,495,399,487,461,487,535,491,615,495,696,495,771,487,834,479,860,467,881,449,896"/>
+<area shape="rect" id="Node000010" href="$d9/dc6/class_main_window.html#ad2ca8de275eb8d22001fc8ae43a5b263" title="Creates and configures a QComboBox for selecting pen cap styles." alt="" coords="538,365,725,406"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="446,892,463,877,483,848,496,818,503,790,505,761,499,704,484,648,471,592,465,535,468,506,476,476,490,447,511,417,523,406,526,410,515,421,494,450,481,478,473,507,470,535,476,591,490,647,504,703,510,761,508,790,501,820,487,850,467,881,449,896"/>
+<area shape="rect" id="Node000011" href="$d9/dc6/class_main_window.html#ae585cf395690d3bf28b9ff94f8506a03" title="Creates and configures a QComboBox for selecting pen join styles." alt="" coords="538,431,725,471"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="446,892,463,877,480,852,492,827,498,802,500,778,496,729,485,681,474,632,470,583,473,558,480,533,492,508,511,483,523,472,526,476,515,486,497,511,485,535,478,559,475,583,479,631,490,680,501,728,506,778,503,803,497,829,485,855,467,881,449,896"/>
+<area shape="rect" id="Node000012" href="$d9/dc6/class_main_window.html#a55eed5bdf9b2ec38f0d86c661acddcb5" title="Creates and configures a QComboBox for selecting pen styles." alt="" coords="534,496,728,537"/>
+<area shape="poly" id="edge11_Node000003_Node000012" title=" " alt="" coords="446,892,463,877,478,856,487,836,496,795,493,754,485,714,477,673,475,632,484,590,495,569,511,548,520,540,523,543,515,551,500,572,489,592,480,632,482,672,490,713,498,754,501,795,493,837,482,859,467,881,449,896"/>
+<area shape="rect" id="Node000013" href="$d9/dc6/class_main_window.html#a78611ff63653443ba2244f2f94ad67b2" title="Creates and configures a QSpinBox for editing pen width." alt="" coords="532,561,730,602"/>
+<area shape="poly" id="edge12_Node000003_Node000013" title=" " alt="" coords="446,891,463,877,484,844,491,811,490,778,485,746,480,713,480,679,488,646,511,612,518,605,521,609,515,615,493,648,485,680,485,712,490,745,496,778,496,812,488,846,467,881,449,896"/>
+<area shape="rect" id="Node000014" href="$d7/da7/class_shape.html#a8b5e05c84e401dddad339a15fa7d8ab1" title=" " alt="" coords="556,626,706,652"/>
+<area shape="poly" id="edge13_Node000003_Node000014" title=" " alt="" coords="446,891,463,877,480,850,487,824,488,797,484,770,482,742,482,715,491,688,511,661,540,643,543,648,515,665,496,690,488,716,487,742,490,769,493,796,493,824,485,852,467,881,449,895"/>
+<area shape="rect" id="Node000015" href="$d7/da7/class_shape.html#a32f4199b1d1c9283c88e4199e787be2e" title=" " alt="" coords="556,676,707,701"/>
+<area shape="poly" id="edge14_Node000003_Node000015" title=" " alt="" coords="446,891,463,877,478,857,484,836,485,794,486,752,495,731,511,710,539,694,542,698,515,714,499,734,492,753,490,794,489,837,482,859,467,881,449,895"/>
+<area shape="rect" id="Node000016" href="$d7/da7/class_shape.html#af9f3e91f66f410f59065a28bb8021d4d" title=" " alt="" coords="544,725,718,750"/>
+<area shape="poly" id="edge15_Node000003_Node000016" title=" " alt="" coords="446,889,463,877,475,863,481,849,485,819,490,789,498,774,511,760,529,749,531,753,515,764,502,777,495,791,491,820,486,850,479,866,467,881,449,894"/>
+<area shape="rect" id="Node000017" href="$d7/da7/class_shape.html#a32e7b26329177063e40671687a0c62be" title=" " alt="" coords="557,774,705,800"/>
+<area shape="poly" id="edge16_Node000003_Node000017" title=" " alt="" coords="446,888,463,877,478,860,486,843,494,825,511,809,541,795,543,800,515,813,499,829,491,845,483,863,467,881,448,892"/>
+<area shape="rect" id="Node000018" href="$d7/da7/class_shape.html#a4718fe1b6fc5d30e83a8761175b77344" title=" " alt="" coords="562,824,700,849"/>
+<area shape="poly" id="edge17_Node000003_Node000018" title=" " alt="" coords="434,888,464,877,512,858,546,849,548,854,514,863,466,881,436,893"/>
+<area shape="rect" id="Node000019" href="$d7/da7/class_shape.html#a8e5d4c7be5890c73cab44af6005573d4" title=" " alt="" coords="558,873,705,898"/>
+<area shape="poly" id="edge18_Node000003_Node000019" title=" " alt="" coords="447,901,541,892,542,897,448,906"/>
+<area shape="rect" id="Node000020" href="$da/d0e/class_text.html#ace6ab02148fe23efffcd3f7c3dde9183" title=" " alt="" coords="582,922,680,948"/>
+<area shape="poly" id="edge19_Node000003_Node000020" title=" " alt="" coords="448,915,567,926,566,932,447,920"/>
+<area shape="rect" id="Node000021" href="$da/d0e/class_text.html#a0a3c00384e73eed7af1d20cffca51b18" title=" " alt="" coords="567,972,695,997"/>
+<area shape="poly" id="edge20_Node000003_Node000021" title=" " alt="" coords="429,929,514,958,552,967,551,972,512,963,427,935"/>
+<area shape="rect" id="Node000022" href="$da/d0e/class_text.html#a4b4b411734e3f6ceace9e73d293e2f64" title=" " alt="" coords="562,1021,700,1046"/>
+<area shape="poly" id="edge21_Node000003_Node000022" title=" " alt="" coords="399,930,450,970,481,990,514,1007,548,1019,546,1024,512,1012,478,995,447,974,396,934"/>
+<area shape="rect" id="Node000023" href="$d7/da7/class_shape.html#a3cca235345ab6f173c4e52a8598ee6b1" title=" " alt="" coords="557,1070,705,1096"/>
+<area shape="poly" id="edge22_Node000003_Node000023" title=" " alt="" coords="390,930,439,994,474,1028,514,1057,543,1069,541,1074,512,1061,471,1032,435,997,386,933"/>
+<area shape="rect" id="Node000024" href="$d7/da7/class_shape.html#a1eaba6ddbc4404e64fc6910fa9a9fa11" title=" " alt="" coords="550,1120,712,1145"/>
+<area shape="poly" id="edge23_Node000003_Node000024" title=" " alt="" coords="386,931,404,969,431,1017,468,1066,490,1088,514,1106,537,1117,534,1122,512,1111,487,1092,464,1069,427,1020,399,971,381,933"/>
+<area shape="rect" id="Node000025" href="$d7/da7/class_shape.html#a4cbfcdf734ed9633dfb4dad1dab1cb6f" title=" " alt="" coords="562,1169,700,1194"/>
+<area shape="poly" id="edge24_Node000003_Node000025" title=" " alt="" coords="383,931,398,978,424,1040,463,1103,487,1131,514,1155,548,1171,546,1176,512,1160,483,1135,458,1106,419,1042,393,980,378,933"/>
+<area shape="rect" id="Node000026" href="$d7/da7/class_shape.html#a633352978d8776c142b848b8d682587a" title=" " alt="" coords="823,1245,963,1270"/>
+<area shape="poly" id="edge25_Node000003_Node000026" title=" " alt="" coords="381,931,392,988,416,1063,433,1103,455,1141,482,1176,515,1205,536,1216,565,1226,641,1240,727,1248,808,1253,807,1258,727,1254,640,1245,564,1231,534,1221,511,1209,478,1179,451,1144,429,1105,411,1065,387,989,375,932"/>
+<area shape="rect" id="Node000027" href="$d7/da7/class_shape.html#a581611275dae291b4d82927dcd6114b7" title=" " alt="" coords="811,1308,975,1333"/>
+<area shape="poly" id="edge26_Node000003_Node000027" title=" " alt="" coords="378,931,382,1006,388,1056,399,1110,416,1165,441,1219,473,1267,515,1306,551,1328,592,1342,634,1350,677,1353,761,1348,832,1335,832,1340,762,1353,677,1359,633,1356,590,1347,549,1333,511,1310,469,1270,436,1221,411,1167,394,1111,383,1057,376,1006,372,932"/>
+<area shape="rect" id="Node000028" href="$d7/da7/class_shape.html#a7cf1547b5328248b8a4c066b4c714efa" title=" " alt="" coords="550,1422,712,1448"/>
+<area shape="poly" id="edge27_Node000003_Node000028" title=" " alt="" coords="377,932,379,1018,384,1078,394,1144,411,1213,436,1281,470,1345,515,1401,538,1417,535,1421,511,1405,465,1348,431,1284,406,1215,389,1145,379,1078,373,1018,372,932"/>
+<area shape="rect" id="Node000029" href="$d7/da7/class_shape.html#ad336858f193d765d831deb9ce29246aa" title=" " alt="" coords="562,1472,700,1497"/>
+<area shape="poly" id="edge28_Node000003_Node000029" title=" " alt="" coords="380,931,394,1041,422,1201,441,1283,462,1358,487,1418,501,1441,515,1458,530,1470,548,1477,546,1482,528,1474,511,1462,496,1444,482,1421,457,1359,435,1284,417,1202,389,1042,375,932"/>
+<area shape="rect" id="Node000030" href="$d7/da7/class_shape.html#a400f7b5ca58fc561b106a3a672f3f432" title=" " alt="" coords="560,1521,702,1546"/>
+<area shape="poly" id="edge29_Node000003_Node000030" title=" " alt="" coords="380,931,392,1050,419,1224,437,1314,459,1397,485,1464,500,1489,515,1508,529,1518,546,1526,544,1531,527,1523,511,1512,495,1492,480,1466,454,1398,432,1316,413,1225,387,1051,374,932"/>
+<area shape="rect" id="Node000031" href="$d7/da7/class_shape.html#a4b502262ae5a22122456b9624d5ccb3d" title="Accessor Functions &#45; Returns the data named after them." alt="" coords="565,1570,697,1596"/>
+<area shape="poly" id="edge30_Node000003_Node000031" title=" " alt="" coords="379,932,391,1059,416,1248,434,1346,456,1436,483,1509,499,1536,515,1557,531,1569,551,1577,549,1582,529,1574,511,1561,494,1539,479,1511,451,1437,429,1347,410,1249,385,1060,374,932"/>
+<area shape="rect" id="Node000032" href="$da/d0e/class_text.html#a3d6716fc88f895932e2c96940188c647" title=" " alt="" coords="554,1620,709,1645"/>
+<area shape="poly" id="edge31_Node000003_Node000032" title=" " alt="" coords="379,932,389,1068,413,1272,431,1378,453,1475,481,1554,498,1584,515,1606,540,1623,537,1627,511,1610,493,1587,477,1556,448,1476,425,1379,407,1273,384,1068,374,932"/>
+<area shape="rect" id="Node000033" href="$d7/da7/class_shape.html#aec4675c2b06d40373eefac4b982af242" title=" " alt="" coords="823,1372,963,1397"/>
+<area shape="poly" id="edge32_Node000003_Node000033" title=" " alt="" coords="381,931,398,1025,427,1156,445,1222,466,1281,490,1329,515,1360,535,1371,564,1379,641,1388,727,1390,808,1387,808,1393,727,1395,640,1393,563,1384,533,1376,511,1364,485,1332,461,1283,440,1223,421,1157,392,1026,376,932"/>
+<area shape="rect" id="Node000034" href="$d9/dc6/class_main_window.html#ab5aea14b9366d3d78c9d6e9353e8f5d0" title="Slot triggered when a QComboBox value in the tree widget changes." alt="" coords="514,1669,749,1694"/>
+<area shape="poly" id="edge33_Node000003_Node000034" title=" " alt="" coords="379,932,387,1076,409,1295,427,1409,450,1514,480,1599,496,1632,515,1656,516,1657,513,1661,511,1659,492,1634,475,1601,445,1515,422,1410,404,1296,382,1077,373,932"/>
+<area shape="rect" id="Node000036" href="$d9/dc6/class_main_window.html#a7d524432f3c348d51c52b6bbca13df57" title="Slot triggered when a QSpinBox value in the tree widget changes." alt="" coords="522,1270,741,1296"/>
+<area shape="poly" id="edge35_Node000003_Node000036" title=" " alt="" coords="380,931,390,994,413,1080,431,1126,453,1171,481,1213,515,1249,532,1261,529,1266,511,1253,477,1216,448,1173,426,1128,408,1081,385,995,375,932"/>
+<area shape="rect" id="Node000035" href="$d9/dc6/class_main_window.html#af971d03f10fd514287332e2adfd79bea" title="Emitted when a property of an existing shape is changed." alt="" coords="797,1669,989,1694"/>
+<area shape="poly" id="edge34_Node000034_Node000035" title=" " alt="" coords="749,1679,782,1679,782,1684,749,1684"/>
+<area shape="poly" id="edge36_Node000036_Node000026" title=" " alt="" coords="741,1270,807,1263,808,1269,742,1275"/>
+<area shape="poly" id="edge37_Node000036_Node000027" title=" " alt="" coords="726,1294,797,1304,796,1309,726,1299"/>
+<area shape="poly" id="edge38_Node000036_Node000033" title=" " alt="" coords="668,1294,845,1363,843,1368,666,1299"/>
+</map>

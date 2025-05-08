@@ -9,10 +9,24 @@ Manages user testimonials, including storage, retrieval, and prompting logic.
 
 {\ttfamily \#include $<$Testimonial\+Manager.\+h$>$}
 
-Inheritance diagram for Testimonial\+Manager\+:\begin{figure}[H]
+
+
+Inheritance diagram for Testimonial\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{d4/d0d/class_testimonial_manager}
+\includegraphics[height=550pt]{da/d20/class_testimonial_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Testimonial\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{de/d90/class_testimonial_manager__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Signals}
@@ -143,6 +157,22 @@ Testimonial\+Manager\+::\+Testimonial\+Manager (\begin{DoxyParamCaption}{}{}\end
 
 Private constructor to enforce singleton pattern. Initializes API connections and timer. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_aded0ef0783e1e67e701f7c3bf3a80072_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_aded0ef0783e1e67e701f7c3bf3a80072_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_a64a932285a93bbacf59e12b5f8445546}\index{TestimonialManager@{TestimonialManager}!````~TestimonialManager@{\texorpdfstring{$\sim$}{\string~}TestimonialManager}}
 \index{````~TestimonialManager@{\texorpdfstring{$\sim$}{\string~}TestimonialManager}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TestimonialManager()}{\string~TestimonialManager()}}
@@ -153,6 +183,14 @@ Testimonial\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Testimonial\+Manager 
 
 Private destructor. Saves testimonials before destruction. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_a64a932285a93bbacf59e12b5f8445546_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Function Documentation}
@@ -166,6 +204,22 @@ void Testimonial\+Manager\+::add\+Testimonial (\begin{DoxyParamCaption}\item[{co
 
 Adds a new testimonial to the manager and persists it. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_ab5c9dca488f9037b051263dfd8005c48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_ab5c9dca488f9037b051263dfd8005c48_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_a69979eb09835fcb35d804fa169b63f0f}\index{TestimonialManager@{TestimonialManager}!checkTimeAndPrompt@{checkTimeAndPrompt}}
 \index{checkTimeAndPrompt@{checkTimeAndPrompt}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{checkTimeAndPrompt()}{checkTimeAndPrompt()}}
@@ -176,6 +230,22 @@ void Testimonial\+Manager\+::check\+Time\+And\+Prompt (\begin{DoxyParamCaption}{
 
 Checks accumulated user time and emits {\ttfamily should\+Prompt\+For\+Testimonial} if criteria are met. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_a69979eb09835fcb35d804fa169b63f0f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_a69979eb09835fcb35d804fa169b63f0f_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_a1ebec1a781a7508501e398bb042a0b2d}\index{TestimonialManager@{TestimonialManager}!getDoNotShowAgain@{getDoNotShowAgain}}
 \index{getDoNotShowAgain@{getDoNotShowAgain}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{getDoNotShowAgain()}{getDoNotShowAgain()}}
@@ -186,6 +256,14 @@ bool Testimonial\+Manager\+::get\+Do\+Not\+Show\+Again (\begin{DoxyParamCaption}
 
 Retrieves the "{}do not show again"{} preference for a user. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_a1ebec1a781a7508501e398bb042a0b2d_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_a7b05489ceb9a8bd5e94e955c50b9515f}\index{TestimonialManager@{TestimonialManager}!getInstance@{getInstance}}
 \index{getInstance@{getInstance}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
@@ -196,6 +274,22 @@ Retrieves the "{}do not show again"{} preference for a user.
 
 Returns a reference to the singleton \doxylink{class_testimonial_manager}{Testimonial\+Manager} instance. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_a7b05489ceb9a8bd5e94e955c50b9515f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_a7b05489ceb9a8bd5e94e955c50b9515f_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_ac40b670bcee48c927ed5655bf8456713}\index{TestimonialManager@{TestimonialManager}!getSatisfactoryTestimonials@{getSatisfactoryTestimonials}}
 \index{getSatisfactoryTestimonials@{getSatisfactoryTestimonials}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{getSatisfactoryTestimonials()}{getSatisfactoryTestimonials()}}
@@ -206,6 +300,14 @@ QVector$<$ \mbox{\hyperlink{class_testimonial}{Testimonial}} $>$ Testimonial\+Ma
 
 Returns a vector of testimonials marked as satisfactory. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_ac40b670bcee48c927ed5655bf8456713_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_a9466acdac4dddfe8947b41cb637cb556}\index{TestimonialManager@{TestimonialManager}!hasUserGivenTestimonial@{hasUserGivenTestimonial}}
 \index{hasUserGivenTestimonial@{hasUserGivenTestimonial}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{hasUserGivenTestimonial()}{hasUserGivenTestimonial()}}
@@ -216,6 +318,14 @@ bool Testimonial\+Manager\+::has\+User\+Given\+Testimonial (\begin{DoxyParamCapt
 
 Checks if a user with the given username has already submitted a testimonial. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_a9466acdac4dddfe8947b41cb637cb556_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_a9c940e559ec27373c8997d16abfa7f20}\index{TestimonialManager@{TestimonialManager}!loadTestimonials@{loadTestimonials}}
 \index{loadTestimonials@{loadTestimonials}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{loadTestimonials()}{loadTestimonials()}}
@@ -236,6 +346,14 @@ void Testimonial\+Manager\+::on\+Bad\+Get\+Response (\begin{DoxyParamCaption}\it
 
 Slot called when a GET request for testimonials fails. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_aa256bebedcc689ce416c7a2fcade3900_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_acfda7a2d454b513c1c75d8d030a43dd9}\index{TestimonialManager@{TestimonialManager}!onBadPostResponse@{onBadPostResponse}}
 \index{onBadPostResponse@{onBadPostResponse}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{onBadPostResponse}{onBadPostResponse}}
@@ -246,6 +364,14 @@ void Testimonial\+Manager\+::on\+Bad\+Post\+Response (\begin{DoxyParamCaption}\i
 
 Slot called when a POST request to save testimonials fails. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_acfda7a2d454b513c1c75d8d030a43dd9_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_a2a9ada04ab15847f2c1b3c81deb994d7}\index{TestimonialManager@{TestimonialManager}!onGoodGetResponse@{onGoodGetResponse}}
 \index{onGoodGetResponse@{onGoodGetResponse}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{onGoodGetResponse}{onGoodGetResponse}}
@@ -256,6 +382,14 @@ void Testimonial\+Manager\+::on\+Good\+Get\+Response (\begin{DoxyParamCaption}\i
 
 Slot called when a GET request for testimonials succeeds. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_a2a9ada04ab15847f2c1b3c81deb994d7_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_ad384569c01fdadf0bb38e053a7bee337}\index{TestimonialManager@{TestimonialManager}!onGoodPostResponse@{onGoodPostResponse}}
 \index{onGoodPostResponse@{onGoodPostResponse}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{onGoodPostResponse}{onGoodPostResponse}}
@@ -266,6 +400,14 @@ void Testimonial\+Manager\+::on\+Good\+Post\+Response (\begin{DoxyParamCaption}{
 
 Slot called when a POST request to save testimonials succeeds. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_ad384569c01fdadf0bb38e053a7bee337_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_a776df0038128c3464b01c4f52199a960}\index{TestimonialManager@{TestimonialManager}!saveTestimonials@{saveTestimonials}}
 \index{saveTestimonials@{saveTestimonials}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{saveTestimonials()}{saveTestimonials()}}
@@ -276,6 +418,22 @@ void Testimonial\+Manager\+::save\+Testimonials (\begin{DoxyParamCaption}{}{}\en
 
 Saves all current testimonials (via API client). 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_a776df0038128c3464b01c4f52199a960_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_a776df0038128c3464b01c4f52199a960_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_af8576194e4cc9cc482d460666880c8b1}\index{TestimonialManager@{TestimonialManager}!setDoNotShowAgain@{setDoNotShowAgain}}
 \index{setDoNotShowAgain@{setDoNotShowAgain}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{setDoNotShowAgain()}{setDoNotShowAgain()}}
@@ -286,6 +444,22 @@ void Testimonial\+Manager\+::set\+Do\+Not\+Show\+Again (\begin{DoxyParamCaption}
 
 Sets the "{}do not show again"{} preference for a user. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_af8576194e4cc9cc482d460666880c8b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_af8576194e4cc9cc482d460666880c8b1_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_ade7e70f55550c1417ab7d0ca7b3b3142}\index{TestimonialManager@{TestimonialManager}!shouldPromptForTestimonial@{shouldPromptForTestimonial}}
 \index{shouldPromptForTestimonial@{shouldPromptForTestimonial}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{shouldPromptForTestimonial}{shouldPromptForTestimonial}}
@@ -296,6 +470,14 @@ void Testimonial\+Manager\+::should\+Prompt\+For\+Testimonial (\begin{DoxyParamC
 
 Emitted to prompt the user for a testimonial. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_ade7e70f55550c1417ab7d0ca7b3b3142_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_a06504060ff2ed420035a8433e03d8fa5}\index{TestimonialManager@{TestimonialManager}!startTrackingTime@{startTrackingTime}}
 \index{startTrackingTime@{startTrackingTime}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{startTrackingTime()}{startTrackingTime()}}
@@ -306,6 +488,14 @@ void Testimonial\+Manager\+::start\+Tracking\+Time (\begin{DoxyParamCaption}{}{}
 
 Starts the timer for tracking user activity time. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d0d/class_testimonial_manager_a06504060ff2ed420035a8433e03d8fa5_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_testimonial_manager_a586111756e6e3ece79ba70f196c36242}\index{TestimonialManager@{TestimonialManager}!stopTrackingTime@{stopTrackingTime}}
 \index{stopTrackingTime@{stopTrackingTime}!TestimonialManager@{TestimonialManager}}
 \doxysubsubsection{\texorpdfstring{stopTrackingTime()}{stopTrackingTime()}}
@@ -403,5 +593,5 @@ Time in seconds for subsequent testimonial prompts if not dismissed (1 hour).
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/backend/\mbox{\hyperlink{_testimonial_manager_8h}{Testimonial\+Manager.\+h}}\item 
-src/backend/\mbox{\hyperlink{_testimonial_manager_8cpp}{Testimonial\+Manager.\+cpp}}\end{DoxyCompactItemize}
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/backend/\mbox{\hyperlink{_testimonial_manager_8h}{Testimonial\+Manager.\+h}}\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/backend/\mbox{\hyperlink{_testimonial_manager_8cpp}{Testimonial\+Manager.\+cpp}}\end{DoxyCompactItemize}

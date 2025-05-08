@@ -1,0 +1,34 @@
+<map id="UserManager::UserManager" name="UserManager::UserManager">
+<area shape="rect" id="Node000001" title="Constructor. Initializes ApiClient connections and loads users." alt="" coords="5,281,191,307"/>
+<area shape="rect" id="Node000002" href="$d2/dd1/class_api_client.html#a2362fb6ae6555400e50840bd2138fa3c" title="Signal for a failed request sent to a Delete endpoint." alt="" coords="269,5,446,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,280,114,234,140,168,158,133,180,99,207,67,237,40,253,31,256,35,240,44,210,71,185,102,163,136,145,171,119,236,105,282"/>
+<area shape="rect" id="Node000003" href="$d2/dd1/class_api_client.html#ae22339e302eb27bc51fbdfc1b7c1a4ec" title="Signal for a failed request sent to a Get endpoint." alt="" coords="278,55,438,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,280,118,242,147,190,186,135,210,110,237,89,261,77,264,82,240,94,214,114,190,139,151,193,123,244,107,282"/>
+<area shape="rect" id="Node000004" href="$d2/dd1/class_api_client.html#ac0f68b238bace3703854d7de15a3bb38" title="Signal for a failed request sent to a Post endpoint." alt="" coords="275,104,441,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="105,279,125,250,154,211,192,172,237,139,259,129,261,134,240,143,196,176,158,215,129,253,109,282"/>
+<area shape="rect" id="Node000005" href="$d2/dd1/class_api_client.html#a36b7d26e91c582a56da7c3bcfbdccbd9" title="Signal for a successful request sent to a Delete endpoint." alt="" coords="265,153,450,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="111,279,163,234,199,209,238,188,253,182,255,187,240,193,202,213,167,238,114,283"/>
+<area shape="rect" id="Node000006" href="$d2/dd1/class_api_client.html#a940bf610f9fa472fc660e1ab60203de7" title="Signal for a successful request sent to a Get endpoint." alt="" coords="274,203,442,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="128,278,179,257,238,237,265,230,267,235,239,242,181,262,130,283"/>
+<area shape="rect" id="Node000007" href="$d2/dd1/class_api_client.html#aa2e03a2c693acb0052f80415b453e279" title="Signal for a successful request sent to a Post endpoint." alt="" coords="271,252,445,278"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="191,281,255,274,255,279,191,286"/>
+<area shape="rect" id="Node000008" href="$d1/da2/class_user_manager.html#a93243af98a0b172c5b6ff685f8d196a0" title="Slot called when a DELETE request for user data fails." alt="" coords="267,302,449,342"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="191,302,251,308,251,313,191,307"/>
+<area shape="rect" id="Node000010" href="$d1/da2/class_user_manager.html#acac58c863dc2d027a297c28725d91c93" title="Slot called when a GET request for user data fails." alt="" coords="246,367,470,392"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="127,305,179,329,240,352,269,360,268,365,238,357,176,333,125,310"/>
+<area shape="rect" id="Node000011" href="$d1/da2/class_user_manager.html#adaa13ba1ac6af2a667cde728a593ad83" title="Slot called when a POST request to save user data fails." alt="" coords="243,416,473,442"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="114,306,165,354,201,380,240,402,254,408,252,413,237,407,198,385,162,358,110,309"/>
+<area shape="rect" id="Node000012" href="$d1/da2/class_user_manager.html#aaae30b6ea45379ce5ecba8958d1a0a6f" title="Slot called when a DELETE request for user data succeeds." alt="" coords="263,466,453,506"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="109,306,158,376,196,417,240,452,250,458,247,462,237,456,192,421,154,379,105,309"/>
+<area shape="rect" id="Node000013" href="$d1/da2/class_user_manager.html#a3b3f078e58e742fd67185a8438d06fd4" title="Slot called when a GET request for user data succeeds." alt="" coords="242,531,474,556"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="106,306,121,348,149,405,188,466,213,493,240,516,249,521,246,526,237,520,209,497,184,469,144,408,116,350,101,308"/>
+<area shape="rect" id="Node000014" href="$d1/da2/class_user_manager.html#a6c96002eef3fbb7981f569d43e163a64" title="Slot called when a POST request to save user data succeeds." alt="" coords="239,580,477,606"/>
+<area shape="poly" id="edge17_Node000001_Node000014" title=" " alt="" coords="104,306,117,356,142,427,160,466,182,503,209,538,240,567,245,570,242,574,237,571,205,541,178,506,155,468,137,429,111,358,99,308"/>
+<area shape="rect" id="Node000009" href="$d1/da2/class_user_manager.html#ad725cb6519b4256e254da21ff5741e78" title="Emitted to provide general status updates or error messages." alt="" coords="525,445,721,471"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="450,341,478,352,545,392,598,433,594,437,542,396,476,357,448,345"/>
+<area shape="poly" id="edge10_Node000010_Node000009" title=" " alt="" coords="435,390,478,401,578,437,576,442,476,406,434,396"/>
+<area shape="poly" id="edge12_Node000011_Node000009" title=" " alt="" coords="474,439,510,443,509,448,473,444"/>
+<area shape="poly" id="edge14_Node000012_Node000009" title=" " alt="" coords="453,473,510,467,510,473,454,479"/>
+<area shape="poly" id="edge16_Node000013_Node000009" title=" " alt="" coords="431,527,476,516,579,475,581,480,478,521,433,533"/>
+<area shape="poly" id="edge18_Node000014_Node000009" title=" " alt="" coords="447,577,476,566,511,547,543,525,596,480,600,484,547,529,514,552,478,571,448,582"/>
+</map>

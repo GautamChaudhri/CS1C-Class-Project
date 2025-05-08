@@ -1,0 +1,19 @@
+<map id="Shape::getPainter" name="Shape::getPainter">
+<area shape="rect" id="Node000001" title=" " alt="" coords="173,179,298,204"/>
+<area shape="rect" id="Node000002" href="$d0/d88/class_circle.html#ac05f869cde1af46ac56ff2e0318980bb" title="Draw &#45; Draws a circle at the assigned coords with the given radius." alt="" coords="18,5,112,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,166,180,105,153,73,123,44,105,34,108,29,126,40,157,69,184,102,223,163"/>
+<area shape="rect" id="Node000003" href="$dc/d25/class_ellipse.html#a76eaec1becd0860f48dd5c39bb00dabf" title="Draw &#45; Draws the ellipse to the passed renderArea." alt="" coords="15,55,115,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,169,172,131,123,94,103,83,106,79,126,89,175,127,214,165"/>
+<area shape="rect" id="Node000004" href="$dd/db4/class_line.html#ad68aeb558c52eace258a55e24f45d11e" title="Draw &#45; Draws a line from startPoint to endPoint." alt="" coords="23,104,107,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="191,174,124,143,99,133,101,128,126,138,193,169"/>
+<area shape="rect" id="Node000005" href="$d1/db0/class_polygon.html#ae6ac66f1548f1d4baf2ceea00feea940" title="Draw &#45; Draws a Polygon at the assigned coords with points in the pointsList." alt="" coords="11,153,119,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="157,183,119,177,120,172,158,177"/>
+<area shape="rect" id="Node000006" href="$d1/d42/class_polyline.html#a554e950db881f3d67e05f453c1f22e77" title="Draw &#45; Draws a Polyline at the assigne coords with points in the pointsList." alt="" coords="12,203,118,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="157,205,119,211,118,205,157,200"/>
+<area shape="rect" id="Node000007" href="$d9/dc7/class_rectangle.html#a146fede0215e7c98fbc99b6c302ed743" title="Draw &#45; Draws a Rectangle at the assigned coords." alt="" coords="5,252,125,278"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="192,214,126,243,100,254,98,249,124,238,190,209"/>
+<area shape="rect" id="Node000008" href="$d9/d0c/class_square.html#a76509a6807c851fb2fd88713cd856f64" title="Draw &#45; Draws a Square at the assigned coords." alt="" coords="14,301,116,327"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="214,218,175,255,126,292,106,303,103,298,123,288,171,251,210,214"/>
+<area shape="rect" id="Node000009" href="$da/d0e/class_text.html#aac7609b2292703561a26921d23aa2541" title="Draw &#45; Draws the text to the assigned coords." alt="" coords="22,351,108,376"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="223,220,184,280,157,313,126,342,108,353,105,348,123,337,153,309,180,277,218,217"/>
+</map>

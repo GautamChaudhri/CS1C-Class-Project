@@ -1,0 +1,18 @@
+<map id="/Users/gautam/Local/Forge/Team&#45;Alphawolves/2D&#45;Graphics&#45;Modeler/src/frontend/renderarea.h" name="/Users/gautam/Local/Forge/Team&#45;Alphawolves/2D&#45;Graphics&#45;Modeler/src/frontend/renderarea.h">
+<area shape="rect" id="Node000001" title="Defines the RenderArea class, a custom QWidget for drawing and interacting with 2D shapes." alt="" coords="325,5,498,76"/>
+<area shape="rect" id="Node000002" href="$dc/dbb/_app_driver_8h.html" title=" " alt="" coords="201,243,374,313"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="347,88,329,106,315,125,302,154,295,185,289,242,284,242,289,184,297,152,311,123,325,102,343,84"/>
+<area shape="rect" id="Node000006" href="$d9/d53/mainwindow_8h.html" title=" " alt="" coords="325,124,498,195"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="414,91,414,124,409,124,409,91"/>
+<area shape="rect" id="Node000008" href="$df/daa/renderarea_8cpp.html" title=" " alt="" coords="521,124,694,195"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="484,82,550,121,548,126,481,86"/>
+<area shape="rect" id="Node000003" href="$dc/df3/_app_driver_8cpp.html" title=" " alt="" coords="5,361,178,432"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="218,324,151,363,149,358,215,319"/>
+<area shape="rect" id="Node000004" href="$d8/d80/src_2backend_2main_8cpp.html" title=" " alt="" coords="201,361,374,432"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="290,329,290,361,285,361,285,329"/>
+<area shape="rect" id="Node000005" href="$d2/d21/src_2frontend_2main_8cpp.html" title="Main entry point for the 2D Graphics Modeler application." alt="" coords="397,361,570,432"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="360,319,426,358,424,363,357,324"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="365,208,326,244,323,240,362,204"/>
+<area shape="rect" id="Node000007" href="$d8/dd9/mainwindow_8cpp.html" title=" " alt="" coords="397,243,570,313"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="443,206,464,241,460,244,438,209"/>
+</map>

@@ -1,0 +1,97 @@
+<map id="Parser::ShapesToJson" name="Parser::ShapesToJson">
+<area shape="rect" id="Node000001" title="Converts a vector of Shape pointers into a JSON string representation." alt="" coords="5,380,159,406"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#a4947ae95392cd961660d9202d4c12e5e" title="Appends QBrush properties (BrushColor, BrushStyle) to a JSON string." alt="" coords="235,55,408,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,379,91,327,112,251,128,209,148,169,174,131,205,97,223,85,226,89,208,102,178,134,153,171,133,212,117,253,96,328,88,380"/>
+<area shape="rect" id="Node000006" href="$d7/da7/class_shape.html#a4b502262ae5a22122456b9624d5ccb3d" title="Accessor Functions &#45; Returns the data named after them." alt="" coords="741,211,873,236"/>
+<area shape="poly" id="edge53_Node000001_Node000006" title=" " alt="" coords="96,377,153,328,244,261,299,225,358,192,420,163,483,141,538,126,582,119,627,123,680,141,696,152,706,166,714,179,728,192,746,202,743,207,725,196,710,182,701,169,692,156,677,146,626,128,583,124,539,131,485,146,422,168,360,197,302,230,247,265,157,333,100,381"/>
+<area shape="rect" id="Node000008" href="$dc/db7/class_parser.html#a8f8932bed758cd3e61de3669fdef1110" title="Appends common shape properties (ID, Type, Dimensions, Pen properties) to a JSON string." alt="" coords="207,380,436,406"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="159,390,191,390,191,396,159,396"/>
+<area shape="rect" id="Node000033" href="$dc/db7/class_parser.html#a3c8d6dcf6e07231eaedb036ebe90b51f" title="Appends all properties specific to Text objects to a JSON string." alt="" coords="239,655,404,680"/>
+<area shape="poly" id="edge38_Node000001_Node000033" title=" " alt="" coords="97,404,301,641,297,645,93,408"/>
+<area shape="rect" id="Node000041" href="$db/d35/classalpha_1_1vector.html#a78b5e138cba3b9bc0f9d569c6dd96156" title=" " alt="" coords="257,704,386,730"/>
+<area shape="poly" id="edge54_Node000001_Node000041" title=" " alt="" coords="87,406,95,459,115,537,131,579,151,620,177,658,208,691,225,701,243,708,241,713,222,706,205,695,173,662,146,623,126,581,110,539,90,460,82,407"/>
+<area shape="rect" id="Node000003" href="$d7/da7/class_shape.html#a8b5e05c84e401dddad339a15fa7d8ab1" title=" " alt="" coords="506,5,656,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="392,51,494,32,495,37,393,57"/>
+<area shape="rect" id="Node000004" href="$dc/db7/class_parser.html#a2ae1381ec08a2e3b54077c753d4dbf34" title="Gets the brush style of a shape as a string (e.g., &quot;SolidPattern&quot;, &quot;NoBrush&quot;)." alt="" coords="505,55,657,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="409,65,490,65,490,70,409,70"/>
+<area shape="rect" id="Node000007" href="$dc/db7/class_parser.html#a873d052551342d31e66e6746b09d2fe9" title="Converts a QColor object to its string representation (e.g., &quot;red&quot;, &quot;blue&quot;)." alt="" coords="522,205,641,231"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="337,79,398,134,440,165,485,192,508,201,506,206,483,197,437,169,394,138,334,83"/>
+<area shape="rect" id="Node000005" href="$d7/da7/class_shape.html#a32e7b26329177063e40671687a0c62be" title=" " alt="" coords="733,55,881,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="657,65,717,65,717,70,657,70"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="647,79,680,98,698,122,705,146,711,169,728,192,740,201,737,205,724,196,707,172,700,147,694,124,677,101,645,83"/>
+<area shape="poly" id="edge35_Node000008_Node000006" title=" " alt="" coords="436,385,576,370,636,357,677,340,688,330,694,319,701,295,706,270,713,258,725,246,729,242,732,247,728,249,718,261,711,272,706,297,699,321,692,333,680,344,638,362,577,376,437,391"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="331,378,390,312,434,273,483,240,506,230,508,235,485,245,437,277,394,315,335,381"/>
+<area shape="rect" id="Node000009" href="$d7/da7/class_shape.html#a16aad057da1ce3475f666cbdd27da042" title=" " alt="" coords="528,255,635,280"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="338,377,400,334,440,310,483,289,512,279,513,284,485,294,443,315,403,339,341,382"/>
+<area shape="rect" id="Node000010" href="$dc/db7/class_parser.html#a4cc8c1d3938f5f55be6074830f96090e" title="Gets the pen cap style of a shape as a string (e.g., &quot;FlatCap&quot;, &quot;RoundCap&quot;)." alt="" coords="498,156,664,182"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="327,378,348,341,382,290,428,236,454,212,483,191,490,186,493,191,485,195,457,216,431,240,387,293,353,344,332,381"/>
+<area shape="rect" id="Node000012" href="$d7/da7/class_shape.html#a4cbfcdf734ed9633dfb4dad1dab1cb6f" title=" " alt="" coords="512,304,650,330"/>
+<area shape="poly" id="edge13_Node000008_Node000012" title=" " alt="" coords="367,377,519,332,521,337,369,382"/>
+<area shape="rect" id="Node000013" href="$dc/db7/class_parser.html#aacdb18c8e63721594a5ee98f94e160c3" title="Gets the pen join style of a shape as a string (e.g., &quot;MiterJoin&quot;, &quot;BevelJoin&quot;)." alt="" coords="498,405,664,431"/>
+<area shape="poly" id="edge14_Node000008_Node000013" title=" " alt="" coords="437,401,483,406,483,411,436,407"/>
+<area shape="rect" id="Node000015" href="$dc/db7/class_parser.html#af303a9796fe246709fd2da137248e6d2" title="Gets the pen style of a shape as a string (e.g., &quot;SolidLine&quot;, &quot;DashLine&quot;)." alt="" coords="510,455,652,480"/>
+<area shape="poly" id="edge17_Node000008_Node000015" title=" " alt="" coords="364,404,485,441,510,448,509,453,483,446,362,409"/>
+<area shape="rect" id="Node000017" href="$dc/db7/class_parser.html#af246a0732ef6c7518e5aaee1043d12e4" title="Gets the geometric dimensions of a shape as a JSON array string." alt="" coords="484,655,678,680"/>
+<area shape="poly" id="edge20_Node000008_Node000017" title=" " alt="" coords="334,405,395,486,438,539,486,590,550,643,547,647,482,593,434,542,390,489,330,408"/>
+<area shape="rect" id="Node000031" href="$d7/da7/class_shape.html#ab89b48cc1a361849a094c894075361e1" title=" " alt="" coords="506,553,656,579"/>
+<area shape="poly" id="edge36_Node000008_Node000031" title=" " alt="" coords="335,404,394,469,437,508,485,540,496,545,494,550,483,544,434,512,390,473,331,408"/>
+<area shape="rect" id="Node000032" href="$d7/da7/class_shape.html#aec4675c2b06d40373eefac4b982af242" title=" " alt="" coords="512,504,651,530"/>
+<area shape="poly" id="edge37_Node000008_Node000032" title=" " alt="" coords="342,404,403,446,443,470,485,490,501,496,499,501,483,495,441,475,400,451,339,408"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="638,180,737,204,736,209,636,185"/>
+<area shape="rect" id="Node000011" href="$d7/da7/class_shape.html#a1eaba6ddbc4404e64fc6910fa9a9fa11" title=" " alt="" coords="726,156,888,182"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="664,166,711,166,711,172,664,172"/>
+<area shape="poly" id="edge16_Node000013_Node000006" title=" " alt="" coords="648,402,677,384,689,368,696,351,699,316,703,281,710,263,724,246,727,243,731,247,728,249,715,266,708,282,705,317,701,352,694,370,680,388,651,407"/>
+<area shape="rect" id="Node000014" href="$d7/da7/class_shape.html#a7cf1547b5328248b8a4c066b4c714efa" title=" " alt="" coords="726,260,888,286"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="644,402,677,384,693,363,700,341,707,318,724,295,729,292,732,296,728,299,711,320,705,342,698,365,680,388,647,407"/>
+<area shape="poly" id="edge19_Node000015_Node000006" title=" " alt="" coords="651,457,677,442,694,418,701,395,702,371,700,346,698,321,699,296,707,271,724,246,726,244,730,247,728,249,712,273,704,297,703,321,706,346,708,371,706,396,698,421,680,445,654,462"/>
+<area shape="rect" id="Node000016" href="$d7/da7/class_shape.html#ad336858f193d765d831deb9ce29246aa" title=" " alt="" coords="738,309,876,335"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="651,455,677,441,688,430,694,419,700,395,706,369,713,357,725,344,729,341,732,345,728,348,717,360,711,371,705,396,699,421,692,434,680,446,654,460"/>
+<area shape="poly" id="edge31_Node000017_Node000006" title=" " alt="" coords="652,652,676,634,693,609,705,585,711,561,714,537,710,489,699,441,688,394,684,345,687,321,694,296,706,271,724,246,726,244,730,247,728,249,711,274,699,298,692,322,690,345,694,393,704,440,715,488,719,537,717,562,710,587,698,612,680,637,655,656"/>
+<area shape="rect" id="Node000018" href="$dc/d25/class_ellipse.html#a77211318bb4d61848cfa76e887c290f0" title="Accessor Functions." alt="" coords="759,753,855,779"/>
+<area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="656,678,680,689,695,702,705,715,713,728,728,740,746,749,744,754,725,744,709,731,700,718,691,706,677,694,654,683"/>
+<area shape="rect" id="Node000019" href="$dc/d25/class_ellipse.html#a18ac4b70047614c98a8e663cc900b656" title=" " alt="" coords="759,803,855,828"/>
+<area shape="poly" id="edge22_Node000017_Node000019" title=" " alt="" coords="663,679,680,689,692,702,699,715,705,741,711,766,717,778,728,789,746,801,743,805,725,794,713,781,706,768,700,742,694,717,688,705,677,694,660,683"/>
+<area shape="rect" id="Node000020" href="$dd/db4/class_line.html#aedb630a8121c423320ef5e369e17f65f" title=" " alt="" coords="745,852,869,878"/>
+<area shape="poly" id="edge23_Node000017_Node000020" title=" " alt="" coords="665,679,680,690,695,708,703,727,705,766,708,803,714,821,728,839,733,843,730,847,724,843,710,824,702,804,700,766,698,729,691,711,677,693,662,683"/>
+<area shape="rect" id="Node000021" href="$d9/dc7/class_rectangle.html#af86510135f0d97d2295bbc304ea932bf" title="Accessor Functions." alt="" coords="734,901,880,927"/>
+<area shape="poly" id="edge24_Node000017_Node000021" title=" " alt="" coords="666,679,680,690,699,715,707,740,708,765,706,791,703,815,704,840,711,864,728,888,730,890,726,894,724,892,707,866,699,841,698,815,700,790,703,765,701,741,694,717,676,693,662,683"/>
+<area shape="rect" id="Node000022" href="$d9/d0c/class_square.html#a8f3f73c6ceea3fba1c09dcaba56f49af" title="Accessor Functions." alt="" coords="743,951,871,976"/>
+<area shape="poly" id="edge25_Node000017_Node000022" title=" " alt="" coords="666,679,680,690,702,721,710,753,710,784,706,815,701,846,701,877,708,907,728,938,732,942,729,945,724,941,703,909,695,877,696,846,700,814,705,784,705,753,697,723,676,693,663,683"/>
+<area shape="rect" id="Node000023" href="$da/d0e/class_text.html#aa538b21160165d28fbaf706c51221ef3" title="Accessor Functions." alt="" coords="751,359,863,384"/>
+<area shape="poly" id="edge26_Node000017_Node000023" title=" " alt="" coords="651,652,676,634,696,604,703,575,703,545,699,515,695,485,695,455,704,424,724,394,735,384,739,388,728,397,709,427,701,456,701,485,705,515,709,545,709,575,700,606,680,637,654,656"/>
+<area shape="rect" id="Node000024" href="$d7/da7/class_shape.html#ab1cc10b4862f2e16db50622e2df278f3" title=" " alt="" coords="746,408,868,434"/>
+<area shape="poly" id="edge27_Node000017_Node000024" title=" " alt="" coords="649,652,676,634,693,610,700,587,701,564,699,540,698,516,699,492,707,467,724,443,731,437,735,441,728,447,712,470,704,493,703,516,705,540,706,564,705,588,697,613,680,637,652,656"/>
+<area shape="rect" id="Node000025" href="$d1/db0/class_polygon.html#aa29df027578f8427676e9eb4a5ee67c2" title="getPointsList &#45; Returns the pointsList by value" alt="" coords="731,457,883,483"/>
+<area shape="poly" id="edge28_Node000017_Node000025" title=" " alt="" coords="648,652,677,634,690,617,696,600,699,564,703,528,710,510,724,492,727,490,731,494,728,496,715,513,708,530,705,565,702,601,694,619,680,637,651,656"/>
+<area shape="rect" id="Node000026" href="$d1/d42/class_polyline.html#acb3340122423e1c80e3aa7c7a30fda84" title="getPointsList &#45; Returns the pointsList by value" alt="" coords="731,507,883,532"/>
+<area shape="poly" id="edge29_Node000017_Node000026" title=" " alt="" coords="644,652,677,633,693,611,700,589,706,565,724,542,729,538,732,543,728,545,711,567,705,590,698,614,680,638,647,656"/>
+<area shape="rect" id="Node000027" href="$d0/d88/class_circle.html#a955ba2846a5c3a9f42b1e38f7ace0860" title="getR &#45; Accessor &#45; Returns the radius" alt="" coords="761,556,853,582"/>
+<area shape="poly" id="edge30_Node000017_Node000027" title=" " alt="" coords="634,652,677,633,691,623,700,612,710,601,725,591,746,581,748,586,728,595,714,605,704,616,695,627,680,638,636,657"/>
+<area shape="rect" id="Node000028" href="$dd/db4/class_line.html#ae0c35900f7e283b3559263455ac18669" title="Accessor Functions." alt="" coords="742,605,872,631"/>
+<area shape="poly" id="edge32_Node000017_Node000028" title=" " alt="" coords="643,651,729,632,731,638,644,657"/>
+<area shape="rect" id="Node000029" href="$d9/dc7/class_rectangle.html#ab38bbfcd0c11b39e0ef58ffd0b5c5069" title=" " alt="" coords="737,655,877,680"/>
+<area shape="poly" id="edge33_Node000017_Node000029" title=" " alt="" coords="678,665,721,665,721,670,678,670"/>
+<area shape="rect" id="Node000030" href="$da/d0e/class_text.html#ad24ce301552aff8f9231d438ff9bd1e4" title=" " alt="" coords="754,704,860,730"/>
+<area shape="poly" id="edge34_Node000017_Node000030" title=" " alt="" coords="644,678,739,699,738,705,643,684"/>
+<area shape="poly" id="edge48_Node000033_Node000006" title=" " alt="" coords="403,653,571,622,641,605,664,597,677,589,693,569,704,548,711,527,713,506,711,464,702,422,692,378,689,335,697,290,708,268,724,246,726,244,730,247,728,249,713,271,702,292,694,335,697,378,707,421,716,464,719,507,716,528,709,550,697,572,680,594,666,602,642,610,572,628,404,658"/>
+<area shape="poly" id="edge41_Node000033_Node000007" title=" " alt="" coords="327,653,375,556,433,417,441,390,444,366,446,323,453,282,464,261,482,240,505,225,508,230,486,244,469,264,458,284,451,323,450,367,446,392,439,419,380,558,332,655"/>
+<area shape="poly" id="edge47_Node000033_Node000017" title=" " alt="" coords="404,665,469,665,469,670,404,670"/>
+<area shape="poly" id="edge49_Node000033_Node000031" title=" " alt="" coords="350,652,483,596,522,582,524,587,485,601,353,657"/>
+<area shape="poly" id="edge52_Node000033_Node000032" title=" " alt="" coords="334,652,394,597,437,566,483,538,496,533,498,538,485,543,440,570,398,601,337,656"/>
+<area shape="rect" id="Node000034" href="$dc/db7/class_parser.html#a34f89825a62c101002365cdc06188b0b" title="Gets the text alignment of a Text object as a string (e.g., &quot;AlignLeft&quot;, &quot;AlignCenter&quot;)." alt="" coords="496,704,667,730"/>
+<area shape="poly" id="edge39_Node000033_Node000034" title=" " alt="" coords="393,678,495,698,494,703,392,684"/>
+<area shape="rect" id="Node000036" href="$da/d0e/class_text.html#ace6ab02148fe23efffcd3f7c3dde9183" title=" " alt="" coords="758,1049,856,1075"/>
+<area shape="poly" id="edge42_Node000033_Node000036" title=" " alt="" coords="405,671,422,678,438,690,457,714,466,738,468,763,467,787,466,837,472,862,486,888,527,920,603,967,727,1036,744,1042,742,1047,725,1041,600,971,524,924,482,892,467,864,460,837,462,787,463,763,461,740,452,717,434,693,420,683,403,675"/>
+<area shape="rect" id="Node000037" href="$dc/db7/class_parser.html#a772810a8efbdda40d51d9a81125a45c0" title="Gets the font style of a Text object as a string (e.g., &quot;StyleNormal&quot;, &quot;StyleItalic&quot;)." alt="" coords="509,1025,653,1051"/>
+<area shape="poly" id="edge43_Node000033_Node000037" title=" " alt="" coords="405,670,422,678,438,690,462,722,473,754,475,786,471,819,467,851,465,885,471,920,486,957,513,989,544,1014,541,1018,509,993,482,960,465,921,460,885,462,851,466,818,469,786,468,756,457,725,434,693,420,682,403,675"/>
+<area shape="rect" id="Node000038" href="$dc/db7/class_parser.html#ae8599ff5bde69ad1ceb08f81b955539d" title="Gets the font weight of a Text object as a string (e.g., &quot;Normal&quot;, &quot;Bold&quot;)." alt="" coords="504,753,658,779"/>
+<area shape="poly" id="edge45_Node000033_Node000038" title=" " alt="" coords="405,676,437,689,453,702,462,715,471,728,485,740,495,745,492,750,483,744,467,732,458,718,449,705,435,694,403,681"/>
+<area shape="rect" id="Node000039" href="$da/d0e/class_text.html#af3456aea5e1ce4ac424465a189e31294" title=" " alt="" coords="517,803,645,828"/>
+<area shape="poly" id="edge50_Node000033_Node000039" title=" " alt="" coords="405,673,438,689,450,702,457,715,463,741,468,766,475,778,486,789,504,801,501,805,482,794,470,781,463,768,458,742,452,717,445,705,434,694,403,678"/>
+<area shape="rect" id="Node000040" href="$da/d0e/class_text.html#ac4d54ea22e31be28700336bbc5bde23e" title=" " alt="" coords="516,852,647,878"/>
+<area shape="poly" id="edge51_Node000033_Node000040" title=" " alt="" coords="405,671,422,679,438,690,453,708,461,727,463,766,465,803,472,821,486,839,502,850,499,855,482,843,467,824,460,805,458,766,456,728,449,711,434,693,420,683,403,676"/>
+<area shape="rect" id="Node000035" href="$da/d0e/class_text.html#a3d6716fc88f895932e2c96940188c647" title=" " alt="" coords="729,1000,885,1026"/>
+<area shape="poly" id="edge40_Node000034_Node000035" title=" " alt="" coords="666,728,680,739,702,770,710,802,710,833,706,865,701,895,701,926,708,957,728,987,730,989,726,992,724,990,703,959,695,927,696,895,700,864,705,833,705,803,697,773,676,743,663,732"/>
+<area shape="poly" id="edge44_Node000037_Node000036" title=" " alt="" coords="654,1043,742,1053,742,1058,653,1048"/>
+<area shape="poly" id="edge46_Node000038_Node000036" title=" " alt="" coords="660,774,680,788,702,820,710,851,710,883,706,914,701,945,701,975,708,1006,728,1036,745,1049,742,1053,724,1040,703,1008,695,976,696,944,700,913,705,882,705,852,697,822,676,792,657,779"/>
+</map>

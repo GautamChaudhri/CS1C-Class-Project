@@ -1,0 +1,27 @@
+<map id="/Users/gautam/Local/Forge/Team&#45;Alphawolves/2D&#45;Graphics&#45;Modeler/src/backend/moc_ApiClient.cpp" name="/Users/gautam/Local/Forge/Team&#45;Alphawolves/2D&#45;Graphics&#45;Modeler/src/backend/moc_ApiClient.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="712,5,901,76"/>
+<area shape="rect" id="Node000002" href="$d3/dc3/_api_client_8h.html" title="Implements the ApiClient class that makes API requests to the Crow Webservice." alt="" coords="456,124,541,150"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="713,73,554,122,552,117,711,68"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="565,124,704,150"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="744,79,672,118,669,114,742,74"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="728,124,885,150"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="809,76,809,108,804,108,804,76"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="908,124,977,150"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="858,74,914,113,911,117,855,79"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1001,124,1162,150"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="902,72,1032,116,1031,121,900,77"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,198,75,223"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="456,146,299,166,90,200,90,195,298,160,455,140"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="98,198,272,223"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="456,150,254,196,253,191,455,145"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="296,198,410,223"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="475,153,393,193,391,188,473,148"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="434,198,563,223"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="501,150,501,182,496,182,496,150"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="588,198,636,223"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="519,148,581,187,578,191,516,152"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="661,198,750,223"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="535,148,657,190,655,195,533,153"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="774,198,839,223"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="542,145,760,194,758,199,541,150"/>
+</map>

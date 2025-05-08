@@ -1,0 +1,45 @@
+<map id="/Users/gautam/Local/Forge/Team&#45;Alphawolves/2D&#45;Graphics&#45;Modeler/src/backend/ApiClient.h" name="/Users/gautam/Local/Forge/Team&#45;Alphawolves/2D&#45;Graphics&#45;Modeler/src/backend/ApiClient.h">
+<area shape="rect" id="Node000001" title="Implements the ApiClient class that makes API requests to the Crow Webservice." alt="" coords="911,5,1083,76"/>
+<area shape="rect" id="Node000002" href="$d4/d5b/_api_client_8cpp.html" title=" " alt="" coords="249,124,422,195"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="896,55,685,81,563,102,441,127,423,131,421,126,440,121,562,96,684,76,895,49"/>
+<area shape="rect" id="Node000003" href="$d6/d83/_render_area_manager_8h.html" title=" " alt="" coords="1310,124,1518,195"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1099,68,1311,127,1309,132,1097,73"/>
+<area shape="rect" id="Node000006" href="$d8/d80/src_2backend_2main_8cpp.html" title=" " alt="" coords="424,480,596,551"/>
+<area shape="poly" id="edge22_Node000001_Node000006" title=" " alt="" coords="896,58,806,80,708,116,659,140,614,169,573,204,538,244,521,272,510,303,499,367,500,429,506,479,501,480,494,429,494,367,505,301,517,270,533,241,569,200,611,165,657,135,706,111,805,75,895,53"/>
+<area shape="rect" id="Node000009" href="$db/dd2/_shapes_manager_8h.html" title=" " alt="" coords="1542,124,1724,195"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1099,50,1300,77,1416,97,1531,121,1542,124,1541,129,1530,127,1415,102,1299,82,1098,55"/>
+<area shape="rect" id="Node000011" href="$d4/d0a/_testimonial_manager_8h.html" title=" " alt="" coords="895,124,1099,195"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1000,91,1000,124,994,124,994,91"/>
+<area shape="rect" id="Node000017" href="$d1/dc5/_user_manager_8h.html" title=" " alt="" coords="300,243,472,313"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="895,52,788,62,670,78,565,99,523,112,493,126,474,145,451,175,408,244,403,241,446,172,470,141,490,122,521,107,564,94,669,72,787,57,895,46"/>
+<area shape="rect" id="Node000020" href="$d3/d53/moc___api_client_8cpp.html" title=" " alt="" coords="1748,124,1936,195"/>
+<area shape="poly" id="edge23_Node000001_Node000020" title=" " alt="" coords="1099,44,1227,53,1387,68,1562,90,1736,121,1748,124,1747,129,1735,127,1561,96,1386,73,1227,58,1099,50"/>
+<area shape="rect" id="Node000004" href="$dc/dbb/_app_driver_8h.html" title=" " alt="" coords="861,361,1034,432"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1462,205,1481,231,1494,260,1497,288,1494,302,1485,315,1463,328,1422,340,1302,361,1161,379,1034,391,1034,386,1161,373,1302,356,1421,335,1461,323,1482,311,1489,300,1492,288,1489,261,1476,234,1458,208"/>
+<area shape="rect" id="Node000008" href="$d1/d86/_render_area_manager_8cpp.html" title=" " alt="" coords="1546,243,1768,313"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="1501,199,1586,240,1583,245,1499,204"/>
+<area shape="rect" id="Node000005" href="$dc/df3/_app_driver_8cpp.html" title=" " alt="" coords="763,480,935,551"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="911,446,880,481,876,478,907,442"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="847,427,597,494,596,488,846,422"/>
+<area shape="rect" id="Node000007" href="$d2/d21/src_2frontend_2main_8cpp.html" title="Main entry point for the 2D Graphics Modeler application." alt="" coords="959,480,1131,551"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="988,442,1018,478,1014,481,984,446"/>
+<area shape="rect" id="Node000010" href="$d0/d45/_shapes_manager_8cpp.html" title=" " alt="" coords="1792,243,1988,313"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1725,199,1815,240,1813,245,1722,204"/>
+<area shape="rect" id="Node000012" href="$d7/d96/_testimonial_manager_8cpp.html" title=" " alt="" coords="1056,243,1274,313"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="1061,202,1116,240,1113,244,1058,206"/>
+<area shape="rect" id="Node000013" href="$da/d08/_testimonial_dialog_8cpp.html" title=" " alt="" coords="548,243,752,313"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="881,202,753,245,752,240,879,197"/>
+<area shape="rect" id="Node000014" href="$d6/db1/_testimonials_display_dialog_8cpp.html" title=" " alt="" coords="776,243,1031,313"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="962,208,933,244,929,241,958,205"/>
+<area shape="rect" id="Node000015" href="$d9/d53/mainwindow_8h.html" title=" " alt="" coords="1299,243,1471,313"/>
+<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="1115,190,1287,240,1299,244,1297,249,1285,245,1113,195"/>
+<area shape="poly" id="edge15_Node000015_Node000004" title=" " alt="" coords="1285,316,1150,352,1035,379,1033,374,1148,347,1283,311"/>
+<area shape="rect" id="Node000016" href="$d8/dd9/mainwindow_8cpp.html" title=" " alt="" coords="1299,361,1471,432"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="1388,329,1388,361,1382,361,1382,329"/>
+<area shape="poly" id="edge18_Node000017_Node000004" title=" " alt="" coords="488,300,536,311,861,376,860,381,535,316,487,305"/>
+<area shape="poly" id="edge20_Node000017_Node000006" title=" " alt="" coords="417,326,437,360,496,479,492,481,432,363,412,328"/>
+<area shape="rect" id="Node000018" href="$d4/d3b/_user_manager_8cpp.html" title=" " alt="" coords="5,361,186,432"/>
+<area shape="poly" id="edge19_Node000017_Node000018" title=" " alt="" coords="286,322,183,363,181,358,284,317"/>
+<area shape="rect" id="Node000019" href="$de/d9f/moc___user_manager_8cpp.html" title=" " alt="" coords="209,361,422,432"/>
+<area shape="poly" id="edge21_Node000017_Node000019" title=" " alt="" coords="360,328,339,362,334,360,355,325"/>
+</map>

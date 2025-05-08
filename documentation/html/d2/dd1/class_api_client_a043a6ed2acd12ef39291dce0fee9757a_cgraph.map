@@ -1,0 +1,9 @@
+<map id="ApiClient::PostUsers" name="ApiClient::PostUsers">
+<area shape="rect" id="Node000001" title="Makes a request to send data to the Post /users API Endpoint." alt="" coords="5,31,150,56"/>
+<area shape="rect" id="Node000002" href="$d2/dd1/class_api_client.html#aeaa808b2a23ba8e6f5e5520a991127e3" title="Analyzes the reply for POST requests." alt="" coords="198,31,388,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,41,182,41,182,46,150,46"/>
+<area shape="rect" id="Node000003" href="$d2/dd1/class_api_client.html#ac0f68b238bace3703854d7de15a3bb38" title="Signal for a failed request sent to a Post endpoint." alt="" coords="440,5,606,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="388,30,424,26,425,32,388,36"/>
+<area shape="rect" id="Node000004" href="$d2/dd1/class_api_client.html#aa2e03a2c693acb0052f80415b453e279" title="Signal for a successful request sent to a Post endpoint." alt="" coords="436,55,610,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="388,51,421,54,420,59,388,56"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="UserAccount::isAdmin" name="UserAccount::isAdmin">
+<area shape="rect" id="Node000001" title="Returns true if the user has administrative privileges, false otherwise." alt="" coords="198,5,350,31"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#aec700c3508cbac1197ff4010160be3cb" title="Converts a vector of UserAccount pointers into a JSON string representation." alt="" coords="5,5,150,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,21,150,21,150,16,182,16"/>
+</map>

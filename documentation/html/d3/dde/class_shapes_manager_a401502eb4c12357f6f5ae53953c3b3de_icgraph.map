@@ -1,0 +1,15 @@
+<map id="ShapesManager::shapesChanged" name="ShapesManager::shapesChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="518,120,735,146"/>
+<area shape="rect" id="Node000002" href="$d3/dde/class_shapes_manager.html#ae851cda2501ba8af0f6f44d5361a5348" title="These functions are used to add, delete, and load shapes in the ShapesManager." alt="" coords="280,5,461,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="592,113,536,79,469,46,434,34,435,29,471,41,538,74,595,109"/>
+<area shape="rect" id="Node000003" href="$d3/dde/class_shapes_manager.html#a3f497ccd5877aa974e3811df954f149b" title=" " alt="" coords="284,55,457,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="550,119,457,97,458,92,552,113"/>
+<area shape="rect" id="Node000004" href="$d3/dde/class_shapes_manager.html#a00d9c085c697132f0ce4ad260c3b9147" title=" " alt="" coords="273,120,468,146"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="502,136,468,136,468,130,502,130"/>
+<area shape="rect" id="Node000005" href="$d3/dde/class_shapes_manager.html#aeb0348ac6e97b3248dfc262bfd4eceaa" title=" " alt="" coords="271,169,470,195"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="542,152,441,171,440,166,541,147"/>
+<area shape="rect" id="Node000006" href="$d3/dde/class_shapes_manager.html#a1f4218728de2c529424149d6a9b61ce3" title=" " alt="" coords="276,219,465,260"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="587,156,471,210,441,221,439,216,469,205,585,151"/>
+<area shape="rect" id="Node000007" href="$d3/dde/class_shapes_manager.html#ab717143ddccb519cf74e28a27793112a" title="Default Constructor." alt="" coords="5,227,223,252"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="260,242,223,242,223,237,260,237"/>
+</map>

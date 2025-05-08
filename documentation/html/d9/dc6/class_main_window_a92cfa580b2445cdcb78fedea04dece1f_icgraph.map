@@ -1,0 +1,7 @@
+<map id="MainWindow::onLoginRequest" name="MainWindow::onLoginRequest">
+<area shape="rect" id="Node000001" title="Slot triggered by a login dialog to initiate a login attempt." alt="" coords="474,5,672,31"/>
+<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#a44b1462463b23490276f54034ab12325" title="Slot triggered when the login button is clicked, typically opening a login dialog." alt="" coords="233,5,426,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="458,21,426,21,426,16,458,16"/>
+<area shape="rect" id="Node000003" href="$d9/dc6/class_main_window.html#a25d06b6f11a1eb7fa2239f01e853ae29" title=" " alt="" coords="5,5,185,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+</map>

@@ -9,10 +9,24 @@ Manages user accounts, including creation, authentication, and persistence.
 
 {\ttfamily \#include $<$User\+Manager.\+h$>$}
 
-Inheritance diagram for User\+Manager\+:\begin{figure}[H]
+
+
+Inheritance diagram for User\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{d1/da2/class_user_manager}
+\includegraphics[height=550pt]{d5/d4d/class_user_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for User\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{de/dd4/class_user_manager__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Signals}
@@ -123,6 +137,14 @@ User\+Manager\+::\+User\+Manager (\begin{DoxyParamCaption}\item[{QObject \texorp
 
 Constructor. Initializes \doxylink{class_api_client}{Api\+Client} connections and loads users. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_aefc22181e82f255ad68cb91d98373077_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_ad6f661321c38b332c0e0eff3a933e753}\index{UserManager@{UserManager}!````~UserManager@{\texorpdfstring{$\sim$}{\string~}UserManager}}
 \index{````~UserManager@{\texorpdfstring{$\sim$}{\string~}UserManager}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}UserManager()}{\string~UserManager()}}
@@ -147,6 +169,14 @@ void User\+Manager\+::add\+User (\begin{DoxyParamCaption}\item[{const QString}]{
 {\em username} & Adds a new user account and attempts to authenticate with the new credentials. \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_a8860588081ca0e6a7f88fc5b689fb235_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_a65e90a5565b65c8feb3b9299872d609d}\index{UserManager@{UserManager}!authenticate@{authenticate}}
 \index{authenticate@{authenticate}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{authenticate()}{authenticate()}}
@@ -158,6 +188,22 @@ void User\+Manager\+::authenticate (\begin{DoxyParamCaption}\item[{const QString
 {\em username} & Authenticates a user against the loaded user accounts. \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_a65e90a5565b65c8feb3b9299872d609d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_a65e90a5565b65c8feb3b9299872d609d_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_ab930b67c285d8ba31325a2621fe5ea5d}\index{UserManager@{UserManager}!authenticationFailed@{authenticationFailed}}
 \index{authenticationFailed@{authenticationFailed}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{authenticationFailed}{authenticationFailed}}
@@ -168,6 +214,14 @@ void User\+Manager\+::authentication\+Failed (\begin{DoxyParamCaption}\item[{con
 
 Emitted when user authentication fails. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_ab930b67c285d8ba31325a2621fe5ea5d_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_ab319dea2171804401ca54d825514972e}\index{UserManager@{UserManager}!deleteAllUsers@{deleteAllUsers}}
 \index{deleteAllUsers@{deleteAllUsers}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{deleteAllUsers()}{deleteAllUsers()}}
@@ -188,6 +242,14 @@ void User\+Manager\+::delete\+User (\begin{DoxyParamCaption}\item[{QString}]{use
 
 Deletes a specific user account by username. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_a290e8e3f0e751870db0331bb685751c3_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_a8a493a94c7d19f694abf481e1f764e8e}\index{UserManager@{UserManager}!getCurrUserRef@{getCurrUserRef}}
 \index{getCurrUserRef@{getCurrUserRef}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{getCurrUserRef()}{getCurrUserRef()}}
@@ -219,6 +281,14 @@ void User\+Manager\+::modify\+User (\begin{DoxyParamCaption}\item[{const QString
 {\em username} & Modifies an existing user account\textquotesingle{}s details (password, admin status). \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_a718dde56eb80e6bf05d74550f2dd723a_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_a93243af98a0b172c5b6ff685f8d196a0}\index{UserManager@{UserManager}!onBadDeleteResponse@{onBadDeleteResponse}}
 \index{onBadDeleteResponse@{onBadDeleteResponse}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{onBadDeleteResponse}{onBadDeleteResponse}}
@@ -229,6 +299,22 @@ void User\+Manager\+::on\+Bad\+Delete\+Response (\begin{DoxyParamCaption}\item[{
 
 Slot called when a DELETE request for user data fails. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_a93243af98a0b172c5b6ff685f8d196a0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_a93243af98a0b172c5b6ff685f8d196a0_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_acac58c863dc2d027a297c28725d91c93}\index{UserManager@{UserManager}!onBadGetResponse@{onBadGetResponse}}
 \index{onBadGetResponse@{onBadGetResponse}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{onBadGetResponse}{onBadGetResponse}}
@@ -239,6 +325,22 @@ void User\+Manager\+::on\+Bad\+Get\+Response (\begin{DoxyParamCaption}\item[{con
 
 Slot called when a GET request for user data fails. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_acac58c863dc2d027a297c28725d91c93_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_acac58c863dc2d027a297c28725d91c93_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_adaa13ba1ac6af2a667cde728a593ad83}\index{UserManager@{UserManager}!onBadPostResponse@{onBadPostResponse}}
 \index{onBadPostResponse@{onBadPostResponse}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{onBadPostResponse}{onBadPostResponse}}
@@ -249,6 +351,22 @@ void User\+Manager\+::on\+Bad\+Post\+Response (\begin{DoxyParamCaption}\item[{co
 
 Slot called when a POST request to save user data fails. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_adaa13ba1ac6af2a667cde728a593ad83_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_adaa13ba1ac6af2a667cde728a593ad83_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_aaae30b6ea45379ce5ecba8958d1a0a6f}\index{UserManager@{UserManager}!onGoodDeleteResponse@{onGoodDeleteResponse}}
 \index{onGoodDeleteResponse@{onGoodDeleteResponse}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{onGoodDeleteResponse}{onGoodDeleteResponse}}
@@ -259,6 +377,22 @@ void User\+Manager\+::on\+Good\+Delete\+Response (\begin{DoxyParamCaption}{}{}\e
 
 Slot called when a DELETE request for user data succeeds. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_aaae30b6ea45379ce5ecba8958d1a0a6f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_aaae30b6ea45379ce5ecba8958d1a0a6f_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_a3b3f078e58e742fd67185a8438d06fd4}\index{UserManager@{UserManager}!onGoodGetResponse@{onGoodGetResponse}}
 \index{onGoodGetResponse@{onGoodGetResponse}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{onGoodGetResponse}{onGoodGetResponse}}
@@ -269,6 +403,22 @@ void User\+Manager\+::on\+Good\+Get\+Response (\begin{DoxyParamCaption}\item[{co
 
 Slot called when a GET request for user data succeeds. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_a3b3f078e58e742fd67185a8438d06fd4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_a3b3f078e58e742fd67185a8438d06fd4_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_a6c96002eef3fbb7981f569d43e163a64}\index{UserManager@{UserManager}!onGoodPostResponse@{onGoodPostResponse}}
 \index{onGoodPostResponse@{onGoodPostResponse}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{onGoodPostResponse}{onGoodPostResponse}}
@@ -279,6 +429,22 @@ void User\+Manager\+::on\+Good\+Post\+Response (\begin{DoxyParamCaption}{}{}\end
 
 Slot called when a POST request to save user data succeeds. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_a6c96002eef3fbb7981f569d43e163a64_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_a6c96002eef3fbb7981f569d43e163a64_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_ae723fce00890079d4702ba901f7d39a9}\index{UserManager@{UserManager}!saveUsers@{saveUsers}}
 \index{saveUsers@{saveUsers}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{saveUsers()}{saveUsers()}}
@@ -289,6 +455,14 @@ void User\+Manager\+::save\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCap
 
 Saves all current user accounts to the webservice. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_ae723fce00890079d4702ba901f7d39a9_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_ad725cb6519b4256e254da21ff5741e78}\index{UserManager@{UserManager}!statusMessage@{statusMessage}}
 \index{statusMessage@{statusMessage}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{statusMessage}{statusMessage}}
@@ -299,6 +473,14 @@ void User\+Manager\+::status\+Message (\begin{DoxyParamCaption}\item[{const QStr
 
 Emitted to provide general status updates or error messages. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_ad725cb6519b4256e254da21ff5741e78_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_abc36e1a0307e39413bf7e1ef9c487d61}\index{UserManager@{UserManager}!userAuthenticated@{userAuthenticated}}
 \index{userAuthenticated@{userAuthenticated}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{userAuthenticated}{userAuthenticated}}
@@ -309,6 +491,14 @@ void User\+Manager\+::user\+Authenticated (\begin{DoxyParamCaption}\item[{const 
 
 Emitted upon successful user authentication, providing the authenticated user. 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_abc36e1a0307e39413bf7e1ef9c487d61_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_user_manager_a62b1030933c092e59c9b2ad10e36415c}\index{UserManager@{UserManager}!userChanged@{userChanged}}
 \index{userChanged@{userChanged}!UserManager@{UserManager}}
 \doxysubsubsection{\texorpdfstring{userChanged}{userChanged}}
@@ -329,6 +519,14 @@ void User\+Manager\+::user\+Not\+Changed (\begin{DoxyParamCaption}\item[{const Q
 
 Emitted when an operation that would change users fails (e.\+g., user not found, username taken). 
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/da2/class_user_manager_a971a7f0b550dd6ac2c314a977aea395b_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Data Documentation}
@@ -376,6 +574,6 @@ Vector storing pointers to all loaded \doxylink{class_user_account}{User\+Accoun
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/backend/\mbox{\hyperlink{_user_manager_8h}{User\+Manager.\+h}}\item 
-src/backend/\mbox{\hyperlink{moc___user_manager_8cpp}{moc\+\_\+\+User\+Manager.\+cpp}}\item 
-src/backend/\mbox{\hyperlink{_user_manager_8cpp}{User\+Manager.\+cpp}}\end{DoxyCompactItemize}
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/backend/\mbox{\hyperlink{_user_manager_8h}{User\+Manager.\+h}}\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/backend/\mbox{\hyperlink{moc___user_manager_8cpp}{moc\+\_\+\+User\+Manager.\+cpp}}\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/backend/\mbox{\hyperlink{_user_manager_8cpp}{User\+Manager.\+cpp}}\end{DoxyCompactItemize}

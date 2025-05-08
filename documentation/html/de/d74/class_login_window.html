@@ -103,76 +103,118 @@ $(function(){initNavTree('de/d74/class_login_window.html','../../'); initResizab
 
 <div class="header">
   <div class="summary">
-<a href="#signals">Signals</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-slots">Private Slots</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../db/d3d/class_login_window-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">LoginWindow Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p>A dialog window for user login and signup.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../d0/d47/loginwindow_8h_source.html">loginwindow.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for LoginWindow:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="../../de/d74/class_login_window.png" alt=""/>
- </div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d5/d06/class_login_window__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for LoginWindow:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d22/class_login_window__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">User Action Signals</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Signals emitted based on user interactions within the dialog.</p>
+<p>These signals notify other parts of the application about login or signup attempts. </p>
+</div></td></tr>
 <tr class="memitem:a075f5a5f9da1f4b202aec66d6bd7ec76" id="r_a075f5a5f9da1f4b202aec66d6bd7ec76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a075f5a5f9da1f4b202aec66d6bd7ec76">loginRequested</a> (const QString &amp;<a class="el" href="#a2b28bf4bc7080e39afb0d096d212e0a0">username</a>, const QString &amp;<a class="el" href="#ab207055cd16762112d1facbd35da9c25">password</a>)</td></tr>
+<tr class="memdesc:a075f5a5f9da1f4b202aec66d6bd7ec76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when the user attempts to log in with the provided credentials.  <br /></td></tr>
 <tr class="separator:a075f5a5f9da1f4b202aec66d6bd7ec76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae166943123818d0b0a3dcdcf66380994" id="r_ae166943123818d0b0a3dcdcf66380994"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae166943123818d0b0a3dcdcf66380994">signupRequested</a> (const QString &amp;<a class="el" href="#a2b28bf4bc7080e39afb0d096d212e0a0">username</a>, const QString &amp;<a class="el" href="#ab207055cd16762112d1facbd35da9c25">password</a>, const bool admin)</td></tr>
+<tr class="memdesc:ae166943123818d0b0a3dcdcf66380994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when the user attempts to sign up with the provided credentials. (Admin flag is currently hardcoded to true in the .cpp).  <br /></td></tr>
 <tr class="separator:ae166943123818d0b0a3dcdcf66380994"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Constructor and Public Accessors</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Methods for creating and interacting with the <a class="el" href="../../de/d74/class_login_window.html" title="A dialog window for user login and signup.">LoginWindow</a>.</p>
+<p>Includes the constructor and methods to retrieve user input. </p>
+</div></td></tr>
 <tr class="memitem:aa4c04d26b299de00156bbf3c32b2a082" id="r_aa4c04d26b299de00156bbf3c32b2a082"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4c04d26b299de00156bbf3c32b2a082">LoginWindow</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aa4c04d26b299de00156bbf3c32b2a082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that sets up the UI components for login and signup.  <br /></td></tr>
 <tr class="separator:aa4c04d26b299de00156bbf3c32b2a082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b28bf4bc7080e39afb0d096d212e0a0" id="r_a2b28bf4bc7080e39afb0d096d212e0a0"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b28bf4bc7080e39afb0d096d212e0a0">username</a> () const</td></tr>
+<tr class="memdesc:a2b28bf4bc7080e39afb0d096d212e0a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the username entered in the currently active input field (login or signup).  <br /></td></tr>
 <tr class="separator:a2b28bf4bc7080e39afb0d096d212e0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab207055cd16762112d1facbd35da9c25" id="r_ab207055cd16762112d1facbd35da9c25"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab207055cd16762112d1facbd35da9c25">password</a> () const</td></tr>
+<tr class="memdesc:ab207055cd16762112d1facbd35da9c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the password entered in the currently active input field (login or signup).  <br /></td></tr>
 <tr class="separator:ab207055cd16762112d1facbd35da9c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Private Slots</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Page Navigation and Action Slots</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Slots to handle UI events like button clicks.</p>
+<p>These slots manage switching between login/signup pages and triggering login/signup attempts. </p>
+</div></td></tr>
 <tr class="memitem:a090d7c9a09bfc32e168c090c95f6cb54" id="r_a090d7c9a09bfc32e168c090c95f6cb54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a090d7c9a09bfc32e168c090c95f6cb54">showSignupPage</a> ()</td></tr>
+<tr class="memdesc:a090d7c9a09bfc32e168c090c95f6cb54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches the QStackedWidget to display the signup page.  <br /></td></tr>
 <tr class="separator:a090d7c9a09bfc32e168c090c95f6cb54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5d204dd749d28fdbdcda5a6080339b4" id="r_ac5d204dd749d28fdbdcda5a6080339b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5d204dd749d28fdbdcda5a6080339b4">showLoginPage</a> ()</td></tr>
+<tr class="memdesc:ac5d204dd749d28fdbdcda5a6080339b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches the QStackedWidget to display the login page.  <br /></td></tr>
 <tr class="separator:ac5d204dd749d28fdbdcda5a6080339b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4677fdb497a115ea633069d51eb03944" id="r_a4677fdb497a115ea633069d51eb03944"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4677fdb497a115ea633069d51eb03944">attemptLogin</a> ()</td></tr>
+<tr class="memdesc:a4677fdb497a115ea633069d51eb03944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emits the loginRequested signal with current input from login fields.  <br /></td></tr>
 <tr class="separator:a4677fdb497a115ea633069d51eb03944"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70f65bf3f12674754e167540444b7009" id="r_a70f65bf3f12674754e167540444b7009"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70f65bf3f12674754e167540444b7009">attemptSignup</a> ()</td></tr>
+<tr class="memdesc:a70f65bf3f12674754e167540444b7009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emits the signupRequested signal with current input from signup fields.  <br /></td></tr>
 <tr class="separator:a70f65bf3f12674754e167540444b7009"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">UI Components</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Private member variables storing pointers to UI widgets.</p>
+<p>These widgets make up the login and signup pages. </p>
+</div></td></tr>
 <tr class="memitem:a68afd4c7d12003f162c202a37a180625" id="r_a68afd4c7d12003f162c202a37a180625"><td class="memItemLeft" align="right" valign="top">QStackedWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68afd4c7d12003f162c202a37a180625">stack</a></td></tr>
+<tr class="memdesc:a68afd4c7d12003f162c202a37a180625"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stacked widget managing the login and signup pages.  <br /></td></tr>
 <tr class="separator:a68afd4c7d12003f162c202a37a180625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea779547c3fdf5adeba9b3a37d999fb2" id="r_aea779547c3fdf5adeba9b3a37d999fb2"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea779547c3fdf5adeba9b3a37d999fb2">loginPage</a></td></tr>
+<tr class="memdesc:aea779547c3fdf5adeba9b3a37d999fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The widget container for the login page UI elements.  <br /></td></tr>
 <tr class="separator:aea779547c3fdf5adeba9b3a37d999fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac72ac7a79c869375966bd6619d534a29" id="r_ac72ac7a79c869375966bd6619d534a29"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac72ac7a79c869375966bd6619d534a29">loginUserEdit</a></td></tr>
+<tr class="memdesc:ac72ac7a79c869375966bd6619d534a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input field for the username on the login page.  <br /></td></tr>
 <tr class="separator:ac72ac7a79c869375966bd6619d534a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f13f0dc71a1557e0701c9a14e6bccdb" id="r_a0f13f0dc71a1557e0701c9a14e6bccdb"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f13f0dc71a1557e0701c9a14e6bccdb">loginPassEdit</a></td></tr>
+<tr class="memdesc:a0f13f0dc71a1557e0701c9a14e6bccdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input field for the password on the login page.  <br /></td></tr>
 <tr class="separator:a0f13f0dc71a1557e0701c9a14e6bccdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc0fb88b9ee3a8581b10eaca178ed008" id="r_afc0fb88b9ee3a8581b10eaca178ed008"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc0fb88b9ee3a8581b10eaca178ed008">loginBtn</a></td></tr>
+<tr class="memdesc:afc0fb88b9ee3a8581b10eaca178ed008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Button to initiate a login attempt.  <br /></td></tr>
 <tr class="separator:afc0fb88b9ee3a8581b10eaca178ed008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1aa058da600286ac1956a1ddb4e3bb49" id="r_a1aa058da600286ac1956a1ddb4e3bb49"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1aa058da600286ac1956a1ddb4e3bb49">toSignupBtn</a></td></tr>
+<tr class="memdesc:a1aa058da600286ac1956a1ddb4e3bb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Button to navigate to the signup page.  <br /></td></tr>
 <tr class="separator:a1aa058da600286ac1956a1ddb4e3bb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ab29b2a04b9f0f6f52151b790ac7a01" id="r_a8ab29b2a04b9f0f6f52151b790ac7a01"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ab29b2a04b9f0f6f52151b790ac7a01">signupPage</a></td></tr>
+<tr class="memdesc:a8ab29b2a04b9f0f6f52151b790ac7a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">The widget container for the signup page UI elements.  <br /></td></tr>
 <tr class="separator:a8ab29b2a04b9f0f6f52151b790ac7a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94c8dbea36fdc2b31c7358191c2b088b" id="r_a94c8dbea36fdc2b31c7358191c2b088b"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94c8dbea36fdc2b31c7358191c2b088b">signupUserEdit</a></td></tr>
+<tr class="memdesc:a94c8dbea36fdc2b31c7358191c2b088b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input field for the username on the signup page.  <br /></td></tr>
 <tr class="separator:a94c8dbea36fdc2b31c7358191c2b088b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5f00572cefbba064f3723352657d87d" id="r_ad5f00572cefbba064f3723352657d87d"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5f00572cefbba064f3723352657d87d">signupPassEdit</a></td></tr>
+<tr class="memdesc:ad5f00572cefbba064f3723352657d87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input field for the password on the signup page.  <br /></td></tr>
 <tr class="separator:ad5f00572cefbba064f3723352657d87d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69b71ef56685dc774e10ac8f877fa8cf" id="r_a69b71ef56685dc774e10ac8f877fa8cf"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69b71ef56685dc774e10ac8f877fa8cf">signupBtn</a></td></tr>
+<tr class="memdesc:a69b71ef56685dc774e10ac8f877fa8cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Button to initiate a signup attempt.  <br /></td></tr>
 <tr class="separator:a69b71ef56685dc774e10ac8f877fa8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57c19b3fb6eb05bfa6695d05ebc93c54" id="r_a57c19b3fb6eb05bfa6695d05ebc93c54"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57c19b3fb6eb05bfa6695d05ebc93c54">backToLoginBtn</a></td></tr>
+<tr class="memdesc:a57c19b3fb6eb05bfa6695d05ebc93c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Button to navigate back to the login page.  <br /></td></tr>
 <tr class="separator:a57c19b3fb6eb05bfa6695d05ebc93c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A dialog window for user login and signup. </p>
+<p>This class provides a QDialog with a QStackedWidget to switch between a login page and a signup page. It emits signals when a login or signup attempt is made. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa4c04d26b299de00156bbf3c32b2a082" name="aa4c04d26b299de00156bbf3c32b2a082"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4c04d26b299de00156bbf3c32b2a082">&#9670;&#160;</a></span>LoginWindow()</h2>
 
@@ -195,6 +237,13 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Constructor that sets up the UI components for login and signup. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_aa4c04d26b299de00156bbf3c32b2a082_cgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -222,6 +271,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Emits the loginRequested signal with current input from login fields. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_a4677fdb497a115ea633069d51eb03944_cgraph.svg" width="651" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_a4677fdb497a115ea633069d51eb03944_icgraph.svg" width="427" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="a70f65bf3f12674754e167540444b7009" name="a70f65bf3f12674754e167540444b7009"></a>
@@ -246,6 +307,18 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emits the signupRequested signal with current input from signup fields. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_a70f65bf3f12674754e167540444b7009_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_a70f65bf3f12674754e167540444b7009_icgraph.svg" width="436" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -276,6 +349,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Emitted when the user attempts to log in with the provided credentials. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_a075f5a5f9da1f4b202aec66d6bd7ec76_cgraph.svg" width="420" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_a075f5a5f9da1f4b202aec66d6bd7ec76_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a id="ab207055cd16762112d1facbd35da9c25" name="ab207055cd16762112d1facbd35da9c25"></a>
@@ -292,6 +377,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the password entered in the currently active input field (login or signup). </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_ab207055cd16762112d1facbd35da9c25_icgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -318,6 +410,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Switches the QStackedWidget to display the login page. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_ac5d204dd749d28fdbdcda5a6080339b4_icgraph.svg" width="444" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="a090d7c9a09bfc32e168c090c95f6cb54" name="a090d7c9a09bfc32e168c090c95f6cb54"></a>
@@ -342,6 +441,13 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Switches the QStackedWidget to display the signup page. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_a090d7c9a09bfc32e168c090c95f6cb54_icgraph.svg" width="452" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -377,6 +483,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Emitted when the user attempts to sign up with the provided credentials. (Admin flag is currently hardcoded to true in the .cpp). </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_ae166943123818d0b0a3dcdcf66380994_cgraph.svg" width="432" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_ae166943123818d0b0a3dcdcf66380994_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a id="a2b28bf4bc7080e39afb0d096d212e0a0" name="a2b28bf4bc7080e39afb0d096d212e0a0"></a>
@@ -393,6 +511,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the username entered in the currently active input field (login or signup). </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../de/d74/class_login_window_a2b28bf4bc7080e39afb0d096d212e0a0_icgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -417,6 +542,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Button to navigate back to the login page. </p>
+
 </div>
 </div>
 <a id="afc0fb88b9ee3a8581b10eaca178ed008" name="afc0fb88b9ee3a8581b10eaca178ed008"></a>
@@ -438,6 +565,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Button to initiate a login attempt. </p>
 
 </div>
 </div>
@@ -461,6 +590,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The widget container for the login page UI elements. </p>
+
 </div>
 </div>
 <a id="a0f13f0dc71a1557e0701c9a14e6bccdb" name="a0f13f0dc71a1557e0701c9a14e6bccdb"></a>
@@ -482,6 +613,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Input field for the password on the login page. </p>
 
 </div>
 </div>
@@ -505,6 +638,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Input field for the username on the login page. </p>
+
 </div>
 </div>
 <a id="a69b71ef56685dc774e10ac8f877fa8cf" name="a69b71ef56685dc774e10ac8f877fa8cf"></a>
@@ -526,6 +661,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Button to initiate a signup attempt. </p>
 
 </div>
 </div>
@@ -549,6 +686,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The widget container for the signup page UI elements. </p>
+
 </div>
 </div>
 <a id="ad5f00572cefbba064f3723352657d87d" name="ad5f00572cefbba064f3723352657d87d"></a>
@@ -570,6 +709,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Input field for the password on the signup page. </p>
 
 </div>
 </div>
@@ -593,6 +734,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Input field for the username on the signup page. </p>
+
 </div>
 </div>
 <a id="a68afd4c7d12003f162c202a37a180625" name="a68afd4c7d12003f162c202a37a180625"></a>
@@ -614,6 +757,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The stacked widget managing the login and signup pages. </p>
 
 </div>
 </div>
@@ -637,11 +782,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Button to navigate to the signup page. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/frontend/<a class="el" href="../../d0/d47/loginwindow_8h_source.html">loginwindow.h</a></li>
-<li>src/frontend/<a class="el" href="../../dc/dae/loginwindow_8cpp.html">loginwindow.cpp</a></li>
+<li>/Users/gautam/Local/Forge/Team-Alphawolves/2D-Graphics-Modeler/src/frontend/<a class="el" href="../../d0/d47/loginwindow_8h_source.html">loginwindow.h</a></li>
+<li>/Users/gautam/Local/Forge/Team-Alphawolves/2D-Graphics-Modeler/src/frontend/<a class="el" href="../../dc/dae/loginwindow_8cpp.html">loginwindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

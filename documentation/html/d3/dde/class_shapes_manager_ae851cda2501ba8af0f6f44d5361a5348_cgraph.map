@@ -1,0 +1,9 @@
+<map id="ShapesManager::addShape" name="ShapesManager::addShape">
+<area shape="rect" id="Node000001" title="These functions are used to add, delete, and load shapes in the ShapesManager." alt="" coords="5,55,187,80"/>
+<area shape="rect" id="Node000002" href="$d7/da7/class_shape.html#aec4675c2b06d40373eefac4b982af242" title=" " alt="" coords="274,5,413,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,51,260,32,261,37,165,57"/>
+<area shape="rect" id="Node000003" href="$d3/dde/class_shapes_manager.html#a1b76d87eb372f56453320d1b0bf566ac" title=" " alt="" coords="246,55,441,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,65,230,65,230,70,187,70"/>
+<area shape="rect" id="Node000004" href="$d3/dde/class_shapes_manager.html#a401502eb4c12357f6f5ae53953c3b3de" title=" " alt="" coords="235,104,452,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="165,78,261,98,260,103,164,84"/>
+</map>

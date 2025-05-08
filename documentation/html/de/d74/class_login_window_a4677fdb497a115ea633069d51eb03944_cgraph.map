@@ -1,0 +1,9 @@
+<map id="LoginWindow::attemptLogin" name="LoginWindow::attemptLogin">
+<area shape="rect" id="Node000001" title="Emits the loginRequested signal with current input from login fields." alt="" coords="5,31,188,56"/>
+<area shape="rect" id="Node000002" href="$de/d74/class_login_window.html#a075f5a5f9da1f4b202aec66d6bd7ec76" title="Emitted when the user attempts to log in with the provided credentials." alt="" coords="236,31,433,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,41,220,41,220,46,188,46"/>
+<area shape="rect" id="Node000003" href="$de/d74/class_login_window.html#ab207055cd16762112d1facbd35da9c25" title="Returns the password entered in the currently active input field (login or signup)." alt="" coords="482,5,645,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="433,30,466,26,466,32,434,35"/>
+<area shape="rect" id="Node000004" href="$de/d74/class_login_window.html#a2b28bf4bc7080e39afb0d096d212e0a0" title="Returns the username entered in the currently active input field (login or signup)." alt="" coords="481,55,645,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="434,51,466,55,465,60,433,57"/>
+</map>

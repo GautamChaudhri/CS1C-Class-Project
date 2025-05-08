@@ -1,0 +1,31 @@
+<map id="Parser::GetShapeDimensions" name="Parser::GetShapeDimensions">
+<area shape="rect" id="Node000001" title="Gets the geometric dimensions of a shape as a JSON array string." alt="" coords="5,327,200,352"/>
+<area shape="rect" id="Node000002" href="$dc/d25/class_ellipse.html#a77211318bb4d61848cfa76e887c290f0" title="Accessor Functions." alt="" coords="276,5,372,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,326,117,274,143,197,162,155,185,113,213,74,246,40,260,31,263,35,249,44,217,78,190,116,167,157,148,199,122,275,109,327"/>
+<area shape="rect" id="Node000003" href="$dc/d25/class_ellipse.html#a18ac4b70047614c98a8e663cc900b656" title=" " alt="" coords="276,55,372,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,326,121,281,149,217,191,149,217,117,246,89,260,80,263,85,249,94,220,121,195,152,154,220,126,283,110,327"/>
+<area shape="rect" id="Node000004" href="$dd/db4/class_line.html#aedb630a8121c423320ef5e369e17f65f" title=" " alt="" coords="262,104,386,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="107,325,126,288,156,238,196,185,246,139,252,135,255,139,249,143,200,188,160,241,131,291,112,327"/>
+<area shape="rect" id="Node000005" href="$d9/dc7/class_rectangle.html#af86510135f0d97d2295bbc304ea932bf" title="Accessor Functions." alt="" coords="251,153,396,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="111,325,163,260,202,221,246,188,254,183,257,188,249,192,206,225,167,263,115,328"/>
+<area shape="rect" id="Node000006" href="$d9/d0c/class_square.html#a8f3f73c6ceea3fba1c09dcaba56f49af" title="Accessor Functions." alt="" coords="260,203,388,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="118,324,173,282,246,237,258,232,260,237,249,242,176,286,121,328"/>
+<area shape="rect" id="Node000007" href="$da/d0e/class_text.html#aa538b21160165d28fbaf706c51221ef3" title="Accessor Functions." alt="" coords="268,252,380,278"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="140,324,247,286,264,281,266,286,249,291,142,329"/>
+<area shape="rect" id="Node000008" href="$d7/da7/class_shape.html#ab1cc10b4862f2e16db50622e2df278f3" title=" " alt="" coords="263,301,384,327"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="199,326,247,320,248,326,200,331"/>
+<area shape="rect" id="Node000009" href="$d1/db0/class_polygon.html#aa29df027578f8427676e9eb4a5ee67c2" title="getPointsList &#45; Returns the pointsList by value" alt="" coords="248,351,400,376"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="200,347,232,351,232,356,199,353"/>
+<area shape="rect" id="Node000010" href="$d1/d42/class_polyline.html#acb3340122423e1c80e3aa7c7a30fda84" title="getPointsList &#45; Returns the pointsList by value" alt="" coords="248,400,400,426"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="143,350,249,386,267,392,265,397,247,391,141,355"/>
+<area shape="rect" id="Node000011" href="$d0/d88/class_circle.html#a955ba2846a5c3a9f42b1e38f7ace0860" title="getR &#45; Accessor &#45; Returns the radius" alt="" coords="278,449,370,475"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="121,351,176,392,249,436,264,443,262,447,246,441,173,396,118,355"/>
+<area shape="rect" id="Node000012" href="$d7/da7/class_shape.html#a4b502262ae5a22122456b9624d5ccb3d" title="Accessor Functions &#45; Returns the data named after them." alt="" coords="258,499,390,524"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="115,351,167,415,206,453,249,485,257,490,254,494,246,490,202,457,163,419,111,354"/>
+<area shape="rect" id="Node000013" href="$dd/db4/class_line.html#ae0c35900f7e283b3559263455ac18669" title="Accessor Functions." alt="" coords="259,548,388,574"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="112,352,131,388,160,437,200,490,249,535,255,538,252,543,246,539,196,493,156,440,126,391,107,354"/>
+<area shape="rect" id="Node000014" href="$d9/dc7/class_rectangle.html#ab38bbfcd0c11b39e0ef58ffd0b5c5069" title=" " alt="" coords="254,597,394,623"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="110,352,126,396,154,459,195,526,220,557,249,584,253,587,250,591,246,588,217,561,191,529,149,461,121,398,105,353"/>
+<area shape="rect" id="Node000015" href="$da/d0e/class_text.html#ad24ce301552aff8f9231d438ff9bd1e4" title=" " alt="" coords="271,647,377,672"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="109,352,122,405,148,480,167,522,190,562,217,600,249,633,258,640,255,644,246,638,213,604,185,565,162,524,143,482,117,406,104,354"/>
+</map>

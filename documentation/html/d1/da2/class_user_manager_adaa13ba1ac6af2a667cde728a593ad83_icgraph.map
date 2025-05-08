@@ -1,0 +1,5 @@
+<map id="UserManager::onBadPostResponse" name="UserManager::onBadPostResponse">
+<area shape="rect" id="Node000001" title="Slot called when a POST request to save user data fails." alt="" coords="239,5,469,31"/>
+<area shape="rect" id="Node000002" href="$d1/da2/class_user_manager.html#aefc22181e82f255ad68cb91d98373077" title="Constructor. Initializes ApiClient connections and loads users." alt="" coords="5,5,191,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,21,191,21,191,16,223,16"/>
+</map>

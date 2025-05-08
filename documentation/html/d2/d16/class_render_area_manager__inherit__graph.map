@@ -1,0 +1,5 @@
+<map id="RenderAreaManager" name="RenderAreaManager">
+<area shape="rect" id="Node000001" title="Manages the shapes to be rendered and interacts with the backend API." alt="" coords="5,120,207,1369"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="77,5,136,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,87,109,120,104,120,104,87"/>
+</map>

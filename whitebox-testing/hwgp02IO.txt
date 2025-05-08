@@ -1,0 +1,477 @@
+============================================================
+                    White Box Test: Shape Listing Report
+============================================================
+
+Unsorted Shapes Pre-Testing (ID Report):
+------------------------------------------------------------
+[
+{
+"ShapeId": 5,
+"TrackerId": 5890,
+"ShapeType": "Square",
+"ShapeDimensions": [50, 50, 50],
+"PenColor": "red",
+"PenWidth": 2,
+"PenStyle": "DotLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "blue",
+"BrushStyle": "DiagCrossPattern"
+},
+{
+"ShapeId": 1,
+"TrackerId": 1534,
+"ShapeType": "Line",
+"ShapeDimensions": [0, 0, 500, 500],
+"PenColor": "blue",
+"PenWidth": 4,
+"PenStyle": "DashDotDotLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 7,
+"TrackerId": 7104,
+"ShapeType": "Circle",
+"ShapeDimensions": [100, 100, 60],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "yellow",
+"BrushStyle": "HorPattern"
+},
+{
+"ShapeId": 2,
+"TrackerId": 2471,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 60, 80, 20, 100, 100],
+"PenColor": "green",
+"PenWidth": 4,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 4,
+"TrackerId": 4098,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 10, 200, 100],
+"PenColor": "gray",
+"PenWidth": 5,
+"PenStyle": "DashLine",
+"PenCapStyle": "RoundCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+}
+]
+
+Test Description                                  Result
+------------------------------------------------------------
+Pre-condition: shapes imported successfully       PASS  
+Delete shape TrackerId=1534                       PASS  
+Add new Ellipse TrackerId=6281                    PASS  
+Modify Circle radius to 20                        PASS  
+Modify Square Side=80                             PASS  
+Modify Rectangle L=50, W=75                       PASS  
+------------------------------------------------------------
+
+Sorted Shapes Post-Testing (ID Report):
+------------------------------------------------------------
+[
+{
+"ShapeId": 2,
+"TrackerId": 2471,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 60, 80, 20, 100, 100],
+"PenColor": "green",
+"PenWidth": 4,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 4,
+"TrackerId": 4098,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 10, 50, 75],
+"PenColor": "gray",
+"PenWidth": 5,
+"PenStyle": "DashLine",
+"PenCapStyle": "RoundCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+},
+{
+"ShapeId": 5,
+"TrackerId": 5890,
+"ShapeType": "Square",
+"ShapeDimensions": [50, 50, 80],
+"PenColor": "red",
+"PenWidth": 2,
+"PenStyle": "DotLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "blue",
+"BrushStyle": "DiagCrossPattern"
+},
+{
+"ShapeId": 6,
+"TrackerId": 6281,
+"ShapeType": "Ellipse",
+"ShapeDimensions": [70, 70, 30, 20],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+},
+{
+"ShapeId": 7,
+"TrackerId": 7104,
+"ShapeType": "Circle",
+"ShapeDimensions": [100, 100, 20],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "yellow",
+"BrushStyle": "HorPattern"
+}
+]
+
+
+
+============================================================
+                    White Box Test: Shape Area Report
+============================================================
+
+Unsorted Shapes Pre-Testing (Area Report):
+------------------------------------------------------------
+[
+{
+"ShapeId": 5,
+"TrackerId": 5892,
+"ShapeType": "Square",
+"ShapeDimensions": [50, 50, 50],
+"PenColor": "red",
+"PenWidth": 2,
+"PenStyle": "DotLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "blue",
+"BrushStyle": "DiagCrossPattern"
+},
+{
+"ShapeId": 1,
+"TrackerId": 1536,
+"ShapeType": "Line",
+"ShapeDimensions": [0, 0, 500, 500],
+"PenColor": "blue",
+"PenWidth": 4,
+"PenStyle": "DashDotDotLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 7,
+"TrackerId": 7106,
+"ShapeType": "Circle",
+"ShapeDimensions": [100, 100, 60],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "yellow",
+"BrushStyle": "HorPattern"
+},
+{
+"ShapeId": 2,
+"TrackerId": 2473,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 60, 80, 20, 100, 100],
+"PenColor": "green",
+"PenWidth": 4,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 4,
+"TrackerId": 4100,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 10, 200, 100],
+"PenColor": "gray",
+"PenWidth": 5,
+"PenStyle": "DashLine",
+"PenCapStyle": "RoundCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+}
+]
+
+
+Shape Report   Tracker ID  Dimensions          Area      
+------------------------------------------------------------
+Line              1536     N/A                 N/A       
+Polyline          2473     N/A                 N/A       
+Square            5892     Side=50             2500      
+Circle            7106     R=60                11304     
+Rectangle         4100     L=200, W=100        20000     
+------------------------------------------------------------
+
+Applying modifications to shapes:
+------------------------------------------------------------
+Modified Square (ID=5892) side to 240
+Modified Circle (ID=7106) radius to 35
+Modified Rectangle (ID=4100) length to 165
+------------------------------------------------------------
+
+Shape Report   Tracker ID  Dimensions          Area      
+------------------------------------------------------------
+Line              1536     N/A                 N/A       
+Polyline          2473     N/A                 N/A       
+Circle            7106     R=35                3846.5    
+Rectangle         4100     L=165, W=100        16500     
+Square            5892     Side=240            57600     
+------------------------------------------------------------
+
+Sorted Shapes Post-Testing (Area Report):
+------------------------------------------------------------
+[
+{
+"ShapeId": 1,
+"TrackerId": 1536,
+"ShapeType": "Line",
+"ShapeDimensions": [0, 0, 500, 500],
+"PenColor": "blue",
+"PenWidth": 4,
+"PenStyle": "DashDotDotLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 2,
+"TrackerId": 2473,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 60, 80, 20, 100, 100],
+"PenColor": "green",
+"PenWidth": 4,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 7,
+"TrackerId": 7106,
+"ShapeType": "Circle",
+"ShapeDimensions": [100, 100, 35],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "yellow",
+"BrushStyle": "HorPattern"
+},
+{
+"ShapeId": 4,
+"TrackerId": 4100,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 10, 165, 100],
+"PenColor": "gray",
+"PenWidth": 5,
+"PenStyle": "DashLine",
+"PenCapStyle": "RoundCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+},
+{
+"ShapeId": 5,
+"TrackerId": 5892,
+"ShapeType": "Square",
+"ShapeDimensions": [50, 50, 240],
+"PenColor": "red",
+"PenWidth": 2,
+"PenStyle": "DotLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "blue",
+"BrushStyle": "DiagCrossPattern"
+}
+]
+
+
+
+============================================================
+                    White Box Test: Shape Perimeter Report
+============================================================
+
+Unsorted Shapes Pre-Testing (Perimeter Report):
+------------------------------------------------------------
+[
+{
+"ShapeId": 5,
+"TrackerId": 5894,
+"ShapeType": "Square",
+"ShapeDimensions": [50, 50, 50],
+"PenColor": "red",
+"PenWidth": 2,
+"PenStyle": "DotLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "blue",
+"BrushStyle": "DiagCrossPattern"
+},
+{
+"ShapeId": 1,
+"TrackerId": 1538,
+"ShapeType": "Line",
+"ShapeDimensions": [0, 0, 500, 500],
+"PenColor": "blue",
+"PenWidth": 4,
+"PenStyle": "DashDotDotLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 7,
+"TrackerId": 7108,
+"ShapeType": "Circle",
+"ShapeDimensions": [100, 100, 60],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "yellow",
+"BrushStyle": "HorPattern"
+},
+{
+"ShapeId": 2,
+"TrackerId": 2475,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 60, 80, 20, 100, 100],
+"PenColor": "green",
+"PenWidth": 4,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 4,
+"TrackerId": 4102,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 10, 200, 100],
+"PenColor": "gray",
+"PenWidth": 5,
+"PenStyle": "DashLine",
+"PenCapStyle": "RoundCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+}
+]
+
+
+Shape Report   Tracker ID  Dimensions          Perimeter 
+------------------------------------------------------------
+Polyline          2475     N/A                 132.462113
+Square            5894     Side=50             200.000000
+Circle            7108     R=60                376.800000
+Rectangle         4102     L=200, W=100        600.000000
+Line              1538     N/A                 707.106781
+------------------------------------------------------------
+
+
+Applying modifications to shapes:
+------------------------------------------------------------
+Modified Square (ID=5894) side to 240
+Modified Circle (ID=7108) radius to 35
+Modified Rectangle (ID=4102) length to 165
+------------------------------------------------------------
+
+Shape Report   Tracker ID  Dimensions          Perimeter 
+------------------------------------------------------------
+Polyline          2475     N/A                 132.462113
+Circle            7108     R=35                219.800000
+Rectangle         4102     L=165, W=100        530.000000
+Line              1538     N/A                 707.106781
+Square            5894     Side=240            960.000000
+------------------------------------------------------------
+
+Sorted Shapes Post-Testing (Perimeter Report):
+------------------------------------------------------------
+[
+{
+"ShapeId": 2,
+"TrackerId": 2475,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 60, 80, 20, 100, 100],
+"PenColor": "green",
+"PenWidth": 4,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 7,
+"TrackerId": 7108,
+"ShapeType": "Circle",
+"ShapeDimensions": [100, 100, 35],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "yellow",
+"BrushStyle": "HorPattern"
+},
+{
+"ShapeId": 4,
+"TrackerId": 4102,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 10, 165, 100],
+"PenColor": "gray",
+"PenWidth": 5,
+"PenStyle": "DashLine",
+"PenCapStyle": "RoundCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+},
+{
+"ShapeId": 1,
+"TrackerId": 1538,
+"ShapeType": "Line",
+"ShapeDimensions": [0, 0, 500, 500],
+"PenColor": "blue",
+"PenWidth": 4,
+"PenStyle": "DashDotDotLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 5,
+"TrackerId": 5894,
+"ShapeType": "Square",
+"ShapeDimensions": [50, 50, 240],
+"PenColor": "red",
+"PenWidth": 2,
+"PenStyle": "DotLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "blue",
+"BrushStyle": "DiagCrossPattern"
+}
+]
+

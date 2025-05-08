@@ -1,0 +1,11 @@
+<map id="Parser::ExtractLiteral" name="Parser::ExtractLiteral">
+<area shape="rect" id="Node000001" title="Extracts a JSON literal (true, false, null) as a string." alt="" coords="611,31,756,56"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#ade9641ed520d4e9b73600e3cc049af46" title="Extracts a JSON value from the input string." alt="" coords="422,31,563,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="596,46,564,46,564,41,596,41"/>
+<area shape="rect" id="Node000003" href="$dc/db7/class_parser.html#a7e0c6d8559fd28407b48e9eef05496d8" title="Converts a JSON string representation into a vector of UserAccount objects." alt="" coords="218,5,362,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="406,35,363,30,363,25,407,30"/>
+<area shape="rect" id="Node000004" href="$dc/db7/class_parser.html#a4d2c4035d6109be0ceca773cfbcff523" title="Parses a single JSON object (data within &#39;{}&#39;) into a MorphicShape." alt="" coords="207,55,374,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="407,56,375,60,374,55,406,51"/>
+<area shape="rect" id="Node000005" href="$dc/db7/class_parser.html#a9c4bd21d0d23be70682e026d6e702ec9" title="Converts a JSON string representation into a vector of Shape objects." alt="" coords="5,55,159,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="191,70,159,70,159,65,191,65"/>
+</map>

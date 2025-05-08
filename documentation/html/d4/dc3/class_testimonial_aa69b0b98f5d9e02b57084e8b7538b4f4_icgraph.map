@@ -1,0 +1,5 @@
+<map id="Testimonial::fromJson" name="Testimonial::fromJson">
+<area shape="rect" id="Node000001" title="Creates a Testimonial object from a QJsonObject." alt="" coords="236,5,385,31"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#afde14aac82ddca80d32462cc085e71d9" title="Converts a JSON string representation into a QVector of Testimonial objects." alt="" coords="5,5,188,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,21,188,21,188,16,220,16"/>
+</map>
