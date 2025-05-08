@@ -79,4 +79,4 @@ clean:
 	rm -f $(OBJECTS) moc_*.cpp $(TARGET)
 
 tar:
-	tar -czvf hwgp02.tar .devcontainer objects *.cpp *.h README.md Makefile *.scr *.txt
+	tar -czvf hwgp02.tar .devcontainer objects *.cpp *.h README.md Makefile *.scr *.txt *.pdf
