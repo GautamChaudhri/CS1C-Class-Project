@@ -336,18 +336,20 @@
   * @return crow::json::rvalue The parsed JSON data.
   */
  crow::json::rvalue get_json_file(const std::string& path) {
-     std::ifstream file(path);
-     if (!file) 
-         throw std::runtime_error("Failed to open file: " + path);
-     
-     // Put file data into a stringstream
-     std::stringstream buffer;
-     buffer << file.rdbuf();
- 
-     // Parse data with Crow's JSON parser
-     auto jsonData = crow::json::load(buffer.str());
-     if (!jsonData)
-         throw std::runtime_error("Failed to parse file: " + path);
-     
-     return jsonData;
- }
+    std::ifstream file(path);
+    if (!file) 
+        throw std::runtime_error("Failed to open file: " + path);
+    
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    std::string contents = buffer.str();
+
+    if (contents.empty())
+        return crow::json::load("[]");
+
+    auto jsonData = crow::json::load(contents);
+    if (!jsonData)
+        throw std::runtime_error("Failed to parse file: " + path);
+    
+    return jsonData;
+}

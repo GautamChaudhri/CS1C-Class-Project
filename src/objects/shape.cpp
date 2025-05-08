@@ -47,6 +47,10 @@ Shape::Shape(int shapeId,
 
 Shape::~Shape()
 {
+    // Mark the tracker ID as unused if it's within valid range
+    if (trackerId >= 1000 && trackerId < 9000)
+        trackersInUse[trackerId] = false;
+
     delete parentItem;
 }
 

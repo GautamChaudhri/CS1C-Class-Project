@@ -340,12 +340,14 @@
      if (!file) 
          throw std::runtime_error("Failed to open file: " + path);
      
-     // Put file data into a stringstream
      std::stringstream buffer;
      buffer << file.rdbuf();
- 
-     // Parse data with Crow's JSON parser
-     auto jsonData = crow::json::load(buffer.str());
+     std::string contents = buffer.str();
+
+     if (contents.empty())
+         return crow::json::load("[]");
+
+     auto jsonData = crow::json::load(contents);
      if (!jsonData)
          throw std::runtime_error("Failed to parse file: " + path);
      
