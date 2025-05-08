@@ -876,17 +876,6 @@
     </property>
     <addaction name="toggleStyle"/>
    </widget>
-   <widget class="QMenu" name="menuLogin">
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="title">
-     <string>Login</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menuFile">
     <property name="minimumSize">
      <size>
@@ -900,7 +889,6 @@
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuSettings"/>
-   <addaction name="menuLogin"/>
   </widget>
   <action name="actionnew_line_button">
    <property name="enabled">
