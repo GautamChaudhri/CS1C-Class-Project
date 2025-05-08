@@ -1046,8 +1046,7 @@ void MainWindow::onContactUsClicked()
         "5. Luke Ortiz (<b>lortiz25@saddleback.edu</b>)<br>"
         "6. Eric Sears (<b>esears5@ivc.edu</b>)<br>"
         "7. Paul Tripodi (<b>ptripod0@saddleback.edu</b>)<br>"
-        "8. Placeholder for Aram<br>"
-        "9. Brian Su (<b>bsu9@ivc.edu</b>)"
+        "8. Brian Su (<b>bsu9@ivc.edu</b>)"
         "</span>",
         contactWindow
     );
