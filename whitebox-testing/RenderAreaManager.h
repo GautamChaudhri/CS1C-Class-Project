@@ -7,9 +7,9 @@
 #include <QBrush>
 #include <QPen>
 #include <QString>
-#include "../src/backend/Parser.h"
-#include "../src/objects/all_shapes.h" // ShapeId enum located here
-#include "../src/objects/vector.h"
+#include "Parser.h"
+#include "objects/all_shapes.h" // ShapeId enum located here
+#include "objects/vector.h"
 
 /**
  * @brief This class is a refactor of src/backend/RenderAreaManager

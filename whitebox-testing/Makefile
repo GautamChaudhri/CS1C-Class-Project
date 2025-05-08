@@ -7,29 +7,26 @@ MOC = /usr/lib64/qt6/libexec/moc
 CXXFLAGS = -std=c++17 -g -O0 \
   -I/usr/include/qt6 \
   -I/usr/include/qt6/QtCore \
-  -I/usr/include/qt6/QtNetwork \
   -I/usr/include/qt6/QtGui \
   -I/usr/include/qt6/QtWidgets
 
 # Linker flags: Link against the necessary Qt6 libraries
-LDFLAGS = -lQt6Core -lQt6Network -lQt6Gui -lQt6Widgets
+LDFLAGS = -lQt6Core -lQt6Gui -lQt6Widgets
 
 # Source files for the test harness
 SOURCES = \
     main.cpp \
     SelSort.cpp \
     RenderAreaManager.cpp \
-    ../src/backend/Parser.cpp
+    Parser.cpp
 
 # Paths to object implementations in the project
-OBJ_DIR = ../src/objects
+OBJ_DIR = objects
 OBJECTS = \
     main.o \
     SelSort.o \
     RenderAreaManager.o \
     Parser.o \
-    UserAccount.o \
-    Testimonial.o \
     moc_RenderAreaManager.o \
     $(OBJ_DIR)/shape.o \
     $(OBJ_DIR)/line.o \
@@ -42,9 +39,9 @@ OBJECTS = \
     $(OBJ_DIR)/text.o
 
 # Name of the final executable
-TARGET = hwgp02_tests
+TARGET = hwgp02
 
-.PHONY: all clean
+.PHONY: all clean tar
 
 all: $(TARGET)
 
@@ -63,16 +60,9 @@ SelSort.o: SelSort.cpp
 RenderAreaManager.o: RenderAreaManager.cpp RenderAreaManager.h
 	$(CXX) $(CXXFLAGS) -c RenderAreaManager.cpp -o RenderAreaManager.o
 
-Parser.o: ../src/backend/Parser.cpp ../src/backend/Parser.h
-	$(CXX) $(CXXFLAGS) -c ../src/backend/Parser.cpp -o Parser.o
+Parser.o: Parser.cpp Parser.h
+	$(CXX) $(CXXFLAGS) -c Parser.cpp -o Parser.o
 
-# Compile UserAccount.cpp for Parser references
-UserAccount.o: ../src/backend/UserAccount.cpp ../src/backend/UserAccount.h
-	$(CXX) $(CXXFLAGS) -c ../src/backend/UserAccount.cpp -o UserAccount.o
-
-# Compile Testimonial.cpp for Parser references
-Testimonial.o: ../src/backend/Testimonial.cpp ../src/backend/Testimonial.h
-	$(CXX) $(CXXFLAGS) -c ../src/backend/Testimonial.cpp -o Testimonial.o
 
 # Generate moc and compile for Qt meta-object processing
 moc_RenderAreaManager.cpp: RenderAreaManager.h
@@ -86,4 +76,7 @@ $(OBJ_DIR)/%.o: $(OBJ_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS) moc_*.cpp $(TARGET) UserAccount.o Testimonial.o
+	rm -f $(OBJECTS) moc_*.cpp $(TARGET)
+
+tar:
+	tar -czvf hwgp02.tar .devcontainer objects *.cpp *.h README.md Makefile

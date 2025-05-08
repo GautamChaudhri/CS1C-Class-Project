@@ -1,5 +1,5 @@
 #include <algorithm>
-#include "../src/objects/all_shapes.h"
+#include "objects/all_shapes.h"
 
 namespace SelSort {
 
