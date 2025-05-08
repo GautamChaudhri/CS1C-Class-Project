@@ -1,0 +1,543 @@
+Script started on 2025-05-07 21:11:04-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="115" LINES="94"]
+[1m[7m#[27m[1m[0m                                                                                                                   ]2;root@5f8465d7825b:/2D-Graphics-Modeler/whitebox-testing]1;..tebox-testing]7;file://5f8465d7825b/2D-Graphics-Modeler/whitebox-testing\[0m[27m[24m[J
+[01;32m/2D-Graphics-Modeler/whitebox-testing[00m ⌚ [01;31m21:11:04[00m
+$ [K[?1h=[?2004h[A[A[0m[27m[24m[J
+[01;32m/2D-Graphics-Modeler/whitebox-testing[00m on [35m main[31m![00m ⌚ [01;31m21:11:04[00m
+$ [K[32ml[39m[32ml[39m[90ms[39m[32ml[32ms[39m [90m-l[39m[36m-[39m[36m-[36ml[39m[?1l>[?2004l
+]2;eza -l]1;ls.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m    [32m0[0m [1;33mroot[0m [34m 7 May 21:11[0m hwgp02.scr
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m  [1;32m19k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;33mmain.cpp[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m2.0k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;4;33mMakefile[0m
+[1;34md[33mr[31mw[32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m    [1;90m-[0m [1;33mroot[0m [34m 7 May 21:09[0m [1;34mobjects[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m  [1;32m35k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;33mParser.cpp[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m  [1;32m17k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;33mParser.h[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m1.7k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;4;33mREADME.md[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m  [1;32m24k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;33mRenderAreaManager.cpp[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m5.2k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;33mRenderAreaManager.h[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m2.3k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;33mSelSort.cpp[0m
+[1m[7m#[27m[1m[0m                                                                                                                   ]2;root@5f8465d7825b:/2D-Graphics-Modeler/whitebox-testing]1;..tebox-testing]7;file://5f8465d7825b/2D-Graphics-Modeler/whitebox-testing\[0m[27m[24m[J
+[01;32m/2D-Graphics-Modeler/whitebox-testing[00m on [35m main[31m![00m ⌚ [01;31m21:11:06[00m
+$ [K[?1h=[?2004h[1m[31mm[0m[39m[1m[31mm[0m[39m[90make clean[39m[9D[1m[31mm[1m[31ma[0m[39m[1m[31mm[1m[31ma[1m[31mk[0m[39m[0m[32mm[0m[32ma[0m[32mk[32me[39m[39m [39m [39m [39m [39m [39m [?1l>[?2004l
+]2;make]1;makeg++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c main.cpp -o main.o
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c SelSort.cpp -o SelSort.o
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c RenderAreaManager.cpp -o RenderAreaManager.o
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c Parser.cpp -o Parser.o
+/usr/lib64/qt6/libexec/moc -o moc_RenderAreaManager.cpp RenderAreaManager.h
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c moc_RenderAreaManager.cpp -o moc_RenderAreaManager.o
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c objects/shape.cpp -o objects/shape.o
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c objects/line.cpp -o objects/line.o
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c objects/polyline.cpp -o objects/polyline.o
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c objects/polygon.cpp -o objects/polygon.o
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c objects/rectangle.cpp -o objects/rectangle.o
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c objects/square.cpp -o objects/square.o
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c objects/ellipse.cpp -o objects/ellipse.o
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c objects/circle.cpp -o objects/circle.o
+g++ -std=c++17 -g -O0 -I/usr/include/qt6 -I/usr/include/qt6/QtCore -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtWidgets -c objects/text.cpp -o objects/text.o
+g++ -o hwgp02 main.o SelSort.o RenderAreaManager.o Parser.o moc_RenderAreaManager.o objects/shape.o objects/line.o objects/polyline.o objects/polygon.o objects/rectangle.o objects/square.o objects/ellipse.o objects/circle.o objects/text.o -lQt6Core -lQt6Gui -lQt6Widgets
+[1m[7m#[27m[1m[0m                                                                                                                   ]2;root@5f8465d7825b:/2D-Graphics-Modeler/whitebox-testing]1;..tebox-testing]7;file://5f8465d7825b/2D-Graphics-Modeler/whitebox-testing\[0m[27m[24m[J
+[01;32m/2D-Graphics-Modeler/whitebox-testing[00m on [35m main[31m![00m ⌚ [01;31m21:11:17[00m
+$ [K[?1h=[?2004h[32ml[39m[32ml[39m[90ms -l[39m[32ml[32ms[39m[39m [36m-[39m[36m-[36ml[39m[?1l>[?2004l
+]2;eza -l]1;ls.[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m [33m5.7M[0m [1;33mroot[0m [34m 7 May 21:11[0m [1;32mhwgp02[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m4.1k[0m [1;33mroot[0m [34m 7 May 21:11[0m hwgp02.scr
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m  [1;32m19k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;33mmain.cpp[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [33m1.5M[0m [1;33mroot[0m [34m 7 May 21:11[0m [33mmain.o[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m2.0k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;4;33mMakefile[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m3.0k[0m [1;33mroot[0m [34m 7 May 21:11[0m [1;33mmoc_RenderAreaManager.cpp[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [33m1.3M[0m [1;33mroot[0m [34m 7 May 21:11[0m [33mmoc_RenderAreaManager.o[0m
+[1;34md[33mr[31mw[32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m    [1;90m-[0m [1;33mroot[0m [34m 7 May 21:11[0m [1;34mobjects[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m  [1;32m35k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;33mParser.cpp[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m  [1;32m17k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;33mParser.h[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [33m1.7M[0m [1;33mroot[0m [34m 7 May 21:11[0m [33mParser.o[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m1.7k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;4;33mREADME.md[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m  [1;32m24k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;33mRenderAreaManager.cpp[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m5.2k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;33mRenderAreaManager.h[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [33m1.5M[0m [1;33mroot[0m [34m 7 May 21:11[0m [33mRenderAreaManager.o[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m2.3k[0m [1;33mroot[0m [34m 7 May 21:05[0m [1;33mSelSort.cpp[0m
+.[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m143k[0m [1;33mroot[0m [34m 7 May 21:11[0m [33mSelSort.o[0m
+[1m[7m#[27m[1m[0m                                                                                                                   ]2;root@5f8465d7825b:/2D-Graphics-Modeler/whitebox-testing]1;..tebox-testing]7;file://5f8465d7825b/2D-Graphics-Modeler/whitebox-testing\[0m[27m[24m[J
+[01;32m/2D-Graphics-Modeler/whitebox-testing[00m on [35m main[31m![00m ⌚ [01;31m21:11:21[00m
+$ [K[?1h=[?2004h[32m.[39m[4m[35m.[4m[35m/[24m[39m[24m[1m[31m.[24m[1m[31m/[1m[31mh[0m[39m[1m[31mh[1m[31mw[0m[39m[1m[31mw[1m[31mg[0m[39m[1m[31mg[1m[31mp[0m[39m[1m[31mp[1m[31m0[0m[39m[0m[32m.[0m[32m/[0m[32mh[0m[32mw[0m[32mg[0m[32mp[0m[32m0[32m2[39m > hwgp0[35mh[35mw[35mg[35mp[35m0[35m2[39m[39mh[39mw[39mg[39mp[39m0[39m2IO.txt[23D[39m[7m.[39m[7m/[39m[7mh[39m[7mw[39m[7mg[39m[7mp[39m[7m0[39m[7m2[7m [7m>[7m [7mh[7mw[7mg[7mp[7m0[7m2[7mI[7mO[7m.[7mt[7mx[7mt[27m[23D[27m.[27m/[27mh[27mw[27mg[27mp[27m0[27m2[27m [27m>[27m [27mh[27mw[27mg[27mp[27m0[27m2[27mI[27mO[27m.[27mt[27mx[27mt[?1l>[?2004l[23D[32m.[32m/[32mh[32mw[32mg[32mp[32m0[32m2[39m[15C
+]2;./hwgp02 > hwgp02IO.txt]1;./hwgp02[1m[7m#[27m[1m[0m                                                                                                                   ]2;root@5f8465d7825b:/2D-Graphics-Modeler/whitebox-testing]1;..tebox-testing]7;file://5f8465d7825b/2D-Graphics-Modeler/whitebox-testing\[0m[27m[24m[J
+[01;32m/2D-Graphics-Modeler/whitebox-testing[00m on [35m main[31m![00m ⌚ [01;31m21:11:22[00m
+$ [K[?1h=[?2004h[1m[31mc[0m[39m[1m[31mc[0m[39m[90mlear[39m[1m[31mc[1m[31ma[0m[39m[39m [39m [39m [90mt hwgp02IO.txt[39m[14D[0m[32mc[0m[32ma[32mt[39m[39m [35mh[35mw[35mg[35mp[35m0[35m2[35mI[35mO[35m.[35mt[35mx[35mt[39m[?1l>[?2004l
+]2;cat hwgp02IO.txt]1;cat============================================================
+                    White Box Test: Shape Listing Report
+============================================================
+
+Unsorted Shapes Pre-Testing (ID Report):
+------------------------------------------------------------
+[
+{
+"ShapeId": 5,
+"TrackerId": 5890,
+"ShapeType": "Square",
+"ShapeDimensions": [50, 50, 50],
+"PenColor": "red",
+"PenWidth": 2,
+"PenStyle": "DotLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "blue",
+"BrushStyle": "DiagCrossPattern"
+},
+{
+"ShapeId": 1,
+"TrackerId": 1534,
+"ShapeType": "Line",
+"ShapeDimensions": [0, 0, 500, 500],
+"PenColor": "blue",
+"PenWidth": 4,
+"PenStyle": "DashDotDotLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 7,
+"TrackerId": 7104,
+"ShapeType": "Circle",
+"ShapeDimensions": [100, 100, 60],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "yellow",
+"BrushStyle": "HorPattern"
+},
+{
+"ShapeId": 2,
+"TrackerId": 2471,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 60, 80, 20, 100, 100],
+"PenColor": "green",
+"PenWidth": 4,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 4,
+"TrackerId": 4098,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 10, 200, 100],
+"PenColor": "gray",
+"PenWidth": 5,
+"PenStyle": "DashLine",
+"PenCapStyle": "RoundCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+}
+]
+
+Test Description                                  Result
+------------------------------------------------------------
+Pre-condition: shapes imported successfully       PASS  
+Delete shape TrackerId=1534                       PASS  
+Add new Ellipse TrackerId=6281                    PASS  
+Modify Circle radius to 20                        PASS  
+Modify Square Side=80                             PASS  
+Modify Rectangle L=50, W=75                       PASS  
+------------------------------------------------------------
+
+Sorted Shapes Post-Testing (ID Report):
+------------------------------------------------------------
+[
+{
+"ShapeId": 2,
+"TrackerId": 2471,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 60, 80, 20, 100, 100],
+"PenColor": "green",
+"PenWidth": 4,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 4,
+"TrackerId": 4098,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 10, 50, 75],
+"PenColor": "gray",
+"PenWidth": 5,
+"PenStyle": "DashLine",
+"PenCapStyle": "RoundCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+},
+{
+"ShapeId": 5,
+"TrackerId": 5890,
+"ShapeType": "Square",
+"ShapeDimensions": [50, 50, 80],
+"PenColor": "red",
+"PenWidth": 2,
+"PenStyle": "DotLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "blue",
+"BrushStyle": "DiagCrossPattern"
+},
+{
+"ShapeId": 6,
+"TrackerId": 6281,
+"ShapeType": "Ellipse",
+"ShapeDimensions": [70, 70, 30, 20],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+},
+{
+"ShapeId": 7,
+"TrackerId": 7104,
+"ShapeType": "Circle",
+"ShapeDimensions": [100, 100, 20],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "yellow",
+"BrushStyle": "HorPattern"
+}
+]
+
+
+
+============================================================
+                    White Box Test: Shape Area Report
+============================================================
+
+Unsorted Shapes Pre-Testing (Area Report):
+------------------------------------------------------------
+[
+{
+"ShapeId": 5,
+"TrackerId": 5892,
+"ShapeType": "Square",
+"ShapeDimensions": [50, 50, 50],
+"PenColor": "red",
+"PenWidth": 2,
+"PenStyle": "DotLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "blue",
+"BrushStyle": "DiagCrossPattern"
+},
+{
+"ShapeId": 1,
+"TrackerId": 1536,
+"ShapeType": "Line",
+"ShapeDimensions": [0, 0, 500, 500],
+"PenColor": "blue",
+"PenWidth": 4,
+"PenStyle": "DashDotDotLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 7,
+"TrackerId": 7106,
+"ShapeType": "Circle",
+"ShapeDimensions": [100, 100, 60],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "yellow",
+"BrushStyle": "HorPattern"
+},
+{
+"ShapeId": 2,
+"TrackerId": 2473,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 60, 80, 20, 100, 100],
+"PenColor": "green",
+"PenWidth": 4,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 4,
+"TrackerId": 4100,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 10, 200, 100],
+"PenColor": "gray",
+"PenWidth": 5,
+"PenStyle": "DashLine",
+"PenCapStyle": "RoundCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+}
+]
+
+
+Shape Report   Tracker ID  Dimensions          Area      
+------------------------------------------------------------
+Line              1536     N/A                 N/A       
+Polyline          2473     N/A                 N/A       
+Square            5892     Side=50             2500      
+Circle            7106     R=60                11304     
+Rectangle         4100     L=200, W=100        20000     
+------------------------------------------------------------
+
+Applying modifications to shapes:
+------------------------------------------------------------
+Modified Square (ID=5892) side to 240
+Modified Circle (ID=7106) radius to 35
+Modified Rectangle (ID=4100) length to 165
+------------------------------------------------------------
+
+Shape Report   Tracker ID  Dimensions          Area      
+------------------------------------------------------------
+Line              1536     N/A                 N/A       
+Polyline          2473     N/A                 N/A       
+Circle            7106     R=35                3846.5    
+Rectangle         4100     L=165, W=100        16500     
+Square            5892     Side=240            57600     
+------------------------------------------------------------
+
+Sorted Shapes Post-Testing (Area Report):
+------------------------------------------------------------
+[
+{
+"ShapeId": 1,
+"TrackerId": 1536,
+"ShapeType": "Line",
+"ShapeDimensions": [0, 0, 500, 500],
+"PenColor": "blue",
+"PenWidth": 4,
+"PenStyle": "DashDotDotLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 2,
+"TrackerId": 2473,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 60, 80, 20, 100, 100],
+"PenColor": "green",
+"PenWidth": 4,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 7,
+"TrackerId": 7106,
+"ShapeType": "Circle",
+"ShapeDimensions": [100, 100, 35],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "yellow",
+"BrushStyle": "HorPattern"
+},
+{
+"ShapeId": 4,
+"TrackerId": 4100,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 10, 165, 100],
+"PenColor": "gray",
+"PenWidth": 5,
+"PenStyle": "DashLine",
+"PenCapStyle": "RoundCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+},
+{
+"ShapeId": 5,
+"TrackerId": 5892,
+"ShapeType": "Square",
+"ShapeDimensions": [50, 50, 240],
+"PenColor": "red",
+"PenWidth": 2,
+"PenStyle": "DotLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "blue",
+"BrushStyle": "DiagCrossPattern"
+}
+]
+
+
+
+============================================================
+                    White Box Test: Shape Perimeter Report
+============================================================
+
+Unsorted Shapes Pre-Testing (Perimeter Report):
+------------------------------------------------------------
+[
+{
+"ShapeId": 5,
+"TrackerId": 5894,
+"ShapeType": "Square",
+"ShapeDimensions": [50, 50, 50],
+"PenColor": "red",
+"PenWidth": 2,
+"PenStyle": "DotLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "blue",
+"BrushStyle": "DiagCrossPattern"
+},
+{
+"ShapeId": 1,
+"TrackerId": 1538,
+"ShapeType": "Line",
+"ShapeDimensions": [0, 0, 500, 500],
+"PenColor": "blue",
+"PenWidth": 4,
+"PenStyle": "DashDotDotLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 7,
+"TrackerId": 7108,
+"ShapeType": "Circle",
+"ShapeDimensions": [100, 100, 60],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "yellow",
+"BrushStyle": "HorPattern"
+},
+{
+"ShapeId": 2,
+"TrackerId": 2475,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 60, 80, 20, 100, 100],
+"PenColor": "green",
+"PenWidth": 4,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 4,
+"TrackerId": 4102,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 10, 200, 100],
+"PenColor": "gray",
+"PenWidth": 5,
+"PenStyle": "DashLine",
+"PenCapStyle": "RoundCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+}
+]
+
+
+Shape Report   Tracker ID  Dimensions          Perimeter 
+------------------------------------------------------------
+Polyline          2475     N/A                 132.462113
+Square            5894     Side=50             200.000000
+Circle            7108     R=60                376.800000
+Rectangle         4102     L=200, W=100        600.000000
+Line              1538     N/A                 707.106781
+------------------------------------------------------------
+
+
+Applying modifications to shapes:
+------------------------------------------------------------
+Modified Square (ID=5894) side to 240
+Modified Circle (ID=7108) radius to 35
+Modified Rectangle (ID=4102) length to 165
+------------------------------------------------------------
+
+Shape Report   Tracker ID  Dimensions          Perimeter 
+------------------------------------------------------------
+Polyline          2475     N/A                 132.462113
+Circle            7108     R=35                219.800000
+Rectangle         4102     L=165, W=100        530.000000
+Line              1538     N/A                 707.106781
+Square            5894     Side=240            960.000000
+------------------------------------------------------------
+
+Sorted Shapes Post-Testing (Perimeter Report):
+------------------------------------------------------------
+[
+{
+"ShapeId": 2,
+"TrackerId": 2475,
+"ShapeType": "Polyline",
+"ShapeDimensions": [50, 60, 80, 20, 100, 100],
+"PenColor": "green",
+"PenWidth": 4,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 7,
+"TrackerId": 7108,
+"ShapeType": "Circle",
+"ShapeDimensions": [100, 100, 35],
+"PenColor": "green",
+"PenWidth": 1,
+"PenStyle": "SolidLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "BevelJoin",
+"BrushColor": "yellow",
+"BrushStyle": "HorPattern"
+},
+{
+"ShapeId": 4,
+"TrackerId": 4102,
+"ShapeType": "Rectangle",
+"ShapeDimensions": [10, 10, 165, 100],
+"PenColor": "gray",
+"PenWidth": 5,
+"PenStyle": "DashLine",
+"PenCapStyle": "RoundCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "black",
+"BrushStyle": "NoBrush"
+},
+{
+"ShapeId": 1,
+"TrackerId": 1538,
+"ShapeType": "Line",
+"ShapeDimensions": [0, 0, 500, 500],
+"PenColor": "blue",
+"PenWidth": 4,
+"PenStyle": "DashDotDotLine",
+"PenCapStyle": "SquareCap",
+"PenJoinStyle": "MiterJoin"
+},
+{
+"ShapeId": 5,
+"TrackerId": 5894,
+"ShapeType": "Square",
+"ShapeDimensions": [50, 50, 240],
+"PenColor": "red",
+"PenWidth": 2,
+"PenStyle": "DotLine",
+"PenCapStyle": "FlatCap",
+"PenJoinStyle": "RoundJoin",
+"BrushColor": "blue",
+"BrushStyle": "DiagCrossPattern"
+}
+]
+
+[1m[7m#[27m[1m[0m                                                                                                                   ]2;root@5f8465d7825b:/2D-Graphics-Modeler/whitebox-testing]1;..tebox-testing]7;file://5f8465d7825b/2D-Graphics-Modeler/whitebox-testing\[0m[27m[24m[J
+[01;32m/2D-Graphics-Modeler/whitebox-testing[00m on [35m main[31m![00m ⌚ [01;31m21:11:26[00m
+$ [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[90mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+]2;exit]1;exit
+Script done on 2025-05-07 21:11:28-07:00 [COMMAND_EXIT_CODE="0"]
