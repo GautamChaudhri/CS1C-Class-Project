@@ -1,5 +1,0 @@
-<map id="RenderAreaManager::deleteAllShapes" name="RenderAreaManager::deleteAllShapes">
-<area shape="rect" id="Node000001" title="Requests the deletion of all shapes from the backend." alt="" coords="5,5,154,46"/>
-<area shape="rect" id="Node000002" href="$d8/d08/class_render_area_manager.html#a8ae2b40cb4cd008dff584aa8cfd14870" title="Emitted when the render area has changed and needs redrawing." alt="" coords="202,5,350,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,23,186,23,186,28,154,28"/>
-</map>

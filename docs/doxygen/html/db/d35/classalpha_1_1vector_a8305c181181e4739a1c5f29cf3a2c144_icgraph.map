@@ -1,0 +1,24 @@
+<map id="alpha::vector::push_back" name="alpha::vector::push_back">
+<area shape="rect" id="Node000001" title=" " alt="" coords="978,112,1145,137"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#a9c4bd21d0d23be70682e026d6e702ec9" title="Converts a JSON string representation into a vector of Shape objects." alt="" coords="5,84,159,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1032,103,986,71,958,55,929,44,873,30,815,20,697,9,580,10,466,19,360,34,266,52,129,86,127,80,265,47,360,29,466,14,580,5,698,4,816,15,874,25,930,39,960,51,989,66,1035,99"/>
+<area shape="rect" id="Node000003" href="$dc/db7/class_parser.html#a7e0c6d8559fd28407b48e9eef05496d8" title="Converts a JSON string representation into a vector of UserAccount objects." alt="" coords="748,54,893,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="991,110,929,95,879,83,880,78,930,90,992,105"/>
+<area shape="rect" id="Node000004" href="$d9/dc6/class_main_window.html#a755e3ce5cc1f97792cc7f7eff9da3858" title="Slot triggered when the sort method or order in the shape report table changes." alt="" coords="728,104,913,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="962,127,913,127,913,122,962,122"/>
+<area shape="rect" id="Node000007" href="$dc/db7/class_parser.html#a0a4c2a3664d2d2c1f5444c18271a1cf4" title="Converts a string representation of a JSON array of integers into an alpha::vector&lt;int&gt;." alt="" coords="744,169,897,195"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="992,144,930,159,880,171,879,166,929,154,991,139"/>
+<area shape="rect" id="Node000010" href="$d9/ddf/class_render_area.html#a7fd734dcf63055b10a414b143a45a226" title="Updates display coordinates of a shape&#39;s properties, typically in an associated view." alt="" coords="711,219,930,259"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="1032,149,985,180,931,209,903,221,901,216,929,205,983,175,1029,144"/>
+<area shape="rect" id="Node000005" href="$d9/dc6/class_main_window.html#ac4c479f9beafaee136b98e7fac6761ee" title="Creates and displays a new tab or window containing the shape report table." alt="" coords="434,112,663,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="712,127,664,127,664,122,712,122"/>
+<area shape="rect" id="Node000006" href="$d9/dc6/class_main_window.html#a25d06b6f11a1eb7fa2239f01e853ae29" title=" " alt="" coords="207,112,386,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="418,127,386,127,386,122,418,122"/>
+<area shape="rect" id="Node000008" href="$dc/db7/class_parser.html#ac3bb64fa743348c1b31eb1118c6d4e0f" title="Updates a MorphicShape accumulator with a parsed key&#45;value pair." alt="" coords="458,165,640,191"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="728,183,640,182,640,176,729,178"/>
+<area shape="rect" id="Node000009" href="$dc/db7/class_parser.html#a4d2c4035d6109be0ceca773cfbcff523" title="Parses a single JSON object (data within &#39;{}&#39;) into a MorphicShape." alt="" coords="213,162,380,188"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="442,179,380,179,380,173,442,174"/>
+<area shape="poly" id="edge9_Node000009_Node000002" title=" " alt="" coords="228,160,206,152,110,112,112,107,208,147,230,155"/>
+<area shape="rect" id="Node000011" href="$d9/ddf/class_render_area.html#a84f2ea379248266648d22338e3904b45" title="Handles mouse release events to finalize a shape move operation." alt="" coords="456,219,641,259"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="696,242,642,242,642,236,696,236"/>
+</map>

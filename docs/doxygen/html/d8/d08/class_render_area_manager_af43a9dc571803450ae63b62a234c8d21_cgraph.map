@@ -1,0 +1,9 @@
+<map id="RenderAreaManager::addShape" name="RenderAreaManager::addShape">
+<area shape="rect" id="Node000001" title="Adds a new shape to the rendering list and triggers a save." alt="" coords="5,55,154,96"/>
+<area shape="rect" id="Node000002" href="$d7/da7/class_shape.html#aec4675c2b06d40373eefac4b982af242" title=" " alt="" coords="206,5,346,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,52,214,33,216,38,152,57"/>
+<area shape="rect" id="Node000003" href="$d8/d08/class_render_area_manager.html#a8ae2b40cb4cd008dff584aa8cfd14870" title="Emitted when the render area has changed and needs redrawing." alt="" coords="202,55,350,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,73,186,73,186,78,154,78"/>
+<area shape="rect" id="Node000004" href="$d8/d08/class_render_area_manager.html#a0c224de3ad3bbe2f6c81e5c40e640f64" title="Initiates saving the current shapes to the backend webservice." alt="" coords="202,120,350,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="143,94,199,113,197,118,142,99"/>
+</map>

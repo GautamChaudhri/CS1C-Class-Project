@@ -1,0 +1,5 @@
+<map id="MainWindow::onToggleStyle" name="MainWindow::onToggleStyle">
+<area shape="rect" id="Node000001" title="Toggles the application&#39;s stylesheet between predefined styles." alt="" coords="5,5,192,31"/>
+<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#af8ba728f629c102e77ac09defa25d3cc" title="Loads a Qt stylesheet from the specified file path." alt="" coords="240,5,432,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,16,224,16,224,21,192,21"/>
+</map>

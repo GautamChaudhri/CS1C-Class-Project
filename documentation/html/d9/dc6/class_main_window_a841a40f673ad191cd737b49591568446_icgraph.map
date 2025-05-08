@@ -1,9 +1,0 @@
-<map id="MainWindow::onRenderAreaChanged" name="MainWindow::onRenderAreaChanged">
-<area shape="rect" id="Node000001" title="Slot triggered when the render area&#39;s content has changed, requiring a UI update." alt="" coords="494,5,682,46"/>
-<area shape="rect" id="Node000002" href="$d7/de6/class_app_driver.html#af39fbba491cc4dc1d378d6e140507554" title="Connects signals from backend managers to slots in the frontend UI." alt="" coords="256,5,446,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="479,28,447,28,447,23,479,23"/>
-<area shape="rect" id="Node000003" href="$d7/de6/class_app_driver.html#af5bf7b6bd96161d95a0a67cc7693127d" title="Initializes and shows the main application window and loads initial data." alt="" coords="103,13,208,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="240,28,208,28,208,23,240,23"/>
-<area shape="rect" id="Node000004" href="$d8/d80/src_2backend_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,38"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,28,55,28,55,23,87,23"/>
-</map>

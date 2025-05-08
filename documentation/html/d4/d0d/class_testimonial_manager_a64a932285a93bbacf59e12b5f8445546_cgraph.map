@@ -1,7 +1,0 @@
-<map id="TestimonialManager::~TestimonialManager" name="TestimonialManager::~TestimonialManager">
-<area shape="rect" id="Node000001" title="Private destructor. Saves testimonials before destruction." alt="" coords="5,5,159,46"/>
-<area shape="rect" id="Node000002" href="$d4/d0d/class_testimonial_manager.html#a776df0038128c3464b01c4f52199a960" title="Saves all current testimonials (via API client)." alt="" coords="207,5,344,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,23,191,23,191,28,159,28"/>
-<area shape="rect" id="Node000003" href="$dc/db7/class_parser.html#a37a8828ed47a09c969ed966865da186d" title="Converts a QVector of Testimonial objects into a JSON string representation." alt="" coords="392,13,574,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="344,23,376,23,376,28,344,28"/>
-</map>

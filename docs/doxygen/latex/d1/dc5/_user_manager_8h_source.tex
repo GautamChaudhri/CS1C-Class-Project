@@ -1,0 +1,63 @@
+\doxysection{User\+Manager.\+h}
+\hypertarget{_user_manager_8h_source}{}\label{_user_manager_8h_source}\index{/Users/gautam/Local/Forge/Team-\/Alphawolves/2D-\/Graphics-\/Modeler/src/backend/UserManager.h@{/Users/gautam/Local/Forge/Team-\/Alphawolves/2D-\/Graphics-\/Modeler/src/backend/UserManager.h}}
+\mbox{\hyperlink{_user_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ USER\_MANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ USER\_MANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cctype>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_api_client_8h}{ApiClient.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_8h}{Parser.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_user_account_8h}{UserAccount.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector_8h}{../objects/vector.h}}"{}}\ \textcolor{comment}{//\ Assuming\ this\ is\ a\ custom\ vector\ implementation}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_user_manager_aefc22181e82f255ad68cb91d98373077}{UserManager}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_user_manager_aefc22181e82f255ad68cb91d98373077}{UserManager}}(QObject*\ parent\ =\ \textcolor{keyword}{nullptr});\ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_user_manager_ad6f661321c38b332c0e0eff3a933e753}{\string~UserManager}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_user_account}{UserAccount}}*\ \mbox{\hyperlink{class_user_manager_a8a493a94c7d19f694abf481e1f764e8e}{getCurrUserRef}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_a8860588081ca0e6a7f88fc5b689fb235}{addUser}}(\textcolor{keyword}{const}\ QString\ username,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ password,\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ admin);\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_a718dde56eb80e6bf05d74550f2dd723a}{modifyUser}}(\textcolor{keyword}{const}\ QString\ username,\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ password,\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ admin);\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_a290e8e3f0e751870db0331bb685751c3}{deleteUser}}(QString\ username);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_ab319dea2171804401ca54d825514972e}{deleteAllUsers}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_a7764b08b3185569f4c433140e0b36666}{loadUsers}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_ae723fce00890079d4702ba901f7d39a9}{saveUsers}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_a65e90a5565b65c8feb3b9299872d609d}{authenticate}}(\textcolor{keyword}{const}\ QString\ username,\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ password);\ }
+\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00068\ signals:}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_a62b1030933c092e59c9b2ad10e36415c}{userChanged}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_a971a7f0b550dd6ac2c314a977aea395b}{userNotChanged}}(\textcolor{keyword}{const}\ QString\ \&message);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_ad725cb6519b4256e254da21ff5741e78}{statusMessage}}(\textcolor{keyword}{const}\ QString\ \&message);\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_abc36e1a0307e39413bf7e1ef9c487d61}{userAuthenticated}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_user_account}{UserAccount}}*\ \mbox{\hyperlink{class_user_manager_a3cd03267433d02b5a1aae0de1f4443c2}{currUser}});}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_ab930b67c285d8ba31325a2621fe5ea5d}{authenticationFailed}}(\textcolor{keyword}{const}\ QString\ \&message);\ \ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_a3b3f078e58e742fd67185a8438d06fd4}{onGoodGetResponse}}(\textcolor{keyword}{const}\ QString\ \&json);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_acac58c863dc2d027a297c28725d91c93}{onBadGetResponse}}(\textcolor{keyword}{const}\ QString\ \&errorMsg);\ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_a6c96002eef3fbb7981f569d43e163a64}{onGoodPostResponse}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_adaa13ba1ac6af2a667cde728a593ad83}{onBadPostResponse}}(\textcolor{keyword}{const}\ QString\ \&errorMsg);\ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_aaae30b6ea45379ce5ecba8958d1a0a6f}{onGoodDeleteResponse}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_manager_a93243af98a0b172c5b6ff685f8d196a0}{onBadDeleteResponse}}(\textcolor{keyword}{const}\ QString\ \&errorMsg);\ \ }
+\DoxyCodeLine{00098\ \ \ \ \ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_user_account}{UserAccount}}*\ \mbox{\hyperlink{class_user_manager_a3cd03267433d02b5a1aae0de1f4443c2}{currUser}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{classalpha_1_1vector}{alpha::vector<UserAccount*>}}\ \mbox{\hyperlink{class_user_manager_a3a27297fe374b3bd977afbd824ca7df4}{users}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{class_api_client}{ApiClient}}\ \mbox{\hyperlink{class_user_manager_a25c42809d2f5c44761e300f617f5c675}{client}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{class_parser}{Parser}}\ \mbox{\hyperlink{class_user_manager_abe151637c9c8c42442d21361efef30c8}{parse}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ USER\_MANAGER\_H}}
+
+\end{DoxyCode}

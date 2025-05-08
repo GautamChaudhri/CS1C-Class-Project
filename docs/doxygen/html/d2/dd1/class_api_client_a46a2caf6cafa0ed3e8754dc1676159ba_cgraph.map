@@ -1,0 +1,9 @@
+<map id="ApiClient::DeleteTestimonialsAll" name="ApiClient::DeleteTestimonialsAll">
+<area shape="rect" id="Node000001" title="Makes a request to delete all testimonials via DELETE /testimonials." alt="" coords="5,31,214,56"/>
+<area shape="rect" id="Node000002" href="$d2/dd1/class_api_client.html#addc68bb9473d31fdf49098377f48d17b" title="Analyzes the reply for DELETE requests." alt="" coords="262,23,429,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,41,246,41,246,46,214,46"/>
+<area shape="rect" id="Node000003" href="$d2/dd1/class_api_client.html#a2362fb6ae6555400e50840bd2138fa3c" title="Signal for a failed request sent to a Delete endpoint." alt="" coords="481,5,658,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="429,31,465,27,466,33,430,37"/>
+<area shape="rect" id="Node000004" href="$d2/dd1/class_api_client.html#a36b7d26e91c582a56da7c3bcfbdccbd9" title="Signal for a successful request sent to a Delete endpoint." alt="" coords="477,55,662,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="429,50,462,53,461,59,429,55"/>
+</map>

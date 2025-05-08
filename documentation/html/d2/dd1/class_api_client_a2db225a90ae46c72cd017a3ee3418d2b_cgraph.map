@@ -1,9 +1,0 @@
-<map id="ApiClient::PostTestimonials" name="ApiClient::PostTestimonials">
-<area shape="rect" id="Node000001" title="Makes a request to post testimonial data via POST /testimonials." alt="" coords="5,31,188,56"/>
-<area shape="rect" id="Node000002" href="$d2/dd1/class_api_client.html#aeaa808b2a23ba8e6f5e5520a991127e3" title="Analyzes the reply for POST requests." alt="" coords="236,31,426,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,41,220,41,220,46,188,46"/>
-<area shape="rect" id="Node000003" href="$d2/dd1/class_api_client.html#ac0f68b238bace3703854d7de15a3bb38" title="Signal for a failed request sent to a Post endpoint." alt="" coords="478,5,644,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,30,462,26,463,32,426,36"/>
-<area shape="rect" id="Node000004" href="$d2/dd1/class_api_client.html#aa2e03a2c693acb0052f80415b453e279" title="Signal for a successful request sent to a Post endpoint." alt="" coords="474,55,648,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="426,51,459,54,458,59,426,56"/>
-</map>

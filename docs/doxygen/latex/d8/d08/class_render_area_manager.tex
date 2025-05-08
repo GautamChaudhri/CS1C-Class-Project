@@ -1,0 +1,533 @@
+\doxysection{Render\+Area\+Manager Class Reference}
+\hypertarget{class_render_area_manager}{}\label{class_render_area_manager}\index{RenderAreaManager@{RenderAreaManager}}
+
+
+Manages the shapes to be rendered and interacts with the backend API.  
+
+
+
+
+{\ttfamily \#include $<$Render\+Area\+Manager.\+h$>$}
+
+
+
+Inheritance diagram for Render\+Area\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d2/d16/class_render_area_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Render\+Area\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d7/d60/class_render_area_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{Indent}\textbf{ Render Area Signals}\par
+{\em Signals emitted by \doxylink{class_render_area_manager}{Render\+Area\+Manager} to communicate with other parts of the application.
+
+These signals are primarily used to notify the UI about changes in the shape data or to convey status messages. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_render_area_manager_a8ae2b40cb4cd008dff584aa8cfd14870}{render\+Area\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Emitted when the render area has changed and needs redrawing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_a56824396a14f64eb605061ce4cc45898}{render\+Area\+Not\+Changed}} (const QString \&message)
+\begin{DoxyCompactList}\small\item\em Emitted when an operation completes without changing the render area, often with a message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_a67d3ed59f05b6fbe86d3abd42766234f}{status\+Message}} (const QString \&message)
+\begin{DoxyCompactList}\small\item\em Emitted to provide a status message to the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Core Management Functions}\par
+{\em Public methods for \doxylink{class_render_area_manager}{Render\+Area\+Manager}.
+
+This section includes constructors, destructors, and primary interface functions for managing and accessing shape data. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_render_area_manager_a40e9c4c1fdd040cbd0a0a366fb337024}{Render\+Area\+Manager}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_render_area_manager}{Render\+Area\+Manager} object and connects API client signals. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_render_area_manager_a000e61dcc2fa664a2a195f4c7e076eb7}{\texorpdfstring{$\sim$}{\string~}\+Render\+Area\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{class_render_area_manager}{Render\+Area\+Manager} object and deallocates rendered shapes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_render_area_manager_a7be8ff32f311af2b9023d6996ef1531b}{get\+Shapes\+Ref}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a pointer to the vector of rendered shapes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Shape Manipulation}\par
+{\em Functions for manipulating shapes within the \doxylink{class_render_area_manager}{Render\+Area\+Manager}.
+
+These methods handle the creation, modification, and deletion of shapes. Most of these operations will trigger a signal to update the rendering area and will attempt to save the changes to the backend. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_render_area_manager_af43a9dc571803450ae63b62a234c8d21}{add\+Shape}} (\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape)
+\begin{DoxyCompactList}\small\item\em Adds a new shape to the rendering list and triggers a save. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_af37e63015f3671115d0da8aff234a805}{modify\+Shape}} (\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}shape, QString key, int value)
+\begin{DoxyCompactList}\small\item\em Modifies a property of an existing shape based on a key-\/value pair. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_a47f13c07bb02a5904a1ff2d162ab13b1}{modify\+Displayed\+Text}} (\mbox{\hyperlink{class_text}{Text}} \texorpdfstring{$\ast$}{*}obj, QString new\+Text)
+\begin{DoxyCompactList}\small\item\em Modifies the displayed text of a \doxylink{class_text}{Text} shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_a5f88d7daf9c0e9e16f2f4c98b4431c01}{delete\+Shape}} (const int tracker\+Id)
+\begin{DoxyCompactList}\small\item\em Deletes a shape identified by its tracker ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_a5ea36e034fff90329526dc6c70de0b3b}{delete\+All\+Shapes}} ()
+\begin{DoxyCompactList}\small\item\em Requests the deletion of all shapes from the backend. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_a9b0ae3d906083345de91aafb1959e3f6}{load\+Shapes}} ()
+\begin{DoxyCompactList}\small\item\em Initiates loading shapes from the backend webservice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_a0c224de3ad3bbe2f6c81e5c40e640f64}{save\+Shapes}} ()
+\begin{DoxyCompactList}\small\item\em Initiates saving the current shapes to the backend webservice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Slots}
+\begin{Indent}\textbf{ API Client Response Handlers}\par
+{\em Private slots for handling responses from the \doxylink{class_api_client}{Api\+Client}.
+
+These slots are connected to signals from the \doxylink{class_api_client}{Api\+Client} and process the results of asynchronous network operations (GET, POST, DELETE). }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_render_area_manager_aa7435693fddb08071d18e0965cc45a9d}{on\+Good\+Get\+Response}} (const QString \&json)
+\begin{DoxyCompactList}\small\item\em Slot to handle successful GET responses from the API client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_a7be312bb8f2b2f172d7e7a4b2d140847}{on\+Bad\+Get\+Response}} (const QString \&error\+Msg)
+\begin{DoxyCompactList}\small\item\em Slot to handle unsuccessful GET responses from the API client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_a82240f891ea5a3ada0778574a9d9f4f4}{on\+Good\+Post\+Response}} ()
+\begin{DoxyCompactList}\small\item\em Slot to handle successful POST responses from the API client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_ad913be20b153ae12e6769da01ca0983f}{on\+Bad\+Post\+Response}} (const QString \&error\+Msg)
+\begin{DoxyCompactList}\small\item\em Slot to handle unsuccessful POST responses from the API client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_acffe5680693aa0139963e7f0b0f44031}{on\+Good\+Delete\+Response}} ()
+\begin{DoxyCompactList}\small\item\em Slot to handle successful DELETE responses from the API client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_render_area_manager_a5eba4d620c1b50c889012aad208bf537}{on\+Bad\+Delete\+Response}} (const QString \&error\+Msg)
+\begin{DoxyCompactList}\small\item\em Slot to handle unsuccessful DELETE responses from the API client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Attributes}
+\begin{Indent}\textbf{ Internal Data and Utilities}\par
+{\em Private members for storing shape data and utility objects.
+
+This section includes the storage for shapes and instances of helper classes like \doxylink{class_api_client}{Api\+Client} and \doxylink{class_parser}{Parser}. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_render_area_manager_a412a5a90d82be07418d8f19e477812f4}{rendered\+Shapes}}
+\begin{DoxyCompactList}\small\item\em Vector storing pointers to all shapes currently managed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_api_client}{Api\+Client}} \mbox{\hyperlink{class_render_area_manager_ac2e3dc91ca31ddfb1ecbea3b194de66b}{client}}
+\begin{DoxyCompactList}\small\item\em Client for making API requests to the backend. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_parser}{Parser}} \mbox{\hyperlink{class_render_area_manager_aba45909dcf2061e501b70a9459f3508f}{parse}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_parser}{Parser} for converting shapes to/from JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Manages the shapes to be rendered and interacts with the backend API. 
+
+This class is responsible for adding, modifying, deleting, loading, and saving shapes. It communicates with an \doxylink{class_api_client}{Api\+Client} to persist shape data and uses a \doxylink{class_parser}{Parser} for serialization and deserialization. It also emits signals when the render area needs to be updated or when status messages should be displayed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_render_area_manager_a40e9c4c1fdd040cbd0a0a366fb337024}\index{RenderAreaManager@{RenderAreaManager}!RenderAreaManager@{RenderAreaManager}}
+\index{RenderAreaManager@{RenderAreaManager}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{RenderAreaManager()}{RenderAreaManager()}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a40e9c4c1fdd040cbd0a0a366fb337024} 
+Render\+Area\+Manager\+::\+Render\+Area\+Manager (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_render_area_manager}{Render\+Area\+Manager} object and connects API client signals. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d08/class_render_area_manager_a40e9c4c1fdd040cbd0a0a366fb337024_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_a000e61dcc2fa664a2a195f4c7e076eb7}\index{RenderAreaManager@{RenderAreaManager}!````~RenderAreaManager@{\texorpdfstring{$\sim$}{\string~}RenderAreaManager}}
+\index{````~RenderAreaManager@{\texorpdfstring{$\sim$}{\string~}RenderAreaManager}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RenderAreaManager()}{\string~RenderAreaManager()}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a000e61dcc2fa664a2a195f4c7e076eb7} 
+Render\+Area\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Render\+Area\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destroys the \doxylink{class_render_area_manager}{Render\+Area\+Manager} object and deallocates rendered shapes. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_render_area_manager_af43a9dc571803450ae63b62a234c8d21}\index{RenderAreaManager@{RenderAreaManager}!addShape@{addShape}}
+\index{addShape@{addShape}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{addShape()}{addShape()}}
+{\footnotesize\ttfamily \label{class_render_area_manager_af43a9dc571803450ae63b62a234c8d21} 
+void Render\+Area\+Manager\+::add\+Shape (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{}\end{DoxyParamCaption})}
+
+
+
+Adds a new shape to the rendering list and triggers a save. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d8/d08/class_render_area_manager_af43a9dc571803450ae63b62a234c8d21_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_a5ea36e034fff90329526dc6c70de0b3b}\index{RenderAreaManager@{RenderAreaManager}!deleteAllShapes@{deleteAllShapes}}
+\index{deleteAllShapes@{deleteAllShapes}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{deleteAllShapes()}{deleteAllShapes()}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a5ea36e034fff90329526dc6c70de0b3b} 
+void Render\+Area\+Manager\+::delete\+All\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Requests the deletion of all shapes from the backend. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d8/d08/class_render_area_manager_a5ea36e034fff90329526dc6c70de0b3b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_a5f88d7daf9c0e9e16f2f4c98b4431c01}\index{RenderAreaManager@{RenderAreaManager}!deleteShape@{deleteShape}}
+\index{deleteShape@{deleteShape}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{deleteShape()}{deleteShape()}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a5f88d7daf9c0e9e16f2f4c98b4431c01} 
+void Render\+Area\+Manager\+::delete\+Shape (\begin{DoxyParamCaption}\item[{const int}]{tracker\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Deletes a shape identified by its tracker ID. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{d8/d08/class_render_area_manager_a5f88d7daf9c0e9e16f2f4c98b4431c01_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_a7be8ff32f311af2b9023d6996ef1531b}\index{RenderAreaManager@{RenderAreaManager}!getShapesRef@{getShapesRef}}
+\index{getShapesRef@{getShapesRef}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{getShapesRef()}{getShapesRef()}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a7be8ff32f311af2b9023d6996ef1531b} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$ \mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} Render\+Area\+Manager\+::get\+Shapes\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a pointer to the vector of rendered shapes. 
+
+\Hypertarget{class_render_area_manager_a9b0ae3d906083345de91aafb1959e3f6}\index{RenderAreaManager@{RenderAreaManager}!loadShapes@{loadShapes}}
+\index{loadShapes@{loadShapes}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{loadShapes()}{loadShapes()}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a9b0ae3d906083345de91aafb1959e3f6} 
+void Render\+Area\+Manager\+::load\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initiates loading shapes from the backend webservice. 
+
+\Hypertarget{class_render_area_manager_a47f13c07bb02a5904a1ff2d162ab13b1}\index{RenderAreaManager@{RenderAreaManager}!modifyDisplayedText@{modifyDisplayedText}}
+\index{modifyDisplayedText@{modifyDisplayedText}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{modifyDisplayedText()}{modifyDisplayedText()}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a47f13c07bb02a5904a1ff2d162ab13b1} 
+void Render\+Area\+Manager\+::modify\+Displayed\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_text}{Text}} \texorpdfstring{$\ast$}{*}}]{obj}{, }\item[{QString}]{new\+Text}{}\end{DoxyParamCaption})}
+
+
+
+Modifies the displayed text of a \doxylink{class_text}{Text} shape. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d8/d08/class_render_area_manager_a47f13c07bb02a5904a1ff2d162ab13b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d08/class_render_area_manager_a47f13c07bb02a5904a1ff2d162ab13b1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_af37e63015f3671115d0da8aff234a805}\index{RenderAreaManager@{RenderAreaManager}!modifyShape@{modifyShape}}
+\index{modifyShape@{modifyShape}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{modifyShape()}{modifyShape()}}
+{\footnotesize\ttfamily \label{class_render_area_manager_af37e63015f3671115d0da8aff234a805} 
+void Render\+Area\+Manager\+::modify\+Shape (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shape}{Shape}} \texorpdfstring{$\ast$}{*}}]{shape}{, }\item[{QString}]{key}{, }\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Modifies a property of an existing shape based on a key-\/value pair. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d8/d08/class_render_area_manager_af37e63015f3671115d0da8aff234a805_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_a5eba4d620c1b50c889012aad208bf537}\index{RenderAreaManager@{RenderAreaManager}!onBadDeleteResponse@{onBadDeleteResponse}}
+\index{onBadDeleteResponse@{onBadDeleteResponse}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{onBadDeleteResponse}{onBadDeleteResponse}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a5eba4d620c1b50c889012aad208bf537} 
+void Render\+Area\+Manager\+::on\+Bad\+Delete\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{error\+Msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot to handle unsuccessful DELETE responses from the API client. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d8/d08/class_render_area_manager_a5eba4d620c1b50c889012aad208bf537_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d8/d08/class_render_area_manager_a5eba4d620c1b50c889012aad208bf537_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_a7be312bb8f2b2f172d7e7a4b2d140847}\index{RenderAreaManager@{RenderAreaManager}!onBadGetResponse@{onBadGetResponse}}
+\index{onBadGetResponse@{onBadGetResponse}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{onBadGetResponse}{onBadGetResponse}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a7be312bb8f2b2f172d7e7a4b2d140847} 
+void Render\+Area\+Manager\+::on\+Bad\+Get\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{error\+Msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot to handle unsuccessful GET responses from the API client. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d8/d08/class_render_area_manager_a7be312bb8f2b2f172d7e7a4b2d140847_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d8/d08/class_render_area_manager_a7be312bb8f2b2f172d7e7a4b2d140847_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_ad913be20b153ae12e6769da01ca0983f}\index{RenderAreaManager@{RenderAreaManager}!onBadPostResponse@{onBadPostResponse}}
+\index{onBadPostResponse@{onBadPostResponse}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{onBadPostResponse}{onBadPostResponse}}
+{\footnotesize\ttfamily \label{class_render_area_manager_ad913be20b153ae12e6769da01ca0983f} 
+void Render\+Area\+Manager\+::on\+Bad\+Post\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{error\+Msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot to handle unsuccessful POST responses from the API client. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d8/d08/class_render_area_manager_ad913be20b153ae12e6769da01ca0983f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d8/d08/class_render_area_manager_ad913be20b153ae12e6769da01ca0983f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_acffe5680693aa0139963e7f0b0f44031}\index{RenderAreaManager@{RenderAreaManager}!onGoodDeleteResponse@{onGoodDeleteResponse}}
+\index{onGoodDeleteResponse@{onGoodDeleteResponse}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{onGoodDeleteResponse}{onGoodDeleteResponse}}
+{\footnotesize\ttfamily \label{class_render_area_manager_acffe5680693aa0139963e7f0b0f44031} 
+void Render\+Area\+Manager\+::on\+Good\+Delete\+Response (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot to handle successful DELETE responses from the API client. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d08/class_render_area_manager_acffe5680693aa0139963e7f0b0f44031_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d08/class_render_area_manager_acffe5680693aa0139963e7f0b0f44031_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_aa7435693fddb08071d18e0965cc45a9d}\index{RenderAreaManager@{RenderAreaManager}!onGoodGetResponse@{onGoodGetResponse}}
+\index{onGoodGetResponse@{onGoodGetResponse}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{onGoodGetResponse}{onGoodGetResponse}}
+{\footnotesize\ttfamily \label{class_render_area_manager_aa7435693fddb08071d18e0965cc45a9d} 
+void Render\+Area\+Manager\+::on\+Good\+Get\+Response (\begin{DoxyParamCaption}\item[{const QString \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot to handle successful GET responses from the API client. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d8/d08/class_render_area_manager_aa7435693fddb08071d18e0965cc45a9d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d8/d08/class_render_area_manager_aa7435693fddb08071d18e0965cc45a9d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_a82240f891ea5a3ada0778574a9d9f4f4}\index{RenderAreaManager@{RenderAreaManager}!onGoodPostResponse@{onGoodPostResponse}}
+\index{onGoodPostResponse@{onGoodPostResponse}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{onGoodPostResponse}{onGoodPostResponse}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a82240f891ea5a3ada0778574a9d9f4f4} 
+void Render\+Area\+Manager\+::on\+Good\+Post\+Response (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot to handle successful POST responses from the API client. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d8/d08/class_render_area_manager_a82240f891ea5a3ada0778574a9d9f4f4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d8/d08/class_render_area_manager_a82240f891ea5a3ada0778574a9d9f4f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_a8ae2b40cb4cd008dff584aa8cfd14870}\index{RenderAreaManager@{RenderAreaManager}!renderAreaChanged@{renderAreaChanged}}
+\index{renderAreaChanged@{renderAreaChanged}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{renderAreaChanged}{renderAreaChanged}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a8ae2b40cb4cd008dff584aa8cfd14870} 
+void Render\+Area\+Manager\+::render\+Area\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when the render area has changed and needs redrawing. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d08/class_render_area_manager_a8ae2b40cb4cd008dff584aa8cfd14870_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_a56824396a14f64eb605061ce4cc45898}\index{RenderAreaManager@{RenderAreaManager}!renderAreaNotChanged@{renderAreaNotChanged}}
+\index{renderAreaNotChanged@{renderAreaNotChanged}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{renderAreaNotChanged}{renderAreaNotChanged}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a56824396a14f64eb605061ce4cc45898} 
+void Render\+Area\+Manager\+::render\+Area\+Not\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when an operation completes without changing the render area, often with a message. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d08/class_render_area_manager_a56824396a14f64eb605061ce4cc45898_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_a0c224de3ad3bbe2f6c81e5c40e640f64}\index{RenderAreaManager@{RenderAreaManager}!saveShapes@{saveShapes}}
+\index{saveShapes@{saveShapes}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{saveShapes()}{saveShapes()}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a0c224de3ad3bbe2f6c81e5c40e640f64} 
+void Render\+Area\+Manager\+::save\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initiates saving the current shapes to the backend webservice. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d08/class_render_area_manager_a0c224de3ad3bbe2f6c81e5c40e640f64_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_render_area_manager_a67d3ed59f05b6fbe86d3abd42766234f}\index{RenderAreaManager@{RenderAreaManager}!statusMessage@{statusMessage}}
+\index{statusMessage@{statusMessage}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{statusMessage}{statusMessage}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a67d3ed59f05b6fbe86d3abd42766234f} 
+void Render\+Area\+Manager\+::status\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted to provide a status message to the user. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d08/class_render_area_manager_a67d3ed59f05b6fbe86d3abd42766234f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_render_area_manager_ac2e3dc91ca31ddfb1ecbea3b194de66b}\index{RenderAreaManager@{RenderAreaManager}!client@{client}}
+\index{client@{client}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily \label{class_render_area_manager_ac2e3dc91ca31ddfb1ecbea3b194de66b} 
+\mbox{\hyperlink{class_api_client}{Api\+Client}} Render\+Area\+Manager\+::client\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Client for making API requests to the backend. 
+
+\Hypertarget{class_render_area_manager_aba45909dcf2061e501b70a9459f3508f}\index{RenderAreaManager@{RenderAreaManager}!parse@{parse}}
+\index{parse@{parse}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{parse}{parse}}
+{\footnotesize\ttfamily \label{class_render_area_manager_aba45909dcf2061e501b70a9459f3508f} 
+\mbox{\hyperlink{class_parser}{Parser}} Render\+Area\+Manager\+::parse\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_parser}{Parser} for converting shapes to/from JSON. 
+
+\Hypertarget{class_render_area_manager_a412a5a90d82be07418d8f19e477812f4}\index{RenderAreaManager@{RenderAreaManager}!renderedShapes@{renderedShapes}}
+\index{renderedShapes@{renderedShapes}!RenderAreaManager@{RenderAreaManager}}
+\doxysubsubsection{\texorpdfstring{renderedShapes}{renderedShapes}}
+{\footnotesize\ttfamily \label{class_render_area_manager_a412a5a90d82be07418d8f19e477812f4} 
+\mbox{\hyperlink{classalpha_1_1vector}{alpha\+::vector}}$<$\mbox{\hyperlink{class_shape}{Shape}}\texorpdfstring{$\ast$}{*}$>$ Render\+Area\+Manager\+::rendered\+Shapes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector storing pointers to all shapes currently managed. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/backend/\mbox{\hyperlink{_render_area_manager_8h}{Render\+Area\+Manager.\+h}}\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/backend/\mbox{\hyperlink{_render_area_manager_8cpp}{Render\+Area\+Manager.\+cpp}}\end{DoxyCompactItemize}

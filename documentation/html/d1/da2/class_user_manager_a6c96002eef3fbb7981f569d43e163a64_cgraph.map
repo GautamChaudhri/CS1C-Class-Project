@@ -1,5 +1,0 @@
-<map id="UserManager::onGoodPostResponse" name="UserManager::onGoodPostResponse">
-<area shape="rect" id="Node000001" title="Slot called when a POST request to save user data succeeds." alt="" coords="5,5,244,31"/>
-<area shape="rect" id="Node000002" href="$d1/da2/class_user_manager.html#ad725cb6519b4256e254da21ff5741e78" title="Emitted to provide general status updates or error messages." alt="" coords="292,5,488,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,16,276,16,276,21,244,21"/>
-</map>

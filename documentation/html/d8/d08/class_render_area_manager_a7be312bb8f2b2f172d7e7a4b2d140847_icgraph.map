@@ -1,5 +1,0 @@
-<map id="RenderAreaManager::onBadGetResponse" name="RenderAreaManager::onBadGetResponse">
-<area shape="rect" id="Node000001" title="Slot to handle unsuccessful GET responses from the API client." alt="" coords="202,5,350,46"/>
-<area shape="rect" id="Node000002" href="$d8/d08/class_render_area_manager.html#a40e9c4c1fdd040cbd0a0a366fb337024" title="Constructs a RenderAreaManager object and connects API client signals." alt="" coords="5,5,154,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,28,154,28,154,23,186,23"/>
-</map>

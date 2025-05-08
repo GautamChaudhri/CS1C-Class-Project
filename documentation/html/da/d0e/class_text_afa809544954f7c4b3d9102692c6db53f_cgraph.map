@@ -1,7 +1,0 @@
-<map id="Text::isPointInside" name="Text::isPointInside">
-<area shape="rect" id="Node000001" title="isPointInside &#45; Returns True if point is inside the text box" alt="" coords="5,31,135,56"/>
-<area shape="rect" id="Node000002" href="$d7/da7/class_shape.html#af604de36aa616c585bb30dedf5e5c68b" title=" " alt="" coords="183,5,276,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,31,167,25,168,31,135,36"/>
-<area shape="rect" id="Node000003" href="$d7/da7/class_shape.html#a2e87ea4122381ffb83474f4b69247ded" title=" " alt="" coords="183,55,276,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,51,168,56,167,61,135,56"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="MainWindow::onComboBoxChanged" name="MainWindow::onComboBoxChanged">
-<area shape="rect" id="Node000001" title="Slot triggered when a QComboBox value in the tree widget changes." alt="" coords="5,5,241,31"/>
-<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#af971d03f10fd514287332e2adfd79bea" title="Emitted when a property of an existing shape is changed." alt="" coords="289,5,480,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,16,273,16,273,21,241,21"/>
-</map>

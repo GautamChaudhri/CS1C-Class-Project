@@ -1,7 +1,0 @@
-<map id="MainWindow::loadStyleSheet" name="MainWindow::loadStyleSheet">
-<area shape="rect" id="Node000001" title="Loads a Qt stylesheet from the specified file path." alt="" coords="467,5,659,31"/>
-<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#a2cffa46e8e27e187a30438c2aa0fe04b" title="Toggles the application&#39;s stylesheet between predefined styles." alt="" coords="233,5,419,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="451,21,419,21,419,16,451,16"/>
-<area shape="rect" id="Node000003" href="$d9/dc6/class_main_window.html#a25d06b6f11a1eb7fa2239f01e853ae29" title=" " alt="" coords="5,5,185,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
-</map>

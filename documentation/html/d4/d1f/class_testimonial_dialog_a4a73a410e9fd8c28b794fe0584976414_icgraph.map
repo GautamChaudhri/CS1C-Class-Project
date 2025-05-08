@@ -1,5 +1,0 @@
-<map id="TestimonialDialog::onCancel" name="TestimonialDialog::onCancel">
-<area shape="rect" id="Node000001" title="Handles the cancellation of the testimonial submission." alt="" coords="186,5,318,46"/>
-<area shape="rect" id="Node000002" href="$d4/d1f/class_testimonial_dialog.html#aa4e46d387d1d8fd4793ede8c2deb0fd4" title="Constructs a TestimonialDialog." alt="" coords="5,5,138,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,28,138,28,138,23,170,23"/>
-</map>

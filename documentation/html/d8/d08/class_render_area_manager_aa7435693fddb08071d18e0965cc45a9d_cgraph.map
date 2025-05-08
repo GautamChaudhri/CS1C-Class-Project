@@ -1,7 +1,0 @@
-<map id="RenderAreaManager::onGoodGetResponse" name="RenderAreaManager::onGoodGetResponse">
-<area shape="rect" id="Node000001" title="Slot to handle successful GET responses from the API client." alt="" coords="5,39,154,79"/>
-<area shape="rect" id="Node000002" href="$d8/d08/class_render_area_manager.html#a8ae2b40cb4cd008dff584aa8cfd14870" title="Emitted when the render area has changed and needs redrawing." alt="" coords="202,5,350,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,44,186,38,187,44,155,49"/>
-<area shape="rect" id="Node000003" href="$d8/d08/class_render_area_manager.html#a67d3ed59f05b6fbe86d3abd42766234f" title="Emitted to provide a status message to the user." alt="" coords="202,71,350,111"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,68,187,74,186,79,154,74"/>
-</map>

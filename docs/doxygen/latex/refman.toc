@@ -1,0 +1,826 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Topic Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Topics}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Namespace Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Namespace List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Hierarchical Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class Hierarchy}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Class List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}File Index}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}File List}{9}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Topic Documentation}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}$>$ Shapes}{11}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Namespace Documentation}{13}{chapter.7}%
+\contentsline {section}{\numberline {7.1}alpha Namespace Reference}{13}{section.7.1}%
+\contentsline {section}{\numberline {7.2}QT\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}WARNING\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DISABLE\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DEPRECATED Namespace Reference}{13}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Ui Namespace Reference}{13}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Class Documentation}{15}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Client Class Reference}{15}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Detailed Description}{19}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Constructor \& Destructor Documentation}{20}{subsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.2.1}ApiClient()}{20}{subsubsection.8.1.2.1}%
+\contentsline {subsection}{\numberline {8.1.3}Member Function Documentation}{20}{subsection.8.1.3}%
+\contentsline {subsubsection}{\numberline {8.1.3.1}AnalyzeDeleteReply}{20}{subsubsection.8.1.3.1}%
+\contentsline {subsubsection}{\numberline {8.1.3.2}AnalyzeGetReply}{21}{subsubsection.8.1.3.2}%
+\contentsline {subsubsection}{\numberline {8.1.3.3}AnalyzePostReply}{22}{subsubsection.8.1.3.3}%
+\contentsline {subsubsection}{\numberline {8.1.3.4}BadDeleteReply}{23}{subsubsection.8.1.3.4}%
+\contentsline {subsubsection}{\numberline {8.1.3.5}BadGetReply}{23}{subsubsection.8.1.3.5}%
+\contentsline {subsubsection}{\numberline {8.1.3.6}BadPostReply}{24}{subsubsection.8.1.3.6}%
+\contentsline {subsubsection}{\numberline {8.1.3.7}DeleteRenderAreaAll()}{24}{subsubsection.8.1.3.7}%
+\contentsline {subsubsection}{\numberline {8.1.3.8}DeleteShapesAll()}{25}{subsubsection.8.1.3.8}%
+\contentsline {subsubsection}{\numberline {8.1.3.9}DeleteTestimonialsAll()}{25}{subsubsection.8.1.3.9}%
+\contentsline {subsubsection}{\numberline {8.1.3.10}DeleteUsersAll()}{25}{subsubsection.8.1.3.10}%
+\contentsline {subsubsection}{\numberline {8.1.3.11}GetRenderArea()}{26}{subsubsection.8.1.3.11}%
+\contentsline {subsubsection}{\numberline {8.1.3.12}GetShapes()}{26}{subsubsection.8.1.3.12}%
+\contentsline {subsubsection}{\numberline {8.1.3.13}GetTestimonials()}{26}{subsubsection.8.1.3.13}%
+\contentsline {subsubsection}{\numberline {8.1.3.14}GetUsers()}{27}{subsubsection.8.1.3.14}%
+\contentsline {subsubsection}{\numberline {8.1.3.15}GoodDeleteReply}{27}{subsubsection.8.1.3.15}%
+\contentsline {subsubsection}{\numberline {8.1.3.16}GoodGetReply}{27}{subsubsection.8.1.3.16}%
+\contentsline {subsubsection}{\numberline {8.1.3.17}GoodPostReply}{28}{subsubsection.8.1.3.17}%
+\contentsline {subsubsection}{\numberline {8.1.3.18}PostRenderArea()}{28}{subsubsection.8.1.3.18}%
+\contentsline {subsubsection}{\numberline {8.1.3.19}PostShapes()}{29}{subsubsection.8.1.3.19}%
+\contentsline {subsubsection}{\numberline {8.1.3.20}PostTestimonials()}{29}{subsubsection.8.1.3.20}%
+\contentsline {subsubsection}{\numberline {8.1.3.21}PostUsers()}{29}{subsubsection.8.1.3.21}%
+\contentsline {subsection}{\numberline {8.1.4}Member Data Documentation}{30}{subsection.8.1.4}%
+\contentsline {subsubsection}{\numberline {8.1.4.1}manager}{30}{subsubsection.8.1.4.1}%
+\contentsline {section}{\numberline {8.2}App\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Driver Class Reference}{30}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Detailed Description}{34}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Constructor \& Destructor Documentation}{34}{subsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.2.1}AppDriver()}{34}{subsubsection.8.2.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2.2}$\sim $AppDriver()}{34}{subsubsection.8.2.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Member Function Documentation}{35}{subsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.3.1}connectFrontendToDriver()}{35}{subsubsection.8.2.3.1}%
+\contentsline {subsubsection}{\numberline {8.2.3.2}connectManagersToFrontend()}{36}{subsubsection.8.2.3.2}%
+\contentsline {subsubsection}{\numberline {8.2.3.3}loadAllData()}{37}{subsubsection.8.2.3.3}%
+\contentsline {subsubsection}{\numberline {8.2.3.4}onDeleteAllUsers}{37}{subsubsection.8.2.3.4}%
+\contentsline {subsubsection}{\numberline {8.2.3.5}onLoginAttempt}{37}{subsubsection.8.2.3.5}%
+\contentsline {subsubsection}{\numberline {8.2.3.6}onNewUser}{38}{subsubsection.8.2.3.6}%
+\contentsline {subsubsection}{\numberline {8.2.3.7}onRenderDeleteAllShapes}{38}{subsubsection.8.2.3.7}%
+\contentsline {subsubsection}{\numberline {8.2.3.8}onRenderShapeAdded}{38}{subsubsection.8.2.3.8}%
+\contentsline {subsubsection}{\numberline {8.2.3.9}onRenderShapeChanged}{39}{subsubsection.8.2.3.9}%
+\contentsline {subsubsection}{\numberline {8.2.3.10}onRenderShapeDeleted}{39}{subsubsection.8.2.3.10}%
+\contentsline {subsubsection}{\numberline {8.2.3.11}onUserDeleted}{39}{subsubsection.8.2.3.11}%
+\contentsline {subsubsection}{\numberline {8.2.3.12}onUserModified}{39}{subsubsection.8.2.3.12}%
+\contentsline {subsubsection}{\numberline {8.2.3.13}run()}{40}{subsubsection.8.2.3.13}%
+\contentsline {subsubsection}{\numberline {8.2.3.14}shutdown()}{41}{subsubsection.8.2.3.14}%
+\contentsline {subsection}{\numberline {8.2.4}Member Data Documentation}{41}{subsection.8.2.4}%
+\contentsline {subsubsection}{\numberline {8.2.4.1}mainWindow}{41}{subsubsection.8.2.4.1}%
+\contentsline {subsubsection}{\numberline {8.2.4.2}renderedShapes}{41}{subsubsection.8.2.4.2}%
+\contentsline {subsubsection}{\numberline {8.2.4.3}user}{41}{subsubsection.8.2.4.3}%
+\contentsline {section}{\numberline {8.3}Circle Class Reference}{42}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Detailed Description}{45}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Constructor \& Destructor Documentation}{45}{subsection.8.3.2}%
+\contentsline {subsubsection}{\numberline {8.3.2.1}Circle()}{45}{subsubsection.8.3.2.1}%
+\contentsline {subsection}{\numberline {8.3.3}Member Function Documentation}{46}{subsection.8.3.3}%
+\contentsline {subsubsection}{\numberline {8.3.3.1}Area()}{46}{subsubsection.8.3.3.1}%
+\contentsline {subsubsection}{\numberline {8.3.3.2}Draw()}{46}{subsubsection.8.3.3.2}%
+\contentsline {subsubsection}{\numberline {8.3.3.3}getR()}{47}{subsubsection.8.3.3.3}%
+\contentsline {subsubsection}{\numberline {8.3.3.4}isPointInside()}{48}{subsubsection.8.3.3.4}%
+\contentsline {subsubsection}{\numberline {8.3.3.5}Perimeter()}{48}{subsubsection.8.3.3.5}%
+\contentsline {subsubsection}{\numberline {8.3.3.6}setR()}{49}{subsubsection.8.3.3.6}%
+\contentsline {subsubsection}{\numberline {8.3.3.7}setX()}{49}{subsubsection.8.3.3.7}%
+\contentsline {subsubsection}{\numberline {8.3.3.8}setY()}{50}{subsubsection.8.3.3.8}%
+\contentsline {subsection}{\numberline {8.3.4}Member Data Documentation}{50}{subsection.8.3.4}%
+\contentsline {subsubsection}{\numberline {8.3.4.1}r}{50}{subsubsection.8.3.4.1}%
+\contentsline {section}{\numberline {8.4}Column\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Edit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Delegate Class Reference}{51}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Detailed Description}{52}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Constructor \& Destructor Documentation}{53}{subsection.8.4.2}%
+\contentsline {subsubsection}{\numberline {8.4.2.1}ColumnEditDelegate()}{53}{subsubsection.8.4.2.1}%
+\contentsline {subsection}{\numberline {8.4.3}Member Function Documentation}{54}{subsection.8.4.3}%
+\contentsline {subsubsection}{\numberline {8.4.3.1}createEditor()}{54}{subsubsection.8.4.3.1}%
+\contentsline {subsubsection}{\numberline {8.4.3.2}setCanEdit()}{54}{subsubsection.8.4.3.2}%
+\contentsline {subsection}{\numberline {8.4.4}Member Data Documentation}{54}{subsection.8.4.4}%
+\contentsline {subsubsection}{\numberline {8.4.4.1}canEdit}{54}{subsubsection.8.4.4.1}%
+\contentsline {section}{\numberline {8.5}Ellipse Class Reference}{55}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Detailed Description}{58}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}Constructor \& Destructor Documentation}{59}{subsection.8.5.2}%
+\contentsline {subsubsection}{\numberline {8.5.2.1}Ellipse()}{59}{subsubsection.8.5.2.1}%
+\contentsline {subsection}{\numberline {8.5.3}Member Function Documentation}{59}{subsection.8.5.3}%
+\contentsline {subsubsection}{\numberline {8.5.3.1}Area()}{59}{subsubsection.8.5.3.1}%
+\contentsline {subsubsection}{\numberline {8.5.3.2}Draw()}{60}{subsubsection.8.5.3.2}%
+\contentsline {subsubsection}{\numberline {8.5.3.3}getA()}{60}{subsubsection.8.5.3.3}%
+\contentsline {subsubsection}{\numberline {8.5.3.4}getB()}{61}{subsubsection.8.5.3.4}%
+\contentsline {subsubsection}{\numberline {8.5.3.5}isPointInside()}{61}{subsubsection.8.5.3.5}%
+\contentsline {subsubsection}{\numberline {8.5.3.6}Perimeter()}{62}{subsubsection.8.5.3.6}%
+\contentsline {subsubsection}{\numberline {8.5.3.7}setA()}{62}{subsubsection.8.5.3.7}%
+\contentsline {subsubsection}{\numberline {8.5.3.8}setB()}{62}{subsubsection.8.5.3.8}%
+\contentsline {subsubsection}{\numberline {8.5.3.9}setX()}{63}{subsubsection.8.5.3.9}%
+\contentsline {subsubsection}{\numberline {8.5.3.10}setY()}{63}{subsubsection.8.5.3.10}%
+\contentsline {subsection}{\numberline {8.5.4}Member Data Documentation}{64}{subsection.8.5.4}%
+\contentsline {subsubsection}{\numberline {8.5.4.1}a}{64}{subsubsection.8.5.4.1}%
+\contentsline {subsubsection}{\numberline {8.5.4.2}b}{64}{subsubsection.8.5.4.2}%
+\contentsline {section}{\numberline {8.6}Line Class Reference}{64}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Detailed Description}{68}{subsection.8.6.1}%
+\contentsline {subsection}{\numberline {8.6.2}Constructor \& Destructor Documentation}{69}{subsection.8.6.2}%
+\contentsline {subsubsection}{\numberline {8.6.2.1}Line()}{69}{subsubsection.8.6.2.1}%
+\contentsline {subsection}{\numberline {8.6.3}Member Function Documentation}{69}{subsection.8.6.3}%
+\contentsline {subsubsection}{\numberline {8.6.3.1}Area()}{69}{subsubsection.8.6.3.1}%
+\contentsline {subsubsection}{\numberline {8.6.3.2}Draw()}{70}{subsubsection.8.6.3.2}%
+\contentsline {subsubsection}{\numberline {8.6.3.3}getEndPoint()}{70}{subsubsection.8.6.3.3}%
+\contentsline {subsubsection}{\numberline {8.6.3.4}getStartPoint()}{71}{subsubsection.8.6.3.4}%
+\contentsline {subsubsection}{\numberline {8.6.3.5}isPointInside()}{71}{subsubsection.8.6.3.5}%
+\contentsline {subsubsection}{\numberline {8.6.3.6}Move()}{71}{subsubsection.8.6.3.6}%
+\contentsline {subsubsection}{\numberline {8.6.3.7}Perimeter()}{72}{subsubsection.8.6.3.7}%
+\contentsline {subsubsection}{\numberline {8.6.3.8}setEndPoint()}{73}{subsubsection.8.6.3.8}%
+\contentsline {subsubsection}{\numberline {8.6.3.9}setStartPoint()}{73}{subsubsection.8.6.3.9}%
+\contentsline {subsubsection}{\numberline {8.6.3.10}setX()}{73}{subsubsection.8.6.3.10}%
+\contentsline {subsubsection}{\numberline {8.6.3.11}setY()}{74}{subsubsection.8.6.3.11}%
+\contentsline {subsection}{\numberline {8.6.4}Member Data Documentation}{74}{subsection.8.6.4}%
+\contentsline {subsubsection}{\numberline {8.6.4.1}endPoint}{74}{subsubsection.8.6.4.1}%
+\contentsline {subsubsection}{\numberline {8.6.4.2}startPoint}{75}{subsubsection.8.6.4.2}%
+\contentsline {section}{\numberline {8.7}Login\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window Class Reference}{75}{section.8.7}%
+\contentsline {subsection}{\numberline {8.7.1}Detailed Description}{79}{subsection.8.7.1}%
+\contentsline {subsection}{\numberline {8.7.2}Constructor \& Destructor Documentation}{79}{subsection.8.7.2}%
+\contentsline {subsubsection}{\numberline {8.7.2.1}LoginWindow()}{79}{subsubsection.8.7.2.1}%
+\contentsline {subsection}{\numberline {8.7.3}Member Function Documentation}{79}{subsection.8.7.3}%
+\contentsline {subsubsection}{\numberline {8.7.3.1}attemptLogin}{79}{subsubsection.8.7.3.1}%
+\contentsline {subsubsection}{\numberline {8.7.3.2}attemptSignup}{80}{subsubsection.8.7.3.2}%
+\contentsline {subsubsection}{\numberline {8.7.3.3}loginRequested}{80}{subsubsection.8.7.3.3}%
+\contentsline {subsubsection}{\numberline {8.7.3.4}password()}{81}{subsubsection.8.7.3.4}%
+\contentsline {subsubsection}{\numberline {8.7.3.5}showLoginPage}{81}{subsubsection.8.7.3.5}%
+\contentsline {subsubsection}{\numberline {8.7.3.6}showSignupPage}{82}{subsubsection.8.7.3.6}%
+\contentsline {subsubsection}{\numberline {8.7.3.7}signupRequested}{82}{subsubsection.8.7.3.7}%
+\contentsline {subsubsection}{\numberline {8.7.3.8}username()}{83}{subsubsection.8.7.3.8}%
+\contentsline {subsection}{\numberline {8.7.4}Member Data Documentation}{83}{subsection.8.7.4}%
+\contentsline {subsubsection}{\numberline {8.7.4.1}backToLoginBtn}{83}{subsubsection.8.7.4.1}%
+\contentsline {subsubsection}{\numberline {8.7.4.2}loginBtn}{83}{subsubsection.8.7.4.2}%
+\contentsline {subsubsection}{\numberline {8.7.4.3}loginPage}{83}{subsubsection.8.7.4.3}%
+\contentsline {subsubsection}{\numberline {8.7.4.4}loginPassEdit}{83}{subsubsection.8.7.4.4}%
+\contentsline {subsubsection}{\numberline {8.7.4.5}loginUserEdit}{83}{subsubsection.8.7.4.5}%
+\contentsline {subsubsection}{\numberline {8.7.4.6}signupBtn}{84}{subsubsection.8.7.4.6}%
+\contentsline {subsubsection}{\numberline {8.7.4.7}signupPage}{84}{subsubsection.8.7.4.7}%
+\contentsline {subsubsection}{\numberline {8.7.4.8}signupPassEdit}{84}{subsubsection.8.7.4.8}%
+\contentsline {subsubsection}{\numberline {8.7.4.9}signupUserEdit}{84}{subsubsection.8.7.4.9}%
+\contentsline {subsubsection}{\numberline {8.7.4.10}stack}{84}{subsubsection.8.7.4.10}%
+\contentsline {subsubsection}{\numberline {8.7.4.11}toSignupBtn}{84}{subsubsection.8.7.4.11}%
+\contentsline {section}{\numberline {8.8}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window Class Reference}{85}{section.8.8}%
+\contentsline {subsection}{\numberline {8.8.1}Detailed Description}{92}{subsection.8.8.1}%
+\contentsline {subsection}{\numberline {8.8.2}Constructor \& Destructor Documentation}{92}{subsection.8.8.2}%
+\contentsline {subsubsection}{\numberline {8.8.2.1}MainWindow()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{92}{subsubsection.8.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.8.2.2}MainWindow()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{93}{subsubsection.8.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.8.2.3}$\sim $MainWindow()}{93}{subsubsection.8.8.2.3}%
+\contentsline {subsection}{\numberline {8.8.3}Member Function Documentation}{94}{subsection.8.8.3}%
+\contentsline {subsubsection}{\numberline {8.8.3.1}addToShapeTree()}{94}{subsubsection.8.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.8.3.2}createAlignmentComboBox()}{95}{subsubsection.8.8.3.2}%
+\contentsline {subsubsection}{\numberline {8.8.3.3}createBrushStyleComboBox()}{96}{subsubsection.8.8.3.3}%
+\contentsline {subsubsection}{\numberline {8.8.3.4}createColorComboBox()}{96}{subsubsection.8.8.3.4}%
+\contentsline {subsubsection}{\numberline {8.8.3.5}createFontComboBox()}{97}{subsubsection.8.8.3.5}%
+\contentsline {subsubsection}{\numberline {8.8.3.6}createFontStyleComboBox()}{97}{subsubsection.8.8.3.6}%
+\contentsline {subsubsection}{\numberline {8.8.3.7}createFontWeightComboBox()}{98}{subsubsection.8.8.3.7}%
+\contentsline {subsubsection}{\numberline {8.8.3.8}createPenCapStyleComboBox()}{98}{subsubsection.8.8.3.8}%
+\contentsline {subsubsection}{\numberline {8.8.3.9}createPenJoinStyleComboBox()}{99}{subsubsection.8.8.3.9}%
+\contentsline {subsubsection}{\numberline {8.8.3.10}createPenStyleComboBox()}{99}{subsubsection.8.8.3.10}%
+\contentsline {subsubsection}{\numberline {8.8.3.11}createPenWidthSpinBox()}{100}{subsubsection.8.8.3.11}%
+\contentsline {subsubsection}{\numberline {8.8.3.12}createShapeTableTab()}{100}{subsubsection.8.8.3.12}%
+\contentsline {subsubsection}{\numberline {8.8.3.13}createShapeTypeComboBox()}{101}{subsubsection.8.8.3.13}%
+\contentsline {subsubsection}{\numberline {8.8.3.14}deleteAllShapes}{101}{subsubsection.8.8.3.14}%
+\contentsline {subsubsection}{\numberline {8.8.3.15}displayedTextChanged}{102}{subsubsection.8.8.3.15}%
+\contentsline {subsubsection}{\numberline {8.8.3.16}drawShapes()}{102}{subsubsection.8.8.3.16}%
+\contentsline {subsubsection}{\numberline {8.8.3.17}loadStyleSheet()}{102}{subsubsection.8.8.3.17}%
+\contentsline {subsubsection}{\numberline {8.8.3.18}loginAttempt}{102}{subsubsection.8.8.3.18}%
+\contentsline {subsubsection}{\numberline {8.8.3.19}loginFailed}{103}{subsubsection.8.8.3.19}%
+\contentsline {subsubsection}{\numberline {8.8.3.20}loginSuccess}{103}{subsubsection.8.8.3.20}%
+\contentsline {subsubsection}{\numberline {8.8.3.21}newUserAdded}{103}{subsubsection.8.8.3.21}%
+\contentsline {subsubsection}{\numberline {8.8.3.22}on\_actionnew\_circle\_button\_triggered}{104}{subsubsection.8.8.3.22}%
+\contentsline {subsubsection}{\numberline {8.8.3.23}on\_actionnew\_ellipse\_button\_triggered}{104}{subsubsection.8.8.3.23}%
+\contentsline {subsubsection}{\numberline {8.8.3.24}on\_actionnew\_line\_button\_triggered}{105}{subsubsection.8.8.3.24}%
+\contentsline {subsubsection}{\numberline {8.8.3.25}on\_actionnew\_polygon\_button\_triggered}{106}{subsubsection.8.8.3.25}%
+\contentsline {subsubsection}{\numberline {8.8.3.26}on\_actionnew\_polyline\_button\_triggered}{107}{subsubsection.8.8.3.26}%
+\contentsline {subsubsection}{\numberline {8.8.3.27}on\_actionnew\_rectange\_button\_triggered}{108}{subsubsection.8.8.3.27}%
+\contentsline {subsubsection}{\numberline {8.8.3.28}on\_actionnew\_square\_button\_triggered}{109}{subsubsection.8.8.3.28}%
+\contentsline {subsubsection}{\numberline {8.8.3.29}on\_actionnew\_text\_button\_triggered}{110}{subsubsection.8.8.3.29}%
+\contentsline {subsubsection}{\numberline {8.8.3.30}on\_actionremove\_shape\_button\_triggered}{111}{subsubsection.8.8.3.30}%
+\contentsline {subsubsection}{\numberline {8.8.3.31}onComboBoxChanged}{112}{subsubsection.8.8.3.31}%
+\contentsline {subsubsection}{\numberline {8.8.3.32}onContactUsClicked}{113}{subsubsection.8.8.3.32}%
+\contentsline {subsubsection}{\numberline {8.8.3.33}onLoginClicked}{113}{subsubsection.8.8.3.33}%
+\contentsline {subsubsection}{\numberline {8.8.3.34}onLoginRequest}{114}{subsubsection.8.8.3.34}%
+\contentsline {subsubsection}{\numberline {8.8.3.35}onRenderAreaChanged}{114}{subsubsection.8.8.3.35}%
+\contentsline {subsubsection}{\numberline {8.8.3.36}onRenderAreaNotChanged}{116}{subsubsection.8.8.3.36}%
+\contentsline {subsubsection}{\numberline {8.8.3.37}onSignupRequest}{116}{subsubsection.8.8.3.37}%
+\contentsline {subsubsection}{\numberline {8.8.3.38}onSortMethodChanged}{117}{subsubsection.8.8.3.38}%
+\contentsline {subsubsection}{\numberline {8.8.3.39}onSpinBoxChanged}{117}{subsubsection.8.8.3.39}%
+\contentsline {subsubsection}{\numberline {8.8.3.40}onToggleStyle}{118}{subsubsection.8.8.3.40}%
+\contentsline {subsubsection}{\numberline {8.8.3.41}onTreeWidgetItemChanged}{119}{subsubsection.8.8.3.41}%
+\contentsline {subsubsection}{\numberline {8.8.3.42}onUserAuthentication}{119}{subsubsection.8.8.3.42}%
+\contentsline {subsubsection}{\numberline {8.8.3.43}onUserAuthenticationFailure}{121}{subsubsection.8.8.3.43}%
+\contentsline {subsubsection}{\numberline {8.8.3.44}populateShapeTable()}{121}{subsubsection.8.8.3.44}%
+\contentsline {subsubsection}{\numberline {8.8.3.45}selection\_sort()}{122}{subsubsection.8.8.3.45}%
+\contentsline {subsubsection}{\numberline {8.8.3.46}setupTestimonials()}{122}{subsubsection.8.8.3.46}%
+\contentsline {subsubsection}{\numberline {8.8.3.47}shapeAdded}{123}{subsubsection.8.8.3.47}%
+\contentsline {subsubsection}{\numberline {8.8.3.48}shapeChanged}{124}{subsubsection.8.8.3.48}%
+\contentsline {subsubsection}{\numberline {8.8.3.49}shapeDeleted}{125}{subsubsection.8.8.3.49}%
+\contentsline {subsubsection}{\numberline {8.8.3.50}shapes\_to\_treeWidget()}{125}{subsubsection.8.8.3.50}%
+\contentsline {subsubsection}{\numberline {8.8.3.51}showRenderStatusMessage}{127}{subsubsection.8.8.3.51}%
+\contentsline {subsubsection}{\numberline {8.8.3.52}showTestimonialPrompt}{127}{subsubsection.8.8.3.52}%
+\contentsline {subsubsection}{\numberline {8.8.3.53}showTestimonialsDisplay}{128}{subsubsection.8.8.3.53}%
+\contentsline {subsubsection}{\numberline {8.8.3.54}sortByArea()}{128}{subsubsection.8.8.3.54}%
+\contentsline {subsubsection}{\numberline {8.8.3.55}sortById()}{129}{subsubsection.8.8.3.55}%
+\contentsline {subsubsection}{\numberline {8.8.3.56}sortByPerimeter()}{129}{subsubsection.8.8.3.56}%
+\contentsline {subsection}{\numberline {8.8.4}Member Data Documentation}{130}{subsection.8.8.4}%
+\contentsline {subsubsection}{\numberline {8.8.4.1}contactUsWidget}{130}{subsubsection.8.8.4.1}%
+\contentsline {subsubsection}{\numberline {8.8.4.2}contactWindow}{130}{subsubsection.8.8.4.2}%
+\contentsline {subsubsection}{\numberline {8.8.4.3}currUser}{130}{subsubsection.8.8.4.3}%
+\contentsline {subsubsection}{\numberline {8.8.4.4}delegate}{130}{subsubsection.8.8.4.4}%
+\contentsline {subsubsection}{\numberline {8.8.4.5}logoLabel}{130}{subsubsection.8.8.4.5}%
+\contentsline {subsubsection}{\numberline {8.8.4.6}renderArea}{130}{subsubsection.8.8.4.6}%
+\contentsline {subsubsection}{\numberline {8.8.4.7}renderShapes}{130}{subsubsection.8.8.4.7}%
+\contentsline {subsubsection}{\numberline {8.8.4.8}shapeTable}{131}{subsubsection.8.8.4.8}%
+\contentsline {subsubsection}{\numberline {8.8.4.9}sortDropdown}{131}{subsubsection.8.8.4.9}%
+\contentsline {subsubsection}{\numberline {8.8.4.10}sortOrderDropdown}{131}{subsubsection.8.8.4.10}%
+\contentsline {subsubsection}{\numberline {8.8.4.11}tabWidget}{131}{subsubsection.8.8.4.11}%
+\contentsline {subsubsection}{\numberline {8.8.4.12}teamNameLabel}{131}{subsubsection.8.8.4.12}%
+\contentsline {subsubsection}{\numberline {8.8.4.13}ui}{131}{subsubsection.8.8.4.13}%
+\contentsline {subsubsection}{\numberline {8.8.4.14}userStatusLabel}{131}{subsubsection.8.8.4.14}%
+\contentsline {section}{\numberline {8.9}Parser\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Morphic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shape Struct Reference}{132}{section.8.9}%
+\contentsline {subsection}{\numberline {8.9.1}Detailed Description}{133}{subsection.8.9.1}%
+\contentsline {subsection}{\numberline {8.9.2}Member Data Documentation}{133}{subsection.8.9.2}%
+\contentsline {subsubsection}{\numberline {8.9.2.1}brush}{133}{subsubsection.8.9.2.1}%
+\contentsline {subsubsection}{\numberline {8.9.2.2}coords}{133}{subsubsection.8.9.2.2}%
+\contentsline {subsubsection}{\numberline {8.9.2.3}font}{133}{subsubsection.8.9.2.3}%
+\contentsline {subsubsection}{\numberline {8.9.2.4}pen}{134}{subsubsection.8.9.2.4}%
+\contentsline {subsubsection}{\numberline {8.9.2.5}shapeDimensions}{134}{subsubsection.8.9.2.5}%
+\contentsline {subsubsection}{\numberline {8.9.2.6}shapeId}{134}{subsubsection.8.9.2.6}%
+\contentsline {subsubsection}{\numberline {8.9.2.7}shapeType}{134}{subsubsection.8.9.2.7}%
+\contentsline {subsubsection}{\numberline {8.9.2.8}textAlignment}{134}{subsubsection.8.9.2.8}%
+\contentsline {subsubsection}{\numberline {8.9.2.9}textColor}{134}{subsubsection.8.9.2.9}%
+\contentsline {subsubsection}{\numberline {8.9.2.10}textString}{134}{subsubsection.8.9.2.10}%
+\contentsline {subsubsection}{\numberline {8.9.2.11}trackerId}{135}{subsubsection.8.9.2.11}%
+\contentsline {section}{\numberline {8.10}Parser Class Reference}{135}{section.8.10}%
+\contentsline {subsection}{\numberline {8.10.1}Detailed Description}{138}{subsection.8.10.1}%
+\contentsline {subsection}{\numberline {8.10.2}Constructor \& Destructor Documentation}{139}{subsection.8.10.2}%
+\contentsline {subsubsection}{\numberline {8.10.2.1}Parser()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{139}{subsubsection.8.10.2.1}%
+\contentsline {subsubsection}{\numberline {8.10.2.2}$\sim $Parser()}{139}{subsubsection.8.10.2.2}%
+\contentsline {subsubsection}{\numberline {8.10.2.3}Parser()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{139}{subsubsection.8.10.2.3}%
+\contentsline {subsubsection}{\numberline {8.10.2.4}Parser()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{140}{subsubsection.8.10.2.4}%
+\contentsline {subsection}{\numberline {8.10.3}Member Function Documentation}{140}{subsection.8.10.3}%
+\contentsline {subsubsection}{\numberline {8.10.3.1}AppendBrushData()}{140}{subsubsection.8.10.3.1}%
+\contentsline {subsubsection}{\numberline {8.10.3.2}AppendCommonShapeData()}{141}{subsubsection.8.10.3.2}%
+\contentsline {subsubsection}{\numberline {8.10.3.3}AppendTextData()}{143}{subsubsection.8.10.3.3}%
+\contentsline {subsubsection}{\numberline {8.10.3.4}BuildShape()}{144}{subsubsection.8.10.3.4}%
+\contentsline {subsubsection}{\numberline {8.10.3.5}ExtractArray()}{145}{subsubsection.8.10.3.5}%
+\contentsline {subsubsection}{\numberline {8.10.3.6}ExtractInteger()}{145}{subsubsection.8.10.3.6}%
+\contentsline {subsubsection}{\numberline {8.10.3.7}ExtractKey()}{146}{subsubsection.8.10.3.7}%
+\contentsline {subsubsection}{\numberline {8.10.3.8}ExtractLiteral()}{146}{subsubsection.8.10.3.8}%
+\contentsline {subsubsection}{\numberline {8.10.3.9}ExtractValue()}{147}{subsubsection.8.10.3.9}%
+\contentsline {subsubsection}{\numberline {8.10.3.10}GetAlignmentFlag()}{148}{subsubsection.8.10.3.10}%
+\contentsline {subsubsection}{\numberline {8.10.3.11}GetBrushStyle()}{149}{subsubsection.8.10.3.11}%
+\contentsline {subsubsection}{\numberline {8.10.3.12}GetColor()}{150}{subsubsection.8.10.3.12}%
+\contentsline {subsubsection}{\numberline {8.10.3.13}GetFontStyle()}{151}{subsubsection.8.10.3.13}%
+\contentsline {subsubsection}{\numberline {8.10.3.14}GetFontWeight()}{152}{subsubsection.8.10.3.14}%
+\contentsline {subsubsection}{\numberline {8.10.3.15}GetPenCapStyle()}{152}{subsubsection.8.10.3.15}%
+\contentsline {subsubsection}{\numberline {8.10.3.16}GetPenJoinStyle()}{153}{subsubsection.8.10.3.16}%
+\contentsline {subsubsection}{\numberline {8.10.3.17}GetPenStyle()}{154}{subsubsection.8.10.3.17}%
+\contentsline {subsubsection}{\numberline {8.10.3.18}GetShapeDimensions()}{155}{subsubsection.8.10.3.18}%
+\contentsline {subsubsection}{\numberline {8.10.3.19}JsonToShapes()}{157}{subsubsection.8.10.3.19}%
+\contentsline {subsubsection}{\numberline {8.10.3.20}JsonToTestimonials()}{157}{subsubsection.8.10.3.20}%
+\contentsline {subsubsection}{\numberline {8.10.3.21}JsonToUsers()}{158}{subsubsection.8.10.3.21}%
+\contentsline {subsubsection}{\numberline {8.10.3.22}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{159}{subsubsection.8.10.3.22}%
+\contentsline {subsubsection}{\numberline {8.10.3.23}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{159}{subsubsection.8.10.3.23}%
+\contentsline {subsubsection}{\numberline {8.10.3.24}ParseJsonObject()}{160}{subsubsection.8.10.3.24}%
+\contentsline {subsubsection}{\numberline {8.10.3.25}PrintShapeVector()}{161}{subsubsection.8.10.3.25}%
+\contentsline {subsubsection}{\numberline {8.10.3.26}ShapesToJson()}{161}{subsubsection.8.10.3.26}%
+\contentsline {subsubsection}{\numberline {8.10.3.27}SkipWhitespace()}{162}{subsubsection.8.10.3.27}%
+\contentsline {subsubsection}{\numberline {8.10.3.28}StringToVector()}{163}{subsubsection.8.10.3.28}%
+\contentsline {subsubsection}{\numberline {8.10.3.29}TestimonialsToJson()}{164}{subsubsection.8.10.3.29}%
+\contentsline {subsubsection}{\numberline {8.10.3.30}UpdateAccumulator()}{164}{subsubsection.8.10.3.30}%
+\contentsline {subsubsection}{\numberline {8.10.3.31}UpdateUserAccumulator()}{165}{subsubsection.8.10.3.31}%
+\contentsline {subsubsection}{\numberline {8.10.3.32}UsersToJson()}{166}{subsubsection.8.10.3.32}%
+\contentsline {section}{\numberline {8.11}Polygon Class Reference}{166}{section.8.11}%
+\contentsline {subsection}{\numberline {8.11.1}Detailed Description}{170}{subsection.8.11.1}%
+\contentsline {subsection}{\numberline {8.11.2}Constructor \& Destructor Documentation}{170}{subsection.8.11.2}%
+\contentsline {subsubsection}{\numberline {8.11.2.1}Polygon()}{170}{subsubsection.8.11.2.1}%
+\contentsline {subsection}{\numberline {8.11.3}Member Function Documentation}{171}{subsection.8.11.3}%
+\contentsline {subsubsection}{\numberline {8.11.3.1}Area()}{171}{subsubsection.8.11.3.1}%
+\contentsline {subsubsection}{\numberline {8.11.3.2}Draw()}{172}{subsubsection.8.11.3.2}%
+\contentsline {subsubsection}{\numberline {8.11.3.3}getPointsList()}{172}{subsubsection.8.11.3.3}%
+\contentsline {subsubsection}{\numberline {8.11.3.4}isPointInside()}{173}{subsubsection.8.11.3.4}%
+\contentsline {subsubsection}{\numberline {8.11.3.5}Move()}{173}{subsubsection.8.11.3.5}%
+\contentsline {subsubsection}{\numberline {8.11.3.6}Perimeter()}{174}{subsubsection.8.11.3.6}%
+\contentsline {subsubsection}{\numberline {8.11.3.7}setPointsList()}{175}{subsubsection.8.11.3.7}%
+\contentsline {subsubsection}{\numberline {8.11.3.8}setX()}{175}{subsubsection.8.11.3.8}%
+\contentsline {subsubsection}{\numberline {8.11.3.9}setY()}{176}{subsubsection.8.11.3.9}%
+\contentsline {subsection}{\numberline {8.11.4}Member Data Documentation}{176}{subsection.8.11.4}%
+\contentsline {subsubsection}{\numberline {8.11.4.1}pointsList}{176}{subsubsection.8.11.4.1}%
+\contentsline {section}{\numberline {8.12}Polyline Class Reference}{177}{section.8.12}%
+\contentsline {subsection}{\numberline {8.12.1}Detailed Description}{180}{subsection.8.12.1}%
+\contentsline {subsection}{\numberline {8.12.2}Constructor \& Destructor Documentation}{180}{subsection.8.12.2}%
+\contentsline {subsubsection}{\numberline {8.12.2.1}Polyline()}{180}{subsubsection.8.12.2.1}%
+\contentsline {subsection}{\numberline {8.12.3}Member Function Documentation}{181}{subsection.8.12.3}%
+\contentsline {subsubsection}{\numberline {8.12.3.1}Area()}{181}{subsubsection.8.12.3.1}%
+\contentsline {subsubsection}{\numberline {8.12.3.2}Draw()}{181}{subsubsection.8.12.3.2}%
+\contentsline {subsubsection}{\numberline {8.12.3.3}getPointsList()}{182}{subsubsection.8.12.3.3}%
+\contentsline {subsubsection}{\numberline {8.12.3.4}isPointInside()}{183}{subsubsection.8.12.3.4}%
+\contentsline {subsubsection}{\numberline {8.12.3.5}Move()}{183}{subsubsection.8.12.3.5}%
+\contentsline {subsubsection}{\numberline {8.12.3.6}Perimeter()}{184}{subsubsection.8.12.3.6}%
+\contentsline {subsubsection}{\numberline {8.12.3.7}setPointsList()}{184}{subsubsection.8.12.3.7}%
+\contentsline {subsubsection}{\numberline {8.12.3.8}setX()}{185}{subsubsection.8.12.3.8}%
+\contentsline {subsubsection}{\numberline {8.12.3.9}setY()}{185}{subsubsection.8.12.3.9}%
+\contentsline {subsection}{\numberline {8.12.4}Member Data Documentation}{186}{subsection.8.12.4}%
+\contentsline {subsubsection}{\numberline {8.12.4.1}pointsList}{186}{subsubsection.8.12.4.1}%
+\contentsline {section}{\numberline {8.13}QT\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}WARNING\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DISABLE\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DEPRECATED\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::qt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}meta\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ZN11\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{186}{section.8.13}%
+\contentsline {section}{\numberline {8.14}QT\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}WARNING\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DISABLE\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DEPRECATED\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::qt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}meta\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ZN9\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Client\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{187}{section.8.14}%
+\contentsline {section}{\numberline {8.15}Parser\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Raw\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User Struct Reference}{187}{section.8.15}%
+\contentsline {subsection}{\numberline {8.15.1}Detailed Description}{188}{subsection.8.15.1}%
+\contentsline {subsection}{\numberline {8.15.2}Member Data Documentation}{188}{subsection.8.15.2}%
+\contentsline {subsubsection}{\numberline {8.15.2.1}admin}{188}{subsubsection.8.15.2.1}%
+\contentsline {subsubsection}{\numberline {8.15.2.2}hasAdmin}{188}{subsubsection.8.15.2.2}%
+\contentsline {subsubsection}{\numberline {8.15.2.3}hasPassword}{188}{subsubsection.8.15.2.3}%
+\contentsline {subsubsection}{\numberline {8.15.2.4}hasUsername}{188}{subsubsection.8.15.2.4}%
+\contentsline {subsubsection}{\numberline {8.15.2.5}password}{189}{subsubsection.8.15.2.5}%
+\contentsline {subsubsection}{\numberline {8.15.2.6}username}{189}{subsubsection.8.15.2.6}%
+\contentsline {section}{\numberline {8.16}Rectangle Class Reference}{189}{section.8.16}%
+\contentsline {subsection}{\numberline {8.16.1}Detailed Description}{193}{subsection.8.16.1}%
+\contentsline {subsection}{\numberline {8.16.2}Constructor \& Destructor Documentation}{194}{subsection.8.16.2}%
+\contentsline {subsubsection}{\numberline {8.16.2.1}Rectangle()}{194}{subsubsection.8.16.2.1}%
+\contentsline {subsection}{\numberline {8.16.3}Member Function Documentation}{194}{subsection.8.16.3}%
+\contentsline {subsubsection}{\numberline {8.16.3.1}Area()}{194}{subsubsection.8.16.3.1}%
+\contentsline {subsubsection}{\numberline {8.16.3.2}Draw()}{195}{subsubsection.8.16.3.2}%
+\contentsline {subsubsection}{\numberline {8.16.3.3}getLength()}{195}{subsubsection.8.16.3.3}%
+\contentsline {subsubsection}{\numberline {8.16.3.4}getWidth()}{196}{subsubsection.8.16.3.4}%
+\contentsline {subsubsection}{\numberline {8.16.3.5}isPointInside()}{196}{subsubsection.8.16.3.5}%
+\contentsline {subsubsection}{\numberline {8.16.3.6}Perimeter()}{196}{subsubsection.8.16.3.6}%
+\contentsline {subsubsection}{\numberline {8.16.3.7}setLength()}{197}{subsubsection.8.16.3.7}%
+\contentsline {subsubsection}{\numberline {8.16.3.8}setWidth()}{197}{subsubsection.8.16.3.8}%
+\contentsline {subsubsection}{\numberline {8.16.3.9}setX()}{197}{subsubsection.8.16.3.9}%
+\contentsline {subsubsection}{\numberline {8.16.3.10}setY()}{198}{subsubsection.8.16.3.10}%
+\contentsline {subsection}{\numberline {8.16.4}Member Data Documentation}{198}{subsection.8.16.4}%
+\contentsline {subsubsection}{\numberline {8.16.4.1}length}{198}{subsubsection.8.16.4.1}%
+\contentsline {subsubsection}{\numberline {8.16.4.2}width}{199}{subsubsection.8.16.4.2}%
+\contentsline {section}{\numberline {8.17}Render\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Area Class Reference}{199}{section.8.17}%
+\contentsline {subsection}{\numberline {8.17.1}Detailed Description}{203}{subsection.8.17.1}%
+\contentsline {subsection}{\numberline {8.17.2}Constructor \& Destructor Documentation}{203}{subsection.8.17.2}%
+\contentsline {subsubsection}{\numberline {8.17.2.1}RenderArea()}{203}{subsubsection.8.17.2.1}%
+\contentsline {subsection}{\numberline {8.17.3}Member Function Documentation}{203}{subsection.8.17.3}%
+\contentsline {subsubsection}{\numberline {8.17.3.1}getShapes()}{203}{subsubsection.8.17.3.1}%
+\contentsline {subsubsection}{\numberline {8.17.3.2}getShapeSelected()}{203}{subsubsection.8.17.3.2}%
+\contentsline {subsubsection}{\numberline {8.17.3.3}getShapeSelectedIndex()}{203}{subsubsection.8.17.3.3}%
+\contentsline {subsubsection}{\numberline {8.17.3.4}mouseDoubleClickEvent()}{203}{subsubsection.8.17.3.4}%
+\contentsline {subsubsection}{\numberline {8.17.3.5}mouseMoveEvent()}{204}{subsubsection.8.17.3.5}%
+\contentsline {subsubsection}{\numberline {8.17.3.6}mousePressEvent()}{204}{subsubsection.8.17.3.6}%
+\contentsline {subsubsection}{\numberline {8.17.3.7}mouseReleaseEvent()}{204}{subsubsection.8.17.3.7}%
+\contentsline {subsubsection}{\numberline {8.17.3.8}paintEvent()}{205}{subsubsection.8.17.3.8}%
+\contentsline {subsubsection}{\numberline {8.17.3.9}resetSelection()}{205}{subsubsection.8.17.3.9}%
+\contentsline {subsubsection}{\numberline {8.17.3.10}setEditPrivileges()}{205}{subsubsection.8.17.3.10}%
+\contentsline {subsubsection}{\numberline {8.17.3.11}setRenderShapes()}{205}{subsubsection.8.17.3.11}%
+\contentsline {subsubsection}{\numberline {8.17.3.12}setShapeSelectedIndex()}{205}{subsubsection.8.17.3.12}%
+\contentsline {subsubsection}{\numberline {8.17.3.13}updateShapeDisplayCoords()}{206}{subsubsection.8.17.3.13}%
+\contentsline {subsection}{\numberline {8.17.4}Member Data Documentation}{206}{subsection.8.17.4}%
+\contentsline {subsubsection}{\numberline {8.17.4.1}allowEditing}{206}{subsubsection.8.17.4.1}%
+\contentsline {subsubsection}{\numberline {8.17.4.2}renderShapes}{207}{subsubsection.8.17.4.2}%
+\contentsline {subsubsection}{\numberline {8.17.4.3}shapeSelectedIndex}{207}{subsubsection.8.17.4.3}%
+\contentsline {section}{\numberline {8.18}Render\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Area\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{207}{section.8.18}%
+\contentsline {subsection}{\numberline {8.18.1}Detailed Description}{211}{subsection.8.18.1}%
+\contentsline {subsection}{\numberline {8.18.2}Constructor \& Destructor Documentation}{211}{subsection.8.18.2}%
+\contentsline {subsubsection}{\numberline {8.18.2.1}RenderAreaManager()}{211}{subsubsection.8.18.2.1}%
+\contentsline {subsubsection}{\numberline {8.18.2.2}$\sim $RenderAreaManager()}{212}{subsubsection.8.18.2.2}%
+\contentsline {subsection}{\numberline {8.18.3}Member Function Documentation}{212}{subsection.8.18.3}%
+\contentsline {subsubsection}{\numberline {8.18.3.1}addShape()}{212}{subsubsection.8.18.3.1}%
+\contentsline {subsubsection}{\numberline {8.18.3.2}deleteAllShapes()}{213}{subsubsection.8.18.3.2}%
+\contentsline {subsubsection}{\numberline {8.18.3.3}deleteShape()}{213}{subsubsection.8.18.3.3}%
+\contentsline {subsubsection}{\numberline {8.18.3.4}getShapesRef()}{214}{subsubsection.8.18.3.4}%
+\contentsline {subsubsection}{\numberline {8.18.3.5}loadShapes()}{214}{subsubsection.8.18.3.5}%
+\contentsline {subsubsection}{\numberline {8.18.3.6}modifyDisplayedText()}{214}{subsubsection.8.18.3.6}%
+\contentsline {subsubsection}{\numberline {8.18.3.7}modifyShape()}{215}{subsubsection.8.18.3.7}%
+\contentsline {subsubsection}{\numberline {8.18.3.8}onBadDeleteResponse}{216}{subsubsection.8.18.3.8}%
+\contentsline {subsubsection}{\numberline {8.18.3.9}onBadGetResponse}{217}{subsubsection.8.18.3.9}%
+\contentsline {subsubsection}{\numberline {8.18.3.10}onBadPostResponse}{218}{subsubsection.8.18.3.10}%
+\contentsline {subsubsection}{\numberline {8.18.3.11}onGoodDeleteResponse}{218}{subsubsection.8.18.3.11}%
+\contentsline {subsubsection}{\numberline {8.18.3.12}onGoodGetResponse}{219}{subsubsection.8.18.3.12}%
+\contentsline {subsubsection}{\numberline {8.18.3.13}onGoodPostResponse}{220}{subsubsection.8.18.3.13}%
+\contentsline {subsubsection}{\numberline {8.18.3.14}renderAreaChanged}{220}{subsubsection.8.18.3.14}%
+\contentsline {subsubsection}{\numberline {8.18.3.15}renderAreaNotChanged}{221}{subsubsection.8.18.3.15}%
+\contentsline {subsubsection}{\numberline {8.18.3.16}saveShapes()}{221}{subsubsection.8.18.3.16}%
+\contentsline {subsubsection}{\numberline {8.18.3.17}statusMessage}{222}{subsubsection.8.18.3.17}%
+\contentsline {subsection}{\numberline {8.18.4}Member Data Documentation}{222}{subsection.8.18.4}%
+\contentsline {subsubsection}{\numberline {8.18.4.1}client}{222}{subsubsection.8.18.4.1}%
+\contentsline {subsubsection}{\numberline {8.18.4.2}parse}{223}{subsubsection.8.18.4.2}%
+\contentsline {subsubsection}{\numberline {8.18.4.3}renderedShapes}{223}{subsubsection.8.18.4.3}%
+\contentsline {section}{\numberline {8.19}Shape Interface Reference}{223}{section.8.19}%
+\contentsline {subsection}{\numberline {8.19.1}Detailed Description}{227}{subsection.8.19.1}%
+\contentsline {subsection}{\numberline {8.19.2}Constructor \& Destructor Documentation}{227}{subsection.8.19.2}%
+\contentsline {subsubsection}{\numberline {8.19.2.1}Shape()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{227}{subsubsection.8.19.2.1}%
+\contentsline {subsubsection}{\numberline {8.19.2.2}$\sim $Shape()}{228}{subsubsection.8.19.2.2}%
+\contentsline {subsubsection}{\numberline {8.19.2.3}Shape()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{229}{subsubsection.8.19.2.3}%
+\contentsline {subsection}{\numberline {8.19.3}Member Function Documentation}{229}{subsection.8.19.3}%
+\contentsline {subsubsection}{\numberline {8.19.3.1}allocateTrackerId()}{229}{subsubsection.8.19.3.1}%
+\contentsline {subsubsection}{\numberline {8.19.3.2}Area()}{230}{subsubsection.8.19.3.2}%
+\contentsline {subsubsection}{\numberline {8.19.3.3}CreateBrushChild()}{230}{subsubsection.8.19.3.3}%
+\contentsline {subsubsection}{\numberline {8.19.3.4}CreateParentItem()}{231}{subsubsection.8.19.3.4}%
+\contentsline {subsubsection}{\numberline {8.19.3.5}CreatePenChild()}{232}{subsubsection.8.19.3.5}%
+\contentsline {subsubsection}{\numberline {8.19.3.6}CreatePointsChild()}{232}{subsubsection.8.19.3.6}%
+\contentsline {subsubsection}{\numberline {8.19.3.7}Draw()}{233}{subsubsection.8.19.3.7}%
+\contentsline {subsubsection}{\numberline {8.19.3.8}getBrush()}{234}{subsubsection.8.19.3.8}%
+\contentsline {subsubsection}{\numberline {8.19.3.9}getBrushColor()}{234}{subsubsection.8.19.3.9}%
+\contentsline {subsubsection}{\numberline {8.19.3.10}getBrushItems()}{235}{subsubsection.8.19.3.10}%
+\contentsline {subsubsection}{\numberline {8.19.3.11}getBrushItemsEnd()}{235}{subsubsection.8.19.3.11}%
+\contentsline {subsubsection}{\numberline {8.19.3.12}getBrushStyle()}{236}{subsubsection.8.19.3.12}%
+\contentsline {subsubsection}{\numberline {8.19.3.13}getChildEnd()}{236}{subsubsection.8.19.3.13}%
+\contentsline {subsubsection}{\numberline {8.19.3.14}getChildItems()}{237}{subsubsection.8.19.3.14}%
+\contentsline {subsubsection}{\numberline {8.19.3.15}getPainter()}{237}{subsubsection.8.19.3.15}%
+\contentsline {subsubsection}{\numberline {8.19.3.16}getParentItem()}{238}{subsubsection.8.19.3.16}%
+\contentsline {subsubsection}{\numberline {8.19.3.17}getPen()}{239}{subsubsection.8.19.3.17}%
+\contentsline {subsubsection}{\numberline {8.19.3.18}getPenCapStyle()}{239}{subsubsection.8.19.3.18}%
+\contentsline {subsubsection}{\numberline {8.19.3.19}getPenColor()}{240}{subsubsection.8.19.3.19}%
+\contentsline {subsubsection}{\numberline {8.19.3.20}getPenItems()}{240}{subsubsection.8.19.3.20}%
+\contentsline {subsubsection}{\numberline {8.19.3.21}getPenItemsEnd()}{240}{subsubsection.8.19.3.21}%
+\contentsline {subsubsection}{\numberline {8.19.3.22}getPenJoinStyle()}{241}{subsubsection.8.19.3.22}%
+\contentsline {subsubsection}{\numberline {8.19.3.23}getPenStyle()}{241}{subsubsection.8.19.3.23}%
+\contentsline {subsubsection}{\numberline {8.19.3.24}getPenWidth()}{242}{subsubsection.8.19.3.24}%
+\contentsline {subsubsection}{\numberline {8.19.3.25}getPoints()}{242}{subsubsection.8.19.3.25}%
+\contentsline {subsubsection}{\numberline {8.19.3.26}getPointsItems()}{243}{subsubsection.8.19.3.26}%
+\contentsline {subsubsection}{\numberline {8.19.3.27}getSelected()}{243}{subsubsection.8.19.3.27}%
+\contentsline {subsubsection}{\numberline {8.19.3.28}getShapeId()}{244}{subsubsection.8.19.3.28}%
+\contentsline {subsubsection}{\numberline {8.19.3.29}getShapeType()}{245}{subsubsection.8.19.3.29}%
+\contentsline {subsubsection}{\numberline {8.19.3.30}getTrackerId()}{245}{subsubsection.8.19.3.30}%
+\contentsline {subsubsection}{\numberline {8.19.3.31}getX()}{246}{subsubsection.8.19.3.31}%
+\contentsline {subsubsection}{\numberline {8.19.3.32}getY()}{247}{subsubsection.8.19.3.32}%
+\contentsline {subsubsection}{\numberline {8.19.3.33}isPointInside()}{248}{subsubsection.8.19.3.33}%
+\contentsline {subsubsection}{\numberline {8.19.3.34}Move()}{249}{subsubsection.8.19.3.34}%
+\contentsline {subsubsection}{\numberline {8.19.3.35}operator=()}{250}{subsubsection.8.19.3.35}%
+\contentsline {subsubsection}{\numberline {8.19.3.36}Perimeter()}{250}{subsubsection.8.19.3.36}%
+\contentsline {subsubsection}{\numberline {8.19.3.37}setBrush()}{250}{subsubsection.8.19.3.37}%
+\contentsline {subsubsection}{\numberline {8.19.3.38}setInternalBrush()}{250}{subsubsection.8.19.3.38}%
+\contentsline {subsubsection}{\numberline {8.19.3.39}setInternalPen()}{251}{subsubsection.8.19.3.39}%
+\contentsline {subsubsection}{\numberline {8.19.3.40}setPen()}{251}{subsubsection.8.19.3.40}%
+\contentsline {subsubsection}{\numberline {8.19.3.41}setSelected()}{251}{subsubsection.8.19.3.41}%
+\contentsline {subsubsection}{\numberline {8.19.3.42}setShapeType()}{251}{subsubsection.8.19.3.42}%
+\contentsline {subsubsection}{\numberline {8.19.3.43}setTrackerId()}{252}{subsubsection.8.19.3.43}%
+\contentsline {subsubsection}{\numberline {8.19.3.44}setX()}{252}{subsubsection.8.19.3.44}%
+\contentsline {subsubsection}{\numberline {8.19.3.45}setY()}{253}{subsubsection.8.19.3.45}%
+\contentsline {subsection}{\numberline {8.19.4}Friends And Related Symbol Documentation}{253}{subsection.8.19.4}%
+\contentsline {subsubsection}{\numberline {8.19.4.1}operator$<$}{253}{subsubsection.8.19.4.1}%
+\contentsline {subsubsection}{\numberline {8.19.4.2}operator==}{253}{subsubsection.8.19.4.2}%
+\contentsline {subsection}{\numberline {8.19.5}Member Data Documentation}{254}{subsection.8.19.5}%
+\contentsline {subsubsection}{\numberline {8.19.5.1}brush}{254}{subsubsection.8.19.5.1}%
+\contentsline {subsubsection}{\numberline {8.19.5.2}brushItems}{254}{subsubsection.8.19.5.2}%
+\contentsline {subsubsection}{\numberline {8.19.5.3}childItems}{254}{subsubsection.8.19.5.3}%
+\contentsline {subsubsection}{\numberline {8.19.5.4}coords}{254}{subsubsection.8.19.5.4}%
+\contentsline {subsubsection}{\numberline {8.19.5.5}isSelected}{254}{subsubsection.8.19.5.5}%
+\contentsline {subsubsection}{\numberline {8.19.5.6}nextTracker}{254}{subsubsection.8.19.5.6}%
+\contentsline {subsubsection}{\numberline {8.19.5.7}painter}{255}{subsubsection.8.19.5.7}%
+\contentsline {subsubsection}{\numberline {8.19.5.8}parentItem}{255}{subsubsection.8.19.5.8}%
+\contentsline {subsubsection}{\numberline {8.19.5.9}pen}{255}{subsubsection.8.19.5.9}%
+\contentsline {subsubsection}{\numberline {8.19.5.10}penItems}{255}{subsubsection.8.19.5.10}%
+\contentsline {subsubsection}{\numberline {8.19.5.11}pointsItems}{255}{subsubsection.8.19.5.11}%
+\contentsline {subsubsection}{\numberline {8.19.5.12}shapeId}{255}{subsubsection.8.19.5.12}%
+\contentsline {subsubsection}{\numberline {8.19.5.13}shapeType}{255}{subsubsection.8.19.5.13}%
+\contentsline {subsubsection}{\numberline {8.19.5.14}trackerId}{256}{subsubsection.8.19.5.14}%
+\contentsline {subsubsection}{\numberline {8.19.5.15}trackersInUse}{256}{subsubsection.8.19.5.15}%
+\contentsline {section}{\numberline {8.20}Shapes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{256}{section.8.20}%
+\contentsline {subsection}{\numberline {8.20.1}Constructor \& Destructor Documentation}{259}{subsection.8.20.1}%
+\contentsline {subsubsection}{\numberline {8.20.1.1}ShapesManager()}{259}{subsubsection.8.20.1.1}%
+\contentsline {subsubsection}{\numberline {8.20.1.2}$\sim $ShapesManager()}{260}{subsubsection.8.20.1.2}%
+\contentsline {subsection}{\numberline {8.20.2}Member Function Documentation}{260}{subsection.8.20.2}%
+\contentsline {subsubsection}{\numberline {8.20.2.1}addShape()}{260}{subsubsection.8.20.2.1}%
+\contentsline {subsubsection}{\numberline {8.20.2.2}deleteAllShapes()}{261}{subsubsection.8.20.2.2}%
+\contentsline {subsubsection}{\numberline {8.20.2.3}deleteShape()}{261}{subsubsection.8.20.2.3}%
+\contentsline {subsubsection}{\numberline {8.20.2.4}getShapesRef()}{262}{subsubsection.8.20.2.4}%
+\contentsline {subsubsection}{\numberline {8.20.2.5}loadShapes()}{262}{subsubsection.8.20.2.5}%
+\contentsline {subsubsection}{\numberline {8.20.2.6}modifyShape()}{262}{subsubsection.8.20.2.6}%
+\contentsline {subsubsection}{\numberline {8.20.2.7}onBadDeleteResponse}{262}{subsubsection.8.20.2.7}%
+\contentsline {subsubsection}{\numberline {8.20.2.8}onBadGetResponse}{263}{subsubsection.8.20.2.8}%
+\contentsline {subsubsection}{\numberline {8.20.2.9}onBadPostResponse}{263}{subsubsection.8.20.2.9}%
+\contentsline {subsubsection}{\numberline {8.20.2.10}onGoodDeleteResponse}{264}{subsubsection.8.20.2.10}%
+\contentsline {subsubsection}{\numberline {8.20.2.11}onGoodGetResponse}{264}{subsubsection.8.20.2.11}%
+\contentsline {subsubsection}{\numberline {8.20.2.12}onGoodPostResponse}{265}{subsubsection.8.20.2.12}%
+\contentsline {subsubsection}{\numberline {8.20.2.13}saveShapes()}{265}{subsubsection.8.20.2.13}%
+\contentsline {subsubsection}{\numberline {8.20.2.14}shapesChanged}{266}{subsubsection.8.20.2.14}%
+\contentsline {subsubsection}{\numberline {8.20.2.15}shapesNotChanged}{266}{subsubsection.8.20.2.15}%
+\contentsline {subsubsection}{\numberline {8.20.2.16}statusMessage}{267}{subsubsection.8.20.2.16}%
+\contentsline {subsection}{\numberline {8.20.3}Member Data Documentation}{267}{subsection.8.20.3}%
+\contentsline {subsubsection}{\numberline {8.20.3.1}client}{267}{subsubsection.8.20.3.1}%
+\contentsline {subsubsection}{\numberline {8.20.3.2}parse}{267}{subsubsection.8.20.3.2}%
+\contentsline {subsubsection}{\numberline {8.20.3.3}shapes}{268}{subsubsection.8.20.3.3}%
+\contentsline {section}{\numberline {8.21}Square Class Reference}{268}{section.8.21}%
+\contentsline {subsection}{\numberline {8.21.1}Detailed Description}{272}{subsection.8.21.1}%
+\contentsline {subsection}{\numberline {8.21.2}Constructor \& Destructor Documentation}{272}{subsection.8.21.2}%
+\contentsline {subsubsection}{\numberline {8.21.2.1}Square()}{272}{subsubsection.8.21.2.1}%
+\contentsline {subsection}{\numberline {8.21.3}Member Function Documentation}{273}{subsection.8.21.3}%
+\contentsline {subsubsection}{\numberline {8.21.3.1}Area()}{273}{subsubsection.8.21.3.1}%
+\contentsline {subsubsection}{\numberline {8.21.3.2}Draw()}{273}{subsubsection.8.21.3.2}%
+\contentsline {subsubsection}{\numberline {8.21.3.3}getLength()}{274}{subsubsection.8.21.3.3}%
+\contentsline {subsubsection}{\numberline {8.21.3.4}isPointInside()}{274}{subsubsection.8.21.3.4}%
+\contentsline {subsubsection}{\numberline {8.21.3.5}Perimeter()}{275}{subsubsection.8.21.3.5}%
+\contentsline {subsubsection}{\numberline {8.21.3.6}setLength()}{275}{subsubsection.8.21.3.6}%
+\contentsline {subsubsection}{\numberline {8.21.3.7}setX()}{276}{subsubsection.8.21.3.7}%
+\contentsline {subsubsection}{\numberline {8.21.3.8}setY()}{276}{subsubsection.8.21.3.8}%
+\contentsline {subsection}{\numberline {8.21.4}Member Data Documentation}{277}{subsection.8.21.4}%
+\contentsline {subsubsection}{\numberline {8.21.4.1}length}{277}{subsubsection.8.21.4.1}%
+\contentsline {section}{\numberline {8.22}Testimonial Class Reference}{277}{section.8.22}%
+\contentsline {subsection}{\numberline {8.22.1}Detailed Description}{280}{subsection.8.22.1}%
+\contentsline {subsection}{\numberline {8.22.2}Constructor \& Destructor Documentation}{280}{subsection.8.22.2}%
+\contentsline {subsubsection}{\numberline {8.22.2.1}Testimonial()}{280}{subsubsection.8.22.2.1}%
+\contentsline {subsection}{\numberline {8.22.3}Member Function Documentation}{280}{subsection.8.22.3}%
+\contentsline {subsubsection}{\numberline {8.22.3.1}fromJson()}{280}{subsubsection.8.22.3.1}%
+\contentsline {subsubsection}{\numberline {8.22.3.2}getAuthor()}{281}{subsubsection.8.22.3.2}%
+\contentsline {subsubsection}{\numberline {8.22.3.3}getContent()}{281}{subsubsection.8.22.3.3}%
+\contentsline {subsubsection}{\numberline {8.22.3.4}getTimestamp()}{281}{subsubsection.8.22.3.4}%
+\contentsline {subsubsection}{\numberline {8.22.3.5}isGuest()}{281}{subsubsection.8.22.3.5}%
+\contentsline {subsubsection}{\numberline {8.22.3.6}isSatisfactory()}{282}{subsubsection.8.22.3.6}%
+\contentsline {subsubsection}{\numberline {8.22.3.7}setIsSatisfactory()}{282}{subsubsection.8.22.3.7}%
+\contentsline {subsubsection}{\numberline {8.22.3.8}toJson()}{282}{subsubsection.8.22.3.8}%
+\contentsline {subsection}{\numberline {8.22.4}Member Data Documentation}{282}{subsection.8.22.4}%
+\contentsline {subsubsection}{\numberline {8.22.4.1}m\_author}{282}{subsubsection.8.22.4.1}%
+\contentsline {subsubsection}{\numberline {8.22.4.2}m\_content}{282}{subsubsection.8.22.4.2}%
+\contentsline {subsubsection}{\numberline {8.22.4.3}m\_isGuest}{282}{subsubsection.8.22.4.3}%
+\contentsline {subsubsection}{\numberline {8.22.4.4}m\_isSatisfactory}{282}{subsubsection.8.22.4.4}%
+\contentsline {subsubsection}{\numberline {8.22.4.5}m\_timestamp}{283}{subsubsection.8.22.4.5}%
+\contentsline {section}{\numberline {8.23}Testimonial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog Class Reference}{283}{section.8.23}%
+\contentsline {subsection}{\numberline {8.23.1}Detailed Description}{285}{subsection.8.23.1}%
+\contentsline {subsection}{\numberline {8.23.2}Constructor \& Destructor Documentation}{285}{subsection.8.23.2}%
+\contentsline {subsubsection}{\numberline {8.23.2.1}TestimonialDialog()}{285}{subsubsection.8.23.2.1}%
+\contentsline {subsection}{\numberline {8.23.3}Member Function Documentation}{286}{subsection.8.23.3}%
+\contentsline {subsubsection}{\numberline {8.23.3.1}onCancel}{286}{subsubsection.8.23.3.1}%
+\contentsline {subsubsection}{\numberline {8.23.3.2}onSubmit}{286}{subsubsection.8.23.3.2}%
+\contentsline {subsection}{\numberline {8.23.4}Member Data Documentation}{287}{subsection.8.23.4}%
+\contentsline {subsubsection}{\numberline {8.23.4.1}m\_authorEdit}{287}{subsubsection.8.23.4.1}%
+\contentsline {subsubsection}{\numberline {8.23.4.2}m\_contentEdit}{287}{subsubsection.8.23.4.2}%
+\contentsline {subsubsection}{\numberline {8.23.4.3}m\_doNotShowAgain}{288}{subsubsection.8.23.4.3}%
+\contentsline {section}{\numberline {8.24}Testimonial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{288}{section.8.24}%
+\contentsline {subsection}{\numberline {8.24.1}Detailed Description}{292}{subsection.8.24.1}%
+\contentsline {subsection}{\numberline {8.24.2}Constructor \& Destructor Documentation}{293}{subsection.8.24.2}%
+\contentsline {subsubsection}{\numberline {8.24.2.1}TestimonialManager()}{293}{subsubsection.8.24.2.1}%
+\contentsline {subsubsection}{\numberline {8.24.2.2}$\sim $TestimonialManager()}{294}{subsubsection.8.24.2.2}%
+\contentsline {subsection}{\numberline {8.24.3}Member Function Documentation}{294}{subsection.8.24.3}%
+\contentsline {subsubsection}{\numberline {8.24.3.1}addTestimonial()}{294}{subsubsection.8.24.3.1}%
+\contentsline {subsubsection}{\numberline {8.24.3.2}checkTimeAndPrompt()}{295}{subsubsection.8.24.3.2}%
+\contentsline {subsubsection}{\numberline {8.24.3.3}getDoNotShowAgain()}{295}{subsubsection.8.24.3.3}%
+\contentsline {subsubsection}{\numberline {8.24.3.4}getInstance()}{296}{subsubsection.8.24.3.4}%
+\contentsline {subsubsection}{\numberline {8.24.3.5}getSatisfactoryTestimonials()}{296}{subsubsection.8.24.3.5}%
+\contentsline {subsubsection}{\numberline {8.24.3.6}hasUserGivenTestimonial()}{297}{subsubsection.8.24.3.6}%
+\contentsline {subsubsection}{\numberline {8.24.3.7}loadTestimonials()}{297}{subsubsection.8.24.3.7}%
+\contentsline {subsubsection}{\numberline {8.24.3.8}onBadGetResponse}{297}{subsubsection.8.24.3.8}%
+\contentsline {subsubsection}{\numberline {8.24.3.9}onBadPostResponse}{298}{subsubsection.8.24.3.9}%
+\contentsline {subsubsection}{\numberline {8.24.3.10}onGoodGetResponse}{298}{subsubsection.8.24.3.10}%
+\contentsline {subsubsection}{\numberline {8.24.3.11}onGoodPostResponse}{298}{subsubsection.8.24.3.11}%
+\contentsline {subsubsection}{\numberline {8.24.3.12}saveTestimonials()}{299}{subsubsection.8.24.3.12}%
+\contentsline {subsubsection}{\numberline {8.24.3.13}setDoNotShowAgain()}{299}{subsubsection.8.24.3.13}%
+\contentsline {subsubsection}{\numberline {8.24.3.14}shouldPromptForTestimonial}{300}{subsubsection.8.24.3.14}%
+\contentsline {subsubsection}{\numberline {8.24.3.15}startTrackingTime()}{300}{subsubsection.8.24.3.15}%
+\contentsline {subsubsection}{\numberline {8.24.3.16}stopTrackingTime()}{300}{subsubsection.8.24.3.16}%
+\contentsline {subsection}{\numberline {8.24.4}Member Data Documentation}{301}{subsection.8.24.4}%
+\contentsline {subsubsection}{\numberline {8.24.4.1}client}{301}{subsubsection.8.24.4.1}%
+\contentsline {subsubsection}{\numberline {8.24.4.2}INITIAL\_PROMPT\_TIME}{301}{subsubsection.8.24.4.2}%
+\contentsline {subsubsection}{\numberline {8.24.4.3}m\_doNotShowAgain}{301}{subsubsection.8.24.4.3}%
+\contentsline {subsubsection}{\numberline {8.24.4.4}m\_testimonials}{301}{subsubsection.8.24.4.4}%
+\contentsline {subsubsection}{\numberline {8.24.4.5}m\_trackingTimer}{301}{subsubsection.8.24.4.5}%
+\contentsline {subsubsection}{\numberline {8.24.4.6}m\_userTimeTracking}{301}{subsubsection.8.24.4.6}%
+\contentsline {subsubsection}{\numberline {8.24.4.7}parse}{301}{subsubsection.8.24.4.7}%
+\contentsline {subsubsection}{\numberline {8.24.4.8}REPEAT\_PROMPT\_TIME}{302}{subsubsection.8.24.4.8}%
+\contentsline {section}{\numberline {8.25}Testimonials\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Display\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog Class Reference}{302}{section.8.25}%
+\contentsline {subsection}{\numberline {8.25.1}Detailed Description}{303}{subsection.8.25.1}%
+\contentsline {subsection}{\numberline {8.25.2}Constructor \& Destructor Documentation}{303}{subsection.8.25.2}%
+\contentsline {subsubsection}{\numberline {8.25.2.1}TestimonialsDisplayDialog()}{303}{subsubsection.8.25.2.1}%
+\contentsline {subsection}{\numberline {8.25.3}Member Function Documentation}{304}{subsection.8.25.3}%
+\contentsline {subsubsection}{\numberline {8.25.3.1}refreshTestimonials()}{304}{subsubsection.8.25.3.1}%
+\contentsline {subsection}{\numberline {8.25.4}Member Data Documentation}{305}{subsection.8.25.4}%
+\contentsline {subsubsection}{\numberline {8.25.4.1}m\_testimonialsLayout}{305}{subsubsection.8.25.4.1}%
+\contentsline {section}{\numberline {8.26}Text Class Reference}{305}{section.8.26}%
+\contentsline {subsection}{\numberline {8.26.1}Detailed Description}{310}{subsection.8.26.1}%
+\contentsline {subsection}{\numberline {8.26.2}Constructor \& Destructor Documentation}{310}{subsection.8.26.2}%
+\contentsline {subsubsection}{\numberline {8.26.2.1}Text()}{310}{subsubsection.8.26.2.1}%
+\contentsline {subsection}{\numberline {8.26.3}Member Function Documentation}{311}{subsection.8.26.3}%
+\contentsline {subsubsection}{\numberline {8.26.3.1}Area()}{311}{subsubsection.8.26.3.1}%
+\contentsline {subsubsection}{\numberline {8.26.3.2}Draw()}{311}{subsubsection.8.26.3.2}%
+\contentsline {subsubsection}{\numberline {8.26.3.3}getFont()}{312}{subsubsection.8.26.3.3}%
+\contentsline {subsubsection}{\numberline {8.26.3.4}getFontStyle()}{313}{subsubsection.8.26.3.4}%
+\contentsline {subsubsection}{\numberline {8.26.3.5}getFontWeight()}{313}{subsubsection.8.26.3.5}%
+\contentsline {subsubsection}{\numberline {8.26.3.6}getLength()}{314}{subsubsection.8.26.3.6}%
+\contentsline {subsubsection}{\numberline {8.26.3.7}getTextAlignment()}{314}{subsubsection.8.26.3.7}%
+\contentsline {subsubsection}{\numberline {8.26.3.8}getTextColor()}{314}{subsubsection.8.26.3.8}%
+\contentsline {subsubsection}{\numberline {8.26.3.9}getTextString()}{315}{subsubsection.8.26.3.9}%
+\contentsline {subsubsection}{\numberline {8.26.3.10}getWidth()}{315}{subsubsection.8.26.3.10}%
+\contentsline {subsubsection}{\numberline {8.26.3.11}isPointInside()}{315}{subsubsection.8.26.3.11}%
+\contentsline {subsubsection}{\numberline {8.26.3.12}Perimeter()}{316}{subsubsection.8.26.3.12}%
+\contentsline {subsubsection}{\numberline {8.26.3.13}setAlignment()}{316}{subsubsection.8.26.3.13}%
+\contentsline {subsubsection}{\numberline {8.26.3.14}setInternalFont()}{317}{subsubsection.8.26.3.14}%
+\contentsline {subsubsection}{\numberline {8.26.3.15}setLength()}{317}{subsubsection.8.26.3.15}%
+\contentsline {subsubsection}{\numberline {8.26.3.16}setText()}{317}{subsubsection.8.26.3.16}%
+\contentsline {subsubsection}{\numberline {8.26.3.17}setWidth()}{318}{subsubsection.8.26.3.17}%
+\contentsline {subsubsection}{\numberline {8.26.3.18}setX()}{318}{subsubsection.8.26.3.18}%
+\contentsline {subsubsection}{\numberline {8.26.3.19}setY()}{319}{subsubsection.8.26.3.19}%
+\contentsline {subsection}{\numberline {8.26.4}Member Data Documentation}{319}{subsection.8.26.4}%
+\contentsline {subsubsection}{\numberline {8.26.4.1}font}{319}{subsubsection.8.26.4.1}%
+\contentsline {subsubsection}{\numberline {8.26.4.2}length}{319}{subsubsection.8.26.4.2}%
+\contentsline {subsubsection}{\numberline {8.26.4.3}textAlignment}{319}{subsubsection.8.26.4.3}%
+\contentsline {subsubsection}{\numberline {8.26.4.4}textColor}{320}{subsubsection.8.26.4.4}%
+\contentsline {subsubsection}{\numberline {8.26.4.5}textString}{320}{subsubsection.8.26.4.5}%
+\contentsline {subsubsection}{\numberline {8.26.4.6}width}{320}{subsubsection.8.26.4.6}%
+\contentsline {section}{\numberline {8.27}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account Class Reference}{320}{section.8.27}%
+\contentsline {subsection}{\numberline {8.27.1}Detailed Description}{323}{subsection.8.27.1}%
+\contentsline {subsection}{\numberline {8.27.2}Constructor \& Destructor Documentation}{323}{subsection.8.27.2}%
+\contentsline {subsubsection}{\numberline {8.27.2.1}UserAccount()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{323}{subsubsection.8.27.2.1}%
+\contentsline {subsubsection}{\numberline {8.27.2.2}UserAccount()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{323}{subsubsection.8.27.2.2}%
+\contentsline {subsubsection}{\numberline {8.27.2.3}$\sim $UserAccount()}{323}{subsubsection.8.27.2.3}%
+\contentsline {subsubsection}{\numberline {8.27.2.4}UserAccount()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{324}{subsubsection.8.27.2.4}%
+\contentsline {subsubsection}{\numberline {8.27.2.5}UserAccount()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{324}{subsubsection.8.27.2.5}%
+\contentsline {subsection}{\numberline {8.27.3}Member Function Documentation}{324}{subsection.8.27.3}%
+\contentsline {subsubsection}{\numberline {8.27.3.1}getPassword()}{324}{subsubsection.8.27.3.1}%
+\contentsline {subsubsection}{\numberline {8.27.3.2}getUsername()}{325}{subsubsection.8.27.3.2}%
+\contentsline {subsubsection}{\numberline {8.27.3.3}isAdmin()}{325}{subsubsection.8.27.3.3}%
+\contentsline {subsubsection}{\numberline {8.27.3.4}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{325}{subsubsection.8.27.3.4}%
+\contentsline {subsubsection}{\numberline {8.27.3.5}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{326}{subsubsection.8.27.3.5}%
+\contentsline {subsubsection}{\numberline {8.27.3.6}setAdmin()}{326}{subsubsection.8.27.3.6}%
+\contentsline {subsubsection}{\numberline {8.27.3.7}setPassword()}{326}{subsubsection.8.27.3.7}%
+\contentsline {subsubsection}{\numberline {8.27.3.8}setUserAccount()}{326}{subsubsection.8.27.3.8}%
+\contentsline {subsubsection}{\numberline {8.27.3.9}setUsername()}{326}{subsubsection.8.27.3.9}%
+\contentsline {subsection}{\numberline {8.27.4}Member Data Documentation}{327}{subsection.8.27.4}%
+\contentsline {subsubsection}{\numberline {8.27.4.1}admin}{327}{subsubsection.8.27.4.1}%
+\contentsline {subsubsection}{\numberline {8.27.4.2}password}{327}{subsubsection.8.27.4.2}%
+\contentsline {subsubsection}{\numberline {8.27.4.3}username}{327}{subsubsection.8.27.4.3}%
+\contentsline {section}{\numberline {8.28}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{327}{section.8.28}%
+\contentsline {subsection}{\numberline {8.28.1}Detailed Description}{331}{subsection.8.28.1}%
+\contentsline {subsection}{\numberline {8.28.2}Constructor \& Destructor Documentation}{331}{subsection.8.28.2}%
+\contentsline {subsubsection}{\numberline {8.28.2.1}UserManager()}{331}{subsubsection.8.28.2.1}%
+\contentsline {subsubsection}{\numberline {8.28.2.2}$\sim $UserManager()}{332}{subsubsection.8.28.2.2}%
+\contentsline {subsection}{\numberline {8.28.3}Member Function Documentation}{332}{subsection.8.28.3}%
+\contentsline {subsubsection}{\numberline {8.28.3.1}addUser()}{332}{subsubsection.8.28.3.1}%
+\contentsline {subsubsection}{\numberline {8.28.3.2}authenticate()}{333}{subsubsection.8.28.3.2}%
+\contentsline {subsubsection}{\numberline {8.28.3.3}authenticationFailed}{334}{subsubsection.8.28.3.3}%
+\contentsline {subsubsection}{\numberline {8.28.3.4}deleteAllUsers()}{334}{subsubsection.8.28.3.4}%
+\contentsline {subsubsection}{\numberline {8.28.3.5}deleteUser()}{334}{subsubsection.8.28.3.5}%
+\contentsline {subsubsection}{\numberline {8.28.3.6}getCurrUserRef()}{334}{subsubsection.8.28.3.6}%
+\contentsline {subsubsection}{\numberline {8.28.3.7}loadUsers()}{335}{subsubsection.8.28.3.7}%
+\contentsline {subsubsection}{\numberline {8.28.3.8}modifyUser()}{335}{subsubsection.8.28.3.8}%
+\contentsline {subsubsection}{\numberline {8.28.3.9}onBadDeleteResponse}{335}{subsubsection.8.28.3.9}%
+\contentsline {subsubsection}{\numberline {8.28.3.10}onBadGetResponse}{336}{subsubsection.8.28.3.10}%
+\contentsline {subsubsection}{\numberline {8.28.3.11}onBadPostResponse}{336}{subsubsection.8.28.3.11}%
+\contentsline {subsubsection}{\numberline {8.28.3.12}onGoodDeleteResponse}{337}{subsubsection.8.28.3.12}%
+\contentsline {subsubsection}{\numberline {8.28.3.13}onGoodGetResponse}{338}{subsubsection.8.28.3.13}%
+\contentsline {subsubsection}{\numberline {8.28.3.14}onGoodPostResponse}{338}{subsubsection.8.28.3.14}%
+\contentsline {subsubsection}{\numberline {8.28.3.15}saveUsers()}{339}{subsubsection.8.28.3.15}%
+\contentsline {subsubsection}{\numberline {8.28.3.16}statusMessage}{339}{subsubsection.8.28.3.16}%
+\contentsline {subsubsection}{\numberline {8.28.3.17}userAuthenticated}{340}{subsubsection.8.28.3.17}%
+\contentsline {subsubsection}{\numberline {8.28.3.18}userChanged}{340}{subsubsection.8.28.3.18}%
+\contentsline {subsubsection}{\numberline {8.28.3.19}userNotChanged}{340}{subsubsection.8.28.3.19}%
+\contentsline {subsection}{\numberline {8.28.4}Member Data Documentation}{340}{subsection.8.28.4}%
+\contentsline {subsubsection}{\numberline {8.28.4.1}client}{340}{subsubsection.8.28.4.1}%
+\contentsline {subsubsection}{\numberline {8.28.4.2}currUser}{341}{subsubsection.8.28.4.2}%
+\contentsline {subsubsection}{\numberline {8.28.4.3}parse}{341}{subsubsection.8.28.4.3}%
+\contentsline {subsubsection}{\numberline {8.28.4.4}users}{341}{subsubsection.8.28.4.4}%
+\contentsline {section}{\numberline {8.29}alpha\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::vector$<$ T $>$ Class Template Reference}{341}{section.8.29}%
+\contentsline {subsection}{\numberline {8.29.1}Member Typedef Documentation}{344}{subsection.8.29.1}%
+\contentsline {subsubsection}{\numberline {8.29.1.1}const\_iterator}{344}{subsubsection.8.29.1.1}%
+\contentsline {subsubsection}{\numberline {8.29.1.2}iterator}{344}{subsubsection.8.29.1.2}%
+\contentsline {subsection}{\numberline {8.29.2}Constructor \& Destructor Documentation}{344}{subsection.8.29.2}%
+\contentsline {subsubsection}{\numberline {8.29.2.1}vector()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{344}{subsubsection.8.29.2.1}%
+\contentsline {subsubsection}{\numberline {8.29.2.2}vector()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{345}{subsubsection.8.29.2.2}%
+\contentsline {subsubsection}{\numberline {8.29.2.3}vector()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{345}{subsubsection.8.29.2.3}%
+\contentsline {subsubsection}{\numberline {8.29.2.4}vector()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{345}{subsubsection.8.29.2.4}%
+\contentsline {subsubsection}{\numberline {8.29.2.5}$\sim $vector()}{345}{subsubsection.8.29.2.5}%
+\contentsline {subsection}{\numberline {8.29.3}Member Function Documentation}{346}{subsection.8.29.3}%
+\contentsline {subsubsection}{\numberline {8.29.3.1}begin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{346}{subsubsection.8.29.3.1}%
+\contentsline {subsubsection}{\numberline {8.29.3.2}begin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{346}{subsubsection.8.29.3.2}%
+\contentsline {subsubsection}{\numberline {8.29.3.3}capacity()}{346}{subsubsection.8.29.3.3}%
+\contentsline {subsubsection}{\numberline {8.29.3.4}end()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{346}{subsubsection.8.29.3.4}%
+\contentsline {subsubsection}{\numberline {8.29.3.5}end()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{346}{subsubsection.8.29.3.5}%
+\contentsline {subsubsection}{\numberline {8.29.3.6}erase()}{347}{subsubsection.8.29.3.6}%
+\contentsline {subsubsection}{\numberline {8.29.3.7}insert()}{347}{subsubsection.8.29.3.7}%
+\contentsline {subsubsection}{\numberline {8.29.3.8}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{347}{subsubsection.8.29.3.8}%
+\contentsline {subsubsection}{\numberline {8.29.3.9}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{348}{subsubsection.8.29.3.9}%
+\contentsline {subsubsection}{\numberline {8.29.3.10}operator[]()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{348}{subsubsection.8.29.3.10}%
+\contentsline {subsubsection}{\numberline {8.29.3.11}operator[]()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{348}{subsubsection.8.29.3.11}%
+\contentsline {subsubsection}{\numberline {8.29.3.12}push\_back()}{348}{subsubsection.8.29.3.12}%
+\contentsline {subsubsection}{\numberline {8.29.3.13}reserve()}{349}{subsubsection.8.29.3.13}%
+\contentsline {subsubsection}{\numberline {8.29.3.14}resize()}{349}{subsubsection.8.29.3.14}%
+\contentsline {subsubsection}{\numberline {8.29.3.15}size()}{350}{subsubsection.8.29.3.15}%
+\contentsline {subsection}{\numberline {8.29.4}Member Data Documentation}{350}{subsection.8.29.4}%
+\contentsline {subsubsection}{\numberline {8.29.4.1}elem}{350}{subsubsection.8.29.4.1}%
+\contentsline {subsubsection}{\numberline {8.29.4.2}size\_v}{350}{subsubsection.8.29.4.2}%
+\contentsline {subsubsection}{\numberline {8.29.4.3}space}{350}{subsubsection.8.29.4.3}%
+\contentsline {chapter}{\numberline {9}File Documentation}{351}{chapter.9}%
+\contentsline {section}{\numberline {9.1}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Client.cpp File Reference}{351}{section.9.1}%
+\contentsline {section}{\numberline {9.2}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Client.h File Reference}{351}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Detailed Description}{352}{subsection.9.2.1}%
+\contentsline {section}{\numberline {9.3}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Client.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{352}{section.9.3}%
+\contentsline {section}{\numberline {9.4}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}App\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Driver.cpp File Reference}{353}{section.9.4}%
+\contentsline {section}{\numberline {9.5}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}App\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Driver.h File Reference}{353}{section.9.5}%
+\contentsline {section}{\numberline {9.6}App\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Driver.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{354}{section.9.6}%
+\contentsline {section}{\numberline {9.7}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/moc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Client.cpp File Reference}{355}{section.9.7}%
+\contentsline {subsection}{\numberline {9.7.1}Macro Definition Documentation}{356}{subsection.9.7.1}%
+\contentsline {subsubsection}{\numberline {9.7.1.1}Q\_CONSTINIT}{356}{subsubsection.9.7.1.1}%
+\contentsline {subsection}{\numberline {9.7.2}Variable Documentation}{356}{subsection.9.7.2}%
+\contentsline {subsubsection}{\numberline {9.7.2.1}qt\_meta\_data\_ZN9ApiClientE}{356}{subsubsection.9.7.2.1}%
+\contentsline {section}{\numberline {9.8}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/moc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cpp File Reference}{356}{section.9.8}%
+\contentsline {subsection}{\numberline {9.8.1}Macro Definition Documentation}{357}{subsection.9.8.1}%
+\contentsline {subsubsection}{\numberline {9.8.1.1}Q\_CONSTINIT}{357}{subsubsection.9.8.1.1}%
+\contentsline {subsection}{\numberline {9.8.2}Variable Documentation}{357}{subsection.9.8.2}%
+\contentsline {subsubsection}{\numberline {9.8.2.1}qt\_meta\_data\_ZN11UserManagerE}{357}{subsubsection.9.8.2.1}%
+\contentsline {section}{\numberline {9.9}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parser.cpp File Reference}{357}{section.9.9}%
+\contentsline {section}{\numberline {9.10}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parser.h File Reference}{357}{section.9.10}%
+\contentsline {section}{\numberline {9.11}Parser.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{358}{section.9.11}%
+\contentsline {section}{\numberline {9.12}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Render\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Area\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cpp File Reference}{360}{section.9.12}%
+\contentsline {section}{\numberline {9.13}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Render\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Area\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.h File Reference}{360}{section.9.13}%
+\contentsline {section}{\numberline {9.14}Render\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Area\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{361}{section.9.14}%
+\contentsline {section}{\numberline {9.15}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shapes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cpp File Reference}{362}{section.9.15}%
+\contentsline {section}{\numberline {9.16}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shapes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.h File Reference}{362}{section.9.16}%
+\contentsline {subsection}{\numberline {9.16.1}Detailed Description}{363}{subsection.9.16.1}%
+\contentsline {section}{\numberline {9.17}Shapes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{363}{section.9.17}%
+\contentsline {section}{\numberline {9.18}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Testimonial.cpp File Reference}{364}{section.9.18}%
+\contentsline {section}{\numberline {9.19}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Testimonial.h File Reference}{364}{section.9.19}%
+\contentsline {section}{\numberline {9.20}Testimonial.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{365}{section.9.20}%
+\contentsline {section}{\numberline {9.21}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Testimonial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cpp File Reference}{366}{section.9.21}%
+\contentsline {section}{\numberline {9.22}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Testimonial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.h File Reference}{366}{section.9.22}%
+\contentsline {section}{\numberline {9.23}Testimonial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{367}{section.9.23}%
+\contentsline {section}{\numberline {9.24}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account.cpp File Reference}{368}{section.9.24}%
+\contentsline {section}{\numberline {9.25}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account.h File Reference}{368}{section.9.25}%
+\contentsline {section}{\numberline {9.26}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Account.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{369}{section.9.26}%
+\contentsline {section}{\numberline {9.27}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cpp File Reference}{370}{section.9.27}%
+\contentsline {section}{\numberline {9.28}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.h File Reference}{370}{section.9.28}%
+\contentsline {section}{\numberline {9.29}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{371}{section.9.29}%
+\contentsline {section}{\numberline {9.30}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Column\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Edit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Delegate.h File Reference}{372}{section.9.30}%
+\contentsline {section}{\numberline {9.31}Column\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Edit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Delegate.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{373}{section.9.31}%
+\contentsline {section}{\numberline {9.32}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/darkstyle.qss File Reference}{374}{section.9.32}%
+\contentsline {section}{\numberline {9.33}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Geoo.qss File Reference}{374}{section.9.33}%
+\contentsline {section}{\numberline {9.34}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/lightstyle.qss File Reference}{374}{section.9.34}%
+\contentsline {section}{\numberline {9.35}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/loginwindow.cpp File Reference}{374}{section.9.35}%
+\contentsline {section}{\numberline {9.36}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/loginwindow.h File Reference}{374}{section.9.36}%
+\contentsline {section}{\numberline {9.37}loginwindow.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{375}{section.9.37}%
+\contentsline {section}{\numberline {9.38}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/backend/main.cpp File Reference}{376}{section.9.38}%
+\contentsline {subsection}{\numberline {9.38.1}Function Documentation}{377}{subsection.9.38.1}%
+\contentsline {subsubsection}{\numberline {9.38.1.1}GetConnectedClient()}{377}{subsubsection.9.38.1.1}%
+\contentsline {subsubsection}{\numberline {9.38.1.2}GetRenderAreaTestString()}{378}{subsubsection.9.38.1.2}%
+\contentsline {subsubsection}{\numberline {9.38.1.3}GetShapeTestString()}{378}{subsubsection.9.38.1.3}%
+\contentsline {subsubsection}{\numberline {9.38.1.4}GetUsersTestString()}{378}{subsubsection.9.38.1.4}%
+\contentsline {subsubsection}{\numberline {9.38.1.5}main()}{378}{subsubsection.9.38.1.5}%
+\contentsline {subsubsection}{\numberline {9.38.1.6}OnBadGetResponseTest()}{379}{subsubsection.9.38.1.6}%
+\contentsline {subsubsection}{\numberline {9.38.1.7}OnBadPostResponseTest()}{379}{subsubsection.9.38.1.7}%
+\contentsline {subsubsection}{\numberline {9.38.1.8}OnGoodGetResponseTest()}{379}{subsubsection.9.38.1.8}%
+\contentsline {subsubsection}{\numberline {9.38.1.9}OnGoodPostResponseTest()}{380}{subsubsection.9.38.1.9}%
+\contentsline {subsection}{\numberline {9.38.2}Variable Documentation}{380}{subsection.9.38.2}%
+\contentsline {subsubsection}{\numberline {9.38.2.1}pApp}{380}{subsubsection.9.38.2.1}%
+\contentsline {subsubsection}{\numberline {9.38.2.2}parse}{380}{subsubsection.9.38.2.2}%
+\contentsline {subsubsection}{\numberline {9.38.2.3}pClient}{380}{subsubsection.9.38.2.3}%
+\contentsline {section}{\numberline {9.39}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/main.cpp File Reference}{380}{section.9.39}%
+\contentsline {subsection}{\numberline {9.39.1}Detailed Description}{381}{subsection.9.39.1}%
+\contentsline {subsection}{\numberline {9.39.2}Function Documentation}{381}{subsection.9.39.2}%
+\contentsline {subsubsection}{\numberline {9.39.2.1}main()}{381}{subsubsection.9.39.2.1}%
+\contentsline {section}{\numberline {9.40}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/webservice-\/dockerized/main.cpp File Reference}{382}{section.9.40}%
+\contentsline {subsection}{\numberline {9.40.1}Function Documentation}{383}{subsection.9.40.1}%
+\contentsline {subsubsection}{\numberline {9.40.1.1}get\_json\_file()}{383}{subsubsection.9.40.1.1}%
+\contentsline {subsubsection}{\numberline {9.40.1.2}main()}{384}{subsubsection.9.40.1.2}%
+\contentsline {section}{\numberline {9.41}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/mainwindow.cpp File Reference}{385}{section.9.41}%
+\contentsline {section}{\numberline {9.42}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/mainwindow.h File Reference}{385}{section.9.42}%
+\contentsline {section}{\numberline {9.43}mainwindow.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{386}{section.9.43}%
+\contentsline {section}{\numberline {9.44}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/mainwindow.ui File Reference}{388}{section.9.44}%
+\contentsline {section}{\numberline {9.45}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Medize.qss File Reference}{388}{section.9.45}%
+\contentsline {section}{\numberline {9.46}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/renderarea.cpp File Reference}{388}{section.9.46}%
+\contentsline {section}{\numberline {9.47}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/renderarea.h File Reference}{389}{section.9.47}%
+\contentsline {subsection}{\numberline {9.47.1}Detailed Description}{390}{subsection.9.47.1}%
+\contentsline {section}{\numberline {9.48}renderarea.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{390}{section.9.48}%
+\contentsline {section}{\numberline {9.49}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/resources.qrc File Reference}{390}{section.9.49}%
+\contentsline {section}{\numberline {9.50}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Testimonial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog.cpp File Reference}{390}{section.9.50}%
+\contentsline {section}{\numberline {9.51}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Testimonial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog.h File Reference}{391}{section.9.51}%
+\contentsline {subsection}{\numberline {9.51.1}Detailed Description}{392}{subsection.9.51.1}%
+\contentsline {section}{\numberline {9.52}Testimonial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{392}{section.9.52}%
+\contentsline {section}{\numberline {9.53}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Testimonials\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Display\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog.cpp File Reference}{392}{section.9.53}%
+\contentsline {section}{\numberline {9.54}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/frontend/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Testimonials\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Display\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog.h File Reference}{393}{section.9.54}%
+\contentsline {subsection}{\numberline {9.54.1}Detailed Description}{394}{subsection.9.54.1}%
+\contentsline {section}{\numberline {9.55}Testimonials\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Display\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dialog.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{394}{section.9.55}%
+\contentsline {section}{\numberline {9.56}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/all\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}shapes.h File Reference}{394}{section.9.56}%
+\contentsline {subsection}{\numberline {9.56.1}Enumeration Type Documentation}{395}{subsection.9.56.1}%
+\contentsline {subsubsection}{\numberline {9.56.1.1}ShapeIDs}{395}{subsubsection.9.56.1.1}%
+\contentsline {section}{\numberline {9.57}all\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}shapes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{395}{section.9.57}%
+\contentsline {section}{\numberline {9.58}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/circle.cpp File Reference}{396}{section.9.58}%
+\contentsline {section}{\numberline {9.59}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/circle.h File Reference}{396}{section.9.59}%
+\contentsline {section}{\numberline {9.60}circle.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{397}{section.9.60}%
+\contentsline {section}{\numberline {9.61}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/ellipse.cpp File Reference}{397}{section.9.61}%
+\contentsline {section}{\numberline {9.62}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/ellipse.h File Reference}{398}{section.9.62}%
+\contentsline {section}{\numberline {9.63}ellipse.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{398}{section.9.63}%
+\contentsline {section}{\numberline {9.64}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/line.cpp File Reference}{399}{section.9.64}%
+\contentsline {section}{\numberline {9.65}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/line.h File Reference}{399}{section.9.65}%
+\contentsline {section}{\numberline {9.66}line.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{400}{section.9.66}%
+\contentsline {section}{\numberline {9.67}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/polygon.cpp File Reference}{401}{section.9.67}%
+\contentsline {section}{\numberline {9.68}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/polygon.h File Reference}{401}{section.9.68}%
+\contentsline {section}{\numberline {9.69}polygon.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{402}{section.9.69}%
+\contentsline {section}{\numberline {9.70}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/polyline.cpp File Reference}{402}{section.9.70}%
+\contentsline {section}{\numberline {9.71}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/polyline.h File Reference}{403}{section.9.71}%
+\contentsline {section}{\numberline {9.72}polyline.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{403}{section.9.72}%
+\contentsline {section}{\numberline {9.73}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/rectangle.cpp File Reference}{404}{section.9.73}%
+\contentsline {section}{\numberline {9.74}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/rectangle.h File Reference}{404}{section.9.74}%
+\contentsline {section}{\numberline {9.75}rectangle.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{405}{section.9.75}%
+\contentsline {section}{\numberline {9.76}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/shape.cpp File Reference}{406}{section.9.76}%
+\contentsline {subsection}{\numberline {9.76.1}Function Documentation}{406}{subsection.9.76.1}%
+\contentsline {subsubsection}{\numberline {9.76.1.1}operator$<$()}{406}{subsubsection.9.76.1.1}%
+\contentsline {subsubsection}{\numberline {9.76.1.2}operator==()}{406}{subsubsection.9.76.1.2}%
+\contentsline {section}{\numberline {9.77}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/shape.h File Reference}{407}{section.9.77}%
+\contentsline {subsection}{\numberline {9.77.1}Variable Documentation}{408}{subsection.9.77.1}%
+\contentsline {subsubsection}{\numberline {9.77.1.1}PI}{408}{subsubsection.9.77.1.1}%
+\contentsline {section}{\numberline {9.78}shape.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{408}{section.9.78}%
+\contentsline {section}{\numberline {9.79}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/square.cpp File Reference}{410}{section.9.79}%
+\contentsline {section}{\numberline {9.80}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/square.h File Reference}{410}{section.9.80}%
+\contentsline {section}{\numberline {9.81}square.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{411}{section.9.81}%
+\contentsline {section}{\numberline {9.82}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/text.cpp File Reference}{411}{section.9.82}%
+\contentsline {section}{\numberline {9.83}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/text.h File Reference}{412}{section.9.83}%
+\contentsline {section}{\numberline {9.84}text.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{412}{section.9.84}%
+\contentsline {section}{\numberline {9.85}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/objects/vector.h File Reference}{413}{section.9.85}%
+\contentsline {subsection}{\numberline {9.85.1}Macro Definition Documentation}{414}{subsection.9.85.1}%
+\contentsline {subsubsection}{\numberline {9.85.1.1}ALPHA\_VECTOR\_H}{414}{subsubsection.9.85.1.1}%
+\contentsline {section}{\numberline {9.86}vector.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{414}{section.9.86}%
+\contentsline {section}{\numberline {9.87}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/gautam/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Local/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Forge/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Team-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alphawolves/2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Graphics-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Modeler/src/webservice/webservice.cpp File Reference}{418}{section.9.87}%
+\contentsline {subsection}{\numberline {9.87.1}Detailed Description}{419}{subsection.9.87.1}%
+\contentsline {subsection}{\numberline {9.87.2}Function Documentation}{420}{subsection.9.87.2}%
+\contentsline {subsubsection}{\numberline {9.87.2.1}get\_json\_file()}{420}{subsubsection.9.87.2.1}%
+\contentsline {subsubsection}{\numberline {9.87.2.2}main()}{421}{subsubsection.9.87.2.2}%
+\contentsline {chapter}{Index}{423}{section*.752}%

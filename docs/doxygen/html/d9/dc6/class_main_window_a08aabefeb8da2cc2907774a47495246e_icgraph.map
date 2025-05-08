@@ -1,0 +1,5 @@
+<map id="MainWindow::onContactUsClicked" name="MainWindow::onContactUsClicked">
+<area shape="rect" id="Node000001" title="Slot triggered to display the &#39;Contact Us&#39; information window." alt="" coords="233,5,458,31"/>
+<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#a25d06b6f11a1eb7fa2239f01e853ae29" title=" " alt="" coords="5,5,185,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,21,185,21,185,16,217,16"/>
+</map>

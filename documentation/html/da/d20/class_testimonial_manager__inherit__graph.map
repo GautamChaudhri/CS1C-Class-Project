@@ -1,5 +1,0 @@
-<map id="TestimonialManager" name="TestimonialManager">
-<area shape="rect" id="Node000001" title="Manages user testimonials, including storage, retrieval, and prompting logic." alt="" coords="5,120,230,1475"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="88,5,147,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,87,120,120,115,120,115,87"/>
-</map>

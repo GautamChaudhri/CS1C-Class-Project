@@ -1,0 +1,64 @@
+\doxysection{Api\+Client.\+h}
+\hypertarget{_api_client_8h_source}{}\label{_api_client_8h_source}\index{/Users/gautam/Local/Forge/Team-\/Alphawolves/2D-\/Graphics-\/Modeler/src/backend/ApiClient.h@{/Users/gautam/Local/Forge/Team-\/Alphawolves/2D-\/Graphics-\/Modeler/src/backend/ApiClient.h}}
+\mbox{\hyperlink{_api_client_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ API\_CLIENT\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ API\_CLIENT\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QObject>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ https://doc.qt.io/qt-\/6/qobject.html}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QNetworkAccessManager>}\ \ \ \ \textcolor{comment}{//\ https://doc.qt.io/qt-\/6/qnetworkaccessmanager.html}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QNetworkReply>}\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ https://doc.qt.io/qt-\/6/qnetworkreply.html}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QNetworkRequest>}\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ https://doc.qt.io/qt-\/6/qnetworkrequest.html}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QUrl>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ https://doc.qt.io/qt-\/6/qurl.html}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QByteArray>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ https://doc.qt.io/qt-\/6/qbytearray.html}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QString>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ https://doc.qt.io/qt-\/6/qstring.html}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_api_client_a7ac17ab761c4ee56fa63802573b343e3}{ApiClient}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ Q\_OBJECT\ \ \ \ \textcolor{comment}{//necessary\ macro\ for\ qt's\ compiler}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_api_client_a7ac17ab761c4ee56fa63802573b343e3}{ApiClient}}(QObject*\ parent\ =\ \textcolor{keyword}{nullptr});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a6a3032eaed65944641fc1fde85edf5dc}{GetShapes}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_ae169e9c2947f90bb9fb95ab17db047d7}{PostShapes}}(std::string\ json);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_adfd82e41d4424634a25e72626176fce9}{DeleteShapesAll}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a6bea8ab609c3dbd768ab921896fc3c73}{GetRenderArea}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a4112a3306ed988b66842c63b5bc857df}{PostRenderArea}}(std::string\ json);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a9b4a0deedb0a85a2a79e8257944cc6b6}{DeleteRenderAreaAll}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a5782e90eb0265b193e81e989dc823a3d}{GetUsers}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a043a6ed2acd12ef39291dce0fee9757a}{PostUsers}}(std::string\ json);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a4a58d3d1ab46afa9348afe1bfd4c2c02}{DeleteUsersAll}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a7de3d9e256dde6ed86c19fa4b19c8af6}{GetTestimonials}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a2db225a90ae46c72cd017a3ee3418d2b}{PostTestimonials}}(std::string\ json);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a46a2caf6cafa0ed3e8754dc1676159ba}{DeleteTestimonialsAll}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ signals:}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a940bf610f9fa472fc660e1ab60203de7}{GoodGetReply}}(\textcolor{keyword}{const}\ QString\&\ json);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_ae22339e302eb27bc51fbdfc1b7c1a4ec}{BadGetReply}}(\textcolor{keyword}{const}\ QString\&\ error);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_aa2e03a2c693acb0052f80415b453e279}{GoodPostReply}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_ac0f68b238bace3703854d7de15a3bb38}{BadPostReply}}(\textcolor{keyword}{const}\ QString\&\ error);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a36b7d26e91c582a56da7c3bcfbdccbd9}{GoodDeleteReply}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a2362fb6ae6555400e50840bd2138fa3c}{BadDeleteReply}}(\textcolor{keyword}{const}\ QString\&\ error);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a6b63bb2faeed34e082d84c1c624dda39}{AnalyzeGetReply}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_aeaa808b2a23ba8e6f5e5520a991127e3}{AnalyzePostReply}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_addc68bb9473d31fdf49098377f48d17b}{AnalyzeDeleteReply}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00130\ \ \ \ \ QNetworkAccessManager*\ \mbox{\hyperlink{class_api_client_a1b82f8888490dc631ba559510b92df64}{manager}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00131\ \};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//API\_CLIENT\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,152 @@
+This file outlines the exact files and line numbers where we satisfied
+the project requirements. Files listed without line numbers indicate
+that the whole file is relvant to meet that requirement.
+
+
+The 2D Graphics Modeler must:
+────────────────────────────────────────────────────────────
+1) Provide satisfied customer testimonials (solicit for additional testimonials). 
+   Guest users may enter testimonials. The testimonials must be persistent between executions.
+
+   - Located at the top of the UI when running the application
+   - Files:
+     • Testimonial.h / cpp
+     • TestimonialManager.h / cpp
+     • TestimonialDialog.h / cpp
+     • TestimonialsDisplayDialog.h / cpp
+
+────────────────────────────────────────────────────────────
+2) Provide “contact us” method with team name and logo
+
+   - Opens after clicking Help -> Contact Us
+   - Files:
+     • mainwindow.h: Line 211
+     • mainwindow.cpp: Lines 1011–1072
+
+────────────────────────────────────────────────────────────
+3) Display all graphic objects (i.e. shapes including text) in rendering window.
+   The shape ID will be displayed above each shape. 
+   The rendering area must have a minimum of 1000x500 pixels.
+   Coordinate system: (0,0) top-left to (1000,500) bottom-right.
+
+   - Files:
+     • renderArea.h / cpp
+     • mainwindow.cpp: Lines 35–40 (mainly done in the designer)
+
+────────────────────────────────────────────────────────────
+4) Read from a shape file that tracks all currently rendered shapes.
+   Shapes include: line, polyline, polygon, rectangle, ellipse, text.
+   Each shape has various graphical and text properties and a unique ID.
+
+   - Entry point:
+     • AppDriver.h: Lines 34, 36
+     • AppDriver.cpp: Lines 12–30, 38–42
+
+   - Other Relevant Files:
+     • RenderAreaManager.h: Lines 53, 80
+     • RenderAreaManager.cpp: Lines 684–687, 696–702
+     • ApiClient.h / cpp
+     • Parser.h / cpp
+     • See #13 for Webservice info
+
+────────────────────────────────────────────────────────────
+5) Move shapes via a move shape form (admin only).
+   All changes must be reflected in the rendering area.
+
+   - Files:
+     • shape.cpp: Lines 53–57
+     • renderArea.cpp: Lines 9–56
+
+────────────────────────────────────────────────────────────
+6) Add/Remove shapes via a form (admin only).
+   All changes must be reflected in the rendering area.
+
+   - Add Shapes:
+     • mainwindow.cpp: Lines 447–507
+
+   - Remove Shapes:
+     • mainwindow.cpp: Lines 691–709
+
+────────────────────────────────────────────────────────────
+7) Produce a shape listing report sorted by shape ID.
+   All shape properties must be included.
+
+   - Files:
+     • mainwindow.h: Lines 180, 270, 284–290
+     • mainwindow.cpp: Lines 846–1009
+
+────────────────────────────────────────────────────────────
+8) Produce a shape listing report of shapes with an area, sorted by area.
+   Must include: shape type, ID, and area.
+
+   - Files:
+     • mainwindow.h: Lines 180, 270, 284–290
+     • mainwindow.cpp: Lines 846–1009
+
+────────────────────────────────────────────────────────────
+9) Produce a shape listing report of shapes with a perimeter, sorted by perimeter.
+   Must include: shape type, ID, and perimeter.
+
+   - Files:
+     • mainwindow.h: Lines 180, 270, 284–290
+     • mainwindow.cpp: Lines 846–1009
+
+────────────────────────────────────────────────────────────
+10) Save all changes between executions.
+
+   - Entry point:
+     • RenderAreaManager.h: Lines 54, 82
+     • RenderAreaManager.cpp: Lines 689–692, 709
+       (Called on: 28, 645, 652, 655)
+
+   - Other Relevant Files:
+     • ApiClient.h / cpp
+     • Parser.h / cpp
+     • See #13 for Webservice info
+
+────────────────────────────────────────────────────────────
+Extra Credit
+
+11) Modify a shape’s properties (admin only)
+
+   - Modification:
+     • RenderAreaManager.h: Lines 49–50
+     • RenderAreaManager.cpp: Lines 31–653
+     • mainwindow.h: Lines 81, 190, 191
+     • mainwindow.cpp: Lines 299–393
+
+   - User login:
+     • mainwindow.h: Lines 129–131, 142–143
+     • mainwindow.cpp: Lines 657–686
+     • loginwindow.h / cpp
+     • AppDriver.h: Lines 66–75
+     • AppDriver.cpp: Lines 62–80
+     • UserManager.h / cpp
+     • UserAccount.h / cpp
+     • ApiClient.h / cpp
+     • Parser.h / cpp
+     • See #13 for Webservice info
+
+   - Admin only check:
+     • mainwindow.cpp: Lines 132-138, 263-267, 301, 365, 402, 679-681
+
+────────────────────────────────────────────────────────────
+12) Write a custom selection_sort algorithm with two custom comparison functions:
+    compare_shape_perimeter and compare_shape_area.
+    Must be templated and support sorting by ID (default), perimeter, or area via function pointer.
+
+   - Files:
+     • mainwindow.h: Lines 180, 270, 284–290
+     • mainwindow.cpp: Lines 846–1009
+
+────────────────────────────────────────────────────────────
+13) Persist shapes via a Docker service instead of shapes.txt.
+    Qt application must read/write to this service.
+
+   - Start webservice from Qt:
+     • src/webservice/webservice.cpp
+
+   - Build and run Docker container:
+     • webservice-dockerized/main.cpp
+       (same as webservice.cpp but with modified paths)
+     • webservice-dockerized/Dockerfile

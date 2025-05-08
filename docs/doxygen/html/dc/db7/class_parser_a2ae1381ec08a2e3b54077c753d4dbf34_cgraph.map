@@ -1,0 +1,7 @@
+<map id="Parser::GetBrushStyle" name="Parser::GetBrushStyle">
+<area shape="rect" id="Node000001" title="Gets the brush style of a shape as a string (e.g., &quot;SolidPattern&quot;, &quot;NoBrush&quot;)." alt="" coords="5,31,158,56"/>
+<area shape="rect" id="Node000002" href="$d7/da7/class_shape.html#a32e7b26329177063e40671687a0c62be" title=" " alt="" coords="206,5,354,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,31,190,27,191,32,158,36"/>
+<area shape="rect" id="Node000003" href="$d7/da7/class_shape.html#a4b502262ae5a22122456b9624d5ccb3d" title="Accessor Functions &#45; Returns the data named after them." alt="" coords="214,55,346,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,50,199,55,198,60,158,55"/>
+</map>

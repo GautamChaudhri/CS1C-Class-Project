@@ -1,0 +1,60 @@
+\doxysection{Render\+Area\+Manager.\+h}
+\hypertarget{_render_area_manager_8h_source}{}\label{_render_area_manager_8h_source}\index{/Users/gautam/Local/Forge/Team-\/Alphawolves/2D-\/Graphics-\/Modeler/src/backend/RenderAreaManager.h@{/Users/gautam/Local/Forge/Team-\/Alphawolves/2D-\/Graphics-\/Modeler/src/backend/RenderAreaManager.h}}
+\mbox{\hyperlink{_render_area_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RENDER\_AREA\_MANAGER}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RENDER\_AREA\_MANAGER}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QBrush>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QPen>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_api_client_8h}{ApiClient.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_8h}{Parser.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{all__shapes_8h}{../objects/all\_shapes.h}}"{}}\ \textcolor{comment}{//\ ShapeId\ enum\ located\ here}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector_8h}{../objects/vector.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_render_area_manager_a40e9c4c1fdd040cbd0a0a366fb337024}{RenderAreaManager}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_render_area_manager_a40e9c4c1fdd040cbd0a0a366fb337024}{RenderAreaManager}}(QObject*\ parent\ =\ \textcolor{keyword}{nullptr});\ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_render_area_manager_a000e61dcc2fa664a2a195f4c7e076eb7}{\string~RenderAreaManager}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classalpha_1_1vector}{alpha::vector<Shape*>}}*\ \mbox{\hyperlink{class_render_area_manager_a7be8ff32f311af2b9023d6996ef1531b}{getShapesRef}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_af43a9dc571803450ae63b62a234c8d21}{addShape}}(\mbox{\hyperlink{class_shape}{Shape}}*\ shape);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_af37e63015f3671115d0da8aff234a805}{modifyShape}}(\mbox{\hyperlink{class_shape}{Shape}}*\ shape,\ QString\ key,\ \textcolor{keywordtype}{int}\ value);\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_a47f13c07bb02a5904a1ff2d162ab13b1}{modifyDisplayedText}}(\mbox{\hyperlink{class_text}{Text}}*\ obj,\ QString\ newText);\ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_a5f88d7daf9c0e9e16f2f4c98b4431c01}{deleteShape}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ trackerId);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_a5ea36e034fff90329526dc6c70de0b3b}{deleteAllShapes}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_a9b0ae3d906083345de91aafb1959e3f6}{loadShapes}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_a0c224de3ad3bbe2f6c81e5c40e640f64}{saveShapes}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ signals:}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_a8ae2b40cb4cd008dff584aa8cfd14870}{renderAreaChanged}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_a56824396a14f64eb605061ce4cc45898}{renderAreaNotChanged}}(\textcolor{keyword}{const}\ QString\ \&message);\ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_a67d3ed59f05b6fbe86d3abd42766234f}{statusMessage}}(\textcolor{keyword}{const}\ QString\ \&message);\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_aa7435693fddb08071d18e0965cc45a9d}{onGoodGetResponse}}(\textcolor{keyword}{const}\ QString\ \&json);\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_a7be312bb8f2b2f172d7e7a4b2d140847}{onBadGetResponse}}(\textcolor{keyword}{const}\ QString\ \&errorMsg);\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_a82240f891ea5a3ada0778574a9d9f4f4}{onGoodPostResponse}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_ad913be20b153ae12e6769da01ca0983f}{onBadPostResponse}}(\textcolor{keyword}{const}\ QString\ \&errorMsg);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_acffe5680693aa0139963e7f0b0f44031}{onGoodDeleteResponse}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_area_manager_a5eba4d620c1b50c889012aad208bf537}{onBadDeleteResponse}}(\textcolor{keyword}{const}\ QString\ \&errorMsg);\ \ \ \ \ \ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classalpha_1_1vector}{alpha::vector<Shape*>}}\ \mbox{\hyperlink{class_render_area_manager_a412a5a90d82be07418d8f19e477812f4}{renderedShapes}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_api_client}{ApiClient}}\ \mbox{\hyperlink{class_render_area_manager_ac2e3dc91ca31ddfb1ecbea3b194de66b}{client}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{class_parser}{Parser}}\ \mbox{\hyperlink{class_render_area_manager_aba45909dcf2061e501b70a9459f3508f}{parse}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RENDER\_AREA\_MANAGER}}
+
+\end{DoxyCode}

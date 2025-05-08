@@ -1,0 +1,22 @@
+<map id="Parser::JsonToUsers" name="Parser::JsonToUsers">
+<area shape="rect" id="Node000001" title="Converts a JSON string representation into a vector of UserAccount objects." alt="" coords="5,141,150,167"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#a6658bb70a8b63f8edab2c0a6c7c65d9a" title="Extracts a JSON key (a string enclosed in double quotes) from the input string." alt="" coords="464,5,597,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,139,139,107,197,77,261,56,328,40,449,22,450,27,329,45,263,61,199,82,141,112,97,143"/>
+<area shape="rect" id="Node000003" href="$dc/db7/class_parser.html#ade9641ed520d4e9b73600e3cc049af46" title="Extracts a JSON value from the input string." alt="" coords="232,92,374,118"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,138,225,119,227,124,140,143"/>
+<area shape="rect" id="Node000007" href="$db/d35/classalpha_1_1vector.html#a8305c181181e4739a1c5f29cf3a2c144" title=" " alt="" coords="219,141,386,167"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="150,152,204,152,204,157,150,157"/>
+<area shape="rect" id="Node000009" href="$dc/db7/class_parser.html#a49fad6dc437bab644ea477090320cbe8" title="Advances the parsing index past any whitespace characters." alt="" coords="222,191,384,216"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="140,165,227,184,225,189,139,170"/>
+<area shape="rect" id="Node000010" href="$dc/db7/class_parser.html#abd4e33be5c6b2f9e92412f598da0a78c" title="Updates a RawUser accumulator with a parsed key&#45;value pair for user data." alt="" coords="198,240,408,266"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="97,165,142,196,199,226,215,233,214,238,197,231,139,201,94,170"/>
+<area shape="poly" id="edge5_Node000003_Node000002" title=" " alt="" coords="334,89,455,40,471,34,473,39,457,45,336,94"/>
+<area shape="rect" id="Node000004" href="$dc/db7/class_parser.html#acabd71dccc533b85de37e566cda47abe" title="Extracts a JSON array (content within &#39;[]&#39;) as a string." alt="" coords="460,55,601,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="373,91,445,79,446,84,374,96"/>
+<area shape="rect" id="Node000005" href="$dc/db7/class_parser.html#a30398a0f28f70626124609a1071f7f60" title="Extracts an integer value from the JSON string." alt="" coords="456,104,605,130"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="374,106,441,109,440,115,373,111"/>
+<area shape="rect" id="Node000006" href="$dc/db7/class_parser.html#a9dbc99f343ea14baa4e3c8d84066b83e" title="Extracts a JSON literal (true, false, null) as a string." alt="" coords="458,153,603,179"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="366,116,409,126,475,146,473,151,407,131,365,121"/>
+<area shape="rect" id="Node000008" href="$db/d35/classalpha_1_1vector.html#a6dd9585078696eb1d5e7186435f0e41c" title=" " alt="" coords="457,203,604,228"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="366,165,409,176,475,195,473,200,407,181,365,170"/>
+</map>

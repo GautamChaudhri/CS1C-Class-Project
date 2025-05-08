@@ -1,0 +1,34 @@
+<map id="MainWindow::createPenJoinStyleComboBox" name="MainWindow::createPenJoinStyleComboBox">
+<area shape="rect" id="Node000001" title="Creates and configures a QComboBox for selecting pen join styles." alt="" coords="966,471,1153,511"/>
+<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#a5ff173340d6b138bee993d26454d2aaa" title="Populates the tree widget with details of the current shapes and sets up editing controls." alt="" coords="772,471,918,511"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="951,494,919,494,919,488,951,488"/>
+<area shape="rect" id="Node000003" href="$d9/dc6/class_main_window.html#afe8619a02bba82d0ad5e05065d6c0ea1" title="Adds a given shape to the properties tree widget and emits shapeAdded signal." alt="" coords="508,274,710,300"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="807,462,624,302,627,298,810,458"/>
+<area shape="rect" id="Node000012" href="$d9/dc6/class_main_window.html#a841a40f673ad191cd737b49591568446" title="Slot triggered when the render area&#39;s content has changed, requiring a UI update." alt="" coords="515,471,703,511"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="756,494,703,494,703,488,756,488"/>
+<area shape="rect" id="Node000016" href="$d9/dc6/class_main_window.html#a04d9898f7479308e0e7e2b8796426c2b" title="Slot triggered upon successful user authentication. Updates UI with user info." alt="" coords="494,536,724,561"/>
+<area shape="poly" id="edge15_Node000002_Node000016" title=" " alt="" coords="758,517,724,526,673,537,672,532,723,520,756,512"/>
+<area shape="rect" id="Node000004" href="$d9/dc6/class_main_window.html#a9b9bf9b3d640e2bcace3cbfdc5d75d8b" title="Slot triggered to create and add a new Circle shape." alt="" coords="259,5,443,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="593,261,571,218,538,164,495,109,445,61,424,49,427,44,448,57,499,105,542,161,575,215,598,259"/>
+<area shape="rect" id="Node000005" href="$d9/dc6/class_main_window.html#a4e25fe2c6dd72b44efdf2d1b1e9c1846" title="Slot triggered to create and add a new Ellipse shape." alt="" coords="259,71,443,111"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="587,263,528,196,488,159,445,127,421,114,424,109,448,122,492,155,531,192,591,260"/>
+<area shape="rect" id="Node000006" href="$d9/dc6/class_main_window.html#abd3987548635bfd1133f8f0d5e0a1879" title="Slot triggered to create and add a new Line shape." alt="" coords="259,136,443,177"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="575,268,516,230,445,192,416,180,418,175,447,187,518,226,578,263"/>
+<area shape="rect" id="Node000007" href="$d9/dc6/class_main_window.html#a28e2b0b2efac43e0553aef6a8d23aee5" title="Slot triggered to create and add a new Polygon shape." alt="" coords="259,201,443,242"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="540,273,434,245,435,240,542,267"/>
+<area shape="rect" id="Node000008" href="$d9/dc6/class_main_window.html#ab4fc6a65cac38759157fd77d12497a89" title="Slot triggered to create and add a new Polyline shape." alt="" coords="259,267,443,307"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="492,290,444,290,444,284,492,284"/>
+<area shape="rect" id="Node000009" href="$d9/dc6/class_main_window.html#af65e6b1a5513198eece131b1d164a978" title="Slot triggered to create and add a new Rectangle shape." alt="" coords="259,332,443,373"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="542,307,435,334,434,329,540,301"/>
+<area shape="rect" id="Node000010" href="$d9/dc6/class_main_window.html#a7d1d40640f58ce6dd36eabcee8ecdc6e" title="Slot triggered to create and add a new Square shape." alt="" coords="259,397,443,438"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="578,311,518,348,447,387,418,399,416,394,445,382,516,344,575,306"/>
+<area shape="rect" id="Node000011" href="$d9/dc6/class_main_window.html#aebcb152e26ef6d6bd4fc348e815fe8c8" title="Slot triggered to create and add a new Text shape." alt="" coords="259,463,443,503"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="591,314,531,382,492,419,448,452,424,465,421,460,445,447,488,415,528,378,587,311"/>
+<area shape="rect" id="Node000013" href="$d7/de6/class_app_driver.html#af39fbba491cc4dc1d378d6e140507554" title="Connects signals from backend managers to slots in the frontend UI." alt="" coords="256,528,446,569"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="500,518,446,530,445,525,499,513"/>
+<area shape="rect" id="Node000014" href="$d7/de6/class_app_driver.html#af5bf7b6bd96161d95a0a67cc7693127d" title="Initializes and shows the main application window and loads initial data." alt="" coords="103,536,208,561"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="240,551,208,551,208,546,240,546"/>
+<area shape="rect" id="Node000015" href="$d8/d80/src_2backend_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,536,55,561"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="87,551,55,551,55,546,87,546"/>
+<area shape="poly" id="edge16_Node000016_Node000013" title=" " alt="" coords="479,551,447,551,447,546,479,546"/>
+</map>

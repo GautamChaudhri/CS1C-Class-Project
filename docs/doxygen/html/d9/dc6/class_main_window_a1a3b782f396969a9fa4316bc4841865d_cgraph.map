@@ -1,0 +1,5 @@
+<map id="MainWindow::onUserAuthenticationFailure" name="MainWindow::onUserAuthenticationFailure">
+<area shape="rect" id="Node000001" title="Slot triggered when user authentication fails. Displays an error message." alt="" coords="5,5,235,46"/>
+<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#ad0a0e42c1ba16a5dc05e7653bad32207" title="Emitted when a login attempt fails, providing an error message." alt="" coords="283,13,449,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,23,267,23,267,28,235,28"/>
+</map>

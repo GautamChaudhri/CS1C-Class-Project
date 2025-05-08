@@ -1,0 +1,67 @@
+\doxysection{Testimonial\+Manager.\+h}
+\hypertarget{_testimonial_manager_8h_source}{}\label{_testimonial_manager_8h_source}\index{/Users/gautam/Local/Forge/Team-\/Alphawolves/2D-\/Graphics-\/Modeler/src/backend/TestimonialManager.h@{/Users/gautam/Local/Forge/Team-\/Alphawolves/2D-\/Graphics-\/Modeler/src/backend/TestimonialManager.h}}
+\mbox{\hyperlink{_testimonial_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TESTIMONIALMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TESTIMONIALMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QJsonDocument>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QHash>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_testimonial_8h}{Testimonial.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_api_client_8h}{ApiClient.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_8h}{Parser.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_testimonial_manager_aded0ef0783e1e67e701f7c3bf3a80072}{TestimonialManager}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_testimonial_manager_aded0ef0783e1e67e701f7c3bf3a80072}{TestimonialManager}}\&\ \mbox{\hyperlink{class_testimonial_manager_a7b05489ceb9a8bd5e94e955c50b9515f}{getInstance}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_testimonial_manager_ab5c9dca488f9037b051263dfd8005c48}{addTestimonial}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_testimonial}{Testimonial}}\&\ testimonial);\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ QVector<Testimonial>\ \mbox{\hyperlink{class_testimonial_manager_ac40b670bcee48c927ed5655bf8456713}{getSatisfactoryTestimonials}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_testimonial_manager_a9466acdac4dddfe8947b41cb637cb556}{hasUserGivenTestimonial}}(\textcolor{keyword}{const}\ QString\&\ username)\ \textcolor{keyword}{const};\ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_testimonial_manager_af8576194e4cc9cc482d460666880c8b1}{setDoNotShowAgain}}(\textcolor{keyword}{const}\ QString\&\ username,\ \textcolor{keywordtype}{bool}\ value);\ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_testimonial_manager_a1ebec1a781a7508501e398bb042a0b2d}{getDoNotShowAgain}}(\textcolor{keyword}{const}\ QString\&\ username)\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_testimonial_manager_a06504060ff2ed420035a8433e03d8fa5}{startTrackingTime}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_testimonial_manager_a586111756e6e3ece79ba70f196c36242}{stopTrackingTime}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00069\ signals:}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_testimonial_manager_ade7e70f55550c1417ab7d0ca7b3b3142}{shouldPromptForTestimonial}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_testimonial_manager_a2a9ada04ab15847f2c1b3c81deb994d7}{onGoodGetResponse}}(\textcolor{keyword}{const}\ QString\&\ json);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_testimonial_manager_aa256bebedcc689ce416c7a2fcade3900}{onBadGetResponse}}(\textcolor{keyword}{const}\ QString\&\ error);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_testimonial_manager_ad384569c01fdadf0bb38e053a7bee337}{onGoodPostResponse}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_testimonial_manager_acfda7a2d454b513c1c75d8d030a43dd9}{onBadPostResponse}}(\textcolor{keyword}{const}\ QString\&\ error);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{class_testimonial_manager_aded0ef0783e1e67e701f7c3bf3a80072}{TestimonialManager}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{class_testimonial_manager_a64a932285a93bbacf59e12b5f8445546}{\string~TestimonialManager}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_testimonial_manager_a9c940e559ec27373c8997d16abfa7f20}{loadTestimonials}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_testimonial_manager_a776df0038128c3464b01c4f52199a960}{saveTestimonials}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_testimonial_manager_a69979eb09835fcb35d804fa169b63f0f}{checkTimeAndPrompt}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00122\ \ \ \ \ QVector<Testimonial>\ \mbox{\hyperlink{class_testimonial_manager_ac2e5d24da987db85c15df4893583fa3e}{m\_testimonials}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ QTimer*\ \mbox{\hyperlink{class_testimonial_manager_a2b8b8e8ab8711d200e61c7211e28e6be}{m\_trackingTimer}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ \ \ QHash<QString,\ bool>\ \mbox{\hyperlink{class_testimonial_manager_a7a7088c2fb14bdf4119bb9215a2cba9a}{m\_doNotShowAgain}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ QHash<QString,\ int>\ \mbox{\hyperlink{class_testimonial_manager_a583ede70157c73d6b60160276220abdd}{m\_userTimeTracking}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{class_api_client}{ApiClient}}\ \mbox{\hyperlink{class_testimonial_manager_a4bfd53c6d32fcc4ef2a040c3d6a66134}{client}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{class_parser}{Parser}}\ \mbox{\hyperlink{class_testimonial_manager_afd5edfce7c489e27bd9908913b0e9924}{parse}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//\ timing\ constants\ for\ testimonial\ prompts}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_testimonial_manager_a3bff81cd423babf5acde8d55d4944eed}{INITIAL\_PROMPT\_TIME}}\ =\ 30\ *\ 60;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_testimonial_manager_a12a4598bee8f8a869815ca30dd942e62}{REPEAT\_PROMPT\_TIME}}\ =\ 60\ *\ 60;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00134\ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TESTIMONIALMANAGER\_H}}
+
+\end{DoxyCode}

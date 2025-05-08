@@ -1,0 +1,5 @@
+<map id="UserManager::onGoodGetResponse" name="UserManager::onGoodGetResponse">
+<area shape="rect" id="Node000001" title="Slot called when a GET request for user data succeeds." alt="" coords="5,5,238,31"/>
+<area shape="rect" id="Node000002" href="$d1/da2/class_user_manager.html#ad725cb6519b4256e254da21ff5741e78" title="Emitted to provide general status updates or error messages." alt="" coords="286,5,482,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,16,270,16,270,21,238,21"/>
+</map>

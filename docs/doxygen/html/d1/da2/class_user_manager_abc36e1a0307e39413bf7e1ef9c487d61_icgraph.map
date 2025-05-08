@@ -1,0 +1,13 @@
+<map id="UserManager::userAuthenticated" name="UserManager::userAuthenticated">
+<area shape="rect" id="Node000001" title="Emitted upon successful user authentication, providing the authenticated user." alt="" coords="545,35,758,60"/>
+<area shape="rect" id="Node000002" href="$d1/da2/class_user_manager.html#a65e90a5565b65c8feb3b9299872d609d" title=" " alt="" coords="313,5,491,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="530,36,491,31,492,26,530,31"/>
+<area shape="rect" id="Node000004" href="$d7/de6/class_app_driver.html#af39fbba491cc4dc1d378d6e140507554" title="Connects signals from backend managers to slots in the frontend UI." alt="" coords="307,55,497,96"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="530,64,498,67,498,62,529,59"/>
+<area shape="rect" id="Node000003" href="$d1/da2/class_user_manager.html#a8860588081ca0e6a7f88fc5b689fb235" title=" " alt="" coords="103,5,259,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="298,21,260,21,260,16,298,16"/>
+<area shape="rect" id="Node000005" href="$d7/de6/class_app_driver.html#af5bf7b6bd96161d95a0a67cc7693127d" title="Initializes and shows the main application window and loads initial data." alt="" coords="128,63,234,88"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="292,78,234,78,234,73,292,73"/>
+<area shape="rect" id="Node000006" href="$d8/d80/src_2backend_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,63,55,88"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="113,78,55,78,55,73,113,73"/>
+</map>

@@ -1,0 +1,423 @@
+\doxysection{Login\+Window Class Reference}
+\hypertarget{class_login_window}{}\label{class_login_window}\index{LoginWindow@{LoginWindow}}
+
+
+A dialog window for user login and signup.  
+
+
+
+
+{\ttfamily \#include $<$loginwindow.\+h$>$}
+
+
+
+Inheritance diagram for Login\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d5/d06/class_login_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Login\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/d22/class_login_window__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{Indent}\textbf{ User Action Signals}\par
+{\em Signals emitted based on user interactions within the dialog.
+
+These signals notify other parts of the application about login or signup attempts. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_login_window_a075f5a5f9da1f4b202aec66d6bd7ec76}{login\+Requested}} (const QString \&\mbox{\hyperlink{class_login_window_a2b28bf4bc7080e39afb0d096d212e0a0}{username}}, const QString \&\mbox{\hyperlink{class_login_window_ab207055cd16762112d1facbd35da9c25}{password}})
+\begin{DoxyCompactList}\small\item\em Emitted when the user attempts to log in with the provided credentials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_login_window_ae166943123818d0b0a3dcdcf66380994}{signup\+Requested}} (const QString \&\mbox{\hyperlink{class_login_window_a2b28bf4bc7080e39afb0d096d212e0a0}{username}}, const QString \&\mbox{\hyperlink{class_login_window_ab207055cd16762112d1facbd35da9c25}{password}}, const bool admin)
+\begin{DoxyCompactList}\small\item\em Emitted when the user attempts to sign up with the provided credentials. (Admin flag is currently hardcoded to true in the .cpp). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructor and Public Accessors}\par
+{\em Methods for creating and interacting with the \doxylink{class_login_window}{Login\+Window}.
+
+Includes the constructor and methods to retrieve user input. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_login_window_aa4c04d26b299de00156bbf3c32b2a082}{Login\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor that sets up the UI components for login and signup. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_login_window_a2b28bf4bc7080e39afb0d096d212e0a0}{username}} () const
+\begin{DoxyCompactList}\small\item\em Returns the username entered in the currently active input field (login or signup). \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_login_window_ab207055cd16762112d1facbd35da9c25}{password}} () const
+\begin{DoxyCompactList}\small\item\em Returns the password entered in the currently active input field (login or signup). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Slots}
+\begin{Indent}\textbf{ Page Navigation and Action Slots}\par
+{\em Slots to handle UI events like button clicks.
+
+These slots manage switching between login/signup pages and triggering login/signup attempts. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_login_window_a090d7c9a09bfc32e168c090c95f6cb54}{show\+Signup\+Page}} ()
+\begin{DoxyCompactList}\small\item\em Switches the QStacked\+Widget to display the signup page. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_login_window_ac5d204dd749d28fdbdcda5a6080339b4}{show\+Login\+Page}} ()
+\begin{DoxyCompactList}\small\item\em Switches the QStacked\+Widget to display the login page. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_login_window_a4677fdb497a115ea633069d51eb03944}{attempt\+Login}} ()
+\begin{DoxyCompactList}\small\item\em Emits the login\+Requested signal with current input from login fields. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_login_window_a70f65bf3f12674754e167540444b7009}{attempt\+Signup}} ()
+\begin{DoxyCompactList}\small\item\em Emits the signup\+Requested signal with current input from signup fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Attributes}
+\begin{Indent}\textbf{ UI Components}\par
+{\em Private member variables storing pointers to UI widgets.
+
+These widgets make up the login and signup pages. }\begin{DoxyCompactItemize}
+\item 
+QStacked\+Widget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_login_window_a68afd4c7d12003f162c202a37a180625}{stack}}
+\begin{DoxyCompactList}\small\item\em The stacked widget managing the login and signup pages. \end{DoxyCompactList}\item 
+QWidget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_login_window_aea779547c3fdf5adeba9b3a37d999fb2}{login\+Page}}
+\begin{DoxyCompactList}\small\item\em The widget container for the login page UI elements. \end{DoxyCompactList}\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_login_window_ac72ac7a79c869375966bd6619d534a29}{login\+User\+Edit}}
+\begin{DoxyCompactList}\small\item\em Input field for the username on the login page. \end{DoxyCompactList}\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_login_window_a0f13f0dc71a1557e0701c9a14e6bccdb}{login\+Pass\+Edit}}
+\begin{DoxyCompactList}\small\item\em Input field for the password on the login page. \end{DoxyCompactList}\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_login_window_afc0fb88b9ee3a8581b10eaca178ed008}{login\+Btn}}
+\begin{DoxyCompactList}\small\item\em Button to initiate a login attempt. \end{DoxyCompactList}\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_login_window_a1aa058da600286ac1956a1ddb4e3bb49}{to\+Signup\+Btn}}
+\begin{DoxyCompactList}\small\item\em Button to navigate to the signup page. \end{DoxyCompactList}\item 
+QWidget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_login_window_a8ab29b2a04b9f0f6f52151b790ac7a01}{signup\+Page}}
+\begin{DoxyCompactList}\small\item\em The widget container for the signup page UI elements. \end{DoxyCompactList}\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_login_window_a94c8dbea36fdc2b31c7358191c2b088b}{signup\+User\+Edit}}
+\begin{DoxyCompactList}\small\item\em Input field for the username on the signup page. \end{DoxyCompactList}\item 
+QLine\+Edit \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_login_window_ad5f00572cefbba064f3723352657d87d}{signup\+Pass\+Edit}}
+\begin{DoxyCompactList}\small\item\em Input field for the password on the signup page. \end{DoxyCompactList}\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_login_window_a69b71ef56685dc774e10ac8f877fa8cf}{signup\+Btn}}
+\begin{DoxyCompactList}\small\item\em Button to initiate a signup attempt. \end{DoxyCompactList}\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_login_window_a57c19b3fb6eb05bfa6695d05ebc93c54}{back\+To\+Login\+Btn}}
+\begin{DoxyCompactList}\small\item\em Button to navigate back to the login page. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+A dialog window for user login and signup. 
+
+This class provides a QDialog with a QStacked\+Widget to switch between a login page and a signup page. It emits signals when a login or signup attempt is made. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_login_window_aa4c04d26b299de00156bbf3c32b2a082}\index{LoginWindow@{LoginWindow}!LoginWindow@{LoginWindow}}
+\index{LoginWindow@{LoginWindow}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{LoginWindow()}{LoginWindow()}}
+{\footnotesize\ttfamily \label{class_login_window_aa4c04d26b299de00156bbf3c32b2a082} 
+Login\+Window\+::\+Login\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor that sets up the UI components for login and signup. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_aa4c04d26b299de00156bbf3c32b2a082_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_login_window_a4677fdb497a115ea633069d51eb03944}\index{LoginWindow@{LoginWindow}!attemptLogin@{attemptLogin}}
+\index{attemptLogin@{attemptLogin}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{attemptLogin}{attemptLogin}}
+{\footnotesize\ttfamily \label{class_login_window_a4677fdb497a115ea633069d51eb03944} 
+void Login\+Window\+::attempt\+Login (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Emits the login\+Requested signal with current input from login fields. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_a4677fdb497a115ea633069d51eb03944_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_a4677fdb497a115ea633069d51eb03944_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_login_window_a70f65bf3f12674754e167540444b7009}\index{LoginWindow@{LoginWindow}!attemptSignup@{attemptSignup}}
+\index{attemptSignup@{attemptSignup}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{attemptSignup}{attemptSignup}}
+{\footnotesize\ttfamily \label{class_login_window_a70f65bf3f12674754e167540444b7009} 
+void Login\+Window\+::attempt\+Signup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Emits the signup\+Requested signal with current input from signup fields. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_a70f65bf3f12674754e167540444b7009_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_a70f65bf3f12674754e167540444b7009_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_login_window_a075f5a5f9da1f4b202aec66d6bd7ec76}\index{LoginWindow@{LoginWindow}!loginRequested@{loginRequested}}
+\index{loginRequested@{loginRequested}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{loginRequested}{loginRequested}}
+{\footnotesize\ttfamily \label{class_login_window_a075f5a5f9da1f4b202aec66d6bd7ec76} 
+void Login\+Window\+::login\+Requested (\begin{DoxyParamCaption}\item[{const QString \&}]{username}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when the user attempts to log in with the provided credentials. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_a075f5a5f9da1f4b202aec66d6bd7ec76_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_a075f5a5f9da1f4b202aec66d6bd7ec76_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_login_window_ab207055cd16762112d1facbd35da9c25}\index{LoginWindow@{LoginWindow}!password@{password}}
+\index{password@{password}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{password()}{password()}}
+{\footnotesize\ttfamily \label{class_login_window_ab207055cd16762112d1facbd35da9c25} 
+QString Login\+Window\+::password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the password entered in the currently active input field (login or signup). 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_ab207055cd16762112d1facbd35da9c25_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_login_window_ac5d204dd749d28fdbdcda5a6080339b4}\index{LoginWindow@{LoginWindow}!showLoginPage@{showLoginPage}}
+\index{showLoginPage@{showLoginPage}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{showLoginPage}{showLoginPage}}
+{\footnotesize\ttfamily \label{class_login_window_ac5d204dd749d28fdbdcda5a6080339b4} 
+void Login\+Window\+::show\+Login\+Page (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Switches the QStacked\+Widget to display the login page. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_ac5d204dd749d28fdbdcda5a6080339b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_login_window_a090d7c9a09bfc32e168c090c95f6cb54}\index{LoginWindow@{LoginWindow}!showSignupPage@{showSignupPage}}
+\index{showSignupPage@{showSignupPage}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{showSignupPage}{showSignupPage}}
+{\footnotesize\ttfamily \label{class_login_window_a090d7c9a09bfc32e168c090c95f6cb54} 
+void Login\+Window\+::show\+Signup\+Page (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Switches the QStacked\+Widget to display the signup page. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_a090d7c9a09bfc32e168c090c95f6cb54_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_login_window_ae166943123818d0b0a3dcdcf66380994}\index{LoginWindow@{LoginWindow}!signupRequested@{signupRequested}}
+\index{signupRequested@{signupRequested}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{signupRequested}{signupRequested}}
+{\footnotesize\ttfamily \label{class_login_window_ae166943123818d0b0a3dcdcf66380994} 
+void Login\+Window\+::signup\+Requested (\begin{DoxyParamCaption}\item[{const QString \&}]{username}{, }\item[{const QString \&}]{password}{, }\item[{const bool}]{admin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when the user attempts to sign up with the provided credentials. (Admin flag is currently hardcoded to true in the .cpp). 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_ae166943123818d0b0a3dcdcf66380994_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_ae166943123818d0b0a3dcdcf66380994_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_login_window_a2b28bf4bc7080e39afb0d096d212e0a0}\index{LoginWindow@{LoginWindow}!username@{username}}
+\index{username@{username}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{username()}{username()}}
+{\footnotesize\ttfamily \label{class_login_window_a2b28bf4bc7080e39afb0d096d212e0a0} 
+QString Login\+Window\+::username (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the username entered in the currently active input field (login or signup). 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d74/class_login_window_a2b28bf4bc7080e39afb0d096d212e0a0_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_login_window_a57c19b3fb6eb05bfa6695d05ebc93c54}\index{LoginWindow@{LoginWindow}!backToLoginBtn@{backToLoginBtn}}
+\index{backToLoginBtn@{backToLoginBtn}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{backToLoginBtn}{backToLoginBtn}}
+{\footnotesize\ttfamily \label{class_login_window_a57c19b3fb6eb05bfa6695d05ebc93c54} 
+QPush\+Button\texorpdfstring{$\ast$}{*} Login\+Window\+::back\+To\+Login\+Btn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Button to navigate back to the login page. 
+
+\Hypertarget{class_login_window_afc0fb88b9ee3a8581b10eaca178ed008}\index{LoginWindow@{LoginWindow}!loginBtn@{loginBtn}}
+\index{loginBtn@{loginBtn}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{loginBtn}{loginBtn}}
+{\footnotesize\ttfamily \label{class_login_window_afc0fb88b9ee3a8581b10eaca178ed008} 
+QPush\+Button\texorpdfstring{$\ast$}{*} Login\+Window\+::login\+Btn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Button to initiate a login attempt. 
+
+\Hypertarget{class_login_window_aea779547c3fdf5adeba9b3a37d999fb2}\index{LoginWindow@{LoginWindow}!loginPage@{loginPage}}
+\index{loginPage@{loginPage}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{loginPage}{loginPage}}
+{\footnotesize\ttfamily \label{class_login_window_aea779547c3fdf5adeba9b3a37d999fb2} 
+QWidget\texorpdfstring{$\ast$}{*} Login\+Window\+::login\+Page\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The widget container for the login page UI elements. 
+
+\Hypertarget{class_login_window_a0f13f0dc71a1557e0701c9a14e6bccdb}\index{LoginWindow@{LoginWindow}!loginPassEdit@{loginPassEdit}}
+\index{loginPassEdit@{loginPassEdit}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{loginPassEdit}{loginPassEdit}}
+{\footnotesize\ttfamily \label{class_login_window_a0f13f0dc71a1557e0701c9a14e6bccdb} 
+QLine\+Edit\texorpdfstring{$\ast$}{*} Login\+Window\+::login\+Pass\+Edit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Input field for the password on the login page. 
+
+\Hypertarget{class_login_window_ac72ac7a79c869375966bd6619d534a29}\index{LoginWindow@{LoginWindow}!loginUserEdit@{loginUserEdit}}
+\index{loginUserEdit@{loginUserEdit}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{loginUserEdit}{loginUserEdit}}
+{\footnotesize\ttfamily \label{class_login_window_ac72ac7a79c869375966bd6619d534a29} 
+QLine\+Edit\texorpdfstring{$\ast$}{*} Login\+Window\+::login\+User\+Edit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Input field for the username on the login page. 
+
+\Hypertarget{class_login_window_a69b71ef56685dc774e10ac8f877fa8cf}\index{LoginWindow@{LoginWindow}!signupBtn@{signupBtn}}
+\index{signupBtn@{signupBtn}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{signupBtn}{signupBtn}}
+{\footnotesize\ttfamily \label{class_login_window_a69b71ef56685dc774e10ac8f877fa8cf} 
+QPush\+Button\texorpdfstring{$\ast$}{*} Login\+Window\+::signup\+Btn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Button to initiate a signup attempt. 
+
+\Hypertarget{class_login_window_a8ab29b2a04b9f0f6f52151b790ac7a01}\index{LoginWindow@{LoginWindow}!signupPage@{signupPage}}
+\index{signupPage@{signupPage}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{signupPage}{signupPage}}
+{\footnotesize\ttfamily \label{class_login_window_a8ab29b2a04b9f0f6f52151b790ac7a01} 
+QWidget\texorpdfstring{$\ast$}{*} Login\+Window\+::signup\+Page\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The widget container for the signup page UI elements. 
+
+\Hypertarget{class_login_window_ad5f00572cefbba064f3723352657d87d}\index{LoginWindow@{LoginWindow}!signupPassEdit@{signupPassEdit}}
+\index{signupPassEdit@{signupPassEdit}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{signupPassEdit}{signupPassEdit}}
+{\footnotesize\ttfamily \label{class_login_window_ad5f00572cefbba064f3723352657d87d} 
+QLine\+Edit\texorpdfstring{$\ast$}{*} Login\+Window\+::signup\+Pass\+Edit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Input field for the password on the signup page. 
+
+\Hypertarget{class_login_window_a94c8dbea36fdc2b31c7358191c2b088b}\index{LoginWindow@{LoginWindow}!signupUserEdit@{signupUserEdit}}
+\index{signupUserEdit@{signupUserEdit}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{signupUserEdit}{signupUserEdit}}
+{\footnotesize\ttfamily \label{class_login_window_a94c8dbea36fdc2b31c7358191c2b088b} 
+QLine\+Edit\texorpdfstring{$\ast$}{*} Login\+Window\+::signup\+User\+Edit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Input field for the username on the signup page. 
+
+\Hypertarget{class_login_window_a68afd4c7d12003f162c202a37a180625}\index{LoginWindow@{LoginWindow}!stack@{stack}}
+\index{stack@{stack}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{stack}{stack}}
+{\footnotesize\ttfamily \label{class_login_window_a68afd4c7d12003f162c202a37a180625} 
+QStacked\+Widget\texorpdfstring{$\ast$}{*} Login\+Window\+::stack\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The stacked widget managing the login and signup pages. 
+
+\Hypertarget{class_login_window_a1aa058da600286ac1956a1ddb4e3bb49}\index{LoginWindow@{LoginWindow}!toSignupBtn@{toSignupBtn}}
+\index{toSignupBtn@{toSignupBtn}!LoginWindow@{LoginWindow}}
+\doxysubsubsection{\texorpdfstring{toSignupBtn}{toSignupBtn}}
+{\footnotesize\ttfamily \label{class_login_window_a1aa058da600286ac1956a1ddb4e3bb49} 
+QPush\+Button\texorpdfstring{$\ast$}{*} Login\+Window\+::to\+Signup\+Btn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Button to navigate to the signup page. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/frontend/\mbox{\hyperlink{loginwindow_8h}{loginwindow.\+h}}\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/frontend/\mbox{\hyperlink{loginwindow_8cpp}{loginwindow.\+cpp}}\end{DoxyCompactItemize}

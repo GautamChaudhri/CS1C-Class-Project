@@ -1,5 +1,0 @@
-<map id="MainWindow::sortByArea" name="MainWindow::sortByArea">
-<area shape="rect" id="Node000001" title="Static comparison function to sort shapes by their calculated area." alt="" coords="5,5,175,31"/>
-<area shape="rect" id="Node000002" href="$d7/da7/class_shape.html#a7d09aae7e39d5ecb7ced4e8026ff5c6c" title="Area &#45; Returns the area of the shape." alt="" coords="223,5,316,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,16,207,16,207,21,175,21"/>
-</map>

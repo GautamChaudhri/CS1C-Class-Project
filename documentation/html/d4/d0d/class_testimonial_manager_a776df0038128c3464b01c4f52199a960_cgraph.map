@@ -1,5 +1,0 @@
-<map id="TestimonialManager::saveTestimonials" name="TestimonialManager::saveTestimonials">
-<area shape="rect" id="Node000001" title="Saves all current testimonials (via API client)." alt="" coords="5,5,143,46"/>
-<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#a37a8828ed47a09c969ed966865da186d" title="Converts a QVector of Testimonial objects into a JSON string representation." alt="" coords="191,13,373,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,23,175,23,175,28,143,28"/>
-</map>

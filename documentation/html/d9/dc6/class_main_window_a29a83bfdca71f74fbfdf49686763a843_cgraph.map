@@ -1,7 +1,0 @@
-<map id="MainWindow::onTreeWidgetItemChanged" name="MainWindow::onTreeWidgetItemChanged">
-<area shape="rect" id="Node000001" title="Slot triggered when an item in the shape properties tree widget is changed." alt="" coords="5,35,191,75"/>
-<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#a1f2cddcea15650f8ef72e8862fd945df" title="Emitted when the displayed text of a Text shape is changed." alt="" coords="242,5,426,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,41,226,36,227,42,191,46"/>
-<area shape="rect" id="Node000003" href="$d9/dc6/class_main_window.html#af971d03f10fd514287332e2adfd79bea" title="Emitted when a property of an existing shape is changed." alt="" coords="239,70,430,96"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,63,223,67,223,72,191,69"/>
-</map>

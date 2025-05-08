@@ -1,0 +1,30 @@
+<map id="alpha::vector::reserve" name="alpha::vector::reserve">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1193,136,1340,161"/>
+<area shape="rect" id="Node000002" href="$db/d35/classalpha_1_1vector.html#a227cc7dc4cc72af0a487e20597954b67" title=" " alt="" coords="993,86,1130,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1194,134,1117,115,1119,110,1196,129"/>
+<area shape="rect" id="Node000003" href="$db/d35/classalpha_1_1vector.html#a8305c181181e4739a1c5f29cf3a2c144" title=" " alt="" coords="978,136,1145,161"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1177,151,1145,151,1145,146,1177,146"/>
+<area shape="rect" id="Node000014" href="$db/d35/classalpha_1_1vector.html#aafbc8044c15d29161e5458aafcf572e2" title=" " alt="" coords="992,185,1131,211"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="1196,168,1119,187,1117,182,1194,163"/>
+<area shape="rect" id="Node000004" href="$dc/db7/class_parser.html#a9c4bd21d0d23be70682e026d6e702ec9" title="Converts a JSON string representation into a vector of Shape objects." alt="" coords="5,108,159,133"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="983,131,976,127,960,111,952,95,944,80,928,68,874,46,816,29,758,18,698,11,578,10,461,21,351,41,255,65,118,110,117,105,253,60,350,36,460,16,577,5,698,6,758,13,818,24,875,41,931,64,948,77,957,92,965,108,979,122,986,126"/>
+<area shape="rect" id="Node000005" href="$dc/db7/class_parser.html#a7e0c6d8559fd28407b48e9eef05496d8" title="Converts a JSON string representation into a vector of UserAccount objects." alt="" coords="748,78,893,104"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="991,134,929,119,879,107,880,102,930,114,992,129"/>
+<area shape="rect" id="Node000006" href="$d9/dc6/class_main_window.html#a755e3ce5cc1f97792cc7f7eff9da3858" title="Slot triggered when the sort method or order in the shape report table changes." alt="" coords="728,128,913,169"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="962,151,913,151,913,146,962,146"/>
+<area shape="rect" id="Node000009" href="$dc/db7/class_parser.html#a0a4c2a3664d2d2c1f5444c18271a1cf4" title="Converts a string representation of a JSON array of integers into an alpha::vector&lt;int&gt;." alt="" coords="744,193,897,219"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="992,168,930,183,880,195,879,190,929,178,991,163"/>
+<area shape="rect" id="Node000012" href="$d9/ddf/class_render_area.html#a7fd734dcf63055b10a414b143a45a226" title="Updates display coordinates of a shape&#39;s properties, typically in an associated view." alt="" coords="711,243,930,284"/>
+<area shape="poly" id="edge12_Node000003_Node000012" title=" " alt="" coords="986,171,979,175,964,189,956,203,947,218,931,233,911,245,908,240,928,229,943,215,951,201,960,185,976,170,983,166"/>
+<area shape="rect" id="Node000007" href="$d9/dc6/class_main_window.html#ac4c479f9beafaee136b98e7fac6761ee" title="Creates and displays a new tab or window containing the shape report table." alt="" coords="434,136,663,161"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="712,151,664,151,664,146,712,146"/>
+<area shape="rect" id="Node000008" href="$d9/dc6/class_main_window.html#a25d06b6f11a1eb7fa2239f01e853ae29" title=" " alt="" coords="207,136,386,161"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="418,151,386,151,386,146,418,146"/>
+<area shape="rect" id="Node000010" href="$dc/db7/class_parser.html#ac3bb64fa743348c1b31eb1118c6d4e0f" title="Updates a MorphicShape accumulator with a parsed key&#45;value pair." alt="" coords="458,189,640,215"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="728,207,640,206,640,201,729,202"/>
+<area shape="rect" id="Node000011" href="$dc/db7/class_parser.html#a4d2c4035d6109be0ceca773cfbcff523" title="Parses a single JSON object (data within &#39;{}&#39;) into a MorphicShape." alt="" coords="213,186,380,212"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="442,203,380,203,380,197,442,198"/>
+<area shape="poly" id="edge11_Node000011_Node000004" title=" " alt="" coords="228,184,206,176,110,136,112,131,208,171,230,179"/>
+<area shape="rect" id="Node000013" href="$d9/ddf/class_render_area.html#a84f2ea379248266648d22338e3904b45" title="Handles mouse release events to finalize a shape move operation." alt="" coords="456,243,641,284"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="696,266,642,266,642,261,696,261"/>
+</map>

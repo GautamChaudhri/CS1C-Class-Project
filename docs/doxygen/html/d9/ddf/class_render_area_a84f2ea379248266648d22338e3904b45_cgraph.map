@@ -1,0 +1,25 @@
+<map id="RenderArea::mouseReleaseEvent" name="RenderArea::mouseReleaseEvent">
+<area shape="rect" id="Node000001" title="Handles mouse release events to finalize a shape move operation." alt="" coords="5,195,191,236"/>
+<area shape="rect" id="Node000002" href="$d9/ddf/class_render_area.html#a7fd734dcf63055b10a414b143a45a226" title="Updates display coordinates of a shape&#39;s properties, typically in an associated view." alt="" coords="239,195,457,236"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,213,223,213,223,218,191,218"/>
+<area shape="rect" id="Node000003" href="$d7/da7/class_shape.html#a8e5d4c7be5890c73cab44af6005573d4" title=" " alt="" coords="515,5,662,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="360,193,416,119,457,76,504,40,511,35,514,40,506,44,460,80,420,122,364,197"/>
+<area shape="rect" id="Node000004" href="$dd/db4/class_line.html#aedb630a8121c423320ef5e369e17f65f" title=" " alt="" coords="526,55,651,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="368,193,426,141,463,113,504,89,515,84,517,89,506,94,466,118,429,146,371,197"/>
+<area shape="rect" id="Node000005" href="$d7/da7/class_shape.html#a516fb93ee4883eabf72c7dc1dc9cd25f" title=" " alt="" coords="512,104,666,130"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="387,192,442,165,504,138,521,132,523,137,506,143,444,170,389,197"/>
+<area shape="rect" id="Node000006" href="$d1/db0/class_polygon.html#aa29df027578f8427676e9eb4a5ee67c2" title="getPointsList &#45; Returns the pointsList by value" alt="" coords="512,153,665,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="450,192,507,180,508,185,451,197"/>
+<area shape="rect" id="Node000007" href="$d1/d42/class_polyline.html#acb3340122423e1c80e3aa7c7a30fda84" title="getPointsList &#45; Returns the pointsList by value" alt="" coords="513,203,664,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="457,213,497,213,497,218,457,218"/>
+<area shape="rect" id="Node000008" href="$d7/da7/class_shape.html#a4b502262ae5a22122456b9624d5ccb3d" title="Accessor Functions &#45; Returns the data named after them." alt="" coords="522,252,655,278"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="451,234,508,246,507,251,450,239"/>
+<area shape="rect" id="Node000009" href="$dd/db4/class_line.html#ae0c35900f7e283b3559263455ac18669" title="Accessor Functions." alt="" coords="524,301,653,327"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="389,234,444,261,506,288,523,294,521,299,504,293,442,266,387,239"/>
+<area shape="rect" id="Node000010" href="$db/d35/classalpha_1_1vector.html#a8305c181181e4739a1c5f29cf3a2c144" title=" " alt="" coords="505,351,672,376"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="371,234,429,285,466,313,506,337,517,342,515,347,504,342,463,318,426,290,368,238"/>
+<area shape="rect" id="Node000012" href="$db/d35/classalpha_1_1vector.html#a78b5e138cba3b9bc0f9d569c6dd96156" title=" " alt="" coords="524,400,653,426"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="364,234,420,309,460,351,506,387,514,391,511,396,504,391,457,355,416,312,360,238"/>
+<area shape="rect" id="Node000011" href="$db/d35/classalpha_1_1vector.html#a6dd9585078696eb1d5e7186435f0e41c" title=" " alt="" coords="720,351,868,376"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="672,361,705,361,705,366,672,366"/>
+</map>

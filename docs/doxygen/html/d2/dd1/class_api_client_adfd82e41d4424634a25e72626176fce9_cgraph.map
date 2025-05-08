@@ -1,0 +1,9 @@
+<map id="ApiClient::DeleteShapesAll" name="ApiClient::DeleteShapesAll">
+<area shape="rect" id="Node000001" title="Makes a request to delete all shapes via the Delete /shapes&#45;all endpoint." alt="" coords="5,31,185,56"/>
+<area shape="rect" id="Node000002" href="$d2/dd1/class_api_client.html#addc68bb9473d31fdf49098377f48d17b" title="Analyzes the reply for DELETE requests." alt="" coords="233,23,400,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,41,217,41,217,46,185,46"/>
+<area shape="rect" id="Node000003" href="$d2/dd1/class_api_client.html#a2362fb6ae6555400e50840bd2138fa3c" title="Signal for a failed request sent to a Delete endpoint." alt="" coords="452,5,629,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="400,31,436,27,437,33,401,37"/>
+<area shape="rect" id="Node000004" href="$d2/dd1/class_api_client.html#a36b7d26e91c582a56da7c3bcfbdccbd9" title="Signal for a successful request sent to a Delete endpoint." alt="" coords="448,55,633,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="400,50,433,53,432,59,400,55"/>
+</map>

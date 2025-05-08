@@ -1,0 +1,5 @@
+<map id="Parser::UpdateUserAccumulator" name="Parser::UpdateUserAccumulator">
+<area shape="rect" id="Node000001" title="Updates a RawUser accumulator with a parsed key&#45;value pair for user data." alt="" coords="198,5,408,31"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#a7e0c6d8559fd28407b48e9eef05496d8" title="Converts a JSON string representation into a vector of UserAccount objects." alt="" coords="5,5,150,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,21,150,21,150,16,182,16"/>
+</map>

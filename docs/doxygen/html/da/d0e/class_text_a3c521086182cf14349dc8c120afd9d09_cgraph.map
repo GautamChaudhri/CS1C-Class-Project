@@ -1,0 +1,19 @@
+<map id="Text::Text" name="Text::Text">
+<area shape="rect" id="Node000001" title="Text." alt="" coords="5,153,85,179"/>
+<area shape="rect" id="Node000002" href="$d7/da7/class_shape.html#ad3725fd4cfb43613897c2d3f3e647842" title="CreateParentItem &#45; Adds data cooresponding to all shapes to parentItem for a QTreeWidget." alt="" coords="133,104,302,130"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,152,132,138,154,132,156,137,133,143,86,157"/>
+<area shape="rect" id="Node000007" href="$da/d0e/class_text.html#ac4d54ea22e31be28700336bbc5bde23e" title=" " alt="" coords="152,153,283,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="85,164,136,164,136,169,85,169"/>
+<area shape="rect" id="Node000008" href="$d7/da7/class_shape.html#a3fffc5f799f419e3e608e03ab1f3e913" title="Shape Constructor." alt="" coords="166,203,269,228"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="86,175,133,189,156,195,154,201,132,194,84,180"/>
+<area shape="rect" id="Node000003" href="$d7/da7/class_shape.html#a4b502262ae5a22122456b9624d5ccb3d" title="Accessor Functions &#45; Returns the data named after them." alt="" coords="367,5,499,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,101,287,71,349,40,364,34,366,39,351,45,290,76,240,106"/>
+<area shape="rect" id="Node000004" href="$d7/da7/class_shape.html#aec4675c2b06d40373eefac4b982af242" title=" " alt="" coords="364,55,503,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="276,101,358,82,359,87,278,106"/>
+<area shape="rect" id="Node000005" href="$d7/da7/class_shape.html#af604de36aa616c585bb30dedf5e5c68b" title=" " alt="" coords="386,104,480,130"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="302,114,371,114,371,120,302,120"/>
+<area shape="rect" id="Node000006" href="$d7/da7/class_shape.html#a2e87ea4122381ffb83474f4b69247ded" title=" " alt="" coords="386,153,480,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="278,128,372,150,371,155,276,133"/>
+<area shape="rect" id="Node000009" href="$d7/da7/class_shape.html#a520308cc2273f60cb19bf5664570bcf8" title=" " alt="" coords="350,203,516,228"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="269,213,335,213,335,218,269,218"/>
+</map>

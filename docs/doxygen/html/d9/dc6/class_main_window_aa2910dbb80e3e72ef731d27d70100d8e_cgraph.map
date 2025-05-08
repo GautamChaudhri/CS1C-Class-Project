@@ -1,0 +1,38 @@
+<map id="MainWindow::setupTestimonials" name="MainWindow::setupTestimonials">
+<area shape="rect" id="Node000001" title="Sets up connections and UI elements for the testimonial feature." alt="" coords="5,587,215,612"/>
+<area shape="rect" id="Node000002" href="$d4/d0d/class_testimonial_manager.html#a7b05489ceb9a8bd5e94e955c50b9515f" title="Returns a reference to the singleton TestimonialManager instance." alt="" coords="298,338,436,378"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,584,331,388,334,391,127,588"/>
+<area shape="rect" id="Node000009" href="$d4/d0d/class_testimonial_manager.html#ade7e70f55550c1417ab7d0ca7b3b3142" title="Emitted to prompt the user for a testimonial." alt="" coords="935,346,1129,386"/>
+<area shape="poly" id="edge15_Node000001_Node000009" title=" " alt="" coords="166,583,262,565,358,556,441,557,584,569,651,572,722,567,798,549,885,514,924,491,957,460,986,428,1008,398,1012,401,990,431,961,464,927,495,888,519,800,554,722,572,651,578,584,575,441,562,358,561,263,570,167,589"/>
+<area shape="rect" id="Node000016" href="$d9/dc6/class_main_window.html#ade3d9ed9b1c685f1ba1044cf10a401a4" title="Displays a dialog prompting the user to submit a testimonial." alt="" coords="266,579,468,620"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="215,597,251,597,251,602,215,602"/>
+<area shape="rect" id="Node000017" href="$d9/dc6/class_main_window.html#a415d10b19b2dd2e7ba99d0dd5fcb76da" title="Displays a dialog showing existing testimonials." alt="" coords="263,644,471,685"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="164,610,270,638,269,643,163,615"/>
+<area shape="rect" id="Node000018" href="$d4/d0d/class_testimonial_manager.html#a06504060ff2ed420035a8433e03d8fa5" title="Starts the timer for tracking user activity time." alt="" coords="298,710,436,750"/>
+<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="130,611,188,651,264,694,285,703,283,708,261,699,185,656,127,615"/>
+<area shape="rect" id="Node000003" href="$d4/d0d/class_testimonial_manager.html#aded0ef0783e1e67e701f7c3bf3a80072" title="Private constructor to enforce singleton pattern. Initializes API connections and timer." alt="" coords="519,240,664,281"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="415,335,528,285,530,290,417,340"/>
+<area shape="rect" id="Node000004" href="$d2/dd1/class_api_client.html#ae22339e302eb27bc51fbdfc1b7c1a4ec" title="Signal for a failed request sent to a Get endpoint." alt="" coords="719,5,880,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="596,240,609,198,632,144,666,88,687,62,711,40,715,37,719,41,714,44,691,66,670,91,637,146,614,200,601,241"/>
+<area shape="rect" id="Node000005" href="$d2/dd1/class_api_client.html#ac0f68b238bace3703854d7de15a3bb38" title="Signal for a failed request sent to a Post endpoint." alt="" coords="716,55,883,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="600,239,616,206,641,166,672,125,711,91,719,85,722,90,714,95,676,129,645,169,621,209,605,241"/>
+<area shape="rect" id="Node000006" href="$d4/d0d/class_testimonial_manager.html#a69979eb09835fcb35d804fa169b63f0f" title="Checks accumulated user time and emits shouldPromptForTestimonial if criteria are met." alt="" coords="720,104,879,145"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="611,238,654,196,711,155,719,150,722,155,714,159,658,201,614,242"/>
+<area shape="rect" id="Node000010" href="$d2/dd1/class_api_client.html#a940bf610f9fa472fc660e1ab60203de7" title="Signal for a successful request sent to a Get endpoint." alt="" coords="715,169,884,195"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="633,238,711,204,730,197,731,202,713,209,635,242"/>
+<area shape="rect" id="Node000011" href="$d2/dd1/class_api_client.html#aa2e03a2c693acb0052f80415b453e279" title="Signal for a successful request sent to a Post endpoint." alt="" coords="712,219,887,244"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="664,248,697,243,698,249,665,253"/>
+<area shape="rect" id="Node000012" href="$d4/d0d/class_testimonial_manager.html#aa256bebedcc689ce416c7a2fcade3900" title="Slot called when a GET request for testimonials fails." alt="" coords="726,268,873,309"/>
+<area shape="poly" id="edge11_Node000003_Node000012" title=" " alt="" coords="665,268,711,274,710,280,664,273"/>
+<area shape="rect" id="Node000013" href="$d4/d0d/class_testimonial_manager.html#acfda7a2d454b513c1c75d8d030a43dd9" title="Slot called when a POST request to save testimonials fails." alt="" coords="723,334,876,374"/>
+<area shape="poly" id="edge12_Node000003_Node000013" title=" " alt="" coords="633,279,713,318,729,325,727,330,711,323,631,284"/>
+<area shape="rect" id="Node000014" href="$d4/d0d/class_testimonial_manager.html#a2a9ada04ab15847f2c1b3c81deb994d7" title="Slot called when a GET request for testimonials succeeds." alt="" coords="722,399,877,440"/>
+<area shape="poly" id="edge13_Node000003_Node000014" title=" " alt="" coords="610,280,654,331,682,359,714,384,722,389,720,394,711,388,679,363,650,335,606,283"/>
+<area shape="rect" id="Node000015" href="$d4/d0d/class_testimonial_manager.html#ad384569c01fdadf0bb38e053a7bee337" title="Slot called when a POST request to save testimonials succeeds." alt="" coords="719,464,880,505"/>
+<area shape="poly" id="edge14_Node000003_Node000015" title=" " alt="" coords="603,281,619,317,643,362,675,409,714,450,720,454,717,458,711,453,671,412,638,365,614,319,598,283"/>
+<area shape="rect" id="Node000007" href="$d4/d0d/class_testimonial_manager.html#a1ebec1a781a7508501e398bb042a0b2d" title="Retrieves the &quot;do not show again&quot; preference for a user." alt="" coords="956,72,1108,113"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="879,111,940,103,941,108,880,117"/>
+<area shape="rect" id="Node000008" href="$d4/d0d/class_testimonial_manager.html#a9466acdac4dddfe8947b41cb637cb556" title="Checks if a user with the given username has already submitted a testimonial." alt="" coords="943,138,1121,178"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="880,134,928,141,927,146,879,139"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="870,143,888,155,931,196,968,243,997,290,1017,330,1013,333,992,293,963,246,927,200,885,159,868,148"/>
+</map>

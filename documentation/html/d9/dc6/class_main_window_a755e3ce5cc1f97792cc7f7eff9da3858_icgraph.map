@@ -1,7 +1,0 @@
-<map id="MainWindow::onSortMethodChanged" name="MainWindow::onSortMethodChanged">
-<area shape="rect" id="Node000001" title="Slot triggered when the sort method or order in the shape report table changes." alt="" coords="510,5,695,46"/>
-<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#ac4c479f9beafaee136b98e7fac6761ee" title="Creates and displays a new tab or window containing the shape report table." alt="" coords="233,13,462,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="494,28,462,28,462,23,494,23"/>
-<area shape="rect" id="Node000003" href="$d9/dc6/class_main_window.html#a25d06b6f11a1eb7fa2239f01e853ae29" title=" " alt="" coords="5,13,185,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="217,28,185,28,185,23,217,23"/>
-</map>

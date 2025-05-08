@@ -1,5 +1,0 @@
-<map id="RenderAreaManager::onBadPostResponse" name="RenderAreaManager::onBadPostResponse">
-<area shape="rect" id="Node000001" title="Slot to handle unsuccessful POST responses from the API client." alt="" coords="5,5,154,46"/>
-<area shape="rect" id="Node000002" href="$d8/d08/class_render_area_manager.html#a67d3ed59f05b6fbe86d3abd42766234f" title="Emitted to provide a status message to the user." alt="" coords="202,5,350,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,23,186,23,186,28,154,28"/>
-</map>

@@ -1,0 +1,581 @@
+\doxysection{Api\+Client Class Reference}
+\hypertarget{class_api_client}{}\label{class_api_client}\index{ApiClient@{ApiClient}}
+
+
+Documentation Qt Version 6.\+9.\+0.  
+
+
+
+
+{\ttfamily \#include $<$Api\+Client.\+h$>$}
+
+
+
+Inheritance diagram for Api\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dc/d53/class_api_client__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Api\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{db/dbc/class_api_client__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{Indent}\textbf{ API Reply Signals}\par
+{\em Signals emitted by \doxylink{class_api_client}{Api\+Client} to communicate request outcomes.
+
+These signals notify listeners about the success or failure of GET, POST, and DELETE operations. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_api_client_a940bf610f9fa472fc660e1ab60203de7}{Good\+Get\+Reply}} (const QString \&json)
+\begin{DoxyCompactList}\small\item\em Signal for a successful request sent to a Get endpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_ae22339e302eb27bc51fbdfc1b7c1a4ec}{Bad\+Get\+Reply}} (const QString \&error)
+\begin{DoxyCompactList}\small\item\em Signal for a failed request sent to a Get endpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_aa2e03a2c693acb0052f80415b453e279}{Good\+Post\+Reply}} ()
+\begin{DoxyCompactList}\small\item\em Signal for a successful request sent to a Post endpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_ac0f68b238bace3703854d7de15a3bb38}{Bad\+Post\+Reply}} (const QString \&error)
+\begin{DoxyCompactList}\small\item\em Signal for a failed request sent to a Post endpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_a36b7d26e91c582a56da7c3bcfbdccbd9}{Good\+Delete\+Reply}} ()
+\begin{DoxyCompactList}\small\item\em Signal for a successful request sent to a Delete endpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_a2362fb6ae6555400e50840bd2138fa3c}{Bad\+Delete\+Reply}} (const QString \&error)
+\begin{DoxyCompactList}\small\item\em Signal for a failed request sent to a Delete endpoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructor and Core API Functions}\par
+{\em Public methods for \doxylink{class_api_client}{Api\+Client}.
+
+This section includes the constructor and functions for making API requests. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_api_client_a7ac17ab761c4ee56fa63802573b343e3}{Api\+Client}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Shape Data Management}\par
+{\em API endpoints for managing \doxylink{class_shape}{Shape} data.
+
+These functions interact with the {\ttfamily /shapes} and {\ttfamily /shapes-\/all} endpoints to retrieve, submit, or delete shape information.
+
+\begin{DoxyNote}{Note}
+These endpoints are deprecated 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_api_client_a6a3032eaed65944641fc1fde85edf5dc}{Get\+Shapes}} ()
+\begin{DoxyCompactList}\small\item\em Makes a request to get data from the Get /shapes API Endpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_ae169e9c2947f90bb9fb95ab17db047d7}{Post\+Shapes}} (std\+::string json)
+\begin{DoxyCompactList}\small\item\em Makes a request to send data to the Post /shapes API Endpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_adfd82e41d4424634a25e72626176fce9}{Delete\+Shapes\+All}} ()
+\begin{DoxyCompactList}\small\item\em Makes a request to delete all shapes via the Delete /shapes-\/all endpoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Render Area Data Management}\par
+{\em API endpoints for managing Render Area data.
+
+These functions interact with the {\ttfamily /render\+\_\+area} and {\ttfamily /render\+\_\+area-\/all} endpoints to retrieve, submit, or delete render area configurations. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_api_client_a6bea8ab609c3dbd768ab921896fc3c73}{Get\+Render\+Area}} ()
+\begin{DoxyCompactList}\small\item\em Makes a request to get data from the Get /render\+\_\+area API Endpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_a4112a3306ed988b66842c63b5bc857df}{Post\+Render\+Area}} (std\+::string json)
+\begin{DoxyCompactList}\small\item\em Makes a request to send data to the Post /render\+\_\+area API Endpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_a9b4a0deedb0a85a2a79e8257944cc6b6}{Delete\+Render\+Area\+All}} ()
+\begin{DoxyCompactList}\small\item\em Makes a request to delete all render area data via Delete /render\+\_\+area-\/all. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ User Data Management}\par
+{\em API endpoints for managing User data.
+
+These functions interact with the {\ttfamily /users} and {\ttfamily /users-\/all} endpoints to retrieve, submit, or delete user information. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_api_client_a5782e90eb0265b193e81e989dc823a3d}{Get\+Users}} ()
+\begin{DoxyCompactList}\small\item\em Makes a request to get data from the Get /users API Endpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_a043a6ed2acd12ef39291dce0fee9757a}{Post\+Users}} (std\+::string json)
+\begin{DoxyCompactList}\small\item\em Makes a request to send data to the Post /users API Endpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_a4a58d3d1ab46afa9348afe1bfd4c2c02}{Delete\+Users\+All}} ()
+\begin{DoxyCompactList}\small\item\em Makes a request to delete all user data via Delete /users-\/all. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Testimonial Data Management}\par
+{\em API endpoints for managing \doxylink{class_testimonial}{Testimonial} data.
+
+These functions interact with the {\ttfamily /testimonials} endpoint to retrieve, submit, or delete testimonial entries. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_api_client_a7de3d9e256dde6ed86c19fa4b19c8af6}{Get\+Testimonials}} ()
+\begin{DoxyCompactList}\small\item\em Makes a request to get all testimonials via GET /testimonials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_a2db225a90ae46c72cd017a3ee3418d2b}{Post\+Testimonials}} (std\+::string json)
+\begin{DoxyCompactList}\small\item\em Makes a request to post testimonial data via POST /testimonials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_a46a2caf6cafa0ed3e8754dc1676159ba}{Delete\+Testimonials\+All}} ()
+\begin{DoxyCompactList}\small\item\em Makes a request to delete all testimonials via DELETE /testimonials. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Slots}
+\begin{Indent}\textbf{ Network Reply Analysis}\par
+{\em These slots are connected to the finished signal of QNetwork\+Reply and determine whether the operation was successful, emitting the appropriate Good/\+Bad Get/\+Post/\+Delete reply signals. }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_api_client_a6b63bb2faeed34e082d84c1c624dda39}{Analyze\+Get\+Reply}} ()
+\begin{DoxyCompactList}\small\item\em Analyzes the reply for GET requests. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_aeaa808b2a23ba8e6f5e5520a991127e3}{Analyze\+Post\+Reply}} ()
+\begin{DoxyCompactList}\small\item\em Analyzes the reply for POST requests. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_addc68bb9473d31fdf49098377f48d17b}{Analyze\+Delete\+Reply}} ()
+\begin{DoxyCompactList}\small\item\em Analyzes the reply for DELETE requests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QNetwork\+Access\+Manager \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_api_client_a1b82f8888490dc631ba559510b92df64}{manager}}
+\begin{DoxyCompactList}\small\item\em Manages all network operations for the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documentation Qt Version 6.\+9.\+0. 
+
+Manages network communication with the backend API.
+
+This class provides methods to perform GET, POST, and DELETE requests to various endpoints of the webservice. It uses QNetwork\+Access\+Manager for handling network operations and emits signals to indicate the success or failure of these requests. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_api_client_a7ac17ab761c4ee56fa63802573b343e3}\index{ApiClient@{ApiClient}!ApiClient@{ApiClient}}
+\index{ApiClient@{ApiClient}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{ApiClient()}{ApiClient()}}
+{\footnotesize\ttfamily \label{class_api_client_a7ac17ab761c4ee56fa63802573b343e3} 
+Api\+Client\+::\+Api\+Client (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Default Constructor. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a7ac17ab761c4ee56fa63802573b343e3_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_api_client_addc68bb9473d31fdf49098377f48d17b}\index{ApiClient@{ApiClient}!AnalyzeDeleteReply@{AnalyzeDeleteReply}}
+\index{AnalyzeDeleteReply@{AnalyzeDeleteReply}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{AnalyzeDeleteReply}{AnalyzeDeleteReply}}
+{\footnotesize\ttfamily \label{class_api_client_addc68bb9473d31fdf49098377f48d17b} 
+void Api\+Client\+::\+Analyze\+Delete\+Reply (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Analyzes the reply for DELETE requests. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_addc68bb9473d31fdf49098377f48d17b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_addc68bb9473d31fdf49098377f48d17b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a6b63bb2faeed34e082d84c1c624dda39}\index{ApiClient@{ApiClient}!AnalyzeGetReply@{AnalyzeGetReply}}
+\index{AnalyzeGetReply@{AnalyzeGetReply}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{AnalyzeGetReply}{AnalyzeGetReply}}
+{\footnotesize\ttfamily \label{class_api_client_a6b63bb2faeed34e082d84c1c624dda39} 
+void Api\+Client\+::\+Analyze\+Get\+Reply (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Analyzes the reply for GET requests. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a6b63bb2faeed34e082d84c1c624dda39_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a6b63bb2faeed34e082d84c1c624dda39_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_aeaa808b2a23ba8e6f5e5520a991127e3}\index{ApiClient@{ApiClient}!AnalyzePostReply@{AnalyzePostReply}}
+\index{AnalyzePostReply@{AnalyzePostReply}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{AnalyzePostReply}{AnalyzePostReply}}
+{\footnotesize\ttfamily \label{class_api_client_aeaa808b2a23ba8e6f5e5520a991127e3} 
+void Api\+Client\+::\+Analyze\+Post\+Reply (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Analyzes the reply for POST requests. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_aeaa808b2a23ba8e6f5e5520a991127e3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_aeaa808b2a23ba8e6f5e5520a991127e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a2362fb6ae6555400e50840bd2138fa3c}\index{ApiClient@{ApiClient}!BadDeleteReply@{BadDeleteReply}}
+\index{BadDeleteReply@{BadDeleteReply}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{BadDeleteReply}{BadDeleteReply}}
+{\footnotesize\ttfamily \label{class_api_client_a2362fb6ae6555400e50840bd2138fa3c} 
+void Api\+Client\+::\+Bad\+Delete\+Reply (\begin{DoxyParamCaption}\item[{const QString \&}]{error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal for a failed request sent to a Delete endpoint. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a2362fb6ae6555400e50840bd2138fa3c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_ae22339e302eb27bc51fbdfc1b7c1a4ec}\index{ApiClient@{ApiClient}!BadGetReply@{BadGetReply}}
+\index{BadGetReply@{BadGetReply}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{BadGetReply}{BadGetReply}}
+{\footnotesize\ttfamily \label{class_api_client_ae22339e302eb27bc51fbdfc1b7c1a4ec} 
+void Api\+Client\+::\+Bad\+Get\+Reply (\begin{DoxyParamCaption}\item[{const QString \&}]{error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal for a failed request sent to a Get endpoint. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_ae22339e302eb27bc51fbdfc1b7c1a4ec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_ac0f68b238bace3703854d7de15a3bb38}\index{ApiClient@{ApiClient}!BadPostReply@{BadPostReply}}
+\index{BadPostReply@{BadPostReply}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{BadPostReply}{BadPostReply}}
+{\footnotesize\ttfamily \label{class_api_client_ac0f68b238bace3703854d7de15a3bb38} 
+void Api\+Client\+::\+Bad\+Post\+Reply (\begin{DoxyParamCaption}\item[{const QString \&}]{error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal for a failed request sent to a Post endpoint. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_ac0f68b238bace3703854d7de15a3bb38_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a9b4a0deedb0a85a2a79e8257944cc6b6}\index{ApiClient@{ApiClient}!DeleteRenderAreaAll@{DeleteRenderAreaAll}}
+\index{DeleteRenderAreaAll@{DeleteRenderAreaAll}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{DeleteRenderAreaAll()}{DeleteRenderAreaAll()}}
+{\footnotesize\ttfamily \label{class_api_client_a9b4a0deedb0a85a2a79e8257944cc6b6} 
+void Api\+Client\+::\+Delete\+Render\+Area\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Makes a request to delete all render area data via Delete /render\+\_\+area-\/all. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a9b4a0deedb0a85a2a79e8257944cc6b6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_adfd82e41d4424634a25e72626176fce9}\index{ApiClient@{ApiClient}!DeleteShapesAll@{DeleteShapesAll}}
+\index{DeleteShapesAll@{DeleteShapesAll}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{DeleteShapesAll()}{DeleteShapesAll()}}
+{\footnotesize\ttfamily \label{class_api_client_adfd82e41d4424634a25e72626176fce9} 
+void Api\+Client\+::\+Delete\+Shapes\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Makes a request to delete all shapes via the Delete /shapes-\/all endpoint. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_adfd82e41d4424634a25e72626176fce9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a46a2caf6cafa0ed3e8754dc1676159ba}\index{ApiClient@{ApiClient}!DeleteTestimonialsAll@{DeleteTestimonialsAll}}
+\index{DeleteTestimonialsAll@{DeleteTestimonialsAll}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{DeleteTestimonialsAll()}{DeleteTestimonialsAll()}}
+{\footnotesize\ttfamily \label{class_api_client_a46a2caf6cafa0ed3e8754dc1676159ba} 
+void Api\+Client\+::\+Delete\+Testimonials\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Makes a request to delete all testimonials via DELETE /testimonials. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a46a2caf6cafa0ed3e8754dc1676159ba_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a4a58d3d1ab46afa9348afe1bfd4c2c02}\index{ApiClient@{ApiClient}!DeleteUsersAll@{DeleteUsersAll}}
+\index{DeleteUsersAll@{DeleteUsersAll}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{DeleteUsersAll()}{DeleteUsersAll()}}
+{\footnotesize\ttfamily \label{class_api_client_a4a58d3d1ab46afa9348afe1bfd4c2c02} 
+void Api\+Client\+::\+Delete\+Users\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Makes a request to delete all user data via Delete /users-\/all. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a4a58d3d1ab46afa9348afe1bfd4c2c02_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a6bea8ab609c3dbd768ab921896fc3c73}\index{ApiClient@{ApiClient}!GetRenderArea@{GetRenderArea}}
+\index{GetRenderArea@{GetRenderArea}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{GetRenderArea()}{GetRenderArea()}}
+{\footnotesize\ttfamily \label{class_api_client_a6bea8ab609c3dbd768ab921896fc3c73} 
+void Api\+Client\+::\+Get\+Render\+Area (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Makes a request to get data from the Get /render\+\_\+area API Endpoint. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a6bea8ab609c3dbd768ab921896fc3c73_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a6a3032eaed65944641fc1fde85edf5dc}\index{ApiClient@{ApiClient}!GetShapes@{GetShapes}}
+\index{GetShapes@{GetShapes}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{GetShapes()}{GetShapes()}}
+{\footnotesize\ttfamily \label{class_api_client_a6a3032eaed65944641fc1fde85edf5dc} 
+void Api\+Client\+::\+Get\+Shapes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Makes a request to get data from the Get /shapes API Endpoint. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a6a3032eaed65944641fc1fde85edf5dc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a7de3d9e256dde6ed86c19fa4b19c8af6}\index{ApiClient@{ApiClient}!GetTestimonials@{GetTestimonials}}
+\index{GetTestimonials@{GetTestimonials}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{GetTestimonials()}{GetTestimonials()}}
+{\footnotesize\ttfamily \label{class_api_client_a7de3d9e256dde6ed86c19fa4b19c8af6} 
+void Api\+Client\+::\+Get\+Testimonials (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Makes a request to get all testimonials via GET /testimonials. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a7de3d9e256dde6ed86c19fa4b19c8af6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a5782e90eb0265b193e81e989dc823a3d}\index{ApiClient@{ApiClient}!GetUsers@{GetUsers}}
+\index{GetUsers@{GetUsers}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{GetUsers()}{GetUsers()}}
+{\footnotesize\ttfamily \label{class_api_client_a5782e90eb0265b193e81e989dc823a3d} 
+void Api\+Client\+::\+Get\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Makes a request to get data from the Get /users API Endpoint. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a5782e90eb0265b193e81e989dc823a3d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a36b7d26e91c582a56da7c3bcfbdccbd9}\index{ApiClient@{ApiClient}!GoodDeleteReply@{GoodDeleteReply}}
+\index{GoodDeleteReply@{GoodDeleteReply}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{GoodDeleteReply}{GoodDeleteReply}}
+{\footnotesize\ttfamily \label{class_api_client_a36b7d26e91c582a56da7c3bcfbdccbd9} 
+void Api\+Client\+::\+Good\+Delete\+Reply (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal for a successful request sent to a Delete endpoint. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a36b7d26e91c582a56da7c3bcfbdccbd9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a940bf610f9fa472fc660e1ab60203de7}\index{ApiClient@{ApiClient}!GoodGetReply@{GoodGetReply}}
+\index{GoodGetReply@{GoodGetReply}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{GoodGetReply}{GoodGetReply}}
+{\footnotesize\ttfamily \label{class_api_client_a940bf610f9fa472fc660e1ab60203de7} 
+void Api\+Client\+::\+Good\+Get\+Reply (\begin{DoxyParamCaption}\item[{const QString \&}]{json}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal for a successful request sent to a Get endpoint. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a940bf610f9fa472fc660e1ab60203de7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_aa2e03a2c693acb0052f80415b453e279}\index{ApiClient@{ApiClient}!GoodPostReply@{GoodPostReply}}
+\index{GoodPostReply@{GoodPostReply}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{GoodPostReply}{GoodPostReply}}
+{\footnotesize\ttfamily \label{class_api_client_aa2e03a2c693acb0052f80415b453e279} 
+void Api\+Client\+::\+Good\+Post\+Reply (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal for a successful request sent to a Post endpoint. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_aa2e03a2c693acb0052f80415b453e279_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a4112a3306ed988b66842c63b5bc857df}\index{ApiClient@{ApiClient}!PostRenderArea@{PostRenderArea}}
+\index{PostRenderArea@{PostRenderArea}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{PostRenderArea()}{PostRenderArea()}}
+{\footnotesize\ttfamily \label{class_api_client_a4112a3306ed988b66842c63b5bc857df} 
+void Api\+Client\+::\+Post\+Render\+Area (\begin{DoxyParamCaption}\item[{std\+::string}]{json}{}\end{DoxyParamCaption})}
+
+
+
+Makes a request to send data to the Post /render\+\_\+area API Endpoint. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a4112a3306ed988b66842c63b5bc857df_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_ae169e9c2947f90bb9fb95ab17db047d7}\index{ApiClient@{ApiClient}!PostShapes@{PostShapes}}
+\index{PostShapes@{PostShapes}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{PostShapes()}{PostShapes()}}
+{\footnotesize\ttfamily \label{class_api_client_ae169e9c2947f90bb9fb95ab17db047d7} 
+void Api\+Client\+::\+Post\+Shapes (\begin{DoxyParamCaption}\item[{std\+::string}]{json}{}\end{DoxyParamCaption})}
+
+
+
+Makes a request to send data to the Post /shapes API Endpoint. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_ae169e9c2947f90bb9fb95ab17db047d7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a2db225a90ae46c72cd017a3ee3418d2b}\index{ApiClient@{ApiClient}!PostTestimonials@{PostTestimonials}}
+\index{PostTestimonials@{PostTestimonials}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{PostTestimonials()}{PostTestimonials()}}
+{\footnotesize\ttfamily \label{class_api_client_a2db225a90ae46c72cd017a3ee3418d2b} 
+void Api\+Client\+::\+Post\+Testimonials (\begin{DoxyParamCaption}\item[{std\+::string}]{json}{}\end{DoxyParamCaption})}
+
+
+
+Makes a request to post testimonial data via POST /testimonials. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a2db225a90ae46c72cd017a3ee3418d2b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_api_client_a043a6ed2acd12ef39291dce0fee9757a}\index{ApiClient@{ApiClient}!PostUsers@{PostUsers}}
+\index{PostUsers@{PostUsers}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{PostUsers()}{PostUsers()}}
+{\footnotesize\ttfamily \label{class_api_client_a043a6ed2acd12ef39291dce0fee9757a} 
+void Api\+Client\+::\+Post\+Users (\begin{DoxyParamCaption}\item[{std\+::string}]{json}{}\end{DoxyParamCaption})}
+
+
+
+Makes a request to send data to the Post /users API Endpoint. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dd1/class_api_client_a043a6ed2acd12ef39291dce0fee9757a_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_api_client_a1b82f8888490dc631ba559510b92df64}\index{ApiClient@{ApiClient}!manager@{manager}}
+\index{manager@{manager}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{manager}{manager}}
+{\footnotesize\ttfamily \label{class_api_client_a1b82f8888490dc631ba559510b92df64} 
+QNetwork\+Access\+Manager\texorpdfstring{$\ast$}{*} Api\+Client\+::manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Manages all network operations for the client. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/backend/\mbox{\hyperlink{_api_client_8h}{Api\+Client.\+h}}\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/backend/\mbox{\hyperlink{_api_client_8cpp}{Api\+Client.\+cpp}}\item 
+/\+Users/gautam/\+Local/\+Forge/\+Team-\/\+Alphawolves/2\+D-\/\+Graphics-\/\+Modeler/src/backend/\mbox{\hyperlink{moc___api_client_8cpp}{moc\+\_\+\+Api\+Client.\+cpp}}\end{DoxyCompactItemize}

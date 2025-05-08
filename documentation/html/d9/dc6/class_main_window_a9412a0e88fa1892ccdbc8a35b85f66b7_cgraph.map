@@ -1,5 +1,0 @@
-<map id="MainWindow::on_actionremove_shape_button_triggered" name="MainWindow::on_actionremove_shape_button_triggered">
-<area shape="rect" id="Node000001" title="Slot triggered to remove the currently selected shape." alt="" coords="5,5,209,46"/>
-<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#a906062572c910e53ece385587548e981" title="Emitted when a shape is requested to be deleted." alt="" coords="257,13,441,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,23,241,23,241,28,209,28"/>
-</map>

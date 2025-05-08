@@ -1,9 +1,0 @@
-<map id="MainWindow::setupTestimonials" name="MainWindow::setupTestimonials">
-<area shape="rect" id="Node000001" title="Sets up connections and UI elements for the testimonial feature." alt="" coords="460,7,669,33"/>
-<area shape="rect" id="Node000002" href="$d9/dc6/class_main_window.html#a25d06b6f11a1eb7fa2239f01e853ae29" title=" " alt="" coords="5,7,185,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="444,12,412,11,322,8,233,11,185,14,185,8,233,5,322,3,412,5,445,7"/>
-<area shape="rect" id="Node000003" href="$d9/dc6/class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title="Default constructor." alt="" coords="233,44,412,70"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="462,38,410,46,410,41,461,33"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="224,44,177,36,178,31,225,39"/>
-<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="362,32,349,26,322,23,298,25,285,30,282,35,289,42,285,46,277,36,282,26,297,20,322,18,350,20,364,27"/>
-</map>

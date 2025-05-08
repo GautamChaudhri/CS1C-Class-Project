@@ -1,9 +1,0 @@
-<map id="MainWindow::onSpinBoxChanged" name="MainWindow::onSpinBoxChanged">
-<area shape="rect" id="Node000001" title="Slot triggered when a QSpinBox value in the tree widget changes." alt="" coords="5,55,225,80"/>
-<area shape="rect" id="Node000002" href="$d7/da7/class_shape.html#a633352978d8776c142b848b8d682587a" title=" " alt="" coords="284,5,424,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,51,273,32,274,37,182,57"/>
-<area shape="rect" id="Node000003" href="$d7/da7/class_shape.html#a581611275dae291b4d82927dcd6114b7" title=" " alt="" coords="273,55,436,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,65,257,65,257,70,225,70"/>
-<area shape="rect" id="Node000004" href="$d7/da7/class_shape.html#aec4675c2b06d40373eefac4b982af242" title=" " alt="" coords="285,104,424,130"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="182,78,274,98,273,103,180,84"/>
-</map>

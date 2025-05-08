@@ -1,9 +1,0 @@
-<map id="ApiClient::PostShapes" name="ApiClient::PostShapes">
-<area shape="rect" id="Node000001" title="Makes a request to send data to the Post /shapes API Endpoint." alt="" coords="5,31,159,56"/>
-<area shape="rect" id="Node000002" href="$d2/dd1/class_api_client.html#aeaa808b2a23ba8e6f5e5520a991127e3" title="Analyzes the reply for POST requests." alt="" coords="207,31,397,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,41,191,41,191,46,159,46"/>
-<area shape="rect" id="Node000003" href="$d2/dd1/class_api_client.html#ac0f68b238bace3703854d7de15a3bb38" title="Signal for a failed request sent to a Post endpoint." alt="" coords="449,5,615,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="397,30,433,26,434,32,397,36"/>
-<area shape="rect" id="Node000004" href="$d2/dd1/class_api_client.html#aa2e03a2c693acb0052f80415b453e279" title="Signal for a successful request sent to a Post endpoint." alt="" coords="445,55,619,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="397,51,430,54,429,59,397,56"/>
-</map>

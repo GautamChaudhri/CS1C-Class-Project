@@ -1,7 +1,0 @@
-<map id="TestimonialManager::addTestimonial" name="TestimonialManager::addTestimonial">
-<area shape="rect" id="Node000001" title="Adds a new testimonial to the manager and persists it." alt="" coords="366,5,503,46"/>
-<area shape="rect" id="Node000002" href="$d4/d1f/class_testimonial_dialog.html#a98f2520e872b1eabda8e66a3807ef39e" title="Handles the submission of a new testimonial." alt="" coords="186,5,318,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="351,28,318,28,318,23,351,23"/>
-<area shape="rect" id="Node000003" href="$d4/d1f/class_testimonial_dialog.html#aa4e46d387d1d8fd4793ede8c2deb0fd4" title="Constructs a TestimonialDialog." alt="" coords="5,5,138,46"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="170,28,138,28,138,23,170,23"/>
-</map>

@@ -1,0 +1,10 @@
+<map id="TestimonialManager::setDoNotShowAgain" name="TestimonialManager::setDoNotShowAgain">
+<area shape="rect" id="Node000001" title="Sets the &quot;do not show again&quot; preference for a user." alt="" coords="366,39,517,79"/>
+<area shape="rect" id="Node000002" href="$d4/d1f/class_testimonial_dialog.html#a4a73a410e9fd8c28b794fe0584976414" title="Handles the cancellation of the testimonial submission." alt="" coords="186,5,318,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="350,46,318,40,319,35,351,40"/>
+<area shape="rect" id="Node000004" href="$d4/d1f/class_testimonial_dialog.html#a98f2520e872b1eabda8e66a3807ef39e" title="Handles the submission of a new testimonial." alt="" coords="186,71,318,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="351,77,319,82,318,77,350,72"/>
+<area shape="rect" id="Node000003" href="$d4/d1f/class_testimonial_dialog.html#aa4e46d387d1d8fd4793ede8c2deb0fd4" title="Constructs a TestimonialDialog." alt="" coords="5,39,138,79"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="171,43,138,49,137,44,170,38"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="170,79,138,73,138,68,171,74"/>
+</map>

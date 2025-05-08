@@ -1,5 +1,0 @@
-<map id="Parser::GetAlignmentFlag" name="Parser::GetAlignmentFlag">
-<area shape="rect" id="Node000001" title="Gets the text alignment of a Text object as a string (e.g., &quot;AlignLeft&quot;, &quot;AlignCenter&quot;)." alt="" coords="5,5,177,31"/>
-<area shape="rect" id="Node000002" href="$da/d0e/class_text.html#a3d6716fc88f895932e2c96940188c647" title=" " alt="" coords="225,5,380,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,16,209,16,209,21,177,21"/>
-</map>

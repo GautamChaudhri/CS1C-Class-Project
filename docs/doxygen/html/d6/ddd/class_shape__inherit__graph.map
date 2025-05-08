@@ -1,0 +1,19 @@
+<map id="Shape" name="Shape">
+<area shape="rect" id="Node000001" title="The Shape Abstract Base Class." alt="" coords="799,5,1024,795"/>
+<area shape="rect" id="Node000002" href="$d0/d88/class_circle.html" title="The Circle class." alt="" coords="5,952,188,1286"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="786,452,651,514,574,554,494,601,415,653,338,711,266,775,202,845,167,897,141,953,136,951,163,894,197,842,262,771,334,707,412,649,492,596,571,550,648,509,784,447"/>
+<area shape="rect" id="Node000003" href="$dc/d25/class_ellipse.html" title="The Ellipse class." alt="" coords="212,922,395,1316"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="788,486,696,555,594,640,495,737,450,790,408,845,385,882,365,923,361,920,381,880,404,842,445,787,491,734,591,636,692,551,785,482"/>
+<area shape="rect" id="Node000004" href="$dd/db4/class_line.html" title="The Line class." alt="" coords="419,866,639,1372"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="794,595,722,717,653,845,641,868,636,865,648,842,717,714,789,592"/>
+<area shape="rect" id="Node000005" href="$d1/db0/class_polygon.html" title="The Polygon class." alt="" coords="662,912,899,1326"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="840,811,821,913,816,912,834,810"/>
+<area shape="rect" id="Node000006" href="$d1/d42/class_polyline.html" title="The Polyline class." alt="" coords="924,912,1161,1326"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="989,810,1007,912,1002,913,983,811"/>
+<area shape="rect" id="Node000007" href="$d9/dc7/class_rectangle.html" title="The Rectangle class." alt="" coords="1184,906,1374,1332"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1034,588,1107,712,1175,842,1204,906,1199,908,1170,845,1102,714,1029,590"/>
+<area shape="rect" id="Node000008" href="$d9/d0c/class_square.html" title="The Square class." alt="" coords="1399,944,1582,1294"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1037,489,1123,558,1217,643,1308,738,1350,789,1388,842,1417,891,1441,944,1436,946,1412,894,1384,845,1346,792,1304,742,1213,646,1120,562,1034,493"/>
+<area shape="rect" id="Node000009" href="$da/d0e/class_text.html" title="The Text class." alt="" coords="1605,843,1796,1395"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1039,452,1168,515,1242,556,1317,602,1393,654,1466,711,1535,774,1596,842,1608,856,1603,860,1592,845,1531,778,1463,715,1390,658,1314,607,1239,560,1166,520,1037,456"/>
+</map>

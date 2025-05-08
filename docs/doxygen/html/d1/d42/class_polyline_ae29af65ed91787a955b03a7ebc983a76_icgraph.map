@@ -1,0 +1,7 @@
+<map id="Polyline::setY" name="Polyline::setY">
+<area shape="rect" id="Node000001" title=" " alt="" coords="357,13,459,38"/>
+<area shape="rect" id="Node000002" href="$d1/d42/class_polyline.html#a98f16a2f50d4ce8ef70444c284e299d7" title="Move &#45; Moves the Polyline to the passed x and y coordinates." alt="" coords="202,13,309,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="341,28,309,28,309,23,341,23"/>
+<area shape="rect" id="Node000003" href="$d8/d08/class_render_area_manager.html#af37e63015f3671115d0da8aff234a805" title="Modifies a property of an existing shape based on a key&#45;value pair." alt="" coords="5,5,154,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="186,28,154,28,154,23,186,23"/>
+</map>

@@ -1,7 +1,0 @@
-<map id="Parser::MorphicShape" name="Parser::MorphicShape">
-<area shape="rect" id="Node000001" title="Internal accumulator structure for parsing shape data from JSON." alt="" coords="5,902,196,1151"/>
-<area shape="rect" id="Node000002" href="$db/d35/classalpha_1_1vector.html" title=" " alt="" coords="13,454,189,839"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,839,104,885,98,885,98,839"/>
-<area shape="rect" id="Node000003" href="$db/d35/classalpha_1_1vector.html" title=" " alt="" coords="13,5,189,391"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="104,406,104,454,98,454,98,406"/>
-</map>

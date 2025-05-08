@@ -1,5 +1,0 @@
-<map id="RenderArea::updateShapeDisplayCoords" name="RenderArea::updateShapeDisplayCoords">
-<area shape="rect" id="Node000001" title="Updates display coordinates of a shape&#39;s properties, typically in an associated view." alt="" coords="239,5,457,46"/>
-<area shape="rect" id="Node000002" href="$d9/ddf/class_render_area.html#a84f2ea379248266648d22338e3904b45" title="Handles mouse release events to finalize a shape move operation." alt="" coords="5,5,191,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,28,191,28,191,23,223,23"/>
-</map>

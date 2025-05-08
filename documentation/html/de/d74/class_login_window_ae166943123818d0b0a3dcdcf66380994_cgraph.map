@@ -1,7 +1,0 @@
-<map id="LoginWindow::signupRequested" name="LoginWindow::signupRequested">
-<area shape="rect" id="Node000001" title="Emitted when the user attempts to sign up with the provided credentials. (Admin flag is currently har..." alt="" coords="5,31,214,56"/>
-<area shape="rect" id="Node000002" href="$de/d74/class_login_window.html#ab207055cd16762112d1facbd35da9c25" title="Returns the password entered in the currently active input field (login or signup)." alt="" coords="262,5,426,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,30,246,26,247,31,214,35"/>
-<area shape="rect" id="Node000003" href="$de/d74/class_login_window.html#a2b28bf4bc7080e39afb0d096d212e0a0" title="Returns the username entered in the currently active input field (login or signup)." alt="" coords="262,55,426,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,52,246,55,246,60,214,57"/>
-</map>

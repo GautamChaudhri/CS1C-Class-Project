@@ -1,5 +1,0 @@
-<map id="RenderAreaManager::onBadDeleteResponse" name="RenderAreaManager::onBadDeleteResponse">
-<area shape="rect" id="Node000001" title="Slot to handle unsuccessful DELETE responses from the API client." alt="" coords="5,5,161,46"/>
-<area shape="rect" id="Node000002" href="$d8/d08/class_render_area_manager.html#a67d3ed59f05b6fbe86d3abd42766234f" title="Emitted to provide a status message to the user." alt="" coords="209,5,357,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,23,193,23,193,28,161,28"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="MainWindow::sortByPerimeter" name="MainWindow::sortByPerimeter">
-<area shape="rect" id="Node000001" title="Static comparison function to sort shapes by their calculated perimeter." alt="" coords="5,5,204,31"/>
-<area shape="rect" id="Node000002" href="$d7/da7/class_shape.html#ac33d1f4554e4b4d9cbbe7159411b111c" title="Perimeter &#45; Returns the perimeter of the shape." alt="" coords="252,5,374,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,16,236,16,236,21,204,21"/>
-</map>

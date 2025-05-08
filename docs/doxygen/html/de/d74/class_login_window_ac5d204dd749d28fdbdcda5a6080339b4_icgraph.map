@@ -1,0 +1,5 @@
+<map id="LoginWindow::showLoginPage" name="LoginWindow::showLoginPage">
+<area shape="rect" id="Node000001" title="Switches the QStackedWidget to display the login page." alt="" coords="239,5,438,31"/>
+<area shape="rect" id="Node000002" href="$de/d74/class_login_window.html#aa4c04d26b299de00156bbf3c32b2a082" title="Constructor that sets up the UI components for login and signup." alt="" coords="5,5,191,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,21,191,21,191,16,223,16"/>
+</map>

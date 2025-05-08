@@ -1,7 +1,0 @@
-<map id="TestimonialManager::getSatisfactoryTestimonials" name="TestimonialManager::getSatisfactoryTestimonials">
-<area shape="rect" id="Node000001" title="Returns a vector of testimonials marked as satisfactory." alt="" coords="460,5,650,46"/>
-<area shape="rect" id="Node000002" href="$d8/d62/class_testimonials_display_dialog.html#a3176c00727ade2c7890937cf50b58d6f" title="Refreshes the displayed list of testimonials." alt="" coords="237,5,412,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="445,28,413,28,413,23,445,23"/>
-<area shape="rect" id="Node000003" href="$d8/d62/class_testimonials_display_dialog.html#a4e2ab02e7129d2f299f13a6dc4538272" title="Constructs a TestimonialsDisplayDialog." alt="" coords="5,5,189,46"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="221,28,189,28,189,23,221,23"/>
-</map>

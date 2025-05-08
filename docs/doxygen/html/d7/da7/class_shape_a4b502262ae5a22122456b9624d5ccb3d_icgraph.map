@@ -1,0 +1,109 @@
+<map id="Shape::getShapeId" name="Shape::getShapeId">
+<area shape="rect" id="Node000001" title="Accessor Functions &#45; Returns the data named after them." alt="" coords="1151,501,1283,527"/>
+<area shape="rect" id="Node000002" href="$dc/db7/class_parser.html#a8f8932bed758cd3e61de3669fdef1110" title="Appends common shape properties (ID, Type, Dimensions, Pen properties) to a JSON string." alt="" coords="607,132,837,158"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1210,486,1197,396,1175,277,1160,218,1143,165,1123,123,1101,96,1080,83,1058,73,1010,62,959,62,908,71,859,85,815,101,747,134,745,129,813,97,857,80,907,65,958,57,1010,57,1060,68,1083,78,1105,92,1128,120,1148,163,1165,216,1180,275,1203,395,1215,486"/>
+<area shape="rect" id="Node000003" href="$dc/db7/class_parser.html#ac0dc74d228421b62ece9d9e93511509e" title="Converts a vector of Shape pointers into a JSON string representation." alt="" coords="368,437,521,463"/>
+<area shape="poly" id="edge51_Node000001_Node000003" title=" " alt="" coords="1217,543,1210,602,1193,677,1178,716,1159,753,1135,787,1105,816,1061,840,1001,859,930,873,854,881,778,882,708,876,648,863,625,853,606,840,578,808,565,776,563,742,567,708,573,672,576,635,572,597,557,557,537,528,513,503,466,466,469,462,517,499,541,525,562,554,577,596,581,635,578,673,572,708,568,742,570,775,582,806,609,836,627,848,650,858,708,871,778,877,854,875,929,867,1000,854,1059,835,1101,812,1131,784,1155,751,1173,714,1188,675,1205,601,1212,542"/>
+<area shape="rect" id="Node000004" href="$dc/db7/class_parser.html#a3c8d6dcf6e07231eaedb036ebe90b51f" title="Appends all properties specific to Text objects to a JSON string." alt="" coords="640,356,804,382"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1203,542,1164,595,1136,621,1104,641,1043,666,989,679,963,678,937,672,911,660,883,640,859,612,849,582,850,550,855,518,861,486,862,455,855,424,835,395,820,384,803,376,805,371,823,379,839,391,860,422,868,454,866,487,860,519,855,551,855,581,864,609,886,636,913,655,939,667,964,673,988,673,1041,661,1102,636,1133,617,1160,592,1199,539"/>
+<area shape="rect" id="Node000005" href="$d7/da7/class_shape.html#ad3725fd4cfb43613897c2d3f3e647842" title="CreateParentItem &#45; Adds data cooresponding to all shapes to parentItem for a QTreeWidget." alt="" coords="909,701,1078,727"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="1207,543,1169,613,1140,652,1105,684,1067,703,1065,698,1101,680,1136,648,1164,610,1202,540"/>
+<area shape="rect" id="Node000014" href="$d0/d88/class_circle.html#ac05f869cde1af46ac56ff2e0318980bb" title="Draw &#45; Draws a circle at the assigned coords with the given radius." alt="" coords="947,205,1041,231"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="1210,486,1200,434,1181,368,1167,334,1149,301,1127,270,1101,244,1073,229,1041,222,1042,216,1075,224,1105,240,1131,267,1153,298,1172,332,1186,366,1206,433,1215,485"/>
+<area shape="rect" id="Node000015" href="$dc/d25/class_ellipse.html#a76eaec1becd0860f48dd5c39bb00dabf" title="Draw &#45; Draws the ellipse to the passed renderArea." alt="" coords="944,255,1044,280"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="1207,487,1195,444,1174,391,1143,338,1124,314,1101,294,1074,279,1044,272,1045,267,1076,274,1105,289,1128,311,1148,335,1179,389,1200,442,1213,486"/>
+<area shape="rect" id="Node000016" href="$dd/db4/class_line.html#ad68aeb558c52eace258a55e24f45d11e" title="Draw &#45; Draws a line from startPoint to endPoint." alt="" coords="952,304,1036,330"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="1203,488,1188,454,1166,414,1137,375,1102,343,1070,328,1036,321,1037,316,1071,323,1104,339,1141,372,1171,412,1193,451,1208,486"/>
+<area shape="rect" id="Node000017" href="$d1/db0/class_polygon.html#ae6ac66f1548f1d4baf2ceea00feea940" title="Draw &#45; Draws a Polygon at the assigned coords with points in the pointsList." alt="" coords="940,353,1048,379"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="1197,490,1158,439,1131,414,1102,392,1075,381,1047,374,1049,369,1077,376,1104,388,1135,410,1162,436,1202,487"/>
+<area shape="rect" id="Node000018" href="$d1/d42/class_polyline.html#a554e950db881f3d67e05f453c1f22e77" title="Draw &#45; Draws a Polyline at the assigne coords with points in the pointsList." alt="" coords="941,403,1047,428"/>
+<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="1187,494,1148,467,1102,442,1047,426,1048,421,1104,437,1150,462,1190,489"/>
+<area shape="rect" id="Node000019" href="$d9/dc7/class_rectangle.html#a146fede0215e7c98fbc99b6c302ed743" title="Draw &#45; Draws a Rectangle at the assigned coords." alt="" coords="934,452,1054,478"/>
+<area shape="poly" id="edge19_Node000001_Node000019" title=" " alt="" coords="1141,500,1102,491,1053,480,1055,475,1104,486,1142,495"/>
+<area shape="rect" id="Node000020" href="$d9/d0c/class_square.html#a76509a6807c851fb2fd88713cd856f64" title="Draw &#45; Draws a Square at the assigned coords." alt="" coords="943,501,1044,527"/>
+<area shape="poly" id="edge20_Node000001_Node000020" title=" " alt="" coords="1136,517,1045,517,1045,512,1136,512"/>
+<area shape="rect" id="Node000021" href="$da/d0e/class_text.html#aac7609b2292703561a26921d23aa2541" title="Draw &#45; Draws the text to the assigned coords." alt="" coords="951,551,1036,576"/>
+<area shape="poly" id="edge21_Node000001_Node000021" title=" " alt="" coords="1142,534,1104,542,1038,557,1037,552,1102,537,1141,528"/>
+<area shape="rect" id="Node000022" href="$dc/db7/class_parser.html#a2ae1381ec08a2e3b54077c753d4dbf34" title="Gets the brush style of a shape as a string (e.g., &quot;SolidPattern&quot;, &quot;NoBrush&quot;)." alt="" coords="918,776,1070,802"/>
+<area shape="poly" id="edge22_Node000001_Node000022" title=" " alt="" coords="1211,542,1197,585,1175,638,1145,692,1105,741,1075,763,1043,778,1041,773,1072,758,1101,738,1140,689,1171,635,1192,583,1206,541"/>
+<area shape="rect" id="Node000024" href="$dc/db7/class_parser.html#a4cc8c1d3938f5f55be6074830f96090e" title="Gets the pen cap style of a shape as a string (e.g., &quot;FlatCap&quot;, &quot;RoundCap&quot;)." alt="" coords="911,107,1076,132"/>
+<area shape="poly" id="edge25_Node000001_Node000024" title=" " alt="" coords="1214,486,1210,416,1194,324,1180,275,1161,228,1135,184,1101,146,1076,130,1078,126,1105,141,1139,181,1165,225,1185,274,1200,323,1215,416,1219,486"/>
+<area shape="rect" id="Node000025" href="$dc/db7/class_parser.html#aacdb18c8e63721594a5ee98f94e160c3" title="Gets the pen join style of a shape as a string (e.g., &quot;MiterJoin&quot;, &quot;BevelJoin&quot;)." alt="" coords="911,156,1076,182"/>
+<area shape="poly" id="edge27_Node000001_Node000025" title=" " alt="" coords="1212,486,1205,425,1188,346,1174,304,1155,264,1131,227,1101,195,1075,180,1078,175,1105,191,1135,224,1159,262,1179,302,1193,344,1211,424,1217,485"/>
+<area shape="rect" id="Node000026" href="$dc/db7/class_parser.html#af303a9796fe246709fd2da137248e6d2" title="Gets the pen style of a shape as a string (e.g., &quot;SolidLine&quot;, &quot;DashLine&quot;)." alt="" coords="923,5,1064,31"/>
+<area shape="poly" id="edge29_Node000001_Node000026" title=" " alt="" coords="1210,486,1197,389,1174,258,1159,193,1142,133,1122,85,1101,52,1084,39,1064,30,1066,25,1087,34,1105,48,1127,82,1147,132,1164,192,1179,257,1202,388,1215,485"/>
+<area shape="rect" id="Node000027" href="$dc/db7/class_parser.html#af246a0732ef6c7518e5aaee1043d12e4" title="Gets the geometric dimensions of a shape as a JSON array string." alt="" coords="897,600,1091,626"/>
+<area shape="poly" id="edge31_Node000001_Node000027" title=" " alt="" coords="1190,539,1150,566,1104,591,1073,602,1071,597,1102,586,1148,562,1187,535"/>
+<area shape="rect" id="Node000028" href="$d8/d08/class_render_area_manager.html#af37e63015f3671115d0da8aff234a805" title="Modifies a property of an existing shape based on a key&#45;value pair." alt="" coords="920,900,1068,941"/>
+<area shape="poly" id="edge34_Node000001_Node000028" title=" " alt="" coords="1218,543,1212,611,1196,702,1181,751,1162,799,1137,844,1105,884,1088,897,1070,907,1067,903,1086,893,1101,880,1132,841,1157,796,1176,749,1191,701,1207,611,1213,543"/>
+<area shape="rect" id="Node000029" href="$d9/dc6/class_main_window.html#a5ff173340d6b138bee993d26454d2aaa" title="Populates the tree widget with details of the current shapes and sets up editing controls." alt="" coords="921,974,1067,1014"/>
+<area shape="poly" id="edge35_Node000001_Node000029" title=" " alt="" coords="1220,543,1218,622,1204,731,1190,790,1169,849,1141,905,1105,955,1088,969,1069,980,1066,975,1085,965,1101,951,1137,902,1164,847,1185,789,1199,730,1212,622,1214,542"/>
+<area shape="rect" id="Node000044" href="$d9/dc6/class_main_window.html#a517b645d625b741b3d8aae6d62abe3cb" title="Static comparison function to sort shapes by their ID." alt="" coords="917,1096,1070,1122"/>
+<area shape="poly" id="edge52_Node000001_Node000044" title=" " alt="" coords="1219,542,1215,630,1201,755,1186,824,1166,895,1140,964,1105,1028,1087,1050,1066,1070,1023,1098,1020,1093,1063,1065,1083,1047,1101,1025,1135,961,1161,893,1181,823,1195,754,1210,629,1213,542"/>
+<area shape="rect" id="Node000048" href="$d9/ddf/class_render_area.html#a7fd734dcf63055b10a414b143a45a226" title="Updates display coordinates of a shape&#39;s properties, typically in an associated view." alt="" coords="885,1178,1103,1218"/>
+<area shape="poly" id="edge57_Node000001_Node000048" title=" " alt="" coords="1216,542,1205,666,1184,842,1169,932,1151,1016,1130,1086,1105,1136,1081,1161,1051,1179,1048,1175,1077,1157,1101,1133,1125,1084,1146,1014,1163,931,1178,841,1200,666,1211,542"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="701,171,460,439,456,435,697,167"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="636,388,608,395,480,439,479,434,607,390,635,383"/>
+<area shape="rect" id="Node000006" href="$d0/d88/class_circle.html#a782690f42da545ac8e35d3732ed76f42" title="Circle Constructor." alt="" coords="673,504,771,530"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="899,696,883,684,869,666,861,647,859,611,856,576,849,559,835,543,805,526,771,519,772,514,807,521,838,539,853,556,861,574,864,611,867,646,873,663,887,680,902,692"/>
+<area shape="rect" id="Node000007" href="$dc/d25/class_ellipse.html#a6fd6f0bad023ecfd3d607142c21846c4" title="Ellipse Constructor." alt="" coords="668,553,776,579"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="903,697,883,684,865,661,859,636,852,613,846,603,835,592,807,578,775,570,776,565,808,573,838,588,850,599,857,611,864,635,870,658,886,680,906,693"/>
+<area shape="rect" id="Node000008" href="$dd/db4/class_line.html#aab2a9c230d1bbb8a9e07f4c554e00c26" title="Line Constructor." alt="" coords="683,603,761,628"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="915,698,883,684,868,673,859,662,850,652,835,642,798,628,761,621,762,616,799,623,838,637,853,648,863,659,872,670,886,680,917,693"/>
+<area shape="rect" id="Node000009" href="$d1/db0/class_polygon.html#a7ab0204bb62eddea1fb659e8a6ecd202" title="Polygon Constructor." alt="" coords="660,652,784,678"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="904,701,784,679,785,673,905,695"/>
+<area shape="rect" id="Node000010" href="$d1/d42/class_polyline.html#a27e879d516bc07264e2e871211df3a1f" title="Polyline." alt="" coords="661,701,783,727"/>
+<area shape="poly" id="edge10_Node000005_Node000010" title=" " alt="" coords="894,717,783,717,783,712,894,712"/>
+<area shape="rect" id="Node000011" href="$d9/dc7/class_rectangle.html#af84479273a72d93294cd210732117dd7" title="Rectangle." alt="" coords="648,751,796,776"/>
+<area shape="poly" id="edge11_Node000005_Node000011" title=" " alt="" coords="905,733,797,753,796,747,904,728"/>
+<area shape="rect" id="Node000012" href="$d9/d0c/class_square.html#a4b6e69fc0dda7084eb3db5d3fe92dfb3" title="Square." alt="" coords="666,405,778,431"/>
+<area shape="poly" id="edge12_Node000005_Node000012" title=" " alt="" coords="897,696,883,684,862,653,854,622,855,591,859,561,863,531,863,501,855,473,835,444,808,427,777,420,778,415,810,423,838,440,860,470,869,501,869,531,864,561,860,592,860,621,867,651,887,680,900,692"/>
+<area shape="rect" id="Node000013" href="$da/d0e/class_text.html#a3c521086182cf14349dc8c120afd9d09" title="Text." alt="" coords="682,455,762,480"/>
+<area shape="poly" id="edge13_Node000005_Node000013" title=" " alt="" coords="897,696,883,684,865,660,858,635,857,610,859,586,861,562,860,538,852,516,835,493,819,482,801,475,762,469,763,463,802,469,822,477,839,490,857,513,865,537,866,562,864,586,862,610,863,634,870,657,887,680,901,692"/>
+<area shape="rect" id="Node000023" href="$dc/db7/class_parser.html#a4947ae95392cd961660d9202d4c12e5e" title="Appends QBrush properties (BrushColor, BrushStyle) to a JSON string." alt="" coords="635,800,809,826"/>
+<area shape="poly" id="edge23_Node000022_Node000023" title=" " alt="" coords="902,800,809,808,809,803,902,794"/>
+<area shape="poly" id="edge24_Node000023_Node000003" title=" " alt="" coords="620,802,605,791,584,762,573,734,570,706,572,678,576,620,571,590,557,557,537,528,512,503,465,466,468,461,516,499,541,525,562,554,576,588,581,620,577,679,576,706,578,733,588,760,609,787,623,798"/>
+<area shape="poly" id="edge26_Node000024_Node000002" title=" " alt="" coords="896,131,837,137,837,131,895,126"/>
+<area shape="poly" id="edge28_Node000025_Node000002" title=" " alt="" coords="895,163,837,158,837,152,896,158"/>
+<area shape="poly" id="edge30_Node000026_Node000002" title=" " alt="" coords="924,38,886,53,806,95,744,134,741,129,803,90,884,48,922,33"/>
+<area shape="poly" id="edge32_Node000027_Node000002" title=" " alt="" coords="884,592,883,591,860,561,847,532,843,504,843,475,847,415,844,381,834,344,809,288,780,236,731,159,735,157,785,233,814,286,839,343,849,380,852,415,849,475,848,504,852,531,864,558,887,587,888,588"/>
+<area shape="poly" id="edge33_Node000027_Node000004" title=" " alt="" coords="885,593,883,591,864,566,857,541,856,516,858,490,861,466,860,441,852,418,835,395,820,384,803,377,806,372,823,379,839,391,857,415,865,441,866,466,863,491,861,516,862,540,869,564,887,587,889,589"/>
+<area shape="rect" id="Node000030" href="$d9/dc6/class_main_window.html#afe8619a02bba82d0ad5e05065d6c0ea1" title="Adds a given shape to the properties tree widget and emits shapeAdded signal." alt="" coords="621,901,823,927"/>
+<area shape="poly" id="edge36_Node000029_Node000030" title=" " alt="" coords="907,971,768,930,769,925,908,966"/>
+<area shape="rect" id="Node000039" href="$d9/dc6/class_main_window.html#a841a40f673ad191cd737b49591568446" title="Slot triggered when the render area&#39;s content has changed, requiring a UI update." alt="" coords="628,975,816,1016"/>
+<area shape="poly" id="edge45_Node000029_Node000039" title=" " alt="" coords="905,997,816,998,816,992,905,992"/>
+<area shape="rect" id="Node000043" href="$d9/dc6/class_main_window.html#a04d9898f7479308e0e7e2b8796426c2b" title="Slot triggered upon successful user authentication. Updates UI with user info." alt="" coords="607,1041,837,1067"/>
+<area shape="poly" id="edge49_Node000029_Node000043" title=" " alt="" coords="906,1016,784,1043,783,1038,905,1011"/>
+<area shape="rect" id="Node000031" href="$d9/dc6/class_main_window.html#a9b9bf9b3d640e2bcace3cbfdc5d75d8b" title="Slot triggered to create and add a new Circle shape." alt="" coords="352,763,537,804"/>
+<area shape="poly" id="edge37_Node000030_Node000031" title=" " alt="" coords="631,898,606,884,589,868,581,851,573,834,558,819,536,807,538,802,561,815,577,831,586,848,594,865,609,880,633,893"/>
+<area shape="rect" id="Node000032" href="$d9/dc6/class_main_window.html#a4e25fe2c6dd72b44efdf2d1b1e9c1846" title="Slot triggered to create and add a new Ellipse shape." alt="" coords="352,828,537,869"/>
+<area shape="poly" id="edge38_Node000030_Node000032" title=" " alt="" coords="649,900,533,872,535,867,650,895"/>
+<area shape="rect" id="Node000033" href="$d9/dc6/class_main_window.html#abd3987548635bfd1133f8f0d5e0a1879" title="Slot triggered to create and add a new Line shape." alt="" coords="352,894,537,934"/>
+<area shape="poly" id="edge39_Node000030_Node000033" title=" " alt="" coords="606,917,537,917,537,912,606,912"/>
+<area shape="rect" id="Node000034" href="$d9/dc6/class_main_window.html#a28e2b0b2efac43e0553aef6a8d23aee5" title="Slot triggered to create and add a new Polygon shape." alt="" coords="352,959,537,1000"/>
+<area shape="poly" id="edge40_Node000030_Node000034" title=" " alt="" coords="650,934,535,961,533,956,649,928"/>
+<area shape="rect" id="Node000035" href="$d9/dc6/class_main_window.html#ab4fc6a65cac38759157fd77d12497a89" title="Slot triggered to create and add a new Polyline shape." alt="" coords="352,1024,537,1065"/>
+<area shape="poly" id="edge41_Node000030_Node000035" title=" " alt="" coords="667,936,609,966,595,978,586,990,576,1002,561,1014,534,1026,532,1022,558,1009,572,998,582,986,591,974,606,961,664,931"/>
+<area shape="rect" id="Node000036" href="$d9/dc6/class_main_window.html#af65e6b1a5513198eece131b1d164a978" title="Slot triggered to create and add a new Rectangle shape." alt="" coords="352,567,537,608"/>
+<area shape="poly" id="edge42_Node000030_Node000036" title=" " alt="" coords="619,895,605,884,583,851,575,817,575,784,581,751,586,719,586,687,578,655,557,623,536,606,539,602,561,619,583,653,592,686,591,719,586,752,581,784,580,817,588,848,609,880,622,891"/>
+<area shape="rect" id="Node000037" href="$d9/dc6/class_main_window.html#a7d1d40640f58ce6dd36eabcee8ecdc6e" title="Slot triggered to create and add a new Square shape." alt="" coords="352,632,537,673"/>
+<area shape="poly" id="edge43_Node000030_Node000037" title=" " alt="" coords="620,896,605,884,588,859,580,834,578,809,581,784,583,760,582,736,574,712,557,688,535,672,539,668,561,684,579,709,587,735,588,760,586,785,584,809,585,833,592,857,609,880,623,891"/>
+<area shape="rect" id="Node000038" href="$d9/dc6/class_main_window.html#aebcb152e26ef6d6bd4fc348e815fe8c8" title="Slot triggered to create and add a new Text shape." alt="" coords="352,698,537,738"/>
+<area shape="poly" id="edge44_Node000030_Node000038" title=" " alt="" coords="622,896,606,884,592,868,584,851,581,817,577,785,570,769,558,753,536,739,539,734,561,750,575,766,582,783,586,817,590,849,596,865,609,880,626,892"/>
+<area shape="rect" id="Node000040" href="$d7/de6/class_app_driver.html#af39fbba491cc4dc1d378d6e140507554" title="Connects signals from backend managers to slots in the frontend UI." alt="" coords="350,1090,540,1130"/>
+<area shape="poly" id="edge46_Node000039_Node000040" title=" " alt="" coords="621,1025,609,1031,594,1043,585,1054,576,1067,561,1079,534,1092,532,1087,558,1075,572,1063,581,1051,591,1039,606,1027,618,1020"/>
+<area shape="rect" id="Node000041" href="$d7/de6/class_app_driver.html#af5bf7b6bd96161d95a0a67cc7693127d" title="Initializes and shows the main application window and loads initial data." alt="" coords="140,1097,245,1123"/>
+<area shape="poly" id="edge47_Node000040_Node000041" title=" " alt="" coords="334,1113,245,1113,245,1108,334,1108"/>
+<area shape="rect" id="Node000042" href="$d8/d80/src_2backend_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,1097,55,1123"/>
+<area shape="poly" id="edge48_Node000041_Node000042" title=" " alt="" coords="124,1113,55,1113,55,1108,124,1108"/>
+<area shape="poly" id="edge50_Node000043_Node000040" title=" " alt="" coords="640,1073,541,1094,540,1088,639,1068"/>
+<area shape="rect" id="Node000045" href="$d9/dc6/class_main_window.html#ac4c479f9beafaee136b98e7fac6761ee" title="Creates and displays a new tab or window containing the shape report table." alt="" coords="330,1155,559,1180"/>
+<area shape="poly" id="edge53_Node000044_Node000045" title=" " alt="" coords="902,1114,763,1121,608,1137,507,1157,506,1151,607,1132,762,1116,901,1109"/>
+<area shape="rect" id="Node000047" href="$d9/dc6/class_main_window.html#a755e3ce5cc1f97792cc7f7eff9da3858" title="Slot triggered when the sort method or order in the shape report table changes." alt="" coords="629,1146,815,1186"/>
+<area shape="poly" id="edge55_Node000044_Node000047" title=" " alt="" coords="915,1128,816,1149,815,1144,914,1123"/>
+<area shape="rect" id="Node000046" href="$d9/dc6/class_main_window.html#a25d06b6f11a1eb7fa2239f01e853ae29" title=" " alt="" coords="103,1155,282,1180"/>
+<area shape="poly" id="edge54_Node000045_Node000046" title=" " alt="" coords="314,1170,282,1170,282,1165,314,1165"/>
+<area shape="poly" id="edge56_Node000047_Node000045" title=" " alt="" coords="614,1169,560,1170,560,1164,614,1164"/>
+<area shape="rect" id="Node000049" href="$d9/ddf/class_render_area.html#a84f2ea379248266648d22338e3904b45" title="Handles mouse release events to finalize a shape move operation." alt="" coords="629,1211,815,1252"/>
+<area shape="poly" id="edge58_Node000048_Node000049" title=" " alt="" coords="869,1216,815,1223,815,1218,869,1211"/>
+</map>

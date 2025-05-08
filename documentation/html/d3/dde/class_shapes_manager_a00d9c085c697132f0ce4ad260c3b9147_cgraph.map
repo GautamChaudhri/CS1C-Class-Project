@@ -1,9 +1,0 @@
-<map id="ShapesManager::deleteShape" name="ShapesManager::deleteShape">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,201,80"/>
-<area shape="rect" id="Node000002" href="$d3/dde/class_shapes_manager.html#a1b76d87eb372f56453320d1b0bf566ac" title=" " alt="" coords="260,5,455,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,51,272,32,273,37,174,57"/>
-<area shape="rect" id="Node000003" href="$d3/dde/class_shapes_manager.html#a401502eb4c12357f6f5ae53953c3b3de" title=" " alt="" coords="249,55,466,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,65,233,65,233,70,201,70"/>
-<area shape="rect" id="Node000004" href="$d3/dde/class_shapes_manager.html#aefe8d8daf30445ae70b4035831f857dc" title=" " alt="" coords="264,104,450,145"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,78,250,98,249,103,163,84"/>
-</map>

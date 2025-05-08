@@ -1,9 +1,0 @@
-<map id="TestimonialManager::checkTimeAndPrompt" name="TestimonialManager::checkTimeAndPrompt">
-<area shape="rect" id="Node000001" title="Checks accumulated user time and emits shouldPromptForTestimonial if criteria are met." alt="" coords="5,71,164,111"/>
-<area shape="rect" id="Node000002" href="$d4/d0d/class_testimonial_manager.html#a1ebec1a781a7508501e398bb042a0b2d" title="Retrieves the &quot;do not show again&quot; preference for a user." alt="" coords="233,5,384,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,68,221,48,222,54,157,73"/>
-<area shape="rect" id="Node000003" href="$d4/d0d/class_testimonial_manager.html#a9466acdac4dddfe8947b41cb637cb556" title="Checks if a user with the given username has already submitted a testimonial." alt="" coords="220,71,398,111"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,88,204,88,204,94,164,94"/>
-<area shape="rect" id="Node000004" href="$d4/d0d/class_testimonial_manager.html#ade7e70f55550c1417ab7d0ca7b3b3142" title="Emitted to prompt the user for a testimonial." alt="" coords="212,136,406,177"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="157,109,222,128,221,134,156,114"/>
-</map>

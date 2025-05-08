@@ -1,7 +1,0 @@
-<map id="UserManager::deleteUser" name="UserManager::deleteUser">
-<area shape="rect" id="Node000001" title="Deletes a specific user account by username." alt="" coords="5,31,176,56"/>
-<area shape="rect" id="Node000002" href="$d1/da2/class_user_manager.html#ae723fce00890079d4702ba901f7d39a9" title="Saves all current user accounts to the webservice." alt="" coords="241,5,412,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,32,225,26,226,32,176,37"/>
-<area shape="rect" id="Node000003" href="$d1/da2/class_user_manager.html#a971a7f0b550dd6ac2c314a977aea395b" title="Emitted when an operation that would change users fails (e.g., user not found, username taken)." alt="" coords="224,55,429,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,50,208,53,208,58,176,55"/>
-</map>

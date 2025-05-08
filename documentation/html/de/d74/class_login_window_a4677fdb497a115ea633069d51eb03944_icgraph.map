@@ -1,5 +1,0 @@
-<map id="LoginWindow::attemptLogin" name="LoginWindow::attemptLogin">
-<area shape="rect" id="Node000001" title="Emits the loginRequested signal with current input from login fields." alt="" coords="239,5,421,31"/>
-<area shape="rect" id="Node000002" href="$de/d74/class_login_window.html#aa4c04d26b299de00156bbf3c32b2a082" title="Constructor that sets up the UI components for login and signup." alt="" coords="5,5,191,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,21,191,21,191,16,223,16"/>
-</map>

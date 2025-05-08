@@ -1,0 +1,36 @@
+<map id="RenderAreaManager::RenderAreaManager" name="RenderAreaManager::RenderAreaManager">
+<area shape="rect" id="Node000001" title="Constructs a RenderAreaManager object and connects API client signals." alt="" coords="5,274,154,314"/>
+<area shape="rect" id="Node000002" href="$d2/dd1/class_api_client.html#a2362fb6ae6555400e50840bd2138fa3c" title="Signal for a failed request sent to a Delete endpoint." alt="" coords="206,5,383,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,273,94,225,116,162,151,96,173,66,200,40,204,37,207,41,203,44,177,70,155,99,121,164,99,226,87,274"/>
+<area shape="rect" id="Node000003" href="$d2/dd1/class_api_client.html#ae22339e302eb27bc51fbdfc1b7c1a4ec" title="Signal for a failed request sent to a Get endpoint." alt="" coords="214,55,374,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="85,272,100,233,123,184,157,133,177,110,200,89,206,86,209,90,203,94,181,113,161,136,128,186,104,235,90,274"/>
+<area shape="rect" id="Node000004" href="$d2/dd1/class_api_client.html#ac0f68b238bace3703854d7de15a3bb38" title="Signal for a failed request sent to a Post endpoint." alt="" coords="211,104,378,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="89,272,132,206,163,169,200,139,208,134,211,139,203,143,167,173,136,209,94,275"/>
+<area shape="rect" id="Node000005" href="$d2/dd1/class_api_client.html#a36b7d26e91c582a56da7c3bcfbdccbd9" title="Signal for a successful request sent to a Delete endpoint." alt="" coords="202,153,387,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="97,271,142,229,170,207,200,188,212,182,214,187,203,193,173,211,145,233,101,275"/>
+<area shape="rect" id="Node000006" href="$d2/dd1/class_api_client.html#a940bf610f9fa472fc660e1ab60203de7" title="Signal for a successful request sent to a Get endpoint." alt="" coords="210,203,378,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="121,271,201,237,221,231,222,236,203,242,123,276"/>
+<area shape="rect" id="Node000007" href="$d2/dd1/class_api_client.html#aa2e03a2c693acb0052f80415b453e279" title="Signal for a successful request sent to a Post endpoint." alt="" coords="207,252,382,278"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="153,281,191,276,192,281,154,287"/>
+<area shape="rect" id="Node000008" href="$d8/d08/class_render_area_manager.html#a5eba4d620c1b50c889012aad208bf537" title="Slot to handle unsuccessful DELETE responses from the API client." alt="" coords="217,302,372,342"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="154,301,202,307,201,313,154,306"/>
+<area shape="rect" id="Node000010" href="$d8/d08/class_render_area_manager.html#a7be312bb8f2b2f172d7e7a4b2d140847" title="Slot to handle unsuccessful GET responses from the API client." alt="" coords="220,367,368,408"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="121,313,203,352,219,359,217,364,201,357,119,317"/>
+<area shape="rect" id="Node000011" href="$d8/d08/class_render_area_manager.html#ad913be20b153ae12e6769da01ca0983f" title="Slot to handle unsuccessful POST responses from the API client." alt="" coords="220,432,368,473"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="98,313,142,365,171,393,203,417,213,423,210,428,200,422,168,397,138,368,94,316"/>
+<area shape="rect" id="Node000012" href="$d8/d08/class_render_area_manager.html#acffe5680693aa0139963e7f0b0f44031" title="Slot to handle successful DELETE responses from the API client." alt="" coords="213,498,376,538"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="91,314,107,350,131,395,164,442,203,483,210,487,206,492,200,487,159,446,127,398,102,353,86,316"/>
+<area shape="rect" id="Node000013" href="$d8/d08/class_render_area_manager.html#aa7435693fddb08071d18e0965cc45a9d" title="Slot to handle successful GET responses from the API client." alt="" coords="220,628,368,669"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="85,315,94,373,114,453,130,496,149,539,174,578,204,614,209,619,206,623,200,617,169,581,145,541,125,498,109,455,89,374,80,315"/>
+<area shape="rect" id="Node000015" href="$d8/d08/class_render_area_manager.html#a82240f891ea5a3ada0778574a9d9f4f4" title="Slot to handle successful POST responses from the API client." alt="" coords="218,563,370,604"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="88,314,100,362,122,425,156,491,178,521,203,548,208,552,205,556,200,552,174,525,152,493,117,427,95,363,82,316"/>
+<area shape="rect" id="Node000009" href="$d8/d08/class_render_area_manager.html#a67d3ed59f05b6fbe86d3abd42766234f" title="Emitted to provide a status message to the user." alt="" coords="435,466,583,506"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="366,341,388,353,418,376,444,401,487,451,482,455,440,405,414,380,386,358,363,345"/>
+<area shape="poly" id="edge10_Node000010_Node000009" title=" " alt="" coords="358,406,388,418,461,456,458,460,386,423,356,411"/>
+<area shape="poly" id="edge12_Node000011_Node000009" title=" " alt="" coords="369,462,420,470,420,475,368,467"/>
+<area shape="poly" id="edge14_Node000012_Node000009" title=" " alt="" coords="376,503,419,497,420,502,377,509"/>
+<area shape="poly" id="edge17_Node000013_Node000009" title=" " alt="" coords="363,626,386,613,414,591,440,566,482,517,486,521,444,570,418,595,388,618,366,630"/>
+<area shape="rect" id="Node000014" href="$d8/d08/class_render_area_manager.html#a8ae2b40cb4cd008dff584aa8cfd14870" title="Emitted when the render area has changed and needs redrawing." alt="" coords="435,628,583,669"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="369,646,419,646,419,652,369,652"/>
+<area shape="poly" id="edge19_Node000015_Node000009" title=" " alt="" coords="356,560,386,548,457,512,460,517,388,553,358,565"/>
+</map>

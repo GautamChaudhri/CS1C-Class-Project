@@ -1,7 +1,0 @@
-<map id="TestimonialManager::addTestimonial" name="TestimonialManager::addTestimonial">
-<area shape="rect" id="Node000001" title="Adds a new testimonial to the manager and persists it." alt="" coords="5,5,143,46"/>
-<area shape="rect" id="Node000002" href="$d4/d0d/class_testimonial_manager.html#a776df0038128c3464b01c4f52199a960" title="Saves all current testimonials (via API client)." alt="" coords="191,5,328,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,23,175,23,175,28,143,28"/>
-<area shape="rect" id="Node000003" href="$dc/db7/class_parser.html#a37a8828ed47a09c969ed966865da186d" title="Converts a QVector of Testimonial objects into a JSON string representation." alt="" coords="376,13,558,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="328,23,360,23,360,28,328,28"/>
-</map>
