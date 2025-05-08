@@ -4,11 +4,14 @@
 namespace SelSort {
 
 // Selection sort copied from MainWindow, adapted for free functions
+// These functions have been refactored to function in this test harness
+// for whitebox testing. However, the core logic remains exactly the same
+// as the originals.
 static void selection_sort(alpha::vector<Shape*>& shapes,
                            bool (*compare)(const Shape*, const Shape*),
                            bool ascending)
 {
-    for (size_t i = 0; i < shapes.size(); ++i) {
+   for (size_t i = 0; i < shapes.size(); ++i) {
         size_t targetIdx = i;
         for (size_t j = i + 1; j < shapes.size(); ++j) {
             if (ascending ? compare(shapes[j], shapes[targetIdx])
@@ -36,22 +39,25 @@ static bool compareByPerimeter(const Shape* a, const Shape* b) {
 }
 
 // Public API: return a sorted copy of the input vector
-alpha::vector<Shape*> listById(const alpha::vector<Shape*>& shapes, bool ascending) {
-    auto result = shapes;
-    selection_sort(result, compareById, ascending);
-    return result;
+alpha::vector<Shape*> listById(const alpha::vector<Shape*>* shapes_ptr, bool ascending) {
+    if (!shapes_ptr) return alpha::vector<Shape*>(); // Return empty if null
+    auto shapesCopy = *shapes_ptr; // Dereference to copy the vector
+    selection_sort(shapesCopy, compareById, ascending);
+    return shapesCopy;
 }
 
-alpha::vector<Shape*> listByArea(const alpha::vector<Shape*>& shapes, bool ascending) {
-    auto result = shapes;
-    selection_sort(result, compareByArea, ascending);
-    return result;
+alpha::vector<Shape*> listByArea(const alpha::vector<Shape*>* shapes_ptr, bool ascending) {
+    if (!shapes_ptr) return alpha::vector<Shape*>(); // Return empty if null
+    auto shapesCopy = *shapes_ptr; // Dereference to copy the vector
+    selection_sort(shapesCopy, compareByArea, ascending);
+    return shapesCopy;
 }
 
-alpha::vector<Shape*> listByPerimeter(const alpha::vector<Shape*>& shapes, bool ascending) {
-    auto result = shapes;
-    selection_sort(result, compareByPerimeter, ascending);
-    return result;
+alpha::vector<Shape*> listByPerimeter(const alpha::vector<Shape*>* shapes_ptr, bool ascending) {
+    if (!shapes_ptr) return alpha::vector<Shape*>(); // Return empty if null
+    auto shapesCopy = *shapes_ptr; // Dereference to copy the vector
+    selection_sort(shapesCopy, compareByPerimeter, ascending);
+    return shapesCopy;
 }
 
-} // namespace ReportGenerator
+} // namespace SelSort

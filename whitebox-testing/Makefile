@@ -19,8 +19,7 @@ SOURCES = \
     main.cpp \
     SelSort.cpp \
     RenderAreaManager.cpp \
-    ../src/backend/Parser.cpp \
-    ../src/backend/ApiClient.cpp
+    ../src/backend/Parser.cpp
 
 # Paths to object implementations in the project
 OBJ_DIR = ../src/objects
@@ -29,10 +28,8 @@ OBJECTS = \
     SelSort.o \
     RenderAreaManager.o \
     Parser.o \
-    ApiClient.o \
     UserAccount.o \
     Testimonial.o \
-    moc_ApiClient.o \
     moc_RenderAreaManager.o \
     $(OBJ_DIR)/shape.o \
     $(OBJ_DIR)/line.o \
@@ -69,9 +66,6 @@ RenderAreaManager.o: RenderAreaManager.cpp RenderAreaManager.h
 Parser.o: ../src/backend/Parser.cpp ../src/backend/Parser.h
 	$(CXX) $(CXXFLAGS) -c ../src/backend/Parser.cpp -o Parser.o
 
-ApiClient.o: ../src/backend/ApiClient.cpp ../src/backend/ApiClient.h
-	$(CXX) $(CXXFLAGS) -c ../src/backend/ApiClient.cpp -o ApiClient.o
-
 # Compile UserAccount.cpp for Parser references
 UserAccount.o: ../src/backend/UserAccount.cpp ../src/backend/UserAccount.h
 	$(CXX) $(CXXFLAGS) -c ../src/backend/UserAccount.cpp -o UserAccount.o
@@ -81,12 +75,6 @@ Testimonial.o: ../src/backend/Testimonial.cpp ../src/backend/Testimonial.h
 	$(CXX) $(CXXFLAGS) -c ../src/backend/Testimonial.cpp -o Testimonial.o
 
 # Generate moc and compile for Qt meta-object processing
-moc_ApiClient.cpp: ../src/backend/ApiClient.h
-	$(MOC) -o moc_ApiClient.cpp ../src/backend/ApiClient.h
-
-moc_ApiClient.o: moc_ApiClient.cpp
-	$(CXX) $(CXXFLAGS) -c moc_ApiClient.cpp -o moc_ApiClient.o
-
 moc_RenderAreaManager.cpp: RenderAreaManager.h
 	$(MOC) -o moc_RenderAreaManager.cpp RenderAreaManager.h
 
@@ -98,4 +86,4 @@ $(OBJ_DIR)/%.o: $(OBJ_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS) moc_*.cpp $(TARGET) UserAccount.o Testimonial.o \
+	rm -f $(OBJECTS) moc_*.cpp $(TARGET) UserAccount.o Testimonial.o
