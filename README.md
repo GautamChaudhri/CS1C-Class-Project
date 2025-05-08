@@ -73,6 +73,22 @@ The project therefore showcases an end‑to‑end **C++17** solution—from GUI 
 
 ---
 
+***Directory Map***
+
+| Item                                    | File Path                                                                   |
+|-----------------------------------------|-----------------------------------------------------------------------------|
+| 1. Project Source Code                  | `src`                                                                       |
+| 2. File References & Line Numbers       | `docs/deliverables.txt`                                                     |
+| 3. Extra Credit Submissions             | See entries 11–13 in `docs/deliverables.txt`                                |
+| 4. Agile Documentation                  | `docs/agile`                                                                |
+| 5. Doxygen Documentation (Web)          | `docs/doxygen/html/index.html`                                              |
+| 6. Doxygen Documentation (PDF)          | `docs/doxygen/latex/refman.pdf`                                             |
+| 7. Valgrind Memory Leak Check           | `vector-driver`                                                             |
+| 8. Whitebox Testing                     | `whitebox-testing`                                                          |
+| 9. UML Diagrams                         | `docs/uml`, `docs/doxygen/html/index.html`, `docs/doxygen/latex/refman.pdf` |
+
+---
+
 **Qt Setup**
 - Download this project onto your machine.
   ```bash
