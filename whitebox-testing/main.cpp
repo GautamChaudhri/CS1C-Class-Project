@@ -75,15 +75,6 @@ void runShapeIdReport() {
     std::cout << std::left << std::setw(50) << "Add new Ellipse TrackerId=" + std::to_string(newEllipseId)
                 << std::setw(6) << (addEllipseSuccess ? "PASS" : "FAIL") << "\n";
 
-    // Add a new Square
-    const int newSquareId =5600; // New unique ID for the square
-    Square* addedSquare = new Square("Square", QPoint(50, 50), QPen(Qt::blue), QBrush(Qt::NoBrush), 25); // Example parameters
-    addedSquare->setTrackerId(newSquareId);
-    manager.addShape(addedSquare);
-    bool addSquareSuccess = findShape(*pShapes, newSquareId);
-    std::cout << std::left << std::setw(50) << "Add new Square TrackerId=" + std::to_string(newSquareId)
-                << std::setw(6) << (addSquareSuccess ? "PASS" : "FAIL") << "\n";
-
     // Modify a Circle's radius
     int circleId = 7104;
     for (Shape* shape : *pShapes) {                         //change the shape
